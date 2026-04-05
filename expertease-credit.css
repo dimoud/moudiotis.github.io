@@ -1,84 +1,90 @@
 /* ============================================================
-   EXPERTEASE CREDIT BANNER — modular component v3
-   Transparent, no background/border/shadow.
-   Place inside a dark-background container as the last child.
-   Add <hr class="ec-rule"> immediately before the banner div.
+   EXPERTEASE CREDIT BANNER — modular component v4
+   Neutral — works on any dark background.
+   Transparent, no hardcoded background color.
+   Usage:
+     <hr class="ec-rule">
+     <div class="expertease-credit">…</div>
    ============================================================ */
 
 :root {
-  --ec-gold:   #c9a86c;
-  --ec-gold2:  #f0d898;
-  --ec-text:   rgba(255,255,255,0.45);
-  --ec-logo-h: 22px;
-  --ec-font:   inherit;
+  --ec-white:   rgba(255,255,255,0.82);
+  --ec-muted:   rgba(255,255,255,0.38);
+  --ec-accent:  rgba(255,255,255,0.65);
+  --ec-cta-col: rgba(255,255,255,0.90);
+  --ec-logo-h:  20px;
+  --ec-font:    inherit;
 }
 
-/* ── horizontal rule separator ── */
+/* ── separator rule ── */
 hr.ec-rule {
   border: none;
   height: 1px;
   margin: 0 6%;
-  background: linear-gradient(90deg, transparent, rgba(201,168,108,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
 }
 
-/* ── outer wrapper — isolated, transparent ── */
+/* ── outer wrapper ── */
 .expertease-credit {
   position: relative;
   z-index: 0;
-  isolation: isolate;       /* own stacking context: page animations can't bleed in */
-  contain: layout style;    /* block external transform/opacity from leaking in */
-
+  isolation: isolate;
+  contain: layout style;
   background: transparent;
-  padding: 14px 6% 18px;
   overflow: hidden;
   font-family: var(--ec-font);
+  padding: 0 6%;
+  height: 60px;
+  margin-bottom: 72px;   /* clear the fixed #backToTop button (bottom:32px + ~40px height) */
 }
 
-/* ── shimmer beam sweeping left → right ── */
-.expertease-credit::before {
-  content: "";
+/* ─────────────────────────────────────────────
+   LAYER A — copyright + "designed by" credit
+   LAYER B — advertisement CTA
+   They alternate: A visible → fade out → B visible → fade out → repeat
+   ───────────────────────────────────────────── */
+
+.ec-layer {
   position: absolute;
-  top: 0;
-  left: -60%;
-  width: 40%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(201,168,108,0.1) 40%,
-    rgba(240,216,152,0.16) 50%,
-    rgba(201,168,108,0.1) 60%,
-    transparent 100%
-  );
-  transform: skewX(-10deg);
-  animation: ec-sweep 4s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes ec-sweep {
-  0%   { left: -60%; opacity: 0; }
-  8%   { opacity: 1; }
-  92%  { opacity: 1; }
-  100% { left: 150%; opacity: 0; }
-}
-
-/* ── inner layout ── */
-.ec-inner {
-  position: relative;
-  z-index: 1;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 14px;
   flex-wrap: wrap;
+  padding: 0 6%;
 }
 
-/* ── copyright ── */
+/* Layer A: credit — visible first */
+.ec-layer--credit {
+  animation: ec-fade-credit 9s ease-in-out infinite;
+}
+
+/* Layer B: ad — offset by 4.5s (half cycle) */
+.ec-layer--ad {
+  opacity: 0;
+  animation: ec-fade-ad 9s ease-in-out infinite;
+}
+
+@keyframes ec-fade-credit {
+  0%,  35%  { opacity: 1; transform: translateY(0); }
+  42%,  57%  { opacity: 0; transform: translateY(-6px); }
+  92%, 100%  { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ec-fade-ad {
+  0%,  35%  { opacity: 0; transform: translateY(6px); }
+  42%,  57%  { opacity: 1; transform: translateY(0); }
+  92%, 100%  { opacity: 0; transform: translateY(6px); }
+}
+
+/* ── copyright text ── */
 .ec-copy {
-  font-size: 11px;
-  letter-spacing: 1.8px;
+  font-size: 10.5px;
+  letter-spacing: 1.6px;
   text-transform: uppercase;
-  color: var(--ec-text);
+  color: var(--ec-muted);
+  white-space: nowrap;
 }
 
 /* ── divider dot ── */
@@ -86,80 +92,179 @@ hr.ec-rule {
   width: 3px;
   height: 3px;
   border-radius: 50%;
-  background: rgba(201,168,108,0.35);
+  background: rgba(255,255,255,0.2);
   flex-shrink: 0;
 }
 
-/* ── brand link ── */
+/* ── "designed by" label ── */
+.ec-label {
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ec-muted);
+  white-space: nowrap;
+}
+
+/* ── brand link (credit layer) ── */
 .ec-brand {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 8px;
   text-decoration: none;
   color: inherit;
+  transition: opacity 0.25s;
 }
 
-.ec-label {
-  font-size: 11px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--ec-text);
-}
+.ec-brand:hover { opacity: 0.75; }
 
-/* ── logo pulse ── */
+/* ── logo ── */
 .ec-logo {
   height: var(--ec-logo-h);
   width: auto;
   display: block;
-  transition: transform 0.4s ease, filter 0.4s ease;
-  animation: ec-logo-glow 5s ease-in-out infinite;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  filter: brightness(0) invert(1);   /* force white — neutral on any bg */
 }
 
-@keyframes ec-logo-glow {
-  0%,100% { filter: brightness(0.8) saturate(0.7); }
-  50%      { filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 7px rgba(201,168,108,0.55)); }
-}
+.ec-brand:hover .ec-logo { opacity: 1; }
 
-.ec-brand:hover .ec-logo {
-  transform: scale(1.08);
-  filter: brightness(1.3) saturate(1.4) drop-shadow(0 0 10px rgba(201,168,108,0.7)) !important;
-  animation-play-state: paused;
-}
-
-/* ── brand name: flowing shimmer text ── */
+/* ── brand name — clean white, no gold ── */
 .ec-name {
   font-size: 12px;
-  font-weight: 700;
-  font-style: italic;
+  font-weight: 600;
   letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--ec-accent);
   white-space: nowrap;
+  transition: color 0.3s;
+}
+
+.ec-brand:hover .ec-name { color: var(--ec-white); }
+
+/* ─────────────────────────────────────────
+   AD LAYER STYLES
+   ───────────────────────────────────────── */
+
+/* Pulse ring that draws the eye */
+.ec-ad-ring {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.ec-ad-ring::before,
+.ec-ad-ring::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.35);
+}
+
+.ec-ad-ring::after {
+  animation: ec-ring-pulse 2.4s ease-out infinite;
+}
+
+@keyframes ec-ring-pulse {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  100% { transform: scale(1.9); opacity: 0;   }
+}
+
+.ec-ad-logo {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ec-ad-logo img {
+  height: 16px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
+
+/* Ad text group */
+.ec-ad-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.ec-ad-question {
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--ec-muted);
+  line-height: 1;
+}
+
+.ec-ad-cta {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  color: var(--ec-cta-col);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.ec-ad-cta:hover { color: #fff; }
+
+/* Arrow that slides right on hover */
+.ec-ad-arrow {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.6;
+  transform: translateX(0);
+  transition: transform 0.25s ease, opacity 0.25s;
+}
+
+.ec-ad-cta:hover .ec-ad-arrow {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+/* ── shimmer sweep across the whole banner ── */
+.expertease-credit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 35%;
+  height: 100%;
   background: linear-gradient(
     90deg,
-    var(--ec-gold)  0%,
-    var(--ec-gold2) 30%,
-    var(--ec-gold)  55%,
-    var(--ec-gold2) 75%,
-    var(--ec-gold)  100%
+    transparent 0%,
+    rgba(255,255,255,0.04) 40%,
+    rgba(255,255,255,0.07) 50%,
+    rgba(255,255,255,0.04) 60%,
+    transparent 100%
   );
-  background-size: 250% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: ec-text-flow 2.8s linear infinite;
+  transform: skewX(-12deg);
+  animation: ec-sweep 7s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
 }
 
-@keyframes ec-text-flow {
-  0%   { background-position: 0%   center; }
-  100% { background-position: 250% center; }
-}
-
-.ec-brand:hover .ec-name {
-  animation-duration: 1.2s;
+@keyframes ec-sweep {
+  0%   { left: -70%; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { left: 160%; opacity: 0; }
 }
 
 /* ── responsive ── */
 @media (max-width: 480px) {
-  .expertease-credit { padding: 12px 5% 16px; }
-  .ec-inner          { flex-direction: column; gap: 6px; }
+  .expertease-credit { height: auto; padding: 12px 5%; }
+  .ec-layer          { position: relative; inset: auto; padding: 0; }
+  .ec-layer--ad      { display: none; }
+  .ec-layer--credit  { animation: none; opacity: 1; transform: none; }
   .ec-divider        { display: none; }
 }
