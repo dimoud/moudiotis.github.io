@@ -330,6 +330,11 @@ document.querySelectorAll('.nav-links a').forEach(a => {
     document.getElementById('hamburger').classList.remove('open');
   });
 });
+// Close menu on scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('navLinks').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}, { passive: true });
 
 /* ── SCROLL REVEAL ── */
 const revealObserver = new IntersectionObserver((entries) => {
