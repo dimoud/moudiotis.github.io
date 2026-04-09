@@ -11,8 +11,8 @@
     <link rel="alternate"     href="https://moudiotis.github.io/" hreflang="en">
     <link rel="alternate"     href="https://moudiotis.github.io/" hreflang="x-default">
 
-    <link rel="icon"          href="founder.png" type="image/png">
-    <link rel="apple-touch-icon" href="founder.png">
+    <link rel="icon"          href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
 
     <meta property="og:type"        content="website">
     <meta property="og:url"         content="https://moudiotis.github.io/">
@@ -195,6 +195,13 @@
             <div class="sec-meas-tick"></div>
         </div>
         <div class="services-grid" id="servicesGrid"></div>
+
+        <!-- Trailer sketch animation — O1/O2 licence visual -->
+        <div id="trailerAnimWrap" aria-hidden="true" style="
+            margin: 52px auto 0;
+            max-width: 860px;
+            padding: 0 16px;
+        "></div>
     </section>
 
     <!-- ===== TRUST ===== -->
@@ -262,7 +269,7 @@
 
             <div class="contact-map">
                 <iframe
-                    src="https://www.google.com/maps?ll=37.965194,23.745722&z=17&t=m&hl=el&gl=GR&mapclient=embed&output=embed"
+                    src="https://maps.google.com/maps?q=37.965194,23.745722&hl=el&z=17&output=embed"
                     width="100%" height="340" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade" title="Χάρτης Αθήνας">
                 </iframe>
@@ -271,7 +278,7 @@
             <div class="contact-form-wrap" data-reveal>
                 <h3 data-i18n="form.title"></h3>
                 <form id="clientContactForm" class="form-fields" novalidate>
-                    <input type="hidden" name="_to" value="Moudiotis.MEng@gmail.com">
+                    <input type="hidden" name="_to" value="moudiotis.meng@gmail.com">
                     <div class="form-row">
                         <div class="field">
                             <label for="f-name" data-i18n="form.label.name"></label>
@@ -394,6 +401,7 @@
     <script src="site-init.js"></script>
     <script src="i18n.js"></script>
     <script src="eng-animations.js"></script>
+    <script src="trailer-animation.js"></script>
     <script src="contact-form.js"></script>
 </body>
 </html>
