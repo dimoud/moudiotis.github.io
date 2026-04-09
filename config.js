@@ -160,8 +160,8 @@ window.SITE_CONFIG = {
             url:     'https://expertease.eu/3dprint',
             titleEl: 'Μηχανολογικός Σχεδιασμός &amp; 3D Printing',
             titleEn: 'Mechanical Design &amp; 3D Printing',
-            textEl:  'CAD 3D (SolidWorks), FEA ανάλυση αντοχών, <strong class="kw">rapid prototyping</strong>. FDM, SLA, SLS τεχνολογίες εκτύπωσης για ακριβή εξαρτήματα &amp; πρωτότυπα. Laser cut &amp; κατεργασία φύλλων μετάλλου.',
-            textEn:  'CAD 3D (SolidWorks), FEA strength analysis, <strong class="kw">rapid prototyping</strong>. FDM, SLA, SLS printing for precision parts &amp; prototypes. Laser cutting &amp; sheet metal work.',
+            textEl:  'CAD 3D, FEA ανάλυση αντοχών, <strong class="kw">rapid prototyping</strong>. FDM, SLA, SLS τεχνολογίες εκτύπωσης για ακριβή εξαρτήματα &amp; πρωτότυπα. Laser cut &amp; κατεργασία φύλλων μετάλλου.',
+            textEn:  'CAD 3D, FEA strength analysis, <strong class="kw">rapid prototyping</strong>. FDM, SLA, SLS printing for precision parts &amp; prototypes. Laser cutting &amp; sheet metal work.',
         },
         {
             icon:    'fa-code',
