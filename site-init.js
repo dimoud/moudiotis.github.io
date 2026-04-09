@@ -176,7 +176,7 @@
 
 
     // ── 3. META TAGS ─────────────────────────────────────────────────────────
-    var savedLang = (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || C.meta.lang || 'el';
+    var savedLang = C.meta.lang || 'el';
     var langKey   = savedLang === 'en' ? 'En' : 'El';
 
     document.title = C.meta['title' + langKey] || C.meta.titleEl || '';
@@ -235,14 +235,14 @@
                 '<span class="hbc-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>' +
                 '<span class="hbc-text"><span class="hbc-label">Κινητό</span><span class="hbc-val">' + C.contact.mobile + '</span></span>' +
             '</a>' +
-            '<a href="mailto:' + C.contact.email + '" class="hbc-item">' +
-                '<span class="hbc-icon"><i class="fa-solid fa-envelope"></i></span>' +
-                '<span class="hbc-text"><span class="hbc-label">Email</span><span class="hbc-val">' + C.contact.email + '</span></span>' +
-            '</a>' +
             '<span class="hbc-item hbc-address">' +
                 '<span class="hbc-icon"><i class="fa-solid fa-location-dot"></i></span>' +
                 '<span class="hbc-text"><span class="hbc-label">Διεύθυνση</span><span class="hbc-val">' + (C.contact.address || '') + '</span></span>' +
-            '</span>';
+            '</span>' +
+            '<a href="mailto:' + C.contact.email + '" class="hbc-item">' +
+                '<span class="hbc-icon"><i class="fa-solid fa-envelope"></i></span>' +
+                '<span class="hbc-text"><span class="hbc-label">Email</span><span class="hbc-val">' + C.contact.email + '</span></span>' +
+            '</a>';
     }
 
     // ── 5. NAMES ──────────────────────────────────────────────────────────────
@@ -356,17 +356,27 @@
         (C.services || []).forEach(function (s, i) {
             var n   = i + 1;
             var pad = n < 10 ? '0' + n : '' + n;
-            // h3 and p are wrapped in .service-card-body so they stack (title above description)
-            // data-i18n-html used (not data-i18n) so HTML entities like &amp; render correctly
+            // First card (O1/O2) gets featured class for attention animation
+            var featuredClass = (i === 0) ? ' service-card--featured' : '';
+            var featuredBadge = (i === 0) ?
+                '<span class="service-badge">ΝΕΑ</span>' : '';
+            // Odd-index (0,2,4,6) = left column, even-index (1,3,5,7) = right column
+            var colClass = (i % 2 === 0) ? ' service-card--odd' : ' service-card--even';
+            // Cards with a url become anchor elements
+            var tag    = s.url ? 'a' : 'div';
+            var urlAttr = s.url
+                ? ' href="' + s.url + '" target="_blank" rel="noopener"'
+                : '';
             sHtml +=
-                '<div class="service-card" data-reveal>' +
+                '<' + tag + urlAttr + ' class="service-card' + featuredClass + colClass + '" data-reveal>' +
                 '<div class="service-num">' + pad + '</div>' +
                 '<i class="fa-solid ' + s.icon + ' service-icon"></i>' +
                 '<div class="service-card-body">' +
                 '<h3 data-i18n-html="s' + n + '.title">' + s.titleEl + '</h3>' +
+                featuredBadge +
                 '<p data-i18n-html="s' + n + '.text">'   + s.textEl  + '</p>' +
                 '</div>' +
-                '</div>';
+                '</' + tag + '>';
         });
         servicesGrid.innerHTML = sHtml;
     }

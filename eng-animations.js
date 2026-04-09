@@ -112,18 +112,19 @@
     var calVal      = $('caliperVal');
     var calSvg      = $('caliperSvg');
 
-    /* Geometry constants (match the SVG viewBox in index.html)
-       Left jaw fixed anchor x = 88
-       Right jaw group base x  = 350 (path starts M350 ...)
-       When group translateX = -262: right jaw tip at x=88 → gap = 0 (closed)
-       When group translateX =    0: right jaw tip at x=350 → gap = 262px
+    /* Geometry constants — vertical caliper (SVG viewBox 0 0 72 480)
+       Top jaw fixed anchor y = 88
+       Bottom jaw group base y = 350 (path starts M18 350 ...)
+       When group translateY = -262: bottom jaw tip at y=88 → gap = 0 (closed)
+       When group translateY =    0: bottom jaw tip at y=350 → gap = 262px
        Scale: 262px / 4.235m → each metre ≈ 61.9px
-       Max measurement displayed: 4.235 m (262 / 61.9) */
-    var CAL_JAW_ORIGIN_X = 350;   /* right jaw body x when group is at 0 */
-    var CAL_LEFT_ANCHOR  = 88;    /* left jaw tip x */
-    var CAL_MAX_OFFSET   = 262;   /* px when fully open */
+       Max measurement displayed: 4.235 m */
+    var CAL_JAW_ORIGIN_Y = 350;
+    var CAL_TOP_ANCHOR   = 88;
+    var CAL_MAX_OFFSET   = 262;
     var CAL_PX_PER_M     = CAL_MAX_OFFSET / 4.235;
     var CAL_MAX_M        = 4.235;
+    var CAL_VERTICAL     = !!(calSvg && calSvg.classList.contains('caliper-svg--vertical'));
 
     function easeInOut(t) {
         return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
@@ -132,23 +133,46 @@
     function applyCaliperOffset(offset) {
         /* offset: 0 = closed, CAL_MAX_OFFSET = fully open */
         if (!calJaw) return;
-        calJaw.style.transform = 'translateX(' + (-CAL_MAX_OFFSET + offset) + 'px)';
+        var mVal = (offset / CAL_PX_PER_M).toFixed(3);
 
-        var jawX = CAL_JAW_ORIGIN_X - (CAL_MAX_OFFSET - offset);
-        var midX  = (CAL_LEFT_ANCHOR + jawX) / 2;
-        var mVal  = (offset / CAL_PX_PER_M).toFixed(3);
+        if (CAL_VERTICAL) {
+            calJaw.style.transform = 'translateY(' + (-CAL_MAX_OFFSET + offset) + 'px)';
+            var jawY = CAL_JAW_ORIGIN_Y - (CAL_MAX_OFFSET - offset);
+            var midY = (CAL_TOP_ANCHOR + jawY) / 2;
 
-        if (calDimLine) {
-            calDimLine.setAttribute('x1', CAL_LEFT_ANCHOR);
-            calDimLine.setAttribute('x2', jawX);
-        }
-        if (calDimTickR) {
-            calDimTickR.setAttribute('x1', jawX - 2);
-            calDimTickR.setAttribute('x2', jawX + 2);
-        }
-        if (calVal) {
-            calVal.setAttribute('x', midX);
-            calVal.textContent = mVal + ' m';
+            if (calDimLine) {
+                calDimLine.setAttribute('y1', CAL_TOP_ANCHOR);
+                calDimLine.setAttribute('y2', jawY);
+                calDimLine.setAttribute('x1', 16);
+                calDimLine.setAttribute('x2', 16);
+            }
+            if (calDimTickR) {
+                calDimTickR.setAttribute('y1', jawY - 2);
+                calDimTickR.setAttribute('y2', jawY + 2);
+                calDimTickR.setAttribute('x1', 13);
+                calDimTickR.setAttribute('x2', 20);
+            }
+            if (calVal) {
+                calVal.setAttribute('transform', 'rotate(-90,' + 10 + ',' + midY + ')');
+                calVal.setAttribute('y', midY);
+                calVal.textContent = mVal + ' m';
+            }
+        } else {
+            calJaw.style.transform = 'translateX(' + (-CAL_MAX_OFFSET + offset) + 'px)';
+            var jawX = 350 - (CAL_MAX_OFFSET - offset);
+            var midX = (88 + jawX) / 2;
+            if (calDimLine) {
+                calDimLine.setAttribute('x1', 88);
+                calDimLine.setAttribute('x2', jawX);
+            }
+            if (calDimTickR) {
+                calDimTickR.setAttribute('x1', jawX - 2);
+                calDimTickR.setAttribute('x2', jawX + 2);
+            }
+            if (calVal) {
+                calVal.setAttribute('x', midX);
+                calVal.textContent = mVal + ' m';
+            }
         }
     }
 
@@ -177,11 +201,39 @@
     /* ─── 7. SECTION MEASUREMENT LINES ──────────────────────────────────── */
     var secMeasEls = document.querySelectorAll('[data-sec-meas]');
 
+    /* Animated number count-up for services measurement label */
+    function animateServicesMeasLabel(el) {
+        var finalText = el.textContent.trim(); /* e.g. "8 ΥΠΗΡΕΣΙΕΣ — 320.00 m²" */
+        /* Extract numeric value at end (m²) */
+        var m2Match = finalText.match(/([\d.,]+)\s*m²/);
+        if (!m2Match) return;
+        var finalVal = parseFloat(m2Match[1].replace(',', '.'));
+        var prefix   = finalText.split('—')[0].trim(); /* "8 ΥΠΗΡΕΣΙΕΣ" */
+        var dur      = 3000; /* ms — slow */
+        var start    = null;
+
+        function tick(ts) {
+            if (!start) start = ts;
+            var pct    = Math.min(1, (ts - start) / dur);
+            var eased  = pct < 0.5 ? 2 * pct * pct : -1 + (4 - 2 * pct) * pct;
+            var cur    = (eased * finalVal).toFixed(2);
+            el.textContent = prefix + ' — ' + cur + ' m²';
+            if (pct < 1) requestAnimationFrame(tick);
+            else el.textContent = finalText;
+        }
+        /* Delay to sync with label CSS opacity transition (2.2s) */
+        setTimeout(function () { requestAnimationFrame(tick); }, 2200);
+    }
+
     if (secMeasEls.length && 'IntersectionObserver' in window) {
         var secObs = new IntersectionObserver(function (entries) {
             entries.forEach(function (e) {
                 if (e.isIntersecting) {
                     e.target.classList.add('ready');
+                    /* Animate the services measurement label count */
+                    var lbl = e.target.querySelector('.sec-meas-label') ||
+                              document.getElementById('servicesMeasLabel');
+                    if (lbl) animateServicesMeasLabel(lbl);
                     secObs.unobserve(e.target);
                 }
             });
@@ -203,12 +255,13 @@
     }
 
     /* ─── 9. REVEAL ON SCROLL ────────────────────────────────────────────── */
-    var revealEls = document.querySelectorAll('[data-reveal], [data-reveal-r]');
-    if (revealEls.length && 'IntersectionObserver' in window) {
-        var revealObs = new IntersectionObserver(function (entries) {
+    var revealEls    = document.querySelectorAll('[data-reveal]:not(.service-card), [data-reveal-r]');
+    var serviceCards = document.querySelectorAll('.service-card[data-reveal]');
+
+    function makeRevealHandler(isServiceCard) {
+        return function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
-                    var isServiceCard = entry.target.classList.contains('service-card');
                     var siblings = Array.prototype.filter.call(
                         entry.target.parentElement.children,
                         function (el) {
@@ -216,19 +269,44 @@
                         }
                     );
                     var idx = siblings.indexOf(entry.target);
-                    /* Service cards: 90ms stagger — crisp cascade feel.
-                       Other elements: 120ms stagger — slower, section-level pacing. */
-                    var step = isServiceCard ? 90 : 120;
+                    var delay;
+                    if (isServiceCard) {
+                        /* Stagger by row (pairs of 2), 180ms per row */
+                        var row = Math.floor(idx / 2);
+                        delay = row * 180;
+                    } else {
+                        delay = idx * 120;
+                    }
                     setTimeout(function () {
                         entry.target.classList.add('visible');
-                    }, idx * step);
-                    revealObs.unobserve(entry.target);
+                    }, delay);
+                    this.unobserve(entry.target);
                 }
+            }.bind(this));
+        };
+    }
+
+    if ('IntersectionObserver' in window) {
+        /* General reveal — fires early (8% visible) */
+        if (revealEls.length) {
+            var revealObs = new IntersectionObserver(makeRevealHandler(false), { threshold: 0.08 });
+            revealEls.forEach(function (el) { revealObs.observe(el); });
+        }
+
+        /* Service cards — fire only after user has scrolled well into the section:
+           rootMargin "-20% 0px -10% 0px" means the trigger zone is the middle 70%
+           of the viewport, so cards won't animate until they're clearly on screen. */
+        if (serviceCards.length) {
+            var serviceObs = new IntersectionObserver(makeRevealHandler(true), {
+                threshold: 0.18,
+                rootMargin: '-15% 0px -15% 0px'
             });
-        }, { threshold: 0.08 });
-        revealEls.forEach(function (el) { revealObs.observe(el); });
+            serviceCards.forEach(function (el) { serviceObs.observe(el); });
+        }
     } else {
-        revealEls.forEach(function (el) { el.classList.add('visible'); });
+        document.querySelectorAll('[data-reveal], [data-reveal-r]').forEach(function (el) {
+            el.classList.add('visible');
+        });
     }
 
     /* ─── 0. SCROLL PROGRESS BAR ─────────────────────────────────────────── */
@@ -287,6 +365,94 @@
         refresh: onScroll,
     };
 
+    /* ─── ARTICLES CAROUSEL — AUTO-SCROLL + DRAG ────────────────────── */
+    (function () {
+        var band  = document.querySelector('.articles-band');
+        var track = document.getElementById('articlesTrack');
+        if (!band || !track) return;
+
+        /* Use JS scroll instead of CSS transform animation */
+        band.style.overflowX  = 'scroll';
+        band.style.cursor     = 'grab';
+        track.style.animation = 'none';
+        track.style.transform = 'none';
+
+        /* Auto-scroll speed: ~0.5px per frame at 60fps ≈ 30px/s (very slow) */
+        var SPEED      = 0.5;
+        var isDown     = false;
+        var isDragging = false;
+        var paused     = false;
+        var startX     = 0;
+        var scrollLeft = 0;
+        var half       = 0;
+
+        /* Initialise: start at first duplicate boundary */
+        setTimeout(function () {
+            half = track.scrollWidth / 2;
+            band.scrollLeft = 0;
+            startAutoScroll();
+        }, 80);
+
+        /* ── Auto-scroll RAF loop ── */
+        function startAutoScroll() {
+            function tick() {
+                if (!paused && !isDown) {
+                    band.scrollLeft += SPEED;
+                    /* Seamless loop: when we've scrolled one full copy, jump back */
+                    if (band.scrollLeft >= track.scrollWidth / 2) {
+                        band.scrollLeft -= track.scrollWidth / 2;
+                    }
+                }
+                requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+
+        /* ── Mouse drag ── */
+        band.addEventListener('mousedown', function (e) {
+            isDown = true; isDragging = false;
+            band.style.cursor = 'grabbing';
+            startX     = e.pageX - band.offsetLeft;
+            scrollLeft = band.scrollLeft;
+            e.preventDefault();
+        });
+        band.addEventListener('mouseleave', function () { isDown = false; band.style.cursor = 'grab'; });
+        band.addEventListener('mouseup',    function () { isDown = false; isDragging = false; band.style.cursor = 'grab'; });
+        band.addEventListener('mousemove',  function (e) {
+            if (!isDown) return;
+            isDragging = true;
+            e.preventDefault();
+            var x    = e.pageX - band.offsetLeft;
+            var walk = (x - startX) * 1.6;
+            band.scrollLeft = scrollLeft - walk;
+            /* Seamless loop while dragging */
+            if (band.scrollLeft >= track.scrollWidth / 2)  band.scrollLeft -= track.scrollWidth / 2;
+            if (band.scrollLeft < 0) band.scrollLeft += track.scrollWidth / 2;
+        });
+
+        /* Pause on hover (desktop) */
+        band.addEventListener('mouseenter', function () { paused = true; });
+        band.addEventListener('mouseleave', function () { paused = false; });
+
+        /* ── Touch swipe ── */
+        var touchStartX     = 0;
+        var touchScrollLeft = 0;
+        band.addEventListener('touchstart', function (e) {
+            touchStartX     = e.touches[0].pageX;
+            touchScrollLeft = band.scrollLeft;
+            paused = true;
+        }, { passive: true });
+        band.addEventListener('touchmove', function (e) {
+            var diff = touchStartX - e.touches[0].pageX;
+            band.scrollLeft = touchScrollLeft + diff;
+            if (band.scrollLeft >= track.scrollWidth / 2)  band.scrollLeft -= track.scrollWidth / 2;
+            if (band.scrollLeft < 0) band.scrollLeft += track.scrollWidth / 2;
+        }, { passive: true });
+        band.addEventListener('touchend', function () {
+            setTimeout(function () { paused = false; }, 800);
+        }, { passive: true });
+    })();
+
     /* ─── 11. HERO CURSOR SPOTLIGHT ──────────────────────────────────────── */
     var heroEl       = document.querySelector('.hero');
     var spotlightEl  = document.querySelector('.hero-spotlight');
@@ -344,5 +510,6 @@
         }, { threshold: 0.4 });
         statNums.forEach(function (el) { statObs.observe(el); });
     }
+
 
 })();

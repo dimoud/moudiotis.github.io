@@ -27,10 +27,10 @@ window.SITE_CONFIG = {
         navBrandEn:    'MOUDIOTIS TECHNICAL OFFICE',
         displayNameEl: 'Δημήτριος Μουδιώτης & Συνεργάτες',
         displayNameEn: 'Dimitrios Moudiotis & Associates',
-        professionEl:  'Μηχανολόγος Μηχανικός',
-        professionEn:  'Mechanical Engineer',
-        fullTitleEl:   'Μηχανολόγος Μηχανικός | Αθήνα - Θεσσαλονίκη',
-        fullTitleEn:   'Mechanical Engineer | Athens - Thessaloniki',
+        professionEl:  'Μηχανολόγος Μηχανικός ΑΠΘ, MSc',
+        professionEn:  'Mechanical Engineer AUTH, MSc',
+        fullTitleEl:   'Μηχανολόγος Μηχανικός ΑΠΘ, MSc | Αθήνα - Θεσσαλονίκη',
+        fullTitleEn:   'Mechanical Engineer AUTH, MSc | Athens - Thessaloniki',
         universityEl:  '',
         universityEn:  '',
         locationEl:    'Αθήνα - Θεσσαλονίκη',
@@ -84,8 +84,8 @@ window.SITE_CONFIG = {
     about: {
         headingEl: 'Εμπειρία &amp; <em>Εξειδίκευση</em>',
         headingEn: 'Experience &amp; <em>Expertise</em>',
-        leadEl:    'Με {years}+ χρόνια εμπειρίας, το τεχνικό γραφείο μας αποτελεί αξιόπιστο συνεργάτη για μελέτες οχημάτων, αδειοδότηση ρυμουλκούμενων Ο1/Ο2, ενεργειακά πιστοποιητικά και κάλυψη τεχνικού ασφαλείας. Εξυπηρετούμε ιδιώτες &amp; επαγγελματίες σε Αθήνα και Αττική.',
-        leadEn:    'With {years}+ years of experience, our technical office is a trusted partner for vehicle studies, O1/O2 trailer licensing, energy certificates and safety engineer coverage. Serving individuals &amp; professionals across Athens and Attica.',
+        leadEl:    'Με {years}+ χρόνια εμπειρίας, το τεχνικό γραφείο μας αποτελεί αξιόπιστο συνεργάτη για μελέτες οχημάτων, αδειοδότηση ρυμουλκούμενων Ο1/Ο2, ενεργειακά πιστοποιητικά και κάλυψη τεχνικού ασφαλείας.',
+        leadEn:    'With {years}+ years of experience, our technical office is a trusted partner for vehicle studies, O1/O2 trailer licensing, energy certificates and safety engineer coverage.',
         features: [
             {
                 icon:    'fa-bolt-lightning',
@@ -157,6 +157,7 @@ window.SITE_CONFIG = {
         },
         {
             icon:    'fa-cube',
+            url:     'https://expertease.eu/3dprint',
             titleEl: 'Μηχανολογικός Σχεδιασμός &amp; 3D Printing',
             titleEn: 'Mechanical Design &amp; 3D Printing',
             textEl:  'CAD 3D (SolidWorks), FEA ανάλυση αντοχών, <strong class="kw">rapid prototyping</strong>. FDM, SLA, SLS τεχνολογίες εκτύπωσης για ακριβή εξαρτήματα &amp; πρωτότυπα. Laser cut &amp; κατεργασία φύλλων μετάλλου.',
@@ -164,8 +165,9 @@ window.SITE_CONFIG = {
         },
         {
             icon:    'fa-code',
-            titleEl: 'Web Design &amp; Ανάπτυξη Λογισμικού',
-            titleEn: 'Web Design &amp; Software Development',
+            url:     'https://expertease.eu/webdesign',
+            titleEl: 'Web Design',
+            titleEn: 'Web Design',
             textEl:  'Κατασκευή επαγγελματικών websites <strong class="kw">χωρίς templates</strong> — 100% custom, bilingual, mobile-first. Ανάπτυξη ειδικού λογισμικού για τεχνικές εφαρμογές.',
             textEn:  'Professional websites <strong class="kw">without templates</strong> — 100% custom, bilingual, mobile-first. Specialised software development for technical applications.',
         },
@@ -327,7 +329,7 @@ window.SITE_CONFIG = {
         { el: 'Τεχνικός Ασφαλείας / ΓΕΕΚ',                en: 'Safety Engineer / Risk Assessment' },
         { el: 'Μελέτη Οχήματος / Έγκριση Τύπου',          en: 'Vehicle Study / Type Approval' },
         { el: 'Μηχανολογικός Σχεδιασμός / 3D Print',       en: 'Mechanical Design / 3D Print' },
-        { el: 'Web Design / Λογισμικό',                    en: 'Web Design / Software' },
+        { el: 'Web Design',                                 en: 'Web Design' },
         { el: 'Άλλο',                                      en: 'Other' },
     ],
 

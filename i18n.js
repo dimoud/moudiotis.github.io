@@ -25,8 +25,7 @@
     var t = (window.SITE_CONFIG && window.SITE_CONFIG.translations) || {};
 
     /* ─── STATE ──────────────────────────────────────────────────────────── */
-    var currentLang = localStorage.getItem('lang') ||
-                      (window.SITE_CONFIG && window.SITE_CONFIG.meta && window.SITE_CONFIG.meta.lang) ||
+    var currentLang = (window.SITE_CONFIG && window.SITE_CONFIG.meta && window.SITE_CONFIG.meta.lang) ||
                       'el';
 
     /* ─── APPLY TRANSLATIONS ─────────────────────────────────────────────── */
