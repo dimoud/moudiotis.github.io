@@ -1369,7 +1369,7 @@ footer {
     .contact-map iframe { height: 220px; }
     /* Person card: scale down 15% to prevent overflow */
     .person-card { transform: scale(0.85); transform-origin: left center; margin-left: 0; margin-bottom: 10px; }
-    .contact-form-wrap { padding: 32px 22px; width: 85%; margin: 0 auto; box-sizing: border-box; grid-column: 1; }
+    .contact-form-wrap { padding: 32px 22px; width: 85%; margin: 0 auto; box-sizing: border-box; grid-column: 1; justify-self: center; }
     .form-row { grid-template-columns: 1fr; }
     .contact-form-wrap h3 { font-size: 20px; margin-bottom: 28px; text-align: center; }
     .form-fields input, .form-fields select, .form-fields textarea { font-size: 16px; } /* prevent iOS auto-zoom */
@@ -1449,7 +1449,7 @@ footer {
 
     .trust-section { padding: 36px 4%; }
     .contact-section { padding: 36px 4%; }
-    .contact-form-wrap { padding: 28px 18px; }
+    .contact-form-wrap { padding: 28px 18px; justify-self: center; }
     .service-icon { font-size: 20px; }
     .article-card { width: 310px; padding: 28px 22px; }
 }
