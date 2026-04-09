@@ -302,23 +302,7 @@
         });
     }
 
-    /* ─── 12. SERVICE CARD 3-D TILT ─────────────────────────────────────── */
-    var tiltCards = document.querySelectorAll('.service-card');
-    tiltCards.forEach(function (card) {
-        card.addEventListener('mousemove', function (e) {
-            var rect = card.getBoundingClientRect();
-            var cx   = rect.left + rect.width  / 2;
-            var cy   = rect.top  + rect.height / 2;
-            var dx   = (e.clientX - cx) / (rect.width  / 2);  /* -1 … 1 */
-            var dy   = (e.clientY - cy) / (rect.height / 2);
-            var rx   = -dy * 6;   /* tilt up/down */
-            var ry   =  dx * 6;   /* tilt left/right */
-            card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateZ(4px)';
-        }, { passive: true });
-        card.addEventListener('mouseleave', function () {
-            card.style.transform = '';
-        });
-    });
+    /* 3D tilt removed */
 
     /* ─── 13. MAGNETIC BUTTON GLOW ──────────────────────────────────────── */
     var glowBtns = document.querySelectorAll('.nav-cta, .btn-submit');

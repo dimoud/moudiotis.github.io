@@ -37,12 +37,12 @@ window.SITE_CONFIG = {
         locationEn:    'Athens',
         areaEl:        'Αθήνα, Ελλάδα',
         areaEn:        'Athens, Greece',
-        expStartYear:  2015,
+        expStartYear:  2019,
     },
 
     // ── ASSETS ────────────────────────────────────────────────────────────
     assets: {
-        logo:       'logo_expertease.png',
+        logo:       'logo.png',
         photo:      'founder.png',
         heroSlides: [],
     },
@@ -54,12 +54,12 @@ window.SITE_CONFIG = {
         mobile:    '699 849 0768',
         mobileTel: 'tel:+306998490768',
         fax:       '',
-        email:     'Moudiotis.meng@gmail.com',
-        address:   'Αθήνα, Ελλάδα',
-        addressEn: 'Athens, Greece',
+        email:     'Moudiotis.MEng@gmail.com',
+        address:   'Αθήνα - Θεσσαλονίκη',
+        addressEn: 'Athens - Thessaloniki',
         facebook:  '',
         linkedin:  'https://www.linkedin.com/in/moudiotis/',
-        mapsUrl:   'https://maps.google.com/maps?q=40.671426233509,22.93926462035&hl=el&z=16&output=embed',
+        mapsUrl:   'https://www.google.com/maps?ll=37.965194,23.745722&z=17&t=m&hl=el&gl=GR&mapclient=embed&output=embed',
     },
 
     // ── THEME ─────────────────────────────────────────────────────────────
@@ -178,8 +178,8 @@ window.SITE_CONFIG = {
         headingEl: 'Εμπειρία που <em>μιλάει</em>',
         headingEn: 'Experience that <em>speaks</em>',
         stats: [
-            { numEl: '40+',     numEn: '40+',     labelEl: 'Χρόνια Εμπειρίας',     labelEn: 'Years of Experience' },
-            { numEl: '20.000+', numEn: '20,000+', labelEl: 'Ολοκληρωμένα Έργα',    labelEn: 'Completed Projects' },
+            { numEl: '{years}+', numEn: '{years}+', labelEl: 'Χρόνια Εμπειρίας',    labelEn: 'Years of Experience' },
+            { numEl: '300+',    numEn: '300+',    labelEl: 'Ολοκληρωμένα Έργα',    labelEn: 'Completed Projects' },
             { numEl: '100%',    numEn: '100%',    labelEl: 'Επιτυχείς Εγκρίσεις',  labelEn: 'Successful Approvals' },
         ],
         pillars: [

@@ -113,7 +113,7 @@ nav.scrolled {
 .nav-cta {
     border: 1px solid var(--gold) !important;
     color: var(--gold) !important;
-    padding: 9px 24px; border-radius: 2px;
+    padding: 9px 24px; border-radius: 8px;
     transition: background 0.3s, color 0.3s !important;
 }
 .nav-cta:hover {
@@ -327,7 +327,7 @@ nav:not(.scrolled) .lang-sep              { background: rgba(255,255,255,0.18); 
     background: transparent;
     color: var(--warm);
     border: 1.5px solid var(--warm);
-    padding: 14px 38px; border-radius: 2px;
+    padding: 14px 38px; border-radius: 8px;
     font-size: 10px; font-weight: 600; letter-spacing: 2.5px;
     text-transform: uppercase;
     transition: background 0.3s var(--ease), color 0.3s var(--ease),
@@ -345,7 +345,7 @@ nav:not(.scrolled) .lang-sep              { background: rgba(255,255,255,0.18); 
 /* Standard gold button (used outside hero) */
 .btn-gold {
     background: var(--gold); color: var(--white);
-    padding: 15px 38px; border-radius: 2px;
+    padding: 15px 38px; border-radius: 8px;
     font-size: 10px; font-weight: 600; letter-spacing: 2.5px;
     text-transform: uppercase;
     transition: all 0.3s var(--ease);
@@ -765,6 +765,7 @@ section { padding: 160px 7%; }
 .person-card {
     display: flex; align-items: center; gap: 22px;
     border: 1px solid rgba(29,58,92,0.12);
+    border-radius: 12px;
     padding: 28px 32px; margin-bottom: 36px;
     position: relative;
     transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
@@ -838,7 +839,8 @@ section { padding: 160px 7%; }
 
 /* Form — row 1, right column, same height as contact info */
 .contact-form-wrap {
-    border: 1px solid rgba(29,58,92,0.15);
+    border: 1.5px solid rgba(29,58,92,0.2);
+    border-radius: 12px;
     padding: 52px 48px;
     background: var(--white);
     grid-row: 1;
@@ -846,34 +848,39 @@ section { padding: 160px 7%; }
     align-self: stretch;
 }
 .contact-form-wrap h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px; color: var(--ink); font-weight: 300;
+    font-family: 'Inter', sans-serif;
+    font-size: 22px; color: var(--ink); font-weight: 600;
+    letter-spacing: 0.5px;
     margin-bottom: 36px;
 }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.field { display: flex; flex-direction: column; gap: 10px; }
+.field { display: flex; flex-direction: column; gap: 8px; }
 .field label {
-    font-size: 9px; font-weight: 600;
-    color: var(--stone); letter-spacing: 2.5px; text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 600;
+    color: var(--stone); letter-spacing: 2px; text-transform: uppercase;
 }
 .field input, .field textarea, .field select {
-    background: transparent;
-    border: none; border-bottom: 1.5px solid rgba(29,58,92,0.15);
-    color: var(--ink); padding: 12px 0;
+    background: var(--cream);
+    border: 1.5px solid rgba(29,58,92,0.25);
+    border-radius: 8px;
+    color: var(--ink); padding: 11px 14px;
     font-family: 'Inter', sans-serif;
-    font-size: 14px; font-weight: 300; outline: none;
-    transition: border-color 0.3s; -webkit-appearance: none; appearance: none;
+    font-size: 14px; font-weight: 400; outline: none;
+    transition: border-color 0.3s, background 0.3s;
+    -webkit-appearance: none; appearance: none;
 }
 .field select option { background: var(--white); color: var(--ink); }
-.field input::placeholder, .field textarea::placeholder { color: rgba(28,27,25,0.35); }
+.field input::placeholder, .field textarea::placeholder { color: rgba(28,27,25,0.32); }
 .field input:focus, .field textarea:focus, .field select:focus {
-    border-bottom-color: var(--gold);
+    border-color: var(--gold);
+    background: var(--white);
 }
 .field textarea { resize: none; min-height: 110px; }
 .form-fields { display: flex; flex-direction: column; gap: 26px; }
 .btn-submit {
     background: var(--gold); color: var(--white);
-    padding: 17px 48px; border: none;
+    padding: 17px 48px; border: none; border-radius: 8px;
     font-family: 'Inter', sans-serif;
     font-size: 9.5px; font-weight: 600;
     letter-spacing: 2.5px; text-transform: uppercase;
@@ -1239,7 +1246,7 @@ footer {
     .contact-map iframe { height: 220px; }
     .contact-form-wrap { padding: 32px 22px; width: 100%; margin: 0 auto; box-sizing: border-box; grid-column: 1; }
     .form-row { grid-template-columns: 1fr; }
-    .contact-form-wrap h3 { font-size: 26px; margin-bottom: 28px; text-align: center; }
+    .contact-form-wrap h3 { font-size: 20px; margin-bottom: 28px; text-align: center; }
     .form-fields input, .form-fields select, .form-fields textarea { font-size: 16px; } /* prevent iOS auto-zoom */
     .btn-submit { width: 100%; padding: 16px; }
 
@@ -1388,14 +1395,7 @@ footer {
     user-select: none;
 }
 
-/* ===== WOW — SERVICE CARD 3D TILT ===== */
-.services-grid {
-    perspective: 1200px;
-}
-.service-card {
-    transform-style: preserve-3d;
-    will-change: transform;
-}
+/* 3D tilt removed */
 
 /* ===== WOW — MAGNETIC CTA GLOW ===== */
 .nav-cta, .btn-submit {

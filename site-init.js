@@ -138,7 +138,7 @@
     T['trust.heading'] = { el: TR.headingEl || '', en: TR.headingEn || '' };
     (TR.stats || []).forEach(function (s, i) {
         var n = i + 1;
-        T['trust.stat' + n + '.num']   = { el: s.numEl,   en: s.numEn };
+        T['trust.stat' + n + '.num']   = { el: injectYears(s.numEl),   en: injectYears(s.numEn) };
         T['trust.stat' + n + '.label'] = { el: s.labelEl, en: s.labelEn };
     });
     (TR.pillars || []).forEach(function (p, i) {
