@@ -1257,8 +1257,7 @@ footer {
     /* ── Navigation ── */
     nav { height: 60px; padding: 0 5%; }
     nav.scrolled { height: 52px; }
-    .logo-text .name { font-size: 14px; }
-    .logo-text .title { display: none; }
+    .logo-text { display: none; }
     .lang-toggle { padding: 4px 5px; }
     .lang-btn { padding: 4px 7px; gap: 6px; }
     .lang-btn .lcode { font-size: 10px; }    /* keep visible, just slightly smaller */
