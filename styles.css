@@ -437,20 +437,16 @@ section { padding: 160px 7%; }
 }
 [data-reveal-r].visible { opacity: 1; transform: translateX(0); }
 
-/* ── Service card reveal — slide from left ── */
+/* ── Service card reveal — simple fade ── */
 .service-card[data-reveal] {
     opacity: 0;
-    transform: translateX(-28px);
-    transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+    transition: opacity 0.5s ease;
 }
 .service-card[data-reveal].visible {
     opacity: 1;
-    transform: translateX(0);
 }
-/* Left accent line sweeps in shortly after the card */
 .service-card[data-reveal].visible::before {
     transform: scaleY(0.45);
-    transition: transform 0.35s var(--ease) 0.4s;
 }
 .service-card[data-reveal].visible:hover::before {
     transform: scaleY(1);
@@ -1422,21 +1418,21 @@ footer {
     background: linear-gradient(
         100deg,
         #fff 0%,
-        #fff 38%,
-        rgba(201,168,108,0.9) 48%,
-        #fff 58%,
+        #fff 40%,
+        rgba(201,168,108,0.55) 50%,
+        #fff 60%,
         #fff 100%
     );
-    background-size: 250% auto;
+    background-size: 300% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: heroFadeUp 0.7s var(--ease) 0.70s both, heroNameShimmer 10s linear 3s infinite;
+    animation: heroFadeUp 0.7s var(--ease) 0.70s both, heroNameShimmer 22s linear 4s infinite;
 }
 @keyframes heroNameShimmer {
-    0%   { background-position: 250% center; }
-    14%  { background-position: -250% center; }
-    100% { background-position: -250% center; }
+    0%   { background-position: 300% center; }
+    18%  { background-position: -300% center; }
+    100% { background-position: -300% center; }
 }
 
 /* ===== WOW — SECTION HEADING ACCENT ===== */
