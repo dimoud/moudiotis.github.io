@@ -350,6 +350,18 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
 
+/* ── FEATURED CARD ANIMATION (start on scroll) ── */
+const featuredObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      featuredObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+const featuredCard = document.querySelector('.service-card--featured');
+if (featuredCard) featuredObserver.observe(featuredCard);
+
 /* ── EXPERTISE BARS ── */
 const barObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

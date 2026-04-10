@@ -198,6 +198,55 @@
         applyCaliperOffset(offset);
     }
 
+    /* ─── 6b. MOBILE HORIZONTAL CALIPER ────────────────────────────────── */
+    var calMobileWrap    = $('caliperMobileWrap');
+    var calMobileJaw     = $('calMobileJawGroup');
+    var calMobileDimLine = $('calMobileDimLine');
+    var calMobileDimTickR= $('calMobileDimTickR');
+    var calMobileVal     = $('caliperMobileVal');
+
+    function applyMobileCaliperOffset(offset) {
+        if (!calMobileJaw) return;
+        var mVal = (offset / CAL_PX_PER_M).toFixed(3);
+        calMobileJaw.style.transform = 'translateX(' + (-CAL_MAX_OFFSET + offset) + 'px)';
+        var jawX = 350 - (CAL_MAX_OFFSET - offset);
+        var midX = (88 + jawX) / 2;
+        if (calMobileDimLine) {
+            calMobileDimLine.setAttribute('x1', 88);
+            calMobileDimLine.setAttribute('x2', jawX);
+            calMobileDimLine.setAttribute('y1', 14);
+            calMobileDimLine.setAttribute('y2', 14);
+        }
+        if (calMobileDimTickR) {
+            calMobileDimTickR.setAttribute('x1', jawX - 4);
+            calMobileDimTickR.setAttribute('x2', jawX + 4);
+            calMobileDimTickR.setAttribute('y1', 10);
+            calMobileDimTickR.setAttribute('y2', 18);
+        }
+        if (calMobileVal) {
+            calMobileVal.setAttribute('x', midX);
+            calMobileVal.textContent = mVal + ' m';
+        }
+    }
+
+    function updateMobileCaliper() {
+        if (!calMobileWrap || !calMobileJaw) return;
+        var rect    = calMobileWrap.getBoundingClientRect();
+        var vh      = window.innerHeight;
+        var visible = rect.top < vh && rect.bottom > 0;
+
+        calMobileWrap.classList.toggle('vis', visible);
+        if (!visible) return;
+
+        var total  = vh + rect.height;
+        var pct    = Math.max(0, Math.min(1, (vh - rect.top) / total));
+        var offset = pct < 0.5
+            ? easeInOut(pct / 0.5) * CAL_MAX_OFFSET
+            : CAL_MAX_OFFSET;
+
+        applyMobileCaliperOffset(offset);
+    }
+
     /* ─── 7. SECTION MEASUREMENT LINES ──────────────────────────────────── */
     var secMeasEls = document.querySelectorAll('[data-sec-meas]');
 
@@ -353,6 +402,7 @@
         updateProgress();
         updateNav();
         updateCaliper();
+        updateMobileCaliper();
         updateBackToTop();
         updateScrollSpy();
     }
@@ -453,21 +503,61 @@
         }, { passive: true });
     })();
 
-    /* ─── 12. HERO CRANE ANIMATION (mobile) ────────────────────────────────── */
-    var craneWrap = $('heroCraneWrap');
-    if (craneWrap) {
-        /* Reveal SVG after hero text animates in */
-        setTimeout(function () {
-            craneWrap.classList.add('crane-ready');
-        }, 900);
-        /* Stagger dimension lines in after SVG appears */
-        setTimeout(function () {
-            craneWrap.classList.add('crane-dims-in');
-            var dims = craneWrap.querySelectorAll('.crane-dim');
-            dims.forEach(function (d, i) {
-                d.style.transitionDelay = (i * 0.22) + 's';
+    /* ─── 12. CRANE ANIMATIONS ───────────────────────────────────────────────── */
+    var CRANE_DRAW_MS  = 3600;  /* draw duration (matches CSS 3.6s) */
+    var CRANE_HOLD_MS  = 4000;  /* pause after fully drawn */
+    var CRANE_ERASE_MS = 1800;  /* erase duration */
+    var CRANE_GAP_MS   = 600;   /* pause before redrawing */
+
+    function startCraneLoop(col) {
+        var paths = col.querySelectorAll('.crane-path');
+
+        function applyStagger(draw) {
+            paths.forEach(function (p, i) {
+                /* stagger draw forward, stagger erase in reverse */
+                var idx   = draw ? i : (paths.length - 1 - i);
+                var delay = idx * 0.032;
+                p.style.transition      = 'stroke-dashoffset ' + (draw ? 3.6 : 1.4) + 's cubic-bezier(0.4,0,0.2,1)';
+                p.style.transitionDelay = delay + 's';
             });
-        }, 1500);
+        }
+
+        function drawIn() {
+            applyStagger(true);
+            col.classList.add('crane-draw');
+            /* after draw + hold, erase */
+            setTimeout(eraseOut, CRANE_DRAW_MS + CRANE_HOLD_MS);
+        }
+
+        function eraseOut() {
+            applyStagger(false);
+            col.classList.remove('crane-draw');
+            /* after erase + gap, draw again */
+            setTimeout(drawIn, CRANE_ERASE_MS + CRANE_GAP_MS);
+        }
+
+        drawIn();
+    }
+
+    /* Trust section — start loop on scroll entry */
+    var trustCraneCol = $('trustCraneCol');
+    if (trustCraneCol && 'IntersectionObserver' in window) {
+        var craneObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                    startCraneLoop(trustCraneCol);
+                    craneObs.unobserve(trustCraneCol);
+                }
+            });
+        }, { threshold: 0.15 });
+        craneObs.observe(trustCraneCol);
+    }
+
+    /* Hero mobile — start loop after page load */
+    var heroCraneMobile = $('heroCraneMobile');
+    if (heroCraneMobile) {
+        heroCraneMobile.classList.add('crane-ready');
+        setTimeout(function () { startCraneLoop(heroCraneMobile); }, 700);
     }
 
     /* ─── 11. HERO CURSOR SPOTLIGHT ──────────────────────────────────────── */

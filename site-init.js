@@ -237,7 +237,7 @@
             '</a>' +
             '<span class="hbc-item hbc-address">' +
                 '<span class="hbc-icon"><i class="fa-solid fa-location-dot"></i></span>' +
-                '<span class="hbc-text"><span class="hbc-label">Διεύθυνση</span><span class="hbc-val">' + (C.contact.address || '') + '</span></span>' +
+                '<span class="hbc-text"><span class="hbc-label">Εξυπηρέτηση</span><span class="hbc-val">' + (C.contact.address || '') + '</span></span>' +
             '</span>' +
             '<a href="mailto:' + C.contact.email + '" class="hbc-item">' +
                 '<span class="hbc-icon"><i class="fa-solid fa-envelope"></i></span>' +
@@ -340,8 +340,10 @@
             var n = i + 1;
             fHtml +=
                 '<div class="feature-row" data-reveal>' +
+                '<div class="feature-row-header">' +
                 '<i class="fa-solid ' + f.icon + '"></i>' +
                 '<strong data-i18n-html="feature.' + n + '.label">' + f.labelEl + '</strong>' +
+                '</div>' +
                 '<span data-i18n-html="feature.' + n + '.text">' + f.textEl + '</span>' +
                 '</div>';
         });

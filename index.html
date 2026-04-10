@@ -122,7 +122,76 @@
             </h1>
         </div>
 
-        <!-- CRANE removed from hero — now lives in about section -->
+        <!-- Crane: mobile hero only -->
+        <div class="hero-crane-mobile" id="heroCraneMobile" aria-hidden="true">
+            <svg class="crane-svg crane-svg--hero" viewBox="0 0 360 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- chassis -->
+                <path class="crane-path" style="--len:700" d="M44 172 L310 172 L310 183 L44 183 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" fill="rgba(201,168,108,0.09)"/>
+                <!-- flatbed -->
+                <path class="crane-path" style="--len:560" d="M44 160 L222 160 L222 172 L44 172 Z" stroke="currentColor" stroke-width="1.6" fill="rgba(201,168,108,0.08)"/>
+                <!-- cab -->
+                <path class="crane-path" style="--len:760" d="M224 118 L224 172 L316 172 L316 140 L300 118 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="rgba(201,168,108,0.09)"/>
+                <!-- windscreen -->
+                <path class="crane-path" style="--len:340" d="M235 124 L235 158 L305 158 L305 144 L290 124 Z" stroke="currentColor" stroke-width="1.2" fill="rgba(201,168,108,0.18)" opacity="0.8"/>
+                <!-- headlight -->
+                <rect class="crane-path" style="--len:32" x="313" y="148" width="9" height="7" rx="1" stroke="currentColor" stroke-width="1.2" fill="rgba(201,168,108,0.35)"/>
+                <!-- bumper -->
+                <path class="crane-path" style="--len:50" d="M312 172 L334 172 L334 181 L312 181 Z" stroke="currentColor" stroke-width="1.3" fill="rgba(201,168,108,0.08)"/>
+                <!-- outriggers -->
+                <path class="crane-path" style="--len:80" d="M72 183 L72 196 L54 196" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" fill="none"/>
+                <rect class="crane-path" style="--len:30" x="47" y="194" width="18" height="4" rx="1" stroke="currentColor" stroke-width="1.3" fill="rgba(201,168,108,0.2)"/>
+                <path class="crane-path" style="--len:80" d="M192 183 L192 196 L210 196" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" fill="none"/>
+                <rect class="crane-path" style="--len:30" x="203" y="194" width="18" height="4" rx="1" stroke="currentColor" stroke-width="1.3" fill="rgba(201,168,108,0.2)"/>
+                <!-- wheels rear -->
+                <circle class="crane-path" style="--len:95"  cx="100" cy="196" r="16" stroke="currentColor" stroke-width="2" fill="rgba(201,168,108,0.07)"/>
+                <circle class="crane-path" style="--len:56"  cx="100" cy="196" r="9"  stroke="currentColor" stroke-width="1.1" fill="rgba(201,168,108,0.05)"/>
+                <circle class="crane-path" style="--len:22"  cx="100" cy="196" r="3.5" stroke="currentColor" stroke-width="1.1" fill="rgba(201,168,108,0.28)"/>
+                <circle class="crane-path" style="--len:78"  cx="118" cy="196" r="13" stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.04)" opacity="0.5"/>
+                <!-- wheels front -->
+                <circle class="crane-path" style="--len:95"  cx="287" cy="196" r="16" stroke="currentColor" stroke-width="2" fill="rgba(201,168,108,0.07)"/>
+                <circle class="crane-path" style="--len:56"  cx="287" cy="196" r="9"  stroke="currentColor" stroke-width="1.1" fill="rgba(201,168,108,0.05)"/>
+                <circle class="crane-path" style="--len:22"  cx="287" cy="196" r="3.5" stroke="currentColor" stroke-width="1.1" fill="rgba(201,168,108,0.28)"/>
+                <!-- turret -->
+                <rect class="crane-path" style="--len:160" x="116" y="148" width="44" height="18" rx="2.5" stroke="currentColor" stroke-width="1.8" fill="rgba(201,168,108,0.13)"/>
+                <circle class="crane-path" style="--len:72" cx="138" cy="157" r="7" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.10)"/>
+                <rect class="crane-path" style="--len:130" x="123" y="135" width="30" height="15" rx="2" stroke="currentColor" stroke-width="1.6" fill="rgba(201,168,108,0.10)"/>
+                <!-- boom outer -->
+                <path class="crane-path" style="--len:430" d="M128 133 L116 50 L134 44 L148 126 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" fill="rgba(201,168,108,0.10)"/>
+                <!-- boom mid -->
+                <path class="crane-path" style="--len:350" d="M130 129 L118 62 L132 58 L144 122 Z" stroke="currentColor" stroke-width="1.3" fill="rgba(201,168,108,0.06)" opacity="0.85"/>
+                <!-- boom inner -->
+                <path class="crane-path" style="--len:260" d="M132 125 L122 72 L132 70 L140 118 Z" stroke="currentColor" stroke-width="1" fill="rgba(201,168,108,0.04)" opacity="0.75"/>
+                <!-- pivot -->
+                <circle class="crane-path" style="--len:36" cx="138" cy="140" r="4.5" stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.22)"/>
+                <!-- hydraulic -->
+                <line class="crane-path" style="--len:85" x1="150" y1="154" x2="137" y2="108" stroke="currentColor" stroke-width="3.2" opacity="0.28"/>
+                <line class="crane-path" style="--len:68" x1="148" y1="154" x2="135" y2="112" stroke="currentColor" stroke-width="1.3" opacity="0.5"/>
+                <!-- pivot arm -->
+                <path class="crane-path" style="--len:72" d="M113 49 L100 39 L108 31 L122 41 Z" stroke="currentColor" stroke-width="1.3" fill="rgba(201,168,108,0.12)"/>
+                <!-- basket -->
+                <path class="crane-path" style="--len:250" d="M64 16 L64 48 L106 48 L106 16 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="rgba(201,168,108,0.13)"/>
+                <line class="crane-path" style="--len:42" x1="64" y1="43" x2="106" y2="43" stroke="currentColor" stroke-width="1.8" opacity="0.6"/>
+                <line class="crane-path" style="--len:42" x1="64" y1="30" x2="106" y2="30" stroke="currentColor" stroke-width="0.9" opacity="0.4"/>
+                <line class="crane-path" style="--len:24" x1="76"  y1="16" x2="76"  y2="7"  stroke="currentColor" stroke-width="1.5"/>
+                <line class="crane-path" style="--len:24" x1="85"  y1="16" x2="85"  y2="4"  stroke="currentColor" stroke-width="1.5"/>
+                <line class="crane-path" style="--len:24" x1="94"  y1="16" x2="94"  y2="7"  stroke="currentColor" stroke-width="1.5"/>
+                <line class="crane-path" style="--len:32" x1="73"  y1="7"  x2="97"  y2="7"  stroke="currentColor" stroke-width="1.5"/>
+                <!-- operator -->
+                <circle class="crane-path" style="--len:28" cx="85" cy="26" r="5" stroke="currentColor" stroke-width="1.2" fill="rgba(201,168,108,0.18)"/>
+                <!-- safety light -->
+                <circle class="crane-path" style="--len:20" cx="106" cy="20" r="3.5" stroke="currentColor" stroke-width="1.2" fill="rgba(201,168,108,0.50)"/>
+                <!-- dim length -->
+                <g class="crane-dim-line">
+                    <line x1="44" y1="212" x2="334" y2="212" stroke="currentColor" stroke-width="0.9" stroke-dasharray="3 2" opacity="0.6"/>
+                    <line x1="44"  y1="208" x2="44"  y2="216" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="334" y1="208" x2="334" y2="216" stroke="currentColor" stroke-width="1.5"/>
+                    <text x="189" y="208" text-anchor="middle" dominant-baseline="auto"
+                          font-family="Cormorant Garamond, serif" font-size="10" letter-spacing="2"
+                          fill="currentColor" opacity="0.9">7.200 m</text>
+                </g>
+            </svg>
+        </div>
+
         <div class="hero-bottom">
             <a href="#contact" class="btn-hero-cta" data-i18n="hero.cta"></a>
             <div class="hero-bottom-contact" id="heroBottomContact"></div>
@@ -148,6 +217,53 @@
                     <div class="dim-tick"></div>
                 </div>
                 <div class="about-features" id="aboutFeatures"></div>
+                <!-- Mobile-only horizontal caliper -->
+                <div class="caliper-mobile caliper-wrap" id="caliperMobileWrap" aria-hidden="true">
+                    <svg class="caliper-svg caliper-svg--horizontal" id="caliperMobileSvg" viewBox="0 0 480 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Ruler bar (horizontal beam) -->
+                        <rect x="88" y="32" width="310" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.12)"/>
+                        <!-- Ruler bar highlight edge -->
+                        <line x1="90" y1="33" x2="396" y2="33" stroke="currentColor" stroke-width="0.5" opacity="0.25"/>
+                        <!-- Tick marks -->
+                        <g stroke="currentColor" opacity="0.55">
+                            <line y1="40" x1="103" y2="47" x2="103" stroke-width="1"/><line y1="40" x1="118" y2="47" x2="118" stroke-width="1"/>
+                            <line y1="40" x1="134" y2="47" x2="134" stroke-width="1"/><line y1="40" x1="150" y2="50" x2="150" stroke-width="1.5"/>
+                            <line y1="40" x1="165" y2="47" x2="165" stroke-width="1"/><line y1="40" x1="181" y2="47" x2="181" stroke-width="1"/>
+                            <line y1="40" x1="196" y2="47" x2="196" stroke-width="1"/><line y1="40" x1="212" y2="50" x2="212" stroke-width="1.5"/>
+                            <line y1="40" x1="227" y2="47" x2="227" stroke-width="1"/><line y1="40" x1="243" y2="47" x2="243" stroke-width="1"/>
+                            <line y1="40" x1="258" y2="47" x2="258" stroke-width="1"/><line y1="40" x1="274" y2="50" x2="274" stroke-width="1.5"/>
+                            <line y1="40" x1="289" y2="47" x2="289" stroke-width="1"/><line y1="40" x1="305" y2="47" x2="305" stroke-width="1"/>
+                            <line y1="40" x1="320" y2="47" x2="320" stroke-width="1"/><line y1="40" x1="336" y2="50" x2="336" stroke-width="1.5"/>
+                            <line y1="40" x1="352" y2="47" x2="352" stroke-width="1"/><line y1="40" x1="367" y2="47" x2="367" stroke-width="1"/>
+                            <line y1="40" x1="383" y2="47" x2="383" stroke-width="1"/>
+                        </g>
+                        <!-- Left jaw (fixed) -->
+                        <path d="M100 16 L100 62 L88 62 L70 62 L70 44 L88 44 L88 16 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="rgba(201,168,108,0.13)"/>
+                        <line x1="88" y1="16" x2="88" y2="44" stroke="currentColor" stroke-width="2.5" opacity="0.9"/>
+                        <!-- Right jaw (moves) -->
+                        <g id="calMobileJawGroup" style="transform:translateX(-262px)">
+                            <path d="M338 16 L338 62 L350 62 L368 62 L368 44 L350 44 L350 16 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="rgba(201,168,108,0.13)"/>
+                            <line x1="350" y1="16" x2="350" y2="44" stroke="currentColor" stroke-width="2.5" opacity="0.9"/>
+                            <!-- Vernier scale -->
+                            <g stroke="currentColor" opacity="0.4" stroke-width="0.8">
+                                <line x1="340" y1="44" x2="348" y2="44"/>
+                                <line x1="341" y1="47" x2="348" y2="47"/>
+                                <line x1="341" y1="50" x2="348" y2="50"/>
+                                <line x1="342" y1="53" x2="348" y2="53"/>
+                                <line x1="342" y1="56" x2="348" y2="56"/>
+                                <line x1="340" y1="59" x2="348" y2="59"/>
+                            </g>
+                        </g>
+                        <!-- Dimension line -->
+                        <line id="calMobileDimLine" x1="88" y1="14" x2="88" y2="14" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.6"/>
+                        <!-- Dimension tick right -->
+                        <line id="calMobileDimTickR" x1="84" y1="10" x2="92" y2="18" stroke="currentColor" stroke-width="2" opacity="0.8"/>
+                        <!-- Value label -->
+                        <text id="caliperMobileVal" x="88" y="10" text-anchor="middle"
+                              font-family="Cormorant Garamond, serif" font-size="12"
+                              letter-spacing="2.5" fill="currentColor" opacity="0.85">0.000 m</text>
+                    </svg>
+                </div>
             </div>
             <div class="about-caliper-col" aria-hidden="true">
                 <div class="caliper-wrap caliper-wrap--vertical" id="caliperWrap">
@@ -205,6 +321,196 @@
         </div>
     </section>
 
+    <!-- CRANE SVG placeholder — will be moved to trust section below -->
+    <div style="display:none">
+            <svg class="crane-svg" id="craneSvgStash" viewBox="0 0 440 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                    <!-- ── GROUND LINE ── -->
+                    <line x1="20" y1="268" x2="420" y2="268" stroke="currentColor" stroke-width="0.8" opacity="0.2" class="crane-dim-line"/>
+
+                    <!-- ── CHASSIS FRAME (C-channel side view) ── -->
+                    <path class="crane-path" style="--len:900"
+                          d="M60 240 L380 240 L380 252 L60 252 Z"
+                          stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="rgba(201,168,108,0.10)"/>
+                    <!-- lower flange -->
+                    <line class="crane-path" style="--len:320" x1="60" y1="258" x2="380" y2="258" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+
+                    <!-- ── FLATBED DECK ── -->
+                    <path class="crane-path" style="--len:700"
+                          d="M60 222 L280 222 L280 240 L60 240 Z"
+                          stroke="currentColor" stroke-width="1.8" fill="rgba(201,168,108,0.08)"/>
+                    <!-- deck texture lines -->
+                    <g stroke="currentColor" stroke-width="0.6" opacity="0.25">
+                        <line class="crane-path" style="--len:22" x1="90"  y1="222" x2="90"  y2="240"/>
+                        <line class="crane-path" style="--len:22" x1="115" y1="222" x2="115" y2="240"/>
+                        <line class="crane-path" style="--len:22" x1="140" y1="222" x2="140" y2="240"/>
+                        <line class="crane-path" style="--len:22" x1="165" y1="222" x2="165" y2="240"/>
+                        <line class="crane-path" style="--len:22" x1="190" y1="222" x2="190" y2="240"/>
+                        <line class="crane-path" style="--len:22" x1="215" y1="222" x2="215" y2="240"/>
+                        <line class="crane-path" style="--len:22" x1="240" y1="222" x2="240" y2="240"/>
+                        <line class="crane-path" style="--len:22" x1="265" y1="222" x2="265" y2="240"/>
+                    </g>
+
+                    <!-- ── CAB ── -->
+                    <!-- cab body — full rectangle cab like real truck -->
+                    <path class="crane-path" style="--len:900"
+                          d="M282 158 L282 240 L390 240 L390 180 L370 158 Z"
+                          stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="rgba(201,168,108,0.10)"/>
+                    <!-- cab roof rounded -->
+                    <path class="crane-path" style="--len:200"
+                          d="M294 158 L370 158 L390 180"
+                          stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="none" opacity="0.7"/>
+                    <!-- windscreen -->
+                    <path class="crane-path" style="--len:400"
+                          d="M296 164 L296 206 L378 206 L378 184 L362 164 Z"
+                          stroke="currentColor" stroke-width="1.3" fill="rgba(201,168,108,0.18)" opacity="0.75"/>
+                    <!-- cab door -->
+                    <path class="crane-path" style="--len:300"
+                          d="M282 180 L282 240 L320 240 L320 180 Z"
+                          stroke="currentColor" stroke-width="1" fill="none" opacity="0.35"/>
+                    <!-- door handle -->
+                    <rect class="crane-path" style="--len:14" x="307" y="212" width="8" height="3" rx="1.5"
+                          stroke="currentColor" stroke-width="1" fill="none" opacity="0.65"/>
+                    <!-- side mirror arm -->
+                    <line class="crane-path" style="--len:14" x1="388" y1="180" x2="402" y2="178" stroke="currentColor" stroke-width="1.2" opacity="0.6"/>
+                    <rect class="crane-path" style="--len:26" x="402" y="174" width="12" height="8" rx="1.5"
+                          stroke="currentColor" stroke-width="1" fill="rgba(201,168,108,0.12)"/>
+                    <!-- cab step -->
+                    <rect class="crane-path" style="--len:50" x="282" y="240" width="18" height="8" rx="1"
+                          stroke="currentColor" stroke-width="1" fill="rgba(201,168,108,0.08)" opacity="0.6"/>
+                    <!-- headlight -->
+                    <rect class="crane-path" style="--len:40" x="387" y="210" width="10" height="7" rx="1"
+                          stroke="currentColor" stroke-width="1.2" fill="rgba(201,168,108,0.3)"/>
+                    <!-- bumper -->
+                    <path class="crane-path" style="--len:60"
+                          d="M386 240 L415 240 L415 250 L386 250 Z"
+                          stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.08)"/>
+
+                    <!-- ── OUTRIGGER LEGS (deployed) ── -->
+                    <!-- front outrigger -->
+                    <path class="crane-path" style="--len:120"
+                          d="M96 252 L96 268 L76 268"
+                          stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+                    <rect class="crane-path" style="--len:40" x="68" y="266" width="20" height="5" rx="1"
+                          stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.2)"/>
+                    <!-- rear outrigger -->
+                    <path class="crane-path" style="--len:120"
+                          d="M240 252 L240 268 L260 268"
+                          stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+                    <rect class="crane-path" style="--len:40" x="252" y="266" width="20" height="5" rx="1"
+                          stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.2)"/>
+                    <!-- horizontal outrigger beams -->
+                    <line class="crane-path" style="--len:40" x1="60" y1="258" x2="96" y2="258" stroke="currentColor" stroke-width="3" opacity="0.5"/>
+                    <line class="crane-path" style="--len:40" x1="240" y1="258" x2="280" y2="258" stroke="currentColor" stroke-width="3" opacity="0.5"/>
+
+                    <!-- ── WHEELS ── -->
+                    <!-- rear axle dual wheels -->
+                    <circle class="crane-path" style="--len:110" cx="130" cy="268" r="18" stroke="currentColor" stroke-width="2.2" fill="rgba(201,168,108,0.07)"/>
+                    <circle class="crane-path" style="--len:65"  cx="130" cy="268" r="10" stroke="currentColor" stroke-width="1.2" fill="rgba(201,168,108,0.05)"/>
+                    <circle class="crane-path" style="--len:22"  cx="130" cy="268" r="4"  stroke="currentColor" stroke-width="1.2" fill="rgba(201,168,108,0.25)"/>
+                    <!-- dual tyre -->
+                    <circle class="crane-path" style="--len:95"  cx="150" cy="268" r="15" stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.04)" opacity="0.55"/>
+                    <!-- front axle -->
+                    <circle class="crane-path" style="--len:110" cx="356" cy="268" r="18" stroke="currentColor" stroke-width="2.2" fill="rgba(201,168,108,0.07)"/>
+                    <circle class="crane-path" style="--len:65"  cx="356" cy="268" r="10" stroke="currentColor" stroke-width="1.2" fill="rgba(201,168,108,0.05)"/>
+                    <circle class="crane-path" style="--len:22"  cx="356" cy="268" r="4"  stroke="currentColor" stroke-width="1.2" fill="rgba(201,168,108,0.25)"/>
+                    <!-- tyre tread marks -->
+                    <g stroke="currentColor" stroke-width="0.8" opacity="0.3">
+                        <line class="crane-path" style="--len:36" x1="112" y1="253" x2="112" y2="283"/>
+                        <line class="crane-path" style="--len:36" x1="120" y1="250" x2="120" y2="286"/>
+                        <line class="crane-path" style="--len:36" x1="140" y1="250" x2="140" y2="286"/>
+                        <line class="crane-path" style="--len:36" x1="148" y1="253" x2="148" y2="283"/>
+                    </g>
+
+                    <!-- ── TURRET / SLEWING RING ── -->
+                    <rect class="crane-path" style="--len:200" x="148" y="200" width="52" height="22" rx="3"
+                          stroke="currentColor" stroke-width="2" fill="rgba(201,168,108,0.14)"/>
+                    <circle class="crane-path" style="--len:88" cx="174" cy="211" r="8"
+                            stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.1)"/>
+                    <circle class="crane-path" style="--len:25" cx="174" cy="211" r="3"
+                            stroke="currentColor" stroke-width="1" fill="rgba(201,168,108,0.3)"/>
+                    <!-- turret housing -->
+                    <rect class="crane-path" style="--len:160" x="156" y="185" width="36" height="18" rx="2"
+                          stroke="currentColor" stroke-width="1.8" fill="rgba(201,168,108,0.10)"/>
+
+                    <!-- ── BOOM SECTIONS (telescoping, at ~55° angle) ── -->
+                    <!-- boom outer section -->
+                    <path class="crane-path" style="--len:500"
+                          d="M162 182 L148 80 L170 74 L184 176 Z"
+                          stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="rgba(201,168,108,0.10)"/>
+                    <!-- boom mid section -->
+                    <path class="crane-path" style="--len:420"
+                          d="M164 178 L152 96 L168 92 L180 172 Z"
+                          stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.07)" opacity="0.8"/>
+                    <!-- boom inner section (tip) -->
+                    <path class="crane-path" style="--len:320"
+                          d="M166 174 L156 108 L166 106 L176 168 Z"
+                          stroke="currentColor" stroke-width="1.2" fill="rgba(201,168,108,0.05)" opacity="0.7"/>
+                    <!-- boom centre axis line -->
+                    <line class="crane-path" style="--len:180" x1="173" y1="178" x2="159" y2="77"
+                          stroke="currentColor" stroke-width="0.7" stroke-dasharray="4 3" opacity="0.3"/>
+                    <!-- boom knuckle/pin at base -->
+                    <circle class="crane-path" style="--len:40" cx="173" cy="185" r="5"
+                            stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.2)"/>
+                    <!-- hydraulic cylinder (boom elevation) -->
+                    <line class="crane-path" style="--len:100" x1="185" y1="200" x2="172" y2="148"
+                          stroke="currentColor" stroke-width="3.5" opacity="0.35"/>
+                    <line class="crane-path" style="--len:80"  x1="183" y1="200" x2="170" y2="156"
+                          stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+
+                    <!-- ── AERIAL WORK PLATFORM (basket) ── -->
+                    <!-- pivot arm at boom tip -->
+                    <path class="crane-path" style="--len:80"
+                          d="M155 78 L138 66 L148 56 L165 68 Z"
+                          stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.12)"/>
+                    <!-- basket body -->
+                    <path class="crane-path" style="--len:300"
+                          d="M98 28 L98 68 L148 68 L148 28 Z"
+                          stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="rgba(201,168,108,0.13)"/>
+                    <!-- basket floor plate -->
+                    <line class="crane-path" style="--len:50" x1="98" y1="62" x2="148" y2="62"
+                          stroke="currentColor" stroke-width="2" opacity="0.6"/>
+                    <!-- basket guard rails -->
+                    <line class="crane-path" style="--len:40" x1="108" y1="28" x2="108" y2="16" stroke="currentColor" stroke-width="1.5"/>
+                    <line class="crane-path" style="--len:40" x1="123" y1="28" x2="123" y2="12" stroke="currentColor" stroke-width="1.5"/>
+                    <line class="crane-path" style="--len:40" x1="138" y1="28" x2="138" y2="16" stroke="currentColor" stroke-width="1.5"/>
+                    <line class="crane-path" style="--len:50" x1="105" y1="16" x2="141" y2="16" stroke="currentColor" stroke-width="1.5"/>
+                    <!-- mid rail -->
+                    <line class="crane-path" style="--len:50" x1="98" y1="48" x2="148" y2="48" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+                    <!-- operator (stick figure) -->
+                    <circle class="crane-path" style="--len:28" cx="123" cy="44" r="5" stroke="currentColor" stroke-width="1.2" fill="rgba(201,168,108,0.15)"/>
+                    <line class="crane-path" style="--len:18" x1="123" y1="49" x2="123" y2="62" stroke="currentColor" stroke-width="1.2" opacity="0.6"/>
+                    <!-- safety light on basket -->
+                    <circle class="crane-path" style="--len:22" cx="148" cy="32" r="4" stroke="currentColor" stroke-width="1.2" fill="rgba(201,168,108,0.45)"/>
+
+                    <!-- ── DIMENSION LINES ── -->
+                    <!-- overall vehicle length -->
+                    <g class="crane-dim-line">
+                        <line x1="60" y1="298" x2="415" y2="298" stroke="currentColor" stroke-width="0.9" stroke-dasharray="3 2" opacity="0.55"/>
+                        <line x1="60"  y1="293" x2="60"  y2="303" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="415" y1="293" x2="415" y2="303" stroke="currentColor" stroke-width="1.5"/>
+                        <text x="237" y="314" text-anchor="middle" font-family="Cormorant Garamond, serif"
+                              font-size="11" letter-spacing="2" fill="currentColor" opacity="0.8">7.200 m</text>
+                    </g>
+                    <!-- boom reach height -->
+                    <g class="crane-dim-line">
+                        <line x1="36" y1="28" x2="36" y2="240" stroke="currentColor" stroke-width="0.9" stroke-dasharray="3 2" opacity="0.55"/>
+                        <line x1="30" y1="28"  x2="42" y2="28"  stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="30" y1="240" x2="42" y2="240" stroke="currentColor" stroke-width="1.5"/>
+                        <text x="22" y="140" text-anchor="middle" font-family="Cormorant Garamond, serif"
+                              font-size="11" letter-spacing="1.5" fill="currentColor" opacity="0.8"
+                              transform="rotate(-90,22,140)">10.500 m</text>
+                    </g>
+                    <!-- boom angle arc -->
+                    <g class="crane-dim-line">
+                        <path d="M173 185 A52 52 0 0 0 225 185" stroke="currentColor" stroke-width="0.9" fill="none" opacity="0.5"/>
+                        <text x="216" y="175" text-anchor="middle" font-family="Cormorant Garamond, serif"
+                              font-size="10" letter-spacing="1" fill="currentColor" opacity="0.75">55°</text>
+                    </g>
+
+                </svg>
+    </div><!-- /stash -->
+
     <!-- ===== SERVICES ===== -->
     <section class="services-section" id="services">
         <div class="services-header">
@@ -232,12 +538,192 @@
 
     <!-- ===== TRUST ===== -->
     <section class="trust-section" id="trust">
-        <div class="trust-header" data-reveal>
-            <div class="eyebrow"><span data-i18n="trust.eyebrow"></span></div>
-            <h2 class="section-heading" data-i18n-html="trust.heading"></h2>
+        <div class="trust-layout">
+            <div class="trust-left">
+                <div class="trust-header" data-reveal>
+                    <div class="eyebrow"><span data-i18n="trust.eyebrow"></span></div>
+                    <h2 class="section-heading" data-i18n-html="trust.heading"></h2>
+                </div>
+                <div class="trust-stats" id="trustStats"></div>
+                <div class="trust-pillars" id="trustPillars"></div>
+            </div>
+            <div class="trust-crane-col" id="trustCraneCol" aria-hidden="true">
+                <svg class="crane-svg" id="craneSvg" viewBox="0 0 440 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                    <!-- ── GROUND LINE ── -->
+                    <line x1="20" y1="268" x2="430" y2="268" stroke="currentColor" stroke-width="1" opacity="0.25" class="crane-dim-line"/>
+
+                    <!-- ── CHASSIS FRAME ── -->
+                    <path class="crane-path" style="--len:900"
+                          d="M55 238 L385 238 L385 252 L55 252 Z"
+                          stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="rgba(201,168,108,0.10)"/>
+                    <line class="crane-path" style="--len:330" x1="55" y1="256" x2="385" y2="256" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+
+                    <!-- ── FLATBED DECK ── -->
+                    <path class="crane-path" style="--len:700"
+                          d="M55 220 L278 220 L278 238 L55 238 Z"
+                          stroke="currentColor" stroke-width="2" fill="rgba(201,168,108,0.09)"/>
+                    <g stroke="currentColor" stroke-width="0.7" opacity="0.2">
+                        <line class="crane-path" style="--len:22" x1="85"  y1="220" x2="85"  y2="238"/>
+                        <line class="crane-path" style="--len:22" x1="112" y1="220" x2="112" y2="238"/>
+                        <line class="crane-path" style="--len:22" x1="139" y1="220" x2="139" y2="238"/>
+                        <line class="crane-path" style="--len:22" x1="166" y1="220" x2="166" y2="238"/>
+                        <line class="crane-path" style="--len:22" x1="193" y1="220" x2="193" y2="238"/>
+                        <line class="crane-path" style="--len:22" x1="220" y1="220" x2="220" y2="238"/>
+                        <line class="crane-path" style="--len:22" x1="250" y1="220" x2="250" y2="238"/>
+                    </g>
+
+                    <!-- ── CAB ── -->
+                    <path class="crane-path" style="--len:950"
+                          d="M280 154 L280 238 L395 238 L395 178 L374 154 Z"
+                          stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" fill="rgba(201,168,108,0.10)"/>
+                    <!-- windscreen -->
+                    <path class="crane-path" style="--len:420"
+                          d="M294 162 L294 206 L382 206 L382 182 L364 162 Z"
+                          stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.20)" opacity="0.8"/>
+                    <!-- cab door -->
+                    <path class="crane-path" style="--len:260"
+                          d="M280 178 L280 238 L322 238 L322 178 Z"
+                          stroke="currentColor" stroke-width="1" fill="none" opacity="0.35"/>
+                    <!-- door handle -->
+                    <rect class="crane-path" style="--len:16" x="308" y="210" width="9" height="3" rx="1.5"
+                          stroke="currentColor" stroke-width="1" fill="none" opacity="0.7"/>
+                    <!-- roof line -->
+                    <line class="crane-path" style="--len:100" x1="294" y1="154" x2="374" y2="154" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+                    <!-- mirror -->
+                    <line class="crane-path" style="--len:16" x1="392" y1="180" x2="408" y2="178" stroke="currentColor" stroke-width="1.2" opacity="0.6"/>
+                    <rect class="crane-path" style="--len:28" x="408" y="174" width="13" height="8" rx="1.5"
+                          stroke="currentColor" stroke-width="1" fill="rgba(201,168,108,0.12)"/>
+                    <!-- headlight -->
+                    <rect class="crane-path" style="--len:38" x="390" y="208" width="11" height="8" rx="1.5"
+                          stroke="currentColor" stroke-width="1.3" fill="rgba(201,168,108,0.35)"/>
+                    <!-- bumper -->
+                    <path class="crane-path" style="--len:65"
+                          d="M390 238 L420 238 L420 250 L390 250 Z"
+                          stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.08)"/>
+                    <!-- cab step -->
+                    <rect class="crane-path" style="--len:42" x="280" y="238" width="20" height="8" rx="1"
+                          stroke="currentColor" stroke-width="1" fill="rgba(201,168,108,0.08)" opacity="0.6"/>
+
+                    <!-- ── OUTRIGGER LEGS (deployed) ── -->
+                    <path class="crane-path" style="--len:100" d="M92 252 L92 268 L70 268" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/>
+                    <rect class="crane-path" style="--len:38" x="62" y="266" width="22" height="5" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.22)"/>
+                    <path class="crane-path" style="--len:100" d="M240 252 L240 268 L262 268" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/>
+                    <rect class="crane-path" style="--len:38" x="254" y="266" width="22" height="5" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.22)"/>
+                    <!-- horizontal beams -->
+                    <line class="crane-path" style="--len:42" x1="55" y1="256" x2="92" y2="256" stroke="currentColor" stroke-width="3.5" opacity="0.45"/>
+                    <line class="crane-path" style="--len:42" x1="240" y1="256" x2="280" y2="256" stroke="currentColor" stroke-width="3.5" opacity="0.45"/>
+
+                    <!-- ── WHEELS ── -->
+                    <!-- rear dual -->
+                    <circle class="crane-path" style="--len:120" cx="125" cy="268" r="20" stroke="currentColor" stroke-width="2.5" fill="rgba(201,168,108,0.07)"/>
+                    <circle class="crane-path" style="--len:72"  cx="125" cy="268" r="11" stroke="currentColor" stroke-width="1.3" fill="rgba(201,168,108,0.05)"/>
+                    <circle class="crane-path" style="--len:28"  cx="125" cy="268" r="4.5" stroke="currentColor" stroke-width="1.3" fill="rgba(201,168,108,0.28)"/>
+                    <circle class="crane-path" style="--len:100" cx="147" cy="268" r="17" stroke="currentColor" stroke-width="1.8" fill="rgba(201,168,108,0.04)" opacity="0.55"/>
+                    <!-- front -->
+                    <circle class="crane-path" style="--len:120" cx="358" cy="268" r="20" stroke="currentColor" stroke-width="2.5" fill="rgba(201,168,108,0.07)"/>
+                    <circle class="crane-path" style="--len:72"  cx="358" cy="268" r="11" stroke="currentColor" stroke-width="1.3" fill="rgba(201,168,108,0.05)"/>
+                    <circle class="crane-path" style="--len:28"  cx="358" cy="268" r="4.5" stroke="currentColor" stroke-width="1.3" fill="rgba(201,168,108,0.28)"/>
+                    <!-- lug nuts -->
+                    <g stroke="currentColor" stroke-width="0.8" opacity="0.4">
+                        <circle class="crane-path" style="--len:10" cx="125" cy="257" r="2"/>
+                        <circle class="crane-path" style="--len:10" cx="136" cy="261" r="2"/>
+                        <circle class="crane-path" style="--len:10" cx="136" cy="275" r="2"/>
+                        <circle class="crane-path" style="--len:10" cx="125" cy="279" r="2"/>
+                        <circle class="crane-path" style="--len:10" cx="114" cy="275" r="2"/>
+                        <circle class="crane-path" style="--len:10" cx="114" cy="261" r="2"/>
+                    </g>
+
+                    <!-- ── TURRET / SLEWING RING ── -->
+                    <rect class="crane-path" style="--len:200" x="145" y="198" width="56" height="24" rx="3"
+                          stroke="currentColor" stroke-width="2.2" fill="rgba(201,168,108,0.14)"/>
+                    <circle class="crane-path" style="--len:90" cx="173" cy="210" r="9"
+                            stroke="currentColor" stroke-width="1.6" fill="rgba(201,168,108,0.10)"/>
+                    <circle class="crane-path" style="--len:28" cx="173" cy="210" r="3.5"
+                            stroke="currentColor" stroke-width="1" fill="rgba(201,168,108,0.35)"/>
+                    <!-- turret housing box -->
+                    <rect class="crane-path" style="--len:170" x="154" y="182" width="38" height="18" rx="2.5"
+                          stroke="currentColor" stroke-width="2" fill="rgba(201,168,108,0.11)"/>
+
+                    <!-- ── BOOM (3 telescoping sections, ~55°) ── -->
+                    <!-- outer -->
+                    <path class="crane-path" style="--len:520"
+                          d="M160 180 L144 72 L168 65 L186 172 Z"
+                          stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="rgba(201,168,108,0.11)"/>
+                    <!-- mid -->
+                    <path class="crane-path" style="--len:430"
+                          d="M162 176 L148 88 L166 84 L182 168 Z"
+                          stroke="currentColor" stroke-width="1.6" fill="rgba(201,168,108,0.07)" opacity="0.85"/>
+                    <!-- inner tip -->
+                    <path class="crane-path" style="--len:330"
+                          d="M164 172 L152 102 L164 99 L176 166 Z"
+                          stroke="currentColor" stroke-width="1.2" fill="rgba(201,168,108,0.05)" opacity="0.75"/>
+                    <!-- centreline -->
+                    <line class="crane-path" style="--len:195" x1="173" y1="176" x2="156" y2="68"
+                          stroke="currentColor" stroke-width="0.8" stroke-dasharray="5 3" opacity="0.28"/>
+                    <!-- pivot pin -->
+                    <circle class="crane-path" style="--len:44" cx="173" cy="183" r="5.5"
+                            stroke="currentColor" stroke-width="1.8" fill="rgba(201,168,108,0.22)"/>
+                    <!-- hydraulic cylinder -->
+                    <line class="crane-path" style="--len:105" x1="187" y1="198" x2="172" y2="144"
+                          stroke="currentColor" stroke-width="4" opacity="0.30"/>
+                    <line class="crane-path" style="--len:85"  x1="185" y1="198" x2="170" y2="150"
+                          stroke="currentColor" stroke-width="1.6" opacity="0.55"/>
+                    <!-- cylinder clevis -->
+                    <circle class="crane-path" style="--len:22" cx="187" cy="200" r="4" stroke="currentColor" stroke-width="1.2" fill="rgba(201,168,108,0.15)"/>
+
+                    <!-- ── PIVOT ARM at boom tip ── -->
+                    <path class="crane-path" style="--len:90"
+                          d="M150 70 L132 57 L142 46 L160 59 Z"
+                          stroke="currentColor" stroke-width="1.6" fill="rgba(201,168,108,0.13)"/>
+
+                    <!-- ── BASKET ── -->
+                    <path class="crane-path" style="--len:310"
+                          d="M90 22 L90 64 L142 64 L142 22 Z"
+                          stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" fill="rgba(201,168,108,0.13)"/>
+                    <!-- floor -->
+                    <line class="crane-path" style="--len:52" x1="90" y1="58" x2="142" y2="58"
+                          stroke="currentColor" stroke-width="2.2" opacity="0.65"/>
+                    <!-- mid rail -->
+                    <line class="crane-path" style="--len:52" x1="90" y1="42" x2="142" y2="42"
+                          stroke="currentColor" stroke-width="1" opacity="0.45"/>
+                    <!-- guard rails (vertical posts) -->
+                    <line class="crane-path" style="--len:30" x1="102" y1="22" x2="102" y2="10" stroke="currentColor" stroke-width="1.8"/>
+                    <line class="crane-path" style="--len:30" x1="116" y1="22" x2="116" y2="6"  stroke="currentColor" stroke-width="1.8"/>
+                    <line class="crane-path" style="--len:30" x1="130" y1="22" x2="130" y2="10" stroke="currentColor" stroke-width="1.8"/>
+                    <!-- top rail -->
+                    <line class="crane-path" style="--len:40" x1="98" y1="10" x2="134" y2="10" stroke="currentColor" stroke-width="1.8"/>
+                    <!-- operator -->
+                    <circle class="crane-path" style="--len:32" cx="116" cy="38" r="6" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.18)"/>
+                    <line class="crane-path" style="--len:22" x1="116" y1="44" x2="116" y2="58" stroke="currentColor" stroke-width="1.4" opacity="0.6"/>
+                    <!-- safety light -->
+                    <circle class="crane-path" style="--len:24" cx="142" cy="26" r="4.5" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.50)"/>
+
+                    <!-- ── DIMENSION LINES ── -->
+                    <g class="crane-dim-line">
+                        <line x1="55" y1="295" x2="420" y2="295" stroke="currentColor" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+                        <line x1="55"  y1="290" x2="55"  y2="300" stroke="currentColor" stroke-width="1.8"/>
+                        <line x1="420" y1="290" x2="420" y2="300" stroke="currentColor" stroke-width="1.8"/>
+                        <text x="237" y="312" text-anchor="middle" font-family="Cormorant Garamond, serif"
+                              font-size="12" letter-spacing="2" fill="currentColor" opacity="0.9">7.200 m</text>
+                    </g>
+                    <g class="crane-dim-line">
+                        <line x1="32" y1="22" x2="32" y2="238" stroke="currentColor" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+                        <line x1="26" y1="22"  x2="38" y2="22"  stroke="currentColor" stroke-width="1.8"/>
+                        <line x1="26" y1="238" x2="38" y2="238" stroke="currentColor" stroke-width="1.8"/>
+                        <text x="18" y="135" text-anchor="middle" font-family="Cormorant Garamond, serif"
+                              font-size="12" letter-spacing="1.5" fill="currentColor" opacity="0.9"
+                              transform="rotate(-90,18,135)">10.500 m</text>
+                    </g>
+                    <g class="crane-dim-line">
+                        <path d="M173 183 A55 55 0 0 0 228 183" stroke="currentColor" stroke-width="1" fill="none" opacity="0.55"/>
+                        <text x="220" y="172" text-anchor="middle" font-family="Cormorant Garamond, serif"
+                              font-size="11" letter-spacing="1" fill="currentColor" opacity="0.85">55°</text>
+                    </g>
+
+                </svg>
+            </div>
         </div>
-        <div class="trust-stats" id="trustStats"></div>
-        <div class="trust-pillars" id="trustPillars"></div>
     </section>
 
     <!-- ===== ARTICLES TICKER ===== -->
@@ -286,7 +772,7 @@
                     <div class="contact-detail">
                         <span class="cd-icon"><i class="fa-solid fa-location-dot"></i></span>
                         <div class="contact-detail-text">
-                            <span class="cd-label">Διεύθυνση</span>
+                            <span class="cd-label">Εξυπηρέτηση</span>
                             <span class="cd-value" data-i18n="contact.address"></span>
                         </div>
                     </div>
