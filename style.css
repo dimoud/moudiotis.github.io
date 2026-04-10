@@ -996,10 +996,12 @@ a.ct-item:hover { background: rgba(255,255,255,.05); border-color: rgba(255,255,
 
 @media (max-width: 860px) {
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .contact-section { padding: 100px 24px; }
 }
 @media (max-width: 560px) {
   .form-row-2 { grid-template-columns: 1fr; }
   .ct-form-wrap { padding: 28px 20px; }
+  .contact-section { padding: 80px 20px; }
 }
 
 /* ══════════════════════════════════════════
