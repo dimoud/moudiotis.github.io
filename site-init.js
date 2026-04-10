@@ -381,6 +381,20 @@
                 '</' + tag + '>';
         });
         servicesGrid.innerHTML = sHtml;
+
+        // Start featured-card animation when it scrolls into view
+        var fc = servicesGrid.querySelector('.service-card--featured');
+        if (fc) {
+            var fcObs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        fcObs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            fcObs.observe(fc);
+        }
     }
 
 

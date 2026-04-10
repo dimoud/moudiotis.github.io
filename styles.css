@@ -714,34 +714,33 @@ section { padding: 112px 7%; }
 
 
 /* ===== FEATURED SERVICE CARD (O1/O2) ===== */
-@keyframes featuredPulse {
-    0%   { box-shadow: inset 4px 0 0 var(--warm); background: transparent; }
-    15%  { box-shadow: inset 4px 0 0 var(--warm), 0 0 0 8px rgba(201,168,108,0.22), 0 0 20px rgba(201,168,108,0.10); background: rgba(201,168,108,0.07); }
-    30%  { box-shadow: inset 4px 0 0 var(--warm), 0 0 0 14px rgba(201,168,108,0.14), 0 0 32px rgba(201,168,108,0.07); background: rgba(201,168,108,0.04); }
-    50%  { box-shadow: inset 4px 0 0 var(--warm); background: transparent; }
-    65%  { box-shadow: inset 4px 0 0 var(--warm), 0 0 0 10px rgba(201,168,108,0.18), 0 0 24px rgba(201,168,108,0.09); background: rgba(201,168,108,0.06); }
-    80%  { box-shadow: inset 4px 0 0 var(--warm), 0 0 0 5px rgba(201,168,108,0.10); background: rgba(201,168,108,0.02); }
-    100% { box-shadow: inset 4px 0 0 var(--warm); background: transparent; }
-}
-@keyframes badgePulse {
-    0%, 100% { transform: scale(1) rotate(0); box-shadow: 0 0 0 0 rgba(201,168,108,0.5); }
-    20%       { transform: scale(1.18) rotate(-3deg); box-shadow: 0 0 0 6px rgba(201,168,108,0.18); }
-    40%       { transform: scale(1.08) rotate(2deg); box-shadow: 0 0 0 10px rgba(201,168,108,0.06); }
-    60%       { transform: scale(1.13) rotate(-1deg); box-shadow: 0 0 0 4px rgba(201,168,108,0.14); }
-    80%       { transform: scale(1.04) rotate(1deg); }
-}
-@keyframes badgePop {
-    0%   { transform: scale(0.7) rotate(-8deg); opacity: 0; }
-    60%  { transform: scale(1.12) rotate(2deg); opacity: 1; }
-    100% { transform: scale(1) rotate(0); opacity: 1; }
+@keyframes borderTravel {
+    0%   { background-position: 0% 0%, 100% 0%, 100% 100%, 0% 100%; }
+    100% { background-position: 200% 0%, 100% 200%, -100% 100%, 0% -100%; }
 }
 /* Default: paused — JS adds .is-visible to start when scrolled into view */
 .service-card--featured {
-    animation: featuredPulse 4.8s ease-in-out infinite;
-    animation-play-state: paused;
+    position: relative;
 }
-.service-card--featured.is-visible {
+.service-card--featured::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg,  transparent 40%, rgba(201,168,108,0.7) 50%, transparent 60%) top    / 200% 2px no-repeat,
+        linear-gradient(180deg, transparent 40%, rgba(201,168,108,0.7) 50%, transparent 60%) right  / 2px 200% no-repeat,
+        linear-gradient(90deg,  transparent 40%, rgba(201,168,108,0.7) 50%, transparent 60%) bottom / 200% 2px no-repeat,
+        linear-gradient(180deg, transparent 40%, rgba(201,168,108,0.7) 50%, transparent 60%) left   / 2px 200% no-repeat;
+    background-position: -100% 0%, 100% -100%, 200% 100%, 0% 200%;
+    animation: borderTravel 4s linear infinite;
+    animation-play-state: paused;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+.service-card--featured.is-visible::after {
     animation-play-state: running;
+    opacity: 1;
 }
 .service-card--featured h3 { color: var(--warm); }
 .service-badge {
@@ -752,11 +751,6 @@ section { padding: 112px 7%; }
     letter-spacing: 2.5px; text-transform: uppercase;
     padding: 4px 10px; border-radius: 3px;
     margin-bottom: 4px;
-    animation: badgePop 0.6s var(--ease) both, badgePulse 3.2s ease-in-out 1s infinite;
-    animation-play-state: paused, paused;
-}
-.service-card--featured.is-visible .service-badge {
-    animation-play-state: running, running;
 }
 
 /* ── Hero crane (mobile only) ── */
@@ -1400,11 +1394,6 @@ footer {
         gap: 0 1rem;
         padding: 22px 0;
         transition: background 0.3s;
-    }
-    /* Featured card animation — same pulse on mobile */
-    .service-card--featured.is-visible {
-        animation: featuredPulse 4.8s ease-in-out infinite;
-        animation-play-state: running;
     }
     .service-card h3 { font-size: 20px; }
     /* Shorter text on mobile: clamp to 3 lines */
