@@ -511,6 +511,7 @@
 
     function startCraneLoop(col) {
         var paths = col.querySelectorAll('.crane-path');
+        var stamp = col.querySelector('#craneStamp');
 
         function applyStagger(draw) {
             paths.forEach(function (p, i) {
@@ -522,9 +523,29 @@
             });
         }
 
+        function showStamp() {
+            if (!stamp) return;
+            stamp.style.transition = 'none';
+            stamp.style.opacity = '0';
+            stamp.setAttribute('transform', 'rotate(-15,220,170) scale(0.55) translate(176,80)');
+            void stamp.getBoundingClientRect();
+            stamp.style.transition = 'opacity 0.45s ease, transform 0.45s cubic-bezier(0.34,1.56,0.64,1)';
+            stamp.style.opacity = '1';
+            stamp.setAttribute('transform', 'rotate(-15,220,170)');
+        }
+
+        function hideStamp() {
+            if (!stamp) return;
+            stamp.style.transition = 'opacity 0.3s ease';
+            stamp.style.opacity = '0';
+        }
+
         function drawIn() {
+            hideStamp();
             applyStagger(true);
             col.classList.add('crane-draw');
+            /* show stamp after draw completes */
+            setTimeout(showStamp, CRANE_DRAW_MS + 400);
             /* after draw + hold, erase */
             setTimeout(eraseOut, CRANE_DRAW_MS + CRANE_HOLD_MS);
         }

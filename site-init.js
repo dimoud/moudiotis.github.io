@@ -392,7 +392,7 @@
                         fcObs.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { threshold: 0 });
             fcObs.observe(fc);
         }
     }

@@ -358,7 +358,7 @@ const featuredObserver = new IntersectionObserver((entries) => {
       featuredObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0 });
 const featuredCard = document.querySelector('.service-card--featured');
 if (featuredCard) featuredObserver.observe(featuredCard);
 
