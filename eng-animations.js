@@ -143,14 +143,14 @@
             if (calDimLine) {
                 calDimLine.setAttribute('y1', CAL_TOP_ANCHOR);
                 calDimLine.setAttribute('y2', jawY);
-                calDimLine.setAttribute('x1', 16);
-                calDimLine.setAttribute('x2', 16);
+                calDimLine.setAttribute('x1', 14);
+                calDimLine.setAttribute('x2', 14);
             }
             if (calDimTickR) {
-                calDimTickR.setAttribute('y1', jawY - 2);
-                calDimTickR.setAttribute('y2', jawY + 2);
-                calDimTickR.setAttribute('x1', 13);
-                calDimTickR.setAttribute('x2', 20);
+                calDimTickR.setAttribute('y1', jawY - 4);
+                calDimTickR.setAttribute('y2', jawY + 4);
+                calDimTickR.setAttribute('x1', 10);
+                calDimTickR.setAttribute('x2', 18);
             }
             if (calVal) {
                 calVal.setAttribute('transform', 'rotate(-90,' + 10 + ',' + midY + ')');
@@ -452,6 +452,23 @@
             setTimeout(function () { paused = false; }, 800);
         }, { passive: true });
     })();
+
+    /* ─── 12. HERO CRANE ANIMATION (mobile) ────────────────────────────────── */
+    var craneWrap = $('heroCraneWrap');
+    if (craneWrap) {
+        /* Reveal SVG after hero text animates in */
+        setTimeout(function () {
+            craneWrap.classList.add('crane-ready');
+        }, 900);
+        /* Stagger dimension lines in after SVG appears */
+        setTimeout(function () {
+            craneWrap.classList.add('crane-dims-in');
+            var dims = craneWrap.querySelectorAll('.crane-dim');
+            dims.forEach(function (d, i) {
+                d.style.transitionDelay = (i * 0.22) + 's';
+            });
+        }, 1500);
+    }
 
     /* ─── 11. HERO CURSOR SPOTLIGHT ──────────────────────────────────────── */
     var heroEl       = document.querySelector('.hero');
