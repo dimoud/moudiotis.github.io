@@ -715,7 +715,7 @@ section { padding: 112px 7%; }
 .service-card-body { display: flex; flex-direction: column; gap: 10px; }
 .service-card h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 26px; font-weight: 600;
+    font-size: 26px; font-weight: 700;
     color: var(--ink); letter-spacing: 0.2px;
     line-height: 1.2;
     transition: color 0.3s;

@@ -511,7 +511,11 @@
 
     function startCraneLoop(col) {
         var paths = col.querySelectorAll('.crane-path');
-        var stamp = col.querySelector('#craneStamp');
+        /* pick whichever stamp lives inside this column */
+        var stamp = col.querySelector('#craneStamp, #craneStampMobile');
+        /* pivot and final transform differ per instance */
+        var isMobile = !!col.querySelector('#craneStampMobile');
+        var pivot    = isMobile ? 'rotate(-15,189,110)' : 'rotate(-15,220,160)';
 
         function applyStagger(draw) {
             paths.forEach(function (p, i) {
@@ -527,11 +531,11 @@
             if (!stamp) return;
             stamp.style.transition = 'none';
             stamp.style.opacity = '0';
-            stamp.setAttribute('transform', 'rotate(-15,220,170) scale(0.55) translate(176,80)');
+            stamp.setAttribute('transform', pivot + ' scale(0.55) translate(176,80)');
             void stamp.getBoundingClientRect();
             stamp.style.transition = 'opacity 0.45s ease, transform 0.45s cubic-bezier(0.34,1.56,0.64,1)';
             stamp.style.opacity = '1';
-            stamp.setAttribute('transform', 'rotate(-15,220,170)');
+            stamp.setAttribute('transform', pivot);
         }
 
         function hideStamp() {

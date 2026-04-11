@@ -166,7 +166,7 @@
       '    stroke-dasharray="5 5"/>',
       '  <text x="440" y="175" text-anchor="middle"',
       '    font-family="\'Oswald\',sans-serif" font-size="44" font-weight="700"',
-      '    letter-spacing="8" fill="#38a169">ΕΓΚΡΙΘΗΚΕ</text>',
+      '    letter-spacing="8" fill="#38a169">ΑΔΕΙΟΔΟΤΗΘΗΚΕ</text>',
       '  <text x="440" y="202" text-anchor="middle"',
       '    font-family="\'IBM Plex Mono\',monospace" font-size="12" letter-spacing="4"',
       '    fill="#38a169" opacity="0.7">O1 / O2 LICENCE</text>',
