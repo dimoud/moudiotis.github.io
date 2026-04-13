@@ -460,7 +460,8 @@
             (C.articles || []).forEach(function (a, i) {
                 var n = i + 1;
                 aHtml +=
-                    '<a class="article-card" href="' + (a.url || '#') + '" target="_blank" rel="noopener">' +
+                    '<a class="article-card" href="' + (a.url || '#') + '" target="_blank" rel="noopener"' +
+                    ' onclick="window.ccEvent&&ccEvent(\'article_click\',{article_title:\'' + a.titleEn.replace(/'/g, '') + '\',article_category:\'' + a.catEn.replace(/'/g, '') + '\'})"' +
                     '<span class="article-cat" data-i18n="art' + n + '.cat">' + a.catEl + '</span>' +
                     '<h4 data-i18n-html="art' + n + '.title">' + a.titleEl + '</h4>' +
                     '<p data-i18n-html="art' + n + '.text">'   + a.textEl  + '</p>' +

@@ -212,7 +212,7 @@ window.SITE_CONFIG = {
     // ── ARTICLES TICKER ───────────────────────────────────────────────────
     articles: [
         {
-            url:     '#services',
+            url:     'https://www.fhwa.dot.gov/reports/tswstudy/vehiclsaf.htm',
             catEl:   'Μελέτες Οχημάτων',
             catEn:   'Vehicle Studies',
             titleEl: 'Τι περιλαμβάνει μια τεχνική μελέτη οχήματος',
@@ -221,7 +221,7 @@ window.SITE_CONFIG = {
             textEn:  'A vehicle technical study covers the evaluation of structural characteristics, load axles and safety systems in accordance with European directives.',
         },
         {
-            url:     '#services',
+            url:     'https://eur-lex.europa.eu/EN/legal-content/summary/eu-approval-and-market-surveillance-measures-for-motor-vehicles-and-their-trailers.html',
             catEl:   'Εγκρίσεις Τύπου',
             catEn:   'Type Approvals',
             titleEl: 'Έγκριση τύπου ΕΕ: Κανονισμός 2018/858 — βήμα-βήμα',
@@ -230,7 +230,7 @@ window.SITE_CONFIG = {
             textEn:  'Regulation (EU) 2018/858 sets out the type approval process for motor vehicles and trailers. From file submission to final granting.',
         },
         {
-            url:     '#services',
+            url:     'https://www.escargo.it/en/category-o-vehicles-what-are-they',
             catEl:   'Ρυμουλκούμενα',
             catEn:   'Trailers',
             titleEl: 'Άδεια κυκλοφορίας ρυμουλκούμενου: υποχρεώσεις &amp; προϋποθέσεις',
@@ -239,7 +239,7 @@ window.SITE_CONFIG = {
             textEn:  'Which trailer categories (O1–O4) require a special licence, what applies to heavy trucks and how to legally obtain the towing note.',
         },
         {
-            url:     '#services',
+            url:     'https://www.atic-ts.com/brief-analysis-of-eu-regulation-2018858-individual-vehicle-approval-iva/',
             catEl:   'Οχήματα Ειδικής Χρήσης',
             catEn:   'Special Use Vehicles',
             titleEl: 'Αδειοδότηση οχημάτων ειδικής χρήσης — ειδικού σκοπού',
@@ -248,7 +248,7 @@ window.SITE_CONFIG = {
             textEn:  'Classification approval for Special Use–Special Purpose vehicles not performing transport work: documents, competent authorities, procedure.',
         },
         {
-            url:     '#services',
+            url:     'https://adrbook.com/en/2017/ADR/9.1.2',
             catEl:   'Γερανοί &amp; Ανυψωτικά',
             catEn:   'Cranes &amp; Lifting',
             titleEl: 'Τοποθέτηση γερανού σε φορτηγό: νέα άδεια κυκλοφορίας',
@@ -257,7 +257,7 @@ window.SITE_CONFIG = {
             textEn:  'Installing a crane on a truck requires a full static adequacy study, lifting certificate and issuance of a new circulation permit.',
         },
         {
-            url:     '#services',
+            url:     'https://eur-lex.europa.eu/eli/reg/2018/858/oj/eng',
             catEl:   'Εποπτεία Αγοράς ΕΕ',
             catEn:   'EU Market Surveillance',
             titleEl: 'Εποπτεία αγοράς &amp; έγκριση ΕΕ για οχήματα και ρυμουλκούμενα',
@@ -266,7 +266,7 @@ window.SITE_CONFIG = {
             textEn:  'The EU establishes a unified market surveillance system for vehicles and trailers, ensuring approved vehicles meet all technical requirements.',
         },
         {
-            url:     '#services',
+            url:     'https://www.eurowag.com/blog/towing-trailers-on-european-highways-essential-rules-and-tips-for-safe-and-legal-trailer-towing',
             catEl:   'Σημείωμα Ρυμούλκησης',
             catEn:   'Towing Note',
             titleEl: 'Σημείωμα ρυμούλκησης σε Ι.Χ.: πότε χρειάζεται και πώς εκδίδεται',
@@ -275,7 +275,7 @@ window.SITE_CONFIG = {
             textEn:  'Every private car towing a caravan, cargo trailer or boat needs a special attachment note. See the documents and procedure.',
         },
         {
-            url:     '#services',
+            url:     'https://www.nsai.ie/images/uploads/certification-automotive/Guidance_doc_O1_O2_O3_O4_rev_01.pdf',
             catEl:   'Άδεια Κυκλοφορίας',
             catEn:   'Circulation Permit',
             titleEl: 'Έκδοση άδειας κυκλοφορίας ρυμουλκούμενου Ι.Χ. — κατηγορίες Ο1 &amp; Ο2',
@@ -284,7 +284,7 @@ window.SITE_CONFIG = {
             textEn:  'Step-by-step guide for new registration or transfer of an O1 or O2 trailer. Required documents, fees and competent authorities.',
         },
         {
-            url:     '#services',
+            url:     'https://www.atic-ts.com/european-transportation-of-dangerous-goods-adr/',
             catEl:   'Επικίνδυνα Φορτία ADR',
             catEn:   'ADR Dangerous Goods',
             titleEl: 'Άδεια κυκλοφορίας οχήματος ADR: απαιτήσεις &amp; πιστοποίηση',
@@ -293,7 +293,7 @@ window.SITE_CONFIG = {
             textEn:  'Vehicles transporting dangerous goods (EX/II, EX/III, FL, AT, MEMU) require a special ADR circulation permit and regular compliance checks.',
         },
         {
-            url:     '#services',
+            url:     'https://osha.europa.eu/en/legislation/directives/directive-2006-42-ec-of-the-european-parliament-and-of-the-council',
             catEl:   'Πιστοποίηση CE',
             catEn:   'CE Certification',
             titleEl: 'Πιστοποίηση CE μηχανών — Οδηγία 2006/42/ΕΚ &amp; ΠΔ 57/2010',
@@ -302,7 +302,7 @@ window.SITE_CONFIG = {
             textEn:  'Every lifting machine circulating in the EU must bear CE marking. Directive 2006/42/EC sets out the essential health and safety requirements.',
         },
         {
-            url:     '#services',
+            url:     'https://eur-lex.europa.eu/EN/legal-content/summary/type-approval-requirements-to-ensure-the-general-safety-of-vehicles-and-the-protection-of-vulnerable-road-users.html',
             catEl:   'Ασφάλεια Οχημάτων ΕΕ',
             catEn:   'EU Vehicle Safety',
             titleEl: 'Κανονισμός ΕΕ 2019/2144: ασφάλεια &amp; προστασία ευάλωτων χρηστών',
@@ -311,7 +311,7 @@ window.SITE_CONFIG = {
             textEn:  'Regulation 2019/2144 introduces new type approval technical requirements for vehicles, enhancing protection for pedestrians, cyclists and passengers.',
         },
         {
-            url:     '#services',
+            url:     'https://drivers-vehicles.services.gov.gr/',
             catEl:   'Ψηφιακές Υπηρεσίες',
             catEn:   'Digital Services',
             titleEl: 'Ψηφιακές υπηρεσίες αδειών οδήγησης &amp; κυκλοφορίας — gov.gr',
