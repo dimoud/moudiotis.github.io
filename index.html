@@ -207,6 +207,12 @@
                 </g>
             </svg>
         </div>
+        <!-- Scroll bounce indicator -->
+        <div class="scroll-bounce" id="scrollBounce" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="4,8 11,15 18,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
         <br>
         <div class="hero-bottom">
             <a href="#contact" class="btn-hero-cta" data-i18n="hero.cta"></a>
@@ -961,6 +967,24 @@
         });
     </script>
 
+    <script type="module">
+        import { animate, spring } from 'https://cdn.jsdelivr.net/npm/animejs@4/+esm';
+        const el = document.getElementById('scrollBounce');
+        if (el) {
+            animate(el, {
+                y: [0, 14, 0],
+                loop: true,
+                ease: spring({ bounce: 0.39, duration: 628 })
+            });
+            el.addEventListener('click', () => {
+                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+            });
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 80) el.classList.add('hidden');
+                else el.classList.remove('hidden');
+            }, { passive: true });
+        }
+    </script>
     <script src="consent.js"></script>
     <script src="site-init.js"></script>
     <script src="i18n.js"></script>
