@@ -88,6 +88,31 @@
     // SERVICES
     T['services.eyebrow'] = { el: 'Τι προσφέρουμε', en: 'What we offer' };
     T['services.heading'] = { el: 'Οι <em>Υπηρεσίες</em> μας', en: 'Our <em>Services</em>' };
+
+    // TRAILER ANNOUNCEMENT GUIDE
+    T['ta.badge']       = { el: 'ΝΕΟΣ ΝΟΜΟΣ', en: 'NEW LAW' };
+    T['ta.title']       = { el: 'ΤΡΕΙΛΕΡ — Οδηγός Νομιμοποίησης & Έκδοσης Άδειας Κυκλοφορίας', en: 'TRAILER — Legalization & Registration Guide' };
+    T['ta.intro']       = {
+        el: 'Στις <strong>23 Μαρτίου 2026</strong> ψηφίστηκε νόμος του Υπουργείου Υποδομών και Μεταφορών με αντικείμενο την <strong>κυκλοφορία οχημάτων κατηγορίας Ο1 και Ο2</strong> — δηλαδή ρυμουλκούμενων τρέιλερ. Ο νόμος ορίζει για πρώτη φορά σαφή διαδικασία νομιμοποίησης για τα αναρίθμητα ρυμουλκούμενα που κυκλοφορούν χωρίς άδεια στην Ελληνική επικράτεια. Η διαδικασία ξεκινά στις <strong>30/04/2026</strong>.',
+        en: 'On <strong>23 March 2026</strong>, the Ministry of Infrastructure and Transport enacted a law governing the <strong>circulation of O1 and O2 category vehicles</strong> — i.e. towed trailers. For the first time, the law defines a clear legalization procedure for the many trailers circulating without registration in Greece. The process begins on <strong>30/04/2026</strong>.'
+    };
+    T['ta.col1.head']   = { el: 'Ποια οχήματα εντάσσονται', en: 'Eligible vehicles' };
+    T['ta.elig1']       = { el: 'Ρυμουλκούμενα με <strong>Ειδικό Σημείωμα Ρυμούλκησης (Ε.Σ.Ρ.)</strong> ή <strong>Υπεύθυνη Δήλωση Μηχανολόγου</strong> με αποτύπωμα πινακιδίου χαρακτηριστικών.', en: 'Trailers with a <strong>Special Towing Note (E.S.R.)</strong> or a <strong>Mechanical Engineer\'s Declaration</strong> with a characteristic plate imprint.' };
+    T['ta.elig2']       = { el: 'Ρυμουλκούμενα <strong>ειδικής χρήσης και ειδικού σκοπού</strong>, μη μεταφοράς εμπορευμάτων.', en: 'Trailers of <strong>special use and special purpose</strong>, not intended for goods transport.' };
+    T['ta.elig3']       = { el: 'Δεν υπάρχει <strong>ημερομηνία λήξης</strong> της διαδικασίας προς το παρόν — η διαδικασία παραμένει ανοιχτή.', en: 'There is currently <strong>no expiry date</strong> for the process — the window remains open.' };
+    T['ta.col2.head']   = { el: 'Κόστος & απαιτήσεις', en: 'Cost & requirements' };
+    T['ta.proc1']       = { el: 'Παράβολα συνολικά <strong>233 €</strong>, εκδιδόμενα ηλεκτρονικά μέσω <strong>e-paravolo</strong>.', en: 'Total fees of <strong>€233</strong>, issued electronically via <strong>e-paravolo</strong>.' };
+    T['ta.proc2']       = { el: 'Για οχήματα με Υπεύθυνη Δήλωση Μηχανολόγου: <strong>πρακτικό επιθεώρησης</strong> από αρμόδια Υπηρεσία Μεταφορών ή <strong>επιτυχής έλεγχος ΚΤΕΟ</strong>.', en: 'For vehicles with a Mechanical Engineer\'s Declaration: an <strong>inspection report</strong> from the Regional Transport Authority or a <strong>successful KTEO technical check</strong>.' };
+    T['ta.proc3']       = { el: 'Υποβολή πλήρους φακέλου <strong>δικαιολογητικών</strong> στην αρμόδια υπηρεσία, με σωστή καταγραφή χαρακτηριστικών οχήματος.', en: 'Submission of a complete <strong>documentation file</strong> to the competent authority, with accurate recording of vehicle characteristics.' };
+    T['ta.warn.title']  = { el: 'Προσοχή — Απαγόρευση κυκλοφορίας', en: 'Caution — Circulation Prohibited' };
+    T['ta.warn.text']   = { el: 'Έως την έκδοση της άδειας κυκλοφορίας και των πινακίδων, <strong>απαγορεύεται ρητά η κυκλοφορία</strong> των παραπάνω οχημάτων. Σε ενδεχόμενο ελέγχου, αντιμετωπίζονται ως οχήματα <strong>χωρίς στοιχεία κυκλοφορίας και ανασφάλιστα</strong>, με ό,τι αυτό συνεπάγεται νομικά και οικονομικά.', en: 'Until the registration and plates are issued, <strong>circulation of these vehicles is strictly prohibited</strong>. If stopped during a check, they are treated as <strong>unregistered and uninsured</strong>, with all the legal and financial consequences that entails.' };
+    T['ta.svc.head']    = { el: 'Τι αναλαμβάνει το γραφείο μας', en: 'What our office handles' };
+    T['ta.svc1']        = { el: '<strong>Επιθεώρηση & καταγραφή</strong> — Ελέγχουμε το ρυμουλκούμενο και καταγράφουμε με ακρίβεια όλα τα χαρακτηριστικά του, ώστε η νέα άδεια κυκλοφορίας να εκδοθεί σωστά.', en: '<strong>Inspection & recording</strong> — We inspect the trailer and accurately record all its characteristics, ensuring the new registration is issued correctly.' };
+    T['ta.svc2']        = { el: '<strong>Αποτύπωση & πινακίδιο</strong> — Αποτυπώνουμε τον νέο <strong>17ψήφιο αριθμό πλαισίου (VIN)</strong> και τοποθετούμε το πινακίδιο χαρακτηριστικών.', en: '<strong>VIN & plate</strong> — We stamp the new <strong>17-digit chassis number (VIN)</strong> and fit the characteristic plate.' };
+    T['ta.svc3']        = { el: '<strong>Πλήρης μελέτη</strong> — Συντάσσουμε την τεχνική περιγραφή που περιλαμβάνει φωτογραφίες, αποτύπωμα αριθμού πλαισίου και όλα τα απαραίτητα έγγραφα.', en: '<strong>Full technical study</strong> — We prepare the technical description including photographs, chassis number imprint, and all required documents.' };
+    T['ta.svc4']        = { el: '<strong>Υποβολή φακέλου</strong> — Ετοιμάζουμε και υποβάλλουμε τον πλήρη φάκελο στην αρμόδια υπηρεσία. Το μόνο που χρειάζεται να κάνετε είναι να μας <strong>τηλεφωνήσετε</strong>.', en: '<strong>File submission</strong> — We prepare and submit the complete file to the competent authority. All you need to do is <strong>call us</strong>.' };
+    T['ta.cta.text']    = { el: 'Επικοινωνήστε μαζί μας σήμερα για δωρεάν ενημέρωση σχετικά με τη νομιμοποίηση του ρυμουλκούμενού σας.', en: 'Contact us today for a free consultation on legalizing your trailer.' };
+    T['ta.cta.btn']     = { el: 'Επικοινωνία', en: 'Get in Touch' };
     (C.services || []).forEach(function (s, i) {
         var n = i + 1;
         T['s' + n + '.title'] = { el: s.titleEl, en: s.titleEn };
