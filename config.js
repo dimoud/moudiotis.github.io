@@ -49,8 +49,8 @@ window.SITE_CONFIG = {
 
     // ── CONTACT ───────────────────────────────────────────────────────────
     contact: {
-        phone:     '210 075 6183',
-        phoneTel:  'tel:+302100756183',
+        phone:     '210 756 1836',
+        phoneTel:  'tel:+302107561836',
         mobile:    '699 849 0768',
         mobileTel: 'tel:+306998490768',
         fax:       '',
