@@ -392,16 +392,22 @@
             // Cards with a url become anchor elements
             var tag    = s.url ? 'a' : 'div';
             var urlAttr = s.url
-                ? ' href="' + s.url + '" target="_blank" rel="noopener"'
+                ? ' href="' + s.url + '" target="_blank" rel="noopener noreferrer"'
+                : '';
+            var kwMeta = s.seoKeywords
+                ? '<meta itemprop="keywords" content="' + s.seoKeywords + '">'
                 : '';
             sHtml +=
-                '<' + tag + urlAttr + ' class="service-card' + featuredClass + colClass + '" data-reveal>' +
-                '<div class="service-num">' + pad + '</div>' +
-                '<i class="fa-solid ' + s.icon + ' service-icon"></i>' +
+                '<' + tag + urlAttr + ' class="service-card' + featuredClass + colClass + '" data-reveal' +
+                ' itemscope itemtype="https://schema.org/Service" itemprop="itemListElement">' +
+                '<meta itemprop="position" content="' + n + '">' +
+                kwMeta +
+                '<div class="service-num" aria-hidden="true">' + pad + '</div>' +
+                '<i class="fa-solid ' + s.icon + ' service-icon" aria-hidden="true"></i>' +
                 '<div class="service-card-body">' +
-                '<h3 data-i18n-html="s' + n + '.title">' + s.titleEl + '</h3>' +
+                '<h3 itemprop="name" data-i18n-html="s' + n + '.title">' + s.titleEl + '</h3>' +
                 featuredBadge +
-                '<p data-i18n-html="s' + n + '.text">'   + s.textEl  + '</p>' +
+                '<p itemprop="description" data-i18n-html="s' + n + '.text">'   + s.textEl  + '</p>' +
                 '</div>' +
                 '</' + tag + '>';
         });
@@ -452,9 +458,9 @@
         (TR.stats || []).forEach(function (s, i) {
             var n = i + 1;
             tsHtml +=
-                '<div class="trust-stat" data-reveal>' +
-                '<span class="trust-stat-num" data-i18n="trust.stat' + n + '.num">' + s.numEl + '</span>' +
-                '<span class="trust-stat-label" data-i18n="trust.stat' + n + '.label">' + s.labelEl + '</span>' +
+                '<div class="trust-stat" data-reveal itemscope itemtype="https://schema.org/QuantitativeValue">' +
+                '<span class="trust-stat-num" data-i18n="trust.stat' + n + '.num" itemprop="value">' + s.numEl + '</span>' +
+                '<span class="trust-stat-label" data-i18n="trust.stat' + n + '.label" itemprop="unitText">' + s.labelEl + '</span>' +
                 '</div>';
         });
         trustStats.innerHTML = tsHtml;
@@ -467,10 +473,10 @@
         (TR.pillars || []).forEach(function (p, i) {
             var n = i + 1;
             tpHtml +=
-                '<div class="trust-pillar" data-reveal>' +
-                '<div class="trust-pillar-icon"><i class="fa-solid ' + p.icon + '"></i></div>' +
-                '<h3 data-i18n-html="trust.p' + n + '.title">' + p.titleEl + '</h3>' +
-                '<p data-i18n-html="trust.p' + n + '.text">'   + p.textEl  + '</p>' +
+                '<div class="trust-pillar" data-reveal itemscope itemtype="https://schema.org/Thing">' +
+                '<div class="trust-pillar-icon" aria-hidden="true"><i class="fa-solid ' + p.icon + '"></i></div>' +
+                '<h3 itemprop="name" data-i18n-html="trust.p' + n + '.title">' + p.titleEl + '</h3>' +
+                '<p itemprop="description" data-i18n-html="trust.p' + n + '.text">'   + p.textEl  + '</p>' +
                 '</div>';
         });
         trustPillars.innerHTML = tpHtml;
@@ -485,7 +491,7 @@
             (C.articles || []).forEach(function (a, i) {
                 var n = i + 1;
                 aHtml +=
-                    '<a class="article-card" href="' + (a.url || '#') + '" target="_blank" rel="noopener"' +
+                    '<a class="article-card" href="' + (a.url || '#') + '" target="_blank" rel="noopener noreferrer"' +
                     ' onclick="window.ccEvent&&ccEvent(\'article_click\',{article_title:\'' + a.titleEn.replace(/'/g, '') + '\',article_category:\'' + a.catEn.replace(/'/g, '') + '\'})"' +
                     '<span class="article-cat" data-i18n="art' + n + '.cat">' + a.catEl + '</span>' +
                     '<h4 data-i18n-html="art' + n + '.title">' + a.titleEl + '</h4>' +
