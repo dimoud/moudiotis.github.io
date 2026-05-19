@@ -37,7 +37,7 @@ window.SITE_CONFIG = {
         locationEn:    'Athens - Thessaloniki',
         areaEl:        'Αθήνα, Ελλάδα',
         areaEn:        'Athens, Greece',
-        expStartYear:  2019,
+        expStartYear:  2016,
     },
 
     // ── ASSETS ────────────────────────────────────────────────────────────
