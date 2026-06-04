@@ -418,8 +418,27 @@
             var kwMeta = s.seoKeywords
                 ? '<meta itemprop="keywords" content="' + s.seoKeywords + '">'
                 : '';
+            var expandContent = '';
+            if (i === 0) {
+                expandContent =
+                    '<div class="svc-inline-expand">' +
+                    '<div class="svc-inline-expand-inner">' +
+                    '<p>Κάθε τρέιλερ υποχρεούται από τον ΚΟΚ να διαθέτει <strong>άδεια κυκλοφορίας</strong> και πινακίδες. <strong>Ο1</strong>: έως 750 kg (σκάφη, camping, μοτοσυκλέτα) — <strong>Ο2</strong>: έως 3.500 kg (caravan, αυτοκινήτου, βαριά βιομηχανικά). Αναλαμβάνουμε πλήρως: τεχνική μελέτη, υποβολή ΥΜΕΔ/ΚΤΕΟ, έκδοση άδειας.</p>' +
+                    '<p class="svc-inline-meta">Αθήνα &amp; Θεσσαλονίκη &nbsp;·&nbsp; ΑΠΘ, MSc &nbsp;·&nbsp; Κατηγορίες Ο1 &amp; Ο2</p>' +
+                    '</div>' +
+                    '</div>';
+            } else if (i === 1) {
+                expandContent =
+                    '<div class="svc-inline-expand">' +
+                    '<div class="svc-inline-expand-inner">' +
+                    '<p>Τα οχήματα ειδικής χρήσης — γερανοφόρα, πλατφόρμες, ψεκαστικά — χρειάζονται ειδική <strong>ταξινόμηση</strong> και <strong>έγκριση τύπου</strong>. Εκπονούμε τεχνικές μελέτες (στατική ανάλυση, CE, EN 1570) και αναλαμβάνουμε τη διαδικασία από την αρχή έως το τέλος.</p>' +
+                    '<p class="svc-inline-meta">Γερανοφόρα &nbsp;·&nbsp; Πλατφόρμες &nbsp;·&nbsp; Ψεκαστικά &nbsp;·&nbsp; Αθήνα &amp; Θεσσαλονίκη</p>' +
+                    '</div>' +
+                    '</div>';
+            }
+            var expandableClass = (i === 0 || i === 1) ? ' service-card--expandable' : '';
             sHtml +=
-                '<' + tag + urlAttr + ' class="service-card' + featuredClass + colClass + '" data-reveal' +
+                '<' + tag + urlAttr + ' class="service-card' + featuredClass + colClass + expandableClass + '" data-reveal' +
                 ' itemscope itemtype="https://schema.org/Service" itemprop="itemListElement">' +
                 '<meta itemprop="position" content="' + n + '">' +
                 kwMeta +
@@ -430,9 +449,21 @@
                 featuredBadge +
                 '<p itemprop="description" data-i18n-html="s' + n + '.text">'   + s.textEl  + '</p>' +
                 '</div>' +
+                expandContent +
                 '</' + tag + '>';
         });
         servicesGrid.innerHTML = sHtml;
+
+        // Wire expand panels for cards 0 and 1
+        servicesGrid.querySelectorAll('.service-card--expandable').forEach(function (card) {
+            card.setAttribute('aria-expanded', 'false');
+            card.addEventListener('click', function () {
+                var panel = card.querySelector('.svc-inline-expand');
+                if (!panel) return;
+                var open = panel.classList.toggle('is-open');
+                card.setAttribute('aria-expanded', String(open));
+            });
+        });
 
         // Start featured-card animation when it scrolls into view
         var fc = servicesGrid.querySelector('.service-card--featured');

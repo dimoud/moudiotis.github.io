@@ -67,18 +67,37 @@
     <script src="config.js"></script>
 
     <style>
-    /* ── Service Expand Panels ─────────────────────────────────────────── */
-    .svc-expand-panel { overflow: hidden; max-height: 0; transition: max-height 0.55s var(--ease); background: var(--cream); border-top: 2px solid rgba(29,58,92,0.07); }
-    .svc-expand-panel.is-open { max-height: 1400px; }
-    .svc-expand-inner { padding: 56px 7% 64px; max-width: 900px; }
-    .svc-expand-inner .section-heading { font-size: clamp(28px, 3.2vw, 48px); margin-bottom: 20px; }
-    .svc-deep-text p { font-family: 'Source Sans 3', sans-serif; font-size: 1.05rem; line-height: 1.8; color: var(--ink2); margin-bottom: 14px; max-width: 740px; }
-    .svc-deep-text strong { color: var(--ink); font-weight: 600; }
-    .svc-deep-meta { font-size: 0.78rem; color: var(--stone); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; margin-top: 18px; }
-    .svc-deep-dot { margin: 0 10px; opacity: 0.4; }
-    .svc-expand-panel .eyebrow::before { transform: scaleX(1); transition: none; }
+    /* ── Service Card Inline Expand ────────────────────────────────────── */
     .service-card--expandable { cursor: pointer; }
-    @media (max-width: 768px) { .svc-expand-inner { padding: 40px 5% 48px; } }
+    .svc-inline-expand {
+        grid-column: 1 / -1;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.45s var(--ease), border-top-width 0.45s;
+        border-top: 0px solid rgba(29,58,92,0.1);
+    }
+    .svc-inline-expand.is-open {
+        max-height: 400px;
+        border-top-width: 1px;
+    }
+    .svc-inline-expand-inner { padding: 18px 0 20px; }
+    .svc-inline-expand p {
+        font-family: 'Source Sans 3', sans-serif;
+        font-size: 0.92rem;
+        line-height: 1.7;
+        color: var(--ink2);
+        margin-bottom: 8px;
+    }
+    .svc-inline-expand strong { color: var(--ink); font-weight: 600; }
+    .svc-inline-meta {
+        font-size: 0.72rem;
+        color: var(--stone);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-top: 6px;
+        margin-bottom: 0 !important;
+    }
     </style>
 
     <script type="application/ld+json">
@@ -160,19 +179,34 @@
                 "position": 3,
                 "itemOffered": {
                   "@type": "Service",
-                  "@id": "https://moudiotis.github.io/#service-crane",
-                  "name": "Μελέτη Τοποθέτησης Γερανού σε Όχημα — Έγκριση Τύπου",
-                  "alternateName": "Crane Installation Study Vehicle Greece",
-                  "description": "Πλήρης τεχνική μελέτη μηχανολόγου μηχανικού για τοποθέτηση γερανού σε όχημα. Στατική ανάλυση, πιστοποίηση CE, έγκριση τύπου και νέα ταξινόμηση οχήματος.",
-                  "serviceType": "Μελέτη Τοποθέτησης Γερανού",
+                  "@id": "https://moudiotis.github.io/#service-fire-protection",
+                  "name": "Μελέτη Ενεργητικής Πυροπροστασίας — Μηχανολόγος Μηχανικός",
+                  "alternateName": "Active Fire Protection Study Greece",
+                  "description": "Εκπόνηση μελέτης ενεργητικής πυροπροστασίας από μηχανολόγο μηχανικό για κτίρια & εμπορικούς χώρους.",
+                  "serviceType": "Μελέτη Ενεργητικής Πυροπροστασίας",
                   "provider": { "@id": "https://moudiotis.github.io/#business" },
                   "areaServed": ["Αθήνα", "Θεσσαλονίκη", "Ελλάδα"],
-                  "keywords": "μελετη τοποθετησης γερανου, εγκριση τυπου, πιστοποιηση CE, γερανος σε φορτηγο, crane installation study Greece"
+                  "keywords": "μελετη ενεργητικης πυροπροστασιας, ενεργητική πυροπροστασία, συστημα πυροσβεσης, sprinkler, fire protection study Greece"
                 }
               },
               {
                 "@type": "Offer",
                 "position": 4,
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://moudiotis.github.io/#service-safety",
+                  "name": "Τεχνικός Ασφαλείας — Υγεία & Ασφάλεια Εργασίας (Ν.3850/2010)",
+                  "alternateName": "Safety Engineer Athens Greece",
+                  "description": "Υποχρεωτική κάλυψη Τεχνικού Ασφαλείας για κάθε επιχείρηση — ακόμα και με 1 εργαζόμενο. Σύνταξη ΓΕΕΚ, εκπαιδεύσεις εργαζομένων, σχέδια εκκένωσης.",
+                  "serviceType": "Τεχνικός Ασφαλείας",
+                  "provider": { "@id": "https://moudiotis.github.io/#business" },
+                  "areaServed": ["Αθήνα", "Θεσσαλονίκη", "Ελλάδα"],
+                  "keywords": "τεχνικος ασφαλειας, ΓΕΕΚ, υγεια ασφαλεια εργασιας, νομος 3850 2010, safety engineer Athens"
+                }
+              },
+              {
+                "@type": "Offer",
+                "position": 5,
                 "itemOffered": {
                   "@type": "Service",
                   "@id": "https://moudiotis.github.io/#service-hydraulic",
@@ -187,7 +221,7 @@
               },
               {
                 "@type": "Offer",
-                "position": 5,
+                "position": 6,
                 "itemOffered": {
                   "@type": "Service",
                   "@id": "https://moudiotis.github.io/#service-epc",
@@ -198,21 +232,6 @@
                   "provider": { "@id": "https://moudiotis.github.io/#business" },
                   "areaServed": ["Αθήνα", "Θεσσαλονίκη", "Ελλάδα"],
                   "keywords": "ενεργειακο πιστοποιητικο, ΠΕΑ, πιστοποιητικο ενεργειακης αποδοσης, μηχανολογος μηχανικος Αθηνα, energy performance certificate Athens"
-                }
-              },
-              {
-                "@type": "Offer",
-                "position": 6,
-                "itemOffered": {
-                  "@type": "Service",
-                  "@id": "https://moudiotis.github.io/#service-safety",
-                  "name": "Τεχνικός Ασφαλείας — Υγεία & Ασφάλεια Εργασίας (Ν.3850/2010)",
-                  "alternateName": "Safety Engineer Athens Greece",
-                  "description": "Υποχρεωτική κάλυψη Τεχνικού Ασφαλείας για κάθε επιχείρηση — ακόμα και με 1 εργαζόμενο. Σύνταξη ΓΕΕΚ, εκπαιδεύσεις εργαζομένων, σχέδια εκκένωσης.",
-                  "serviceType": "Τεχνικός Ασφαλείας",
-                  "provider": { "@id": "https://moudiotis.github.io/#business" },
-                  "areaServed": ["Αθήνα", "Θεσσαλονίκη", "Ελλάδα"],
-                  "keywords": "τεχνικος ασφαλειας, ΓΕΕΚ, υγεια ασφαλεια εργασιας, νομος 3850 2010, safety engineer Athens"
                 }
               },
               {
@@ -961,46 +980,6 @@
 
         <div class="services-grid" id="servicesGrid"></div>
 
-        <!-- Expandable detail: Άδεια Τρέιλερ Ο1/Ο2 -->
-        <div class="svc-expand-panel" id="svcExpandTrailer">
-          <div class="svc-expand-inner" itemscope itemtype="https://schema.org/Service">
-            <meta itemprop="name" content="Άδεια Τρέιλερ Ο1 &amp; Ο2 — Ταξινόμηση Ρυμουλκούμενου">
-            <link itemprop="url" href="https://moudiotis.github.io/#adeia-treyler-o1-o2">
-            <div class="eyebrow"><span>ΑΔΕΙΑ ΤΡΕΪΛΕΡ Ο1 / Ο2</span></div>
-            <h2 class="section-heading" id="taxinomisi-treyler">Τι Πρέπει να Ξέρετε για την <em>Ταξινόμηση Ρυμουλκούμενου</em></h2>
-            <div class="svc-deep-text" itemprop="description">
-                <p>Κάθε <strong>τρέιλερ (ρυμουλκούμενο)</strong> που κυκλοφορεί στην Ελλάδα υποχρεούται από τον ΚΟΚ να διαθέτει <strong>άδεια κυκλοφορίας</strong> και πινακίδες. Η διαδικασία — γνωστή ως <strong>ταξινόμηση ρυμουλκούμενου</strong> — απαιτεί τεχνική μελέτη από μηχανολόγο μηχανικό, επιθεώρηση ΥΜΕΔ ή ΚΤΕΟ και κατάθεση φακέλου στη Διεύθυνση Μεταφορών.</p>
-                <p>Η <strong>κατηγορία Ο1</strong> αφορά ρυμουλκούμενα έως 750 kg (μικρά τρέιλερ, τρέιλερ σκάφους, μοτοσυκλέτας). Η <strong>κατηγορία Ο2</strong> αφορά ρυμουλκούμενα έως 3.500 kg (caravan, τρέιλερ αυτοκινήτου, βαριά βιομηχανικά). Αναλαμβάνουμε <strong>ολόκληρη τη διαδικασία</strong> — από τη σύνταξη τεχνικής μελέτης έως την παραλαβή άδειας κυκλοφορίας — χωρίς να χρειαστεί να ασχοληθείτε με γραφεία και ουρές.</p>
-            </div>
-            <p class="svc-deep-meta">
-                <span itemprop="areaServed">Αθήνα</span> &amp; <span itemprop="areaServed">Θεσσαλονίκη</span>
-                <span class="svc-deep-dot">·</span>
-                <span>Μηχανολόγος Μηχανικός ΑΠΘ, MSc</span>
-                <span class="svc-deep-dot">·</span>
-                <span>Κατηγορίες Ο1 &amp; Ο2</span>
-            </p>
-          </div>
-        </div>
-
-        <!-- Expandable detail: Ταξινόμηση Οχήματος Ειδικής Χρήσης -->
-        <div class="svc-expand-panel" id="svcExpandSpecial">
-          <div class="svc-expand-inner" itemscope itemtype="https://schema.org/Service">
-            <meta itemprop="name" content="Ταξινόμηση Οχήματος Ειδικής Χρήσης — Εγκρίσεις Τύπου">
-            <link itemprop="url" href="https://moudiotis.github.io/#taxinomisi-eidikis-xrisis">
-            <div class="eyebrow"><span>ΟΧΗΜΑΤΑ ΕΙΔΙΚΗΣ ΧΡΗΣΗΣ</span></div>
-            <h2 class="section-heading" id="taxinomisi-eidikis-xrisis">Ταξινόμηση &amp; <em>Έγκριση Τύπου</em> — Πλήρης Ανάληψη</h2>
-            <div class="svc-deep-text" itemprop="description">
-                <p>Τα <strong>οχήματα ειδικής χρήσης ειδικού σκοπού</strong> είναι οχήματα που φέρουν μόνιμο ειδικό εξοπλισμό και δεν εκτελούν μεταφορικό έργο — γερανοφόρα, οχήματα υδραυλικής ανυψωτικής πλατφόρμας, ψεκαστικά, αλατιέρες και άλλα. Για να κυκλοφορήσουν νόμιμα, απαιτείται ειδική <strong>ταξινόμηση οχήματος</strong> και <strong>έγκριση τύπου</strong> από μηχανολόγο μηχανικό.</p>
-                <p>Η <strong>έγκριση τύπου</strong> είναι η επίσημη τεχνική πιστοποίηση ότι το όχημα πληροί τις προδιαγραφές της ελληνικής και ευρωπαϊκής νομοθεσίας. Εκπονούμε πλήρεις <strong>τεχνικές μελέτες</strong> για κάθε κατηγορία — τοποθέτηση γερανού, υδραυλική πλατφόρμα (EN&nbsp;1570), πιστοποίηση CE — και αναλαμβάνουμε τη διαδικασία ταξινόμησης από την αρχή έως το τέλος.</p>
-            </div>
-            <p class="svc-deep-meta">
-                <span>Γερανοφόρα · Πλατφόρμες · Ψεκαστικά · Αλατιέρες</span>
-                <span class="svc-deep-dot">·</span>
-                <span itemprop="areaServed">Αθήνα &amp; Θεσσαλονίκη</span>
-            </p>
-          </div>
-        </div>
-
         <!-- Trailer sketch animation — O1/O2 licence visual -->
         <div id="trailerAnimWrap" aria-hidden="true" style="
             margin: 52px auto 0;
@@ -1491,32 +1470,5 @@
     })();
     </script>
 
-    <script>
-    /* ── SERVICE CARD EXPAND PANELS ── */
-    (function () {
-        function wireCard(cardIdx, panelId) {
-            var grid = document.getElementById('servicesGrid');
-            if (!grid) return;
-            var cards = grid.querySelectorAll('.service-card');
-            var card  = cards[cardIdx];
-            var panel = document.getElementById(panelId);
-            if (!card || !panel) return;
-            card.classList.add('service-card--expandable');
-            card.setAttribute('role', 'button');
-            card.setAttribute('aria-expanded', 'false');
-            card.addEventListener('click', function () {
-                var open = panel.classList.toggle('is-open');
-                card.setAttribute('aria-expanded', String(open));
-                if (open) {
-                    setTimeout(function () {
-                        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    }, 60);
-                }
-            });
-        }
-        wireCard(0, 'svcExpandTrailer');
-        wireCard(1, 'svcExpandSpecial');
-    })();
-    </script>
 </body>
 </html>
