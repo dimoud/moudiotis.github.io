@@ -91,19 +91,40 @@
 
     // TRAILER ANNOUNCEMENT GUIDE
     T['ta.badge']       = { el: 'ΝΕΟΣ ΝΟΜΟΣ', en: 'NEW LAW' };
-    T['ta.title']       = { el: 'ΤΡΕΙΛΕΡ — Οδηγός Νομιμοποίησης & Έκδοσης Άδειας Κυκλοφορίας', en: 'TRAILER — Legalization & Registration Guide' };
+    T['ta.title']       = { el: 'ΤΡΕΪΛΕΡ — Οδηγός Νομιμοποίησης & Έκδοσης Άδειας Κυκλοφορίας', en: 'TRAILER — Legalization & Registration Guide' };
     T['ta.intro']       = {
-        el: 'Στις <strong>23 Μαρτίου 2026</strong> ψηφίστηκε νόμος του Υπουργείου Υποδομών και Μεταφορών με αντικείμενο την <strong>κυκλοφορία οχημάτων κατηγορίας Ο1 και Ο2</strong> — δηλαδή ρυμουλκούμενων τρέιλερ. Ο νόμος ορίζει για πρώτη φορά σαφή διαδικασία νομιμοποίησης για τα αναρίθμητα ρυμουλκούμενα που κυκλοφορούν χωρίς άδεια στην Ελληνική επικράτεια. Η διαδικασία ξεκινά στις <strong>30/04/2026</strong>.',
-        en: 'On <strong>23 March 2026</strong>, the Ministry of Infrastructure and Transport enacted a law governing the <strong>circulation of O1 and O2 category vehicles</strong> — i.e. towed trailers. For the first time, the law defines a clear legalization procedure for the many trailers circulating without registration in Greece. The process begins on <strong>30/04/2026</strong>.'
+        el: 'Στις <strong>23 Μαρτίου 2026</strong> ψηφίστηκε νόμος του Υπουργείου Υποδομών και Μεταφορών με αντικείμενο την <strong>κυκλοφορία οχημάτων κατηγορίας Ο1 και Ο2</strong> — δηλαδή ρυμουλκούμενων τρέιλερ. Ο νόμος ορίζει για πρώτη φορά σαφή διαδικασία νομιμοποίησης για τα αναρίθμητα ρυμουλκούμενα που κυκλοφορούν χωρίς άδεια στην Ελληνική επικράτεια. Η διαδικασία είναι πλέον ανοιχτή.',
+        en: 'On <strong>23 March 2026</strong>, the Ministry of Infrastructure and Transport enacted a law governing the <strong>circulation of O1 and O2 category vehicles</strong> — i.e. towed trailers. For the first time, the law defines a clear legalization procedure for the many trailers circulating without registration in Greece. The process is now open.'
     };
     T['ta.col1.head']   = { el: 'Ποια οχήματα εντάσσονται', en: 'Eligible vehicles' };
     T['ta.elig1']       = { el: 'Ρυμουλκούμενα με <strong>Ειδικό Σημείωμα Ρυμούλκησης (Ε.Σ.Ρ.)</strong> ή <strong>Υπεύθυνη Δήλωση Μηχανολόγου</strong> με αποτύπωμα πινακιδίου χαρακτηριστικών.', en: 'Trailers with a <strong>Special Towing Note (E.S.R.)</strong> or a <strong>Mechanical Engineer\'s Declaration</strong> with a characteristic plate imprint.' };
     T['ta.elig2']       = { el: 'Ρυμουλκούμενα <strong>ειδικής χρήσης και ειδικού σκοπού</strong>, μη μεταφοράς εμπορευμάτων.', en: 'Trailers of <strong>special use and special purpose</strong>, not intended for goods transport.' };
     T['ta.elig3']       = { el: 'Δεν υπάρχει <strong>ημερομηνία λήξης</strong> της διαδικασίας προς το παρόν — η διαδικασία παραμένει ανοιχτή.', en: 'There is currently <strong>no expiry date</strong> for the process — the window remains open.' };
     T['ta.col2.head']   = { el: 'Κόστος & απαιτήσεις', en: 'Cost & requirements' };
-    T['ta.proc1']       = { el: 'Παράβολα συνολικά <strong>233 €</strong>, εκδιδόμενα ηλεκτρονικά μέσω <strong>e-paravolo</strong>.', en: 'Total fees of <strong>€233</strong>, issued electronically via <strong>e-paravolo</strong>.' };
-    T['ta.proc2']       = { el: 'Για οχήματα με Υπεύθυνη Δήλωση Μηχανολόγου: <strong>πρακτικό επιθεώρησης</strong> από αρμόδια Υπηρεσία Μεταφορών ή <strong>επιτυχής έλεγχος ΚΤΕΟ</strong>.', en: 'For vehicles with a Mechanical Engineer\'s Declaration: an <strong>inspection report</strong> from the Regional Transport Authority or a <strong>successful KTEO technical check</strong>.' };
+    T['ta.proc1']       = { el: 'Παράβολα συνολικά <strong>230 €</strong>, εκδιδόμενα ηλεκτρονικά μέσω <strong>e-paravolo</strong>.', en: 'Total fees of <strong>€230</strong>, issued electronically via <strong>e-paravolo</strong>.' };
+    T['ta.proc2']       = { el: 'Για οχήματα με ΕΣΡ πριν το <strong>1999</strong>: <strong>πρακτικό επιθεώρησης</strong> από αρμόδια Υπηρεσία Μεταφορών ή <strong>επιτυχής έλεγχος ΚΤΕΟ</strong>.', en: 'For vehicles with ESR before <strong>1999</strong>: an <strong>inspection report</strong> from the Regional Transport Authority or a <strong>successful KTEO technical check</strong>.' };
     T['ta.proc3']       = { el: 'Υποβολή πλήρους φακέλου <strong>δικαιολογητικών</strong> στην αρμόδια υπηρεσία, με σωστή καταγραφή χαρακτηριστικών οχήματος.', en: 'Submission of a complete <strong>documentation file</strong> to the competent authority, with accurate recording of vehicle characteristics.' };
+    T['ta.expand.hint'] = { el: 'Δείτε τα δικαιολογητικά', en: 'View required documents' };
+    T['ta.docs.head']   = { el: 'Απαιτούμενα δικαιολογητικά', en: 'Required documents' };
+    T['ta.docs.a.head'] = { el: 'Α. Στοιχεία Ιδιοκτήτη', en: 'A. Owner details' };
+    T['ta.docs.a1']     = { el: 'Φωτοαντίγραφο Αστυνομικής Ταυτότητας ή Διαβατηρίου', en: 'Copy of National ID or Passport' };
+    T['ta.docs.a2']     = { el: 'Αριθμός Φορολογικού Μητρώου (ΑΦΜ)', en: 'Tax Registration Number (VAT/AFM)' };
+    T['ta.docs.a3']     = { el: 'Στοιχεία επικοινωνίας (τηλέφωνο, e-mail)', en: 'Contact details (phone, e-mail)' };
+    T['ta.docs.b.head'] = { el: 'Β. Στοιχεία Οχήματος', en: 'B. Vehicle details' };
+    T['ta.docs.b4']     = { el: '<strong>Πρωτότυπο Σημείωμα Ρυμούλκησης / ΥΔ Μηχανολόγου</strong>', en: '<strong>Original Towing Note / Engineer\'s Declaration</strong>' };
+    T['ta.docs.b5']     = { el: 'Τιμολόγιο αγοράς ή αποδεικτικό ιδιοκτησίας του τρέιλερ (αν υπάρχει)', en: 'Purchase invoice or proof of ownership (if available)' };
+    T['ta.docs.b6']     = { el: 'Παλαιός αριθμός πλαισίου — φωτογραφία (αν υπάρχει) <strong>και αποτύπωμα αν είναι δυνατό</strong>', en: 'Old chassis number — photo (if available) <strong>and imprint if possible</strong>' };
+    T['ta.docs.b7']     = { el: 'Φωτογραφία παλαιού ταμπελακιού (αν υπάρχει)', en: 'Photo of old manufacturer plate (if available)' };
+    T['ta.docs.b8']     = { el: 'Φωτογραφίες όλων των πλευρών του ρυμουλκούμενου (ολόκληρο, κεντραρισμένο)', en: 'Photos of all sides of the trailer (full view, centred)' };
+    T['ta.docs.b9']     = { el: 'Φωτογραφία σημείου ζεύξης', en: 'Photo of the coupling point' };
+    T['ta.docs.b10']    = { el: 'Ζυγολόγιο (αν υπάρχει)', en: 'Weighbridge certificate (if available)' };
+    T['ta.docs.b11']    = { el: 'Φωτογραφία άδειας κυκλοφορίας έλκοντος οχήματος', en: 'Photo of the towing vehicle\'s registration certificate' };
+    T['ta.docs.c.head'] = { el: 'Γ. Έγγραφα', en: 'C. Documents' };
+    T['ta.docs.c1']     = { el: 'Αίτηση με γνήσιο υπογραφής (ΚΕΠ ή gov)', en: 'Application with certified signature (KEP or gov.gr)' };
+    T['ta.docs.c2']     = { el: 'Εξουσιοδότηση με γνήσιο υπογραφής (ΚΕΠ ή gov)', en: 'Power of attorney with certified signature (KEP or gov.gr)' };
+    T['ta.docs.c3']     = { el: 'ΥΔ ιδιοκτησίας', en: 'Statutory declaration of ownership' };
+    T['ta.docs.c4']     = { el: 'Παράβολο <strong>200 €</strong> μέσω e-paravolo, κωδ. <strong>15</strong> — στο ΑΦΜ του ιδιοκτήτη <em>(μπορεί να πληρωθεί αργότερα)</em>', en: '<strong>€200</strong> fee via e-paravolo, code <strong>15</strong> — under the owner\'s AFM <em>(can be paid later)</em>' };
+    T['ta.docs.c5']     = { el: 'Παράβολο <strong>30 €</strong> μέσω e-paravolo, κωδ. <strong>2992</strong> — στο ΑΦΜ του ιδιοκτήτη <em>(μπορεί να πληρωθεί αργότερα)</em>', en: '<strong>€30</strong> fee via e-paravolo, code <strong>2992</strong> — under the owner\'s AFM <em>(can be paid later)</em>' };
     T['ta.warn.title']  = { el: 'Προσοχή — Απαγόρευση κυκλοφορίας', en: 'Caution — Circulation Prohibited' };
     T['ta.warn.text']   = { el: 'Έως την έκδοση της άδειας κυκλοφορίας και των πινακίδων, <strong>απαγορεύεται ρητά η κυκλοφορία</strong> των παραπάνω οχημάτων. Σε ενδεχόμενο ελέγχου, αντιμετωπίζονται ως οχήματα <strong>χωρίς στοιχεία κυκλοφορίας και ανασφάλιστα</strong>, με ό,τι αυτό συνεπάγεται νομικά και οικονομικά.', en: 'Until the registration and plates are issued, <strong>circulation of these vehicles is strictly prohibited</strong>. If stopped during a check, they are treated as <strong>unregistered and uninsured</strong>, with all the legal and financial consequences that entails.' };
     T['ta.svc.head']    = { el: 'Τι αναλαμβάνει το γραφείο μας', en: 'What our office handles' };

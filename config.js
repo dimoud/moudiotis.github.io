@@ -127,8 +127,8 @@ window.SITE_CONFIG = {
             icon:        'fa-car',
             titleEl:     'Ταξινόμηση Οχήματος Ειδικής Χρήσης — Ειδικού Σκοπού | Εγκρίσεις Τύπου',
             titleEn:     'Special Use / Special Purpose Vehicle Registration | Type Approvals',
-            textEl:      'Εκπόνηση <strong class="kw">τεχνικών μελετών</strong> και <strong class="kw">ταξινόμηση οχήματος</strong> για κάθε κατηγορία. <strong class="kw">Οχήματα ειδικής χρήσης &amp; ειδικού σκοπού</strong>, εγκρίσεις τύπου, μελέτες τοποθέτησης γερανού &amp; υδραυλικής πλατφόρμας. Λογισμικό <strong class="kw">Mechanical ExpertEase</strong> για μελέτες ΚΕΚ/ΙΕΚΕΜ.',
-            textEn:      '<strong class="kw">Technical studies</strong> and <strong class="kw">vehicle registration</strong> for all categories. <strong class="kw">Special use &amp; special purpose vehicles</strong>, type approvals, crane &amp; hydraulic platform installation studies. <strong class="kw">Mechanical ExpertEase</strong> software for KEK/IEKEM studies.',
+            textEl:      'Εκπόνηση <strong class="kw">τεχνικών μελετών</strong> και <strong class="kw">ταξινόμηση οχήματος</strong> για κάθε κατηγορία. <strong class="kw">Οχήματα ειδικής χρήσης &amp; ειδικού σκοπού</strong>, εγκρίσεις τύπου, μελέτες τοποθέτησης γερανού &amp; υδραυλικής πλατφόρμας.',
+            textEn:      '<strong class="kw">Technical studies</strong> and <strong class="kw">vehicle registration</strong> for all categories. <strong class="kw">Special use &amp; special purpose vehicles</strong>, type approvals, crane &amp; hydraulic platform installation studies.',
             seoKeywords: 'ταξινόμηση οχήματος, ταξινομιση αδεας οχηματος, οχήματα ειδικής χρήσης ειδικού σκοπού, εγκριση τυπου, μελετη οχηματος, special purpose vehicle registration Greece',
         },
         {
@@ -259,8 +259,8 @@ window.SITE_CONFIG = {
         },
         {
             url:     'https://adrbook.com/en/2017/ADR/9.1.2',
-            catEl:   'Γερανοί &amp; Ανυψωτικά',
-            catEn:   'Cranes &amp; Lifting',
+            catEl:   'Γερανοί & Ανυψωτικά',
+            catEn:   'Cranes & Lifting',
             titleEl: 'Τοποθέτηση γερανού σε φορτηγό: νέα άδεια κυκλοφορίας',
             titleEn: 'Crane installation on truck: new circulation permit',
             textEl:  'Η τοποθέτηση γερανού σε φορτηγό απαιτεί πλήρη μελέτη στατικής επάρκειας, πιστοποιητικό ανύψωσης και έκδοση νέας άδειας κυκλοφορίας.',

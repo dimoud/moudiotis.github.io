@@ -66,6 +66,40 @@
 
     <script src="config.js"></script>
 
+    <style>
+    /* ── Service Expand Panels ─────────────────────────────────────────── */
+    .svc-expand-panel { overflow: hidden; max-height: 0; transition: max-height 0.55s var(--ease); background: var(--cream); border-top: 2px solid rgba(29,58,92,0.07); }
+    .svc-expand-panel.is-open { max-height: 1400px; }
+    .svc-expand-inner { padding: 56px 7% 64px; max-width: 900px; }
+    .svc-expand-inner .section-heading { font-size: clamp(28px, 3.2vw, 48px); margin-bottom: 20px; }
+    .svc-deep-text p { font-family: 'Source Sans 3', sans-serif; font-size: 1.05rem; line-height: 1.8; color: var(--ink2); margin-bottom: 14px; max-width: 740px; }
+    .svc-deep-text strong { color: var(--ink); font-weight: 600; }
+    .svc-deep-meta { font-size: 0.78rem; color: var(--stone); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; margin-top: 18px; }
+    .svc-deep-dot { margin: 0 10px; opacity: 0.4; }
+    .svc-expand-panel .eyebrow::before { transform: scaleX(1); transition: none; }
+    .service-card--expandable { cursor: pointer; }
+    @media (max-width: 768px) { .svc-expand-inner { padding: 40px 5% 48px; } }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Ξανάνοιξαν οι Διαδικασίες Ταξινόμησης Τρέιλερ Ο1 & Ο2",
+      "description": "Επαναλειτουργία διαδικασιών ταξινόμησης ρυμουλκούμενων κατηγορίας Ο1 και Ο2 — άδεια κυκλοφορίας τρέιλερ για όλα τα ρυμουλκούμενα.",
+      "datePublished": "2025-01-01",
+      "dateModified": "2026-06-04",
+      "author": { "@type": "Person", "name": "Δημήτριος Μουδιώτης", "jobTitle": "Μηχανολόγος Μηχανικός ΑΠΘ, MSc" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Τεχνικό Γραφείο Μουδιώτης",
+        "url": "https://moudiotis.github.io/"
+      },
+      "mainEntityOfPage": "https://moudiotis.github.io/",
+      "keywords": "ταξινόμηση τρέιλερ, άδεια τρέιλερ Ο1 Ο2, ρυμουλκούμενο, ΥΜΕΔ ΚΤΕΟ"
+    }
+    </script>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -279,6 +313,46 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Η μελέτη τοποθέτησης γερανού σε φορτηγό περιλαμβάνει: στατική ανάλυση φόρτισης, τήρηση προδιαγραφών ασφαλείας, πιστοποίηση CE σύμφωνα με Οδηγία 2006/42/ΕΚ, έγκριση τύπου και νέα ταξινόμηση οχήματος ειδικής χρήσης."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ποια τρέιλερ μπορούν να ταξινομηθούν — νέα και μεταχειρισμένα;",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Τόσο νέα όσο και μεταχειρισμένα ρυμουλκούμενα Ο1/Ο2 μπορούν να ταξινομηθούν, ακόμα και αν δεν έχουν ποτέ κυκλοφορήσει νόμιμα ή έχουν στεκόταν χρόνια στατικά. Το Τεχνικό Γραφείο Μουδιώτης εκτιμά κάθε περίπτωση ξεχωριστά και βρίσκει τη βέλτιστη λύση."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Μπορώ να βγάλω άδεια τρέιλερ χωρίς τιμολόγιο αγοράς;",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ναι, σε πολλές περιπτώσεις είναι εφικτό. Υπάρχουν εναλλακτικά αποδεικτικά κατοχής (Ε9, δήλωση αγοράς, παλιά ασφάλιση κ.ά.) που μπορούν να χρησιμοποιηθούν. Επικοινωνήστε με το Τεχνικό Γραφείο Μουδιώτης για εκτίμηση της δικής σας περίπτωσης."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ποια οχήματα ανήκουν στην κατηγορία ειδικής χρήσης ειδικού σκοπού;",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Στην κατηγορία 'ειδικής χρήσης ειδικού σκοπού' ανήκουν οχήματα που φέρουν μόνιμο ειδικό εξοπλισμό και δεν εκτελούν μεταφορικό έργο: γερανοφόρα, οχήματα υδραυλικής ανυψωτικής πλατφόρμας, ψεκαστικά, αλατιέρες, οχήματα κατεδάφισης, πυροσβεστικά, ασθενοφόρα και άλλα."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Τι συνέπειες έχει η κυκλοφορία τρέιλερ χωρίς άδεια;",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Η κυκλοφορία ρυμουλκούμενου χωρίς άδεια κυκλοφορίας αποτελεί παράβαση του ΚΟΚ και επισύρει πρόστιμο, ακινητοποίηση του οχήματος και αφαίρεση αδείας οδηγού. Επιπλέον, σε περίπτωση ατυχήματος, η ασφαλιστική εταιρεία μπορεί να αρνηθεί την κάλυψη."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Εξυπηρετείτε ταξινόμηση τρέιλερ και οχήματος εκτός Αθήνας;",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ναι. Εξυπηρετούμε σε Αθήνα και Θεσσαλονίκη, καθώς και σε άλλες περιοχές της Ελλάδας κατόπιν επικοινωνίας. Μεγάλο μέρος της διαδικασίας (τεχνική μελέτη, εγγραφα) γίνεται ηλεκτρονικά."
           }
         }
       ]
@@ -794,16 +868,19 @@
         </div>
 
         <!-- Trailer Announcement Guide -->
-        <div class="ta-wrap" data-reveal>
+        <div class="ta-wrap" id="adeia-treyler-o1-o2" data-reveal>
           <div class="ta-box">
             <div class="ta-topbar">
               <span class="ta-badge"><i class="fa-solid fa-file-circle-check"></i>&nbsp;<span data-i18n="ta.badge"></span></span>
-              <span class="ta-date"><i class="fa-regular fa-calendar"></i>&nbsp;9 Απριλίου 2026</span>
             </div>
             <div class="ta-body-pad">
               <h3 class="ta-title" data-i18n="ta.title"></h3>
               <p class="ta-intro" data-i18n-html="ta.intro"></p>
+              <button class="ta-toggle" aria-expanded="false" aria-controls="taCollapse">
+                <span data-i18n="ta.expand.hint"></span><i class="fa-solid fa-chevron-down ta-chevron"></i>
+              </button>
             </div>
+            <div class="ta-collapse" id="taCollapse" hidden>
             <div class="ta-rule"></div>
             <div class="ta-cols">
               <div class="ta-col">
@@ -821,6 +898,41 @@
                   <li><span class="ta-ck"></span><span data-i18n-html="ta.proc2"></span></li>
                   <li><span class="ta-ck"></span><span data-i18n-html="ta.proc3"></span></li>
                 </ul>
+              </div>
+            </div>
+            <div class="ta-rule"></div>
+            <div class="ta-docs">
+              <div class="ta-sec-head"><i class="fa-solid fa-folder-open"></i><span data-i18n="ta.docs.head"></span></div>
+              <div class="ta-docs-grid">
+                <div class="ta-docs-col">
+                  <div class="ta-docs-group-head" data-i18n="ta.docs.a.head"></div>
+                  <ol class="ta-docs-list" start="1">
+                    <li><span data-i18n-html="ta.docs.a1"></span></li>
+                    <li><span data-i18n-html="ta.docs.a2"></span></li>
+                    <li><span data-i18n-html="ta.docs.a3"></span></li>
+                  </ol>
+                  <div class="ta-docs-group-head" data-i18n="ta.docs.c.head"></div>
+                  <ol class="ta-docs-list" start="1">
+                    <li><span data-i18n-html="ta.docs.c1"></span></li>
+                    <li><span data-i18n-html="ta.docs.c2"></span></li>
+                    <li><span data-i18n-html="ta.docs.c3"></span></li>
+                    <li><span data-i18n-html="ta.docs.c4"></span></li>
+                    <li><span data-i18n-html="ta.docs.c5"></span></li>
+                  </ol>
+                </div>
+                <div class="ta-docs-col">
+                  <div class="ta-docs-group-head" data-i18n="ta.docs.b.head"></div>
+                  <ol class="ta-docs-list" start="4">
+                    <li><span data-i18n-html="ta.docs.b4"></span></li>
+                    <li><span data-i18n-html="ta.docs.b5"></span></li>
+                    <li><span data-i18n-html="ta.docs.b6"></span></li>
+                    <li><span data-i18n-html="ta.docs.b7"></span></li>
+                    <li><span data-i18n-html="ta.docs.b8"></span></li>
+                    <li><span data-i18n-html="ta.docs.b9"></span></li>
+                    <li><span data-i18n-html="ta.docs.b10"></span></li>
+                    <li><span data-i18n-html="ta.docs.b11"></span></li>
+                  </ol>
+                </div>
               </div>
             </div>
             <div class="ta-rule"></div>
@@ -843,10 +955,51 @@
               <p class="ta-cta-text" data-i18n-html="ta.cta.text"></p>
               <a href="#contact" class="ta-cta-btn"><span data-i18n="ta.cta.btn"></span>&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
             </div>
+            </div><!-- /ta-collapse -->
           </div>
         </div>
 
         <div class="services-grid" id="servicesGrid"></div>
+
+        <!-- Expandable detail: Άδεια Τρέιλερ Ο1/Ο2 -->
+        <div class="svc-expand-panel" id="svcExpandTrailer">
+          <div class="svc-expand-inner" itemscope itemtype="https://schema.org/Service">
+            <meta itemprop="name" content="Άδεια Τρέιλερ Ο1 &amp; Ο2 — Ταξινόμηση Ρυμουλκούμενου">
+            <link itemprop="url" href="https://moudiotis.github.io/#adeia-treyler-o1-o2">
+            <div class="eyebrow"><span>ΑΔΕΙΑ ΤΡΕΪΛΕΡ Ο1 / Ο2</span></div>
+            <h2 class="section-heading" id="taxinomisi-treyler">Τι Πρέπει να Ξέρετε για την <em>Ταξινόμηση Ρυμουλκούμενου</em></h2>
+            <div class="svc-deep-text" itemprop="description">
+                <p>Κάθε <strong>τρέιλερ (ρυμουλκούμενο)</strong> που κυκλοφορεί στην Ελλάδα υποχρεούται από τον ΚΟΚ να διαθέτει <strong>άδεια κυκλοφορίας</strong> και πινακίδες. Η διαδικασία — γνωστή ως <strong>ταξινόμηση ρυμουλκούμενου</strong> — απαιτεί τεχνική μελέτη από μηχανολόγο μηχανικό, επιθεώρηση ΥΜΕΔ ή ΚΤΕΟ και κατάθεση φακέλου στη Διεύθυνση Μεταφορών.</p>
+                <p>Η <strong>κατηγορία Ο1</strong> αφορά ρυμουλκούμενα έως 750 kg (μικρά τρέιλερ, τρέιλερ σκάφους, μοτοσυκλέτας). Η <strong>κατηγορία Ο2</strong> αφορά ρυμουλκούμενα έως 3.500 kg (caravan, τρέιλερ αυτοκινήτου, βαριά βιομηχανικά). Αναλαμβάνουμε <strong>ολόκληρη τη διαδικασία</strong> — από τη σύνταξη τεχνικής μελέτης έως την παραλαβή άδειας κυκλοφορίας — χωρίς να χρειαστεί να ασχοληθείτε με γραφεία και ουρές.</p>
+            </div>
+            <p class="svc-deep-meta">
+                <span itemprop="areaServed">Αθήνα</span> &amp; <span itemprop="areaServed">Θεσσαλονίκη</span>
+                <span class="svc-deep-dot">·</span>
+                <span>Μηχανολόγος Μηχανικός ΑΠΘ, MSc</span>
+                <span class="svc-deep-dot">·</span>
+                <span>Κατηγορίες Ο1 &amp; Ο2</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Expandable detail: Ταξινόμηση Οχήματος Ειδικής Χρήσης -->
+        <div class="svc-expand-panel" id="svcExpandSpecial">
+          <div class="svc-expand-inner" itemscope itemtype="https://schema.org/Service">
+            <meta itemprop="name" content="Ταξινόμηση Οχήματος Ειδικής Χρήσης — Εγκρίσεις Τύπου">
+            <link itemprop="url" href="https://moudiotis.github.io/#taxinomisi-eidikis-xrisis">
+            <div class="eyebrow"><span>ΟΧΗΜΑΤΑ ΕΙΔΙΚΗΣ ΧΡΗΣΗΣ</span></div>
+            <h2 class="section-heading" id="taxinomisi-eidikis-xrisis">Ταξινόμηση &amp; <em>Έγκριση Τύπου</em> — Πλήρης Ανάληψη</h2>
+            <div class="svc-deep-text" itemprop="description">
+                <p>Τα <strong>οχήματα ειδικής χρήσης ειδικού σκοπού</strong> είναι οχήματα που φέρουν μόνιμο ειδικό εξοπλισμό και δεν εκτελούν μεταφορικό έργο — γερανοφόρα, οχήματα υδραυλικής ανυψωτικής πλατφόρμας, ψεκαστικά, αλατιέρες και άλλα. Για να κυκλοφορήσουν νόμιμα, απαιτείται ειδική <strong>ταξινόμηση οχήματος</strong> και <strong>έγκριση τύπου</strong> από μηχανολόγο μηχανικό.</p>
+                <p>Η <strong>έγκριση τύπου</strong> είναι η επίσημη τεχνική πιστοποίηση ότι το όχημα πληροί τις προδιαγραφές της ελληνικής και ευρωπαϊκής νομοθεσίας. Εκπονούμε πλήρεις <strong>τεχνικές μελέτες</strong> για κάθε κατηγορία — τοποθέτηση γερανού, υδραυλική πλατφόρμα (EN&nbsp;1570), πιστοποίηση CE — και αναλαμβάνουμε τη διαδικασία ταξινόμησης από την αρχή έως το τέλος.</p>
+            </div>
+            <p class="svc-deep-meta">
+                <span>Γερανοφόρα · Πλατφόρμες · Ψεκαστικά · Αλατιέρες</span>
+                <span class="svc-deep-dot">·</span>
+                <span itemprop="areaServed">Αθήνα &amp; Θεσσαλονίκη</span>
+            </p>
+          </div>
+        </div>
 
         <!-- Trailer sketch animation — O1/O2 licence visual -->
         <div id="trailerAnimWrap" aria-hidden="true" style="
@@ -1321,6 +1474,49 @@
             type();
         }, delay);
     });
+    </script>
+
+    <script>
+    /* ── TRAILER ANNOUNCEMENT COLLAPSE ── */
+    (function () {
+        var btn = document.querySelector('.ta-toggle');
+        if (!btn) return;
+        var panel = document.getElementById('taCollapse');
+        panel.removeAttribute('hidden');
+        btn.addEventListener('click', function () {
+            var open = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!open));
+            panel.classList.toggle('is-open', !open);
+        });
+    })();
+    </script>
+
+    <script>
+    /* ── SERVICE CARD EXPAND PANELS ── */
+    (function () {
+        function wireCard(cardIdx, panelId) {
+            var grid = document.getElementById('servicesGrid');
+            if (!grid) return;
+            var cards = grid.querySelectorAll('.service-card');
+            var card  = cards[cardIdx];
+            var panel = document.getElementById(panelId);
+            if (!card || !panel) return;
+            card.classList.add('service-card--expandable');
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-expanded', 'false');
+            card.addEventListener('click', function () {
+                var open = panel.classList.toggle('is-open');
+                card.setAttribute('aria-expanded', String(open));
+                if (open) {
+                    setTimeout(function () {
+                        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 60);
+                }
+            });
+        }
+        wireCard(0, 'svcExpandTrailer');
+        wireCard(1, 'svcExpandSpecial');
+    })();
     </script>
 </body>
 </html>
