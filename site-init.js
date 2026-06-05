@@ -204,6 +204,43 @@
     // FOOTER
     T['footer.title'] = { el: P.fullTitleEl, en: P.fullTitleEn };
 
+    // ARIA LABELS
+    T['aria.menu']      = { el: 'Μενού πλοήγησης',       en: 'Navigation menu' };
+    T['aria.backToTop'] = { el: 'Επιστροφή στην κορυφή', en: 'Back to top' };
+
+    // TRC WIDGET BADGE
+    T['trc.badge'] = { el: 'Έλεγχος Κ.Ο.Κ.', en: 'Road Code Check' };
+
+    // HERO BOTTOM CONTACT STRIP
+    T['hbc.phone']   = { el: 'Σταθερό',      en: 'Landline' };
+    T['hbc.mobile']  = { el: 'Κινητό',       en: 'Mobile' };
+    T['hbc.service'] = { el: 'Εξυπηρέτηση', en: 'Service area' };
+
+    // MEASURE LABELS
+    T['services.meas'] = { el: 'ΥΠΗΡΕΣΙΕΣ', en: 'SERVICES' };
+    T['projects.meas'] = { el: 'ΕΡΓΑ',       en: 'PROJECTS' };
+
+    // SERVICE BADGE (featured card)
+    T['service.badge.new'] = { el: 'ΝΕΑ', en: 'NEW' };
+
+    // SERVICE INLINE EXPAND (cards 0 & 1)
+    T['svc.expand.0.p1'] = {
+        el: 'Κάθε τρέιλερ υποχρεούται από τον ΚΟΚ να διαθέτει <strong>άδεια κυκλοφορίας</strong> και πινακίδες. <strong>Ο1</strong>: έως 750 kg (σκάφη, camping, μοτοσυκλέτα) — <strong>Ο2</strong>: έως 3.500 kg (caravan, αυτοκινήτου, βαριά βιομηχανικά). Αναλαμβάνουμε πλήρως: τεχνική μελέτη, υποβολή ΥΜΕΔ/ΚΤΕΟ, έκδοση άδειας.',
+        en: 'Every trailer is required by Road Code to have a <strong>registration licence</strong> and plates. <strong>O1</strong>: up to 750 kg (boats, camping, motorcycle) — <strong>O2</strong>: up to 3,500 kg (caravan, car, heavy industrial). We handle everything: technical study, submission to YMED/KTEO, licence issuance.',
+    };
+    T['svc.expand.0.meta'] = {
+        el: 'Αθήνα &amp; Θεσσαλονίκη &nbsp;·&nbsp; ΑΠΘ, MSc &nbsp;·&nbsp; Κατηγορίες Ο1 &amp; Ο2',
+        en: 'Athens &amp; Thessaloniki &nbsp;·&nbsp; AUTH, MSc &nbsp;·&nbsp; Categories O1 &amp; O2',
+    };
+    T['svc.expand.1.p1'] = {
+        el: 'Τα οχήματα ειδικής χρήσης — γερανοφόρα, πλατφόρμες, ψεκαστικά — χρειάζονται ειδική <strong>ταξινόμηση</strong> και <strong>έγκριση τύπου</strong>. Εκπονούμε τεχνικές μελέτες (στατική ανάλυση, CE, EN 1570) και αναλαμβάνουμε τη διαδικασία από την αρχή έως το τέλος.',
+        en: 'Special use vehicles — crane trucks, platforms, sprayers — require special <strong>registration</strong> and <strong>type approval</strong>. We prepare technical studies (static analysis, CE, EN 1570) and handle the entire process from start to finish.',
+    };
+    T['svc.expand.1.meta'] = {
+        el: 'Γερανοφόρα &nbsp;·&nbsp; Πλατφόρμες &nbsp;·&nbsp; Ψεκαστικά &nbsp;·&nbsp; Αθήνα &amp; Θεσσαλονίκη',
+        en: 'Crane trucks &nbsp;·&nbsp; Platforms &nbsp;·&nbsp; Sprayers &nbsp;·&nbsp; Athens &amp; Thessaloniki',
+    };
+
     // NAV BRAND (for language switch)
     if (P.navBrandEl) {
         T['nav.brand'] = { el: P.navBrandEl, en: P.navBrandEn || P.navBrandEl };
@@ -275,15 +312,15 @@
         heroBottomContact.innerHTML =
             '<a href="' + C.contact.phoneTel + '" class="hbc-item">' +
                 '<span class="hbc-icon"><i class="fa-solid fa-phone"></i></span>' +
-                '<span class="hbc-text"><span class="hbc-label">Σταθερό</span><span class="hbc-val">' + C.contact.phone + '</span></span>' +
+                '<span class="hbc-text"><span class="hbc-label" data-i18n="hbc.phone">' + T['hbc.phone'].el + '</span><span class="hbc-val">' + C.contact.phone + '</span></span>' +
             '</a>' +
             '<a href="' + C.contact.mobileTel + '" class="hbc-item">' +
                 '<span class="hbc-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>' +
-                '<span class="hbc-text"><span class="hbc-label">Κινητό</span><span class="hbc-val">' + C.contact.mobile + '</span></span>' +
+                '<span class="hbc-text"><span class="hbc-label" data-i18n="hbc.mobile">' + T['hbc.mobile'].el + '</span><span class="hbc-val">' + C.contact.mobile + '</span></span>' +
             '</a>' +
             '<span class="hbc-item hbc-address">' +
                 '<span class="hbc-icon"><i class="fa-solid fa-location-dot"></i></span>' +
-                '<span class="hbc-text"><span class="hbc-label">Εξυπηρέτηση</span><span class="hbc-val">' + (C.contact.address || '') + '</span></span>' +
+                '<span class="hbc-text"><span class="hbc-label" data-i18n="hbc.service">' + T['hbc.service'].el + '</span><span class="hbc-val" data-i18n="contact.address">' + (C.contact.address || '') + '</span></span>' +
             '</span>' +
             '<a href="mailto:' + C.contact.email + '" class="hbc-item">' +
                 '<span class="hbc-icon"><i class="fa-solid fa-envelope"></i></span>' +
@@ -350,13 +387,17 @@
     var servicesMeas = document.getElementById('servicesMeasLabel');
     if (servicesMeas) {
         var sCount = (C.services || []).length;
-        servicesMeas.textContent = sCount + ' \u03A5\u03A0\u0397\u03A1\u0395\u03A3\u0399\u0395\u03A3 \u2014 ' + (sCount * 40).toFixed(2) + ' m\u00B2';
+        servicesMeas.innerHTML =
+            sCount + ' <span data-i18n="services.meas">' + T['services.meas'].el + '</span>' +
+            ' \u2014 ' + (sCount * 40).toFixed(2) + ' m\u00B2';
     }
 
     var projectsMeas = document.getElementById('projectsMeasLabel');
     if (projectsMeas) {
         var pCount = (C.projects || []).length;
-        projectsMeas.textContent = pCount + ' \u0395\u03A1\u0393\u0391 \u2014 ' + (pCount * 208).toFixed(2) + ' m\u00B2';
+        projectsMeas.innerHTML =
+            pCount + ' <span data-i18n="projects.meas">' + T['projects.meas'].el + '</span>' +
+            ' \u2014 ' + (pCount * 208).toFixed(2) + ' m\u00B2';
     }
 
 
@@ -407,7 +448,7 @@
             // First card (O1/O2) gets featured class for attention animation
             var featuredClass = (i === 0) ? ' service-card--featured' : '';
             var featuredBadge = (i === 0) ?
-                '<span class="service-badge">ΝΕΑ</span>' : '';
+                '<span class="service-badge" data-i18n="service.badge.new">' + T['service.badge.new'].el + '</span>' : '';
             // Odd-index (0,2,4,6) = left column, even-index (1,3,5,7) = right column
             var colClass = (i % 2 === 0) ? ' service-card--odd' : ' service-card--even';
             // Cards with a url become anchor elements
@@ -423,16 +464,16 @@
                 expandContent =
                     '<div class="svc-inline-expand">' +
                     '<div class="svc-inline-expand-inner">' +
-                    '<p>Κάθε τρέιλερ υποχρεούται από τον ΚΟΚ να διαθέτει <strong>άδεια κυκλοφορίας</strong> και πινακίδες. <strong>Ο1</strong>: έως 750 kg (σκάφη, camping, μοτοσυκλέτα) — <strong>Ο2</strong>: έως 3.500 kg (caravan, αυτοκινήτου, βαριά βιομηχανικά). Αναλαμβάνουμε πλήρως: τεχνική μελέτη, υποβολή ΥΜΕΔ/ΚΤΕΟ, έκδοση άδειας.</p>' +
-                    '<p class="svc-inline-meta">Αθήνα &amp; Θεσσαλονίκη &nbsp;·&nbsp; ΑΠΘ, MSc &nbsp;·&nbsp; Κατηγορίες Ο1 &amp; Ο2</p>' +
+                    '<p data-i18n-html="svc.expand.0.p1">' + T['svc.expand.0.p1'].el + '</p>' +
+                    '<p class="svc-inline-meta" data-i18n-html="svc.expand.0.meta">' + T['svc.expand.0.meta'].el + '</p>' +
                     '</div>' +
                     '</div>';
             } else if (i === 1) {
                 expandContent =
                     '<div class="svc-inline-expand">' +
                     '<div class="svc-inline-expand-inner">' +
-                    '<p>Τα οχήματα ειδικής χρήσης — γερανοφόρα, πλατφόρμες, ψεκαστικά — χρειάζονται ειδική <strong>ταξινόμηση</strong> και <strong>έγκριση τύπου</strong>. Εκπονούμε τεχνικές μελέτες (στατική ανάλυση, CE, EN 1570) και αναλαμβάνουμε τη διαδικασία από την αρχή έως το τέλος.</p>' +
-                    '<p class="svc-inline-meta">Γερανοφόρα &nbsp;·&nbsp; Πλατφόρμες &nbsp;·&nbsp; Ψεκαστικά &nbsp;·&nbsp; Αθήνα &amp; Θεσσαλονίκη</p>' +
+                    '<p data-i18n-html="svc.expand.1.p1">' + T['svc.expand.1.p1'].el + '</p>' +
+                    '<p class="svc-inline-meta" data-i18n-html="svc.expand.1.meta">' + T['svc.expand.1.meta'].el + '</p>' +
                     '</div>' +
                     '</div>';
             }

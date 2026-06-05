@@ -11,6 +11,7 @@
       title2:      'Ρυμουλκούμενων',
       badgeKey:    'ΚΑΤΗΓΟΡΙΑ',
       diagramTag:  'ΠΛΑΓΙΑ & ΠΙΣΩ ΟΨΗ',
+      diagramAlt:  'Πλάγια και Πίσω Όψη Ρυμουλκούμενου Κατ. Ο1 & Ο2',
       intro:       'Τα σημεία που ελέγχονται ώστε το ρυμουλκούμενο να είναι <strong>σύμφωνο με τον Κ.Ο.Κ.</strong> και ασφαλές στον δρόμο — ανακλαστήρες, πίσω τρίγωνα, φωτισμός, πινακίδα και σύστημα ζεύξης. Κατηγορία Ο1 &amp; Ο2.',
       tagline:     'Δες αν το ρυμουλκούμενο σου πληροί τις απαιτήσεις του Κ.Ο.Κ.!',
       toggleHint:  'Δείτε τους ελέγχους',
@@ -43,6 +44,7 @@
       title2:      'Road Checks',
       badgeKey:    'CATEGORY',
       diagramTag:  'SIDE & REAR VIEW',
+      diagramAlt:  'Side and Rear View of Trailer Cat. O1 & O2',
       intro:       'The checkpoints verified to ensure the trailer is <strong>compliant with Road Code</strong> and road-safe — reflectors, rear triangles, lights, number plate, and coupling system. Category O1 &amp; O2.',
       tagline:     'Check if your trailer meets Road Code requirements!',
       toggleHint:  'View checks',
@@ -91,6 +93,8 @@
     setText('trcTitle2',          t.title2);
     setText('trcBadgeKey',        t.badgeKey);
     setText('trcDiagramTag',      t.diagramTag);
+    var diagramImg = document.querySelector('.trc-diagram-wrap img');
+    if (diagramImg) diagramImg.alt = t.diagramAlt;
     setHTML('trcIntro',           t.intro);
     setText('trcTagline',         t.tagline);
     setText('trcProgressLbl',     t.progressLbl);
@@ -98,7 +102,9 @@
     setText('trcCompleteText',    t.completeMsg);
     setText('trcSecLbl',          t.secLbl);
     setText('trcBc0Lbl',          t.bc0Lbl);
+    setText('trcBc0InnerLbl',     t.bc0Lbl);
     setText('trcBc1Lbl',          t.bc1Lbl);
+    setText('trcBc1InnerLbl',     t.bc1Lbl);
     setHTML('trcNoteBox',         t.noteBox);
     buildBc0List(t.bc0List);
     currentItems = t.items;

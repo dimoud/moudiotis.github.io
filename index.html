@@ -414,12 +414,12 @@
                 <span class="lcode">EN</span>
             </button>
         </div>
-        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Μενού πλοήγησης" aria-expanded="false">
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Μενού πλοήγησης" data-i18n-aria-label="aria.menu" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
     </nav>
 
-    <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Επιστροφή στην κορυφή">
+    <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Επιστροφή στην κορυφή" data-i18n-aria-label="aria.backToTop">
         <i class="fa-solid fa-chevron-up"></i>
     </button>
 
@@ -1073,14 +1073,14 @@
                                 <div class="trc-b-inner">
                                     <div class="trc-b-inner-lbl">
                                         <span class="trc-b">i</span>
-                                        <span>Περιοδικός Έλεγχος</span>
+                                        <span id="trcBc0InnerLbl">Περιοδικός Έλεγχος</span>
                                     </div>
                                     <ul class="trc-spec-list" id="trcBc0List"></ul>
                                 </div>
                                 <div class="trc-b-inner">
                                     <div class="trc-b-inner-lbl trc-b-lbl--warn">
                                         <span class="trc-b trc-b--warn">!</span>
-                                        <span>Ασφάλιση</span>
+                                        <span id="trcBc1InnerLbl">Ασφάλιση</span>
                                     </div>
                                     <div class="trc-note-box" id="trcNoteBox">Απαιτείται <b>ξεχωριστή ασφάλιση</b> του ρυμουλκούμενου από το ρυμουλκό όχημα. Ενημερωθείτε από τον ασφαλιστή σας.</div>
                                 </div>

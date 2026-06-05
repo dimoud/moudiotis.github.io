@@ -57,6 +57,14 @@
             }
         });
 
+        /* aria-label attribute */
+        document.querySelectorAll('[data-i18n-aria-label]').forEach(function (el) {
+            var key = el.getAttribute('data-i18n-aria-label');
+            if (t[key] && t[key][lang] !== undefined) {
+                el.setAttribute('aria-label', t[key][lang]);
+            }
+        });
+
         /* update <html lang> attribute */
         document.documentElement.lang = lang;
 
