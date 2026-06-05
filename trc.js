@@ -11,7 +11,9 @@
       title2:      'Ρυμουλκούμενων',
       badgeKey:    'ΚΑΤΗΓΟΡΙΑ',
       diagramTag:  'ΠΛΑΓΙΑ & ΠΙΣΩ ΟΨΗ',
-      intro:       'Τα σημεία που ελέγχονται ώστε το ρυμουλκούμενο να είναι <strong>σύμφωνο με τον Κ.Ο.Κ.</strong> και ασφαλές στον δρόμο — ανακλαστήρες, πίσω τρίγωνα, φωτισμός, πινακίδα και σύστημα ζεύξης. Κατηγορία Ο1 &amp; Ο2 — ελαφρύ ρυμουλκούμενο.',
+      intro:       'Τα σημεία που ελέγχονται ώστε το ρυμουλκούμενο να είναι <strong>σύμφωνο με τον Κ.Ο.Κ.</strong> και ασφαλές στον δρόμο — ανακλαστήρες, πίσω τρίγωνα, φωτισμός, πινακίδα και σύστημα ζεύξης. Κατηγορία Ο1 &amp; Ο2.',
+      tagline:     'Δες αν το ρυμουλκούμενο σου πληροί τις απαιτήσεις του Κ.Ο.Κ.!',
+      toggleHint:  'Δείτε τους ελέγχους',
       progressLbl: 'Πρόοδος Ελέγχου',
       resetBtn:    'ΕΠΑΝΑΦΟΡΑ',
       completeMsg: 'Το ρυμουλκούμενο είναι έτοιμο για τον δρόμο!',
@@ -41,7 +43,9 @@
       title2:      'Road Checks',
       badgeKey:    'CATEGORY',
       diagramTag:  'SIDE & REAR VIEW',
-      intro:       'The checkpoints verified to ensure the trailer is <strong>compliant with Road Code</strong> and road-safe — reflectors, rear triangles, lights, number plate, and coupling system. Category O1 &amp; O2 — light trailer.',
+      intro:       'The checkpoints verified to ensure the trailer is <strong>compliant with Road Code</strong> and road-safe — reflectors, rear triangles, lights, number plate, and coupling system. Category O1 &amp; O2.',
+      tagline:     'Check if your trailer meets Road Code requirements!',
+      toggleHint:  'View checks',
       progressLbl: 'Inspection Progress',
       resetBtn:    'RESET',
       completeMsg: 'The trailer is road-ready!',
@@ -83,18 +87,19 @@
 
   function renderLang(lang) {
     var t = I18N[lang] || I18N.el;
-    setText('trcTitle1',       t.title1);
-    setText('trcTitle2',       t.title2);
-    setText('trcBadgeKey',     t.badgeKey);
-    setText('trcDiagramTag',   t.diagramTag);
-    setHTML('trcIntro',        t.intro);
-    setText('trcProgressLbl',  t.progressLbl);
-    setText('trcResetBtn',     t.resetBtn);
-    setText('trcCompleteText', t.completeMsg);
-    setText('trcSecLbl',       t.secLbl);
-    setText('trcBc0Lbl',       t.bc0Lbl);
-    setText('trcBc1Lbl',       t.bc1Lbl);
-    setHTML('trcNoteBox',      t.noteBox);
+    setText('trcTitle1',          t.title1);
+    setText('trcTitle2',          t.title2);
+    setText('trcBadgeKey',        t.badgeKey);
+    setText('trcDiagramTag',      t.diagramTag);
+    setHTML('trcIntro',           t.intro);
+    setText('trcTagline',         t.tagline);
+    setText('trcProgressLbl',     t.progressLbl);
+    setText('trcResetBtn',        t.resetBtn);
+    setText('trcCompleteText',    t.completeMsg);
+    setText('trcSecLbl',          t.secLbl);
+    setText('trcBc0Lbl',          t.bc0Lbl);
+    setText('trcBc1Lbl',          t.bc1Lbl);
+    setHTML('trcNoteBox',         t.noteBox);
     buildBc0List(t.bc0List);
     currentItems = t.items;
     buildCards(t.items);
@@ -119,6 +124,7 @@
       card.className = 'trc-check-card';
       card.innerHTML =
         '<div class="trc-c-num">' + (checked.has(item.n) ? '✓' : item.n) + '</div>' +
+        '<div class="trc-c-check-hint" aria-hidden="true"></div>' +
         '<div class="trc-c-txt">' +
           '<div class="trc-c-title">' + item.title + '</div>' +
           '<div class="trc-c-desc">'  + item.desc  + '</div>' +

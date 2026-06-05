@@ -1685,7 +1685,9 @@ footer {
    ═══════════════════════════════════════════ */
 .ta-wrap {
     width: 100%;
-    margin: 0 0 48px;
+    max-width: 1100px;
+    margin: 0 auto 0;
+    padding: 48px 24px 48px;
 }
 .ta-box {
     background: #fff;
@@ -1728,10 +1730,10 @@ button.ta-toggle {
     border: none;
     padding: 0;
     cursor: pointer;
-    font-family: 'Oswald', sans-serif;
-    font-size: 11px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13pt;
     font-weight: 700;
-    letter-spacing: 2.5px;
+    letter-spacing: .04em;
     text-transform: uppercase;
     color: #c9a86c;
     text-decoration: underline;
@@ -1953,8 +1955,38 @@ button.ta-toggle[aria-expanded="true"] .ta-chevron {
    TRAILER ROAD CHECK — .trc-*
    Interactive section: Έλεγχοι Ρυμουλκούμενων Ο1 & Ο2
 ═══════════════════════════════════════════════════════════════ */
-.trc-section { background: #edf0f5; padding: 72px 24px 80px; }
-.trc-outer   { max-width: 920px; margin: 0 auto; }
+.trc-section { background: #edf0f5; padding: 72px 0 80px; }
+.trc-outer   { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+.trc-widget {
+    background: #fff;
+    border: 4px solid #1f3c63;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(0,0,0,.13);
+    color: #1c1b19;
+    font-family: 'Source Sans 3', sans-serif;
+}
+.trc-widget-topbar {
+    background: #1f3c63;
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+}
+.trc-widget-topbar-badge {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.trc-widget-body {
+    padding: 18px 24px 28px;
+}
 
 /* title row */
 .trc-title-row {
@@ -1982,31 +2014,76 @@ button.ta-toggle[aria-expanded="true"] .ta-chevron {
 }
 .trc-bv { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 19pt; }
 
+/* main section toggle — styled as bold tagline CTA */
+.trc-main-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13pt;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: #1f3c63;
+    text-align: left;
+    transition: color 0.2s;
+}
+.trc-main-toggle:hover { color: #15263f; }
+.trc-main-toggle:focus-visible { outline: 2px solid #1f3c63; outline-offset: 3px; border-radius: 2px; }
+.trc-main-chevron {
+    font-size: 16px;
+    flex-shrink: 0;
+    transition: transform 0.35s var(--ease);
+    animation: ta-pulse 1.8s ease-in-out infinite;
+}
+.trc-main-toggle[aria-expanded="true"] .trc-main-chevron {
+    transform: rotate(180deg);
+    animation: none;
+}
+
+/* collapsible body */
+.trc-main-collapse {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.55s var(--ease);
+}
+.trc-main-collapse.is-open {
+    max-height: 6000px;
+}
+
 /* intro */
-.trc-intro { font-size: 10pt; line-height: 1.6; color: #4a5568; margin-bottom: 20px; max-width: 640px; }
+.trc-intro { font-size: 10pt; line-height: 1.6; color: #4a5568; margin-bottom: 10px; max-width: 640px; }
 .trc-intro strong { color: #15263f; }
 
 /* diagram */
 .trc-diagram-wrap {
-    position: relative; border: 1px solid rgba(31,60,99,.14); border-radius: 6px;
+    position: relative;
     overflow: hidden;
     background: transparent;
-    padding: 10px; margin-bottom: 24px; box-shadow: 0 4px 24px rgba(21,38,63,.1);
-    transition: box-shadow .35s, border-color .35s; cursor: zoom-in;
+    margin-bottom: 24px;
+    height: 0;
+    padding-bottom: 34.94%;
 }
-.trc-diagram-wrap:hover { box-shadow: 0 10px 48px rgba(21,38,63,.2); border-color: rgba(31,60,99,.28); }
 .trc-diagram-wrap img {
-    display: block; width: 100%; height: auto; border-radius: 3px;
-    transition: transform .5s cubic-bezier(.25,.8,.25,1);
+    position: absolute;
+    left: 0; width: 100%;
+    top: -18.67%;
+    height: 137.33%;
+    object-fit: cover;
+    object-position: center center;
 }
-.trc-diagram-wrap:hover img { transform: scale(1.025); }
 .trc-diagram-tag {
     position: absolute; top: 8px; right: 12px;
     font-family: 'Spline Sans Mono', monospace; font-size: 5.5pt;
     letter-spacing: .22em; color: #42658f; text-transform: uppercase;
-    opacity: .75; transition: opacity .2s; z-index: 1; pointer-events: none;
+    opacity: .75; z-index: 1; pointer-events: none;
 }
-.trc-diagram-wrap:hover .trc-diagram-tag { opacity: 1; }
 
 /* progress */
 .trc-progress-row { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
@@ -2117,6 +2194,12 @@ button.ta-toggle[aria-expanded="true"] .ta-chevron {
 .trc-check-card.trc-checked .trc-c-num                        { background: #1a7a4a; }
 .trc-check-card.trc-checked .trc-c-num::after                 { border-color: #1a7a4a; opacity: .3; transform: scale(1); }
 .trc-c-num.trc-popping { animation: trcNumPop .38s cubic-bezier(.25,.8,.25,1); }
+.trc-c-check-hint {
+    flex: none; width: 15px; height: 15px; border-radius: 3px;
+    border: 2px solid rgba(31,60,99,.35); margin-top: 1px; flex-shrink: 0;
+    transition: opacity .25s;
+}
+.trc-check-card.trc-checked .trc-c-check-hint { opacity: 0; }
 .trc-c-txt  { flex: 1; min-width: 0; }
 .trc-c-title { font-size: 9.5pt; font-weight: 600; color: #161b24; line-height: 1.3; transition: color .22s; }
 .trc-check-card.trc-checked .trc-c-title { color: #1a7a4a; }
