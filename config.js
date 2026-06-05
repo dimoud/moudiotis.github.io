@@ -133,9 +133,9 @@ window.SITE_CONFIG = {
         },
         {
             icon:        'fa-fire-extinguisher',
-            titleEl:     'Μελέτη Ενεργητικής Πυροπροστασίας — Μηχανολόγος Μηχανικός',
+            titleEl:     'Μελέτη Ενεργητικής Πυροπροστασίας',
             titleEn:     'Active Fire Protection Study — Mechanical Engineer',
-            textEl:      'Εκπόνηση <strong class="kw">μελέτης ενεργητικής πυροπροστασίας</strong> από <strong class="kw">μηχανολόγο μηχανικό</strong> για κτίρια &amp; εμπορικούς χώρους.',
+            textEl:      'Εκπόνηση <strong class="kw">μελέτης ενεργητικής πυροπροστασίας</strong> για κτίρια &amp; εμπορικούς χώρους.',
             textEn:      '<strong class="kw">Active fire protection study</strong> by a <strong class="kw">mechanical engineer</strong> for buildings, industrial facilities &amp; commercial premises. Design of <strong class="kw">fire suppression systems</strong> (sprinklers, foam, CO₂), flow calculations, hydraulic studies — compliant with <strong class="kw">EN 12845</strong> &amp; Greek legislation. Athens &amp; Thessaloniki.',
             seoKeywords: 'μελετη ενεργητικης πυροπροστασιας, ενεργητική πυροπροστασία, μελέτη πυροπροστασίας, συστημα πυροσβεσης, sprinkler, πυρασφάλεια κτιρίου, fire protection study Greece, μηχανολόγος μηχανικός πυροπροστασία',
         },

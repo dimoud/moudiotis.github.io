@@ -100,6 +100,7 @@
     T['ta.elig1']       = { el: 'Ρυμουλκούμενα με <strong>Ειδικό Σημείωμα Ρυμούλκησης (Ε.Σ.Ρ.)</strong> ή <strong>Υπεύθυνη Δήλωση Μηχανολόγου</strong> με αποτύπωμα πινακιδίου χαρακτηριστικών.', en: 'Trailers with a <strong>Special Towing Note (E.S.R.)</strong> or a <strong>Mechanical Engineer\'s Declaration</strong> with a characteristic plate imprint.' };
     T['ta.elig2']       = { el: 'Ρυμουλκούμενα <strong>ειδικής χρήσης και ειδικού σκοπού</strong>, μη μεταφοράς εμπορευμάτων.', en: 'Trailers of <strong>special use and special purpose</strong>, not intended for goods transport.' };
     T['ta.elig3']       = { el: 'Δεν υπάρχει <strong>ημερομηνία λήξης</strong> της διαδικασίας προς το παρόν — η διαδικασία παραμένει ανοιχτή.', en: 'There is currently <strong>no expiry date</strong> for the process — the window remains open.' };
+    T['ta.elig4']       = { el: 'Δεν μπορούν να εκδόσουν άδεια <strong>ρυμουλκούμενα χωρίς προηγούμενη άδεια κυκλοφορίας</strong> (ιδιοκατασκευές).', en: 'Trailers <strong>without a prior registration licence</strong> (home-built) are not eligible.' };
     T['ta.col2.head']   = { el: 'Κόστος & απαιτήσεις', en: 'Cost & requirements' };
     T['ta.proc1']       = { el: 'Παράβολα συνολικά <strong>230 €</strong>, εκδιδόμενα ηλεκτρονικά μέσω <strong>e-paravolo</strong>.', en: 'Total fees of <strong>€230</strong>, issued electronically via <strong>e-paravolo</strong>.' };
     T['ta.proc2']       = { el: 'Για οχήματα με ΕΣΡ πριν το <strong>1999</strong>: <strong>πρακτικό επιθεώρησης</strong> από αρμόδια Υπηρεσία Μεταφορών ή <strong>επιτυχής έλεγχος ΚΤΕΟ</strong>.', en: 'For vehicles with ESR before <strong>1999</strong>: an <strong>inspection report</strong> from the Regional Transport Authority or a <strong>successful KTEO technical check</strong>.' };
@@ -459,27 +460,27 @@
             var kwMeta = s.seoKeywords
                 ? '<meta itemprop="keywords" content="' + s.seoKeywords + '">'
                 : '';
-            var expandContent = '';
+            // Extra expand content for cards 0 and 1 (goes inside their expand panel)
+            var extraExpand = '';
             if (i === 0) {
-                expandContent =
-                    '<div class="svc-inline-expand">' +
-                    '<div class="svc-inline-expand-inner">' +
+                extraExpand =
                     '<p data-i18n-html="svc.expand.0.p1">' + T['svc.expand.0.p1'].el + '</p>' +
-                    '<p class="svc-inline-meta" data-i18n-html="svc.expand.0.meta">' + T['svc.expand.0.meta'].el + '</p>' +
-                    '</div>' +
-                    '</div>';
+                    '<p class="svc-inline-meta" data-i18n-html="svc.expand.0.meta">' + T['svc.expand.0.meta'].el + '</p>';
             } else if (i === 1) {
-                expandContent =
-                    '<div class="svc-inline-expand">' +
-                    '<div class="svc-inline-expand-inner">' +
+                extraExpand =
                     '<p data-i18n-html="svc.expand.1.p1">' + T['svc.expand.1.p1'].el + '</p>' +
-                    '<p class="svc-inline-meta" data-i18n-html="svc.expand.1.meta">' + T['svc.expand.1.meta'].el + '</p>' +
-                    '</div>' +
-                    '</div>';
+                    '<p class="svc-inline-meta" data-i18n-html="svc.expand.1.meta">' + T['svc.expand.1.meta'].el + '</p>';
             }
-            var expandableClass = (i === 0 || i === 1) ? ' service-card--expandable' : '';
+            // All cards are expandable; description moves into the expand panel
+            var expandContent =
+                '<div class="svc-inline-expand">' +
+                '<div class="svc-inline-expand-inner">' +
+                '<p itemprop="description" data-i18n-html="s' + n + '.text">' + s.textEl + '</p>' +
+                extraExpand +
+                '</div>' +
+                '</div>';
             sHtml +=
-                '<' + tag + urlAttr + ' class="service-card' + featuredClass + colClass + expandableClass + '" data-reveal' +
+                '<' + tag + urlAttr + ' class="service-card' + featuredClass + colClass + ' service-card--expandable" data-reveal' +
                 ' itemscope itemtype="https://schema.org/Service" itemprop="itemListElement">' +
                 '<meta itemprop="position" content="' + n + '">' +
                 kwMeta +
@@ -488,17 +489,17 @@
                 '<div class="service-card-body">' +
                 '<h3 itemprop="name" data-i18n-html="s' + n + '.title">' + s.titleEl + '</h3>' +
                 featuredBadge +
-                '<p itemprop="description" data-i18n-html="s' + n + '.text">'   + s.textEl  + '</p>' +
                 '</div>' +
                 expandContent +
                 '</' + tag + '>';
         });
         servicesGrid.innerHTML = sHtml;
 
-        // Wire expand panels for cards 0 and 1
+        // Wire expand panels — only active on mobile (CSS keeps panels open on desktop)
         servicesGrid.querySelectorAll('.service-card--expandable').forEach(function (card) {
             card.setAttribute('aria-expanded', 'false');
             card.addEventListener('click', function () {
+                if (window.innerWidth > 768) return;
                 var panel = card.querySelector('.svc-inline-expand');
                 if (!panel) return;
                 var open = panel.classList.toggle('is-open');

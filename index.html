@@ -69,19 +69,15 @@
 
     <style>
     /* ── Service Card Inline Expand ────────────────────────────────────── */
-    .service-card--expandable { cursor: pointer; }
+    /* Desktop: description always visible — expand panel is not collapsed */
     .svc-inline-expand {
         grid-column: 1 / -1;
         overflow: hidden;
-        max-height: 0;
+        max-height: 1000px;
         transition: max-height 0.45s var(--ease), border-top-width 0.45s;
         border-top: 0px solid rgba(29,58,92,0.1);
     }
-    .svc-inline-expand.is-open {
-        max-height: 400px;
-        border-top-width: 1px;
-    }
-    .svc-inline-expand-inner { padding: 18px 0 20px; }
+    .svc-inline-expand-inner { padding: 8px 0 0; }
     .svc-inline-expand p {
         font-family: 'Source Sans 3', sans-serif;
         font-size: 0.92rem;
@@ -98,6 +94,22 @@
         font-weight: 500;
         margin-top: 6px;
         margin-bottom: 0 !important;
+    }
+    /* Mobile: collapse by default, expand on tap */
+    @media (max-width: 768px) {
+        .service-card--expandable { cursor: pointer; }
+        .svc-inline-expand {
+            max-height: 0;
+            border-top: 0px solid rgba(29,58,92,0.1);
+            transition: max-height 0.6s var(--ease), border-top-width 0.3s;
+        }
+        .svc-inline-expand.is-open {
+            max-height: 2000px;
+            border-top-width: 1px;
+        }
+        .svc-inline-expand-inner { padding: 12px 6px 14px; }
+        .svc-inline-expand p { font-size: 0.72rem; line-height: 1.55; margin-bottom: 5px; }
+        .svc-inline-meta { font-size: 0.6rem; letter-spacing: 0.04em; }
     }
     </style>
 
@@ -181,9 +193,9 @@
                 "itemOffered": {
                   "@type": "Service",
                   "@id": "https://moudiotis.github.io/#service-fire-protection",
-                  "name": "Μελέτη Ενεργητικής Πυροπροστασίας — Μηχανολόγος Μηχανικός",
+                  "name": "Μελέτη Ενεργητικής Πυροπροστασίας",
                   "alternateName": "Active Fire Protection Study Greece",
-                  "description": "Εκπόνηση μελέτης ενεργητικής πυροπροστασίας από μηχανολόγο μηχανικό για κτίρια & εμπορικούς χώρους.",
+                  "description": "Εκπόνηση μελέτης ενεργητικής πυροπροστασίας για κτίρια & εμπορικούς χώρους.",
                   "serviceType": "Μελέτη Ενεργητικής Πυροπροστασίας",
                   "provider": { "@id": "https://moudiotis.github.io/#business" },
                   "areaServed": ["Αθήνα", "Θεσσαλονίκη", "Ελλάδα"],
@@ -567,7 +579,6 @@
         <div class="about-grid about-grid--desktop-two">
             <div class="about-content" data-reveal>
                 <h2 id="aboutHeading" class="section-heading light" data-i18n-html="about.heading"></h2>
-                <p class="about-lead" data-i18n-html="about.lead"></p>
                 <div class="dim-row" data-dim>
                     <div class="dim-tick"></div>
                     <div class="dim-bar dim-l"></div>
@@ -877,7 +888,6 @@
             <div data-reveal>
                 <div class="eyebrow"><span data-i18n="services.eyebrow"></span></div>
                 <h2 id="servicesHeading" class="section-heading" data-i18n-html="services.heading"></h2>
-                <p class="seo-desc" lang="el"><strong>Τεχνικό Γραφείο Μουδιώτης</strong> — υπηρεσίες <strong>μηχανολόγου μηχανικού</strong>: <strong>ταξινόμηση οχήματος</strong>, <strong>άδεια τρέιλερ</strong> Ο1/Ο2, <strong>οχήματα ειδικής χρήσης ειδικού σκοπού</strong>, εγκρίσεις τύπου — Αθήνα &amp; Θεσσαλονίκη.</p>
             </div>
         </div>
         <div class="sec-meas" data-sec-meas aria-hidden="true">
@@ -907,12 +917,7 @@
         </div>
         <div class="ta-body-pad">
           <h3 class="ta-title" data-i18n="ta.title"></h3>
-          <p class="ta-intro" data-i18n-html="ta.intro"></p>
-          <button class="ta-toggle" aria-expanded="false" aria-controls="taCollapse">
-            <span data-i18n="ta.expand.hint"></span><i class="fa-solid fa-chevron-down ta-chevron"></i>
-          </button>
         </div>
-        <div class="ta-collapse" id="taCollapse" hidden>
         <div class="ta-rule"></div>
         <div class="ta-cols">
           <div class="ta-col">
@@ -921,9 +926,10 @@
               <li><span class="ta-ck"></span><span data-i18n-html="ta.elig1"></span></li>
               <li><span class="ta-ck"></span><span data-i18n-html="ta.elig2"></span></li>
               <li><span class="ta-ck"></span><span data-i18n-html="ta.elig3"></span></li>
+              <li><span class="ta-ck"></span><span data-i18n-html="ta.elig4"></span></li>
             </ul>
           </div>
-          <div class="ta-col">
+          <div class="ta-col ta-col--cost">
             <div class="ta-col-label"><i class="fa-solid fa-clipboard-list"></i><span data-i18n="ta.col2.head"></span></div>
             <ul class="ta-checklist">
               <li><span class="ta-ck"></span><span data-i18n-html="ta.proc1"></span></li>
@@ -932,6 +938,20 @@
             </ul>
           </div>
         </div>
+        <div class="ta-body-pad">
+          <button class="ta-toggle" aria-expanded="false" aria-controls="taCollapse">
+            <span data-i18n="ta.expand.hint"></span><i class="fa-solid fa-chevron-down ta-chevron"></i>
+          </button>
+        </div>
+        <div class="ta-collapse" id="taCollapse" hidden>
+        <div class="ta-col ta-col--cost-mobile">
+            <div class="ta-col-label"><i class="fa-solid fa-clipboard-list"></i><span data-i18n="ta.col2.head"></span></div>
+            <ul class="ta-checklist">
+              <li><span class="ta-ck"></span><span data-i18n-html="ta.proc1"></span></li>
+              <li><span class="ta-ck"></span><span data-i18n-html="ta.proc2"></span></li>
+              <li><span class="ta-ck"></span><span data-i18n-html="ta.proc3"></span></li>
+            </ul>
+          </div>
         <div class="ta-rule"></div>
         <div class="ta-docs">
           <div class="ta-sec-head"><i class="fa-solid fa-folder-open"></i><span data-i18n="ta.docs.head"></span></div>
@@ -1100,10 +1120,6 @@
     <section class="trust-section" id="trust" aria-labelledby="trustHeading">
         <div class="trust-layout">
             <div class="trust-left">
-                <div class="trust-header" data-reveal>
-                    <div class="eyebrow"><span data-i18n="trust.eyebrow"></span></div>
-                    <h2 id="trustHeading" class="section-heading" data-i18n-html="trust.heading"></h2>
-                </div>
                 <div class="trust-stats" id="trustStats"></div>
                 <div class="trust-pillars" id="trustPillars"></div>
             </div>
@@ -1599,6 +1615,7 @@
         }
         widget.addEventListener('click', function (e) {
             if (e.target.closest('a, input, select, textarea, button:not(#trcMainToggle)')) return;
+            if (e.target.closest('#trcMainCollapse')) return;
             toggle();
         });
         widget.style.cursor = 'pointer';
