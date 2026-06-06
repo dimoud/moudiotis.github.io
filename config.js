@@ -166,8 +166,8 @@ window.SITE_CONFIG = {
         {
             icon:        'fa-cube',
             url:         'https://expertease.eu/3dprint',
-            titleEl:     'Μηχανολογικός Σχεδιασμός &amp; 3D Printing — Αθήνα',
-            titleEn:     'Mechanical Design &amp; 3D Printing — Athens',
+            titleEl:     'Μηχανολογικός Σχεδιασμός &amp; 3D Printing',
+            titleEn:     'Mechanical Design &amp; 3D Printing',
             textEl:      '<strong class="kw">Μηχανολόγος μηχανικός</strong> για CAD 3D, FEA ανάλυση αντοχών, <strong class="kw">rapid prototyping</strong>. FDM, SLA, SLS τεχνολογίες εκτύπωσης για ακριβή εξαρτήματα &amp; πρωτότυπα. Laser cut &amp; κατεργασία φύλλων μετάλλου — Αθήνα &amp; Θεσσαλονίκη.',
             textEn:      '<strong class="kw">Mechanical engineer</strong> for CAD 3D, FEA strength analysis, <strong class="kw">rapid prototyping</strong>. FDM, SLA, SLS printing for precision parts &amp; prototypes. Laser cutting &amp; sheet metal work — Athens &amp; Thessaloniki.',
             seoKeywords: 'μηχανολογικος σχεδιασμος, 3D printing Αθηνα, CAD μηχανολογος, rapid prototyping, FEA αναλυση, mechanical design Athens',
@@ -175,8 +175,8 @@ window.SITE_CONFIG = {
         {
             icon:        'fa-code',
             url:         'https://expertease.eu/webdesign',
-            titleEl:     'Web Design — Κατασκευή Ιστοσελίδων Αθήνα',
-            titleEn:     'Web Design — Website Development Athens',
+            titleEl:     'Web Design — Κατασκευή Ιστοσελίδων',
+            titleEn:     'Web Design — Website Development',
             textEl:      'Κατασκευή επαγγελματικών websites <strong class="kw">χωρίς templates</strong> — 100% custom, bilingual, mobile-first.',
             textEn:      'Professional websites <strong class="kw">without templates</strong> — 100% custom, bilingual, mobile-first.',
             seoKeywords: 'web design Αθηνα, κατασκευη ιστοσελιδας, τεχνικο γραφειο ιστοσελιδα, website development Athens, custom website Greece',

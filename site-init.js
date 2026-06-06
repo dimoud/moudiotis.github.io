@@ -495,11 +495,10 @@
         });
         servicesGrid.innerHTML = sHtml;
 
-        // Wire expand panels — only active on mobile (CSS keeps panels open on desktop)
+        // Wire expand panels — collapsed by default on all screen sizes
         servicesGrid.querySelectorAll('.service-card--expandable').forEach(function (card) {
             card.setAttribute('aria-expanded', 'false');
             card.addEventListener('click', function () {
-                if (window.innerWidth > 768) return;
                 var panel = card.querySelector('.svc-inline-expand');
                 if (!panel) return;
                 var open = panel.classList.toggle('is-open');
