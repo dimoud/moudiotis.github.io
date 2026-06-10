@@ -299,7 +299,7 @@
 
     var personPhoto = document.getElementById('personPhoto');
     if (personPhoto) {
-        personPhoto.src = C.assets.photo;
+        personPhoto.src = C.assets.contactPhoto || C.assets.photo;
         personPhoto.alt = P.displayNameEl;
         personPhoto.onerror = function () {
             this.src = 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png';

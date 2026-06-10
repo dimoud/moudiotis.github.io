@@ -453,7 +453,84 @@
         <div class="hero-spotlight" aria-hidden="true"></div>
 
         <div class="hero-photo-col">
-            <img id="heroPhoto" src="" alt="Δημήτριος Μουδιώτης — Μηχανολόγος Μηχανικός, ταξινόμηση οχήματος, άδεια τρέιλερ Αθήνα" class="hero-photo">
+            <div class="hero-photo-wrap" aria-hidden="true">
+                <!-- Orbiting ring SVG -->
+                <svg class="hero-orbit-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <path id="orbitTopArc"    d="M 50,250 A 200,200 0 0,1 450,250"/>
+                        <path id="orbitBottomArc" d="M 450,250 A 200,200 0 0,1 50,250"/>
+                        <!-- Comet trail gradient -->
+                        <radialGradient id="cometGlow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%"   stop-color="#c9a86c" stop-opacity="1"/>
+                            <stop offset="40%"  stop-color="#c9a86c" stop-opacity="0.4"/>
+                            <stop offset="100%" stop-color="#c9a86c" stop-opacity="0"/>
+                        </radialGradient>
+                        <!-- Halo behind photo -->
+                        <radialGradient id="haloGrad" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%"   stop-color="#2e5f8a" stop-opacity="0.55"/>
+                            <stop offset="60%"  stop-color="#1d3a5c" stop-opacity="0.18"/>
+                            <stop offset="100%" stop-color="#1d3a5c" stop-opacity="0"/>
+                        </radialGradient>
+                        <!-- Text glow filter -->
+                        <filter id="textGlow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+                            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                        <!-- Dot pulse filter -->
+                        <filter id="dotGlow" x="-100%" y="-100%" width="300%" height="300%">
+                            <feGaussianBlur stdDeviation="3" result="blur"/>
+                            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- Radial halo bloom behind photo -->
+                    <circle class="orbit-halo" cx="250" cy="250" r="175" fill="url(#haloGrad)"/>
+
+                    <!-- Outer blueprint ring — slow counter-clockwise -->
+                    <circle class="orbit-ring-outer" cx="250" cy="250" r="230" fill="none"/>
+                    <!-- Main orbit ring -->
+                    <circle class="orbit-ring-main"  cx="250" cy="250" r="200" fill="none"/>
+
+                    <!-- Compass ticks -->
+                    <g class="orbit-ticks">
+                        <line x1="250" y1="42"  x2="250" y2="62"/>
+                        <line x1="458" y1="250" x2="438" y2="250"/>
+                        <line x1="250" y1="458" x2="250" y2="438"/>
+                        <line x1="42"  y1="250" x2="62"  y2="250"/>
+                    </g>
+
+                    <!-- Pulsing gold dots at compass points -->
+                    <g class="orbit-dots" filter="url(#dotGlow)">
+                        <circle class="orbit-dot" cx="250" cy="50"  r="4" style="animation-delay:0s"/>
+                        <circle class="orbit-dot" cx="450" cy="250" r="4" style="animation-delay:0.75s"/>
+                        <circle class="orbit-dot" cx="250" cy="450" r="4" style="animation-delay:1.5s"/>
+                        <circle class="orbit-dot" cx="50"  cy="250" r="4" style="animation-delay:2.25s"/>
+                    </g>
+
+                    <!-- Comet group — orbits the ring -->
+                    <g class="orbit-comet-group">
+                        <!-- Comet tail arc (stroke trick: large dasharray offset) -->
+                        <circle class="orbit-comet-tail" cx="250" cy="250" r="200" fill="none"/>
+                        <!-- Comet head -->
+                        <circle class="orbit-comet-head" cx="250" cy="50" r="5" fill="url(#cometGlow)" filter="url(#dotGlow)"/>
+                    </g>
+
+                    <!-- Rotating text ring -->
+                    <g class="orbit-text-group">
+                        <text class="orbit-text" filter="url(#textGlow)">
+                            <textPath href="#orbitTopArc" startOffset="0%">
+                                ENGINEERING CONSULTING · VEHICLE LICENSING · TECHNICAL STUDIES ·
+                            </textPath>
+                        </text>
+                        <text class="orbit-text" filter="url(#textGlow)">
+                            <textPath href="#orbitBottomArc" startOffset="0%">
+                                TYPE APPROVALS · TRAILER PERMITS · SPECIAL PURPOSE VEHICLES ·
+                            </textPath>
+                        </text>
+                    </g>
+                </svg>
+                <img id="heroPhoto" src="" alt="Δημήτριος Μουδιώτης — Μηχανολόγος Μηχανικός, ταξινόμηση οχήματος, άδεια τρέιλερ Αθήνα" class="hero-photo">
+            </div>
         </div>
 
         <div class="hero-inner">
