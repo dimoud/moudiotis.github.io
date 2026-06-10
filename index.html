@@ -1677,6 +1677,25 @@
     </script>
 
     <script>
+    /* ── MOBILE: close both panels by default ── */
+    (function () {
+        if (window.innerWidth > 768) return;
+        var taBtn   = document.querySelector('.ta-toggle');
+        var taPanel = document.getElementById('taCollapse');
+        if (taBtn && taPanel) {
+            taBtn.setAttribute('aria-expanded', 'false');
+            taPanel.classList.remove('is-open');
+        }
+        var trcBtn   = document.getElementById('trcMainToggle');
+        var trcPanel = document.getElementById('trcMainCollapse');
+        if (trcBtn && trcPanel) {
+            trcBtn.setAttribute('aria-expanded', 'false');
+            trcPanel.classList.remove('is-open');
+        }
+    })();
+    </script>
+
+    <script>
     /* ── TRAILER ANNOUNCEMENT COLLAPSE ── */
     (function () {
         var btn   = document.querySelector('.ta-toggle');

@@ -2232,8 +2232,7 @@ button.ta-toggle--bar[aria-expanded="true"] .ta-chevron { transform: rotate(180d
 
 @media (max-width: 900px) {
     .ta-dual-row { padding: 24px 16px 0; }
-    button.ta-toggle--bar,
-    .trc-main-toggle--bar { width: calc(100% - 32px); margin-left: 16px; margin-right: 16px; }
+    button.ta-toggle--bar { width: calc(100% - 32px); margin-left: 16px; margin-right: 16px; }
 }
 
 @media (max-width: 768px) {
@@ -2406,12 +2405,12 @@ button.ta-toggle--bar[aria-expanded="true"] .ta-chevron { transform: rotate(180d
 /* bar-style toggle button */
 .trc-main-toggle--bar {
     display: flex;
-    width: calc(100% - 48px);
+    width: 100%;
     background: #1f3c63;
     color: #fff;
     border-radius: 4px;
     padding: 13px 20px;
-    margin: 14px 24px 20px;
+    margin: 14px 0 0;
     font-size: 10pt;
     justify-content: space-between;
     animation: trcBarBg 3s ease-in-out infinite;
