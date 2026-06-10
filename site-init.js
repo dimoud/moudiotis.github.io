@@ -105,7 +105,15 @@
     T['ta.proc1']       = { el: 'Παράβολα συνολικά <strong>230 €</strong>, εκδιδόμενα ηλεκτρονικά μέσω <strong>e-paravolo</strong>.', en: 'Total fees of <strong>€230</strong>, issued electronically via <strong>e-paravolo</strong>.' };
     T['ta.proc2']       = { el: 'Για οχήματα με ΕΣΡ πριν το <strong>1999</strong>: <strong>πρακτικό επιθεώρησης</strong> από αρμόδια Υπηρεσία Μεταφορών ή <strong>επιτυχής έλεγχος ΚΤΕΟ</strong>.', en: 'For vehicles with ESR before <strong>1999</strong>: an <strong>inspection report</strong> from the Regional Transport Authority or a <strong>successful KTEO technical check</strong>.' };
     T['ta.proc3']       = { el: 'Υποβολή πλήρους φακέλου <strong>δικαιολογητικών</strong> στην αρμόδια υπηρεσία, με σωστή καταγραφή χαρακτηριστικών οχήματος.', en: 'Submission of a complete <strong>documentation file</strong> to the competent authority, with accurate recording of vehicle characteristics.' };
-    T['ta.expand.hint'] = { el: 'Δείτε τα δικαιολογητικά', en: 'View required documents' };
+    T['ta.expand.hint']      = { el: 'ΔΕΣ ΑΝΑΛΥΤΙΚΑ ΤΑ 5 ΣΤΑΔΙΑ ΤΗΣ ΔΙΑΔΙΚΑΣΙΑΣ', en: 'SEE ALL 5 STEPS OF THE PROCESS' };
+    T['ta.stat.docs']        = { el: '10–15', en: '10–15' };
+    T['ta.stat.docs.lbl']    = { el: 'Δικαιολογητικά', en: 'Documents' };
+    T['ta.stat.fee.lbl']     = { el: 'Παράβολα', en: 'Fees' };
+    T['ta.stat.days']        = { el: '3–10', en: '3–10' };
+    T['ta.stat.days.lbl']    = { el: 'Ημέρες', en: 'Days' };
+    T['ta.stat.process']     = { el: 'Βήμα-βήμα', en: 'Step-by-step' };
+    T['ta.stat.process.lbl'] = { el: 'Διαδικασία', en: 'Process' };
+    T['trc.badge.cat']       = { el: 'ΚΑΤΗΓΟΡΙΑ', en: 'CATEGORY' };
     T['ta.docs.head']   = { el: 'Απαιτούμενα δικαιολογητικά', en: 'Required documents' };
     T['ta.docs.a.head'] = { el: 'Α. Στοιχεία Ιδιοκτήτη', en: 'A. Owner details' };
     T['ta.docs.a1']     = { el: 'Φωτοαντίγραφο Αστυνομικής Ταυτότητας ή Διαβατηρίου', en: 'Copy of National ID or Passport' };

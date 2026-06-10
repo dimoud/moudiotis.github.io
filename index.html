@@ -980,41 +980,60 @@
         "></div>
     </section>
 
+    <!-- Trailer dual-panel row -->
+    <div class="ta-dual-row">
+
     <!-- Trailer Announcement Guide -->
     <div class="ta-wrap" id="adeia-treyler-o1-o2" data-reveal>
       <div class="ta-box">
         <div class="ta-topbar">
           <span class="ta-badge"><i class="fa-solid fa-file-circle-check"></i>&nbsp;<span data-i18n="ta.badge"></span></span>
         </div>
-        <div class="ta-body-pad">
+        <div class="ta-title-row">
           <h3 class="ta-title" data-i18n="ta.title"></h3>
+          <div class="ta-cat-badge">
+            <span class="ta-cat-bv">Ο1 &amp; Ο2</span>
+            <span class="ta-cat-bk" data-i18n="trc.badge.cat">ΚΑΤΗΓΟΡΙΑ</span>
+          </div>
         </div>
         <div class="ta-rule"></div>
-        <div class="ta-cols">
-          <div class="ta-col">
-            <div class="ta-col-label"><i class="fa-solid fa-circle-check"></i><span data-i18n="ta.col1.head"></span></div>
-            <ul class="ta-checklist">
-              <li><span class="ta-ck"></span><span data-i18n-html="ta.elig1"></span></li>
-              <li><span class="ta-ck"></span><span data-i18n-html="ta.elig2"></span></li>
-              <li><span class="ta-ck"></span><span data-i18n-html="ta.elig3"></span></li>
-              <li><span class="ta-ck"></span><span data-i18n-html="ta.elig4"></span></li>
-            </ul>
+        <div class="ta-stat-strip">
+          <div class="ta-stat">
+            <div class="ta-stat-icon"><i class="fa-solid fa-folder-open"></i></div>
+            <div class="ta-stat-body">
+              <div class="ta-stat-val" data-i18n="ta.stat.docs">10–15</div>
+              <div class="ta-stat-lbl" data-i18n="ta.stat.docs.lbl">Δικαιολογητικά</div>
+            </div>
           </div>
-          <div class="ta-col ta-col--cost">
-            <div class="ta-col-label"><i class="fa-solid fa-clipboard-list"></i><span data-i18n="ta.col2.head"></span></div>
-            <ul class="ta-checklist">
-              <li><span class="ta-ck"></span><span data-i18n-html="ta.proc1"></span></li>
-              <li><span class="ta-ck"></span><span data-i18n-html="ta.proc2"></span></li>
-              <li><span class="ta-ck"></span><span data-i18n-html="ta.proc3"></span></li>
-            </ul>
+          <div class="ta-stat-sep"></div>
+          <div class="ta-stat">
+            <div class="ta-stat-icon"><i class="fa-solid fa-euro-sign"></i></div>
+            <div class="ta-stat-body">
+              <div class="ta-stat-val">230€</div>
+              <div class="ta-stat-lbl" data-i18n="ta.stat.fee.lbl">Παράβολα</div>
+            </div>
+          </div>
+          <div class="ta-stat-sep"></div>
+          <div class="ta-stat">
+            <div class="ta-stat-icon"><i class="fa-regular fa-clock"></i></div>
+            <div class="ta-stat-body">
+              <div class="ta-stat-val" data-i18n="ta.stat.days">3–10</div>
+              <div class="ta-stat-lbl" data-i18n="ta.stat.days.lbl">Ημέρες</div>
+            </div>
+          </div>
+          <div class="ta-stat-sep"></div>
+          <div class="ta-stat">
+            <div class="ta-stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="ta-stat-body">
+              <div class="ta-stat-val" data-i18n="ta.stat.process">Βήμα-βήμα</div>
+              <div class="ta-stat-lbl" data-i18n="ta.stat.process.lbl">Διαδικασία</div>
+            </div>
           </div>
         </div>
-        <div class="ta-body-pad">
-          <button class="ta-toggle" aria-expanded="false" aria-controls="taCollapse">
-            <span data-i18n="ta.expand.hint"></span><i class="fa-solid fa-chevron-down ta-chevron"></i>
-          </button>
-        </div>
-        <div class="ta-collapse" id="taCollapse" hidden>
+        <button class="ta-toggle ta-toggle--bar" aria-expanded="true" aria-controls="taCollapse">
+          <span data-i18n="ta.expand.hint"></span><i class="fa-solid fa-chevron-down ta-chevron"></i>
+        </button>
+        <div class="ta-collapse is-open" id="taCollapse">
         <div class="ta-col ta-col--cost-mobile">
             <div class="ta-col-label"><i class="fa-solid fa-clipboard-list"></i><span data-i18n="ta.col2.head"></span></div>
             <ul class="ta-checklist">
@@ -1084,7 +1103,7 @@
 
     <!-- ===== TRAILER ROAD CHECK ===== -->
     <section class="trc-section" id="trailer-road-check" aria-labelledby="trcHeading">
-        <div class="trc-outer">
+        <div class="trc-outer trc-outer--dual">
             <div class="trc-widget" data-reveal>
 
                 <!-- TOPBAR -->
@@ -1103,15 +1122,19 @@
                     </div>
                 </div>
 
-                <!-- ALWAYS VISIBLE: intro + tagline + toggle -->
+                <!-- ALWAYS VISIBLE: intro + preview + toggle -->
                 <p class="trc-intro" id="trcIntro">Τα σημεία που ελέγχονται ώστε το ρυμουλκούμενο να είναι <strong>σύμφωνο με τον Κ.Ο.Κ.</strong> και ασφαλές στον δρόμο — ανακλαστήρες, πίσω τρίγωνα, φωτισμός, πινακίδα και σύστημα ζεύξης. Κατηγορία Ο1 &amp; Ο2.</p>
-                <button class="trc-main-toggle" id="trcMainToggle" aria-expanded="false" aria-controls="trcMainCollapse">
-                    <span id="trcTagline">Δες αν το ρυμουλκούμενο σου πληροί τις απαιτήσεις του Κ.Ο.Κ.!</span>
+
+                <!-- CHECKLIST PREVIEW STRIP — always visible -->
+                <div class="trc-preview-strip" id="trcPreviewStrip"></div>
+
+                <button class="trc-main-toggle trc-main-toggle--bar" id="trcMainToggle" aria-expanded="true" aria-controls="trcMainCollapse">
+                    <span id="trcTagline">ΚΑΝΕ ΤΟΝ ΠΛΗΡΗ ΕΛΕΓΧΟ ΚΑΙ ΔΕΣ ΑΝΑΛΥΤΙΚΑ</span>
                     <i class="fa-solid fa-chevron-down trc-main-chevron"></i>
                 </button>
 
                 <!-- COLLAPSIBLE BODY -->
-                <div class="trc-main-collapse" id="trcMainCollapse">
+                <div class="trc-main-collapse is-open" id="trcMainCollapse">
 
                     <!-- DIAGRAM -->
                     <div class="trc-diagram-wrap">
@@ -1186,6 +1209,8 @@
             </div><!-- /trc-widget -->
         </div><!-- /trc-outer -->
     </section>
+
+    </div><!-- /ta-dual-row -->
 
     <!-- ===== TRUST ===== -->
     <section class="trust-section" id="trust" aria-labelledby="trustHeading">

@@ -5,6 +5,23 @@
 (function () {
   'use strict';
 
+  var PREVIEW_ITEMS = {
+    el: [
+      { icon: 'fa-solid fa-circle-dot',         label: 'Πίσω φώτα\nλειτουργικά' },
+      { icon: 'fa-solid fa-triangle-exclamation',label: 'Τρίγωνα\nασφαλείας' },
+      { icon: 'fa-solid fa-square-check',        label: 'Πινακίδα\nκυκλοφορίας' },
+      { icon: 'fa-solid fa-link',                label: 'Σύστημα\nζεύξης' },
+      { icon: 'fa-solid fa-shield-halved',       label: 'Ανακλαστικά\nσήματα' }
+    ],
+    en: [
+      { icon: 'fa-solid fa-circle-dot',         label: 'Rear lights\nworking' },
+      { icon: 'fa-solid fa-triangle-exclamation',label: 'Safety\ntriangles' },
+      { icon: 'fa-solid fa-square-check',        label: 'Number\nplate' },
+      { icon: 'fa-solid fa-link',                label: 'Coupling\nsystem' },
+      { icon: 'fa-solid fa-shield-halved',       label: 'Reflective\nmarkers' }
+    ]
+  };
+
   var I18N = {
     el: {
       title1:      'Έλεγχοι ',
@@ -13,7 +30,7 @@
       diagramTag:  'ΠΛΑΓΙΑ & ΠΙΣΩ ΟΨΗ',
       diagramAlt:  'Πλάγια και Πίσω Όψη Ρυμουλκούμενου Κατ. Ο1 & Ο2',
       intro:       'Τα σημεία που ελέγχονται ώστε το ρυμουλκούμενο να είναι <strong>σύμφωνο με τον Κ.Ο.Κ.</strong> και ασφαλές στον δρόμο — ανακλαστήρες, πίσω τρίγωνα, φωτισμός, πινακίδα και σύστημα ζεύξης. Κατηγορία Ο1 &amp; Ο2.',
-      tagline:     'Δες αν το ρυμουλκούμενο σου πληροί τις απαιτήσεις του Κ.Ο.Κ.!',
+      tagline:     'ΚΑΝΕ ΤΟΝ ΠΛΗΡΗ ΕΛΕΓΧΟ ΚΑΙ ΔΕΣ ΑΝΑΛΥΤΙΚΑ',
       toggleHint:  'Δείτε τους ελέγχους',
       progressLbl: 'Πρόοδος Ελέγχου',
       resetBtn:    'ΕΠΑΝΑΦΟΡΑ',
@@ -46,7 +63,7 @@
       diagramTag:  'SIDE & REAR VIEW',
       diagramAlt:  'Side and Rear View of Trailer Cat. O1 & O2',
       intro:       'The checkpoints verified to ensure the trailer is <strong>compliant with Road Code</strong> and road-safe — reflectors, rear triangles, lights, number plate, and coupling system. Category O1 &amp; O2.',
-      tagline:     'Check if your trailer meets Road Code requirements!',
+      tagline:     'RUN THE FULL CHECKLIST & SEE DETAILS',
       toggleHint:  'View checks',
       progressLbl: 'Inspection Progress',
       resetBtn:    'RESET',
@@ -107,9 +124,23 @@
     setText('trcBc1InnerLbl',     t.bc1Lbl);
     setHTML('trcNoteBox',         t.noteBox);
     buildBc0List(t.bc0List);
+    buildPreview(lang);
     currentItems = t.items;
     buildCards(t.items);
     updateProgress();
+  }
+
+  function buildPreview(lang) {
+    var strip = document.getElementById('trcPreviewStrip');
+    if (!strip) return;
+    var items = PREVIEW_ITEMS[lang] || PREVIEW_ITEMS.el;
+    strip.innerHTML = items.map(function (item) {
+      var lines = item.label.split('\n');
+      return '<div class="trc-preview-item">' +
+        '<div class="trc-preview-icon"><i class="' + item.icon + '"></i></div>' +
+        '<div class="trc-preview-lbl">' + lines.join('<br>') + '</div>' +
+      '</div>';
+    }).join('');
   }
 
   function buildBc0List(list) {
