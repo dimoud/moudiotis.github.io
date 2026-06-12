@@ -221,9 +221,11 @@
     T['trc.badge'] = { el: 'Έλεγχος Κ.Ο.Κ.', en: 'Road Code Check' };
 
     // HERO BOTTOM CONTACT STRIP
-    T['hbc.phone']   = { el: 'Σταθερό',      en: 'Landline' };
-    T['hbc.mobile']  = { el: 'Κινητό',       en: 'Mobile' };
-    T['hbc.service'] = { el: 'Εξυπηρέτηση', en: 'Service area' };
+    T['hbc.phone']        = { el: 'Σταθερό',      en: 'Landline' };
+    T['hbc.mobile']       = { el: 'Κινητό',       en: 'Mobile' };
+    T['hbc.service']      = { el: 'Εξυπηρέτηση', en: 'Service area' };
+    T['contact.phone.val']  = { el: C.contact.phone,   en: C.contact.phoneEn  || C.contact.phone };
+    T['contact.mobile.val'] = { el: C.contact.mobile,  en: C.contact.mobileEn || C.contact.mobile };
 
     // MEASURE LABELS
     T['services.meas'] = { el: 'ΥΠΗΡΕΣΙΕΣ', en: 'SERVICES' };
@@ -324,11 +326,11 @@
         heroBottomContact.innerHTML =
             '<a href="' + C.contact.phoneTel + '" class="hbc-item">' +
                 '<span class="hbc-icon"><i class="fa-solid fa-phone"></i></span>' +
-                '<span class="hbc-text"><span class="hbc-label" data-i18n="hbc.phone">' + T['hbc.phone'].el + '</span><span class="hbc-val">' + C.contact.phone + '</span></span>' +
+                '<span class="hbc-text"><span class="hbc-label" data-i18n="hbc.phone">' + T['hbc.phone'].el + '</span><span class="hbc-val" data-i18n="contact.phone.val">' + C.contact.phone + '</span></span>' +
             '</a>' +
             '<a href="' + C.contact.mobileTel + '" class="hbc-item">' +
                 '<span class="hbc-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>' +
-                '<span class="hbc-text"><span class="hbc-label" data-i18n="hbc.mobile">' + T['hbc.mobile'].el + '</span><span class="hbc-val">' + C.contact.mobile + '</span></span>' +
+                '<span class="hbc-text"><span class="hbc-label" data-i18n="hbc.mobile">' + T['hbc.mobile'].el + '</span><span class="hbc-val" data-i18n="contact.mobile.val">' + C.contact.mobile + '</span></span>' +
             '</a>' +
             '<span class="hbc-item hbc-address">' +
                 '<span class="hbc-icon"><i class="fa-solid fa-location-dot"></i></span>' +
