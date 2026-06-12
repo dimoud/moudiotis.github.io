@@ -51,8 +51,10 @@ window.SITE_CONFIG = {
     // ── CONTACT ───────────────────────────────────────────────────────────
     contact: {
         phone:     '210 756 1836',
+        phoneEn:   '0030 210 756 1836',
         phoneTel:  'tel:+302107561836',
         mobile:    '699 849 0768',
+        mobileEn:  '0030 699 849 0768',
         mobileTel: 'tel:+306998490768',
         fax:       '',
         email:     'moudiotis.meng@gmail.com',

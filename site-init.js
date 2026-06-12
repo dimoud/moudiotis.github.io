@@ -255,6 +255,9 @@
         T['nav.brand'] = { el: P.navBrandEl, en: P.navBrandEn || P.navBrandEl };
     }
 
+    // FOOTER BRAND (for language switch)
+    T['footer.brand'] = { el: P.displayNameEl, en: P.displayNameEn || P.displayNameEl };
+
     C.translations = T;
 
 
