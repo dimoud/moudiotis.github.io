@@ -258,7 +258,8 @@
     }
 
     // FOOTER BRAND (for language switch)
-    T['footer.brand'] = { el: P.displayNameEl, en: P.displayNameEn || P.displayNameEl };
+    T['footer.brand']   = { el: P.displayNameEl, en: P.displayNameEn || P.displayNameEl };
+    T['contact.person'] = { el: P.displayNameEl, en: P.displayNameEn || P.displayNameEl };
 
     C.translations = T;
 
@@ -343,18 +344,11 @@
     }
 
     // ── 5. NAMES ──────────────────────────────────────────────────────────────
-    // Nav brand: use navBrandEl if set, otherwise derive "Β. LASTNAME"
-    var navBrandName = document.getElementById('navBrandName');
-    if (navBrandName) {
-        navBrandName.textContent = P.navBrandEl || (P.firstNameEl.charAt(0) + '. ' + P.lastNameEl);
-    }
+    // navBrandName and footerBrandName are handled by data-i18n via applyLang
 
-    // Contact + footer: natural case from config (e.g. "Βάϊος Λιάπης")
-    var personName = document.getElementById('personName');
-    if (personName) personName.textContent = P.displayNameEl;
+    // personName is handled by data-i18n="contact.person" via applyLang
 
-    var footerBrandName = document.getElementById('footerBrandName');
-    if (footerBrandName) footerBrandName.textContent = P.displayNameEl;
+    // footerBrandName is handled by data-i18n="footer.brand" via applyLang
 
     // Hero crosshair university label — hide if not set
     var chLabel = document.querySelector('.ch-label');
