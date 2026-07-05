@@ -1030,10 +1030,10 @@
             </div>
           </div>
         </div>
-        <button class="ta-toggle ta-toggle--bar" aria-expanded="true" aria-controls="taCollapse">
+        <button class="ta-toggle ta-toggle--bar" aria-expanded="false" aria-controls="taCollapse">
           <span data-i18n="ta.expand.hint"></span><i class="fa-solid fa-chevron-down ta-chevron"></i>
         </button>
-        <div class="ta-collapse is-open" id="taCollapse">
+        <div class="ta-collapse" id="taCollapse">
         <div class="ta-col ta-col--cost-mobile">
             <div class="ta-col-label"><i class="fa-solid fa-clipboard-list"></i><span data-i18n="ta.col2.head"></span></div>
             <ul class="ta-checklist">
@@ -1128,13 +1128,13 @@
                 <!-- CHECKLIST PREVIEW STRIP — always visible -->
                 <div class="trc-preview-strip" id="trcPreviewStrip"></div>
 
-                <button class="trc-main-toggle trc-main-toggle--bar" id="trcMainToggle" aria-expanded="true" aria-controls="trcMainCollapse">
+                <button class="trc-main-toggle trc-main-toggle--bar" id="trcMainToggle" aria-expanded="false" aria-controls="trcMainCollapse">
                     <span id="trcTagline">ΚΑΝΕ ΤΟΝ ΠΛΗΡΗ ΕΛΕΓΧΟ ΚΑΙ ΔΕΣ ΑΝΑΛΥΤΙΚΑ</span>
                     <i class="fa-solid fa-chevron-down trc-main-chevron"></i>
                 </button>
 
                 <!-- COLLAPSIBLE BODY -->
-                <div class="trc-main-collapse is-open" id="trcMainCollapse">
+                <div class="trc-main-collapse" id="trcMainCollapse">
 
                     <!-- DIAGRAM -->
                     <div class="trc-diagram-wrap">
@@ -1438,6 +1438,17 @@
         <div class="articles-track" id="articlesTrack"></div>
     </div>
 
+    <!-- ===== GOOGLE REVIEWS ===== -->
+    <section class="reviews-section" id="reviews" aria-labelledby="reviewsHeading">
+        <div class="reviews-heading-wrap">
+            <div class="eyebrow"><span data-i18n="reviews.eyebrow"></span></div>
+            <h2 id="reviewsHeading" class="section-heading" data-i18n-html="reviews.heading"></h2>
+        </div>
+        <div class="reviews-band" id="reviewsBand">
+            <div class="reviews-track" id="reviewsTrack"></div>
+        </div>
+    </section>
+
     <!-- ===== CONTACT ===== -->
     <section class="contact-section" id="contact" aria-labelledby="contactHeading">
         <div class="contact-grid">
@@ -1674,25 +1685,6 @@
             type();
         }, delay);
     });
-    </script>
-
-    <script>
-    /* ── MOBILE: close both panels by default ── */
-    (function () {
-        if (window.innerWidth > 768) return;
-        var taBtn   = document.querySelector('.ta-toggle');
-        var taPanel = document.getElementById('taCollapse');
-        if (taBtn && taPanel) {
-            taBtn.setAttribute('aria-expanded', 'false');
-            taPanel.classList.remove('is-open');
-        }
-        var trcBtn   = document.getElementById('trcMainToggle');
-        var trcPanel = document.getElementById('trcMainCollapse');
-        if (trcBtn && trcPanel) {
-            trcBtn.setAttribute('aria-expanded', 'false');
-            trcPanel.classList.remove('is-open');
-        }
-    })();
     </script>
 
     <script>

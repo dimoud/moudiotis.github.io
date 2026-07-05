@@ -334,6 +334,55 @@ window.SITE_CONFIG = {
         },
     ],
 
+    // ── GOOGLE REVIEWS ────────────────────────────────────────────────────
+    reviews: [
+        {
+            name: 'Christos Karopoulos',
+            textEl: 'Εξαιρετικές υπηρεσίες του μηχανολόγου μηχανικού Μουδιώτη σε πληρότητα και ποιότητα, άμεσος προγραμματισμός εργασιών, συνεχής διαθεσιμότητα για την επίλυση τυχόν προβλημάτων και όλα αυτά με απολύτως λογική αμοιβή. Συστήνεται ανεπιφύλακτα.',
+            textEn: 'Excellent services from mechanical engineer Moudiotis, thorough and high quality, immediate scheduling of work, constant availability to resolve any issues, all at a perfectly reasonable fee. Highly recommended.',
+        },
+        {
+            name: 'Στέλλα Τσέλιου',
+            textEl: 'Πολύ καλός επαγγελματίας! Βοήθησε στην άμεση έκδοση άδειας του τρέιλερ του πατέρα μου.',
+            textEn: 'Very good professional! He helped with the immediate issuance of my father’s trailer licence.',
+        },
+        {
+            name: 'Vassilios Mazis',
+            textEl: 'Το είπε και το έκανε.',
+            textEn: 'He said it and he did it.',
+        },
+        {
+            name: 'Ελένη Σταματοπούλου',
+            textEl: 'Εξαιρετικό τεχνικό γραφείο! Η κατάρτιση, η υπευθυνότητα και η συνέπεια του μηχανικού κου Μουδιώτη Δημήτρη μας εντυπωσίασε και μας συγκίνησε. Διεκπεραίωσε την υπόθεσή μας άμεσα και με απόλυτη επαγγελματική συνέπεια.',
+            textEn: 'Excellent technical office! The expertise, responsibility and consistency of engineer Mr. Dimitrios Moudiotis impressed and moved us. He handled our case immediately and with absolute professional consistency.',
+        },
+        {
+            name: 'Vaios K',
+            textEl: 'Άριστη εμπειρία με το τεχνικό γραφείο! Επαγγελματισμός υψηλού επιπέδου, άριστη τεχνική κατάρτιση και άμεση ανταπόκριση σε κάθε ερώτημα. Η συνολική συνεργασία ήταν πολύ ικανοποιητική και τους συστήνω ανεπιφύλακτα.',
+            textEn: 'Excellent experience with the technical office! High-level professionalism, excellent technical expertise and immediate response to every question. The overall collaboration was very satisfying and I recommend them without reservation.',
+        },
+        {
+            name: 'Nikolaos Papadopoulos',
+            textEl: 'Συνεργάστηκα άψογα με τον Κ. Μουδιώτη, αν θέλετε να γίνει γρήγορα και σωστά η δουλειά σας, σας τον προτείνω ανεπιφύλακτα.',
+            textEn: 'I worked flawlessly with Mr. Moudiotis. If you want your work done quickly and correctly, I recommend him without reservation.',
+        },
+        {
+            name: 'Konstantinos Panagiotatos',
+            textEl: 'Άψογη εξυπηρέτηση από την αρχή μέχρι το τέλος! Η διαδικασία για την μελέτη και την άδεια του οχήματος ολοκληρώθηκε χωρίς καμία ταλαιπωρία.',
+            textEn: 'Impeccable service from start to finish! The process for the vehicle study and licence was completed without any hassle.',
+        },
+        {
+            name: 'Αλέξανδρος Μυλωνάς',
+            textEl: 'Εξαιρετική εξυπηρέτηση και απόλυτος επαγγελματισμός! Ο κ. Μουδιώτης ανέλαβε όλη τη διαδικασία για την άδεια του τρέιλερ μου γρήγορα, σωστά και χωρίς καμία ταλαιπωρία.',
+            textEn: 'Excellent service and absolute professionalism! Mr. Moudiotis handled the entire process for my trailer licence quickly, correctly and without any hassle.',
+        },
+        {
+            name: 'Stavros Malliaris',
+            textEl: 'Χρειαστήκα τον Δημήτρη για μια μελέτη μηχανικού. Μιλήσαμε στο τηλέφωνο, δώσαμε ραντεβού και όλα κύλησαν πολύ εύκολα, χωρίς εκπλήξεις στην τιμή και στην ώρα τους. Είναι ενημερωμένος και ξέρει για τι μιλάει. Συστήνω 👌',
+            textEn: 'I needed Dimitris for an engineering study. We spoke on the phone, arranged an appointment and everything went very smoothly, no surprises on price or timing. He’s well informed and knows what he’s talking about. Recommended 👌',
+        },
+    ],
+
     // ── FORM OPTIONS ──────────────────────────────────────────────────────
     formOptions: [
         { el: 'Άδεια Τρέιλερ Ο1 — Ταξινόμηση (έως 750 kg)',     en: 'O1 Trailer Licence — Registration (up to 750 kg)' },

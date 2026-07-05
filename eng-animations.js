@@ -503,6 +503,77 @@
         }, { passive: true });
     })();
 
+    /* ─── REVIEWS CAROUSEL — AUTO-SCROLL + DRAG ─────────────────────── */
+    (function () {
+        var band  = document.getElementById('reviewsBand');
+        var track = document.getElementById('reviewsTrack');
+        if (!band || !track) return;
+
+        band.style.overflowX = 'scroll';
+        band.style.cursor    = 'grab';
+
+        /* ~0.5px/frame ≈ 30px/s — same slow pace as the articles ticker */
+        var SPEED      = 0.5;
+        var isDown     = false;
+        var paused     = false;
+        var startX     = 0;
+        var scrollLeft = 0;
+
+        setTimeout(function () {
+            band.scrollLeft = 0;
+            startAutoScroll();
+        }, 80);
+
+        function startAutoScroll() {
+            function tick() {
+                if (!paused && !isDown) {
+                    band.scrollLeft += SPEED;
+                    if (band.scrollLeft >= track.scrollWidth / 2) {
+                        band.scrollLeft -= track.scrollWidth / 2;
+                    }
+                }
+                requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+
+        band.addEventListener('mousedown', function (e) {
+            isDown = true;
+            band.style.cursor = 'grabbing';
+            startX     = e.pageX - band.offsetLeft;
+            scrollLeft = band.scrollLeft;
+            e.preventDefault();
+        });
+        band.addEventListener('mouseleave', function () { isDown = false; band.style.cursor = 'grab'; });
+        band.addEventListener('mouseup',    function () { isDown = false; band.style.cursor = 'grab'; });
+        band.addEventListener('mousemove',  function (e) {
+            if (!isDown) return;
+            e.preventDefault();
+            var x    = e.pageX - band.offsetLeft;
+            var walk = (x - startX) * 1.6;
+            band.scrollLeft = scrollLeft - walk;
+            if (band.scrollLeft >= track.scrollWidth / 2) band.scrollLeft -= track.scrollWidth / 2;
+            if (band.scrollLeft < 0) band.scrollLeft += track.scrollWidth / 2;
+        });
+
+        var touchStartX     = 0;
+        var touchScrollLeft = 0;
+        band.addEventListener('touchstart', function (e) {
+            touchStartX     = e.touches[0].pageX;
+            touchScrollLeft = band.scrollLeft;
+            paused = true;
+        }, { passive: true });
+        band.addEventListener('touchmove', function (e) {
+            var diff = touchStartX - e.touches[0].pageX;
+            band.scrollLeft = touchScrollLeft + diff;
+            if (band.scrollLeft >= track.scrollWidth / 2) band.scrollLeft -= track.scrollWidth / 2;
+            if (band.scrollLeft < 0) band.scrollLeft += track.scrollWidth / 2;
+        }, { passive: true });
+        band.addEventListener('touchend', function () {
+            setTimeout(function () { paused = false; }, 800);
+        }, { passive: true });
+    })();
+
     /* ─── 12. CRANE ANIMATIONS ───────────────────────────────────────────────── */
     var CRANE_DRAW_MS  = 3600;  /* draw duration (matches CSS 3.6s) */
     var CRANE_HOLD_MS  = 4000;  /* pause after fully drawn */
