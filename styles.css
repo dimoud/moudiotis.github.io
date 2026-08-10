@@ -867,11 +867,12 @@ section { padding: 112px 7%; }
 .service-card-body { display: flex; flex-direction: column; gap: 10px; }
 .service-card h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 26px; font-weight: 700;
+    font-size: 26px; font-weight: 400;
     color: var(--ink); letter-spacing: 0.2px;
     line-height: 1.2;
     transition: color 0.3s;
 }
+.service-card h3 strong { font-weight: 700; }
 .service-card:hover h3 { color: var(--warm); }
 .service-card p {
     font-size: 14.5px; line-height: 1.85;
@@ -2722,5 +2723,19 @@ button.ta-toggle--bar[aria-expanded="true"] .ta-chevron { transform: rotate(180d
     .trc-progress-row { flex-wrap: wrap; }
     .trc-progress-lbl { width: 100%; }
     .trc-preview-strip { flex-wrap: wrap; }
-    .trc-preview-item { flex: 1 0 calc(33% - 6px); min-width: 80px; }
+    .trc-preview-item {
+        flex: 1 0 calc(33% - 6px);
+        min-width: 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 6px;
+        padding: 10px 6px;
+    }
+    .trc-preview-icon { width: 34px; height: 34px; font-size: 15px; }
+    .trc-preview-lbl { font-size: 7.5pt; line-height: 1.2; word-break: break-word; }
+}
+
+@media (max-width: 380px) {
+    .trc-preview-item { flex: 1 0 calc(50% - 4px); }
 }
