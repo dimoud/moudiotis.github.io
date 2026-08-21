@@ -141,7 +141,7 @@
     T['ta.svc2']        = { el: '<strong>Αποτύπωση & πινακίδιο</strong> — Αποτυπώνουμε τον νέο <strong>17ψήφιο αριθμό πλαισίου (VIN)</strong> και τοποθετούμε το πινακίδιο χαρακτηριστικών.', en: '<strong>VIN & plate</strong> — We stamp the new <strong>17-digit chassis number (VIN)</strong> and fit the characteristic plate.' };
     T['ta.svc3']        = { el: '<strong>Πλήρης μελέτη</strong> — Συντάσσουμε την τεχνική περιγραφή που περιλαμβάνει φωτογραφίες, αποτύπωμα αριθμού πλαισίου και όλα τα απαραίτητα έγγραφα.', en: '<strong>Full technical study</strong> — We prepare the technical description including photographs, chassis number imprint, and all required documents.' };
     T['ta.svc4']        = { el: '<strong>Υποβολή φακέλου</strong> — Ετοιμάζουμε και υποβάλλουμε τον πλήρη φάκελο στην αρμόδια υπηρεσία. Το μόνο που χρειάζεται να κάνετε είναι να μας <strong>τηλεφωνήσετε</strong>.', en: '<strong>File submission</strong> — We prepare and submit the complete file to the competent authority. All you need to do is <strong>call us</strong>.' };
-    T['ta.cta.text']    = { el: 'Επικοινωνήστε μαζί μας σήμερα για δωρεάν ενημέρωση σχετικά με τη νομιμοποίηση του ρυμουλκούμενού σας.', en: 'Contact us today for a free consultation on legalizing your trailer.' };
+    T['ta.cta.text']    = { el: 'Επικοινωνήστε μαζί μας σήμερα για δωρεάν ενημέρωση σχετικά με τη νομιμοποίηση του τρέιλερ ή της μπαγκαζιέρας σας.', en: 'Contact us today for a free consultation on legalizing your trailer or cargo box.' };
     T['ta.cta.btn']     = { el: 'Επικοινωνία', en: 'Get in Touch' };
     (C.services || []).forEach(function (s, i) {
         var n = i + 1;
@@ -245,16 +245,16 @@
 
     // SERVICE INLINE EXPAND (cards 0 & 1)
     T['svc.expand.0.p1'] = {
-        el: 'Κάθε τρέιλερ υποχρεούται από τον ΚΟΚ να διαθέτει <strong>άδεια κυκλοφορίας</strong> και πινακίδες. <strong>Ο1</strong>: έως 750 kg (σκάφη, camping, μοτοσυκλέτα) — <strong>Ο2</strong>: έως 3.500 kg (caravan, αυτοκινήτου, βαριά βιομηχανικά). Αναλαμβάνουμε πλήρως: τεχνική μελέτη, υποβολή ΥΜΕΔ/ΚΤΕΟ, έκδοση άδειας.',
-        en: 'Every trailer is required by Road Code to have a <strong>registration licence</strong> and plates. <strong>O1</strong>: up to 750 kg (boats, camping, motorcycle) — <strong>O2</strong>: up to 3,500 kg (caravan, car, heavy industrial). We handle everything: technical study, submission to YMED/KTEO, licence issuance.',
+        el: 'Κάθε τρέιλερ υποχρεούται από τον ΚΟΚ να διαθέτει <strong>άδεια κυκλοφορίας</strong> και πινακίδες. <strong>Ο1</strong>: έως 750 kg (μπαγκαζιέρα, σκάφη, camping, μοτοσυκλέτα) — <strong>Ο2</strong>: έως 3.500 kg (caravan, αυτοκινήτου, βαριά βιομηχανικά). Αναλαμβάνουμε πλήρως: <strong>έγκριση τύπου ρυμουλκούμενου</strong>, τεχνική μελέτη, υποβολή ΥΜΕΔ/ΚΤΕΟ, έκδοση άδειας.',
+        en: 'Every trailer is required by Road Code to have a <strong>registration licence</strong> and plates. <strong>O1</strong>: up to 750 kg (cargo trailer, boats, camping, motorcycle) — <strong>O2</strong>: up to 3,500 kg (caravan, car, heavy industrial). We handle everything: <strong>trailer type approval</strong>, technical study, submission to YMED/KTEO, licence issuance.',
     };
     T['svc.expand.0.meta'] = {
         el: 'Αθήνα &amp; Θεσσαλονίκη &nbsp;·&nbsp; ΑΠΘ, MSc &nbsp;·&nbsp; Κατηγορίες Ο1 &amp; Ο2',
         en: 'Athens &amp; Thessaloniki &nbsp;·&nbsp; AUTH, MSc &nbsp;·&nbsp; Categories O1 &amp; O2',
     };
     T['svc.expand.1.p1'] = {
-        el: 'Τα οχήματα ειδικής χρήσης — γερανοφόρα, πλατφόρμες, ψεκαστικά — χρειάζονται ειδική <strong>ταξινόμηση</strong> και <strong>έγκριση τύπου</strong>. Εκπονούμε τεχνικές μελέτες (στατική ανάλυση, CE, EN 1570) και αναλαμβάνουμε τη διαδικασία από την αρχή έως το τέλος.',
-        en: 'Special use vehicles — crane trucks, platforms, sprayers — require special <strong>registration</strong> and <strong>type approval</strong>. We prepare technical studies (static analysis, CE, EN 1570) and handle the entire process from start to finish.',
+        el: 'Τα οχήματα ειδικής χρήσης — γερανοφόρα, πλατφόρμες, ψεκαστικά — χρειάζονται ειδική <strong>ταξινόμηση</strong> και <strong>έγκριση τύπου οχήματος</strong>. Αναλαμβάνουμε επίσης <strong>έγκριση τύπου ρυμουλκούμενου</strong> για τρέιλερ εκτός σειράς παραγωγής. Εκπονούμε τεχνικές μελέτες (στατική ανάλυση, CE, EN 1570) και αναλαμβάνουμε τη διαδικασία από την αρχή έως το τέλος.',
+        en: 'Special use vehicles — crane trucks, platforms, sprayers — require special <strong>registration</strong> and <strong>vehicle type approval</strong>. We also handle <strong>trailer type approval</strong> for custom-built trailers. We prepare technical studies (static analysis, CE, EN 1570) and handle the entire process from start to finish.',
     };
     T['svc.expand.1.meta'] = {
         el: 'Γερανοφόρα &nbsp;·&nbsp; Πλατφόρμες &nbsp;·&nbsp; Ψεκαστικά &nbsp;·&nbsp; Αθήνα &amp; Θεσσαλονίκη',

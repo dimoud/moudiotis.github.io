@@ -7,10 +7,10 @@ window.SITE_CONFIG = {
 
     // ── META ──────────────────────────────────────────────────────────────
     meta: {
-        titleEl:       'Τεχνικό Γραφείο Μουδιώτης | Ταξινόμηση Οχήματος & Άδεια Τρέιλερ | Μηχανολόγος Μηχανικός Αθήνα',
-        titleEn:       'Moudiotis Technical Office | Vehicle Registration & Trailer Licence | Mechanical Engineer Athens',
-        descriptionEl: 'Τεχνικό Γραφείο Μουδιώτης — Ταξινόμηση οχήματος, άδεια τρέιλερ Ο1/Ο2, μελέτες οχημάτων ειδικής χρήσης ειδικού σκοπού, εγκρίσεις τύπου. Μηχανολόγος Μηχανικός Αθήνα - Θεσσαλονίκη.',
-        descriptionEn: 'Moudiotis Technical Office — Vehicle registration, O1/O2 trailer licences, special use / special purpose vehicle studies, type approvals. Mechanical Engineer Athens - Thessaloniki.',
+        titleEl:       'Τεχνικό Γραφείο Μουδιώτης | Έγκριση Τύπου Οχήματος & Ρυμουλκούμενου | Άδεια Τρέιλερ Αθήνα',
+        titleEn:       'Moudiotis Technical Office | Vehicle Type Approval & Trailer Registration | Athens',
+        descriptionEl: 'Τεχνικό Γραφείο Μουδιώτης — έγκριση τύπου οχήματος & ρυμουλκούμενου, άδεια τρέιλερ Ο1/Ο2, άδεια μπαγκαζιέρας. Μηχανολόγος Μηχανικός, Αθήνα - Θεσσαλονίκη.',
+        descriptionEn: 'Moudiotis Technical Office — vehicle type approval, trailer and cargo-box registration (O1/O2). Mechanical Engineer, Athens - Thessaloniki.',
         lang:          'el',
     },
 
@@ -74,7 +74,10 @@ window.SITE_CONFIG = {
     // ── MARQUEE ───────────────────────────────────────────────────────────
     marquee: [
         { el: 'Ταξινόμηση Οχήματος',               en: 'Vehicle Registration' },
+        { el: 'Έγκριση Τύπου Οχήματος',            en: 'Vehicle Type Approval' },
         { el: 'Άδεια Τρέιλερ Ο1 / Ο2',            en: 'O1 / O2 Trailer Licence' },
+        { el: 'Έγκριση Τύπου Ρυμουλκούμενου',      en: 'Trailer Type Approval' },
+        { el: 'Άδεια Μπαγκαζιέρας',                en: 'Cargo Trailer Licence' },
         { el: 'Οχήματα Ειδικής Χρήσης',            en: 'Special Use Vehicles' },
         { el: 'Μελέτες Οχημάτων',                  en: 'Vehicle Studies' },
         { el: 'Εγκρίσεις Τύπου',                   en: 'Type Approvals' },
@@ -89,8 +92,8 @@ window.SITE_CONFIG = {
     about: {
         headingEl: 'Εμπειρία &amp; <em>Εξειδίκευση</em>',
         headingEn: 'Experience &amp; <em>Expertise</em>',
-        leadEl:    'Με {years}+ χρόνια εμπειρίας, το <strong class="kw">τεχνικό γραφείο</strong> του <strong class="kw">μηχανολόγου μηχανικού</strong> Δημήτρη Μουδιώτη αναλαμβάνει <strong class="kw">ταξινόμηση οχήματος</strong>, <strong class="kw">άδεια τρέιλερ</strong> Ο1/Ο2, μελέτες <strong class="kw">οχημάτων ειδικής χρήσης ειδικού σκοπού</strong>, ενεργειακά πιστοποιητικά και κάλυψη τεχνικού ασφαλείας.',
-        leadEn:    'With {years}+ years of experience, the <strong class="kw">technical office</strong> of <strong class="kw">mechanical engineer</strong> Dimitrios Moudiotis handles <strong class="kw">vehicle registration</strong>, <strong class="kw">trailer licences</strong> O1/O2, <strong class="kw">special use / special purpose vehicle</strong> studies, energy certificates and safety engineer coverage.',
+        leadEl:    'Με {years}+ χρόνια εμπειρίας, το <strong class="kw">τεχνικό γραφείο</strong> του <strong class="kw">μηχανολόγου μηχανικού</strong> Δημήτρη Μουδιώτη αναλαμβάνει <strong class="kw">έγκριση τύπου οχήματος</strong> και <strong class="kw">έγκριση τύπου ρυμουλκούμενου</strong>, <strong class="kw">άδεια τρέιλερ</strong> Ο1/Ο2, <strong class="kw">άδεια μπαγκαζιέρας</strong>, μελέτες <strong class="kw">οχημάτων ειδικής χρήσης ειδικού σκοπού</strong>, ενεργειακά πιστοποιητικά και κάλυψη τεχνικού ασφαλείας.',
+        leadEn:    'With {years}+ years of experience, the <strong class="kw">technical office</strong> of <strong class="kw">mechanical engineer</strong> Dimitrios Moudiotis handles <strong class="kw">vehicle type approval</strong> and <strong class="kw">trailer type approval</strong>, <strong class="kw">trailer &amp; cargo-box licences</strong> O1/O2, <strong class="kw">special use / special purpose vehicle</strong> studies, energy certificates and safety engineer coverage.',
         features: [
             {
                 icon:    'fa-bolt-lightning',
@@ -120,19 +123,19 @@ window.SITE_CONFIG = {
     services: [
         {
             icon:        'fa-truck-ramp-box',
-            titleEl:     'Άδεια Τρέιλερ Ο1 &amp; Ο2 — Ταξινόμηση Ρυμουλκούμενου',
-            titleEn:     'O1 &amp; O2 Trailer Licence — Trailer Registration',
-            textEl:      'Ξανάνοιξαν οι διαδικασίες <strong class="kw">ταξινόμησης</strong> για <strong class="kw">όλα τα τρέιλερ</strong>. Αναλαμβάνουμε πλήρως: <strong class="kw">Ο1</strong> (έως 750 kg) &amp; <strong class="kw">Ο2</strong> (έως 3,5 τόνους). Τεχνική μελέτη, υποβολή σε ΥΜΕΔ/ΚΤΕΟ, <strong class="kw">έκδοση άδειας κυκλοφορίας</strong> — από την αρχή ώς το τέλος.',
-            textEn:      'Procedures have reopened for <strong class="kw">all trailers</strong>. We handle everything: <strong class="kw">O1</strong> (up to 750 kg) &amp; <strong class="kw">O2</strong> (up to 3.5 tonnes). Technical study, submission to YMED/KTEO, <strong class="kw">circulation licence issuance</strong> — end to end.',
-            seoKeywords: 'αδεια τρειλερ, άδεια τρέιλερ, ταξινόμηση ρυμουλκούμενου, αδεια ρυμουλκουμενου Ο1 Ο2, ταξινόμηση τρέιλερ, έκδοση άδειας κυκλοφορίας, trailer licence Greece',
+            titleEl:     'Άδεια Τρέιλερ Ο1 &amp; Ο2 — Ταξινόμηση Ρυμουλκούμενου &amp; Μπαγκαζιέρας',
+            titleEn:     'O1 &amp; O2 Trailer Licence — Trailer &amp; Cargo Box Registration',
+            textEl:      'Ξανάνοιξαν οι διαδικασίες <strong class="kw">ταξινόμησης</strong> για <strong class="kw">όλα τα τρέιλερ</strong>. Αναλαμβάνουμε πλήρως: <strong class="kw">Ο1</strong> (έως 750 kg — <strong class="kw">μπαγκαζιέρα</strong>, σκάφος, τροχόσπιτο) &amp; <strong class="kw">Ο2</strong> (έως 3,5 τόνους). <strong class="kw">Έγκριση τύπου ρυμουλκούμενου</strong>, τεχνική μελέτη, υποβολή σε ΥΜΕΔ/ΚΤΕΟ, <strong class="kw">έκδοση άδειας κυκλοφορίας</strong> — από την αρχή ώς το τέλος.',
+            textEn:      'Procedures have reopened for <strong class="kw">all trailers</strong>. We handle everything: <strong class="kw">O1</strong> (up to 750 kg — cargo box, boat, caravan) &amp; <strong class="kw">O2</strong> (up to 3.5 tonnes). <strong class="kw">Trailer type approval</strong>, technical study, submission to YMED/KTEO, <strong class="kw">circulation licence issuance</strong> — end to end.',
+            seoKeywords: 'αδεια τρειλερ, άδεια τρέιλερ, τρέϊλερ, ταξινόμηση ρυμουλκούμενου, έγκριση τύπου ρυμουλκούμενου, αδεια ρυμουλκουμενου Ο1 Ο2, άδεια ρυμουλκούμενου, μπαγκαζιέρα, άδεια μπαγκαζιέρα, νομιμοποίηση τρέιλερ, ταξινόμηση τρέιλερ, έκδοση άδειας κυκλοφορίας, trailer licence Greece, cargo trailer licence Greece',
         },
         {
             icon:        'fa-car',
-            titleEl:     'Ταξινόμηση Οχήματος Ειδικής Χρήσης — Ειδικού Σκοπού | Εγκρίσεις Τύπου',
-            titleEn:     'Special Use / Special Purpose Vehicle Registration | Type Approvals',
-            textEl:      'Εκπόνηση <strong class="kw">τεχνικών μελετών</strong> και <strong class="kw">ταξινόμηση οχήματος</strong> για κάθε κατηγορία.',
-            textEn:      '<strong class="kw">Technical studies</strong> and <strong class="kw">vehicle registration</strong> for all categories. <strong class="kw">Special use &amp; special purpose vehicles</strong>, type approvals, crane &amp; hydraulic platform installation studies.',
-            seoKeywords: 'ταξινόμηση οχήματος, ταξινομιση αδεας οχηματος, οχήματα ειδικής χρήσης ειδικού σκοπού, εγκριση τυπου, μελετη οχηματος, special purpose vehicle registration Greece',
+            titleEl:     'Έγκριση Τύπου Οχήματος &amp; Ρυμουλκούμενου — Ταξινόμηση Ειδικής Χρήσης',
+            titleEn:     'Vehicle &amp; Trailer Type Approval — Special Use Registration',
+            textEl:      'Εκπόνηση <strong class="kw">τεχνικών μελετών</strong>, <strong class="kw">έγκριση τύπου οχήματος</strong> και <strong class="kw">έγκριση τύπου ρυμουλκούμενου</strong> για κάθε κατηγορία.',
+            textEn:      '<strong class="kw">Technical studies</strong>, <strong class="kw">vehicle type approval</strong> and <strong class="kw">trailer type approval</strong> for all categories. <strong class="kw">Special use &amp; special purpose vehicles</strong>, crane &amp; hydraulic platform installation studies.',
+            seoKeywords: 'έγκριση τύπου οχήματος, έγκριση τύπου ρυμουλκούμενου, ταξινόμηση οχήματος, ταξινομιση αδεας οχηματος, οχήματα ειδικής χρήσης ειδικού σκοπού, εγκριση τυπου, μελετη οχηματος, vehicle type approval Greece, trailer type approval, special purpose vehicle registration Greece',
         },
         {
             icon:        'fa-fire-extinguisher',
