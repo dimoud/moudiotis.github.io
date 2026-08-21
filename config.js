@@ -42,9 +42,9 @@ window.SITE_CONFIG = {
 
     // ── ASSETS ────────────────────────────────────────────────────────────
     assets: {
-        logo:         'logo.png',
-        photo:        'founder.png',
-        contactPhoto: 'founder_contact.png',
+        logo:         '/logo.png',
+        photo:        '/founder.png',
+        contactPhoto: '/founder_contact.png',
         heroSlides:   [],
     },
 

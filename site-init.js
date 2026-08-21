@@ -632,17 +632,17 @@
                 var n = i + 1;
                 var initial = (r.name || '?').trim().charAt(0).toUpperCase();
                 rHtml +=
-                    '<div class="review-card" itemscope itemtype="https://schema.org/Review">' +
+                    '<div class="review-card">' +
                     '<div class="review-head">' +
                     '<div class="review-avatar" aria-hidden="true">' + initial + '</div>' +
                     '<div class="review-head-text">' +
-                    '<h4 itemprop="author">' + r.name + '</h4>' +
+                    '<h4>' + r.name + '</h4>' +
                     '<span class="review-source" data-i18n="reviews.source"></span>' +
                     '</div>' +
                     googleIconHtml +
                     '</div>' +
                     starsHtml +
-                    '<p itemprop="reviewBody" data-i18n="review' + n + '.text">' + r.textEl + '</p>' +
+                    '<p data-i18n="review' + n + '.text">' + r.textEl + '</p>' +
                     '</div>';
             });
         });
@@ -658,48 +658,6 @@
         });
         serviceSelect.innerHTML = optHtml;
     }
-
-    // ── 16. JSON-LD STRUCTURED DATA ───────────────────────────────────────────
-    // Injects schema.org LocalBusiness for SEO / rich results
-    (function () {
-        var ct = C.contact || {};
-        var ld = {
-            '@context': 'https://schema.org',
-            '@graph': [
-                {
-                    '@type':       'LocalBusiness',
-                    'name':        P.displayNameEl || '',
-                    'description': C.meta.descriptionEl || '',
-                    'telephone':   ct.phone || '',
-                    'email':       ct.email || '',
-                    'url':         window.location.href,
-                    'sameAs':      ct.facebook ? [ct.facebook] : [],
-                    'address': {
-                        '@type':           'PostalAddress',
-                        'streetAddress':   'Λεωφ. Στρατού 1',
-                        'addressLocality': 'Πολίχνη',
-                        'postalCode':      '564 29',
-                        'addressRegion':   'Θεσσαλονίκη',
-                        'addressCountry':  'GR'
-                    },
-                    'geo': {
-                        '@type':     'GeoCoordinates',
-                        'latitude':  40.671426233509,
-                        'longitude': 22.93926462035
-                    },
-                    'founder': {
-                        '@type':    'Person',
-                        'name':     P.displayNameEl || '',
-                        'jobTitle': P.professionEl  || ''
-                    }
-                }
-            ]
-        };
-        var s = document.createElement('script');
-        s.type = 'application/ld+json';
-        s.text = JSON.stringify(ld);
-        document.head.appendChild(s);
-    })();
 
     // ── ADD phone placeholder translation ─────────────────────────────────────
     T['form.ph.phone'] = { el: '', en: '' };
