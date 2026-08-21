@@ -395,7 +395,7 @@ nav:not(.scrolled) .lang-sep              { background: rgba(255,255,255,0.18); 
     text-align: right;
     font-style: italic;
     position: absolute;
-    bottom: 0; right: 5cm; left: 0;
+    bottom: 0; right: 0; left: 0;
     transform: translateY(12px);
     opacity: 0;
     transition: transform 0.6s ease, opacity 0.4s ease;
