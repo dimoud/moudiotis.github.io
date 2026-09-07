@@ -363,7 +363,6 @@ body .svc-crumb { padding-top: 20px; padding-bottom: 0; }
     .svc-quick { flex-direction: column; }
     .svc-quick a { justify-content: center; }
 }
-}
 
 /* ── ΤΥΠΟΓΡΑΦΙΚΗ ΟΜΟΙΟΓΕΝΕΙΑ ΜΕΣΑ ΣΤΟ CONTAINER ──────────────────────────
    Πριν: το τρέχον κείμενο εμφανιζόταν σε δύο ασύνδετα μεγέθη (16,5px στην
