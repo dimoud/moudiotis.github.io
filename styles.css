@@ -3158,5 +3158,51 @@ a.tap-item-link:hover .tap-item-t { color: var(--warm); }
 a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 3px; }
 
 /* Το nav φιλοξενεί πλέον επτά συνδέσμους — μειώνουμε το κενό σε στενές οθόνες */
-@media (max-width: 1500px) { .nav-links { gap: 26px; } }
-@media (max-width: 1280px) { .nav-links { gap: 18px; } .nav-links a { font-size: 12.5px; } }
+/* ── ΠΛΟΗΓΗΣΗ: ΠΟΤΕ ΑΝΑΔΙΠΛΩΣΗ ────────────────────────────────────────────
+   Οκτώ σύνδεσμοι δεν χωρούν σε στενή οθόνη με το αρχικό μέγεθος. Αντί να
+   σπάσουν σε δεύτερη γραμμή, μικραίνουν προοδευτικά· κάτω από 1240px
+   περνούν στο μενού «χάμπουργκερ», γιατί εκεί δεν χωρούν με τίποτα. */
+.nav-links { flex-wrap: nowrap; min-width: 0; }
+.nav-links a { white-space: nowrap; }
+@media (max-width: 1500px) { .nav-links { gap: 24px; } }
+@media (max-width: 1400px) {
+    .nav-links { gap: 18px; }
+    .nav-links a { font-size: 10px; letter-spacing: 1.5px; }
+    .nav-cta { padding: 12px 26px; }
+}
+@media (max-width: 1320px) {
+    .nav-links { gap: 13px; }
+    .nav-links a { font-size: 9.4px; letter-spacing: 1px; }
+    .nav-cta { padding: 11px 18px; }
+}
+
+/* ── ΤΟ ΜΕΝΟΥ «ΧΑΜΠΟΥΡΓΚΕΡ» ΞΕΚΙΝΑ ΑΠΟ ΤΑ 1240px ────────────────────────
+   Κάτω από αυτό το πλάτος οι οκτώ σύνδεσμοι δεν χωρούν σε μία γραμμή όσο
+   κι αν μικρύνουν. Μόνο η ίδια η μπάρα αλλάζει εδώ — η υπόλοιπη διάταξη
+   κινητού μένει στα 768px. */
+@media (max-width: 1240px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; inset: 0;
+        background: rgba(18, 28, 42, 0.97);
+        justify-content: center; align-items: center;
+        gap: 20px; z-index: 999;
+        backdrop-filter: blur(12px);
+    }
+    .nav-links.open a {
+        font-size: 12px; letter-spacing: 3px;
+        color: rgba(255,255,255,0.85);
+        padding: 12px 0; min-height: 44px;
+        display: flex; align-items: center;
+        white-space: nowrap;
+    }
+    .nav-links.open a:hover { color: var(--warm); }
+    .nav-links.open .nav-cta {
+        border: 1px solid var(--warm) !important;
+        color: var(--warm) !important;
+        padding: 10px 32px; margin-top: 4px;
+    }
+}
+
