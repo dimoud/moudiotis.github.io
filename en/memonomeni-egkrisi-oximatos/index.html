@@ -33,7 +33,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>document.documentElement.className += ' js';</script>
     <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../expertease-credit.css">
     <link rel="stylesheet" href="../../service-page.css">
 
     <script type="application/ld+json">
@@ -135,6 +137,8 @@
 </head>
 <body>
 
+    <div id="progress"></div>
+
     <!-- ===== NAVIGATION (ίδιο markup με την αρχική) ===== -->
     <nav id="nav" class="scrolled">
         <a href="../../en/index.html" class="nav-logo">
@@ -155,12 +159,12 @@
         </div>
         <div class="lang-toggle" id="langToggle">
             <a class="lang-btn" href="../../memonomeni-egkrisi-oximatos/" hreflang="el" aria-label="Ελληνικά">
-                <img src="https://flagcdn.com/w20/gr.png" class="lflag" alt="GR" width="20" height="15">
+                <img src="https://flagcdn.com/w20/gr.png" class="lflag" alt="" width="20" height="15">
                 <span class="lcode">ΕΛ</span>
             </a>
             <div class="lang-sep"></div>
             <a class="lang-btn active" href="#" hreflang="en" aria-label="English">
-                <img src="https://flagcdn.com/w20/gb.png" class="lflag" alt="EN" width="20" height="15">
+                <img src="https://flagcdn.com/w20/gb.png" class="lflag" alt="" width="20" height="15">
                 <span class="lcode">EN</span>
             </a>
         </div>
@@ -402,6 +406,44 @@
             document.body.style.overflow = open ? 'hidden' : '';
             if (hb) { hb.setAttribute('aria-expanded', open ? 'true' : 'false'); hb.classList.toggle('open', open); }
         }
+        /* Μπάρα προόδου ανάγνωσης */
+        (function () {
+            var bar = document.getElementById('progress');
+            if (!bar) return;
+            function upd() {
+                var h = document.documentElement.scrollHeight - window.innerHeight;
+                bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+            }
+            window.addEventListener('scroll', upd, { passive: true });
+            window.addEventListener('resize', upd);
+            upd();
+        })();
+
+        /* Μέτρηση των αριθμητικών στατιστικών όταν εμφανιστούν */
+        (function () {
+            var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduce || !('IntersectionObserver' in window)) return;
+            var vals = [].slice.call(document.querySelectorAll('.ta-stat-val')).filter(function (el) {
+                return /^\d+$/.test(el.textContent.trim());
+            });
+            if (!vals.length) return;
+            var io = new IntersectionObserver(function (es) {
+                es.forEach(function (e) {
+                    if (!e.isIntersecting) return;
+                    io.unobserve(e.target);
+                    var el = e.target, end = parseInt(el.textContent, 10), t0 = null;
+                    function step(ts) {
+                        if (!t0) t0 = ts;
+                        var k = Math.min((ts - t0) / 900, 1);
+                        el.textContent = Math.round(end * (1 - Math.pow(1 - k, 3)));
+                        if (k < 1) requestAnimationFrame(step);
+                    }
+                    requestAnimationFrame(step);
+                });
+            }, { threshold: 0.6 });
+            vals.forEach(function (el) { io.observe(el); });
+        })();
+
         document.querySelectorAll('#navLinks a').forEach(function (a) {
             a.addEventListener('click', function () {
                 var hb = document.getElementById('hamburger');

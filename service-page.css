@@ -40,10 +40,10 @@
 }
 .svc-hero .svc-lede strong { color: var(--warm2); font-weight: 600; }
 @media (max-width: 700px) {
-    .svc-hero { padding: 88px 0 40px; }
-    .svc-hero-in { padding: 0 20px; }
-    .svc-hero-in { gap: 20px; flex-direction: column; align-items: flex-start; }
-    .svc-hero-logo { width: 68px; height: 68px; }
+    .svc-hero { padding: 84px 0 38px; }
+    .svc-hero-in { padding: 0 20px; gap: 18px; flex-direction: column; align-items: flex-start; }
+    .svc-hero-logo { width: 74px; height: 74px; margin-left: 12px; }
+    .svc-hero-logo img { width: 60px; height: 60px; }
 }
 
 /* ── Breadcrumb ── */
@@ -148,3 +148,111 @@ a.tap-item-link:hover .tap-item-t { color: var(--warm); text-decoration: underli
 /* Ίδιο περιθώριο με τις υπόλοιπες ενότητες του κουτιού */
 .svc-prose > h2:first-child { margin-top: 10px; }
 .svc-prose > *:last-child { margin-bottom: 4px; }
+
+/* ============================================================
+   ΟΠΤΙΚΗ ΑΝΑΒΑΘΜΙΣΗ
+   ============================================================ */
+
+/* ── Ασφάλεια: χωρίς JavaScript το περιεχόμενο μένει ορατό ── */
+html:not(.js) [data-reveal] { opacity: 1 !important; transform: none !important; }
+
+/* ── Μπάρα προόδου ανάγνωσης ── */
+#progress {
+    position: fixed; top: 0; left: 0; height: 2px; width: 0%;
+    background: linear-gradient(90deg, var(--warm), var(--warm2));
+    z-index: 9999; transition: width 0.1s linear;
+}
+
+/* ── HERO: βάθος, πλέγμα σχεδίασης, χρυσή βάση ── */
+.svc-hero { overflow: hidden; isolation: isolate; }
+.svc-hero::before {
+    content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+        linear-gradient(rgba(201,168,108,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,108,0.055) 1px, transparent 1px);
+    background-size: 46px 46px;
+    mask-image: radial-gradient(ellipse 80% 70% at 30% 50%, #000 20%, transparent 78%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 30% 50%, #000 20%, transparent 78%);
+}
+.svc-hero::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; z-index: 2;
+    background: linear-gradient(90deg, transparent, var(--warm) 22%, var(--warm2) 50%, var(--warm) 78%, transparent);
+    opacity: 0.85;
+}
+.svc-hero-in { position: relative; z-index: 1; }
+
+/* Το λογότυπο σε χρυσό δαχτυλίδι με απαλή λάμψη */
+.svc-hero-logo {
+    position: relative; width: 108px; height: 108px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 45%, rgba(46,95,138,0.42), rgba(29,58,92,0) 68%);
+}
+.svc-hero-logo::before {
+    content: ''; position: absolute; inset: -9px; border-radius: 50%;
+    border: 1px solid rgba(201,168,108,0.42);
+}
+.svc-hero-logo::after {
+    content: ''; position: absolute; inset: -19px; border-radius: 50%;
+    border: 1px solid rgba(201,168,108,0.16);
+}
+.svc-hero-logo img { width: 88px; height: 88px; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.45)); }
+
+/* Είσοδος κειμένου */
+@keyframes svcUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.js .svc-hero .svc-kicker { animation: svcUp .7s var(--ease) .05s both; }
+.js .svc-hero h1          { animation: svcUp .8s var(--ease) .16s both; }
+.js .svc-hero .svc-lede   { animation: svcUp .8s var(--ease) .28s both; }
+.js .svc-hero-logo        { animation: svcUp .9s var(--ease) both; }
+@media (prefers-reduced-motion: reduce) {
+    .js .svc-hero .svc-kicker, .js .svc-hero h1,
+    .js .svc-hero .svc-lede, .js .svc-hero-logo { animation: none; }
+}
+
+/* ── Το κουτί περιεχομένου: περισσότερο βάθος ── */
+.ta-box { box-shadow: 0 18px 60px rgba(13,26,45,.16), 0 3px 10px rgba(13,26,45,.07); }
+
+/* ── Στατιστικά: μεγαλύτερα νούμερα, χρυσή βάση ── */
+.ta-stat-strip .ta-stat { position: relative; }
+.ta-stat-strip .ta-stat::after {
+    content: ''; position: absolute; left: 50%; bottom: -1px; width: 0; height: 2px;
+    background: var(--warm); transform: translateX(-50%);
+    transition: width .8s var(--ease) .2s;
+}
+.visible .ta-stat-strip .ta-stat::after { width: 42px; }
+.ta-stat-val { font-variant-numeric: tabular-nums; }
+
+/* ── Βήματα: υπογράμμιση στο πέρασμα ── */
+.ta-steps > li { transition: background .3s; border-radius: 3px; }
+.ta-steps > li:hover { background: rgba(201,168,108,.07); }
+.ta-step-num { transition: color .3s, transform .3s; }
+.ta-steps > li:hover .ta-step-num { color: var(--gold2); transform: translateY(-1px); }
+
+/* ── Κάρτες σχετικών: βέλος που προχωρά ── */
+.svc-related a { position: relative; padding-right: 34px; }
+.svc-related a::after {
+    content: '\2192'; position: absolute; right: 16px; top: 16px;
+    color: var(--warm); font-size: 17px; opacity: 0;
+    transform: translateX(-6px); transition: opacity .28s, transform .28s;
+}
+.svc-related a:hover::after { opacity: 1; transform: translateX(0); }
+
+/* ── FAQ: απαλό φόντο στο ανοιχτό ── */
+.svc-faq details[open] { background: rgba(201,168,108,.05); border-radius: 3px; padding-left: 10px; padding-right: 10px; }
+
+/* ── Lang toggle: σε μικρές οθόνες μόνο οι κωδικοί ── */
+@media (max-width: 560px) {
+    .lang-toggle .lflag { display: none; }
+    .lang-toggle { padding: 3px 4px; }
+    .lang-toggle a.lang-btn { padding: 4px 8px; gap: 0; }
+}
+
+/* ── Κινητό: το λογότυπο μικραίνει ώστε τα δαχτυλίδια να μην κόβονται.
+   Μπαίνει στο τέλος γιατί ο κανόνας .svc-hero-logo της αναβάθμισης
+   ορίζεται πιο πάνω και διαφορετικά θα υπερίσχυε. ── */
+@media (max-width: 700px) {
+    .svc-hero-logo { width: 76px; height: 76px; margin-left: 14px; }
+    .svc-hero-logo img { width: 60px; height: 60px; }
+    .svc-hero-logo::before { inset: -7px; }
+    .svc-hero-logo::after  { inset: -14px; }
+}

@@ -3096,10 +3096,14 @@ button.tap-toggle[aria-expanded="true"]:hover .tap-chevron { transform: rotate(1
 @media (max-width: 768px) {
     .mobile-cta-bar {
         display: grid; grid-template-columns: 1fr 1fr;
-        position: fixed; left: 0; right: 0; bottom: 0; z-index: 950;
+        /* top/height/padding μηδενίζονται ρητά: ο γενικός κανόνας `nav {}`
+           πιο πάνω δίνει top:0 και height:88px σε κάθε <nav>, που θα
+           προσγείωνε τη μπάρα στην κορυφή αντί στο κάτω μέρος. */
+        position: fixed; left: 0; right: 0; bottom: 0; top: auto;
+        width: 100%; height: auto; z-index: 950;
+        padding: 0 0 env(safe-area-inset-bottom, 0px);
         background: var(--gold);
         box-shadow: 0 -2px 18px rgba(0,0,0,0.22);
-        padding-bottom: env(safe-area-inset-bottom, 0px);
     }
     .mobile-cta-bar a {
         display: flex; align-items: center; justify-content: center; gap: 8px;
