@@ -152,16 +152,16 @@ window.SITE_CONFIG = {
                     urlEn: '/en/memonomeni-egkrisi-oximatos/',
                     titleEl: 'Μεμονωμένη Έγκριση Οχημάτων',
                     titleEn: 'Individual Vehicle Approval',
-                    textEl:  'Πιστοποίηση μεμονωμένων, ειδικών, τροποποιημένων ή εισαγόμενων οχημάτων για την έκδοση άδειας κυκλοφορίας.',
-                    textEn:  'Certification of individual, special, modified or imported vehicles for the issue of a circulation licence.',
+                    textEl:  'Μεμονωμένα, ειδικά, τροποποιημένα ή εισαγόμενα οχήματα πιστοποιούνται ώστε να εκδοθεί άδεια κυκλοφορίας.',
+                    textEn:  'Individual, special, modified or imported vehicles are certified so that a registration certificate can be issued.',
                 },
                 {
                     urlEl: '/deltio-koinopoiisis-tao/',
                     urlEn: '/en/deltio-koinopoiisis-tao/',
                     titleEl: 'Καταχώρηση στο ΤΑΟ',
                     titleEn: 'Technical Vehicle Archive (TAO) Registration',
-                    textEl:  'Πλήρης διεκπεραίωση της διαδικασίας καταχώρησης στο Τεχνικό Αρχείο Οχημάτων του Υπουργείου Υποδομών και Μεταφορών.',
-                    textEn:  'Full handling of the registration procedure in the Technical Vehicle Archive of the Ministry of Infrastructure and Transport.',
+                    textEl:  'Καταχώρηση στο Τεχνικό Αρχείο Οχημάτων του Υπουργείου Υποδομών και Μεταφορών. Τη διαδικασία τη διεκπεραιώνουμε εμείς.',
+                    textEn:  'Registration in the Technical Vehicle Archive of the Ministry of Infrastructure and Transport. We handle the procedure.',
                 },
                 {
                     urlEl: '/deltio-koinopoiisis-tao/',
@@ -190,8 +190,8 @@ window.SITE_CONFIG = {
                 {
                     titleEl: 'Έγκριση Ειδικών Κατασκευών &amp; Μετασκευών',
                     titleEn: 'Approval of Special Bodywork &amp; Conversions',
-                    textEl:  'Πιστοποίηση ειδικών υπερκατασκευών (ψυγεία, γερανοί, ανατροπές, κινητά συνεργεία, ειδικά ρυμουλκούμενα).',
-                    textEn:  'Certification of special superstructures (refrigerated bodies, cranes, tippers, mobile workshops, special trailers).',
+                    textEl:  'Ψυγεία, γερανοί, ανατροπές, κινητά συνεργεία, ειδικά ρυμουλκούμενα — πιστοποίηση ειδικών υπερκατασκευών.',
+                    textEn:  'Refrigerated bodies, cranes, tippers, mobile workshops, special trailers — certification of special superstructures.',
                 },
                 {
                     titleEl: 'Μελέτες Τροποποίησης &amp; Συμμόρφωσης',
@@ -212,8 +212,8 @@ window.SITE_CONFIG = {
                 {
                     titleEl: 'Διαχείριση Φακέλων Πιστοποίησης',
                     titleEn: 'Certification Dossier Management',
-                    textEl:  'Εκπροσώπηση και τεχνική υποστήριξη έναντι ελεγκτικών οργανισμών, τεχνικών υπηρεσιών και εργαστηρίων δοκιμών.',
-                    textEn:  'Representation and technical support before inspection bodies, technical services and testing laboratories.',
+                    textEl:  'Απέναντι σε ελεγκτικούς οργανισμούς, τεχνικές υπηρεσίες και εργαστήρια δοκιμών, το γραφείο σάς εκπροσωπεί και σας υποστηρίζει τεχνικά.',
+                    textEn:  'Before inspection bodies, technical services and testing laboratories, the office represents you and provides technical support.',
                 },
                 {
                     titleEl: 'Βεβαιώσεις Συμμόρφωσης &amp; Τεχνικά Υπομνήματα',
