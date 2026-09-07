@@ -351,6 +351,6 @@
   }
 
   /* Expose for manual calls */
-  window.TypeApprovalAnim = { init: init };
+  window.TypeApprovalAnim = { build: buildSVG, init: init };
 
 }());

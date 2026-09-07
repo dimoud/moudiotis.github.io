@@ -353,6 +353,6 @@
   }
 
   /* Expose for manual calls */
-  window.TrailerAnim = { init: init };
+  window.TrailerAnim = { build: buildSVG, init: init };
 
 }());

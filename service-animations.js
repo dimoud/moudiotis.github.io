@@ -483,5 +483,14 @@
     init();
   }
 
-  window.ServiceAnim = { init: init };
+  /* Οι δύο σκηνές διατίθενται και ως έτοιμο SVG, ώστε να τις ζωγραφίσει
+     αλλού όποιος τις χρειάζεται — π.χ. ο εναλλάκτης του hero. */
+  window.ServiceAnim = {
+    init: init,
+    build: function (name) {
+      if (name === 'import') return buildImport();
+      if (name === 'exes')   return buildExes();
+      return '';
+    }
+  };
 }());
