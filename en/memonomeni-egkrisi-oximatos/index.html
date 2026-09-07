@@ -225,6 +225,12 @@
 
         <div class="ta-rule"></div>
 
+        <!-- Κινούμενο γραφικό «φάκελος έγκρισης τύπου» — το ίδιο με την αρχική -->
+        <div class="tap-graphic" id="typeApprovalAnimWrap" aria-hidden="true"></div>
+        <span class="tap-graphic-tag">TYPE APPROVAL DOSSIER</span>
+
+        <div class="ta-rule"></div>
+
         <div class="svc-prose">
 <h2>Which vehicles need it</h2>
 <p>Individual approval applies to vehicles not covered by a valid type approval. In practice the office mostly sees these cases:</p>
@@ -376,7 +382,18 @@
         (function () {
             var fy = document.getElementById('footerYear');
             if (fy) fy.textContent = new Date().getFullYear();
-            document.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('visible'); });
+            var rv = document.querySelectorAll('[data-reveal]');
+            if (!('IntersectionObserver' in window) ||
+                (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+                rv.forEach(function (el) { el.classList.add('visible'); });
+            } else {
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (e) {
+                        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+                    });
+                }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+                rv.forEach(function (el) { io.observe(el); });
+            }
         })();
         function toggleMenu() {
             var menu = document.getElementById('navLinks');
@@ -394,6 +411,25 @@
             });
         });
     </script>
+    <script>
+        /* Αγγλικά κείμενα για το γραφικό του φακέλου έγκρισης τύπου —
+           οι ίδιες τιμές που ορίζει το site-init.js στην αρχική. */
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.translations = {
+            'tap.doc.title':  { en: 'TYPE APPROVAL' },
+            'tap.doc.sub':    { en: 'VEHICLE TECHNICAL DOSSIER' },
+            'tap.doc.field':  { en: 'APPROVAL No.' },
+            'tap.doc.chk1':   { en: 'TAO REGISTRATION' },
+            'tap.doc.chk2':   { en: 'NOTIFICATION CERTIFICATE' },
+            'tap.dim.label':  { en: 'CATEGORIES  M1 \u00b7 N1 \u00b7 N2 \u00b7 O1 \u00b7 O2' },
+            'tap.stamp.main': { en: 'APPROVED' },
+            'tap.stamp.sub':  { en: 'TYPE APPROVAL' },
+            'tap.stamp.top':  { en: 'e13 \u00b7 2018/858' },
+            'tap.stamp.foot': { en: 'MIN. OF INFRASTRUCTURE \u00b7 TAO' },
+            'tap.graphic.alt':{ en: 'Sketch of a vehicle type approval dossier with approval stamp' }
+        };
+    </script>
+    <script src="../../type-approval-animation.js" defer></script>
 
 </body>
 </html>

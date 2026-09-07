@@ -225,6 +225,12 @@
 
         <div class="ta-rule"></div>
 
+        <!-- Κινούμενο γραφικό «φάκελος έγκρισης τύπου» — το ίδιο με την αρχική -->
+        <div class="tap-graphic" id="typeApprovalAnimWrap" aria-hidden="true"></div>
+        <span class="tap-graphic-tag">ΦΑΚΕΛΟΣ ΕΓΚΡΙΣΗΣ ΤΥΠΟΥ</span>
+
+        <div class="ta-rule"></div>
+
         <div class="svc-prose">
 <h2>Ποια οχήματα το χρειάζονται</h2>
 <p>Η μεμονωμένη έγκριση αφορά οχήματα που δεν καλύπτονται από ισχύουσα έγκριση τύπου. Στην πράξη το γραφείο συναντά κυρίως τις εξής περιπτώσεις:</p>
@@ -376,7 +382,18 @@
         (function () {
             var fy = document.getElementById('footerYear');
             if (fy) fy.textContent = new Date().getFullYear();
-            document.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('visible'); });
+            var rv = document.querySelectorAll('[data-reveal]');
+            if (!('IntersectionObserver' in window) ||
+                (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+                rv.forEach(function (el) { el.classList.add('visible'); });
+            } else {
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (e) {
+                        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+                    });
+                }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+                rv.forEach(function (el) { io.observe(el); });
+            }
         })();
         function toggleMenu() {
             var menu = document.getElementById('navLinks');
@@ -394,6 +411,7 @@
             });
         });
     </script>
+    <script src="../type-approval-animation.js" defer></script>
 
 </body>
 </html>

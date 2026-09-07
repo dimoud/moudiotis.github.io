@@ -225,6 +225,12 @@
 
         <div class="ta-rule"></div>
 
+        <!-- Κινούμενο γραφικό «φάκελος έγκρισης τύπου» — το ίδιο με την αρχική -->
+        <div class="tap-graphic" id="typeApprovalAnimWrap" aria-hidden="true"></div>
+        <span class="tap-graphic-tag">ΦΑΚΕΛΟΣ ΕΓΚΡΙΣΗΣ ΤΥΠΟΥ</span>
+
+        <div class="ta-rule"></div>
+
         <div class="svc-prose">
 <h2>Τι λύνει</h2>
 <p>Με το Δελτίο Κοινοποίησης η αρμόδια ελληνική αρχή αποδέχεται μια έγκριση τύπου, ώστε τα οχήματα που καλύπτει να μπορούν να ταξινομηθούν στη χώρα. Παράλληλα τα τεχνικά χαρακτηριστικά του τύπου καταχωρούνται στο <strong>Τεχνικό Αρχείο Οχημάτων</strong>, το μητρώο από το οποίο η Διεύθυνση Μεταφορών αντλεί τα στοιχεία που τυπώνονται στην άδεια κυκλοφορίας.</p>
@@ -381,7 +387,18 @@
         (function () {
             var fy = document.getElementById('footerYear');
             if (fy) fy.textContent = new Date().getFullYear();
-            document.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('visible'); });
+            var rv = document.querySelectorAll('[data-reveal]');
+            if (!('IntersectionObserver' in window) ||
+                (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+                rv.forEach(function (el) { el.classList.add('visible'); });
+            } else {
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (e) {
+                        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+                    });
+                }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+                rv.forEach(function (el) { io.observe(el); });
+            }
         })();
         function toggleMenu() {
             var menu = document.getElementById('navLinks');
@@ -399,6 +416,7 @@
             });
         });
     </script>
+    <script src="../type-approval-animation.js" defer></script>
 
 </body>
 </html>
