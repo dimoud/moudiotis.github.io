@@ -417,6 +417,9 @@
     var footerEmail = document.getElementById('footerEmail');
     if (footerEmail) footerEmail.href = 'mailto:' + C.contact.email;
 
+    var mcbCall = document.getElementById('mcbCall');
+    if (mcbCall && C.contact.mobileTel) mcbCall.href = C.contact.mobileTel;
+
     var footerPhone = document.getElementById('footerPhone');
     if (footerPhone) footerPhone.href = C.contact.phoneTel;
 

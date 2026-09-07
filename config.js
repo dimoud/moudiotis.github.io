@@ -60,7 +60,7 @@ window.SITE_CONFIG = {
         email:     'moudiotis.meng@gmail.com',
         address:   'Αθήνα - Θεσσαλονίκη',
         addressEn: 'Athens - Thessaloniki',
-        facebook:  'https://www.facebook.com/61550061850076/mentions/',
+        facebook:  'https://www.facebook.com/61550061850076',
         linkedin:  'https://www.linkedin.com/in/moudiotis/',
         mapsUrl:   'https://maps.google.com/maps?q=37.965194,23.745722&hl=el&z=17&output=embed',
     },

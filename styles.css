@@ -3090,3 +3090,34 @@ button.tap-toggle[aria-expanded="true"]:hover .tap-chevron { transform: rotate(1
     .svc-inline-list-t { font-size: 12.5px; }
     .svc-inline-list-d { font-size: 11.8px; line-height: 1.6; }
 }
+
+/* ===== MOBILE STICKY CALL BAR ===== */
+.mobile-cta-bar { display: none; }
+@media (max-width: 768px) {
+    .mobile-cta-bar {
+        display: grid; grid-template-columns: 1fr 1fr;
+        position: fixed; left: 0; right: 0; bottom: 0; z-index: 950;
+        background: var(--gold);
+        box-shadow: 0 -2px 18px rgba(0,0,0,0.22);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    .mobile-cta-bar a {
+        display: flex; align-items: center; justify-content: center; gap: 8px;
+        min-height: 54px; padding: 0 10px;
+        font-family: 'Barlow Condensed', 'Barlow', sans-serif;
+        font-size: 16px; font-weight: 600; letter-spacing: 1.2px;
+        text-transform: uppercase; text-decoration: none;
+        color: var(--white); -webkit-tap-highlight-color: transparent;
+    }
+    .mobile-cta-bar a.mcb-call { background: var(--warm); color: var(--ink); }
+    .mobile-cta-bar a.mcb-call:active { background: var(--warm2); }
+    .mobile-cta-bar a i { font-size: 15px; }
+    .mobile-cta-bar a + a { border-left: 1px solid rgba(255,255,255,0.18); }
+
+    body { padding-bottom: 54px; }
+    #backToTop  { bottom: 70px; }
+    .scroll-ruler { bottom: 66px; }
+}
+@media (max-width: 768px) and (display-mode: standalone) {
+    .mobile-cta-bar { padding-bottom: env(safe-area-inset-bottom, 8px); }
+}

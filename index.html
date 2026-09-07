@@ -141,12 +141,38 @@
           "email": "moudiotis.meng@gmail.com",
           "address": {
             "@type": "PostalAddress",
+            "streetAddress": "Υμηττού 157",
             "addressLocality": "Αθήνα",
+            "addressRegion": "Αττική",
+            "postalCode": "116 33",
             "addressCountry": "GR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 37.965194,
+            "longitude": 23.745722
+          },
+          "hasMap": "https://maps.google.com/maps?q=37.965194,23.745722",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "10:00",
+              "closes": "20:00"
+            }
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "reviewCount": "15"
           },
           "areaServed": ["Αθήνα", "Θεσσαλονίκη", "Ελλάδα"],
           "priceRange": "€€",
-          "sameAs": ["https://www.linkedin.com/in/moudiotis/"],
+          "sameAs": [
+            "https://www.linkedin.com/in/moudiotis/",
+            "https://www.facebook.com/61550061850076"
+          ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Υπηρεσίες Μηχανολόγου Μηχανικού — Τεχνικό Γραφείο Μουδιώτης",
@@ -1861,6 +1887,17 @@
         widget.style.cursor = 'pointer';
     })();
     </script>
+
+
+    <!-- ===== MOBILE STICKY CALL BAR ===== -->
+    <nav class="mobile-cta-bar" aria-label="Γρήγορη επικοινωνία">
+        <a href="tel:+306998490768" id="mcbCall" class="mcb-call">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i><span>Καλέστε μας</span>
+        </a>
+        <a href="#contact" class="mcb-msg">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i><span>Στείλτε μήνυμα</span>
+        </a>
+    </nav>
 
 </body>
 </html>

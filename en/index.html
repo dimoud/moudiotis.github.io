@@ -123,12 +123,38 @@
           "email": "moudiotis.meng@gmail.com",
           "address": {
             "@type": "PostalAddress",
+            "streetAddress": "Ymittou 157, Pagkrati",
             "addressLocality": "Athens",
+            "addressRegion": "Attica",
+            "postalCode": "116 33",
             "addressCountry": "GR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 37.965194,
+            "longitude": 23.745722
+          },
+          "hasMap": "https://maps.google.com/maps?q=37.965194,23.745722",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "10:00",
+              "closes": "20:00"
+            }
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "reviewCount": "15"
           },
           "areaServed": ["Athens", "Thessaloniki", "Greece"],
           "priceRange": "€€",
-          "sameAs": ["https://www.linkedin.com/in/moudiotis/"],
+          "sameAs": [
+            "https://www.linkedin.com/in/moudiotis/",
+            "https://www.facebook.com/61550061850076"
+          ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Mechanical Engineer Services — Moudiotis Technical Office",
@@ -1688,6 +1714,17 @@
         widget.style.cursor = 'pointer';
     })();
     </script>
+
+
+    <!-- ===== MOBILE STICKY CALL BAR ===== -->
+    <nav class="mobile-cta-bar" aria-label="Quick contact">
+        <a href="tel:+306998490768" id="mcbCall" class="mcb-call">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i><span>Call us</span>
+        </a>
+        <a href="#contact" class="mcb-msg">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i><span>Send message</span>
+        </a>
+    </nav>
 
 </body>
 </html>
