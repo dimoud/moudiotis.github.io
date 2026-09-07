@@ -1106,11 +1106,11 @@
                     <div class="tap-graphic" id="typeApprovalAnimWrap" aria-hidden="true"></div>
                     <span class="tap-graphic-tag" data-i18n="tap.graphic.tag">ΦΑΚΕΛΟΣ ΕΓΚΡΙΣΗΣ ΤΥΠΟΥ</span>
 
-                    <button class="tap-toggle" id="tapToggle" aria-expanded="false" aria-controls="tapCollapse">
+                    <button class="tap-toggle" id="tapToggle" aria-expanded="true" aria-controls="tapCollapse">
                         <span data-i18n="tap.expand.hint">ΔΕΣ ΟΛΕΣ ΤΙΣ ΥΠΗΡΕΣΙΕΣ ΕΓΚΡΙΣΕΩΝ ΤΥΠΟΥ ΑΝΑΛΥΤΙΚΑ</span><i class="fa-solid fa-chevron-down tap-chevron" aria-hidden="true"></i>
                     </button>
 
-                    <div class="tap-collapse" id="tapCollapse">
+                    <div class="tap-collapse is-open" id="tapCollapse">
                       <div>
                         <!-- Filled by site-init.js from the same C.services entries that
                              carry an items[] array, so section and cards never drift. -->
@@ -1178,10 +1178,10 @@
             </div>
           </div>
         </div>
-        <button class="ta-toggle ta-toggle--bar" aria-expanded="false" aria-controls="taCollapse">
+        <button class="ta-toggle ta-toggle--bar" aria-expanded="true" aria-controls="taCollapse">
           <span data-i18n="ta.expand.hint"></span><i class="fa-solid fa-chevron-down ta-chevron"></i>
         </button>
-        <div class="ta-collapse" id="taCollapse">
+        <div class="ta-collapse is-open" id="taCollapse">
         <div class="ta-col ta-col--cost-mobile">
             <div class="ta-col-label"><i class="fa-solid fa-clipboard-list"></i><span data-i18n="ta.col2.head"></span></div>
             <ul class="ta-checklist">
@@ -1276,13 +1276,13 @@
                 <!-- CHECKLIST PREVIEW STRIP — always visible -->
                 <div class="trc-preview-strip" id="trcPreviewStrip"></div>
 
-                <button class="trc-main-toggle trc-main-toggle--bar" id="trcMainToggle" aria-expanded="false" aria-controls="trcMainCollapse">
+                <button class="trc-main-toggle trc-main-toggle--bar" id="trcMainToggle" aria-expanded="true" aria-controls="trcMainCollapse">
                     <span id="trcTagline">ΚΑΝΕ ΤΟΝ ΠΛΗΡΗ ΕΛΕΓΧΟ ΚΑΙ ΔΕΣ ΑΝΑΛΥΤΙΚΑ</span>
                     <i class="fa-solid fa-chevron-down trc-main-chevron"></i>
                 </button>
 
                 <!-- COLLAPSIBLE BODY -->
-                <div class="trc-main-collapse" id="trcMainCollapse">
+                <div class="trc-main-collapse is-open" id="trcMainCollapse">
 
                     <!-- DIAGRAM -->
                     <div class="trc-diagram-wrap">

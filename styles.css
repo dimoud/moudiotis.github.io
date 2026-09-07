@@ -670,6 +670,35 @@ section { padding: 112px 7%; }
         transform: translateX(0);
     }
 }
+
+/* ── "Zipper" variant — where supported, tie the slide directly to scroll
+   position instead of firing once, so left/right cards close in toward
+   the middle as the user scrolls (native scroll-driven animation; the
+   transition-based reveal above stays as the fallback where unsupported). ── */
+@keyframes zipperFromLeft {
+    from { opacity: 0; transform: translateX(clamp(-260px, -18vw, -70px)); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes zipperFromRight {
+    from { opacity: 0; transform: translateX(clamp(70px, 18vw, 260px)); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@supports (animation-timeline: view()) {
+    @media (min-width: 769px) {
+        .service-card--odd[data-reveal],
+        .service-card--even[data-reveal] {
+            animation-timeline: view();
+            /* Spans a real chunk of scroll (not just the card's own height),
+               so the slide plays out while the card is visible on screen
+               instead of finishing before the user scrolls it into view. */
+            animation-range: cover 0% cover 45%;
+            animation-fill-mode: both;
+            transition: none;
+        }
+        .service-card--odd[data-reveal]  { animation-name: zipperFromLeft; }
+        .service-card--even[data-reveal] { animation-name: zipperFromRight; }
+    }
+}
 /* Mobile: simple fade */
 @media (max-width: 768px) {
     .service-card[data-reveal] {

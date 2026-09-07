@@ -256,3 +256,50 @@ html:not(.js) [data-reveal] { opacity: 1 !important; transform: none !important;
     .svc-hero-logo::before { inset: -7px; }
     .svc-hero-logo::after  { inset: -14px; }
 }
+
+/* ============================================================
+   ΠΛΑΤΟΣ — ΤΟ ΙΔΙΟ ΜΕ ΤΗΝ ΚΕΝΤΡΙΚΗ
+   Η κεντρική χρησιμοποιεί .tap-outer / .ta-dual-row:
+   max-width 1400px με padding 0 48px  ->  1304px περιεχόμενο.
+   Οι σελίδες υπηρεσίας ακολουθούν ακριβώς αυτό.
+   ============================================================ */
+body .svc-hero-in,
+body .svc-crumb,
+body .ta-wrap {
+    max-width: 1400px;
+    padding-left: 48px;
+    padding-right: 48px;
+}
+body .ta-wrap { padding-top: 48px; padding-bottom: 48px; }
+body .ta-box  { max-width: none; }
+body .svc-crumb { padding-top: 20px; padding-bottom: 0; }
+
+/* Το κείμενο πιάνει όλο το πλάτος του κουτιού — κανένα max-width */
+.svc-prose p, .svc-prose ul, .svc-prose li, .svc-prose h2, .svc-prose h3,
+.svc-hero-txt > *, .svc-faq details p { max-width: none; }
+
+@media (max-width: 900px) {
+    body .svc-hero-in, body .svc-crumb, body .ta-wrap {
+        padding-left: 16px; padding-right: 16px;
+    }
+}
+
+/* Το εισαγωγικό, τώρα μέσα στο λευκό κουτί και όχι στο μπλε hero */
+.svc-prose .svc-intro {
+    font-size: clamp(17px, 1.9vw, 20px);
+    line-height: 1.68;
+    color: var(--ink);
+    margin: 4px 0 20px;
+    padding-left: 16px;
+    border-left: 3px solid var(--warm);
+}
+.svc-prose .svc-intro strong { font-weight: 600; }
+
+/* Το hero κρατά μόνο λογότυπο, kicker και τίτλο — πιο ήσυχο, πιο κοφτό */
+.svc-hero { padding-top: 104px; padding-bottom: 46px; }
+@media (max-width: 700px) { .svc-hero { padding-top: 82px; padding-bottom: 34px; } }
+
+/* Τα δαχτυλίδια του λογοτύπου βγαίνουν 19px έξω από το πλαίσιό του·
+   χωρίς περιθώριο τα έκοβε το overflow:hidden του hero. */
+.svc-hero-in { padding-left: 72px; }
+@media (max-width: 900px) { .svc-hero-in { padding-left: 34px; } }
