@@ -1594,6 +1594,21 @@ footer {
     .trust-stats { grid-template-columns: repeat(3, 1fr); }
 
     .contact-grid { grid-template-columns: 1fr; row-gap: 32px; }
+    /* Χωρίς min-width:0 τα grid items δεν συρρικνώνονται κάτω από το
+       min-content τους: η στήλη έμενε 464px σε οθόνη 390px και η
+       ενότητα επικοινωνίας ξεχείλιζε οριζόντια. */
+    .contact-grid > * { min-width: 0; }
+
+    /* Ίδια αιτία στο footer: τα flex items έμεναν στα 427px σε οθόνη 390px
+       και το περιεχόμενο κοβόταν δεξιά — το έκρυβε το overflow-x:hidden. */
+    .footer-top > *, .footer-brand, .footer-links,
+    .footer-brand-text { min-width: 0; max-width: 100%; }
+    .footer-links { flex-wrap: wrap; }
+    .footer-brand-text .fname,
+    .footer-brand-text .ftitle { overflow-wrap: anywhere; }
+    .contact-info, .contact-form-wrap, .contact-map { min-width: 0; max-width: 100%; }
+    .contact-detail, .contact-detail-text { min-width: 0; }
+    .cd-value { overflow-wrap: anywhere; }
     .contact-info { grid-column: 1; grid-row: auto; }
     .contact-map  { grid-column: 1; grid-row: auto; }
     .contact-form-wrap { grid-column: 1; grid-row: auto; align-self: start; }
@@ -1747,7 +1762,9 @@ footer {
 
     /* ── Footer ── */
     .footer-top { flex-direction: column; align-items: flex-start; gap: 24px; }
-    .footer-links { flex-wrap: nowrap; gap: 20px; }
+    /* Πέντε σύνδεσμοι σε μία σειρά δεν χωρούν σε 343px: το nowrap έβγαζε
+       το τελευταίο («Επικοινωνία») εκτός οθόνης. Wrap με μικρότερο κενό. */
+    .footer-links { flex-wrap: wrap; gap: 14px 18px; }
     .footer-bottom { flex-direction: column; align-items: center; gap: 12px; margin-top: 24px; }
     .footer-socials { justify-content: center; width: 100%; }
     .footer-social-link { width: 44px; height: 44px; }

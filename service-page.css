@@ -324,3 +324,9 @@ body .svc-crumb { padding-top: 20px; padding-bottom: 0; }
 .svc-prose h3   { font-size: clamp(18px, 2vw, 21px);   line-height: 1.35; margin: 24px 0 10px; }
 .svc-faq summary{ font-size: clamp(17px, 1.9vw, 20px); line-height: 1.4; }
 .svc-prose h2:first-child, .svc-prose > .svc-intro + h2 { margin-top: 10px; }
+
+/* Κινητό: τα τέσσερα στατιστικά να αναδιπλώνονται 2×2 όπως στην κεντρική,
+   αντί να στριμώχνονται σε τέσσερις στήλες των ~70px. */
+@media (max-width: 700px) {
+    .ta-stat-strip > .ta-stat { flex: 0 1 auto; }
+}
