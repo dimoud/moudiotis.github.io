@@ -529,6 +529,10 @@
             var hb   = document.getElementById('hamburger');
             var open = menu.classList.toggle('open');
             document.body.style.overflow = open ? 'hidden' : '';
+            /* Φεύγει το backdrop-filter από τη μπάρα όσο το μενού είναι ανοιχτό·
+               αλλιώς το fixed overlay εγκλωβίζεται μέσα της. */
+            var navEl = document.querySelector('nav');
+            if (navEl) navEl.classList.toggle('menu-open', open);
             if (hb) { hb.setAttribute('aria-expanded', open ? 'true' : 'false'); hb.classList.toggle('open', open); }
         }
         /* Μπάρα προόδου ανάγνωσης */
@@ -577,7 +581,23 @@
                 if (hb) { hb.setAttribute('aria-expanded', 'false'); hb.classList.remove('open'); }
             });
         });
-    </script>
+    
+        /* Το μενού κλείνει μόλις ο χρήστης κυλήσει τη σελίδα. */
+        (function () {
+            var last = window.scrollY;
+            window.addEventListener('scroll', function () {
+                var menu = document.getElementById('navLinks');
+                if (!menu || !menu.classList.contains('open')) { last = window.scrollY; return; }
+                if (Math.abs(window.scrollY - last) < 8) return;
+                menu.classList.remove('open');
+                document.body.style.overflow = '';
+                var nv = document.querySelector('nav');
+                if (nv) nv.classList.remove('menu-open');
+                var hb = document.getElementById('hamburger');
+                if (hb) { hb.classList.remove('open'); hb.setAttribute('aria-expanded', 'false'); }
+            }, { passive: true });
+        }());
+</script>
     <script>
         /* Αγγλικά κείμενα για το γραφικό του φακέλου έγκρισης τύπου —
            οι ίδιες τιμές που ορίζει το site-init.js στην αρχική. */

@@ -1600,6 +1600,11 @@
             var hamburger = document.getElementById('hamburger');
             var isOpen    = menu.classList.toggle('open');
             document.body.style.overflow = isOpen ? 'hidden' : '';
+            /* Το <nav> σημαδεύεται ώστε να φύγει το backdrop-filter όσο
+               το μενού είναι ανοιχτό — αλλιώς το fixed overlay εγκλωβίζεται
+               μέσα στη μπάρα. */
+            var navEl = document.querySelector('nav');
+            if (navEl) navEl.classList.toggle('menu-open', isOpen);
             if (hamburger) {
                 hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
                 hamburger.classList.toggle('open', isOpen);
@@ -1608,6 +1613,8 @@
         function closeMenu() {
             var hamburger = document.getElementById('hamburger');
             document.getElementById('navLinks').classList.remove('open');
+            var navEl2 = document.querySelector('nav');
+            if (navEl2) navEl2.classList.remove('menu-open');
             document.body.style.overflow = '';
             if (hamburger) {
                 hamburger.setAttribute('aria-expanded', 'false');
@@ -1617,7 +1624,23 @@
         document.querySelectorAll('#navLinks a').forEach(function(a) {
             a.addEventListener('click', closeMenu);
         });
-    </script>
+    
+        /* Το μενού κλείνει μόλις ο χρήστης κυλήσει τη σελίδα. */
+        (function () {
+            var last = window.scrollY;
+            window.addEventListener('scroll', function () {
+                var menu = document.getElementById('navLinks');
+                if (!menu || !menu.classList.contains('open')) { last = window.scrollY; return; }
+                if (Math.abs(window.scrollY - last) < 8) return;
+                menu.classList.remove('open');
+                document.body.style.overflow = '';
+                var nv = document.querySelector('nav');
+                if (nv) nv.classList.remove('menu-open');
+                var hb = document.getElementById('hamburger');
+                if (hb) { hb.classList.remove('open'); hb.setAttribute('aria-expanded', 'false'); }
+            }, { passive: true });
+        }());
+</script>
 
     <script type="module">
         import { animate, spring } from 'https://cdn.jsdelivr.net/npm/animejs@4/+esm';

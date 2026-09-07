@@ -197,14 +197,20 @@
     }
   }
 
+  function isMobileHero() {
+    return window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
+  }
+
   function init() {
     var src = sources();
     if (!src.length) return;
 
-    /* ── DESKTOP: μέσα στον δακτύλιο του λογοτύπου ── */
-    var wrap = document.querySelector('.hero-photo-wrap');
+    /* ── DESKTOP: εναλλαγή μέσα στον δακτύλιο του λογοτύπου ──
+     *  Στο κινητό ΔΕΝ γίνεται: εκεί το λογότυπο μένει σταθερό στο πλαίσιό του
+     *  και η εναλλαγή αφορά μόνο το σκίτσο πιο κάτω. */
+    var wrap  = document.querySelector('.hero-photo-wrap');
     var photo = document.getElementById('heroPhoto');
-    if (wrap && photo && !reduced()) {
+    if (wrap && photo && !reduced() && !isMobileHero()) {
       var stage = document.createElement('div');
       stage.className = 'hero-stage';
       var first = document.createElement('div');
@@ -221,36 +227,49 @@
       rotator(stage, slides, 0);
     }
 
-    /* ── ΚΙΝΗΤΟ: τυχαίο σκίτσο σε κάθε φόρτωση ── */
+    /* ── ΚΙΝΗΤΟ: εναλλαγή μόνο στο σκίτσο του hero ──
+     *  Ο γερανός που υπήρχε μένει μέσα στη σειρά. Η αφετηρία επιλέγεται τυχαία
+     *  σε κάθε φόρτωση, ώστε ο επισκέπτης που ξαναμπαίνει να μη βλέπει το ίδιο. */
     var crane = document.getElementById('heroCraneMobile');
-    if (crane) {
-      var pool = src.slice();
-      var pick = Math.floor(Math.random() * (pool.length + 1));
-      if (pick < pool.length) {
-        var mStage = document.createElement('div');
-        mStage.className = 'hero-stage hero-stage--mobile';
-        var slide = makeSlide(pool[pick], 90);
-        slide.classList.add('is-active');
-        mStage.appendChild(slide);
-        crane.innerHTML = '';
-        crane.appendChild(mStage);
-        crane.classList.add('hero-crane-mobile--art');
-        if (reduced()) {
-          var s2 = slide.querySelector('svg');
-          slide.dataset.drawn = '1';
-          if (s2) settle(s2);
-        } else if ('IntersectionObserver' in window) {
-          var started = false;
-          new IntersectionObserver(function (entries) {
-            entries.forEach(function (e) {
-              if (e.isIntersecting && !started) { started = true; revealSlide(slide); }
-            });
-          }, { threshold: 0.2 }).observe(crane);
-        } else {
-          revealSlide(slide);
-        }
+    if (!crane) return;
+
+    var mStage = document.createElement('div');
+    mStage.className = 'hero-stage hero-stage--mobile';
+
+    var craneSlide = document.createElement('div');
+    craneSlide.className = 'hero-slide hero-slide--crane';
+    while (crane.firstChild) craneSlide.appendChild(crane.firstChild);
+    mStage.appendChild(craneSlide);
+
+    var mSlides = [craneSlide];
+    src.forEach(function (s, i) {
+      var sl = makeSlide(s, 90 + i);
+      mStage.appendChild(sl);
+      mSlides.push(sl);
+    });
+    crane.appendChild(mStage);
+
+    var start = Math.floor(Math.random() * mSlides.length);
+
+    if (reduced()) {
+      mSlides.forEach(function (sl, i) { sl.classList.toggle('is-active', i === start); });
+      var sv = mSlides[start].querySelector('svg');
+      if (sv && mSlides[start].classList.contains('hero-slide--art')) {
+        mSlides[start].dataset.drawn = '1';
+        settle(sv);
       }
-      /* αν pick === pool.length μένει ο γερανός, όπως ήταν */
+      return;
+    }
+
+    if ('IntersectionObserver' in window) {
+      var began = false;
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting && !began) { began = true; rotator(crane, mSlides, start); }
+        });
+      }, { threshold: 0.2 }).observe(crane);
+    } else {
+      rotator(crane, mSlides, start);
     }
   }
 
