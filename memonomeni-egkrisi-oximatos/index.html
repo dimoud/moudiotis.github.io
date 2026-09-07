@@ -520,8 +520,19 @@
                     entries.forEach(function (e) {
                         if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
                     });
-                }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+                }, { threshold: 0.01, rootMargin: '0px 0px -6% 0px' });
                 rv.forEach(function (el) { io.observe(el); });
+                /* Ένα κουτί ψηλότερο από την οθόνη δεν φτάνει ποτέ ποσοστό
+                   ορατότητας 12%: με το παλιό κατώφλι η πρώτη οθόνη σε κινητό
+                   έμενε κενή μέχρι το πρώτο σκρολ. Ό,τι βρίσκεται ήδη μέσα στο
+                   κάδρο κατά τη φόρτωση εμφανίζεται αμέσως. */
+                rv.forEach(function (el) {
+                    var r = el.getBoundingClientRect();
+                    if (r.top < window.innerHeight && r.bottom > 0) {
+                        el.classList.add('visible');
+                        io.unobserve(el);
+                    }
+                });
             }
         })();
         function toggleMenu() {
@@ -582,20 +593,64 @@
             });
         });
     
-        /* Το μενού κλείνει μόλις ο χρήστης κυλήσει τη σελίδα. */
+        /* ── ΚΛΕΙΣΙΜΟ ΤΟΥ ΜΕΝΟΥ ──
+           Τρεις τρόποι: κύλιση, σύρσιμο προς τα δεξιά, άγγιγμα έξω από
+           το συρτάρι. Το «Χ» παραμένει, φυσικά. */
         (function () {
-            var last = window.scrollY;
-            window.addEventListener('scroll', function () {
-                var menu = document.getElementById('navLinks');
-                if (!menu || !menu.classList.contains('open')) { last = window.scrollY; return; }
-                if (Math.abs(window.scrollY - last) < 8) return;
+            var menu = document.getElementById('navLinks');
+            if (!menu) return;
+
+            function shut() {
+                if (!menu.classList.contains('open')) return;
                 menu.classList.remove('open');
                 document.body.style.overflow = '';
                 var nv = document.querySelector('nav');
                 if (nv) nv.classList.remove('menu-open');
                 var hb = document.getElementById('hamburger');
                 if (hb) { hb.classList.remove('open'); hb.setAttribute('aria-expanded', 'false'); }
+            }
+
+            var last = window.scrollY;
+            window.addEventListener('scroll', function () {
+                if (!menu.classList.contains('open')) { last = window.scrollY; return; }
+                if (Math.abs(window.scrollY - last) < 8) return;
+                shut();
             }, { passive: true });
+
+            /* σύρσιμο προς τα δεξιά */
+            var sx = 0, sy = 0;
+            menu.addEventListener('touchstart', function (e) {
+                if (!e.touches || !e.touches[0]) return;
+                sx = e.touches[0].clientX; sy = e.touches[0].clientY;
+            }, { passive: true });
+            menu.addEventListener('touchend', function (e) {
+                if (!e.changedTouches || !e.changedTouches[0]) return;
+                var dx = e.changedTouches[0].clientX - sx;
+                var dy = e.changedTouches[0].clientY - sy;
+                if (dx > 55 && Math.abs(dx) > Math.abs(dy) * 1.5) shut();
+            }, { passive: true });
+
+            /* άγγιγμα έξω από το συρτάρι */
+            document.addEventListener('click', function (e) {
+                if (!menu.classList.contains('open')) return;
+                if (e.target.closest('#navLinks') || e.target.closest('#hamburger')) return;
+                shut();
+            });
+        }());
+
+        /* Στο κινητό όλα τα πτυσσόμενα ξεκινούν κλειστά — η πρώτη οθόνη
+           πρέπει να δείχνει το ουσιώδες, όχι ανοιγμένους καταλόγους. */
+        (function () {
+            if (window.innerWidth > 768) return;
+            document.querySelectorAll('.ta-collapse.is-open').forEach(function (el) {
+                el.classList.remove('is-open');
+            });
+            document.querySelectorAll('.ta-toggle[aria-expanded="true"], #trcMainToggle[aria-expanded="true"]').forEach(function (b) {
+                b.setAttribute('aria-expanded', 'false');
+            });
+            document.querySelectorAll('details[open]').forEach(function (d) {
+                d.removeAttribute('open');
+            });
         }());
 </script>
     <script src="../service-animations.js" defer></script>
