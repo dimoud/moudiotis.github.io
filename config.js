@@ -127,6 +127,8 @@ window.SITE_CONFIG = {
     services: [
         {
             icon:        'fa-truck-ramp-box',
+            urlEl: '/adeia-treiler-o1-o2/',
+            urlEn: '/en/adeia-treiler-o1-o2/',
             titleEl:     'Άδεια Τρέιλερ Ο1 &amp; Ο2 — Ταξινόμηση Ρυμουλκούμενου &amp; Μπαγκαζιέρας',
             titleEn:     'O1 &amp; O2 Trailer Licence — Trailer &amp; Cargo Box Registration',
             textEl:      'Ξανάνοιξαν οι διαδικασίες <strong class="kw">ταξινόμησης</strong> για <strong class="kw">όλα τα τρέιλερ</strong>. Αναλαμβάνουμε πλήρως: <strong class="kw">Ο1</strong> (έως 750 kg — <strong class="kw">μπαγκαζιέρα</strong>, σκάφος, τροχόσπιτο) &amp; <strong class="kw">Ο2</strong> (έως 3,5 τόνους). <strong class="kw">Έγκριση τύπου ρυμουλκούμενου</strong>, τεχνική μελέτη, υποβολή σε ΥΜΕΔ/ΚΤΕΟ, <strong class="kw">έκδοση άδειας κυκλοφορίας</strong> — από την αρχή ώς το τέλος.',

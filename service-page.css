@@ -330,3 +330,31 @@ body .svc-crumb { padding-top: 20px; padding-bottom: 0; }
 @media (max-width: 700px) {
     .ta-stat-strip > .ta-stat { flex: 0 1 auto; }
 }
+
+/* ── Γρήγορη επικοινωνία, αμέσως μετά το εισαγωγικό ──
+   Το τηλέφωνο πρέπει να είναι ορατό χωρίς κύλιση. */
+.svc-quick {
+    display: flex; flex-wrap: wrap; align-items: stretch; gap: 12px;
+    margin: 0 0 22px;
+}
+.svc-quick a {
+    display: inline-flex; align-items: center; gap: 11px;
+    padding: 13px 22px; text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 17px; letter-spacing: 1.2px; text-transform: uppercase;
+    transition: background .25s, border-color .25s, transform .25s;
+}
+.svc-quick-call { background: var(--warm); color: var(--ink); font-weight: 600; }
+.svc-quick-call:hover { background: var(--warm2); transform: translateY(-1px); }
+.svc-quick-call i { font-size: 15px; }
+.svc-quick-call span { display: flex; flex-direction: column; line-height: 1.15; }
+.svc-quick-call small {
+    font-family: 'Source Sans 3', sans-serif; font-size: 10.5px;
+    letter-spacing: 1.6px; text-transform: uppercase; opacity: .72; font-weight: 500;
+}
+.svc-quick-msg { border: 1px solid var(--gold); color: var(--gold); }
+.svc-quick-msg:hover { background: var(--gold); color: var(--white); }
+@media (max-width: 560px) {
+    .svc-quick { flex-direction: column; }
+    .svc-quick a { justify-content: center; }
+}

@@ -358,6 +358,53 @@
         });
     }
 
+    /* ─── 9b. SERVICE CARD "ZIPPER" SCROLL-SCRUB ─────────────────────────────
+       Ties the odd/even service cards' slide-in directly to scroll position
+       (instead of the one-shot reveal above), so left/right cards visibly
+       converge toward the middle as the user scrolls down — like a zipper
+       closing. Runs on all screen sizes (.services-grid stays two columns
+       down to mobile — see styles.css). Skipped only for reduced-motion
+       users, in which case the one-shot reveal above still applies normally. */
+    (function () {
+        var reduceMq = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (reduceMq.matches) return;
+
+        var zipCards = document.querySelectorAll(
+            '.service-card--odd[data-reveal], .service-card--even[data-reveal]'
+        );
+        if (!zipCards.length) return;
+
+        zipCards.forEach(function (card) { card.classList.add('service-card--zipper-js'); });
+
+        var maxOffset = Math.min(260, Math.max(40, window.innerWidth * 0.18));
+
+        function clamp01(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+
+        function updateZipper() {
+            var vh    = window.innerHeight;
+            var start = vh;         /* card top at viewport bottom  → progress 0 */
+            var end   = vh * 0.55;  /* card top at 55% up viewport  → progress 1 */
+            zipCards.forEach(function (card) {
+                var top = card.getBoundingClientRect().top;
+                var progress = clamp01((start - top) / (start - end));
+                var dir = card.classList.contains('service-card--odd') ? -1 : 1;
+                card.style.opacity   = progress.toFixed(3);
+                card.style.transform = 'translateX(' + ((1 - progress) * dir * maxOffset).toFixed(1) + 'px)';
+            });
+        }
+
+        var ticking = false;
+        function onScroll() {
+            if (ticking) return;
+            ticking = true;
+            raf(function () { updateZipper(); ticking = false; });
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+        updateZipper();
+    })();
+
     /* ─── 0. SCROLL PROGRESS BAR ─────────────────────────────────────────── */
     var progressBar = $('progress');
 
