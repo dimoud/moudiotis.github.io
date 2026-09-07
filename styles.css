@@ -382,6 +382,7 @@ nav:not(.scrolled) .lang-sep              { background: rgba(255,255,255,0.18); 
     display: block; letter-spacing: -2px;
     color: var(--white);
     font-weight: 300; line-height: 0.88;
+    white-space: pre-line;
 }
 .hero-name {
     position: relative;

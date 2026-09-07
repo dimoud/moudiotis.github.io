@@ -18,8 +18,8 @@ window.SITE_CONFIG = {
     profile: {
         firstNameEl:   'ΤΕΧΝΙΚΟ ΓΡΑΦΕΙΟ',
         firstNameEn:   'TECHNICAL OFFICE',
-        lastNameEl:    'ΔΗΜΗΤΡΙΟΣ ΜΟΥΔΙΩΤΗΣ',
-        lastNameEn:    'DIMITRIOS MOUDIOTIS',
+        lastNameEl:    'ΔΗΜΗΤΡΙΟΣ\nΜΟΥΔΙΩΤΗΣ',
+        lastNameEn:    'DIMITRIOS\nMOUDIOTIS',
         suffixEl:      '& ΣΥΝΕΡΓΑΤΕΣ',
         suffixEn:      '& Associates',
         initials:      'ΔΜ',
