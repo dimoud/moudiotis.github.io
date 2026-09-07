@@ -2739,3 +2739,353 @@ button.ta-toggle--bar[aria-expanded="true"] .ta-chevron { transform: rotate(180d
 @media (max-width: 380px) {
     .trc-preview-item { flex: 1 0 calc(50% - 4px); }
 }
+
+
+/* Sub-service breakdown inside an expanded card.
+   The panel itself (collapse, padding, grid-column) is styled by the inline
+   <style> block in each page head, which loads after this file. */
+.svc-inline-list {
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+    border-top: 1px solid rgba(29,58,92,0.1);
+}
+.svc-inline-list li {
+    padding: 12px 0 12px 16px;
+    border-bottom: 1px solid rgba(29,58,92,0.07);
+    position: relative;
+}
+.svc-inline-list li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 19px;
+    width: 6px; height: 6px;
+    background: var(--warm);
+    transform: rotate(45deg);
+}
+.svc-inline-list li:last-child { border-bottom: 0; }
+.svc-inline-list-t {
+    display: block;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.2px;
+    margin-bottom: 3px;
+}
+.svc-inline-list-d {
+    display: block;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--stone);
+    font-weight: 300;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TYPE APPROVAL SECTION (#egkrisi-typou-ochimaton)
+   Shares the visual language of the trailer guide panel (.ta-*): white card,
+   4px warm-gold border, navy topbar strip.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.tap-section { background: var(--cream2); padding: 72px 0 80px; }
+.tap-outer   { max-width: 1400px; margin: 0 auto; padding: 0 48px; }
+
+.tap-box {
+    background: #fff;
+    border: 4px solid #c9a86c;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(0,0,0,.13);
+    color: #1c1b19;
+    font-family: 'Source Sans 3', sans-serif;
+}
+.tap-topbar {
+    background: #1f3c63;
+    color: #fff;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.tap-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    color: #c9a86c;
+}
+.tap-kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.62);
+}
+.tap-body { padding: 28px 24px 24px; }
+.tap-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 3.4vw, 36px);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 14px;
+}
+.tap-intro {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--stone);
+    font-weight: 300;
+    max-width: 78ch;
+    margin: 0;
+}
+.tap-intro strong { color: var(--ink); font-weight: 600; }
+.tap-rule {
+    height: 1px;
+    background: rgba(29,58,92,0.12);
+    margin: 24px 0;
+}
+
+/* Sketch animation holder */
+.tap-graphic {
+    margin: 26px auto 6px;
+    max-width: 860px;
+    padding: 0 8px;
+}
+.tap-graphic-tag {
+    display: block;
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-top: 6px;
+}
+
+/* Collapse — mirrors the .ta-collapse behaviour */
+.tap-collapse {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s var(--ease);
+}
+.tap-collapse.is-open { grid-template-rows: 1fr; }
+.tap-collapse > div { overflow: hidden; min-height: 0; }
+
+button.tap-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #c9a86c;
+    color: #1c1b19;
+    border: 0;
+    cursor: pointer;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5pt;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 20px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s, color 0.3s, letter-spacing 0.3s var(--ease);
+}
+button.tap-toggle:focus-visible { outline: 2px solid #1f3c63; outline-offset: 3px; }
+/* keep the label above the hover sweep, and let the longer text wrap on mobile */
+button.tap-toggle > * { position: relative; z-index: 1; }
+button.tap-toggle > span { text-align: center; }
+
+/* Hover: darken, open the tracking, sweep a light band across, nudge the chevron */
+button.tap-toggle::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(100deg, transparent 0%, rgba(255,255,255,0.42) 50%, transparent 100%);
+    transform: translateX(-110%);
+    transition: transform 0.75s var(--ease);
+}
+button.tap-toggle:hover { background: #b8912f; letter-spacing: 2.7px; }
+button.tap-toggle:hover::before { transform: translateX(110%); }
+
+button.tap-toggle .tap-chevron { transition: transform 0.35s var(--ease); }
+button.tap-toggle:hover .tap-chevron { transform: translateY(3px); }
+button.tap-toggle[aria-expanded="true"] .tap-chevron { transform: rotate(180deg); }
+button.tap-toggle[aria-expanded="true"]:hover .tap-chevron { transform: rotate(180deg) translateY(3px); }
+
+
+/* Three category columns */
+/* Two shared rows — heads on row 1, lists on row 2 — so every column's gold
+   underline lands on the same baseline however many lines its title wraps to. */
+.tap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr;
+    gap: 0;
+    margin-top: 24px;
+}
+.tap-col {
+    padding: 0 22px;
+    border-left: 1px solid rgba(29,58,92,0.1);
+    grid-row: span 2;
+    display: grid;
+    grid-template-rows: subgrid;
+}
+.tap-col:first-child { padding-left: 0; border-left: 0; }
+.tap-col:last-child  { padding-right: 0; }
+.tap-col-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--warm);
+    margin-bottom: 4px;
+    height: 100%;
+    box-sizing: border-box;
+}
+/* Browsers without subgrid: reserve two title lines so the underlines still line up */
+@supports not (grid-template-rows: subgrid) {
+    .tap-col { display: block; }
+    .tap-col-title { min-height: 2.4em; }
+}
+.tap-col-icon { font-size: 20px; color: var(--warm); padding-top: 3px; flex-shrink: 0; }
+.tap-col-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ink);
+    margin: 0;
+}
+.tap-list { list-style: none; margin: 0; padding: 0; }
+.tap-item {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0 8px;
+    /* negative margin + equal padding: the hover background gets breathing room
+       without shifting the text away from the column edge */
+    margin: 0 -12px;
+    padding: 14px 12px;
+    border-bottom: 1px solid rgba(29,58,92,0.08);
+    transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease),
+                border-color 0.3s var(--ease);
+}
+.tap-item:last-child { border-bottom: 0; }
+.tap-item-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: var(--warm);
+    opacity: 0.7;
+    letter-spacing: 1px;
+    padding-top: 2px;
+    user-select: none;
+    transition: opacity 0.3s var(--ease);
+}
+.tap-item-body { min-width: 0; }
+.tap-item-t {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.35;
+    margin-bottom: 4px;
+    transition: color 0.3s var(--ease);
+}
+.tap-item-d {
+    display: block;
+    font-size: 12.8px;
+    line-height: 1.65;
+    color: var(--stone);
+    font-weight: 300;
+    transition: color 0.3s var(--ease);
+}
+
+/* Row hover — same language as .service-card:hover (tint + inset gold accent) */
+.tap-item:hover {
+    background: rgba(29,58,92,0.05);
+    box-shadow: inset 3px 0 0 var(--warm);
+    border-bottom-color: rgba(201,168,108,0.45);
+}
+.tap-item:hover .tap-item-num { opacity: 1; }
+.tap-item:hover .tap-item-t   { color: var(--gold); }
+.tap-item:hover .tap-item-d   { color: var(--ink2); }
+
+/* CTA row */
+.tap-cta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(29,58,92,0.12);
+}
+.tap-cta-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--stone);
+    font-weight: 300;
+    margin: 0;
+    flex: 1 1 320px;
+}
+.tap-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #1f3c63;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 13px 24px;
+    transition: background 0.3s, transform 0.3s;
+}
+.tap-cta-btn:hover { background: #c9a86c; color: #1c1b19; transform: translateX(3px); }
+
+@media (max-width: 900px) {
+    .tap-outer { padding: 0 16px; }
+    .tap-grid { grid-template-columns: 1fr; grid-template-rows: none; }
+    .tap-col {
+        grid-row: auto;
+        display: block;
+        padding: 0;
+        border-left: 0;
+        border-top: 1px solid rgba(29,58,92,0.1);
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+    .tap-col:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+    .tap-col-head { height: auto; }
+    .tap-col-title { min-height: 0; }
+}
+
+@media (max-width: 640px) {
+    .tap-section { padding: 34px 0 40px; }
+    .tap-body { padding: 18px 16px 16px; }
+    .tap-topbar { padding: 8px 16px; }
+    .tap-title { font-size: 20px; }
+    .tap-intro { font-size: 12.5px; line-height: 1.7; }
+    .tap-graphic { margin: 18px auto 4px; padding: 0; }
+    .tap-col-title { font-size: 16px; }
+    .tap-col-icon { font-size: 16px; }
+    .tap-item { grid-template-columns: 1.6rem 1fr; margin: 0 -10px; padding: 11px 10px; }
+    .tap-item-t { font-size: 12.5px; }
+    .tap-item-d { font-size: 11.8px; line-height: 1.55; }
+    button.tap-toggle { font-size: 8pt; padding: 12px 14px; letter-spacing: 1.1px; line-height: 1.35; }
+    button.tap-toggle:hover { letter-spacing: 1.1px; }
+    .tap-cta-text { font-size: 12.5px; }
+    .tap-cta-btn { font-size: 9.5px; padding: 11px 18px; }
+    .svc-inline-list li { padding: 9px 0 9px 13px; }
+    .svc-inline-list-t { font-size: 12.5px; }
+    .svc-inline-list-d { font-size: 11.8px; line-height: 1.6; }
+}

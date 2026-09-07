@@ -56,6 +56,7 @@
     T['nav.title']    = { el: P.professionEl,  en: P.professionEn };
     T['nav.about']    = { el: 'Σχετικά',       en: 'About' };
     T['nav.services'] = { el: 'Υπηρεσίες',     en: 'Services' };
+    T['nav.approvals'] = { el: 'Εγκρίσεις Τύπου', en: 'Type Approvals' };
     T['nav.trust']    = { el: 'Αξιοπιστία',    en: 'Why Us' };
     T['nav.contact']  = { el: 'Επικοινωνία',   en: 'Contact' };
 
@@ -143,10 +144,37 @@
     T['ta.svc4']        = { el: '<strong>Υποβολή φακέλου</strong> — Ετοιμάζουμε και υποβάλλουμε τον πλήρη φάκελο στην αρμόδια υπηρεσία. Το μόνο που χρειάζεται να κάνετε είναι να μας <strong>τηλεφωνήσετε</strong>.', en: '<strong>File submission</strong> — We prepare and submit the complete file to the competent authority. All you need to do is <strong>call us</strong>.' };
     T['ta.cta.text']    = { el: 'Επικοινωνήστε μαζί μας σήμερα για δωρεάν ενημέρωση σχετικά με τη νομιμοποίηση του τρέιλερ ή της μπαγκαζιέρας σας.', en: 'Contact us today for a free consultation on legalizing your trailer or cargo box.' };
     T['ta.cta.btn']     = { el: 'Επικοινωνία', en: 'Get in Touch' };
+
+    // TYPE-APPROVAL SECTION (tap.*)
+    T['tap.badge']       = { el: 'ΕΓΚΡΙΣΕΙΣ ΤΥΠΟΥ', en: 'TYPE APPROVALS' };
+    T['tap.title']       = { el: 'Υπηρεσίες Έγκρισης Τύπου &amp; Τεχνικής Υποστήριξης Οχημάτων', en: 'Vehicle Type Approval &amp; Technical Support Services' };
+    T['tap.kicker']      = { el: 'ΟΧΗΜΑΤΑ &amp; ΡΥΜΟΥΛΚΟΥΜΕΝΑ', en: 'VEHICLES &amp; TRAILERS' };
+    T['tap.intro']       = { el: 'Πέρα από την <strong>έκδοση αδειών τρέιλερ</strong>, το γραφείο αναλαμβάνει το πλήρες φάσμα της <strong>έγκρισης τύπου</strong> και της τεχνικής υποστήριξης οχημάτων — από τη σύνταξη του φακέλου και τη μελέτη, έως την <strong>καταχώρηση στο ΤΑΟ</strong>, το <strong>Δελτίο Κοινοποίησης</strong> και την τελική ταξινόμηση.', en: 'Beyond <strong>trailer licensing</strong>, the office handles the full spectrum of <strong>type approval</strong> and vehicle technical support — from dossier preparation and technical study, through <strong>Technical Vehicle Archive (TAO) registration</strong> and the <strong>Notification Certificate</strong>, to final registration.' };
+    T['tap.expand.hint'] = { el: 'ΔΕΣ ΟΛΕΣ ΤΙΣ ΥΠΗΡΕΣΙΕΣ ΕΓΚΡΙΣΕΩΝ ΤΥΠΟΥ ΑΝΑΛΥΤΙΚΑ', en: 'SEE ALL TYPE APPROVAL SERVICES IN DETAIL' };
+    T['tap.graphic.tag'] = { el: 'ΦΑΚΕΛΟΣ ΕΓΚΡΙΣΗΣ ΤΥΠΟΥ', en: 'TYPE APPROVAL DOSSIER' };
+    T['tap.graphic.alt'] = { el: 'Σκίτσο φακέλου έγκρισης τύπου οχήματος με σφραγίδα έγκρισης', en: 'Sketch of a vehicle type approval dossier with approval stamp' };
+    T['tap.cta.text']    = { el: 'Έχετε όχημα, αμάξωμα ή ρυμουλκούμενο που χρειάζεται έγκριση; Επικοινωνήστε μαζί μας για δωρεάν τεχνική ενημέρωση.', en: 'Have a vehicle, body or trailer that needs approval? Contact us for a free technical consultation.' };
+    T['tap.cta.btn']     = { el: 'Επικοινωνία', en: 'Get in Touch' };
+    // Text baked into the type-approval sketch animation (plain text, no entities)
+    T['tap.doc.title']   = { el: 'ΕΓΚΡΙΣΗ ΤΥΠΟΥ', en: 'TYPE APPROVAL' };
+    T['tap.doc.sub']     = { el: 'ΤΕΧΝΙΚΟΣ ΦΑΚΕΛΟΣ ΟΧΗΜΑΤΟΣ', en: 'VEHICLE TECHNICAL DOSSIER' };
+    T['tap.doc.field']   = { el: 'ΑΡ. ΕΓΚΡΙΣΗΣ', en: 'APPROVAL No.' };
+    T['tap.doc.chk1']    = { el: 'ΚΑΤΑΧΩΡΗΣΗ ΣΤΟ ΤΑΟ', en: 'TAO REGISTRATION' };
+    T['tap.doc.chk2']    = { el: 'ΔΕΛΤΙΟ ΚΟΙΝΟΠΟΙΗΣΗΣ', en: 'NOTIFICATION CERTIFICATE' };
+    T['tap.dim.label']   = { el: 'ΚΑΤΗΓΟΡΙΕΣ  M1 · N1 · N2 · O1 · O2', en: 'CATEGORIES  M1 · N1 · N2 · O1 · O2' };
+    T['tap.stamp.main']  = { el: 'ΕΓΚΡΙΘΗΚΕ', en: 'APPROVED' };
+    T['tap.stamp.sub']   = { el: 'ΕΓΚΡΙΣΗ ΤΥΠΟΥ', en: 'TYPE APPROVAL' };
+    T['tap.stamp.top']   = { el: 'e13 · 2018/858', en: 'e13 · 2018/858' };
+    T['tap.stamp.foot']  = { el: 'ΥΠ. ΥΠΟΔΟΜΩΝ · ΤΑΟ', en: 'MIN. OF INFRASTRUCTURE · TAO' };
     (C.services || []).forEach(function (s, i) {
         var n = i + 1;
         T['s' + n + '.title'] = { el: s.titleEl, en: s.titleEn };
         T['s' + n + '.text']  = { el: s.textEl,  en: s.textEn };
+        (s.items || []).forEach(function (it, j) {
+            var k = j + 1;
+            T['s' + n + '.i' + k + '.title'] = { el: it.titleEl, en: it.titleEn };
+            T['s' + n + '.i' + k + '.text']  = { el: it.textEl,  en: it.textEn };
+        });
     });
 
     // PROJECTS
@@ -487,11 +515,28 @@
                     '<p data-i18n-html="svc.expand.1.p1">' + T['svc.expand.1.p1'].el + '</p>' +
                     '<p class="svc-inline-meta" data-i18n-html="svc.expand.1.meta">' + T['svc.expand.1.meta'].el + '</p>';
             }
+            // Optional sub-service list (e.g. type-approval breakdown)
+            var itemsHtml = '';
+            if (s.items && s.items.length) {
+                itemsHtml += '<ul class="svc-inline-list">';
+                s.items.forEach(function (it, j) {
+                    var k = j + 1;
+                    itemsHtml +=
+                        '<li>' +
+                        '<span class="svc-inline-list-t"' +
+                        ' data-i18n-html="s' + n + '.i' + k + '.title">' + it.titleEl + '</span>' +
+                        '<span class="svc-inline-list-d"' +
+                        ' data-i18n-html="s' + n + '.i' + k + '.text">' + it.textEl + '</span>' +
+                        '</li>';
+                });
+                itemsHtml += '</ul>';
+            }
             // All cards are expandable; description moves into the expand panel
             var expandContent =
                 '<div class="svc-inline-expand">' +
                 '<div class="svc-inline-expand-inner">' +
                 '<p itemprop="description" data-i18n-html="s' + n + '.text">' + s.textEl + '</p>' +
+                itemsHtml +
                 extraExpand +
                 '</div>' +
                 '</div>';
@@ -535,6 +580,52 @@
             }, { threshold: 0 });
             fcObs.observe(fc);
         }
+    }
+
+
+    // ── 10b. RENDER TYPE-APPROVAL SECTION GRID ────────────────────────────────
+    /* Built from the same C.services entries that carry an items[] array, so the
+       section and the service cards can never drift apart, in either language. */
+    var tapGrid = document.getElementById('tapGrid');
+    if (tapGrid) {
+        var tHtml = '';
+        (C.services || []).forEach(function (s, i) {
+            if (!s.items || !s.items.length) return;
+            var n = i + 1;
+            tHtml +=
+                '<div class="tap-col" data-reveal>' +
+                '<div class="tap-col-head">' +
+                '<i class="fa-solid ' + s.icon + ' tap-col-icon" aria-hidden="true"></i>' +
+                '<h3 class="tap-col-title" data-i18n-html="s' + n + '.title">' + s.titleEl + '</h3>' +
+                '</div>' +
+                '<ul class="tap-list">';
+            s.items.forEach(function (it, j) {
+                var k = j + 1;
+                tHtml +=
+                    '<li class="tap-item">' +
+                    '<span class="tap-item-num" aria-hidden="true">' +
+                    (k < 10 ? '0' + k : '' + k) + '</span>' +
+                    '<span class="tap-item-body">' +
+                    '<span class="tap-item-t" data-i18n-html="s' + n + '.i' + k + '.title">' +
+                    it.titleEl + '</span>' +
+                    '<span class="tap-item-d" data-i18n-html="s' + n + '.i' + k + '.text">' +
+                    it.textEl + '</span>' +
+                    '</span>' +
+                    '</li>';
+            });
+            tHtml += '</ul></div>';
+        });
+        tapGrid.innerHTML = tHtml;
+    }
+
+    // Wire the type-approval section collapse toggle
+    var tapToggle = document.getElementById('tapToggle');
+    var tapCollapse = document.getElementById('tapCollapse');
+    if (tapToggle && tapCollapse) {
+        tapToggle.addEventListener('click', function () {
+            var open = tapCollapse.classList.toggle('is-open');
+            tapToggle.setAttribute('aria-expanded', String(open));
+        });
     }
 
 
