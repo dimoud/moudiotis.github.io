@@ -3206,3 +3206,32 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
     }
 }
 
+/* ── ΚΟΥΜΠΙΑ ΠΡΟΣ ΤΙΣ ΑΦΙΕΡΩΜΕΝΕΣ ΣΕΛΙΔΕΣ ────────────────────────────────
+   Μέσα στο expand της κάρτας υπηρεσίας: το κείμενο λέει τι κάνουμε, το
+   κουμπί πάει στη σελίδα που τα λέει αναλυτικά. */
+.svc-inline-cta {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin: 14px 0 2px;
+}
+.svc-inline-btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 9px 16px; border-radius: 6px;
+    border: 1px solid rgba(201,168,108,.55);
+    color: var(--gold); background: rgba(201,168,108,.07);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12.5px; font-weight: 600;
+    letter-spacing: 1.4px; text-transform: uppercase;
+    text-decoration: none; line-height: 1.2;
+    transition: background .25s, border-color .25s, color .25s, transform .25s;
+}
+.svc-inline-btn i { font-size: 10px; transition: transform .25s var(--ease); }
+.svc-inline-btn:hover {
+    background: var(--gold); border-color: var(--gold); color: var(--white);
+    transform: translateY(-1px);
+}
+.svc-inline-btn:hover i { transform: translateX(3px); }
+@media (max-width: 768px) {
+    .svc-inline-cta { flex-direction: column; }
+    .svc-inline-btn { justify-content: space-between; font-size: 11.5px; padding: 10px 14px; }
+}
+

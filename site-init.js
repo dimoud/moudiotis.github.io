@@ -534,6 +534,33 @@
                 });
                 itemsHtml += '</ul>';
             }
+            // ── Κουμπιά προς τις αφιερωμένες σελίδες ──
+            //    Το κείμενο του expand λέει τι κάνουμε· το κουμπί στέλνει τον
+            //    επισκέπτη εκεί όπου τα λέμε αναλυτικά.
+            var isEn    = (C.meta && C.meta.lang === 'en');
+            var pageBtns = [];
+            var svcPage  = isEn ? s.urlEn : s.urlEl;
+            if (svcPage) {
+                pageBtns.push({ href: svcPage, label: isEn ? 'Read the full page' : 'Δείτε τη σελίδα αναλυτικά' });
+            }
+            (s.items || []).forEach(function (it) {
+                var u = isEn ? it.urlEn : it.urlEl;
+                if (!u) return;
+                for (var q = 0; q < pageBtns.length; q++) { if (pageBtns[q].href === u) return; }
+                pageBtns.push({ href: u, label: isEn ? it.titleEn : it.titleEl });
+            });
+            var pagesHtml = '';
+            if (pageBtns.length) {
+                pagesHtml = '<div class="svc-inline-cta">';
+                pageBtns.forEach(function (pb) {
+                    pagesHtml +=
+                        '<a class="svc-inline-btn" href="' + pb.href + '">' +
+                        '<span>' + pb.label + '</span>' +
+                        '<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>';
+                });
+                pagesHtml += '</div>';
+            }
+
             // All cards are expandable; description moves into the expand panel
             var expandContent =
                 '<div class="svc-inline-expand">' +
@@ -541,6 +568,7 @@
                 '<p itemprop="description" data-i18n-html="s' + n + '.text">' + s.textEl + '</p>' +
                 itemsHtml +
                 extraExpand +
+                pagesHtml +
                 '</div>' +
                 '</div>';
             sHtml +=
@@ -562,7 +590,9 @@
         // Wire expand panels — collapsed by default on all screen sizes
         servicesGrid.querySelectorAll('.service-card--expandable').forEach(function (card) {
             card.setAttribute('aria-expanded', 'false');
-            card.addEventListener('click', function () {
+            card.addEventListener('click', function (e) {
+                /* Κλικ σε κουμπί/σύνδεσμο: άφησέ το να πλοηγηθεί, μην κλείσεις την κάρτα */
+                if (e.target.closest && e.target.closest('a.svc-inline-btn')) return;
                 var panel = card.querySelector('.svc-inline-expand');
                 if (!panel) return;
                 var open = panel.classList.toggle('is-open');
