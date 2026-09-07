@@ -3121,3 +3121,13 @@ button.tap-toggle[aria-expanded="true"]:hover .tap-chevron { transform: rotate(1
 @media (max-width: 768px) and (display-mode: standalone) {
     .mobile-cta-bar { padding-bottom: env(safe-area-inset-bottom, 8px); }
 }
+
+/* ===== ΚΑΡΤΕΣ ΕΓΚΡΙΣΕΩΝ ΤΥΠΟΥ ΩΣ ΣΥΝΔΕΣΜΟΙ ===== */
+a.tap-item-link { text-decoration: none; color: inherit; cursor: pointer; }
+a.tap-item-link .tap-item-t { transition: color 0.25s; }
+a.tap-item-link:hover .tap-item-t { color: var(--warm); }
+a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 3px; }
+
+/* Το nav φιλοξενεί πλέον επτά συνδέσμους — μειώνουμε το κενό σε στενές οθόνες */
+@media (max-width: 1500px) { .nav-links { gap: 26px; } }
+@media (max-width: 1280px) { .nav-links { gap: 18px; } .nav-links a { font-size: 12.5px; } }

@@ -608,12 +608,17 @@
                     '<li class="tap-item">' +
                     '<span class="tap-item-num" aria-hidden="true">' +
                     (k < 10 ? '0' + k : '' + k) + '</span>' +
-                    '<span class="tap-item-body">' +
-                    '<span class="tap-item-t" data-i18n-html="s' + n + '.i' + k + '.title">' +
-                    it.titleEl + '</span>' +
-                    '<span class="tap-item-d" data-i18n-html="s' + n + '.i' + k + '.text">' +
-                    it.textEl + '</span>' +
-                    '</span>' +
+                    (function () {
+                        var href = (C.meta && C.meta.lang === 'en') ? it.urlEn : it.urlEl;
+                        var body =
+                            '<span class="tap-item-t" data-i18n-html="s' + n + '.i' + k + '.title">' +
+                            it.titleEl + '</span>' +
+                            '<span class="tap-item-d" data-i18n-html="s' + n + '.i' + k + '.text">' +
+                            it.textEl + '</span>';
+                        return href
+                            ? '<a class="tap-item-body tap-item-link" href="' + href + '">' + body + '</a>'
+                            : '<span class="tap-item-body">' + body + '</span>';
+                    })() +
                     '</li>';
             });
             tHtml += '</ul></div>';
