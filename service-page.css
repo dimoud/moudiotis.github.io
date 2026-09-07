@@ -399,7 +399,7 @@ body .ta-box .ta-warning-body > strong {
    Για να μη σπρώξει κάτω το τηλέφωνο, το ύψος του περιορίζεται· το SVG
    κρατά τις αναλογίες του και απλώς μικραίνει. */
 .tap-graphic { padding: 6px 0 0; }
-.tap-graphic svg { max-height: 216px; height: auto; }
+.tap-graphic svg { max-height: 176px; height: auto; }
 @media (max-width: 900px)  { .tap-graphic svg { max-height: 168px; } }
 @media (max-width: 560px)  { .tap-graphic svg { max-height: 132px; } }
 
@@ -448,3 +448,7 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
 /* Το γραφικό ζωντανεύει ελαφρά όταν περνά από πάνω ο κέρσορας */
 .tap-graphic { transition: transform .5s var(--ease); }
 .tap-graphic:hover { transform: translateY(-3px); }
+
+/* Το όνομα του γραφείου σε μία γραμμή, όπως στην αρχική */
+.logo-text .name { white-space: nowrap; }
+
