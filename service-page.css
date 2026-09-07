@@ -337,24 +337,60 @@ body .svc-crumb { padding-top: 20px; padding-bottom: 0; }
     display: flex; flex-wrap: wrap; align-items: stretch; gap: 12px;
     margin: 0 0 22px;
 }
+/* Και τα δύο κουμπιά: μία οικογένεια, ένα ύψος, μία κλίμακα.
+   Η ιεραρχία βγαίνει από το χρώμα και το βάρος, όχι από διαφορετικά μεγέθη. */
 .svc-quick a {
     display: inline-flex; align-items: center; gap: 11px;
-    padding: 13px 22px; text-decoration: none;
+    min-height: 56px; padding: 0 24px; border-radius: 6px; text-decoration: none;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 17px; letter-spacing: 1.2px; text-transform: uppercase;
-    transition: background .25s, border-color .25s, transform .25s;
+    font-size: 16px; font-weight: 600; line-height: 1;
+    letter-spacing: 1.6px; text-transform: uppercase;
+    transition: background .25s, border-color .25s, color .25s, transform .25s;
 }
-.svc-quick-call { background: var(--warm); color: var(--ink); font-weight: 600; }
+.svc-quick-call { background: var(--warm); color: var(--ink); }
 .svc-quick-call:hover { background: var(--warm2); transform: translateY(-1px); }
-.svc-quick-call i { font-size: 15px; }
-.svc-quick-call span { display: flex; flex-direction: column; line-height: 1.15; }
+.svc-quick-call i { font-size: 14px; }
+.svc-quick-call span { display: flex; flex-direction: column; gap: 3px; }
 .svc-quick-call small {
-    font-family: 'Source Sans 3', sans-serif; font-size: 10.5px;
-    letter-spacing: 1.6px; text-transform: uppercase; opacity: .72; font-weight: 500;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 500; letter-spacing: 1.6px;
+    text-transform: uppercase; opacity: .68; line-height: 1;
 }
+.svc-quick-call span { font-size: 19px; letter-spacing: 1.1px; }
 .svc-quick-msg { border: 1px solid var(--gold); color: var(--gold); }
-.svc-quick-msg:hover { background: var(--gold); color: var(--white); }
+.svc-quick-msg:hover { background: var(--gold); color: var(--white); transform: translateY(-1px); }
 @media (max-width: 560px) {
     .svc-quick { flex-direction: column; }
     .svc-quick a { justify-content: center; }
+}
+}
+
+/* ── ΤΥΠΟΓΡΑΦΙΚΗ ΟΜΟΙΟΓΕΝΕΙΑ ΜΕΣΑ ΣΤΟ CONTAINER ──────────────────────────
+   Πριν: το τρέχον κείμενο εμφανιζόταν σε δύο ασύνδετα μεγέθη (16,5px στην
+   πρόζα, 12,5px στα βήματα, στην προειδοποίηση και στο κλείσιμο) και οι
+   μικρές ετικέτες κεφαλαίων σε τέσσερις διαφορετικές γραμματοσειρές
+   (Oswald 9px, Oswald 11px, IBM Plex Mono 9,5px, Source Sans 10,7px).
+   Τώρα: δύο μεγέθη κειμένου και μία γραμματοσειρά για κάθε μικρή ετικέτα.
+   Ο κανόνας μένει στο service-page.css, άρα ισχύει μόνο στις σελίδες
+   υπηρεσιών — η κεντρική σελίδα δεν θίγεται. */
+body .ta-box .ta-steps > li,
+body .ta-box .ta-warning-body > p,
+body .ta-box .ta-cta-text {
+    font-size: 15px;
+    line-height: 1.62;
+}
+body .ta-box .ta-stat-lbl,
+body .ta-box .ta-badge span,
+body .tap-graphic-tag {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+body .ta-box .ta-warning-body > strong {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
 }

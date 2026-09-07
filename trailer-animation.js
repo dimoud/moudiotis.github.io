@@ -10,6 +10,16 @@
 (function () {
   'use strict';
 
+  /* ── ΓΛΩΣΣΑ ──
+   * Οι σελίδες υπηρεσιών αλλάζουν γλώσσα με σύνδεσμο, οπότε αρκεί να
+   * διαβαστεί το <html lang> τη στιγμή που χτίζεται το σκίτσο. */
+  function isEn() {
+    return (document.documentElement.getAttribute('lang') || 'el')
+      .toLowerCase().indexOf('en') === 0;
+  }
+  function tr(el, en) { return isEn() ? en : el; }
+
+
   /* ── CONFIG ── */
   var DRAW_DURATION   = 3200;  // ms total for sketch draw
   var STAMP_DELAY     = 400;   // ms after draw completes before stamp appears
@@ -43,7 +53,7 @@
     var svg = [
       '<svg id="trailerSvg" viewBox="0 0 820 340" fill="none"',
       '     xmlns="http://www.w3.org/2000/svg"',
-      '     aria-label="Car trailer sketch animation"',
+      '     aria-label=' + JSON.stringify(tr("Σκίτσο ρυμουλκούμενου κατηγορίας Ο1/Ο2","Sketch of an O1/O2 category trailer")) + '',
       '     style="width:100%;max-width:820px;overflow:visible;display:block;margin:0 auto">',
 
       /* ─── GROUP: all sketch paths ─── */
@@ -166,10 +176,10 @@
       '    stroke-dasharray="5 5"/>',
       '  <text x="440" y="175" text-anchor="middle"',
       '    font-family="\'Oswald\',sans-serif" font-size="44" font-weight="700"',
-      '    letter-spacing="8" fill="#38a169">ΑΔΕΙΟΔΟΤΗΘΗΚΕ</text>',
+      '    letter-spacing="8" fill="#38a169">' + tr('ΑΔΕΙΟΔΟΤΗΘΗΚΕ','LICENSED') + '</text>',
       '  <text x="440" y="202" text-anchor="middle"',
       '    font-family="\'IBM Plex Mono\',monospace" font-size="12" letter-spacing="4"',
-      '    fill="#38a169" opacity="0.7">O1 / O2 LICENCE</text>',
+      '    fill="#38a169" opacity="0.7">' + tr('ΑΔΕΙΑ Ο1 / Ο2','O1 / O2 LICENCE') + '</text>',
       '</g>',
 
       '</svg>'
