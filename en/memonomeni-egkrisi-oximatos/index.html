@@ -638,16 +638,21 @@
             });
         }());
 
-        /* Στο κινητό όλα τα πτυσσόμενα ξεκινούν κλειστά — η πρώτη οθόνη
-           πρέπει να δείχνει το ουσιώδες, όχι ανοιγμένους καταλόγους. */
+        /* ── ΠΤΥΣΣΟΜΕΝΑ: ΤΙ ΞΕΚΙΝΑ ΚΛΕΙΣΤΟ ──
+           Ο αναλυτικός οδηγός και ο έλεγχος Κ.Ο.Κ. ξεκινούν κλειστοί παντού,
+           και σε υπολογιστή: είναι ο μεγαλύτερος όγκος διαδικαστικής
+           λεπτομέρειας της σελίδας και ανοιχτός την κάνει να διαβάζεται σαν
+           εγχειρίδιο. Όποιος τα θέλει, τα ανοίγει.
+           Οι συχνές ερωτήσεις: στο κινητό όλες κλειστές· σε υπολογιστή μένει
+           η πρώτη ανοιχτή, ώστε να φαίνεται ότι οι υπόλοιπες ανοίγουν. */
         (function () {
-            if (window.innerWidth > 768) return;
-            document.querySelectorAll('.ta-collapse.is-open').forEach(function (el) {
+            document.querySelectorAll('.ta-collapse.is-open, .trc-main-collapse.is-open').forEach(function (el) {
                 el.classList.remove('is-open');
             });
             document.querySelectorAll('.ta-toggle[aria-expanded="true"], #trcMainToggle[aria-expanded="true"]').forEach(function (b) {
                 b.setAttribute('aria-expanded', 'false');
             });
+            if (window.innerWidth > 768) return;
             document.querySelectorAll('details[open]').forEach(function (d) {
                 d.removeAttribute('open');
             });
