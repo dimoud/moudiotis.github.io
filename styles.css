@@ -1356,7 +1356,9 @@ footer {
     font-size: 8.5px; color: rgba(255,255,255,0.6); letter-spacing: 2px;
     text-transform: uppercase; margin-top: 3px;
 }
-.footer-links { display: flex; gap: 32px; flex-wrap: wrap; }
+/* Η λωρίδα συνδέσμων του υποσέλιδου αποσύρθηκε: επαναλάμβανε τη μπάρα
+   πλοήγησης λίγα εκατοστά πιο κάτω, χωρίς να προσθέτει διαδρομή. */
+.footer-links { display: none; }
 .footer-links a {
     color: rgba(255,255,255,0.6); font-size: 9.5px; font-weight: 500;
     letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s;
@@ -1748,9 +1750,12 @@ footer {
     .footer-bottom { flex-direction: column; align-items: center; gap: 12px; margin-top: 24px; }
     .footer-socials { justify-content: center; width: 100%; }
     .footer-social-link { width: 44px; height: 44px; }
-    .footer-brand { min-width: 0; }
+    .footer-brand {
+        min-width: 0;
+        flex-direction: column; align-items: flex-start; gap: 12px;
+    }
     .footer-brand-text { min-width: 0; flex: 1; overflow: hidden; }
-    .footer-brand-text .fname { white-space: nowrap; font-size: 12px; overflow: hidden; text-overflow: ellipsis; }
+    .footer-brand-text .fname { white-space: normal; font-size: 14px; }
     footer .expertease-credit { padding-top: 32px; }
 
     /* ── Decorative (hide on mobile) ── */
@@ -3312,12 +3317,14 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
 /* Λεζάντα: ποια υπηρεσία δείχνει το σκίτσο. Το transform του σκίτσου δεν
    πιάνει χώρο, οπότε η λεζάντα ανεβαίνει από μόνη της πολύ κοντά — το
    περιθώριο τη σπρώχνει κάτω από το μεγεθυσμένο σχέδιο. */
+.hero-slide--art { position: relative; }
 .hero-art-label {
     display: block;
+    position: absolute; left: 0; right: 0; top: 80.5%;
     /* Το scale(1.22) του σκίτσου δεν πιάνει χώρο στη διάταξη: το σχέδιο
-       ξεχειλίζει ~18px κάτω από το κουτί του, οπότε το περιθώριο πρέπει να
-       τα καλύψει για να μην κολλάει η λεζάντα πάνω στο σχέδιο. */
-    margin-top: 44px;
+       ξεχειλίζει κάτω από το κουτί του· η λεζάντα τοποθετείται σε ποσοστό
+       του πλαισίου, ώστε να μη μετακινεί το σχέδιο από το κέντρο. */
+    margin-top: 0;
     font-family: 'Oswald', sans-serif;
     font-size: 11.5px; font-weight: 500;
     letter-spacing: 2.6px; text-transform: uppercase;
@@ -3342,7 +3349,7 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
     width: 100%; min-height: 218px;
 }
 .hero-stage--mobile .hero-slide { height: 100%; }
-.hero-stage--mobile .hero-art-label { margin-top: 14px; font-size: 10.5px; letter-spacing: 2.2px; }
+.hero-stage--mobile .hero-art-label { position: static; margin-top: 14px; font-size: 10.5px; letter-spacing: 2.2px; }
 .hero-stage--mobile .hero-slide > svg,
 .hero-stage--mobile .hero-art-svg { width: 92%; max-width: 430px; height: auto; transform: none; }
 @media (max-width: 400px) { .hero-stage--mobile { min-height: 188px; } }
