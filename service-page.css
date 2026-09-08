@@ -294,10 +294,6 @@ body .svc-crumb { padding-top: 20px; padding-bottom: 0; }
 .svc-hero { padding-top: 104px; padding-bottom: 46px; }
 @media (max-width: 700px) { .svc-hero { padding-top: 82px; padding-bottom: 34px; } }
 
-/* Τα δαχτυλίδια του λογοτύπου βγαίνουν 19px έξω από το πλαίσιό του·
-   χωρίς περιθώριο τα έκοβε το overflow:hidden του hero. */
-.svc-hero-in { padding-left: 72px; }
-@media (max-width: 900px) { .svc-hero-in { padding-left: 34px; } }
 
 /* ============================================================
    ΤΥΠΟΓΡΑΦΙΚΗ ΟΜΟΙΟΓΕΝΕΙΑ ΜΕΣΑ ΣΤΟ ΚΟΥΤΙ
