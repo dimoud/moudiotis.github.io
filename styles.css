@@ -3489,3 +3489,58 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
     .news-band { overflow-x: auto; }
 }
 
+/* ── ΣΥΝΕΡΓΑΣΙΕΣ ─────────────────────────────────────────────────────────
+   Λωρίδα λογοτύπων επιχειρήσεων με τις οποίες έχει συνεργαστεί το γραφείο.
+   Λευκά πλακίδια, ώστε τα λογότυπα να μη «βουλιάζουν» στο κρεμ φόντο. */
+.partners-section { background: var(--cream); padding: 52px 7% 58px; }
+.partners-head { text-align: center; margin-bottom: 30px; }
+.partners-head .eyebrow { justify-content: center; }
+.partners-note {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13.5px; line-height: 1.6;
+    color: rgba(28,27,25,0.62);
+    max-width: 620px; margin: 12px auto 0;
+}
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+    align-items: stretch;
+    max-width: 1400px; margin: 0 auto;
+}
+.partner-tile {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 104px; padding: 18px 20px;
+    background: #fff;
+    border: 1px solid rgba(29,58,92,0.09);
+    border-radius: 10px;
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s;
+}
+.partner-tile img {
+    max-width: 100%; max-height: 56px;
+    width: auto; height: auto;
+    object-fit: contain;
+    opacity: 0.72;
+    filter: grayscale(100%);
+    transition: opacity .3s, filter .3s;
+}
+.partner-tile:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(13,26,45,0.10);
+    border-color: rgba(201,168,108,0.5);
+}
+.partner-tile:hover img { opacity: 1; filter: grayscale(0%); }
+/* Το λογότυπο Μαλλιάρη είναι λευκό περίγραμμα: χωρίς αναστροφή δεν
+   φαίνεται πάνω σε λευκό πλακίδιο. */
+.partner-tile img.partner-invert { filter: grayscale(100%) invert(1); }
+.partner-tile:hover img.partner-invert { filter: invert(1); }
+
+@media (max-width: 1100px) { .partners-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 620px)  {
+    .partners-section { padding: 38px 5% 42px; }
+    .partners-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .partner-tile { min-height: 84px; padding: 14px; }
+    .partner-tile img { max-height: 42px; }
+    .partners-note { font-size: 12.5px; }
+}
+

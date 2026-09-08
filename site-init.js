@@ -114,6 +114,9 @@
     T['ta.stat.days.lbl']    = { el: 'Ημέρες', en: 'Days' };
     T['ta.stat.process']     = { el: 'Βήμα-βήμα', en: 'Step-by-step' };
     T['ta.stat.process.lbl'] = { el: 'Διαδικασία', en: 'Process' };
+    T['partners.eyebrow']    = { el: 'ΣΥΝΕΡΓΑΣΙΕΣ', en: 'PARTNERSHIPS' };
+    T['partners.heading']    = { el: 'Μας <em>εμπιστεύονται</em>', en: 'They <em>trust us</em>' };
+    T['partners.note']       = { el: 'Επιχειρήσεις με τις οποίες έχει συνεργαστεί το γραφείο σε εγκρίσεις τύπου, ταξινομήσεις και τεχνικές μελέτες οχημάτων.', en: 'Businesses the office has worked with on type approvals, vehicle registrations and technical studies.' };
     T['ta.price.tag']        = { el: 'ΤΕΛΙΚΗ ΤΙΜΗ', en: 'FINAL PRICE' };
     T['ta.price.val']        = { el: '400–430 €', en: '€400–430' };
     T['ta.price.note']       = { el: 'Για άδεια και πινακίδες ρυμουλκούμενου Ο1 ή Ο2. Συμπεριλαμβάνονται τα παράβολα του Δημοσίου.', en: 'For an O1 or O2 trailer licence and plates. Government fees are included.' };
