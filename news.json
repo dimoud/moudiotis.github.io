@@ -1,0 +1,171 @@
+{
+  "_comment": "Πηγή δεδομένων για το καρουζέλ ενημερώσεων της αρχικής σελίδας. Ενημερώνεται εβδομαδιαία. Κάθε εγγραφή τροφοδοτεί και τις αναρτήσεις στο Facebook. Πεδία: id (μοναδικό), date (ISO, ημερομηνία ΦΕΚ/έκδοσης), category (el/en), title (el/en), summary (el/en, 1-2 προτάσεις), source (πηγή αναφοράς, κείμενο), url (εσωτερικός σύνδεσμος ή κενό), fb (true αν είναι κατάλληλο για ανάρτηση), fbPosted (ημερομηνία ανάρτησης ή κενό).",
+  "updated": "2026-09-08",
+  "items": [
+    {
+      "id": "n5290-2026-art14",
+      "date": "2026-03-30",
+      "category": { "el": "Νομοθεσία", "en": "Legislation" },
+      "title": { "el": "Νέα διαδικασία για άδειες ρυμουλκουμένων Ο1 και Ο2", "en": "New procedure for O1 and O2 trailer licences" },
+      "summary": { "el": "Το άρθρο 14 του ν.5290/2026 αντικατέστησε πλήρως το άρθρο 69 του ν.5108/2024. Η αίτηση κατατίθεται στην Υπηρεσία Μεταφορών της Περιφέρειας με το υπάρχον Ειδικό Σημείωμα Ρυμούλκησης και παράβολο 200 €.", "en": "Article 14 of law 5290/2026 fully replaced article 69 of law 5108/2024. The application is filed with the regional transport authority using the existing Special Towing Note and a 200 € fee." },
+      "source": "ΦΕΚ Α΄47/30.3.2026",
+      "url": "/adeia-treiler-o1-o2/",
+      "fb": true,
+      "fbPosted": ""
+    },
+    {
+      "id": "esr-proypothesi",
+      "date": "2026-03-30",
+      "category": { "el": "Προϋποθέσεις", "en": "Requirements" },
+      "title": { "el": "Ένα όχημα ανά φυσικό πρόσωπο, έως τριάντα ανά νομικό", "en": "One vehicle per individual, up to thirty per company" },
+      "summary": { "el": "Η απλοποιημένη διαδικασία καλύπτει ένα ρυμουλκούμενο ανά φυσικό πρόσωπο χωρίς πρόσθετη απαίτηση, και έως τριάντα οχήματα για νομικά πρόσωπα.", "en": "The simplified route covers one trailer per individual with no further requirement, and up to thirty vehicles for legal entities." },
+      "source": "άρθρο 14 ν.5290/2026",
+      "url": "/adeia-treiler-o1-o2/",
+      "fb": true,
+      "fbPosted": ""
+    },
+    {
+      "id": "esr-pro-1999",
+      "date": "2026-03-30",
+      "category": { "el": "Προσοχή", "en": "Note" },
+      "title": { "el": "Σημείωμα ρυμούλκησης πριν το 1999: χρειάζεται έλεγχος ΚΤΕΟ", "en": "Towing note issued before 1999: a roadworthiness test is required" },
+      "summary": { "el": "Όταν το Ειδικό Σημείωμα συνοδεύεται από υπεύθυνη δήλωση μηχανικού βάσει της ΣΤ/29900/1977, απαιτούνται επιπλέον νέα δήλωση μηχανικού και πρακτικό ειδικού τεχνικού ελέγχου ΚΤΕΟ.", "en": "Where the note is accompanied by an engineer's declaration under decision 29900/1977, a fresh engineer's declaration and a special roadworthiness inspection report are also required." },
+      "source": "άρθρο 14 ν.5290/2026",
+      "url": "/adeia-treiler-o1-o2/",
+      "fb": true,
+      "fbPosted": ""
+    },
+    {
+      "id": "ya-2805-2021",
+      "date": "2021-01-07",
+      "category": { "el": "Νομοθεσία", "en": "Legislation" },
+      "title": { "el": "Το γενικό πλαίσιο ταξινόμησης οχημάτων κατηγορίας Ο", "en": "The general framework for category O vehicle registration" },
+      "summary": { "el": "Η ΥΑ 2805/2021 ορίζει δικαιολογητικά ανά περίπτωση, μορφή πινακίδων και τεχνικές προϋποθέσεις έλξης. Κωδικοποιήθηκε με τις τροποποιήσεις των ΥΑ 292015/2021, 5771/2023 και 113794/2023.", "en": "Decision 2805/2021 sets out the documents required in each case, the plate format and the technical conditions for towing. It was consolidated with the amendments of 2021 and 2023." },
+      "source": "ΦΕΚ Β΄99/2021",
+      "url": "/adeia-treiler-o1-o2/",
+      "fb": false,
+      "fbPosted": ""
+    },
+    {
+      "id": "elxi-symvatotita",
+      "date": "2021-01-07",
+      "category": { "el": "Τεχνικά", "en": "Technical" },
+      "title": { "el": "Ποιο όχημα μπορεί να έλξει ποιο ρυμουλκούμενο", "en": "Which vehicle may tow which trailer" },
+      "summary": { "el": "Επιβατικά και ελαφρά φορτηγά έλκουν μόνο Ο1 και Ο2. Για Ο2 με επιβατικό, η χρήση περιορίζεται σε άλογα, σκάφη, τροχόσπιτα, ιστορικά, αγωνιστικά και μοτοσυκλέτες.", "en": "Passenger cars and light vans may tow only O1 and O2. For O2 behind a car, use is limited to horses, boats, caravans, historic and competition vehicles, and motorcycles." },
+      "source": "άρθρα 5 και 8 ΥΑ 2805/2021",
+      "url": "/adeia-treiler-o1-o2/",
+      "fb": true,
+      "fbPosted": ""
+    },
+    {
+      "id": "kan-2018-858",
+      "date": "2020-09-01",
+      "category": { "el": "Ευρωπαϊκό πλαίσιο", "en": "EU framework" },
+      "title": { "el": "Κανονισμός (ΕΕ) 2018/858: το πλαίσιο έγκρισης τύπου", "en": "Regulation (EU) 2018/858: the type-approval framework" },
+      "summary": { "el": "Καλύπτει τις κατηγορίες Μ, Ν και Ο και ορίζει τη διαδικασία μεμονωμένης έγκρισης. Τα δίκυκλα, τρίκυκλα και τετράκυκλα της κατηγορίας L διέπονται από τον Κανονισμό 168/2013.", "en": "It covers categories M, N and O and sets out the individual approval procedure. Two-, three- and four-wheelers in category L fall under Regulation 168/2013." },
+      "source": "Καν. (ΕΕ) 2018/858",
+      "url": "/deltio-koinopoiisis-tao/",
+      "fb": false,
+      "fbPosted": ""
+    },
+    {
+      "id": "memonomeni-egkrisi",
+      "date": "2020-09-01",
+      "category": { "el": "Υπηρεσίες", "en": "Services" },
+      "title": { "el": "Μεμονωμένη έγκριση: για οχήματα χωρίς έγκριση τύπου", "en": "Individual approval: for vehicles without a type approval" },
+      "summary": { "el": "Αφορά εισαγόμενα από τρίτες χώρες, τροχόσπιτα και αυτοκινούμενα, ιδιοκατασκευές, ουσιώδεις μετασκευές και οχήματα με απολεσθέντα στοιχεία.", "en": "It applies to vehicles imported from third countries, caravans and motorhomes, self-builds, substantial conversions, and vehicles with lost documentation." },
+      "source": "άρθρο 23 ΚΥΑ 29949/1841/09",
+      "url": "/memonomeni-egkrisi-oximatos/",
+      "fb": true,
+      "fbPosted": ""
+    },
+    {
+      "id": "tao-mitroo",
+      "date": "2020-09-01",
+      "category": { "el": "Υπηρεσίες", "en": "Services" },
+      "title": { "el": "Τι είναι το Τεχνικό Αρχείο Οχημάτων και γιατί σας αφορά", "en": "What the Technical Vehicle Archive is, and why it matters" },
+      "summary": { "el": "Είναι το μητρώο εγκεκριμένων τύπων του Υπουργείου Υποδομών και Μεταφορών. Η Διεύθυνση Μεταφορών αντλεί από εκεί τα στοιχεία που τυπώνονται στην άδεια κυκλοφορίας.", "en": "It is the ministry's register of approved vehicle types. The transport authority draws from it the data printed on the registration certificate." },
+      "source": "Υπ. Υποδομών & Μεταφορών",
+      "url": "/deltio-koinopoiisis-tao/",
+      "fb": true,
+      "fbPosted": ""
+    },
+    {
+      "id": "exes-pente-mixanismoi",
+      "date": "2020-08-26",
+      "category": { "el": "Ειδικού σκοπού", "en": "Special purpose" },
+      "title": { "el": "Πέντε διαφορετικές διαδρομές για οχήματα ειδικού σκοπού", "en": "Five different routes for special purpose vehicles" },
+      "summary": { "el": "Ανάλογα με το αν το όχημα εκτελεί μεταφορικό έργο, αν είναι ρυμουλκούμενο και αν κυκλοφορεί ήδη, ο φάκελος πηγαίνει σε διαφορετική υπηρεσία και στηρίζεται σε διαφορετική νομοθεσία.", "en": "Depending on whether the vehicle performs transport work, whether it is a trailer and whether it is already registered, the file goes to a different authority under different legislation." },
+      "source": "ΥΑ 42610/2341/2020 · ΥΑ 80255/4693/19",
+      "url": "/oximata-eidikou-skopou/",
+      "fb": true,
+      "fbPosted": ""
+    },
+    {
+      "id": "exes-59-ypokatigories",
+      "date": "2020-01-21",
+      "category": { "el": "Ειδικού σκοπού", "en": "Special purpose" },
+      "title": { "el": "Πενήντα εννέα υποκατηγορίες οχημάτων ειδικού σκοπού", "en": "Fifty-nine sub-categories of special purpose vehicle" },
+      "summary": { "el": "Από το μηχανοκίνητο και το ρυμουλκούμενο τροχόσπιτο μέχρι την κινητή καντίνα, την κινητή ιατρική μονάδα και το όχημα πρόσβασης αναπηρικού αμαξιδίου.", "en": "From motorhomes and caravans to catering units, mobile medical units and wheelchair-accessible vehicles." },
+      "source": "Παράρτημα Ι, ΥΑ 80255/4693/19 (ΦΕΚ Β΄61/2020)",
+      "url": "/oximata-eidikou-skopou/",
+      "fb": true,
+      "fbPosted": ""
+    },
+    {
+      "id": "me-parartima-2025",
+      "date": "2025-03-31",
+      "category": { "el": "Ενημέρωση", "en": "Update" },
+      "title": { "el": "Τέταρτη συμπλήρωση της λίστας μηχανημάτων έργου", "en": "Fourth supplement to the works-machinery list" },
+      "summary": { "el": "Η ισχύουσα λίστα για οχήματα ειδικού σκοπού που ταξινομούνται ως μηχανήματα έργου αριθμεί πλέον πενήντα τρεις κωδικούς.", "en": "The current list for special purpose vehicles registered as works machinery now runs to fifty-three codes." },
+      "source": "ΑΔΑ ΨΧΟΗ465ΧΘΞ-0ΔΟ",
+      "url": "/oximata-eidikou-skopou/",
+      "fb": false,
+      "fbPosted": ""
+    },
+    {
+      "id": "foreas-metaskevis",
+      "date": "2011-05-01",
+      "category": { "el": "Προϋποθέσεις", "en": "Requirements" },
+      "title": { "el": "Ποιο συνεργείο μπορεί να κάνει τη μετασκευή", "en": "Which workshop may carry out the conversion" },
+      "summary": { "el": "Απαιτούνται αδειοδοτημένες εγκαταστάσεις, σύστημα ποιότητας ISO 9001, πιστοποίηση συγκολλήσεων και συγκολλητών, και πιστοποιητικό για το πινακίδιο κατασκευαστή.", "en": "Licensed premises, an ISO 9001 quality system, welding and welder certification, and a manufacturer's plate certificate are all required." },
+      "source": "ΥΑ 12641/1368 (ΦΕΚ Β΄797/2011)",
+      "url": "/oximata-eidikou-skopou/",
+      "fb": true,
+      "fbPosted": ""
+    },
+    {
+      "id": "ethniki-mikri-seira",
+      "date": "2012-10-23",
+      "category": { "el": "Τεχνικά", "en": "Technical" },
+      "title": { "el": "Εθνική έγκριση μικρών σειρών: η ρεαλιστική οδός", "en": "National small-series approval: the realistic route" },
+      "summary": { "el": "Η ευρωπαϊκή μικρή σειρά έχει μηδενικό ετήσιο όριο για όλες τις κατηγορίες πλην Μ1. Για φορτηγά και ρυμουλκούμενα περιορισμένης παραγωγής, διαθέσιμη είναι η εθνική.", "en": "The European small series carries a zero annual limit for every category except M1. For limited-production trucks and trailers, the national route is the available one." },
+      "source": "ΥΑ 5299/406/12 (ΦΕΚ Β΄2840)",
+      "url": "/deltio-koinopoiisis-tao/",
+      "fb": false,
+      "fbPosted": ""
+    },
+    {
+      "id": "moik-evetam",
+      "date": "2014-11-21",
+      "category": { "el": "Τεχνικά", "en": "Technical" },
+      "title": { "el": "Οχήματα ιδιαίτερης κατασκευής: μόνο μέσω ΕΒΕΤΑΜ", "en": "Vehicles of special construction: only through EBETAM" },
+      "summary": { "el": "Για replica ιστορικού οχήματος, kit car ή χειροποίητη κατασκευή, ο έλεγχος γίνεται αποκλειστικά από την ΕΒΕΤΑΜ ΑΕ — όχι από τους φορείς της γενικής μεμονωμένης έγκρισης.", "en": "For a historic replica, a kit car or a hand-built vehicle, inspection is carried out solely by EBETAM SA, not by the bodies handling general individual approval." },
+      "source": "ΥΑ 33692/2202/2014 (ΦΕΚ Β΄3134)",
+      "url": "/memonomeni-egkrisi-oximatos/",
+      "fb": true,
+      "fbPosted": ""
+    },
+    {
+      "id": "kok-2025",
+      "date": "2025-01-01",
+      "category": { "el": "Προσοχή", "en": "Note" },
+      "title": { "el": "Κυκλοφορία χωρίς άδεια: τι προβλέπει ο νέος ΚΟΚ", "en": "Driving without a licence: what the new road code provides" },
+      "summary": { "el": "Μέχρι την έκδοση άδειας και πινακίδων, η κυκλοφορία του ρυμουλκούμενου απαγορεύεται ρητά, με τις κυρώσεις των άρθρων 92 και 94 του ν.5209/2025.", "en": "Until the licence and plates are issued, use of the trailer on the road is expressly prohibited, with the penalties of articles 92 and 94 of law 5209/2025." },
+      "source": "ν.5209/2025",
+      "url": "/adeia-treiler-o1-o2/",
+      "fb": true,
+      "fbPosted": ""
+    }
+  ]
+}
