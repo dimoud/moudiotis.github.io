@@ -423,78 +423,8 @@
       </div>
     </div>
     <div class="ta-wrap" data-reveal id="ypologistis">
-      <div class="ta-box">
-        <div class="ta-topbar">
-          <span class="ta-badge"><i class="fa-solid fa-scale-balanced"></i>&nbsp;<span>ΥΠΟΛΟΓΙΣΤΗΣ ΕΛΞΗΣ · ΑΡΘΡΑ 5 ΚΑΙ 8 ΥΑ 2805/2021</span></span>
-        </div>
-        <div class="svc-prose">
-          <h2>Επιτρέπεται να τραβήξω αυτό το ρυμουλκούμενο;</h2>
-          <p>Συμπληρώστε τα πεδία από τις δύο άδειες κυκλοφορίας. Οι κωδικοί δίπλα σε κάθε πεδίο είναι οι εναρμονισμένοι κοινοτικοί κωδικοί που θα βρείτε τυπωμένους στην άδεια.</p>
-        </div>
-        <div class="ta-rule"></div>
-        <form class="ec-form" id="ecForm" novalidate>
-          <div class="ec-grid">
-            <div class="ec-col">
-              <div class="ec-col-h">ΕΛΚΟΝ ΟΧΗΜΑ</div>
-              <div class="ec-f"><label for="ecCat">Κατηγορία έλκοντος<small>Η κατηγορία αναγράφεται στην άδεια κυκλοφορίας. «G» σημαίνει όχημα παντός εδάφους.</small></label>
-                <select id="ecCat">
-                  <option value="M1">M1 — επιβατικό</option>
-                  <option value="M1G">M1G — επιβατικό παντός εδάφους</option>
-                  <option value="N1">N1 — ελαφρύ φορτηγό έως 3,5 t</option>
-                  <option value="N1G">N1G — ελαφρύ φορτηγό παντός εδάφους</option>
-                  <option value="M23">M2 / M3 — λεωφορείο</option>
-                  <option value="N23">N2 / N3 — φορτηγό</option>
-                  <option value="N23T">N2 / N3 — ρυμουλκό, ελκυστήρας</option>
-                </select></div>
-              <div class="ec-f"><label for="ecTowF2">ΜΑΜΦΟ έλκοντος<span class="ec-f-key">F.2</span><small>Μέγιστη αποδεκτή μάζα φορτωμένου οχήματος, σε κιλά.</small></label><input type="number" id="ecTowF2" min="0" step="1" inputmode="numeric" placeholder="kg"></div>
-              <div class="ec-f"><label for="ecTowO1">Μέγιστη μάζα έλξης με πέδηση<span class="ec-f-key">O.1</span></label><input type="number" id="ecTowO1" min="0" step="1" inputmode="numeric" placeholder="kg"></div>
-              <div class="ec-f"><label for="ecTowO2">Μέγιστη μάζα έλξης χωρίς πέδηση<span class="ec-f-key">O.2</span></label><input type="number" id="ecTowO2" min="0" step="1" inputmode="numeric" placeholder="kg"></div>
-              <div class="ec-f"><label for="ecTowG">Μάζα σε τάξη πορείας (AR)<span class="ec-f-key">G</span><small>Χρειάζεται μόνο για ρυμουλκούμενο Ο1 χωρίς πέδηση.</small></label><input type="number" id="ecTowG" min="0" step="1" inputmode="numeric" placeholder="kg"></div>
-              <div class="ec-f"><label for="ecTowF3">ΜΑΜΦΣ, μάζα συνδυασμού<span class="ec-f-key">F.3</span><small>Προαιρετικό. Αν το συμπληρώσετε, ελέγχεται και ο συνδυασμός.</small></label><input type="number" id="ecTowF3" min="0" step="1" inputmode="numeric" placeholder="kg"></div>
-              <div class="ec-f" data-when="semi" hidden><label for="ecTowFpr">Φορτίο πλάκας επικαθίσεως (ΦΠR)<span class="ec-f-key">18</span><small>Μόνο για ημιρυμουλκούμενα.</small></label><input type="number" id="ecTowFpr" min="0" step="1" inputmode="numeric" placeholder="kg"></div>
-            </div>
-            <div class="ec-col">
-              <div class="ec-col-h">ΕΛΚΟΜΕΝΟ ΟΧΗΜΑ</div>
-              <div class="ec-f"><label for="ecKind">Είδος ελκομένου</label><select id="ecKind"><option value="trailer">Ρυμουλκούμενο</option><option value="semi">Ημιρυμουλκούμενο</option></select></div>
-              <div class="ec-f"><label for="ecSub">Υποκατηγορία</label><select id="ecSub">
-                <option value="O1">Ο1 — έως 750 kg</option>
-                <option value="O2">Ο2 — έως 3.500 kg</option>
-                <option value="O3">Ο3 — έως 10 t</option>
-                <option value="O4">Ο4 — άνω των 10 t</option>
-              </select></div>
-              <div class="ec-f"><label for="ecBrake">Σύστημα πέδησης</label><select id="ecBrake"><option value="yes">Ναι</option><option value="no">Όχι</option></select></div>
-              <div class="ec-f"><label for="ecTrF2">ΜΑΜΦΟ ελκομένου<span class="ec-f-key">F.2</span><small>Μέγιστη αποδεκτή μάζα φορτωμένου, σε κιλά.</small></label><input type="number" id="ecTrF2" min="0" step="1" inputmode="numeric" placeholder="kg"></div>
-              <div class="ec-f" data-when="semi" hidden><label for="ecTrFpr">Φορτίο πείρου (ΦΠρ)<span class="ec-f-key">18</span><small>Μόνο για ημιρυμουλκούμενα.</small></label><input type="number" id="ecTrFpr" min="0" step="1" inputmode="numeric" placeholder="kg"></div>
-              <div class="ec-f" id="ecUseWrap" hidden><label for="ecUse">Χρήση του ρυμουλκούμενου<small>Πίσω από Ε.Ι.Χ., η κατηγορία Ο2 επιτρέπεται μόνο για συγκεκριμένες χρήσεις.</small></label><select id="ecUse">
-                <option value="">— επιλέξτε —</option>
-                <option value="horses">Μεταφορά αλόγων</option>
-                <option value="boats">Μεταφορά σκαφών</option>
-                <option value="historic">Οχήματα ιστορικού ενδιαφέροντος</option>
-                <option value="racing">Αγωνιστικά αυτοκίνητα και μοτοσικλέτες</option>
-                <option value="sport">Εξοπλισμός ερασιτεχνικής ή αθλητικής ενασχόλησης</option>
-                <option value="training">Εκπαιδευτικό όχημα</option>
-                <option value="caravan">Τροχόσπιτο</option>
-                <option value="other">Άλλη χρήση — μεταφορά εμπορευμάτων, εργαλείων, υλικών</option>
-              </select></div>
-            </div>
-          </div>
-          <div class="ec-actions">
-            <button type="submit" class="ec-go">ΕΛΕΓΧΟΣ</button>
-            <button type="button" class="ec-clear" id="ecReset">ΚΑΘΑΡΙΣΜΟΣ</button>
-          </div>
-          <p class="ec-note">Εφαρμόζονται τα άρθρα 5 και 8 της ΥΑ 2805/2021, όπως ισχύουν μετά τις ΥΑ 292015/2021 (Β΄ 4966) και ΥΑ 113794/2023 (Β΄ 2525). Προϋποτίθεται ότι και τα δύο οχήματα φέρουν άδεια κυκλοφορίας.</p>
-        </form>
-        <div class="ec-result" id="ecResult" hidden></div>
-        <div class="ta-warning">
-          <div class="ta-warning-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-          <div class="ta-warning-body">
-            <strong>ΤΟ ΕΡΓΑΛΕΙΟ ΕΙΝΑΙ ΕΝΔΕΙΚΤΙΚΟ</strong>
-            <p>Καθοριστικές είναι οι προδιαγραφές του κατασκευαστή. Οι τιμές της άδειας κυκλοφορίας προκύπτουν από την έγκριση τύπου, όμως ο κατασκευαστής μπορεί να θέτει αυστηρότερα όρια για τη συγκεκριμένη έκδοση του μοντέλου, για τη διάταξη ζεύξης ή για τον κοτσαδόρο. Ο υπολογισμός στηρίζεται αποκλειστικά στα στοιχεία που εισάγετε και δεν υποκαθιστά το κείμενο του ΦΕΚ, το εγχειρίδιο του κατασκευαστή ή τον έλεγχο μηχανικού. Το γραφείο δεν φέρει ευθύνη για χρήση του αποτελέσματος χωρίς επαλήθευση.</p>
-          </div>
-        </div>
-      </div>
+      <div class="ta-box" id="elxiCalc" data-open="true"></div>
     </div>
-
     <div class="ta-wrap" data-reveal>
       <div class="ta-box">
         <div class="ta-topbar">

@@ -1,4 +1,8 @@
+# moudiotis.gr — Τεχνικό Γραφείο Μουδιώτης
+# Όλο το περιεχόμενο είναι δημόσιο και προς ευρετηρίαση.
+
 User-agent: *
 Allow: /
+Disallow: /_to_delete/
 
 Sitemap: https://moudiotis.gr/sitemap.xml
