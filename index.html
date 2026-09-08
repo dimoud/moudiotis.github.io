@@ -768,89 +768,82 @@
                 <!-- Mobile-only horizontal caliper -->
                 <div class="caliper-mobile caliper-wrap" id="caliperMobileWrap" aria-hidden="true">
                     <svg class="caliper-svg caliper-svg--horizontal" id="caliperMobileSvg" viewBox="0 0 480 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- ══ ΠΑΧΥΜΕΤΡΟ (οριζόντιο, κινητά) ══
-                             Επιφάνεια μέτρησης σταθερής x=88, κινητής x=350. -->
-                        <rect x="56" y="34" width="398" height="11" rx="1.2" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.10)"/>
-                        <line y1="36.6" x1="58" y2="36.6" x2="452" stroke="currentColor" stroke-width="0.6" opacity="0.28"/>
+                        <!-- Παχύμετρο, οριζόντιο (κινητά). Σταθερή επιφάνεια x=88, κινητή x=350, διαδρομή 262px. -->
+                        <rect x="46" y="34" width="408" height="11" rx="1.2" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.10)"/>
+                        <line x1="48" y1="36.6" x2="452" y2="36.6" stroke="currentColor" stroke-width="0.6" opacity="0.28"/>
+                        <rect x="39" y="32.4" width="9" height="14.2" rx="1.6" fill="currentColor" opacity="0.92"/>
                         <g stroke="currentColor">
-                            <line y1="45" x1="96.0" y2="54.5" x2="96.0" stroke-width="1.3" opacity="0.72"/>
-                            <line y1="45" x1="105.4" y2="50.0" x2="105.4" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="114.8" y2="50.0" x2="114.8" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="124.2" y2="50.0" x2="124.2" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="133.6" y2="50.0" x2="133.6" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="143.0" y2="54.5" x2="143.0" stroke-width="1.3" opacity="0.72"/>
-                            <line y1="45" x1="152.4" y2="50.0" x2="152.4" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="161.8" y2="50.0" x2="161.8" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="171.2" y2="50.0" x2="171.2" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="180.6" y2="50.0" x2="180.6" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="190.0" y2="54.5" x2="190.0" stroke-width="1.3" opacity="0.72"/>
-                            <line y1="45" x1="199.4" y2="50.0" x2="199.4" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="208.8" y2="50.0" x2="208.8" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="218.2" y2="50.0" x2="218.2" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="227.6" y2="50.0" x2="227.6" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="237.0" y2="54.5" x2="237.0" stroke-width="1.3" opacity="0.72"/>
-                            <line y1="45" x1="246.4" y2="50.0" x2="246.4" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="255.8" y2="50.0" x2="255.8" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="265.2" y2="50.0" x2="265.2" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="274.6" y2="50.0" x2="274.6" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="284.0" y2="54.5" x2="284.0" stroke-width="1.3" opacity="0.72"/>
-                            <line y1="45" x1="293.4" y2="50.0" x2="293.4" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="302.8" y2="50.0" x2="302.8" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="312.2" y2="50.0" x2="312.2" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="321.6" y2="50.0" x2="321.6" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="331.0" y2="54.5" x2="331.0" stroke-width="1.3" opacity="0.72"/>
-                            <line y1="45" x1="340.4" y2="50.0" x2="340.4" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="349.8" y2="50.0" x2="349.8" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="359.2" y2="50.0" x2="359.2" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="368.6" y2="50.0" x2="368.6" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="378.0" y2="54.5" x2="378.0" stroke-width="1.3" opacity="0.72"/>
-                            <line y1="45" x1="387.4" y2="50.0" x2="387.4" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="396.8" y2="50.0" x2="396.8" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="406.2" y2="50.0" x2="406.2" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="415.6" y2="50.0" x2="415.6" stroke-width="0.85" opacity="0.42"/>
-                            <line y1="45" x1="425.0" y2="54.5" x2="425.0" stroke-width="1.3" opacity="0.72"/>
-                            <line y1="45" x1="434.4" y2="50.0" x2="434.4" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="96.0" y1="45" x2="96.0" y2="54.5" stroke-width="1.30" opacity="0.72"/>
+                            <line x1="105.4" y1="45" x2="105.4" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="114.8" y1="45" x2="114.8" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="124.2" y1="45" x2="124.2" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="133.6" y1="45" x2="133.6" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="143.0" y1="45" x2="143.0" y2="54.5" stroke-width="1.30" opacity="0.72"/>
+                            <line x1="152.4" y1="45" x2="152.4" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="161.8" y1="45" x2="161.8" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="171.2" y1="45" x2="171.2" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="180.6" y1="45" x2="180.6" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="190.0" y1="45" x2="190.0" y2="54.5" stroke-width="1.30" opacity="0.72"/>
+                            <line x1="199.4" y1="45" x2="199.4" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="208.8" y1="45" x2="208.8" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="218.2" y1="45" x2="218.2" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="227.6" y1="45" x2="227.6" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="237.0" y1="45" x2="237.0" y2="54.5" stroke-width="1.30" opacity="0.72"/>
+                            <line x1="246.4" y1="45" x2="246.4" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="255.8" y1="45" x2="255.8" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="265.2" y1="45" x2="265.2" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="274.6" y1="45" x2="274.6" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="284.0" y1="45" x2="284.0" y2="54.5" stroke-width="1.30" opacity="0.72"/>
+                            <line x1="293.4" y1="45" x2="293.4" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="302.8" y1="45" x2="302.8" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="312.2" y1="45" x2="312.2" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="321.6" y1="45" x2="321.6" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="331.0" y1="45" x2="331.0" y2="54.5" stroke-width="1.30" opacity="0.72"/>
+                            <line x1="340.4" y1="45" x2="340.4" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="349.8" y1="45" x2="349.8" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="359.2" y1="45" x2="359.2" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="368.6" y1="45" x2="368.6" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="378.0" y1="45" x2="378.0" y2="54.5" stroke-width="1.30" opacity="0.72"/>
+                            <line x1="387.4" y1="45" x2="387.4" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="396.8" y1="45" x2="396.8" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="406.2" y1="45" x2="406.2" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="415.6" y1="45" x2="415.6" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                            <line x1="425.0" y1="45" x2="425.0" y2="54.5" stroke-width="1.30" opacity="0.72"/>
+                            <line x1="434.4" y1="45" x2="434.4" y2="50.0" stroke-width="0.85" opacity="0.42"/>
                         </g>
-
-                        <path d="M88 45 L88 22 L82 17 L70 17 L58 24 L58 45 Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" fill="rgba(201,168,108,0.15)"/>
-                        <line y1="22" x1="88" y2="45" x2="88" stroke="currentColor" stroke-width="2.6" opacity="0.95"/>
-                        <path d="M58 23 L34 23 L25 27.5 L34 32 L58 32" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="rgba(201,168,108,0.15)"/>
-
+                        <path d="M70 45 L70 15 L79 4 L88 15 L88 45 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="rgba(201,168,108,0.16)"/>
+                        <line x1="88" y1="15" x2="88" y2="45" stroke="currentColor" stroke-width="2.6" opacity="0.92"/>
                         <g id="calMobileJawGroup" style="transform:translateX(-262px)">
-                            <path d="M350 45 L350 22 L356 17 L368 17 L380 24 L380 45 Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" fill="rgba(201,168,108,0.15)"/>
-                            <line y1="22" x1="350" y2="45" x2="350" stroke="currentColor" stroke-width="2.6" opacity="0.95"/>
-                            <path d="M350 26 L326 26 L318 30 L326 34 L350 34" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="rgba(201,168,108,0.15)"/>
-                            <rect x="380" y="30" width="44" height="28" rx="2.2" stroke="currentColor" stroke-width="1.6" fill="rgba(201,168,108,0.20)"/>
-                            <g stroke="currentColor">
-                                <line y1="45.5" x1="386.0" y2="54" x2="386.0" stroke-width="0.9" opacity="0.75"/>
-                                <line y1="48.5" x1="389.2" y2="54" x2="389.2" stroke-width="0.9" opacity="0.45"/>
-                                <line y1="48.5" x1="392.4" y2="54" x2="392.4" stroke-width="0.9" opacity="0.45"/>
-                                <line y1="48.5" x1="395.6" y2="54" x2="395.6" stroke-width="0.9" opacity="0.45"/>
-                                <line y1="48.5" x1="398.8" y2="54" x2="398.8" stroke-width="0.9" opacity="0.45"/>
-                                <line y1="45.5" x1="402.0" y2="54" x2="402.0" stroke-width="0.9" opacity="0.75"/>
-                                <line y1="48.5" x1="405.2" y2="54" x2="405.2" stroke-width="0.9" opacity="0.45"/>
-                                <line y1="48.5" x1="408.4" y2="54" x2="408.4" stroke-width="0.9" opacity="0.45"/>
-                                <line y1="48.5" x1="411.6" y2="54" x2="411.6" stroke-width="0.9" opacity="0.45"/>
-                                <line y1="48.5" x1="414.8" y2="54" x2="414.8" stroke-width="0.9" opacity="0.45"/>
-                                <line y1="45.5" x1="418.0" y2="54" x2="418.0" stroke-width="0.9" opacity="0.75"/>
+                            <rect x="350" y="29" width="58" height="25" rx="2.4" stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.22)"/>
+                            <path d="M368 45 L368 15 L359 4 L350 15 L350 45 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="rgba(201,168,108,0.16)"/>
+                            <line x1="350" y1="15" x2="350" y2="45" stroke="currentColor" stroke-width="2.6" opacity="0.92"/>
+                            <g stroke="currentColor" opacity="0.5">
+                                <line x1="374.0" y1="45" x2="374.0" y2="52.0" stroke-width="0.75"/>
+                                <line x1="376.8" y1="45" x2="376.8" y2="49.5" stroke-width="0.75"/>
+                                <line x1="379.6" y1="45" x2="379.6" y2="49.5" stroke-width="0.75"/>
+                                <line x1="382.4" y1="45" x2="382.4" y2="49.5" stroke-width="0.75"/>
+                                <line x1="385.2" y1="45" x2="385.2" y2="49.5" stroke-width="0.75"/>
+                                <line x1="388.0" y1="45" x2="388.0" y2="52.0" stroke-width="0.75"/>
+                                <line x1="390.8" y1="45" x2="390.8" y2="49.5" stroke-width="0.75"/>
+                                <line x1="393.6" y1="45" x2="393.6" y2="49.5" stroke-width="0.75"/>
+                                <line x1="396.4" y1="45" x2="396.4" y2="49.5" stroke-width="0.75"/>
+                                <line x1="399.2" y1="45" x2="399.2" y2="49.5" stroke-width="0.75"/>
+                                <line x1="402.0" y1="45" x2="402.0" y2="52.0" stroke-width="0.75"/>
                             </g>
-                            <circle cx="372" cy="51" r="4.4" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.22)"/>
-                            <line y1="51" x1="368" y2="51" x2="376" stroke="currentColor" stroke-width="1" opacity="0.8"/>
-                            <rect x="428" y="44" width="20" height="13" rx="2.5" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.16)"/>
-                            <g stroke="currentColor">
-                            <line y1="45.5" x1="432.0" y2="55.5" x2="432.0" stroke-width="0.7" opacity="0.45"/>
-                            <line y1="45.5" x1="435.0" y2="55.5" x2="435.0" stroke-width="0.7" opacity="0.45"/>
-                            <line y1="45.5" x1="438.0" y2="55.5" x2="438.0" stroke-width="0.7" opacity="0.45"/>
-                            <line y1="45.5" x1="441.0" y2="55.5" x2="441.0" stroke-width="0.7" opacity="0.45"/>
-                            <line y1="45.5" x1="444.0" y2="55.5" x2="444.0" stroke-width="0.7" opacity="0.45"/>
+                            <circle cx="360" cy="50" r="4.2" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.22)"/>
+                            <line x1="360" y1="47.4" x2="360" y2="52.6" stroke="currentColor" stroke-width="1.1" opacity="0.75"/>
+                            <rect x="412" y="43" width="20" height="13" rx="2.5" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.16)"/>
+                            <g stroke="currentColor" opacity="0.42" stroke-width="0.7">
+                                <line x1="416.0" y1="45" x2="416.0" y2="54"/>
+                                <line x1="419.6" y1="45" x2="419.6" y2="54"/>
+                                <line x1="423.2" y1="45" x2="423.2" y2="54"/>
+                                <line x1="426.8" y1="45" x2="426.8" y2="54"/>
+                                <line x1="430.4" y1="45" x2="430.4" y2="54"/>
                             </g>
                         </g>
-                        </g>
-                        <!-- Dimension line -->
+                        <line x1="84" y1="10" x2="92" y2="18" stroke="currentColor" stroke-width="2" opacity="0.8"/>
                         <line id="calMobileDimLine" x1="88" y1="14" x2="88" y2="14" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.6"/>
-                        <!-- Dimension tick right -->
                         <line id="calMobileDimTickR" x1="84" y1="10" x2="92" y2="18" stroke="currentColor" stroke-width="2" opacity="0.8"/>
-                        <!-- Value label -->
                         <text id="caliperMobileVal" x="88" y="10" text-anchor="middle"
                               font-family="Cormorant Garamond, serif" font-size="12"
                               letter-spacing="2.5" fill="currentColor" opacity="0.85">0.000 m</text>
@@ -860,101 +853,89 @@
             <div class="about-caliper-col" aria-hidden="true">
                 <div class="caliper-wrap caliper-wrap--vertical" id="caliperWrap">
                     <svg class="caliper-svg caliper-svg--vertical" id="caliperSvg" viewBox="0 0 72 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- ══ ΠΑΧΥΜΕΤΡΟ (κατακόρυφο) ══
-                             Σταθερή σιαγόνα πάνω, κινητή κάτω. Οι θέσεις που
-                             χρησιμοποιεί το eng-animations.js μένουν ίδιες:
-                             επιφάνεια μέτρησης σταθερής y=88, κινητής y=350,
-                             διαδρομή 262px. -->
+                        <!-- Παχύμετρο, κατακόρυφο. Σταθερή επιφάνεια μέτρησης y=88, κινητή y=350, διαδρομή 262px. -->
                         <!-- Ράβδος με την κύρια κλίμακα -->
-                        <rect x="34" y="56" width="11" height="398" rx="1.2" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.10)"/>
-                        <line x1="36.6" y1="58" x2="36.6" y2="452" stroke="currentColor" stroke-width="0.6" opacity="0.28"/>
+                        <rect x="34" y="46" width="11" height="408" rx="1.2" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.10)"/>
+                        <line x1="36.6" y1="48" x2="36.6" y2="452" stroke="currentColor" stroke-width="0.6" opacity="0.28"/>
+                        <rect x="32.4" y="39" width="14.2" height="9" rx="1.6" fill="currentColor" opacity="0.92"/>
                         <g stroke="currentColor">
-                            <line x1="45" y1="96.0" x2="54.5" y2="96.0" stroke-width="1.3" opacity="0.72"/>
+                            <line x1="45" y1="96.0" x2="54.5" y2="96.0" stroke-width="1.30" opacity="0.72"/>
                             <line x1="45" y1="105.4" x2="50.0" y2="105.4" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="114.8" x2="50.0" y2="114.8" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="124.2" x2="50.0" y2="124.2" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="133.6" x2="50.0" y2="133.6" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="143.0" x2="54.5" y2="143.0" stroke-width="1.3" opacity="0.72"/>
+                            <line x1="45" y1="143.0" x2="54.5" y2="143.0" stroke-width="1.30" opacity="0.72"/>
                             <line x1="45" y1="152.4" x2="50.0" y2="152.4" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="161.8" x2="50.0" y2="161.8" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="171.2" x2="50.0" y2="171.2" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="180.6" x2="50.0" y2="180.6" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="190.0" x2="54.5" y2="190.0" stroke-width="1.3" opacity="0.72"/>
+                            <line x1="45" y1="190.0" x2="54.5" y2="190.0" stroke-width="1.30" opacity="0.72"/>
                             <line x1="45" y1="199.4" x2="50.0" y2="199.4" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="208.8" x2="50.0" y2="208.8" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="218.2" x2="50.0" y2="218.2" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="227.6" x2="50.0" y2="227.6" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="237.0" x2="54.5" y2="237.0" stroke-width="1.3" opacity="0.72"/>
+                            <line x1="45" y1="237.0" x2="54.5" y2="237.0" stroke-width="1.30" opacity="0.72"/>
                             <line x1="45" y1="246.4" x2="50.0" y2="246.4" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="255.8" x2="50.0" y2="255.8" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="265.2" x2="50.0" y2="265.2" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="274.6" x2="50.0" y2="274.6" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="284.0" x2="54.5" y2="284.0" stroke-width="1.3" opacity="0.72"/>
+                            <line x1="45" y1="284.0" x2="54.5" y2="284.0" stroke-width="1.30" opacity="0.72"/>
                             <line x1="45" y1="293.4" x2="50.0" y2="293.4" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="302.8" x2="50.0" y2="302.8" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="312.2" x2="50.0" y2="312.2" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="321.6" x2="50.0" y2="321.6" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="331.0" x2="54.5" y2="331.0" stroke-width="1.3" opacity="0.72"/>
+                            <line x1="45" y1="331.0" x2="54.5" y2="331.0" stroke-width="1.30" opacity="0.72"/>
                             <line x1="45" y1="340.4" x2="50.0" y2="340.4" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="349.8" x2="50.0" y2="349.8" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="359.2" x2="50.0" y2="359.2" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="368.6" x2="50.0" y2="368.6" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="378.0" x2="54.5" y2="378.0" stroke-width="1.3" opacity="0.72"/>
+                            <line x1="45" y1="378.0" x2="54.5" y2="378.0" stroke-width="1.30" opacity="0.72"/>
                             <line x1="45" y1="387.4" x2="50.0" y2="387.4" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="396.8" x2="50.0" y2="396.8" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="406.2" x2="50.0" y2="406.2" stroke-width="0.85" opacity="0.42"/>
                             <line x1="45" y1="415.6" x2="50.0" y2="415.6" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="425.0" x2="54.5" y2="425.0" stroke-width="1.3" opacity="0.72"/>
+                            <line x1="45" y1="425.0" x2="54.5" y2="425.0" stroke-width="1.30" opacity="0.72"/>
                             <line x1="45" y1="434.4" x2="50.0" y2="434.4" stroke-width="0.85" opacity="0.42"/>
                         </g>
-
-                        <!-- Σταθερό σκέλος: εξωτερική σιαγόνα και μύτη εσωτερικής μέτρησης -->
-                        <path d="M45 88 L22 88 L17 82 L17 70 L24 58 L45 58 Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" fill="rgba(201,168,108,0.15)"/>
-                        <line x1="22" y1="88" x2="45" y2="88" stroke="currentColor" stroke-width="2.6" opacity="0.95"/>
-                        <path d="M23 58 L23 34 L27.5 25 L32 34 L32 58" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="rgba(201,168,108,0.15)"/>
-
+                        <!-- Σταθερή σιαγόνα: επιφάνεια μέτρησης στο y=88 -->
+                        <path d="M45 70 L15 70 L4 79 L15 88 L45 88 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="rgba(201,168,108,0.16)"/>
+                        <line x1="15" y1="88" x2="45" y2="88" stroke="currentColor" stroke-width="2.6" opacity="0.92"/>
                         <!-- Κινητό σκέλος -->
                         <g id="calJawGroup" style="transform:translateY(-262px)">
-                            <path d="M45 350 L22 350 L17 356 L17 368 L24 380 L45 380 Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" fill="rgba(201,168,108,0.15)"/>
-                            <line x1="22" y1="350" x2="45" y2="350" stroke="currentColor" stroke-width="2.6" opacity="0.95"/>
-                            <!-- μύτη εσωτερικής μέτρησης, ελαφρώς μετατοπισμένη ώστε να μη συμπίπτει με τη σταθερή -->
-                            <path d="M26 350 L26 326 L30 318 L34 326 L34 350" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="rgba(201,168,108,0.15)"/>
-                            <!-- Δρομέας με τη βερνιέρα -->
-                            <rect x="30" y="380" width="28" height="44" rx="2.2" stroke="currentColor" stroke-width="1.6" fill="rgba(201,168,108,0.20)"/>
-                            <g stroke="currentColor">
-                                <line x1="45.5" y1="386.0" x2="54" y2="386.0" stroke-width="0.9" opacity="0.75"/>
-                                <line x1="48.5" y1="389.2" x2="54" y2="389.2" stroke-width="0.9" opacity="0.45"/>
-                                <line x1="48.5" y1="392.4" x2="54" y2="392.4" stroke-width="0.9" opacity="0.45"/>
-                                <line x1="48.5" y1="395.6" x2="54" y2="395.6" stroke-width="0.9" opacity="0.45"/>
-                                <line x1="48.5" y1="398.8" x2="54" y2="398.8" stroke-width="0.9" opacity="0.45"/>
-                                <line x1="45.5" y1="402.0" x2="54" y2="402.0" stroke-width="0.9" opacity="0.75"/>
-                                <line x1="48.5" y1="405.2" x2="54" y2="405.2" stroke-width="0.9" opacity="0.45"/>
-                                <line x1="48.5" y1="408.4" x2="54" y2="408.4" stroke-width="0.9" opacity="0.45"/>
-                                <line x1="48.5" y1="411.6" x2="54" y2="411.6" stroke-width="0.9" opacity="0.45"/>
-                                <line x1="48.5" y1="414.8" x2="54" y2="414.8" stroke-width="0.9" opacity="0.45"/>
-                                <line x1="45.5" y1="418.0" x2="54" y2="418.0" stroke-width="0.9" opacity="0.75"/>
+                            <rect x="29" y="350" width="25" height="58" rx="2.4" stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.22)"/>
+                            <path d="M45 368 L15 368 L4 359 L15 350 L45 350 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="rgba(201,168,108,0.16)"/>
+                            <line x1="15" y1="350" x2="45" y2="350" stroke="currentColor" stroke-width="2.6" opacity="0.92"/>
+                            <!-- Βερνιέρος -->
+                            <g stroke="currentColor" opacity="0.5">
+                                <line x1="45" y1="374.0" x2="52.0" y2="374.0" stroke-width="0.75"/>
+                                <line x1="45" y1="376.8" x2="49.5" y2="376.8" stroke-width="0.75"/>
+                                <line x1="45" y1="379.6" x2="49.5" y2="379.6" stroke-width="0.75"/>
+                                <line x1="45" y1="382.4" x2="49.5" y2="382.4" stroke-width="0.75"/>
+                                <line x1="45" y1="385.2" x2="49.5" y2="385.2" stroke-width="0.75"/>
+                                <line x1="45" y1="388.0" x2="52.0" y2="388.0" stroke-width="0.75"/>
+                                <line x1="45" y1="390.8" x2="49.5" y2="390.8" stroke-width="0.75"/>
+                                <line x1="45" y1="393.6" x2="49.5" y2="393.6" stroke-width="0.75"/>
+                                <line x1="45" y1="396.4" x2="49.5" y2="396.4" stroke-width="0.75"/>
+                                <line x1="45" y1="399.2" x2="49.5" y2="399.2" stroke-width="0.75"/>
+                                <line x1="45" y1="402.0" x2="52.0" y2="402.0" stroke-width="0.75"/>
                             </g>
                             <!-- Βίδα ασφάλισης -->
-                            <circle cx="51" cy="372" r="4.4" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.22)"/>
-                            <line x1="51" y1="368" x2="51" y2="376" stroke="currentColor" stroke-width="1" opacity="0.8"/>
+                            <circle cx="50" cy="360" r="4.2" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.22)"/>
+                            <line x1="47.4" y1="360" x2="52.6" y2="360" stroke="currentColor" stroke-width="1.1" opacity="0.75"/>
                             <!-- Τροχός ώθησης -->
-                            <rect x="44" y="428" width="13" height="20" rx="2.5" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.16)"/>
-                            <g stroke="currentColor">
-                            <line x1="45.5" y1="432.0" x2="55.5" y2="432.0" stroke-width="0.7" opacity="0.45"/>
-                            <line x1="45.5" y1="435.0" x2="55.5" y2="435.0" stroke-width="0.7" opacity="0.45"/>
-                            <line x1="45.5" y1="438.0" x2="55.5" y2="438.0" stroke-width="0.7" opacity="0.45"/>
-                            <line x1="45.5" y1="441.0" x2="55.5" y2="441.0" stroke-width="0.7" opacity="0.45"/>
-                            <line x1="45.5" y1="444.0" x2="55.5" y2="444.0" stroke-width="0.7" opacity="0.45"/>
+                            <rect x="43" y="412" width="13" height="20" rx="2.5" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.16)"/>
+                            <g stroke="currentColor" opacity="0.42" stroke-width="0.7">
+                                <line x1="45" y1="416.0" x2="54" y2="416.0"/>
+                                <line x1="45" y1="419.6" x2="54" y2="419.6"/>
+                                <line x1="45" y1="423.2" x2="54" y2="423.2"/>
+                                <line x1="45" y1="426.8" x2="54" y2="426.8"/>
+                                <line x1="45" y1="430.4" x2="54" y2="430.4"/>
                             </g>
                         </g>
-                        </g>
-                        <!-- Dimension arrow top -->
+                        <!-- Γραμμή διάστασης -->
                         <line x1="10" y1="84" x2="18" y2="92" stroke="currentColor" stroke-width="2" opacity="0.8"/>
-                        <!-- Dimension line (vertical) -->
                         <line id="calDimLine" x1="14" y1="88" x2="14" y2="88" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.6"/>
-                        <!-- Dimension tick bottom -->
                         <line id="calDimTickR" x1="10" y1="84" x2="18" y2="92" stroke="currentColor" stroke-width="2" opacity="0.8"/>
-                        <!-- Value label -->
                         <text id="caliperVal" x="10" y="88" text-anchor="middle"
                               font-family="Cormorant Garamond, serif" font-size="12"
                               letter-spacing="2.5" fill="currentColor" opacity="0.85"
