@@ -3314,7 +3314,10 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
    περιθώριο τη σπρώχνει κάτω από το μεγεθυσμένο σχέδιο. */
 .hero-art-label {
     display: block;
-    margin-top: 26px;
+    /* Το scale(1.22) του σκίτσου δεν πιάνει χώρο στη διάταξη: το σχέδιο
+       ξεχειλίζει ~18px κάτω από το κουτί του, οπότε το περιθώριο πρέπει να
+       τα καλύψει για να μην κολλάει η λεζάντα πάνω στο σχέδιο. */
+    margin-top: 44px;
     font-family: 'Oswald', sans-serif;
     font-size: 11.5px; font-weight: 500;
     letter-spacing: 2.6px; text-transform: uppercase;
