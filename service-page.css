@@ -281,8 +281,8 @@ body .svc-crumb { padding-top: 20px; padding-bottom: 0; }
 
 /* Το εισαγωγικό, τώρα μέσα στο λευκό κουτί και όχι στο μπλε hero */
 .svc-prose .svc-intro {
-    font-size: clamp(17px, 1.9vw, 20px);
-    line-height: 1.68;
+    font-size: 16.5px;
+    line-height: 1.74;
     color: var(--ink);
     margin: 4px 0 20px;
     padding-left: 16px;
@@ -414,7 +414,6 @@ body .ta-box .ta-warning-body > strong {
     body .ta-box .ta-stat { padding: 12px 14px; }
     body .ta-box .ta-stat-val { font-size: 19px; }
     body .svc-hero { padding-top: 74px; padding-bottom: 26px; }
-    body .svc-intro { font-size: 17px; line-height: 1.6; }
 }
 
 /* ── ΖΩΝΤΑΝΕΜΑ: HOVER ΚΑΙ ΜΙΚΡΕΣ ΚΙΝΗΣΕΙΣ ────────────────────────────────

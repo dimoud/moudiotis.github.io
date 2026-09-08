@@ -44,6 +44,7 @@
         '#cc-btns{display:flex;gap:10px;flex-shrink:0}',
         '#cc-accept,#cc-reject{',
         '  padding:9px 20px;border:none;border-radius:4px;',
+        '  font-family:"Source Sans 3",sans-serif;',
         '  font-size:13px;font-weight:600;cursor:pointer;transition:opacity .2s;',
         '}',
         '#cc-accept{background:#c9a86c;color:#1c1b19}',

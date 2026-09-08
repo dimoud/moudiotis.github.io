@@ -40,13 +40,13 @@
     }
     if (window.ServiceAnim && window.ServiceAnim.build) {
       out.push({ key: 'import', html: window.ServiceAnim.build('import'),
-                 label: t(['Εισαγόμενα Οχήματα & Τροχόσπιτα', 'Imported Vehicles & Motorhomes']) });
+                 label: t(['Εισαγόμενα Οχήματα και Τροχόσπιτα', 'Imported Vehicles and Motorhomes']) });
       out.push({ key: 'exes',   html: window.ServiceAnim.build('exes'),
                  label: t(['Οχήματα Ειδικού Σκοπού', 'Special Purpose Vehicles']) });
     }
     if (window.TypeApprovalAnim && window.TypeApprovalAnim.build) {
       out.push({ key: 'tap', html: window.TypeApprovalAnim.build(),
-                 label: t(['Έγκριση Τύπου & Καταχώρηση ΤΑΟ', 'Type Approval & TAO Registration']) });
+                 label: t(['Έγκριση Τύπου και Καταχώρηση ΤΑΟ', 'Type Approval and TAO Registration']) });
     }
     return out.filter(function (s) { return s.html; });
   }

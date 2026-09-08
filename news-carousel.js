@@ -28,7 +28,7 @@
     return v || '';
   }
   function esc(s) {
-    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    return String(s).replace(/&/g, 'and').replace(/</g, '&lt;')
       .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 

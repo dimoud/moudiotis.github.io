@@ -47,7 +47,7 @@
     <link rel="preconnect" href="https://flagcdn.com">
 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&family=Oswald:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../expertease-credit.css">
@@ -329,7 +329,7 @@
 <body>
 
     <a href="#main" class="skip-link">Skip to main content</a>
-    <p style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">Moudiotis Technical Office — mechanical engineer services: national &amp; European type approval of vehicles, trailers and components, individual vehicle approval, registration in the Technical Vehicle Archive (TAO), Type Approval Notification Certificates, vehicle registration, O1/O2 trailer licence, cargo trailer licence, special use / special purpose vehicles, technical body studies, approval of special bodywork &amp; conversions, modification and compliance studies, certification dossier management, compliance certificates and technical memoranda — Athens &amp; Thessaloniki.</p>
+    <p style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">Moudiotis Technical Office — mechanical engineer services: national and European type approval of vehicles, trailers and components, individual vehicle approval, registration in the Technical Vehicle Archive (TAO), Type Approval Notification Certificates, vehicle registration, O1/O2 trailer licence, cargo trailer licence, special use / special purpose vehicles, technical body studies, approval of special bodywork and conversions, modification and compliance studies, certification dossier management, compliance certificates and technical memoranda — Athens and Thessaloniki.</p>
 
     <div id="progress"></div>
 
@@ -348,8 +348,8 @@
             <a href="#about"    data-i18n="nav.about"></a>
             <a href="#services" data-i18n="nav.services"></a>
             <a href="/en/adeia-treiler-o1-o2/">Trailer Licence</a>
-            <a href="/en/memonomeni-egkrisi-oximatos/">Imports &amp; Caravans</a>
-            <a href="/en/deltio-koinopoiisis-tao/">Type Approval &amp; TAO</a>
+            <a href="/en/memonomeni-egkrisi-oximatos/">Imports and Caravans</a>
+            <a href="/en/deltio-koinopoiisis-tao/">Type Approval and TAO</a>
             <a href="/en/oximata-eidikou-skopou/">Special Purpose</a>
             <a href="#contact"  class="nav-cta" data-i18n="nav.contact"></a>
         </div>
@@ -1009,11 +1009,11 @@
                 <!-- TOPBAR -->
                 <div class="tap-topbar">
                     <span class="tap-badge"><i class="fa-solid fa-stamp"></i>&nbsp;<span data-i18n="tap.badge">TYPE APPROVALS</span></span>
-                    <span class="tap-kicker" data-i18n-html="tap.kicker">VEHICLES &amp; TRAILERS</span>
+                    <span class="tap-kicker" data-i18n-html="tap.kicker">VEHICLES and TRAILERS</span>
                 </div>
 
                 <div class="tap-body">
-                    <h2 id="tapHeading" class="tap-title" data-i18n-html="tap.title">Vehicle Type Approval &amp; Technical Support Services</h2>
+                    <h2 id="tapHeading" class="tap-title" data-i18n-html="tap.title">Vehicle Type Approval and Technical Support Services</h2>
                     <p class="tap-intro" data-i18n-html="tap.intro">Beyond <strong>trailer licensing</strong>, the office handles the full spectrum of <strong>type approval</strong> and vehicle technical support — from dossier preparation and technical study, through <strong>Technical Vehicle Archive (TAO) registration</strong> and the <strong>Notification Certificate</strong>, to final registration.</p>
 
                     <!-- Type approval dossier sketch animation -->
@@ -1054,7 +1054,7 @@
         <div class="ta-title-row">
           <h3 class="ta-title" data-i18n="ta.title"></h3>
           <div class="ta-cat-badge">
-            <span class="ta-cat-bv">Ο1 &amp; Ο2</span>
+            <span class="ta-cat-bv">Ο1 and Ο2</span>
             <span class="ta-cat-bk" data-i18n="trc.badge.cat">ΚΑΤΗΓΟΡΙΑ</span>
           </div>
         </div>
@@ -1171,16 +1171,113 @@
     </div>
 
     <!-- ===== TRAILER ROAD CHECK ===== -->
-    <div class="ta-wrap" data-reveal>
-      <a class="tool-card" href="/en/ypologistis-elxis/">
-        <span class="tool-card-ic"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></span>
-        <span class="tool-card-b">
-          <strong>Towing calculator &amp; trailer checks</strong>
-          <span>See whether your vehicle may legally tow the trailer, from the fields on the registration document — plus the road-legal checklist.</span>
-        </span>
-        <span class="tool-card-go">Open &rarr;</span>
-      </a>
-    </div>
+    <section class="trc-section" id="trailer-road-check" aria-labelledby="trcHeading">
+        <div class="trc-outer trc-outer--dual">
+            <div class="trc-widget" data-reveal>
+
+                <!-- TOPBAR -->
+                <div class="trc-widget-topbar">
+                    <span class="trc-widget-topbar-badge"><i class="fa-solid fa-shield-halved"></i>&nbsp;<span data-i18n="trc.badge">Έλεγχος Κ.Ο.Κ.</span></span>
+                </div>
+
+                <div class="trc-widget-body">
+
+                <!-- TITLE ROW — always visible -->
+                <div class="trc-title-row">
+                    <h2 id="trcHeading" class="trc-h"><span id="trcTitle1">Έλεγχοι </span><em id="trcTitle2">Ρυμουλκούμενων</em></h2>
+                    <div class="trc-cat-badge">
+                        <span class="trc-bk" id="trcBadgeKey">ΚΑΤΗΓΟΡΙΑ</span>
+                        <span class="trc-bv">Ο1 and Ο2</span>
+                    </div>
+                </div>
+
+                <!-- ALWAYS VISIBLE: intro + preview + toggle -->
+                <p class="trc-intro" id="trcIntro">Τα σημεία που ελέγχονται ώστε το ρυμουλκούμενο να είναι <strong>σύμφωνο με τον Κ.Ο.Κ.</strong> και ασφαλές στον δρόμο — ανακλαστήρες, πίσω τρίγωνα, φωτισμός, πινακίδα και σύστημα ζεύξης. Κατηγορία Ο1 and Ο2.</p>
+
+                <!-- CHECKLIST PREVIEW STRIP — always visible -->
+                <div class="trc-preview-strip" id="trcPreviewStrip"></div>
+
+                <button class="trc-main-toggle trc-main-toggle--bar" id="trcMainToggle" aria-expanded="true" aria-controls="trcMainCollapse">
+                    <span id="trcTagline">ΚΑΝΕ ΤΟΝ ΠΛΗΡΗ ΕΛΕΓΧΟ ΚΑΙ ΔΕΣ ΑΝΑΛΥΤΙΚΑ</span>
+                    <i class="fa-solid fa-chevron-down trc-main-chevron"></i>
+                </button>
+
+                <!-- COLLAPSIBLE BODY -->
+                <div class="trc-main-collapse is-open" id="trcMainCollapse">
+
+                    <!-- DIAGRAM -->
+                    <div class="trc-diagram-wrap">
+                        <span class="trc-diagram-tag" id="trcDiagramTag">ΠΛΑΓΙΑ and ΠΙΣΩ ΟΨΗ</span>
+                        <img src="../TRAILER_EXAMPLE.png" alt="Side and Rear View of an O1 and O2 Category Trailer">
+                    </div>
+
+                    <!-- PROGRESS -->
+                    <div class="trc-progress-row">
+                        <span class="trc-progress-lbl" id="trcProgressLbl">Πρόοδος Ελέγχου</span>
+                        <div class="trc-progress-track"><div class="trc-progress-fill" id="trcFill"></div></div>
+                        <span class="trc-progress-num" id="trcNum">0 / 8</span>
+                        <button class="trc-reset-btn" id="trcResetBtn">ΕΠΑΝΑΦΟΡΑ</button>
+                    </div>
+
+                    <div class="trc-complete-msg" id="trcCompleteMsg">
+                        <span class="trc-complete-star">✦</span>
+                        <span id="trcCompleteText">Το ρυμουλκούμενο είναι έτοιμο για τον δρόμο!</span>
+                    </div>
+
+                    <!-- CHECKLIST LABEL -->
+                    <div class="trc-sec-lbl">
+                        <span class="trc-b">✓</span>
+                        <span id="trcSecLbl">Σημεία Ελέγχου and Νόμιμος Εξοπλισμός</span>
+                    </div>
+
+                    <!-- CHECKLIST GRID — built by trc.js -->
+                    <div class="trc-checks-grid" id="trcChecksGrid"></div>
+
+                    <!-- BOTTOM GRID — expandable as one unit -->
+                    <div class="trc-bottom-single">
+
+                        <button class="trc-b-toggle trc-b-toggle--combined" aria-expanded="true" aria-controls="trcBcCombined" onclick="trcToggleCombined(this)">
+                            <div class="trc-b-combined-labels">
+                                <span class="trc-b-lbl">
+                                    <span class="trc-b">i</span>
+                                    <span id="trcBc0Lbl">Περιοδικός Έλεγχος</span>
+                                </span>
+                                <span class="trc-b-sep">and</span>
+                                <span class="trc-b-lbl trc-b-lbl--warn">
+                                    <span class="trc-b trc-b--warn">!</span>
+                                    <span id="trcBc1Lbl">Ασφάλιση</span>
+                                </span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down trc-b-chevron"></i>
+                        </button>
+
+                        <div class="trc-b-collapse trc-b-collapse--combined" id="trcBcCombined">
+                            <div class="trc-bottom-grid">
+                                <div class="trc-b-inner">
+                                    <div class="trc-b-inner-lbl">
+                                        <span class="trc-b">i</span>
+                                        <span id="trcBc0InnerLbl">Περιοδικός Έλεγχος</span>
+                                    </div>
+                                    <ul class="trc-spec-list" id="trcBc0List"></ul>
+                                </div>
+                                <div class="trc-b-inner">
+                                    <div class="trc-b-inner-lbl trc-b-lbl--warn">
+                                        <span class="trc-b trc-b--warn">!</span>
+                                        <span id="trcBc1InnerLbl">Ασφάλιση</span>
+                                    </div>
+                                    <div class="trc-note-box" id="trcNoteBox">Απαιτείται <b>ξεχωριστή ασφάλιση</b> του ρυμουλκούμενου από το ρυμουλκό όχημα. Ενημερωθείτε από τον ασφαλιστή σας.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /trc-bottom-single -->
+
+                </div><!-- /trc-main-collapse -->
+
+                </div><!-- /trc-widget-body -->
+            </div><!-- /trc-widget -->
+        </div><!-- /trc-outer -->
+    </section>
     </div><!-- /ta-dual-row -->
 
 
@@ -1456,7 +1553,7 @@
     <section class="news-section" id="newsSection" data-src="/news.json" aria-labelledby="newsHeading" hidden>
         <div class="news-heading-wrap">
             <div class="eyebrow"><span>UPDATES</span></div>
-            <h2 id="newsHeading" class="section-heading">Legislation &amp; <em>sector news</em></h2>
+            <h2 id="newsHeading" class="section-heading">Legislation and <em>sector news</em></h2>
         </div>
         <div class="news-band" id="newsBand">
             <div class="news-track" id="newsTrack"></div>

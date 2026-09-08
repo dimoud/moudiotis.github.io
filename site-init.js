@@ -92,7 +92,7 @@
 
     // TRAILER ANNOUNCEMENT GUIDE
     T['ta.badge']       = { el: 'ΝΕΟΣ ΝΟΜΟΣ', en: 'NEW LAW' };
-    T['ta.title']       = { el: 'ΤΡΕΪΛΕΡ — Οδηγός Νομιμοποίησης & Έκδοσης Άδειας Κυκλοφορίας', en: 'TRAILER — Legalization & Registration Guide' };
+    T['ta.title']       = { el: 'ΤΡΕΪΛΕΡ — Οδηγός Νομιμοποίησης και Έκδοσης Άδειας Κυκλοφορίας', en: 'TRAILER — Legalization and Registration Guide' };
     T['ta.intro']       = {
         el: 'Στις <strong>23 Μαρτίου 2026</strong> ψηφίστηκε νόμος του Υπουργείου Υποδομών και Μεταφορών με αντικείμενο την <strong>κυκλοφορία οχημάτων κατηγορίας Ο1 και Ο2</strong> — δηλαδή ρυμουλκούμενων τρέιλερ. Ο νόμος ορίζει για πρώτη φορά σαφή διαδικασία νομιμοποίησης για τα αναρίθμητα ρυμουλκούμενα που κυκλοφορούν χωρίς άδεια στην Ελληνική επικράτεια. Η διαδικασία είναι πλέον ανοιχτή.',
         en: 'On <strong>23 March 2026</strong>, the Ministry of Infrastructure and Transport enacted a law governing the <strong>circulation of O1 and O2 category vehicles</strong> — i.e. towed trailers. For the first time, the law defines a clear legalization procedure for the many trailers circulating without registration in Greece. The process is now open.'
@@ -102,7 +102,7 @@
     T['ta.elig2']       = { el: 'Ρυμουλκούμενα <strong>ειδικής χρήσης και ειδικού σκοπού</strong>, μη μεταφοράς εμπορευμάτων.', en: 'Trailers of <strong>special use and special purpose</strong>, not intended for goods transport.' };
     T['ta.elig3']       = { el: 'Δεν υπάρχει <strong>ημερομηνία λήξης</strong> της διαδικασίας προς το παρόν — η διαδικασία παραμένει ανοιχτή.', en: 'There is currently <strong>no expiry date</strong> for the process — the window remains open.' };
     T['ta.elig4']       = { el: 'Δεν μπορούν να εκδόσουν άδεια <strong>ρυμουλκούμενα χωρίς προηγούμενη άδεια κυκλοφορίας</strong> (ιδιοκατασκευές).', en: 'Trailers <strong>without a prior registration licence</strong> (home-built) are not eligible.' };
-    T['ta.col2.head']   = { el: 'Κόστος & απαιτήσεις', en: 'Cost & requirements' };
+    T['ta.col2.head']   = { el: 'Κόστος και απαιτήσεις', en: 'Cost and requirements' };
     T['ta.proc1']       = { el: 'Παράβολα συνολικά <strong>230 €</strong>, εκδιδόμενα ηλεκτρονικά μέσω <strong>e-paravolo</strong>.', en: 'Total fees of <strong>€230</strong>, issued electronically via <strong>e-paravolo</strong>.' };
     T['ta.proc2']       = { el: 'Για οχήματα με ΕΣΡ πριν το <strong>1999</strong>: <strong>πρακτικό επιθεώρησης</strong> από αρμόδια Υπηρεσία Μεταφορών ή <strong>επιτυχής έλεγχος ΚΤΕΟ</strong>.', en: 'For vehicles with ESR before <strong>1999</strong>: an <strong>inspection report</strong> from the Regional Transport Authority or a <strong>successful KTEO technical check</strong>.' };
     T['ta.proc3']       = { el: 'Υποβολή πλήρους φακέλου <strong>δικαιολογητικών</strong> στην αρμόδια υπηρεσία, με σωστή καταγραφή χαρακτηριστικών οχήματος.', en: 'Submission of a complete <strong>documentation file</strong> to the competent authority, with accurate recording of vehicle characteristics.' };
@@ -117,9 +117,6 @@
     T['partners.eyebrow']    = { el: 'ΣΥΝΕΡΓΑΣΙΕΣ', en: 'PARTNERSHIPS' };
     T['partners.heading']    = { el: 'Μας <em>εμπιστεύονται</em>', en: 'They <em>trust us</em>' };
     T['partners.note']       = { el: 'Επιχειρήσεις με τις οποίες έχει συνεργαστεί το γραφείο σε εγκρίσεις τύπου, ταξινομήσεις και τεχνικές μελέτες οχημάτων.', en: 'Businesses the office has worked with on type approvals, vehicle registrations and technical studies.' };
-    T['tool.elxi.title']    = { el: 'Υπολογιστής έλξης & έλεγχοι ρυμουλκούμενου', en: 'Towing calculator & trailer checks' };
-    T['tool.elxi.text']     = { el: 'Δείτε αν το όχημά σας επιτρέπεται να έλκει το ρυμουλκούμενο, με βάση τα πεδία της άδειας κυκλοφορίας — και τα σημεία που ελέγχονται κατά τον Κ.Ο.Κ.', en: 'See whether your vehicle may legally tow the trailer, from the fields on the registration document — plus the road-legal checklist.' };
-    T['tool.elxi.go']       = { el: 'Άνοιγμα →', en: 'Open →' };
     T['ta.price.tag']        = { el: 'ΤΕΛΙΚΗ ΤΙΜΗ', en: 'FINAL PRICE' };
     T['ta.price.val']        = { el: '400–430 €', en: '€400–430' };
     T['ta.price.note']       = { el: 'Για άδεια και πινακίδες ρυμουλκούμενου Ο1 ή Ο2. Συμπεριλαμβάνονται τα παράβολα του Δημοσίου.', en: 'For an O1 or O2 trailer licence and plates. Government fees are included.' };
@@ -147,8 +144,8 @@
     T['ta.warn.title']  = { el: 'Προσοχή — Απαγόρευση κυκλοφορίας', en: 'Caution — Circulation Prohibited' };
     T['ta.warn.text']   = { el: 'Έως την έκδοση της άδειας κυκλοφορίας και των πινακίδων, <strong>απαγορεύεται ρητά η κυκλοφορία</strong> των παραπάνω οχημάτων. Σε ενδεχόμενο ελέγχου, αντιμετωπίζονται ως οχήματα <strong>χωρίς στοιχεία κυκλοφορίας και ανασφάλιστα</strong>, με ό,τι αυτό συνεπάγεται νομικά και οικονομικά.', en: 'Until the registration and plates are issued, <strong>circulation of these vehicles is strictly prohibited</strong>. If stopped during a check, they are treated as <strong>unregistered and uninsured</strong>, with all the legal and financial consequences that entails.' };
     T['ta.svc.head']    = { el: 'Τι αναλαμβάνει το γραφείο μας', en: 'What our office handles' };
-    T['ta.svc1']        = { el: '<strong>Επιθεώρηση & καταγραφή</strong> — Ελέγχουμε το ρυμουλκούμενο και καταγράφουμε με ακρίβεια όλα τα χαρακτηριστικά του, ώστε η νέα άδεια κυκλοφορίας να εκδοθεί σωστά.', en: '<strong>Inspection & recording</strong> — We inspect the trailer and accurately record all its characteristics, ensuring the new registration is issued correctly.' };
-    T['ta.svc2']        = { el: '<strong>Αποτύπωση & πινακίδιο</strong> — Αποτυπώνουμε τον νέο <strong>17ψήφιο αριθμό πλαισίου (VIN)</strong> και τοποθετούμε το πινακίδιο χαρακτηριστικών.', en: '<strong>VIN & plate</strong> — We stamp the new <strong>17-digit chassis number (VIN)</strong> and fit the characteristic plate.' };
+    T['ta.svc1']        = { el: '<strong>Επιθεώρηση και καταγραφή</strong> — Ελέγχουμε το ρυμουλκούμενο και καταγράφουμε με ακρίβεια όλα τα χαρακτηριστικά του, ώστε η νέα άδεια κυκλοφορίας να εκδοθεί σωστά.', en: '<strong>Inspection and recording</strong> — We inspect the trailer and accurately record all its characteristics, ensuring the new registration is issued correctly.' };
+    T['ta.svc2']        = { el: '<strong>Αποτύπωση και πινακίδιο</strong> — Αποτυπώνουμε τον νέο <strong>17ψήφιο αριθμό πλαισίου (VIN)</strong> και τοποθετούμε το πινακίδιο χαρακτηριστικών.', en: '<strong>VIN and plate</strong> — We stamp the new <strong>17-digit chassis number (VIN)</strong> and fit the characteristic plate.' };
     T['ta.svc3']        = { el: '<strong>Πλήρης μελέτη</strong> — Συντάσσουμε την τεχνική περιγραφή που περιλαμβάνει φωτογραφίες, αποτύπωμα αριθμού πλαισίου και όλα τα απαραίτητα έγγραφα.', en: '<strong>Full technical study</strong> — We prepare the technical description including photographs, chassis number imprint, and all required documents.' };
     T['ta.svc4']        = { el: '<strong>Υποβολή φακέλου</strong> — Ετοιμάζουμε και υποβάλλουμε τον πλήρη φάκελο στην αρμόδια υπηρεσία. Το μόνο που χρειάζεται να κάνετε είναι να μας <strong>τηλεφωνήσετε</strong>.', en: '<strong>File submission</strong> — We prepare and submit the complete file to the competent authority. All you need to do is <strong>call us</strong>.' };
     T['ta.cta.text']    = { el: 'Επικοινωνήστε μαζί μας σήμερα για δωρεάν ενημέρωση σχετικά με τη νομιμοποίηση του τρέιλερ ή της μπαγκαζιέρας σας.', en: 'Contact us today for a free consultation on legalizing your trailer or cargo box.' };
@@ -156,8 +153,8 @@
 
     // TYPE-APPROVAL SECTION (tap.*)
     T['tap.badge']       = { el: 'ΕΓΚΡΙΣΕΙΣ ΤΥΠΟΥ', en: 'TYPE APPROVALS' };
-    T['tap.title']       = { el: 'Υπηρεσίες Έγκρισης Τύπου &amp; Τεχνικής Υποστήριξης Οχημάτων', en: 'Vehicle Type Approval &amp; Technical Support Services' };
-    T['tap.kicker']      = { el: 'ΟΧΗΜΑΤΑ &amp; ΡΥΜΟΥΛΚΟΥΜΕΝΑ', en: 'VEHICLES &amp; TRAILERS' };
+    T['tap.title']       = { el: 'Υπηρεσίες Έγκρισης Τύπου και Τεχνικής Υποστήριξης Οχημάτων', en: 'Vehicle Type Approval and Technical Support Services' };
+    T['tap.kicker']      = { el: 'ΟΧΗΜΑΤΑ και ΡΥΜΟΥΛΚΟΥΜΕΝΑ', en: 'VEHICLES and TRAILERS' };
     T['tap.intro']       = { el: 'Πέρα από την <strong>έκδοση αδειών τρέιλερ</strong>, το γραφείο αναλαμβάνει το πλήρες φάσμα της <strong>έγκρισης τύπου</strong> και της τεχνικής υποστήριξης οχημάτων — από τη σύνταξη του φακέλου και τη μελέτη, έως την <strong>καταχώρηση στο ΤΑΟ</strong>, το <strong>Δελτίο Κοινοποίησης</strong> και την τελική ταξινόμηση.', en: 'Beyond <strong>trailer licensing</strong>, the office handles the full spectrum of <strong>type approval</strong> and vehicle technical support — from dossier preparation and technical study, through <strong>Technical Vehicle Archive (TAO) registration</strong> and the <strong>Notification Certificate</strong>, to final registration.' };
     T['tap.expand.hint'] = { el: 'ΔΕΣ ΟΛΕΣ ΤΙΣ ΥΠΗΡΕΣΙΕΣ ΕΓΚΡΙΣΕΩΝ ΤΥΠΟΥ ΑΝΑΛΥΤΙΚΑ', en: 'SEE ALL TYPE APPROVAL SERVICES IN DETAIL' };
     T['tap.graphic.tag'] = { el: 'ΦΑΚΕΛΟΣ ΕΓΚΡΙΣΗΣ ΤΥΠΟΥ', en: 'TYPE APPROVAL DOSSIER' };
@@ -286,16 +283,16 @@
         en: 'Every trailer is required by Road Code to have a <strong>registration licence</strong> and plates. <strong>O1</strong>: up to 750 kg (cargo trailer, boats, camping, motorcycle) — <strong>O2</strong>: up to 3,500 kg (caravan, car, heavy industrial). We handle everything: <strong>trailer type approval</strong>, technical study, submission to YMED/KTEO, licence issuance.',
     };
     T['svc.expand.0.meta'] = {
-        el: 'Αθήνα &amp; Θεσσαλονίκη &nbsp;·&nbsp; ΑΠΘ, MSc &nbsp;·&nbsp; Κατηγορίες Ο1 &amp; Ο2',
-        en: 'Athens &amp; Thessaloniki &nbsp;·&nbsp; AUTH, MSc &nbsp;·&nbsp; Categories O1 &amp; O2',
+        el: 'Αθήνα και Θεσσαλονίκη &nbsp;·&nbsp; ΑΠΘ, MSc &nbsp;·&nbsp; Κατηγορίες Ο1 και Ο2',
+        en: 'Athens and Thessaloniki &nbsp;·&nbsp; AUTH, MSc &nbsp;·&nbsp; Categories O1 and O2',
     };
     T['svc.expand.1.p1'] = {
         el: 'Τα οχήματα ειδικής χρήσης — γερανοφόρα, πλατφόρμες, ψεκαστικά — χρειάζονται ειδική <strong>ταξινόμηση</strong> και <strong>έγκριση τύπου οχήματος</strong>. Αναλαμβάνουμε επίσης <strong>έγκριση τύπου ρυμουλκούμενου</strong> για τρέιλερ εκτός σειράς παραγωγής. Εκπονούμε τεχνικές μελέτες (στατική ανάλυση, CE, EN 1570) και αναλαμβάνουμε τη διαδικασία από την αρχή έως το τέλος.',
         en: 'Special use vehicles — crane trucks, platforms, sprayers — require special <strong>registration</strong> and <strong>vehicle type approval</strong>. We also handle <strong>trailer type approval</strong> for custom-built trailers. We prepare technical studies (static analysis, CE, EN 1570) and handle the entire process from start to finish.',
     };
     T['svc.expand.1.meta'] = {
-        el: 'Γερανοφόρα &nbsp;·&nbsp; Πλατφόρμες &nbsp;·&nbsp; Ψεκαστικά &nbsp;·&nbsp; Αθήνα &amp; Θεσσαλονίκη',
-        en: 'Crane trucks &nbsp;·&nbsp; Platforms &nbsp;·&nbsp; Sprayers &nbsp;·&nbsp; Athens &amp; Thessaloniki',
+        el: 'Γερανοφόρα &nbsp;·&nbsp; Πλατφόρμες &nbsp;·&nbsp; Ψεκαστικά &nbsp;·&nbsp; Αθήνα και Θεσσαλονίκη',
+        en: 'Crane trucks &nbsp;·&nbsp; Platforms &nbsp;·&nbsp; Sprayers &nbsp;·&nbsp; Athens and Thessaloniki',
     };
 
     // NAV BRAND (for language switch)
