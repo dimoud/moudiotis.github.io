@@ -160,9 +160,28 @@
   function rotator(stage, slides, startAt) {
     var idx = startAt || 0, timer = null, paused = false, inView = true;
 
+    /* Ο δακτύλιος με τα περιστρεφόμενα γράμματα ανήκει στο λογότυπο. Όταν
+     * φεύγει το λογότυπο, φεύγει κι αυτός — αλλιώς τα σκίτσα κάθονται μέσα
+     * σε ένα στεφάνι που δεν τους ανήκει. Η αρχική κίνηση εισόδου του
+     * μηδενίζεται πρώτα, γιατί με animation-fill-mode: both κρατούσε το
+     * opacity στο 1 και δεν άφηνε τη μετάβαση να δουλέψει. */
+    var wrap = stage.closest ? stage.closest('.hero-photo-wrap') : null;
+    var orbit = wrap ? wrap.querySelector('.hero-orbit-svg') : null;
+    if (orbit) {
+      setTimeout(function () {
+        orbit.style.animation  = 'none';
+        orbit.style.transition = 'opacity .55s var(--ease), transform .65s var(--ease)';
+      }, 3200);
+    }
+    function markArt(slide) {
+      if (!wrap) return;
+      wrap.classList.toggle('art-active', slide.classList.contains('hero-slide--art'));
+    }
+
     slides.forEach(function (s, i) {
       s.classList.toggle('is-active', i === idx);
     });
+    markArt(slides[idx]);
     if (slides[idx].classList.contains('hero-slide--art')) revealSlide(slides[idx]);
 
     function go() {
@@ -177,6 +196,7 @@
       next.classList.remove('is-entering');
       next.classList.add('is-active');
       setTimeout(function () { prev.classList.remove('is-leaving'); }, SLIDE_MS);
+      markArt(next);
       if (next.classList.contains('hero-slide--art')) revealSlide(next);
     }
 
