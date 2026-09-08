@@ -3050,7 +3050,7 @@ button.tap-toggle[aria-expanded="true"]:hover .tap-chevron { transform: rotate(1
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
-    margin-top: 26px;
+    margin-top: 44px;
     padding-top: 22px;
     border-top: 1px solid rgba(29,58,92,0.12);
 }
@@ -3288,7 +3288,8 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
 .hero-slide {
     grid-area: 1 / 1;
     width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
     opacity: 0; transform: translateX(46px);
     transition: opacity .62s var(--ease), transform .62s var(--ease);
     will-change: opacity, transform;
@@ -3303,9 +3304,24 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
 .hero-art-svg {
     width: 100%; max-width: 100%; height: auto;
     display: block; overflow: visible;
-    transform: scale(1.12);
+    transform: scale(1.22);
     transform-origin: center center;
     filter: drop-shadow(0 2px 12px rgba(0,0,0,.32));
+}
+
+/* Λεζάντα: ποια υπηρεσία δείχνει το σκίτσο. Το transform του σκίτσου δεν
+   πιάνει χώρο, οπότε η λεζάντα ανεβαίνει από μόνη της πολύ κοντά — το
+   περιθώριο τη σπρώχνει κάτω από το μεγεθυσμένο σχέδιο. */
+.hero-art-label {
+    display: block;
+    margin-top: 26px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11.5px; font-weight: 500;
+    letter-spacing: 2.6px; text-transform: uppercase;
+    color: var(--warm);
+    text-align: center; line-height: 1.4;
+    max-width: 92%;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
 }
 
 /* Ο δακτύλιος φεύγει μαζί με το λογότυπο */
@@ -3320,12 +3336,13 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
    Το ύψος κλειδώνεται ώστε να μη χοροπηδά η σελίδα σε κάθε αλλαγή. */
 .hero-stage--mobile {
     position: relative; inset: auto;
-    width: 100%; min-height: 190px;
+    width: 100%; min-height: 218px;
 }
 .hero-stage--mobile .hero-slide { height: 100%; }
+.hero-stage--mobile .hero-art-label { margin-top: 14px; font-size: 10.5px; letter-spacing: 2.2px; }
 .hero-stage--mobile .hero-slide > svg,
-.hero-stage--mobile .hero-art-svg { width: 92%; max-width: 430px; height: auto; }
-@media (max-width: 400px) { .hero-stage--mobile { min-height: 160px; } }
+.hero-stage--mobile .hero-art-svg { width: 92%; max-width: 430px; height: auto; transform: none; }
+@media (max-width: 400px) { .hero-stage--mobile { min-height: 188px; } }
 
 @media (prefers-reduced-motion: reduce) {
     .hero-slide { transition: none; }

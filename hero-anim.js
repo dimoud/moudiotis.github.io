@@ -35,17 +35,29 @@
   function sources() {
     var out = [];
     if (window.TrailerAnim && window.TrailerAnim.build) {
-      out.push({ key: 'trailer', html: window.TrailerAnim.build() });
+      out.push({ key: 'trailer', html: window.TrailerAnim.build(),
+                 label: t(['Άδεια Ρυμουλκούμενου Ο1 / Ο2', 'O1 / O2 Trailer Licence']) });
     }
     if (window.ServiceAnim && window.ServiceAnim.build) {
-      out.push({ key: 'import', html: window.ServiceAnim.build('import') });
-      out.push({ key: 'exes',   html: window.ServiceAnim.build('exes') });
+      out.push({ key: 'import', html: window.ServiceAnim.build('import'),
+                 label: t(['Εισαγόμενα Οχήματα & Τροχόσπιτα', 'Imported Vehicles & Motorhomes']) });
+      out.push({ key: 'exes',   html: window.ServiceAnim.build('exes'),
+                 label: t(['Οχήματα Ειδικού Σκοπού', 'Special Purpose Vehicles']) });
     }
     if (window.TypeApprovalAnim && window.TypeApprovalAnim.build) {
-      out.push({ key: 'tap', html: window.TypeApprovalAnim.build() });
+      out.push({ key: 'tap', html: window.TypeApprovalAnim.build(),
+                 label: t(['Έγκριση Τύπου & Καταχώρηση ΤΑΟ', 'Type Approval & TAO Registration']) });
     }
     return out.filter(function (s) { return s.html; });
   }
+
+  /* Επιλογή κειμένου ανά γλώσσα, ίδια λογική με τα σκίτσα. */
+  function t(pair) {
+    var en = (document.documentElement.getAttribute('lang') || 'el')
+      .toLowerCase().indexOf('en') === 0;
+    return en ? pair[1] : pair[0];
+  }
+
 
   /* Τα αντίγραφα του hero παίρνουν δικά τους id. Χωρίς αυτό, τα σενάρια των
    * ενοτήτων πιο κάτω στη σελίδα θα έβρισκαν πρώτα το αντίγραφο του hero. */
@@ -137,6 +149,12 @@
       var st1 = svg.querySelector('[id$="tapStamp"]');     if (st1) st1.style.opacity = '0';
       var st2 = svg.querySelector('[id$="trailerStamp"]'); if (st2) st2.style.opacity = '0';
       var bd  = svg.querySelector('[id$="exesBody"]');     if (bd)  bd.style.opacity  = '0';
+    }
+    if (src.label) {
+      var cap = document.createElement('span');
+      cap.className = 'hero-art-label';
+      cap.textContent = src.label;
+      d.appendChild(cap);
     }
     d.dataset.drawn = '0';
     return d;

@@ -255,8 +255,8 @@
            ' stroke-linecap="round" stroke-linejoin="round" fill="none">');
     s.push('<path d="M220 228 L220 108 L620 108 L620 228" stroke-width="4"/>');
     s.push('<path d="M240 150 L600 150" stroke-width="1.4" stroke-opacity="0.45"/>');
-    s.push('<path d="M240 192 L370 192" stroke-width="1.4" stroke-opacity="0.45"/>');
-    s.push('<path d="M510 192 L600 192" stroke-width="1.4" stroke-opacity="0.45"/>');
+    s.push('<path d="M240 192 L346 192" stroke-width="1.4" stroke-opacity="0.45"/>');
+    s.push('<path d="M532 192 L600 192" stroke-width="1.4" stroke-opacity="0.45"/>');
     s.push('<path d="M560 108 L560 228" stroke-width="2.2" stroke-opacity="0.7"/>');
     /* γερανός επί της υπερκατασκευής: κολόνα, αρθρωτός βραχίονας με πάχος,
        δεύτερο σκέλος με απότομη κλίση προς το άγκιστρο — όχι συμμετρική
@@ -294,11 +294,12 @@
            ' fill="rgba(56,161,105,0.12)" stroke="' + GREEN + '" stroke-width="2.4"/>');
     s.push('<text x="' + sgx + '" y="326" text-anchor="middle" font-family="' + OSW + '"',
            ' font-size="12" font-weight="700" letter-spacing="1" fill="' + GREEN + '">SG</text>');
-    s.push('<rect x="376" y="156" width="124" height="40" rx="6" fill="' + CREAM + '"',
+    /* Ο όρος γράφεται ολόκληρος· η συντομογραφία δεν λέει τίποτα στον πελάτη. */
+    s.push('<rect x="352" y="157" width="174" height="36" rx="6" fill="' + CREAM + '"',
            ' stroke="' + GREEN + '" stroke-width="3"/>');
-    s.push('<text x="438" y="184" text-anchor="middle" font-family="' + OSW + '"',
-           ' font-size="21" font-weight="700" letter-spacing="3" fill="' + GREEN + '">' +
-           esc(t(['ΕΧΕΣ', 'SPV'])) + '</text>');
+    s.push('<text x="439" y="181" text-anchor="middle" font-family="' + OSW + '"',
+           ' font-size="13" font-weight="700" letter-spacing="1.6" fill="' + GREEN + '">' +
+           esc(t(['ΕΙΔΙΚΟΥ ΣΚΟΠΟΥ', 'SPECIAL PURPOSE'])) + '</text>');
     s.push('</g>');
 
     s.push('</svg>');
@@ -326,7 +327,7 @@
     setTimeout(function () {
       g.style.transition = 'none';
       g.style.opacity    = '0';
-      g.setAttribute('transform', 'translate(219,120) scale(0.5)');
+      g.setAttribute('transform', 'translate(220,120) scale(0.5)');
       void g.getBoundingClientRect();
       g.style.transition = 'opacity 0.4s ease, transform 0.5s cubic-bezier(0.34,1.56,0.64,1)';
       g.style.opacity    = '1';
