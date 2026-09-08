@@ -3407,7 +3407,12 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
    Τα δεδομένα έρχονται από το news.json, που ενημερώνεται εβδομαδιαία και
    τροφοδοτεί και τις αναρτήσεις στο Facebook. */
 .news-section { background: var(--cream); padding: 60px 0 70px; overflow: hidden; }
-.news-heading-wrap { padding: 0 7%; margin-bottom: 34px; }
+.news-heading-wrap {
+    padding: 0 7%;
+    max-width: 1380px; margin: 0 auto 34px;
+    text-align: center;
+}
+.news-heading-wrap .eyebrow { justify-content: center; }
 .news-band {
     overflow: hidden; position: relative;
     padding: 6px 0;
@@ -3499,7 +3504,7 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
     font-family: 'Source Sans 3', sans-serif;
     font-size: 13.5px; line-height: 1.6;
     color: rgba(28,27,25,0.62);
-    max-width: 620px; margin: 12px auto 0;
+    max-width: none; margin: 12px auto 0;
 }
 .partners-grid {
     display: grid;
