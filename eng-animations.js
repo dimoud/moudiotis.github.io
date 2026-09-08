@@ -761,5 +761,23 @@
         statNums.forEach(function (el) { statObs.observe(el); });
     }
 
+    /* ─── 10. GRAPHIC PROTECTION ─────────────────────────────────────────────
+       Blocks the convenient right-click-save / drag-save on the site's
+       original photos and hand-drawn technical sketches (hero photo + the
+       rotating logo/sketch stage, the mobile crane stage, the trailer
+       diagram photo, the caliper/crane/type-approval illustrations, the
+       contact photo). Doesn't stop a screenshot — nothing does — this just
+       removes the one-click way to grab a clean copy. Pairs with the
+       watermark in styles.css. */
+    var PROTECTED_SELECTOR =
+        '.hero-photo-wrap, .hero-crane-mobile, .trc-diagram-wrap, ' +
+        '.caliper-svg, .crane-svg, #typeApprovalAnimWrap, #personPhoto';
+
+    document.addEventListener('contextmenu', function (e) {
+        if (e.target.closest(PROTECTED_SELECTOR)) e.preventDefault();
+    });
+    document.addEventListener('dragstart', function (e) {
+        if (e.target.closest(PROTECTED_SELECTOR)) e.preventDefault();
+    });
 
 })();

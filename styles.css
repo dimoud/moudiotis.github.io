@@ -930,6 +930,7 @@ section { padding: 112px 7%; }
 
 /* ── Hero crane (mobile only) ── */
 .hero-crane-mobile {
+    position: relative;
     display: none; /* desktop: hidden */
     width: 100%;
     opacity: 0; transform: translateY(10px);
@@ -1659,7 +1660,10 @@ footer {
     .feature-row::before { content: none; }
     .caliper-wrap { margin: 20px 0 0; width: 100%; }
     .caliper-mobile { display: flex; margin: 20px 0 0; width: 100%; }
-    .caliper-svg--horizontal { width: 100%; color: var(--gold); overflow: visible; }
+    /* Mirrored vertically so the jaws point downward on mobile instead of up;
+       the readout text is flipped back so it still reads right-side up. */
+    .caliper-svg--horizontal { width: 100%; color: var(--gold); overflow: visible; transform: scaleY(-1); }
+    .caliper-svg--horizontal text { transform-box: fill-box; transform-origin: center; transform: scaleY(-1); }
     .about-caliper-col { display: none; }
     .about-grid--desktop-two { grid-template-columns: 1fr; max-width: 100%; padding-right: 4%; }
     .dim-row { display: flex; margin: 24px 0 8px; }
@@ -3547,5 +3551,33 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
     .partner-tile { min-height: 84px; padding: 14px; }
     .partner-tile img { max-height: 42px; }
     .partners-note { font-size: 12.5px; }
+}
+
+/* ── ΠΡΟΣΤΑΣΙΑ ΓΡΑΦΙΚΩΝ ────────────────────────────────────────────────────
+   Δεν σταματά ένα screenshot — τίποτα δεν το σταματά — αλλά κόβει το βολικό
+   δεξί-κλικ/drag-save (βλ. eng-animations.js) και αφήνει ένα διακριτικό
+   υδατογράφημα πάνω στις πιο "φωτογραφικές" παρουσιάσεις, ώστε η πηγή να
+   ξεχωρίζει αν κάποιο κομμάτι αντιγραφεί/αναδημοσιευτεί αλλού. */
+.hero-photo-wrap, .hero-crane-mobile, .trc-diagram-wrap,
+.caliper-svg, .crane-svg, #typeApprovalAnimWrap, #personPhoto {
+    -webkit-user-select: none; user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+}
+.hero-photo-wrap::after,
+.hero-crane-mobile::after,
+.trc-diagram-wrap::after {
+    content: 'moudiotis.gr';
+    position: absolute;
+    right: 10px; bottom: 6px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgba(201,168,108,0.75);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    pointer-events: none;
+    user-select: none;
+    z-index: 3;
 }
 
