@@ -114,6 +114,9 @@
     T['ta.stat.days.lbl']    = { el: 'Ημέρες', en: 'Days' };
     T['ta.stat.process']     = { el: 'Βήμα-βήμα', en: 'Step-by-step' };
     T['ta.stat.process.lbl'] = { el: 'Διαδικασία', en: 'Process' };
+    T['ta.price.tag']        = { el: 'ΤΕΛΙΚΗ ΤΙΜΗ', en: 'FINAL PRICE' };
+    T['ta.price.val']        = { el: '400–430 €', en: '€400–430' };
+    T['ta.price.note']       = { el: 'Για άδεια και πινακίδες ρυμουλκούμενου Ο1 ή Ο2. Συμπεριλαμβάνονται τα παράβολα του Δημοσίου.', en: 'For an O1 or O2 trailer licence and plates. Government fees are included.' };
     T['trc.badge.cat']       = { el: 'ΚΑΤΗΓΟΡΙΑ', en: 'CATEGORY' };
     T['ta.docs.head']   = { el: 'Απαιτούμενα δικαιολογητικά', en: 'Required documents' };
     T['ta.docs.a.head'] = { el: 'Α. Στοιχεία Ιδιοκτήτη', en: 'A. Owner details' };

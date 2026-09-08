@@ -3358,3 +3358,47 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
     .hero-slide { transition: none; }
 }
 
+/* ── ΠΛΑΙΣΙΟ ΤΕΛΙΚΗΣ ΤΙΜΗΣ ───────────────────────────────────────────────
+   Η τιμή έβγαινε μέσα στην παράγραφο και χανόταν. Σε δικό της πλαίσιο
+   διαβάζεται ως προσφορά και μπορεί να μπει και στην αρχική, δίπλα στα
+   δικαιολογητικά. */
+.price-offer {
+    display: flex; align-items: center; flex-wrap: wrap;
+    gap: 10px 28px;
+    margin: 18px 24px;
+    padding: 16px 22px;
+    background: linear-gradient(90deg, rgba(201,168,108,0.17), rgba(201,168,108,0.05));
+    border: 1px solid rgba(201,168,108,0.5);
+    border-left: 4px solid var(--warm);
+    border-radius: 6px;
+}
+.price-offer-head { display: flex; flex-direction: column; gap: 4px; flex-shrink: 0; }
+.price-offer-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10.5px; font-weight: 600;
+    letter-spacing: 2.4px; text-transform: uppercase;
+    color: rgba(28,27,25,0.6);
+}
+.price-offer-val {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 30px; font-weight: 700; line-height: 1;
+    letter-spacing: 0.5px; color: var(--gold);
+}
+.price-offer-note {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13.5px; line-height: 1.55;
+    color: rgba(28,27,25,0.72);
+    margin: 0; flex: 1; min-width: 190px;
+}
+/* Μέσα στο κείμενο της σελίδας υπηρεσίας το padding το δίνει ήδη το .svc-prose */
+.svc-prose .price-offer { margin: 0 0 20px; }
+/* Μέσα στην πρόζα, το πλαίσιο προειδοποίησης είχε δικό του περιθώριο 24px
+   πάνω από το padding της πρόζας, οπότε έμπαινε 24px δεξιότερα από τα
+   κουμπιά και το κείμενο. */
+.svc-prose .ta-warning { margin-left: 0; margin-right: 0; margin-bottom: 20px; }
+@media (max-width: 700px) {
+    .price-offer { margin: 16px 16px; padding: 14px 16px; gap: 8px 18px; }
+    .price-offer-val { font-size: 26px; }
+    .price-offer-note { font-size: 12.5px; min-width: 0; }
+}
+
