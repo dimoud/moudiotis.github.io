@@ -65,6 +65,12 @@
             }
         });
 
+        /* href — links to per-language subpages (e.g. /en/foo/ vs /foo/) */
+        document.querySelectorAll('[data-href-el]').forEach(function (el) {
+            var url = el.getAttribute(lang === 'en' ? 'data-href-en' : 'data-href-el');
+            if (url) el.setAttribute('href', url);
+        });
+
         /* update <html lang> attribute */
         document.documentElement.lang = lang;
 

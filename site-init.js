@@ -59,6 +59,14 @@
     T['nav.approvals'] = { el: 'Εγκρίσεις Τύπου', en: 'Type Approvals' };
     T['nav.trust']    = { el: 'Αξιοπιστία',    en: 'Why Us' };
     T['nav.contact']  = { el: 'Επικοινωνία',   en: 'Contact' };
+    T['nav.trailer']  = { el: 'Άδεια Τρέιλερ Ο1/Ο2',        en: 'Trailer Licence' };
+    T['nav.imports']  = { el: 'Εισαγόμενα & Τροχόσπιτα',     en: 'Imports and Caravans' };
+    T['nav.tao']      = { el: 'Έγκριση Τύπου & ΤΑΟ',         en: 'Type Approval and TAO' };
+    T['nav.special']  = { el: 'Ειδικού Σκοπού',              en: 'Special Purpose' };
+
+    // NEWS
+    T['news.eyebrow'] = { el: 'ΕΝΗΜΕΡΩΣΗ', en: 'UPDATES' };
+    T['news.heading'] = { el: 'Νομοθεσία και <em>νέα</em> του κλάδου', en: 'Industry <em>news</em> and legislation' };
 
     // HERO
     T['hero.name1']   = { el: P.firstNameEl,   en: P.firstNameEn };
