@@ -1171,114 +1171,16 @@
     </div>
 
     <!-- ===== TRAILER ROAD CHECK ===== -->
-    <section class="trc-section" id="trailer-road-check" aria-labelledby="trcHeading">
-        <div class="trc-outer trc-outer--dual">
-            <div class="trc-widget" data-reveal>
-
-                <!-- TOPBAR -->
-                <div class="trc-widget-topbar">
-                    <span class="trc-widget-topbar-badge"><i class="fa-solid fa-shield-halved"></i>&nbsp;<span data-i18n="trc.badge">Έλεγχος Κ.Ο.Κ.</span></span>
-                </div>
-
-                <div class="trc-widget-body">
-
-                <!-- TITLE ROW — always visible -->
-                <div class="trc-title-row">
-                    <h2 id="trcHeading" class="trc-h"><span id="trcTitle1">Έλεγχοι </span><em id="trcTitle2">Ρυμουλκούμενων</em></h2>
-                    <div class="trc-cat-badge">
-                        <span class="trc-bk" id="trcBadgeKey">ΚΑΤΗΓΟΡΙΑ</span>
-                        <span class="trc-bv">Ο1 &amp; Ο2</span>
-                    </div>
-                </div>
-
-                <!-- ALWAYS VISIBLE: intro + preview + toggle -->
-                <p class="trc-intro" id="trcIntro">Τα σημεία που ελέγχονται ώστε το ρυμουλκούμενο να είναι <strong>σύμφωνο με τον Κ.Ο.Κ.</strong> και ασφαλές στον δρόμο — ανακλαστήρες, πίσω τρίγωνα, φωτισμός, πινακίδα και σύστημα ζεύξης. Κατηγορία Ο1 &amp; Ο2.</p>
-
-                <!-- CHECKLIST PREVIEW STRIP — always visible -->
-                <div class="trc-preview-strip" id="trcPreviewStrip"></div>
-
-                <button class="trc-main-toggle trc-main-toggle--bar" id="trcMainToggle" aria-expanded="true" aria-controls="trcMainCollapse">
-                    <span id="trcTagline">ΚΑΝΕ ΤΟΝ ΠΛΗΡΗ ΕΛΕΓΧΟ ΚΑΙ ΔΕΣ ΑΝΑΛΥΤΙΚΑ</span>
-                    <i class="fa-solid fa-chevron-down trc-main-chevron"></i>
-                </button>
-
-                <!-- COLLAPSIBLE BODY -->
-                <div class="trc-main-collapse is-open" id="trcMainCollapse">
-
-                    <!-- DIAGRAM -->
-                    <div class="trc-diagram-wrap">
-                        <span class="trc-diagram-tag" id="trcDiagramTag">ΠΛΑΓΙΑ &amp; ΠΙΣΩ ΟΨΗ</span>
-                        <img src="../TRAILER_EXAMPLE.png" alt="Side and Rear View of an O1 &amp; O2 Category Trailer">
-                    </div>
-
-                    <!-- PROGRESS -->
-                    <div class="trc-progress-row">
-                        <span class="trc-progress-lbl" id="trcProgressLbl">Πρόοδος Ελέγχου</span>
-                        <div class="trc-progress-track"><div class="trc-progress-fill" id="trcFill"></div></div>
-                        <span class="trc-progress-num" id="trcNum">0 / 8</span>
-                        <button class="trc-reset-btn" id="trcResetBtn">ΕΠΑΝΑΦΟΡΑ</button>
-                    </div>
-
-                    <div class="trc-complete-msg" id="trcCompleteMsg">
-                        <span class="trc-complete-star">✦</span>
-                        <span id="trcCompleteText">Το ρυμουλκούμενο είναι έτοιμο για τον δρόμο!</span>
-                    </div>
-
-                    <!-- CHECKLIST LABEL -->
-                    <div class="trc-sec-lbl">
-                        <span class="trc-b">✓</span>
-                        <span id="trcSecLbl">Σημεία Ελέγχου &amp; Νόμιμος Εξοπλισμός</span>
-                    </div>
-
-                    <!-- CHECKLIST GRID — built by trc.js -->
-                    <div class="trc-checks-grid" id="trcChecksGrid"></div>
-
-                    <!-- BOTTOM GRID — expandable as one unit -->
-                    <div class="trc-bottom-single">
-
-                        <button class="trc-b-toggle trc-b-toggle--combined" aria-expanded="true" aria-controls="trcBcCombined" onclick="trcToggleCombined(this)">
-                            <div class="trc-b-combined-labels">
-                                <span class="trc-b-lbl">
-                                    <span class="trc-b">i</span>
-                                    <span id="trcBc0Lbl">Περιοδικός Έλεγχος</span>
-                                </span>
-                                <span class="trc-b-sep">&amp;</span>
-                                <span class="trc-b-lbl trc-b-lbl--warn">
-                                    <span class="trc-b trc-b--warn">!</span>
-                                    <span id="trcBc1Lbl">Ασφάλιση</span>
-                                </span>
-                            </div>
-                            <i class="fa-solid fa-chevron-down trc-b-chevron"></i>
-                        </button>
-
-                        <div class="trc-b-collapse trc-b-collapse--combined" id="trcBcCombined">
-                            <div class="trc-bottom-grid">
-                                <div class="trc-b-inner">
-                                    <div class="trc-b-inner-lbl">
-                                        <span class="trc-b">i</span>
-                                        <span id="trcBc0InnerLbl">Περιοδικός Έλεγχος</span>
-                                    </div>
-                                    <ul class="trc-spec-list" id="trcBc0List"></ul>
-                                </div>
-                                <div class="trc-b-inner">
-                                    <div class="trc-b-inner-lbl trc-b-lbl--warn">
-                                        <span class="trc-b trc-b--warn">!</span>
-                                        <span id="trcBc1InnerLbl">Ασφάλιση</span>
-                                    </div>
-                                    <div class="trc-note-box" id="trcNoteBox">Απαιτείται <b>ξεχωριστή ασφάλιση</b> του ρυμουλκούμενου από το ρυμουλκό όχημα. Ενημερωθείτε από τον ασφαλιστή σας.</div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div><!-- /trc-bottom-single -->
-
-                </div><!-- /trc-main-collapse -->
-
-                </div><!-- /trc-widget-body -->
-            </div><!-- /trc-widget -->
-        </div><!-- /trc-outer -->
-    </section>
-
+    <div class="ta-wrap" data-reveal>
+      <a class="tool-card" href="/en/ypologistis-elxis/">
+        <span class="tool-card-ic"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></span>
+        <span class="tool-card-b">
+          <strong>Towing calculator &amp; trailer checks</strong>
+          <span>See whether your vehicle may legally tow the trailer, from the fields on the registration document — plus the road-legal checklist.</span>
+        </span>
+        <span class="tool-card-go">Open &rarr;</span>
+      </a>
+    </div>
     </div><!-- /ta-dual-row -->
 
 
@@ -1845,7 +1747,6 @@
     <script src="../service-animations.js"></script>
     <script src="../hero-anim.js"></script>
     <script src="../contact-form.js"></script>
-    <script src="../trc.js"></script>
 
     <script>
     /* Typewriter animation for .line3 (& Associates / & ΣΥΝΕΡΓΑΤΕΣ) */
