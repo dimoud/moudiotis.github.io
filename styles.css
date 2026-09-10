@@ -3699,3 +3699,6 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
     .mobile-cta-bar a { font-size: 14px; }
     .mobile-cta-bar a i { font-size: 14px; }
 }
+
+.contact-viber .cd-icon { background: rgba(115,96,242,.12); color: #7360f2; }
+.contact-viber:hover .cd-icon { background: rgba(115,96,242,.20); }
