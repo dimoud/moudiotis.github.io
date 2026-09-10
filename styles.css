@@ -3637,3 +3637,65 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
   .ec-go, .ec-clear { flex: 1 1 100%; }
   .ec-r-state { display: none; }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   ΣΥΝΔΕΣΜΟΣ ΑΝΑ ΕΝΟΤΗΤΑ — share-link
+   ══════════════════════════════════════════════════════════════ */
+.share-link {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 3px 8px;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    color: inherit;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    opacity: .55;
+    transition: opacity .2s var(--ease), background .2s var(--ease);
+}
+.share-link:hover  { opacity: 1; background: rgba(0,0,0,.10); }
+.share-link:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; opacity: 1; }
+.share-link i { font-size: 12px; }
+.share-link.is-done { opacity: 1; background: rgba(0,0,0,.14); }
+.trc-widget-topbar .share-link:hover,
+.trc-widget-topbar .share-link.is-done { background: rgba(255,255,255,.16); }
+.share-link-msg:empty { display: none; }
+
+/* Ο σύνδεσμος προσγειώνεται κάτω από τη σταθερή μπάρα πλοήγησης */
+.ta-wrap[id], section[id], .trc-section[id] { scroll-margin-top: 96px; }
+
+@media (max-width: 600px) {
+    .share-link { padding: 3px 6px; }
+    .share-link-msg { display: none; }
+}
+
+/* ── ΚΟΥΜΠΙ VIBER ─────────────────────────────────────────────── */
+.svc-quick-viber {
+    display: inline-flex; align-items: center; gap: 9px;
+    min-height: 45px; padding: 0 19px; border-radius: 5px;
+    background: #7360f2; color: #fff; text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 13px;
+    font-weight: 600; letter-spacing: 1.3px; text-transform: uppercase;
+    transition: background .2s var(--ease), transform .2s var(--ease);
+}
+.svc-quick-viber:hover { background: #5b49d6; transform: translateY(-1px); }
+.svc-quick-viber i { font-size: 17px; }
+/* Η μπάρα κινητού έχει πλέον τρία κουμπιά, όχι δύο */
+@media (max-width: 768px) {
+    .mobile-cta-bar { grid-template-columns: repeat(3, 1fr); }
+    .mobile-cta-bar a { padding: 0 6px; gap: 6px; letter-spacing: .8px; min-width: 0; }
+    .mobile-cta-bar a span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .mobile-cta-bar a.mcb-viber { background: #7360f2; color: #fff; }
+    .mobile-cta-bar a.mcb-viber:active { background: #5b49d6; }
+}
+@media (max-width: 400px) {
+    .mobile-cta-bar a { font-size: 14px; }
+    .mobile-cta-bar a i { font-size: 14px; }
+}

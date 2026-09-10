@@ -60,8 +60,8 @@
     T['nav.trust']    = { el: 'Αξιοπιστία',    en: 'Why Us' };
     T['nav.contact']  = { el: 'Επικοινωνία',   en: 'Contact' };
     T['nav.trailer']  = { el: 'Άδεια Τρέιλερ Ο1/Ο2',        en: 'Trailer Licence' };
-    T['nav.imports']  = { el: 'Εισαγόμενα & Τροχόσπιτα',     en: 'Imports and Caravans' };
-    T['nav.tao']      = { el: 'Έγκριση Τύπου & ΤΑΟ',         en: 'Type Approval and TAO' };
+    T['nav.imports']  = { el: 'Εισαγόμενα, Τροχόσπιτα',     en: 'Imports, Caravans' };
+    T['nav.tao']      = { el: 'Έγκριση Τύπου, ΤΑΟ',         en: 'Type Approval, TAO' };
     T['nav.special']  = { el: 'Ειδικού Σκοπού',              en: 'Special Purpose' };
 
     // NEWS
