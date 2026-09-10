@@ -62,7 +62,7 @@ window.SITE_CONFIG = {
         addressEn: 'Based Athens-Thessaloniki | Nationwide, also within the EU',
         facebook:  'https://www.facebook.com/61550061850076',
         linkedin:  'https://www.linkedin.com/in/moudiotis/',
-        mapsUrl:   'https://maps.google.com/maps?q=37.965194,23.745722&hl=el&z=17&output=embed',
+        mapsUrl:   'https://maps.google.com/maps?q=37.9649217,23.7459572&hl=el&z=17&output=embed',
     },
 
     // ── THEME ─────────────────────────────────────────────────────────────
