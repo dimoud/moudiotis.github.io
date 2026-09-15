@@ -7,10 +7,10 @@ window.SITE_CONFIG = {
 
     // ── META ──────────────────────────────────────────────────────────────
     meta: {
-        titleEl:       'Τεχνικό Γραφείο Μουδιώτης | Έγκριση Τύπου Οχήματος και Ρυμουλκούμενου | Άδεια Τρέιλερ Αθήνα',
-        titleEn:       'Moudiotis Technical Office | Vehicle Type Approval and Trailer Registration | Athens',
-        descriptionEl: 'Τεχνικό Γραφείο Μουδιώτης — εγκρίσεις τύπου οχημάτων και ρυμουλκούμενων, μεμονωμένη έγκριση, καταχώρηση ΤΑΟ, άδεια τρέιλερ Ο1/Ο2, μελέτες και μετασκευές. Αθήνα.',
-        descriptionEn: 'Moudiotis Technical Office — vehicle type approvals, individual vehicle approval, TAO registration, O1/O2 trailer licence, technical studies and conversions.',
+        titleEl:       'Άδεια Τρέιλερ και Έγκριση Τύπου Οχήματος | Μουδιώτης, Αθήνα',
+        titleEn:       'Trailer Licence and Vehicle Type Approval | Moudiotis, Athens',
+        descriptionEl: 'Άδεια και πινακίδες τρέιλερ Ο1/Ο2, έγκριση τύπου οχήματος, μεμονωμένη έγκριση, καταχώρηση ΤΑΟ, οχήματα ειδικού σκοπού. Τεχνικό Γραφείο Μουδιώτης.',
+        descriptionEn: 'O1/O2 trailer licence and plates, vehicle type approval, individual approval, TAO registration, special purpose vehicles. Moudiotis Technical Office.',
         lang:          'el',
     },
 
