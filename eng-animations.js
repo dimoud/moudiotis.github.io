@@ -559,8 +559,8 @@
         band.style.overflowX = 'scroll';
         band.style.cursor    = 'grab';
 
-        /* ~0.5px/frame ≈ 30px/s — same slow pace as the articles ticker */
-        var SPEED      = 0.5;
+        /* ~1.2px/frame ≈ 72px/s — fast enough to read as a moving carousel */
+        var SPEED      = 1.2;
         var isDown     = false;
         var paused     = false;
         var startX     = 0;
@@ -593,6 +593,8 @@
         });
         band.addEventListener('mouseleave', function () { isDown = false; band.style.cursor = 'grab'; });
         band.addEventListener('mouseup',    function () { isDown = false; band.style.cursor = 'grab'; });
+        band.addEventListener('mouseenter', function () { paused = true; });
+        band.addEventListener('mouseleave', function () { paused = false; });
         band.addEventListener('mousemove',  function (e) {
             if (!isDown) return;
             e.preventDefault();
