@@ -453,6 +453,26 @@ window.SITE_CONFIG = {
             textEl: 'Χρειαστήκα τον Δημήτρη για μια μελέτη μηχανικού. Μιλήσαμε στο τηλέφωνο, δώσαμε ραντεβού και όλα κύλησαν πολύ εύκολα, χωρίς εκπλήξεις στην τιμή και στην ώρα τους. Είναι ενημερωμένος και ξέρει για τι μιλάει. Συστήνω 👌',
             textEn: 'I needed Dimitris for an engineering study. We spoke on the phone, arranged an appointment and everything went very smoothly, no surprises on price or timing. He’s well informed and knows what he’s talking about. Recommended 👌',
         },
+        {
+            name: 'Filippos Beck',
+            textEl: 'Θα ήθελα να ευχαριστήσω θερμά για τον χρόνο, την προθυμία και την ουσιαστική βοήθεια που μου προσφέρατε σχετικά με την υπόθεσή μας. Παρότι επικοινώνησα μαζί σας με αρκετές απορίες και λεπτομέρειες που έπρεπε να ξεκαθαριστούν, αφιερώσατε χρόνο για να απαντήσετε με σαφήνεια και υπομονή σε κάθε ερώτημα, ενώ στη συνέχεια μου αποστείλατε και το σχετικό ενημερωτικό υλικό και τις εγκυκλίους που αφορούν την εισαγωγή του οχήματος, τη μετοικεσία, καθώς και τα ζητήματα που σχετίζονται με οχήματα αμερικανικών προδιαγραφών. Σπάνια συναντά κανείς τόσο άμεση, κατατοπιστική και ουσιαστική ανταπόκριση σε ένα θέμα με τόσες ιδιαιτερότητες και γραφειοκρατικές λεπτομέρειες. Σας ευχαριστώ ειλικρινά για τον επαγγελματισμό σας και για την πολύτιμη συμβολή σας στην υπόθεσή μας. Η βοήθειά σας ήταν πραγματικά καθοριστική!',
+            textEn: 'I would like to warmly thank you for the time, willingness and substantial help you offered with our case. Although I contacted you with several questions and details that needed clarifying, you took the time to answer each one clearly and patiently, and afterwards sent me the relevant informational material and circulars on importing the vehicle, relocation formalities, and issues concerning vehicles with American specifications. It’s rare to find such direct, informative and substantial support on a matter with so many particularities and bureaucratic details. Thank you sincerely for your professionalism and your valuable contribution to our case — your help was truly decisive!',
+        },
+        {
+            name: 'Spyros Damigos',
+            textEl: 'Η συνεργασία μου με τον Κο Μουδιώτη εξαιρετική, επαγγελματίας στο είδος του. Συστήνεται ανεπιφύλακτα.',
+            textEn: 'My collaboration with Mr. Moudiotis was excellent — a true professional in his field. Highly recommended.',
+        },
+        {
+            name: 'St. Leon',
+            textEl: 'Άψογος επαγγελματίας με συνέπεια. 2 άδειες τρέιλερ χωρίς χάσιμο χρόνου. Προτείνεται ανεπιφύλακτα.',
+            textEn: 'An impeccable, reliable professional. 2 trailer licences with no time wasted. Highly recommended.',
+        },
+        {
+            name: 'Ioannis Mastrogiorgis',
+            textEl: 'Άψογος επαγγελματίας με συνέπεια.',
+            textEn: 'An impeccable, reliable professional.',
+        },
     ],
 
     // ── FORM OPTIONS ──────────────────────────────────────────────────────
