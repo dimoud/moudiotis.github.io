@@ -276,6 +276,7 @@
     T['hbc.phone']        = { el: 'Σταθερό',      en: 'Landline' };
     T['hbc.service']      = { el: 'Εξυπηρέτηση', en: 'Service area' };
     T['contact.phone.val']  = { el: C.contact.phone,   en: C.contact.phoneEn  || C.contact.phone };
+    T['contact.viber.val'] = { el: 'Στείλτε φωτογραφία', en: 'Send a photo' };
 
     // MEASURE LABELS
     T['services.meas'] = { el: 'ΥΠΗΡΕΣΙΕΣ', en: 'SERVICES' };
