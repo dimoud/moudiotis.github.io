@@ -71,4 +71,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://moudiotis.gr/en/oximata-eidikou-skopou/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moudiotis.gr/oximata-eidikou-skopou/"/>
   </url>
+  <url>
+    <loc>https://moudiotis.gr/egkrisi-typou-dikyklon/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://moudiotis.gr/egkrisi-typou-dikyklon/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moudiotis.gr/en/egkrisi-typou-dikyklon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moudiotis.gr/egkrisi-typou-dikyklon/"/>
+  </url>
+  <url>
+    <loc>https://moudiotis.gr/en/egkrisi-typou-dikyklon/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://moudiotis.gr/egkrisi-typou-dikyklon/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moudiotis.gr/en/egkrisi-typou-dikyklon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moudiotis.gr/egkrisi-typou-dikyklon/"/>
+  </url>
 </urlset>

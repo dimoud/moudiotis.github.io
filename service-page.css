@@ -445,3 +445,42 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
 
 /* Το όνομα του γραφείου σε μία γραμμή, όπως στην αρχική */
 .logo-text .name { white-space: nowrap; }
+/* ── Πίνακας αναφοράς μέσα στο κείμενο υπηρεσίας ──────────────────────── */
+.svc-table-wrap { overflow-x: auto; margin: 0 0 16px; -webkit-overflow-scrolling: touch; }
+.svc-table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 560px;
+    font-size: 14.5px;
+    line-height: 1.55;
+}
+.svc-table th {
+    text-align: left;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 12.5pt; letter-spacing: .05em; text-transform: uppercase;
+    color: #fff; background: var(--gold);
+    padding: 9px 12px;
+    white-space: nowrap;
+}
+.svc-table td {
+    padding: 9px 12px;
+    border-bottom: 1px solid rgba(31,60,99,.14);
+    vertical-align: top;
+    color: #46505e;
+}
+.svc-table tbody tr:nth-child(odd) { background: rgba(31,60,99,.028); }
+.svc-table tbody tr:hover { background: rgba(201,168,108,.10); }
+.svc-table td:first-child {
+    white-space: nowrap; color: var(--ink);
+    font-family: 'IBM Plex Mono', monospace; font-size: 13px;
+}
+.svc-table td b { color: var(--ink); font-weight: 600; }
+.svc-code {
+    font-family: 'IBM Plex Mono', monospace; font-size: 13px;
+    background: rgba(31,60,99,.07); border: 1px solid rgba(31,60,99,.16);
+    border-radius: 3px; padding: 1px 6px; color: var(--ink); white-space: nowrap;
+}
+@media (max-width: 768px) {
+    .svc-table { font-size: 13.5px; min-width: 520px; }
+    .svc-table th, .svc-table td { padding: 8px 10px; }
+}

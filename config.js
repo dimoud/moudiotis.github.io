@@ -156,6 +156,14 @@ window.SITE_CONFIG = {
                     textEn:  'Individual, special, modified or imported vehicles are certified so that a registration certificate can be issued.',
                 },
                 {
+                    urlEl: '/egkrisi-typou-dikyklon/',
+                    urlEn: '/en/egkrisi-typou-dikyklon/',
+                    titleEl: 'Έγκριση Τύπου Κατηγορίας L',
+                    titleEn: 'Category L Type Approval',
+                    textEl:  'Μοτοποδήλατα, μοτοσικλέτες, τρίκυκλα και τετράκυκλα κατά τον Καν. (ΕΕ) 168/2013 — κατάταξη, τεχνικό αρχείο και καταχώρηση.',
+                    textEn:  'Mopeds, motorcycles, tricycles and quadricycles under Reg. (EU) 168/2013 — classification, technical file and registration.',
+                },
+                {
                     urlEl: '/deltio-koinopoiisis-tao/',
                     urlEn: '/en/deltio-koinopoiisis-tao/',
                     titleEl: 'Καταχώρηση στο ΤΑΟ',
