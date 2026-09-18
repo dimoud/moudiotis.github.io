@@ -3687,13 +3687,11 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
 }
 .svc-quick-viber:hover { background: #5b49d6; transform: translateY(-1px); }
 .svc-quick-viber i { font-size: 17px; }
-/* Η μπάρα κινητού έχει πλέον τρία κουμπιά, όχι δύο */
+/* Δύο κουμπιά στη μπάρα κινητού: κλήση και μήνυμα */
 @media (max-width: 768px) {
-    .mobile-cta-bar { grid-template-columns: repeat(3, 1fr); }
+    .mobile-cta-bar { grid-template-columns: repeat(2, 1fr); }
     .mobile-cta-bar a { padding: 0 6px; gap: 6px; letter-spacing: .8px; min-width: 0; }
     .mobile-cta-bar a span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .mobile-cta-bar a.mcb-viber { background: #7360f2; color: #fff; }
-    .mobile-cta-bar a.mcb-viber:active { background: #5b49d6; }
 }
 @media (max-width: 400px) {
     .mobile-cta-bar a { font-size: 14px; }

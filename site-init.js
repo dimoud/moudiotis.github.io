@@ -125,7 +125,6 @@
     T['partners.eyebrow']    = { el: 'ΣΥΝΕΡΓΑΣΙΕΣ', en: 'PARTNERSHIPS' };
     T['partners.heading']    = { el: 'Μας <em>εμπιστεύονται</em>', en: 'They <em>trust us</em>' };
     T['partners.note']       = { el: 'Επιχειρήσεις με τις οποίες έχει συνεργαστεί το γραφείο σε εγκρίσεις τύπου, ταξινομήσεις και τεχνικές μελέτες οχημάτων.', en: 'Businesses the office has worked with on type approvals, vehicle registrations and technical studies.' };
-    T['contact.viber.val'] = { el: 'Στείλτε φωτογραφία', en: 'Send a photo' };
     T['tool.trailerpage'] = { el: 'Δείτε τη σελίδα: Άδεια Τρέιλερ Ο1/Ο2', en: 'See the full page: Trailer Licence O1/O2' };
     T['ta.price.tag']        = { el: 'ΤΕΛΙΚΗ ΤΙΜΗ', en: 'FINAL PRICE' };
     T['ta.price.val']        = { el: '400–430 €', en: '€400–430' };
@@ -275,10 +274,8 @@
 
     // HERO BOTTOM CONTACT STRIP
     T['hbc.phone']        = { el: 'Σταθερό',      en: 'Landline' };
-    T['hbc.mobile']       = { el: 'Κινητό',       en: 'Mobile' };
     T['hbc.service']      = { el: 'Εξυπηρέτηση', en: 'Service area' };
     T['contact.phone.val']  = { el: C.contact.phone,   en: C.contact.phoneEn  || C.contact.phone };
-    T['contact.mobile.val'] = { el: C.contact.mobile,  en: C.contact.mobileEn || C.contact.mobile };
 
     // MEASURE LABELS
     T['services.meas'] = { el: 'ΥΠΗΡΕΣΙΕΣ', en: 'SERVICES' };
@@ -382,10 +379,6 @@
                 '<span class="hbc-icon"><i class="fa-solid fa-phone"></i></span>' +
                 '<span class="hbc-text"><span class="hbc-label" data-i18n="hbc.phone">' + T['hbc.phone'].el + '</span><span class="hbc-val" data-i18n="contact.phone.val">' + C.contact.phone + '</span></span>' +
             '</a>' +
-            '<a href="' + C.contact.mobileTel + '" class="hbc-item">' +
-                '<span class="hbc-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>' +
-                '<span class="hbc-text"><span class="hbc-label" data-i18n="hbc.mobile">' + T['hbc.mobile'].el + '</span><span class="hbc-val" data-i18n="contact.mobile.val">' + C.contact.mobile + '</span></span>' +
-            '</a>' +
             '<span class="hbc-item hbc-address">' +
                 '<span class="hbc-icon"><i class="fa-solid fa-location-dot"></i></span>' +
                 '<span class="hbc-text"><span class="hbc-label" data-i18n="hbc.service">' + T['hbc.service'].el + '</span><span class="hbc-val" data-i18n="contact.address">' + (C.contact.address || '') + '</span></span>' +
@@ -418,11 +411,6 @@
         if (val) val.textContent = C.contact.phone;
     });
 
-    document.querySelectorAll('.contact-mobile').forEach(function (el) {
-        el.href = C.contact.mobileTel;
-        var val = el.querySelector('.cd-value') || el.querySelector('span');
-        if (val) val.textContent = C.contact.mobile;
-    });
 
     document.querySelectorAll('.contact-email').forEach(function (el) {
         el.href = 'mailto:' + C.contact.email;
@@ -434,7 +422,7 @@
     if (footerEmail) footerEmail.href = 'mailto:' + C.contact.email;
 
     var mcbCall = document.getElementById('mcbCall');
-    if (mcbCall && C.contact.mobileTel) mcbCall.href = C.contact.mobileTel;
+    if (mcbCall && C.contact.phoneTel) mcbCall.href = C.contact.phoneTel;
 
     var footerPhone = document.getElementById('footerPhone');
     if (footerPhone) footerPhone.href = C.contact.phoneTel;
