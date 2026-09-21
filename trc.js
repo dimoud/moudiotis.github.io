@@ -174,7 +174,7 @@
   var currentItems = [];
   var variant      = 'box';
   var imgBase      = '';
-  var IMG          = { box: 'TRAILER_EXAMPLE.png', boat: 'BOAT_TRAILER_EXAMPLE.png' };
+  var IMG          = { box: 'TRAILER_EXAMPLE.webp', boat: 'BOAT_TRAILER_EXAMPLE.webp' };
 
   function getLang() {
     return (window.I18n && window.I18n.getLang()) ||

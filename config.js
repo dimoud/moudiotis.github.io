@@ -8,9 +8,9 @@ window.SITE_CONFIG = {
     // ── META ──────────────────────────────────────────────────────────────
     meta: {
         titleEl:       'Άδεια Τρέιλερ και Έγκριση Τύπου Οχήματος | Μουδιώτης, Αθήνα',
-        titleEn:       'Trailer Licence and Vehicle Type Approval | Moudiotis, Athens',
-        descriptionEl: 'Άδεια και πινακίδες τρέιλερ Ο1/Ο2, έγκριση τύπου οχήματος, μεμονωμένη έγκριση, καταχώρηση ΤΑΟ, οχήματα ειδικού σκοπού. Τεχνικό Γραφείο Μουδιώτης.',
-        descriptionEn: 'O1/O2 trailer licence and plates, vehicle type approval, individual approval, TAO registration, special purpose vehicles. Moudiotis Technical Office.',
+        titleEn:       'Trailer Licence, Vehicle Type Approval | Moudiotis, Athens',
+        descriptionEl: 'Δελτίο κοινοποίησης, καταχώρηση ΤΑΟ και εγκρίσεις τύπου πανελλαδικά, εξ αποστάσεως. Άδεια τρέιλερ Ο1/Ο2 σε Αθήνα και Θεσσαλονίκη.',
+        descriptionEn: 'Type approval notification, TAO registration and vehicle type approval across Greece, handled remotely. O1/O2 trailer licences in Athens and Thessaloniki.',
         lang:          'el',
     },
 
@@ -42,9 +42,9 @@ window.SITE_CONFIG = {
 
     // ── ASSETS ────────────────────────────────────────────────────────────
     assets: {
-        logo:         '/logo.png',
-        photo:        '/founder.png',
-        contactPhoto: '/founder_contact.png',
+        logo:         '/logo.webp',
+        photo:        '/founder.webp',
+        contactPhoto: '/founder_contact.webp',
         heroSlides:   [],
     },
 
@@ -55,8 +55,8 @@ window.SITE_CONFIG = {
         phoneTel:  'tel:+302107561836',
         fax:       '',
         email:     'moudiotis.meng@gmail.com',
-        address:   'Βάση Αθήνα-Θεσσαλονίκη | Εξυπηρέτηση Πανελλαδικά',
-        addressEn: 'Based Athens-Thessaloniki | Nationwide, also within the EU',
+        address:   'Αθήνα · Θεσσαλονίκη | Πανελλαδικά και εξωτερικό',
+        addressEn: 'Athens · Thessaloniki | Greece-wide and abroad',
         facebook:  'https://www.facebook.com/61550061850076',
         linkedin:  'https://www.linkedin.com/in/moudiotis/',
         mapsUrl:   'https://maps.google.com/maps?q=37.9649217,23.7459572&hl=el&z=17&output=embed',
@@ -132,10 +132,12 @@ window.SITE_CONFIG = {
         },
         {
             icon:        'fa-file-circle-check',
-            titleEl:     'Εγκρίσεις Τύπου και Ταξινόμηση Οχημάτων',
-            titleEn:     'Type Approvals and Vehicle Registration',
-            textEl:      'Εκπόνηση <strong class="kw">τεχνικών μελετών</strong>, <strong class="kw">έγκριση τύπου οχήματος</strong> και <strong class="kw">έγκριση τύπου ρυμουλκούμενου</strong> για κάθε κατηγορία. Πλήρης διαχείριση φακέλου — από τη <strong class="kw">μεμονωμένη έγκριση</strong> και την <strong class="kw">καταχώρηση στο ΤΑΟ</strong> έως το <strong class="kw">Δελτίο Κοινοποίησης</strong> και την ταξινόμηση.',
-            textEn:      '<strong class="kw">Technical studies</strong>, <strong class="kw">vehicle type approval</strong> and <strong class="kw">trailer type approval</strong> for all categories. Full dossier management — from <strong class="kw">individual vehicle approval</strong> and <strong class="kw">Technical Vehicle Archive (TAO) registration</strong> through to the <strong class="kw">Notification Certificate</strong> and registration.',
+            urlEl: '/deltio-koinopoiisis-tao/',
+            urlEn: '/en/deltio-koinopoiisis-tao/',
+            titleEl:     'Δελτίο Κοινοποίησης, Καταχώρηση ΤΑΟ και Εγκρίσεις Τύπου',
+            titleEn:     'Type Approval Notification, TAO Registration and Type Approvals',
+            textEl:      '<strong class="kw">Δελτίο Κοινοποίησης</strong> έγκρισης τύπου και <strong class="kw">καταχώρηση στο ΤΑΟ</strong> για εισαγωγείς, αντιπροσωπείες και κατασκευαστές — <strong class="kw">εξ αποστάσεως</strong>, σε όλη την Ελλάδα και για το εξωτερικό. Εθνική και ευρωπαϊκή <strong class="kw">έγκριση τύπου</strong>, <strong class="kw">μεμονωμένη έγκριση</strong>, κατηγορία L. Φάκελος που δεν συγχωρεί λάθη — τον αναλαμβάνουμε ολόκληρο.',
+            textEn:      '<strong class="kw">Type approval notification</strong> and <strong class="kw">TAO registration</strong> for importers, dealers and manufacturers — <strong class="kw">handled remotely</strong>, across Greece and for clients abroad. National and European <strong class="kw">type approval</strong>, <strong class="kw">individual approval</strong>, category L. A dossier that forgives no mistakes — we take it on in full.',
             seoKeywords: 'έγκριση τύπου οχήματος, έγκριση τύπου ρυμουλκούμενου, εθνική έγκριση τύπου, ευρωπαϊκή έγκριση τύπου, μεμονωμένη έγκριση οχήματος, καταχώρηση ΤΑΟ, Τεχνικό Αρχείο Οχημάτων, δελτίο κοινοποίησης, ταξινόμηση οχήματος, ταξινομιση αδεας οχηματος, οχήματα ειδικής χρήσης ειδικού σκοπού, εγκριση τυπου, μελετη οχηματος, vehicle type approval Greece, trailer type approval, individual vehicle approval Greece, special purpose vehicle registration Greece',
             items: [
                 {
@@ -314,8 +316,8 @@ window.SITE_CONFIG = {
             url:     'https://eur-lex.europa.eu/EN/legal-content/summary/eu-approval-and-market-surveillance-measures-for-motor-vehicles-and-their-trailers.html',
             catEl:   'Εγκρίσεις Τύπου',
             catEn:   'Type Approvals',
-            titleEl: 'Έγκριση τύπου ΕΕ: Κανονισμός 2018/858 — βήμα-βήμα',
-            titleEn: 'EU Type Approval: Regulation 2018/858 — step by step',
+            titleEl: 'Έγκριση τύπου ΕΕ: τι ορίζει ο Κανονισμός 2018/858',
+            titleEn: 'EU Type Approval: what Regulation 2018/858 covers',
             textEl:  'Ο Κανονισμός (ΕΕ) 2018/858 ορίζει τη διαδικασία έγκρισης τύπου για μηχανοκίνητα οχήματα και ρυμουλκούμενα. Από την κατάθεση φακέλου έως την τελική χορήγηση.',
             textEn:  'Regulation (EU) 2018/858 sets out the type approval process for motor vehicles and trailers. From file submission to final granting.',
         },
