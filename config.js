@@ -416,6 +416,31 @@ window.SITE_CONFIG = {
     // ── GOOGLE REVIEWS ────────────────────────────────────────────────────
     reviews: [
         {
+            name: 'Miltos Athanasiou',
+            textEl: 'Εξαιρετικός επαγγελματίας, μου εκανε δύο άδειες τρέιλερ πολύ άμεσα στην Σαλαμινα, γρήγορη εξυπηρέτηση, άμεση ανταπόκριση και πολύ λογικές τιμές, κανένα παράπονο, ανέλαβε και διεκπαιρεωσε την διαδικασία από την αρχή μέχρι το τέλος.',
+            textEn: 'An excellent professional. He issued two trailer licences for me very quickly in Salamina: fast service, immediate response and very reasonable prices. No complaints at all. He took on the whole process and handled it from start to finish.',
+        },
+        {
+            name: 'Dimitrios Taskoudis',
+            textEl: 'Πραγματικά εξαιρετική συνεργασία με τον κ. Μουδιώτη για τη διασκευή του van σε αυτοκινούμενο. Από την πρώτη στιγμή ήταν πολύ εξυπηρετικός, άμεσος και πρόθυμος να εξηγήσει κάθε λεπτομέρεια. Ήξερε ακριβώς τι χρειάζεται, μας καθοδήγησε σωστά σε όλη τη διαδικασία και κυρίως ήταν πάντα διαθέσιμος όταν χρειάστηκε. Η υπόθεση προχώρησε πολύ πιο εύκολα και γρήγορα απ’ όσο περιμέναμε, με συνεχή ενημέρωση και χωρίς περιττό άγχος. Φαίνεται ότι έχει μεγάλη εμπειρία στο αντικείμενο και πραγματικά ενδιαφέρεται να βρει λύση. Πολύ καλή εξυπηρέτηση και λογική χρέωση. Τον προτείνω με κλειστά μάτια!',
+            textEn: 'A truly excellent collaboration with Mr. Moudiotis on converting our van into a motorhome. From the very first moment he was very helpful, prompt and willing to explain every detail. He knew exactly what was needed, guided us properly through the whole process and, above all, was always available when needed. The case went much more easily and quickly than we expected, with constant updates and no unnecessary stress. He clearly has great experience in the field and genuinely cares about finding a solution. Very good service and a reasonable fee. I recommend him with my eyes closed!',
+        },
+        {
+            name: 'Βάιος Λιάπης',
+            textEl: 'Εξαιρετικός μηχανικός με βαθειά γνώση στο αντικείμενό του. Προτίθεται να ασχοληθεί με τον πελάτη του σε βαθμό που δεν το συναντάς στην αγορά εργασίας. Συνιστώ ανεπιφύλακτα! Ξεχωρίζει για τη φιλική του προσέγγιση, ευγένεια και επαγγελματισμό.',
+            textEn: 'An excellent engineer with deep knowledge of his field. He is willing to engage with his clients to a degree you rarely find in the market. Highly recommended! He stands out for his friendly approach, courtesy and professionalism.',
+        },
+        {
+            name: 'Sakis Kyriakou',
+            textEl: 'Άψογη συνεργασία από την πρώτη επικοινωνία μέχρι και την ολοκλήρωση της διαδικασίας. Η καταχώρηση του οχήματος στο ΤΑΟ και η έκδοση του Δελτίου Κοινοποίησης έγιναν γρήγορα, οργανωμένα και χωρίς περιττή ταλαιπωρία. Αυτό που πραγματικά ξεχωρίζει είναι η συνέπεια και η άμεση ενημέρωση σε κάθε στάδιο. Υπήρχε συνεχής επικοινωνία και ξεκάθαρη καθοδήγηση για τα δικαιολογητικά και τις απαραίτητες ενέργειες, χωρίς να χρειάζεται να αναζητάς μόνος σου πληροφορίες ή να περιμένεις χωρίς να γνωρίζεις τι γίνεται. Η όλη διαδικασία πραγματοποιήθηκε με επαγγελματισμό, ταχύτητα και υπευθυνότητα. Οι χρεώσεις ήταν λογικές και η εξυπηρέτηση πραγματικά άμεση. Επαγγελματίας που γνωρίζει πολύ καλά τη διαδικασία και φροντίζει να ολοκληρωθεί σωστά και όσο το δυνατόν πιο γρήγορα. Σίγουρα θα τον επέλεγα ξανά και τον προτείνω ανεπιφύλακτα.',
+            textEn: 'Flawless collaboration from the first contact through to the completion of the process. Registering the vehicle in the TAO and issuing the Notification Certificate were done quickly, in an organised way and without unnecessary hassle. What really stands out is the consistency and prompt updates at every stage. There was constant communication and clear guidance on the documents and the required steps, so you never had to search for information yourself or wait without knowing what was going on. The whole process was carried out with professionalism, speed and responsibility. The fees were reasonable and the service truly immediate. A professional who knows the process very well and makes sure it is completed correctly and as quickly as possible. I would definitely choose him again and recommend him without reservation.',
+        },
+        {
+            name: 'Giannis Milios',
+            textEl: 'Εξαιρετικός επαγγελματίας! Από την πρώτη επικοινωνία μέχρι την ολοκλήρωση της διαδικασίας, η εξυπηρέτηση ήταν άψογη. Άμεση ανταπόκριση, σωστή ενημέρωση, μεγάλη γνώση του αντικειμένου και κυρίως συνέπεια και αξιοπιστία. Όλα έγιναν γρήγορα και χωρίς περιττή ταλαιπωρία, ενώ κάθε απορία μου απαντήθηκε με σαφήνεια. Είναι πραγματικά σημαντικό να συνεργάζεσαι με ανθρώπους που γνωρίζουν πολύ καλά τη δουλειά τους και σου εμπνέουν εμπιστοσύνη. Συστήνω τον Κ. Μουδιώτη ανεπιφύλακτα!',
+            textEn: 'An excellent professional! From the first contact to the completion of the process, the service was impeccable. Immediate response, accurate information, deep knowledge of the field and, above all, consistency and reliability. Everything was done quickly and without unnecessary hassle, and every question I had was answered clearly. It really matters to work with people who know their job very well and inspire trust. I recommend Mr. Moudiotis without reservation!',
+        },
+        {
             name: 'Christos Karopoulos',
             textEl: 'Εξαιρετικές υπηρεσίες του μηχανολόγου μηχανικού Μουδιώτη σε πληρότητα και ποιότητα, άμεσος προγραμματισμός εργασιών, συνεχής διαθεσιμότητα για την επίλυση τυχόν προβλημάτων και όλα αυτά με απολύτως λογική αμοιβή. Συστήνεται ανεπιφύλακτα.',
             textEn: 'Excellent services from mechanical engineer Moudiotis, thorough and high quality, immediate scheduling of work, constant availability to resolve any issues, all at a perfectly reasonable fee. Highly recommended.',
