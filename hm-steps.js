@@ -33,27 +33,42 @@
     paint();
 })();
 
-/* Έλεγχος Κ.Ο.Κ.: τα σημεία φωτίζονται ένα-ένα */
+/* Έλεγχος Κ.Ο.Κ.: τα σημεία φωτίζονται ένα-ένα· μετά εναλλάσσεται το σχέδιο (κλειστό ρυμουλκούμενο ↔ τρέιλερ λέμβου) */
 (function () {
     var sec = document.querySelector('.hm-rc'); if (!sec) return;
-    var pins = sec.querySelectorAll('.hm-pins > g'), leads = sec.querySelectorAll('.hm-leads > line'), rows = sec.querySelectorAll('.hm-pinlist li');
-    var n = Math.min(pins.length, rows.length); if (!n) return;
+    var svgs = sec.querySelectorAll('.hm-rc-stage .hm-trailer'), kinds = sec.querySelectorAll('.hm-rc-kind span');
+    var rows = sec.querySelectorAll('.hm-pinlist li'); if (!svgs.length || !rows.length) return;
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var i = -1, timer = null, STEP = 1900;
+    var s = 0, i = -1, timer = null, STEP = 1700;
+    function parts() { return { pins: svgs[s].querySelectorAll('.hm-pins > g'), leads: svgs[s].querySelectorAll('.hm-leads > line') }; }
     function paint() {
+        var p = parts(), n = rows.length;
         for (var k = 0; k < n; k++) {
             var on = k === i;
-            pins[k].classList.toggle('is-active', on);
             rows[k].classList.toggle('is-active', on);
-            if (leads[k]) leads[k].classList.toggle('is-active', on);
+            if (p.pins[k]) p.pins[k].classList.toggle('is-active', on);
+            if (p.leads[k]) p.leads[k].classList.toggle('is-active', on);
         }
         sec.classList.toggle('is-cycling', i >= 0);
     }
-    function tick() { i++; if (i >= n) { i = -1; paint(); timer = setTimeout(tick, 900); return; } paint(); timer = setTimeout(tick, STEP); }
+    function show(k) {
+        svgs.forEach(function (el, j) { el.classList.toggle('is-shown', j === k); });
+        kinds.forEach(function (el, j) { el.classList.toggle('is-shown', j === k); });
+    }
+    function tick() {
+        i++;
+        if (i >= rows.length) {
+            i = -1; paint();
+            if (svgs.length > 1) { s = (s + 1) % svgs.length; show(s); timer = setTimeout(tick, 2600); }
+            else timer = setTimeout(tick, 900);
+            return;
+        }
+        paint(); timer = setTimeout(tick, STEP);
+    }
     function start() { if (timer) return; timer = setTimeout(tick, 1800); }
     function stop() { clearTimeout(timer); timer = null; }
     var art = sec.querySelector('.hm-rc-art') || sec;
-    if ('IntersectionObserver' in window) { new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) start(); else stop(); }); }, { threshold: 0.35 }).observe(art); } else { start(); }
+    if ('IntersectionObserver' in window) { new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) start(); else stop(); }); }, { threshold: 0.3 }).observe(art); } else { start(); }
 })();
 
 /* Κινητό: οι τέσσερις ετικέτες του hero έρχονται από τα άκρα προς τα μέσα καθώς ο χρήστης κυλά προς τα κάτω */

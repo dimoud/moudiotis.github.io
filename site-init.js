@@ -70,6 +70,7 @@
 
 
 
+
     // ── ΑΡΧΙΚΗ: ΤΕΣΣΕΡΙΣ ΣΤΙΓΜΕΣ ΥΠΗΡΕΣΙΩΝ ──
     T["hm.ta.eyebrow"] = { el: "Εγκρίσεις τύπου", en: "Type approvals" };
     T["hm.ta.h"] = { el: "Από τον φάκελο <em>ως την ταξινόμηση</em>", en: "From the dossier <em>to registration</em>" };
@@ -102,10 +103,14 @@
     T["hm.rc.h"] = { el: "Πριν βγείτε <em>στον δρόμο</em>", en: "Before you hit <em>the road</em>" };
     T["hm.rc.p"] = { el: "Τα σημεία που πρέπει να είναι σε τάξη ώστε το ρυμουλκούμενο να είναι σύμφωνο με τον Κ.Ο.Κ. και ασφαλές.", en: "The points that must be in order for the trailer to comply with the Highway Code and be safe." };
     T["hm.rc.1"] = { el: "Σύστημα ζεύξης", en: "Coupling system" };
-    T["hm.rc.2"] = { el: "Πλευρικοί ανακλαστήρες", en: "Side reflectors" };
-    T["hm.rc.3"] = { el: "Πίσω τρίγωνα", en: "Rear triangles" };
-    T["hm.rc.4"] = { el: "Πίσω φώτα", en: "Rear lights" };
-    T["hm.rc.5"] = { el: "Πινακίδα κυκλοφορίας", en: "Number plate" };
+    T["hm.rc.2"] = { el: "Ρόδα στήριξης", en: "Jockey wheel" };
+    T["hm.rc.3"] = { el: "Πλευρικοί ανακλαστήρες", en: "Side reflectors" };
+    T["hm.rc.4"] = { el: "Λασπωτήρες", en: "Mudguards" };
+    T["hm.rc.5"] = { el: "Πίσω τρίγωνα", en: "Rear triangles" };
+    T["hm.rc.6"] = { el: "Πίσω φώτα", en: "Rear lights" };
+    T["hm.rc.7"] = { el: "Πινακίδα κυκλοφορίας", en: "Number plate" };
+    T["hm.rc.k1"] = { el: "Κλειστό ρυμουλκούμενο", en: "Box trailer" };
+    T["hm.rc.k2"] = { el: "Τρέιλερ λέμβου", en: "Boat trailer" };
     T["hm.rc.cta"] = { el: "Κάντε τον πλήρη έλεγχο", en: "Run the full check" };
     T["hm.q.eyebrow"] = { el: "Υπολογιστής έλξης", en: "Towing calculator" };
     T["hm.q.h"] = { el: "Επιτρέπεται να τραβήξω <em>αυτό</em> το ρυμουλκούμενο;", en: "May I tow <em>this</em> trailer?" };

@@ -5568,3 +5568,16 @@ a.hero-pillar { text-decoration: none; }
     .hm-idx li.is-focus a { padding-left: 14px !important; }
 }
 @media (prefers-reduced-motion: reduce) { .hm-idx li.is-focus .hm-idx-go { animation: none; } }
+
+/* Έλεγχος Κ.Ο.Κ.: δύο σχέδια στην ίδια θέση — εναλλάσσονται (hm-steps.js) */
+.hm-rc-stage { display: grid; }
+.hm-rc-stage > .hm-trailer { grid-area: 1 / 1; opacity: 0; transform: translateX(24px); transition: opacity .7s, transform .9s cubic-bezier(.16,1,.3,1); }
+.hm-rc-stage > .hm-trailer.is-shown { opacity: 1; transform: none; }
+.hm-rc-art.visible .hm-trailer:not(.is-shown) .hm-draw > * { stroke-dashoffset: 1; transition: stroke-dashoffset .3s .5s; }
+.hm-rc-art.visible .hm-trailer.is-shown .hm-draw > *:nth-child(n+6) { transition-delay: .35s; }
+.hm-rc-art.visible .hm-trailer.is-shown .hm-draw > *:nth-child(n+12) { transition-delay: .7s; }
+.hm-rc-art.visible .hm-trailer:not(.is-shown) .hm-leads, .hm-rc-art.visible .hm-trailer:not(.is-shown) .hm-pins { opacity: 0; transition: opacity .3s; }
+.hm-rc-kind { position: relative; height: 1.4em; margin: 6px 0 0; text-align: center;
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #a57e32; }
+.hm-rc-kind span { position: absolute; inset: 0; opacity: 0; transform: translateY(6px); transition: opacity .6s, transform .6s; }
+.hm-rc-kind span.is-shown { opacity: 1; transform: none; }
