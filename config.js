@@ -215,6 +215,8 @@ window.SITE_CONFIG = {
             ],
         },
         {
+            urlEl:       '/ydravliki-platforma/',
+            urlEn:       '/en/ydravliki-platforma/',
             icon:        'fa-arrows-up-down',
             titleEl:     'Μελέτη Τοποθέτησης Υδραυλικής Πλατφόρμας — Έγκριση Τύπου',
             titleEn:     'Hydraulic Platform Installation Study — Type Approval',
@@ -223,6 +225,8 @@ window.SITE_CONFIG = {
             seoKeywords: 'υδραυλικη πλατφορμα, εγκριση τυπου, EN 1570, πιστοποιηση CE, hydraulic platform study Greece, τεχνική μελέτη υδραυλικής πλατφόρμας',
         },
         {
+            urlEl:       '/texniki-symvouleftiki/',
+            urlEn:       '/en/texniki-symvouleftiki/',
             icon:        'fa-clipboard-check',
             titleEl:     'Τεχνική Συμβουλευτική και Πιστοποίηση',
             titleEn:     'Technical Consulting and Certification',
@@ -245,6 +249,8 @@ window.SITE_CONFIG = {
             ],
         },
         {
+            urlEl:       '/meleti-pyroprostasias/',
+            urlEn:       '/en/meleti-pyroprostasias/',
             icon:        'fa-fire-extinguisher',
             titleEl:     'Μελέτη Ενεργητικής Πυροπροστασίας',
             titleEn:     'Active Fire Protection Study — Mechanical Engineer',
@@ -253,6 +259,8 @@ window.SITE_CONFIG = {
             seoKeywords: 'μελετη ενεργητικης πυροπροστασιας, ενεργητική πυροπροστασία, μελέτη πυροπροστασίας, συστημα πυροσβεσης, sprinkler, πυρασφάλεια κτιρίου, fire protection study Greece, μηχανολόγος μηχανικός πυροπροστασία',
         },
         {
+            urlEl:       '/texnikos-asfaleias/',
+            urlEn:       '/en/texnikos-asfaleias/',
             icon:        'fa-helmet-safety',
             titleEl:     'Τεχνικός Ασφαλείας — Υγεία και Ασφάλεια Εργασίας (Ν.3850/2010)',
             titleEn:     'Safety Engineer — Occupational Health and Safety (Law 3850/2010)',

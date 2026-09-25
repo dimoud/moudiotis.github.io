@@ -11,7 +11,10 @@
     <link rel="alternate" href="https://moudiotis.gr/en/egkrisi-typou-dikyklon/" hreflang="en">
     <link rel="alternate" href="https://moudiotis.gr/egkrisi-typou-dikyklon/" hreflang="x-default">
 
+    <link rel="icon" href="../../favicon.ico" sizes="any">
+    <link rel="icon" href="../../icon-32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="../../icon-48.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="../../icon-192.png" type="image/png" sizes="192x192">
     <link rel="apple-touch-icon" href="../../icon-180.png" sizes="180x180">
 
     <meta property="og:type"        content="article">
@@ -176,12 +179,28 @@
         </a>
         <div class="nav-links" id="navLinks">
             <a href="../../en/index.html">Home</a>
-            <a href="../../en/#services">Services</a>
-            <a href="../../en/adeia-treiler-o1-o2/">Trailer Licence</a>
-            <a href="../../en/memonomeni-egkrisi-oximatos/">Imports and Caravans</a>
-            <a href="../../en/deltio-koinopoiisis-tao/">Type Approval and TAO</a>
-            <a href="../../en/egkrisi-typou-dikyklon/">Two-wheelers, Quads</a>
-            <a href="../../en/oximata-eidikou-skopou/">Special Purpose</a>
+            <div class="nav-dd">
+                <button type="button" class="nav-dd-btn" aria-expanded="false" aria-controls="navDdMenu" aria-haspopup="true"><span>Services</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+                <div class="nav-dd-menu" id="navDdMenu">
+                    <div class="nav-dd-col">
+                        <span class="nav-dd-head">Vehicles</span>
+                        <a href="../deltio-koinopoiisis-tao/">Type Approval and TAO</a>
+                        <a href="../memonomeni-egkrisi-oximatos/">Imports and Caravans</a>
+                        <a href="../adeia-treiler-o1-o2/">O1/O2 Trailer Licence</a>
+                        <a href="../egkrisi-typou-dikyklon/" aria-current="page">Two-wheelers and Quads</a>
+                        <a href="../oximata-eidikou-skopou/">Special Purpose Vehicles</a>
+                        <a href="../ydravliki-platforma/">Hydraulic Platform</a>
+                    </div>
+                    <div class="nav-dd-col">
+                        <span class="nav-dd-head">Studies and Safety</span>
+                        <a href="../texniki-symvouleftiki/">Technical Consulting</a>
+                        <a href="../meleti-pyroprostasias/">Fire Protection Study</a>
+                        <a href="../texnikos-asfaleias/">Safety Engineer</a>
+                        <a href="https://expertease.eu/3dprint" target="_blank" rel="noopener noreferrer">Design and 3D Printing</a>
+                    </div>
+                    <a class="nav-dd-all" href="../../en/#services">All services</a>
+                </div>
+            </div>
             <a href="../../en/#contact" class="nav-cta">Contact</a>
         </div>
         <div class="lang-toggle" id="langToggle">
@@ -539,6 +558,10 @@
                 <a href="../adeia-treiler-o1-o2/">O1/O2 Trailer Licence</a>
                 <a href="../egkrisi-typou-dikyklon/">Two-wheelers and Quads</a>
                 <a href="../oximata-eidikou-skopou/">Special Purpose Vehicles</a>
+                <a href="../ydravliki-platforma/">Hydraulic Platform</a>
+                <a href="../texniki-symvouleftiki/">Technical Consulting</a>
+                <a href="../meleti-pyroprostasias/">Fire Protection Study</a>
+                <a href="../texnikos-asfaleias/">Safety Engineer</a>
             </div>
             <div class="footer-col" role="navigation" aria-label="The office">
                 <h4>The office</h4>
@@ -772,5 +795,6 @@
     <script src="../../share-link.js" defer></script>
     <script src="../../consent.js" defer></script>
 
+    <script src="../../nav-dd.js" defer></script>
 </body>
 </html>

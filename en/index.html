@@ -12,7 +12,10 @@
     <link rel="alternate"     href="https://moudiotis.gr/" hreflang="x-default">
     <link rel="sitemap"       type="application/xml" href="https://moudiotis.gr/sitemap.xml">
 
-    <link rel="icon"          href="../icon-48.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+    <link rel="icon" href="../icon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="../icon-48.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="../icon-192.png" type="image/png" sizes="192x192">
     <link rel="apple-touch-icon" href="../icon-180.png" sizes="180x180">
 
     <meta property="og:type"        content="website">
@@ -405,12 +408,28 @@
         </a>
         <div class="nav-links" id="navLinks">
             <a href="#about"    data-i18n="nav.about">About</a>
-            <a href="#services" data-i18n="nav.services">Services</a>
-            <a href="/en/adeia-treiler-o1-o2/" data-i18n="nav.trailer" data-href-el="/adeia-treiler-o1-o2/" data-href-en="/en/adeia-treiler-o1-o2/">Trailer Licence</a>
-            <a href="/en/memonomeni-egkrisi-oximatos/" data-i18n="nav.imports" data-href-el="/memonomeni-egkrisi-oximatos/" data-href-en="/en/memonomeni-egkrisi-oximatos/">Imports, Caravans</a>
-            <a href="/en/deltio-koinopoiisis-tao/" data-i18n="nav.tao" data-href-el="/deltio-koinopoiisis-tao/" data-href-en="/en/deltio-koinopoiisis-tao/">Type Approval, TAO</a>
-            <a href="/en/egkrisi-typou-dikyklon/" data-i18n="nav.moto" data-href-el="/egkrisi-typou-dikyklon/" data-href-en="/en/egkrisi-typou-dikyklon/">Two-wheelers, Quads</a>
-            <a href="/en/oximata-eidikou-skopou/" data-i18n="nav.special" data-href-el="/oximata-eidikou-skopou/" data-href-en="/en/oximata-eidikou-skopou/">Special Purpose</a>
+            <div class="nav-dd">
+                <button type="button" class="nav-dd-btn" aria-expanded="false" aria-controls="navDdMenu" aria-haspopup="true"><span data-i18n="nav.services">Services</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+                <div class="nav-dd-menu" id="navDdMenu">
+                    <div class="nav-dd-col">
+                        <span class="nav-dd-head" data-i18n="nav.dd.g1">Vehicles</span>
+                        <a href="/en/deltio-koinopoiisis-tao/" data-i18n="nav.dd.deltio-koinopoiisis-tao" data-href-el="/deltio-koinopoiisis-tao/" data-href-en="/en/deltio-koinopoiisis-tao/">Type Approval and TAO</a>
+                        <a href="/en/memonomeni-egkrisi-oximatos/" data-i18n="nav.dd.memonomeni-egkrisi-oximatos" data-href-el="/memonomeni-egkrisi-oximatos/" data-href-en="/en/memonomeni-egkrisi-oximatos/">Imports and Caravans</a>
+                        <a href="/en/adeia-treiler-o1-o2/" data-i18n="nav.dd.adeia-treiler-o1-o2" data-href-el="/adeia-treiler-o1-o2/" data-href-en="/en/adeia-treiler-o1-o2/">O1/O2 Trailer Licence</a>
+                        <a href="/en/egkrisi-typou-dikyklon/" data-i18n="nav.dd.egkrisi-typou-dikyklon" data-href-el="/egkrisi-typou-dikyklon/" data-href-en="/en/egkrisi-typou-dikyklon/">Two-wheelers and Quads</a>
+                        <a href="/en/oximata-eidikou-skopou/" data-i18n="nav.dd.oximata-eidikou-skopou" data-href-el="/oximata-eidikou-skopou/" data-href-en="/en/oximata-eidikou-skopou/">Special Purpose Vehicles</a>
+                        <a href="/en/ydravliki-platforma/" data-i18n="nav.dd.ydravliki-platforma" data-href-el="/ydravliki-platforma/" data-href-en="/en/ydravliki-platforma/">Hydraulic Platform</a>
+                    </div>
+                    <div class="nav-dd-col">
+                        <span class="nav-dd-head" data-i18n="nav.dd.g2">Studies and Safety</span>
+                        <a href="/en/texniki-symvouleftiki/" data-i18n="nav.dd.texniki-symvouleftiki" data-href-el="/texniki-symvouleftiki/" data-href-en="/en/texniki-symvouleftiki/">Technical Consulting</a>
+                        <a href="/en/meleti-pyroprostasias/" data-i18n="nav.dd.meleti-pyroprostasias" data-href-el="/meleti-pyroprostasias/" data-href-en="/en/meleti-pyroprostasias/">Fire Protection Study</a>
+                        <a href="/en/texnikos-asfaleias/" data-i18n="nav.dd.texnikos-asfaleias" data-href-el="/texnikos-asfaleias/" data-href-en="/en/texnikos-asfaleias/">Safety Engineer</a>
+                        <a href="https://expertease.eu/3dprint" target="_blank" rel="noopener noreferrer" data-i18n="nav.dd.3d">Design and 3D Printing</a>
+                    </div>
+                    <a class="nav-dd-all" href="#services" data-i18n="nav.dd.all">All services</a>
+                </div>
+            </div>
             <a href="#contact"  class="nav-cta" data-i18n="nav.contact">Contact</a>
         </div>
         <div class="lang-toggle" id="langToggle">
@@ -942,290 +961,149 @@ MOUDIOTIS</span>
         "></div>
     </section>
 
-    <!-- ===== TYPE APPROVAL & TECHNICAL SUPPORT ===== -->
-    <section class="tap-section" id="egkrisi-typou-ochimaton" aria-labelledby="tapHeading">
-        <div class="tap-outer">
-            <div class="tap-box" data-reveal>
+    <!-- ===== ΑΡΧΙΚΗ: ΤΕΣΣΕΡΙΣ ΣΤΙΓΜΕΣ ΥΠΗΡΕΣΙΩΝ (σύντομες — η λεπτομέρεια ζει στις σελίδες) ===== -->
 
-                <!-- TOPBAR -->
-                <div class="tap-topbar">
-                    <span class="tap-badge"><i class="fa-solid fa-stamp"></i>&nbsp;<span data-i18n="tap.badge">TYPE APPROVALS</span></span>
-                    <span class="tap-kicker" data-i18n-html="tap.kicker">VEHICLES and TRAILERS</span>
+    <!-- 1 · Εγκρίσεις τύπου: ευρετήριο -->
+    <section class="hm hm-ta" id="egkrisi-typou-ochimaton" aria-labelledby="hmTaH">
+        <div class="hm-in hm-ta-grid">
+            <div class="hm-ta-lead" data-reveal>
+                <div class="eyebrow"><span data-i18n="hm.ta.eyebrow">Type approvals</span></div>
+                <h2 id="hmTaH" class="hm-h" data-i18n-html="hm.ta.h">From the dossier <em>to registration</em></h2>
+                <p class="hm-p" data-i18n="hm.ta.p">For importers, manufacturers and private owners. We take on the whole approval dossier, remotely, across Greece.</p>
+                <a href="#contact" class="hm-link"><span data-i18n="hm.ta.cta">Request a quote</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                <div class="tap-graphic hm-ta-graphic" id="typeApprovalAnimWrap" aria-hidden="true"></div>
+            </div>
+            <ol class="hm-idx" data-reveal>
+                <li><a href="/en/deltio-koinopoiisis-tao/" data-href-el="/deltio-koinopoiisis-tao/" data-href-en="/en/deltio-koinopoiisis-tao/">
+                    <span class="hm-idx-n">01</span>
+                    <span class="hm-idx-t"><b data-i18n="hm.ta.1.t">Notification and TAO</b><small data-i18n="hm.ta.1.d">For importers and dealers</small></span>
+                    <i class="fa-solid fa-arrow-right hm-idx-go" aria-hidden="true"></i>
+                </a></li>
+                <li><a href="/en/deltio-koinopoiisis-tao/" data-href-el="/deltio-koinopoiisis-tao/" data-href-en="/en/deltio-koinopoiisis-tao/">
+                    <span class="hm-idx-n">02</span>
+                    <span class="hm-idx-t"><b data-i18n="hm.ta.2.t">National and EU Approval</b><small data-i18n="hm.ta.2.d">Vehicles, bodies, trailers</small></span>
+                    <i class="fa-solid fa-arrow-right hm-idx-go" aria-hidden="true"></i>
+                </a></li>
+                <li><a href="/en/memonomeni-egkrisi-oximatos/" data-href-el="/memonomeni-egkrisi-oximatos/" data-href-en="/en/memonomeni-egkrisi-oximatos/">
+                    <span class="hm-idx-n">03</span>
+                    <span class="hm-idx-t"><b data-i18n="hm.ta.3.t">Individual Approval</b><small data-i18n="hm.ta.3.d">Imports and caravans</small></span>
+                    <i class="fa-solid fa-arrow-right hm-idx-go" aria-hidden="true"></i>
+                </a></li>
+                <li><a href="/en/egkrisi-typou-dikyklon/" data-href-el="/egkrisi-typou-dikyklon/" data-href-en="/en/egkrisi-typou-dikyklon/">
+                    <span class="hm-idx-n">04</span>
+                    <span class="hm-idx-t"><b data-i18n="hm.ta.4.t">Category L</b><small data-i18n="hm.ta.4.d">Motorcycles, tricycles, quads</small></span>
+                    <i class="fa-solid fa-arrow-right hm-idx-go" aria-hidden="true"></i>
+                </a></li>
+                <li><a href="/en/oximata-eidikou-skopou/" data-href-el="/oximata-eidikou-skopou/" data-href-en="/en/oximata-eidikou-skopou/">
+                    <span class="hm-idx-n">05</span>
+                    <span class="hm-idx-t"><b data-i18n="hm.ta.5.t">Special Purpose</b><small data-i18n="hm.ta.5.d">Crane trucks, catering units, mobile units</small></span>
+                    <i class="fa-solid fa-arrow-right hm-idx-go" aria-hidden="true"></i>
+                </a></li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- 2 · Άδεια τρέιλερ: σκούρα λωρίδα με τα πέντε βήματα -->
+    <section class="hm hm-tr" id="adeia-treyler-o1-o2" aria-labelledby="hmTrH">
+        <div class="hm-in">
+            <div class="hm-tr-top" data-reveal>
+                <div>
+                    <div class="eyebrow"><span data-i18n="hm.tr.eyebrow">O1 · O2 trailer licence</span></div>
+                    <h2 id="hmTrH" class="hm-h hm-h--light" data-i18n-html="hm.tr.h">Your trailer, <em>legal</em> in five steps</h2>
+                    <p class="hm-p hm-p--light" data-i18n="hm.tr.p">A trailer or cargo box up to 3.5 tonnes without a licence? We handle everything, from inspection to number plates.</p>
                 </div>
-
-                <div class="tap-body">
-                    <h2 id="tapHeading" class="tap-title" data-i18n-html="tap.title">Vehicle Type Approval and Technical Support Services</h2>
-                    <p class="tap-intro" data-i18n-html="tap.intro">Beyond <strong>trailer licensing</strong>, the office handles the full spectrum of <strong>type approval</strong> and vehicle technical support — from dossier preparation and technical study, through <strong>Technical Vehicle Archive (TAO) registration</strong> and the <strong>Notification Certificate</strong>, to final registration.</p>
-
-                    <!-- Type approval dossier sketch animation -->
-                    <div class="tap-graphic" id="typeApprovalAnimWrap" aria-hidden="true"></div>
-                    <span class="tap-graphic-tag" data-i18n="tap.graphic.tag">TYPE APPROVAL DOSSIER</span>
-
-                    <button class="tap-toggle" id="tapToggle" aria-expanded="true" aria-controls="tapCollapse">
-                        <span data-i18n="tap.expand.hint">SEE ALL TYPE APPROVAL SERVICES IN DETAIL</span><i class="fa-solid fa-chevron-down tap-chevron" aria-hidden="true"></i>
-                    </button>
-
-                    <div class="tap-collapse is-open" id="tapCollapse">
-                      <div>
-                        <!-- Filled by site-init.js from the same C.services entries that
-                             carry an items[] array, so section and cards never drift. -->
-                        <div class="tap-grid" id="tapGrid"><div class="tap-col" data-reveal=""><div class="tap-col-head"><i class="fa-solid fa-file-circle-check tap-col-icon" aria-hidden="true"></i><h3 class="tap-col-title" data-i18n-html="s1.title">Type Approval Notification, TAO Registration and Type Approvals</h3></div><ul class="tap-list"><li class="tap-item"><span class="tap-item-num" aria-hidden="true">01</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s1.i1.title">National and European Type Approval</span><span class="tap-item-d" data-i18n-html="s1.i1.text">Complete preparation and management of the dossier for issuing national or European type approvals for vehicles, trailers and components.</span></span></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">02</span><a class="tap-item-body tap-item-link" href="/en/memonomeni-egkrisi-oximatos/"><span class="tap-item-t" data-i18n-html="s1.i2.title">Individual Vehicle Approval</span><span class="tap-item-d" data-i18n-html="s1.i2.text">Individual, special, modified or imported vehicles are certified so that a registration certificate can be issued.</span></a></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">03</span><a class="tap-item-body tap-item-link" href="/en/egkrisi-typou-dikyklon/"><span class="tap-item-t" data-i18n-html="s1.i3.title">Category L Type Approval</span><span class="tap-item-d" data-i18n-html="s1.i3.text">Mopeds, motorcycles, tricycles and quadricycles under Reg. (EU) 168/2013 — classification, technical file and registration.</span></a></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">04</span><a class="tap-item-body tap-item-link" href="/en/deltio-koinopoiisis-tao/"><span class="tap-item-t" data-i18n-html="s1.i4.title">Technical Vehicle Archive (TAO) Registration</span><span class="tap-item-d" data-i18n-html="s1.i4.text">Registration in the Technical Vehicle Archive of the Ministry of Infrastructure and Transport. We handle the procedure.</span></a></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">05</span><a class="tap-item-body tap-item-link" href="/en/deltio-koinopoiisis-tao/"><span class="tap-item-t" data-i18n-html="s1.i5.title">Notification Certificates</span><span class="tap-item-d" data-i18n-html="s1.i5.text">Preparation, submission and issue of the Type Approval Notification Certificate for vehicle registration.</span></a></li></ul></div><div class="tap-col" data-reveal=""><div class="tap-col-head"><i class="fa-solid fa-compass-drafting tap-col-icon" aria-hidden="true"></i><h3 class="tap-col-title" data-i18n-html="s3.title">Technical Studies and Special Bodywork</h3></div><ul class="tap-list"><li class="tap-item"><span class="tap-item-num" aria-hidden="true">01</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s3.i1.title">Technical Studies from Scratch</span><span class="tap-item-d" data-i18n-html="s3.i1.text">Complete design, strength calculations and preparation of technical memoranda for new vehicles, bodies or trailers.</span></span></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">02</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s3.i2.title">Approval of Special Bodywork and Conversions</span><span class="tap-item-d" data-i18n-html="s3.i2.text">Refrigerated bodies, cranes, tippers, mobile workshops, special trailers — certification of special superstructures.</span></span></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">03</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s3.i3.title">Modification and Compliance Studies</span><span class="tap-item-d" data-i18n-html="s3.i3.text">Technical studies for body replacement, engine replacement, addition or removal of axles and special-use conversions.</span></span></li></ul></div><div class="tap-col" data-reveal=""><div class="tap-col-head"><i class="fa-solid fa-clipboard-check tap-col-icon" aria-hidden="true"></i><h3 class="tap-col-title" data-i18n-html="s5.title">Technical Consulting and Certification</h3></div><ul class="tap-list"><li class="tap-item"><span class="tap-item-num" aria-hidden="true">01</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s5.i1.title">Certification Dossier Management</span><span class="tap-item-d" data-i18n-html="s5.i1.text">Before inspection bodies, technical services and testing laboratories, the office represents you and provides technical support.</span></span></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">02</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s5.i2.title">Compliance Certificates and Technical Memoranda</span><span class="tap-item-d" data-i18n-html="s5.i2.text">Issuing official engineer certificates for customs, KTEO, Transport Directorates and registration dossiers.</span></span></li></ul></div></div>
-
-                        <div class="tap-cta-row">
-                            <p class="tap-cta-text" data-i18n-html="tap.cta.text">Have a vehicle, body or trailer that needs approval? Contact us and we will tell you how it can proceed.</p>
-                            <a href="#contact" class="tap-cta-btn"><span data-i18n="tap.cta.btn">Request a quote</span>&nbsp;<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-                        </div>
-                      </div>
-                    </div>
+                <div class="hm-price">
+                    <span class="hm-price-k" data-i18n="hm.tr.price.k">Final price</span>
+                    <span class="hm-price-v">400–430 €</span>
+                    <span class="hm-price-s" data-i18n="hm.tr.price.s">including state fees</span>
                 </div>
-
+            </div>
+            <ol class="hm-rail" data-reveal>
+                <li><span class="hm-rail-dot" aria-hidden="true"></span><span class="hm-rail-n">01</span><span class="hm-rail-t" data-i18n="hm.tr.s1">Inspection</span></li>
+                <li><span class="hm-rail-dot" aria-hidden="true"></span><span class="hm-rail-n">02</span><span class="hm-rail-t" data-i18n="hm.tr.s2">Chassis number</span></li>
+                <li><span class="hm-rail-dot" aria-hidden="true"></span><span class="hm-rail-n">03</span><span class="hm-rail-t" data-i18n="hm.tr.s3">Technical description</span></li>
+                <li><span class="hm-rail-dot" aria-hidden="true"></span><span class="hm-rail-n">04</span><span class="hm-rail-t" data-i18n="hm.tr.s4">Dossier filing</span></li>
+                <li><span class="hm-rail-dot" aria-hidden="true"></span><span class="hm-rail-n">05</span><span class="hm-rail-t" data-i18n="hm.tr.s5">Licence and plates</span></li>
+            </ol>
+            <div class="hm-tr-foot" data-reveal>
+                <p class="hm-tr-warn"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i><span data-i18n="hm.tr.warn">Until the licence and plates are issued, the trailer may not be driven.</span></p>
+                <a href="/en/adeia-treiler-o1-o2/" data-href-el="/adeia-treiler-o1-o2/" data-href-en="/en/adeia-treiler-o1-o2/" class="hm-btn hm-btn--gold"><span data-i18n="hm.tr.cta">The full guide</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Trailer dual-panel row -->
-    <div class="ta-dual-row" id="ergaleia">
-
-    <!-- Trailer Announcement Guide -->
-    <div class="ta-wrap" id="adeia-treyler-o1-o2" data-reveal>
-      <div class="ta-box">
-        <div class="ta-topbar">
-          <span class="ta-badge"><i class="fa-solid fa-file-circle-check"></i>&nbsp;<span data-i18n="ta.badge">NEW LAW</span></span>
-        </div>
-        <div class="ta-title-row">
-          <h3 class="ta-title" data-i18n="ta.title">TRAILER — Legalization and Registration Guide</h3>
-          <div class="ta-cat-badge">
-            <span class="ta-cat-bv">O1 and O2</span>
-            <span class="ta-cat-bk" data-i18n="trc.badge.cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="ta-rule"></div>
-        <div class="ta-stat-strip">
-          <div class="ta-stat">
-            <div class="ta-stat-icon"><i class="fa-solid fa-folder-open"></i></div>
-            <div class="ta-stat-body">
-              <div class="ta-stat-val" data-i18n="ta.stat.docs">10–15</div>
-              <div class="ta-stat-lbl" data-i18n="ta.stat.docs.lbl">Documents</div>
+    <!-- 3 · Έλεγχος Κ.Ο.Κ.: σχέδιο με σημεία -->
+    <section class="hm hm-rc" id="ergaleia" aria-labelledby="hmRcH">
+        <span id="trailer-road-check" class="hm-anchor" aria-hidden="true"></span>
+        <div class="hm-in hm-rc-grid">
+            <div class="hm-rc-art" data-reveal>
+                <svg class="hm-trailer" viewBox="0 0 680 310" fill="none" role="img" aria-label="Trailer with the check points">
+                    <g class="hm-draw" stroke="#c9a86c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line pathLength="1" x1="20" y1="266" x2="660" y2="266" stroke-width="1" opacity=".45"/>
+                        <rect pathLength="1" x="190" y="92" width="392" height="108"/>
+                        <line pathLength="1" x1="288" y1="92" x2="288" y2="200" opacity=".5"/>
+                        <line pathLength="1" x1="386" y1="92" x2="386" y2="200" opacity=".5"/>
+                        <line pathLength="1" x1="484" y1="92" x2="484" y2="200" opacity=".5"/>
+                        <rect pathLength="1" x="176" y="200" width="420" height="12"/>
+                        <path pathLength="1" d="M190 206 L64 214 M190 212 L74 218"/>
+                        <circle pathLength="1" cx="54" cy="216" r="9"/>
+                        <path pathLength="1" d="M112 216 L112 244"/>
+                        <circle pathLength="1" cx="112" cy="252" r="9"/>
+                        <circle pathLength="1" cx="400" cy="234" r="31"/>
+                        <circle pathLength="1" cx="400" cy="234" r="11"/>
+                        <rect pathLength="1" x="582" y="184" width="14" height="16"/>
+                        <path pathLength="1" d="M589 160 L597 174 L581 174 Z"/>
+                        <rect pathLength="1" x="596" y="202" width="8" height="22"/>
+                        <rect pathLength="1" x="290" y="202" width="16" height="7"/>
+                    </g>
+                    <g class="hm-leads" stroke="#1d3a5c" stroke-width="1" stroke-dasharray="3 4">
+                        <line x1="54" y1="206" x2="54" y2="132"/>
+                        <line x1="298" y1="212" x2="298" y2="284"/>
+                        <line x1="597" y1="167" x2="646" y2="120"/>
+                        <line x1="596" y1="192" x2="652" y2="178"/>
+                        <line x1="604" y1="214" x2="646" y2="244"/>
+                    </g>
+                    <g class="hm-pins" font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle">
+                        <g><circle cx="54" cy="120" r="13"/><text x="54" y="125">1</text></g>
+                        <g><circle cx="298" cy="294" r="13"/><text x="298" y="299">2</text></g>
+                        <g><circle cx="654" cy="112" r="13"/><text x="654" y="117">3</text></g>
+                        <g><circle cx="662" cy="176" r="13"/><text x="662" y="181">4</text></g>
+                        <g><circle cx="654" cy="252" r="13"/><text x="654" y="257">5</text></g>
+                    </g>
+                </svg>
             </div>
-          </div>
-          <div class="ta-stat-sep"></div>
-          <div class="ta-stat">
-            <div class="ta-stat-icon"><i class="fa-solid fa-euro-sign"></i></div>
-            <div class="ta-stat-body">
-              <div class="ta-stat-val">230€</div>
-              <div class="ta-stat-lbl" data-i18n="ta.stat.fee.lbl">Fees</div>
+            <div class="hm-rc-txt" data-reveal>
+                <div class="eyebrow"><span data-i18n="hm.rc.eyebrow">Highway Code check</span></div>
+                <h2 id="hmRcH" class="hm-h" data-i18n-html="hm.rc.h">Before you hit <em>the road</em></h2>
+                <p class="hm-p" data-i18n="hm.rc.p">The points that must be in order for the trailer to comply with the Highway Code and be safe.</p>
+                <ol class="hm-pinlist"><li><span class="hm-pin-n">1</span><span data-i18n="hm.rc.1">Coupling system</span></li><li><span class="hm-pin-n">2</span><span data-i18n="hm.rc.2">Side reflectors</span></li><li><span class="hm-pin-n">3</span><span data-i18n="hm.rc.3">Rear triangles</span></li><li><span class="hm-pin-n">4</span><span data-i18n="hm.rc.4">Rear lights</span></li><li><span class="hm-pin-n">5</span><span data-i18n="hm.rc.5">Number plate</span></li></ol>
+                <a href="/en/adeia-treiler-o1-o2/#trailer-road-check" data-href-el="/adeia-treiler-o1-o2/#trailer-road-check" data-href-en="/en/adeia-treiler-o1-o2/#trailer-road-check" class="hm-link"><span data-i18n="hm.rc.cta">Run the full check</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
-          </div>
-          <div class="ta-stat-sep"></div>
-          <div class="ta-stat">
-            <div class="ta-stat-icon"><i class="fa-regular fa-clock"></i></div>
-            <div class="ta-stat-body">
-              <div class="ta-stat-val" data-i18n="ta.stat.days">3–10</div>
-              <div class="ta-stat-lbl" data-i18n="ta.stat.days.lbl">Days</div>
-            </div>
-          </div>
-          <div class="ta-stat-sep"></div>
-          <div class="ta-stat">
-            <div class="ta-stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
-            <div class="ta-stat-body">
-              <div class="ta-stat-val" data-i18n="ta.stat.process">Step-by-step</div>
-              <div class="ta-stat-lbl" data-i18n="ta.stat.process.lbl">Process</div>
-            </div>
-          </div>
         </div>
-        <button class="ta-toggle ta-toggle--bar" aria-expanded="true" aria-controls="taCollapse">
-          <span data-i18n="ta.expand.hint">SEE ALL 5 STEPS OF THE PROCESS</span><i class="fa-solid fa-chevron-down ta-chevron"></i>
-        </button>
-        <div class="ta-collapse is-open" id="taCollapse">
-        <div class="price-offer price-offer--center">
-            <div class="price-offer-head">
-                <span class="price-offer-tag" data-i18n="ta.price.tag">FINAL PRICE</span>
-                <span class="price-offer-val" data-i18n="ta.price.val">400–430 €</span>
-            </div>
-            <p class="price-offer-note" data-i18n-html="ta.price.note">For an O1 or O2 trailer licence and plates. Government fees are included.</p>
-        </div>
-        <div class="ta-col ta-col--cost-mobile">
-            <div class="ta-col-label"><i class="fa-solid fa-clipboard-list"></i><span data-i18n="ta.col2.head">Cost and requirements</span></div>
-            <ul class="ta-checklist">
-              <li><span class="ta-ck"></span><span data-i18n-html="ta.proc1">Total fees of <strong>€230</strong>, issued electronically via <strong>e-paravolo</strong>.</span></li>
-              <li><span class="ta-ck"></span><span data-i18n-html="ta.proc2">For vehicles with ESR before <strong>1999</strong>: an <strong>inspection report</strong> from the Regional Transport Authority or a <strong>successful KTEO technical check</strong>.</span></li>
-              <li><span class="ta-ck"></span><span data-i18n-html="ta.proc3">Submission of a complete <strong>documentation file</strong> to the competent authority, with accurate recording of vehicle characteristics.</span></li>
-            </ul>
-          </div>
-        <div class="ta-rule"></div>
-        <div class="ta-docs">
-          <div class="ta-sec-head"><i class="fa-solid fa-folder-open"></i><span data-i18n="ta.docs.head">Required documents</span></div>
-          <div class="ta-docs-grid">
-            <div class="ta-docs-col">
-              <div class="ta-docs-group-head" data-i18n="ta.docs.a.head">A. Owner details</div>
-              <ol class="ta-docs-list" start="1">
-                <li><span data-i18n-html="ta.docs.a1">Copy of National ID or Passport</span></li>
-                <li><span data-i18n-html="ta.docs.a2">Tax Registration Number (VAT/AFM)</span></li>
-                <li><span data-i18n-html="ta.docs.a3">Contact details (phone, e-mail)</span></li>
-              </ol>
-              <div class="ta-docs-group-head" data-i18n="ta.docs.c.head">C. Documents</div>
-              <ol class="ta-docs-list" start="1">
-                <li><span data-i18n-html="ta.docs.c1">Application with certified signature (KEP or gov.gr)</span></li>
-                <li><span data-i18n-html="ta.docs.c2">Power of attorney with certified signature (KEP or gov.gr)</span></li>
-                <li><span data-i18n-html="ta.docs.c3">Statutory declaration of ownership</span></li>
-                <li><span data-i18n-html="ta.docs.c4"><strong>€200</strong> fee via e-paravolo, code <strong>15</strong> — under the owner's AFM <em>(can be paid later)</em></span></li>
-                <li><span data-i18n-html="ta.docs.c5"><strong>€30</strong> fee via e-paravolo, code <strong>2992</strong> — under the owner's AFM <em>(can be paid later)</em></span></li>
-              </ol>
-            </div>
-            <div class="ta-docs-col">
-              <div class="ta-docs-group-head" data-i18n="ta.docs.b.head">B. Vehicle details</div>
-              <ol class="ta-docs-list" start="4">
-                <li><span data-i18n-html="ta.docs.b4"><strong>Original Towing Note / Engineer's Declaration</strong></span></li>
-                <li><span data-i18n-html="ta.docs.b5">Purchase invoice or proof of ownership (if available)</span></li>
-                <li><span data-i18n-html="ta.docs.b6">Old chassis number — photo (if available) <strong>and imprint if possible</strong></span></li>
-                <li><span data-i18n-html="ta.docs.b7">Photo of old manufacturer plate (if available)</span></li>
-                <li><span data-i18n-html="ta.docs.b8">Photos of all sides of the trailer (full view, centred)</span></li>
-                <li><span data-i18n-html="ta.docs.b9">Photo of the coupling point</span></li>
-                <li><span data-i18n-html="ta.docs.b10">Weighbridge certificate (if available)</span></li>
-                <li><span data-i18n-html="ta.docs.b11">Photo of the towing vehicle's registration certificate</span></li>
-              </ol>
-            </div>
-          </div>
-        </div>
-        <div class="ta-rule"></div>
-        <div class="ta-warning">
-          <div class="ta-warning-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-          <div class="ta-warning-body">
-            <strong data-i18n="ta.warn.title">Caution — Circulation Prohibited</strong>
-            <p data-i18n-html="ta.warn.text">Until the registration and plates are issued, <strong>circulation of these vehicles is strictly prohibited</strong>. If stopped during a check, they are treated as <strong>unregistered and uninsured</strong>, with all the legal and financial consequences that entails.</p>
-          </div>
-        </div>
-        <div class="ta-rule"></div>
-        <div class="ta-sec-head"><i class="fa-solid fa-screwdriver-wrench"></i><span data-i18n="ta.svc.head">What our office handles</span></div>
-        <ul class="ta-steps">
-          <li><span class="ta-step-num">01</span><span data-i18n-html="ta.svc1"><strong>Inspection and recording</strong> — We inspect the trailer and accurately record all its characteristics, ensuring the new registration is issued correctly.</span></li>
-          <li><span class="ta-step-num">02</span><span data-i18n-html="ta.svc2"><strong>VIN and plate</strong> — We stamp the new <strong>17-digit chassis number (VIN)</strong> and fit the characteristic plate.</span></li>
-          <li><span class="ta-step-num">03</span><span data-i18n-html="ta.svc3"><strong>Full technical study</strong> — We prepare the technical description including photographs, chassis number imprint, and all required documents.</span></li>
-          <li><span class="ta-step-num">04</span><span data-i18n-html="ta.svc4"><strong>File submission</strong> — We prepare and submit the complete file to the competent authority. All you need to do is <strong>call us</strong>.</span></li>
-        </ul>
-        <div class="ta-cta-row">
-          <p class="ta-cta-text" data-i18n-html="ta.cta.text">Contact us about legalising your trailer or cargo box.</p>
-          <a href="#contact" class="ta-cta-btn"><span data-i18n="ta.cta.btn">Request a quote</span>&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-        </div><!-- /ta-collapse -->
-        <div class="svc-inline-cta"><a class="svc-inline-btn" href="/en/adeia-treiler-o1-o2/"><span>See the full page: Trailer Licence O1/O2</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
-      </div>
-    </div>
-
-    <!-- ===== TRAILER ROAD CHECK ===== -->
-    <section class="trc-section" id="trailer-road-check" aria-labelledby="trcHeading">
-        <div class="trc-outer trc-outer--dual">
-            <div class="trc-widget" data-reveal>
-
-                <!-- TOPBAR -->
-                <div class="trc-widget-topbar">
-                    <span class="trc-widget-topbar-badge"><i class="fa-solid fa-shield-halved"></i>&nbsp;<span data-i18n="trc.badge">Road Code Check</span></span>
-                </div>
-
-                <div class="trc-widget-body">
-
-                <!-- TITLE ROW — always visible -->
-                <div class="trc-title-row">
-                    <h2 id="trcHeading" class="trc-h"><span id="trcTitle1">Trailer </span><em id="trcTitle2">Road Checks</em></h2>
-                    <div class="trc-cat-badge">
-                        <span class="trc-bk" id="trcBadgeKey">CATEGORY</span>
-                        <span class="trc-bv">O1 and O2</span>
-                    </div>
-                </div>
-
-                <!-- ALWAYS VISIBLE: intro + preview + toggle -->
-                <p class="trc-intro" id="trcIntro">The checkpoints verified to ensure the trailer is <strong>compliant with Road Code</strong> and road-safe — reflectors, rear triangles, lights, number plate, and coupling system. Category O1 and O2.</p>
-
-                <!-- CHECKLIST PREVIEW STRIP — always visible -->
-                <div class="trc-preview-strip" id="trcPreviewStrip"></div>
-
-                <button class="trc-main-toggle trc-main-toggle--bar" id="trcMainToggle" aria-expanded="true" aria-controls="trcMainCollapse">
-                    <span id="trcTagline">RUN THE FULL CHECKLIST AND SEE DETAILS</span>
-                    <i class="fa-solid fa-chevron-down trc-main-chevron"></i>
-                </button>
-
-                <!-- COLLAPSIBLE BODY -->
-                <div class="trc-main-collapse is-open" id="trcMainCollapse">
-
-                    <!-- DIAGRAM -->
-                    <div class="trc-diagram-wrap">
-                        <span class="trc-diagram-tag" id="trcDiagramTag">SIDE AND REAR VIEW</span>
-                        <img loading="lazy" src="../TRAILER_EXAMPLE.webp" alt="Side and Rear View of an O1 and O2 Category Trailer">
-                    </div>
-
-                    <!-- PROGRESS -->
-                    <div class="trc-progress-row">
-                        <span class="trc-progress-lbl" id="trcProgressLbl">Inspection Progress</span>
-                        <div class="trc-progress-track"><div class="trc-progress-fill" id="trcFill"></div></div>
-                        <span class="trc-progress-num" id="trcNum">0 / 8</span>
-                        <button class="trc-reset-btn" id="trcResetBtn">RESET</button>
-                    </div>
-
-                    <div class="trc-complete-msg" id="trcCompleteMsg">
-                        <span class="trc-complete-star">✦</span>
-                        <span id="trcCompleteText">The trailer is road-ready!</span>
-                    </div>
-
-                    <!-- CHECKLIST LABEL -->
-                    <div class="trc-sec-lbl">
-                        <span class="trc-b">✓</span>
-                        <span id="trcSecLbl">Check Points and Legal Equipment</span>
-                    </div>
-
-                    <!-- CHECKLIST GRID — built by trc.js -->
-                    <div class="trc-checks-grid" id="trcChecksGrid"></div>
-
-                    <!-- BOTTOM GRID — expandable as one unit -->
-                    <div class="trc-bottom-single">
-
-                        <button class="trc-b-toggle trc-b-toggle--combined" aria-expanded="true" aria-controls="trcBcCombined" onclick="trcToggleCombined(this)">
-                            <div class="trc-b-combined-labels">
-                                <span class="trc-b-lbl">
-                                    <span class="trc-b">i</span>
-                                    <span id="trcBc0Lbl">Periodic Inspection</span>
-                                </span>
-                                <span class="trc-b-sep">and</span>
-                                <span class="trc-b-lbl trc-b-lbl--warn">
-                                    <span class="trc-b trc-b--warn">!</span>
-                                    <span id="trcBc1Lbl">Insurance</span>
-                                </span>
-                            </div>
-                            <i class="fa-solid fa-chevron-down trc-b-chevron"></i>
-                        </button>
-
-                        <div class="trc-b-collapse trc-b-collapse--combined" id="trcBcCombined">
-                            <div class="trc-bottom-grid">
-                                <div class="trc-b-inner">
-                                    <div class="trc-b-inner-lbl">
-                                        <span class="trc-b">i</span>
-                                        <span id="trcBc0InnerLbl">Periodic Inspection</span>
-                                    </div>
-                                    <ul class="trc-spec-list" id="trcBc0List"></ul>
-                                </div>
-                                <div class="trc-b-inner">
-                                    <div class="trc-b-inner-lbl trc-b-lbl--warn">
-                                        <span class="trc-b trc-b--warn">!</span>
-                                        <span id="trcBc1InnerLbl">Insurance</span>
-                                    </div>
-                                    <div class="trc-note-box" id="trcNoteBox"><b>Separate insurance</b> is required for the trailer, distinct from the towing vehicle. Contact your insurance provider.</div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div><!-- /trc-bottom-single -->
-
-                </div><!-- /trc-main-collapse -->
-                <div class="svc-inline-cta"><a class="svc-inline-btn" href="/en/adeia-treiler-o1-o2/"><span>See the full page: Trailer Licence O1/O2</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
-
-                </div><!-- /trc-widget-body -->
-            </div><!-- /trc-widget -->
-        </div><!-- /trc-outer -->
     </section>
 
-    <div class="ta-wrap" data-reveal id="ypologistis">
-      <div class="ta-box" id="elxiCalc" data-open="false"></div>
-    </div>
-    </div><!-- /ta-dual-row -->
+    <!-- 4 · Υπολογιστής έλξης: η ερώτηση -->
+    <section class="hm hm-q" id="ypologistis" aria-labelledby="hmQH">
+        <div class="hm-in hm-q-in" data-reveal>
+            <div class="eyebrow hm-eb-c"><span data-i18n="hm.q.eyebrow">Towing calculator</span></div>
+            <h2 id="hmQH" class="hm-q-h" data-i18n-html="hm.q.h">May I tow <em>this</em> trailer?</h2>
+            <div class="hm-lic" aria-hidden="true">
+                <div class="hm-card">
+                    <span class="hm-card-k" data-i18n="hm.q.car">Towing vehicle</span>
+                    <span class="hm-card-r"><b>O.1</b><i data-i18n="hm.q.o1">Max towable, braked</i></span>
+                    <span class="hm-card-r"><b>O.2</b><i data-i18n="hm.q.o2">Max towable, unbraked</i></span>
+                    <span class="hm-card-r"><b>F.3</b><i data-i18n="hm.q.f3">Max combination mass</i></span>
+                </div>
+                <span class="hm-lic-q">?</span>
+                <div class="hm-card">
+                    <span class="hm-card-k" data-i18n="hm.q.trl">Trailer</span>
+                    <span class="hm-card-r"><b>F.2</b><i data-i18n="hm.q.f2">Max permissible mass</i></span>
+                </div>
+            </div>
+            <p class="hm-p hm-p--c" data-i18n="hm.q.p">Enter the codes from the two registration certificates. You get the answer straight away.</p>
+            <a href="/en/adeia-treiler-o1-o2/#ypologistis" data-href-el="/adeia-treiler-o1-o2/#ypologistis" data-href-en="/en/adeia-treiler-o1-o2/#ypologistis" class="hm-btn hm-btn--navy"><span data-i18n="hm.q.cta">Open the calculator</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+    </section>
 
 
     <!-- ===== TRUST ===== -->
@@ -1625,6 +1503,10 @@ MOUDIOTIS</span>
                 <a href="adeia-treiler-o1-o2/">O1/O2 Trailer Licence</a>
                 <a href="egkrisi-typou-dikyklon/">Two-wheelers and Quads</a>
                 <a href="oximata-eidikou-skopou/">Special Purpose Vehicles</a>
+                <a href="ydravliki-platforma/">Hydraulic Platform</a>
+                <a href="texniki-symvouleftiki/">Technical Consulting</a>
+                <a href="meleti-pyroprostasias/">Fire Protection Study</a>
+                <a href="texnikos-asfaleias/">Safety Engineer</a>
             </div>
             <div class="footer-col" role="navigation" aria-label="The office">
                 <h4>The office</h4>
@@ -1820,8 +1702,6 @@ MOUDIOTIS</span>
     <script src="../type-approval-animation.js"></script>
     <script src="../service-animations.js"></script>
     <script src="../hero-anim.js"></script>
-    <script src="../trc.js"></script>
-    <script src="../elxi-calc.js" defer></script>
     <script src="../contact-form.js"></script>
 
     <script>
@@ -1908,5 +1788,6 @@ MOUDIOTIS</span>
         </a>
     </nav>
 
+    <script src="../nav-dd.js" defer></script>
 </body>
 </html>

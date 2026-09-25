@@ -11,7 +11,10 @@
     <link rel="alternate" href="https://moudiotis.gr/en/egkrisi-typou-dikyklon/" hreflang="en">
     <link rel="alternate" href="https://moudiotis.gr/egkrisi-typou-dikyklon/" hreflang="x-default">
 
+    <link rel="icon" href="../favicon.ico" sizes="any">
+    <link rel="icon" href="../icon-32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="../icon-48.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="../icon-192.png" type="image/png" sizes="192x192">
     <link rel="apple-touch-icon" href="../icon-180.png" sizes="180x180">
 
     <meta property="og:type"        content="article">
@@ -176,12 +179,28 @@
         </a>
         <div class="nav-links" id="navLinks">
             <a href="../index.html">Αρχική</a>
-            <a href="../#services">Υπηρεσίες</a>
-            <a href="../adeia-treiler-o1-o2/">Άδεια Τρέιλερ Ο1/Ο2</a>
-            <a href="../memonomeni-egkrisi-oximatos/">Εισαγόμενα, Τροχόσπιτα</a>
-            <a href="../deltio-koinopoiisis-tao/">Έγκριση Τύπου, ΤΑΟ</a>
-            <a href="../egkrisi-typou-dikyklon/">Δίκυκλα, Τετράκυκλα</a>
-            <a href="../oximata-eidikou-skopou/">Ειδικού Σκοπού</a>
+            <div class="nav-dd">
+                <button type="button" class="nav-dd-btn" aria-expanded="false" aria-controls="navDdMenu" aria-haspopup="true"><span>Υπηρεσίες</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+                <div class="nav-dd-menu" id="navDdMenu">
+                    <div class="nav-dd-col">
+                        <span class="nav-dd-head">Οχήματα</span>
+                        <a href="../deltio-koinopoiisis-tao/">Έγκριση Τύπου και ΤΑΟ</a>
+                        <a href="../memonomeni-egkrisi-oximatos/">Εισαγόμενα και Τροχόσπιτα</a>
+                        <a href="../adeia-treiler-o1-o2/">Άδεια Τρέιλερ Ο1/Ο2</a>
+                        <a href="../egkrisi-typou-dikyklon/" aria-current="page">Δίκυκλα και Τετράκυκλα</a>
+                        <a href="../oximata-eidikou-skopou/">Οχήματα Ειδικού Σκοπού</a>
+                        <a href="../ydravliki-platforma/">Υδραυλική Πλατφόρμα</a>
+                    </div>
+                    <div class="nav-dd-col">
+                        <span class="nav-dd-head">Μελέτες και Ασφάλεια</span>
+                        <a href="../texniki-symvouleftiki/">Τεχνική Συμβουλευτική</a>
+                        <a href="../meleti-pyroprostasias/">Μελέτη Πυροπροστασίας</a>
+                        <a href="../texnikos-asfaleias/">Τεχνικός Ασφαλείας</a>
+                        <a href="https://expertease.eu/3dprint" target="_blank" rel="noopener noreferrer">Σχεδιασμός και 3D Printing</a>
+                    </div>
+                    <a class="nav-dd-all" href="../#services">Όλες οι υπηρεσίες</a>
+                </div>
+            </div>
             <a href="../#contact" class="nav-cta">Επικοινωνία</a>
         </div>
         <div class="lang-toggle" id="langToggle">
@@ -539,6 +558,10 @@
                 <a href="../adeia-treiler-o1-o2/">Άδεια Τρέιλερ Ο1/Ο2</a>
                 <a href="../egkrisi-typou-dikyklon/">Δίκυκλα και Τετράκυκλα</a>
                 <a href="../oximata-eidikou-skopou/">Οχήματα Ειδικού Σκοπού</a>
+                <a href="../ydravliki-platforma/">Υδραυλική Πλατφόρμα</a>
+                <a href="../texniki-symvouleftiki/">Τεχνική Συμβουλευτική</a>
+                <a href="../meleti-pyroprostasias/">Μελέτη Πυροπροστασίας</a>
+                <a href="../texnikos-asfaleias/">Τεχνικός Ασφαλείας</a>
             </div>
             <div class="footer-col" role="navigation" aria-label="Το γραφείο">
                 <h4>Το γραφείο</h4>
@@ -754,5 +777,6 @@
     <script src="../share-link.js" defer></script>
     <script src="../consent.js" defer></script>
 
+    <script src="../nav-dd.js" defer></script>
 </body>
 </html>

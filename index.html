@@ -12,7 +12,10 @@
     <link rel="alternate"     href="https://moudiotis.gr/" hreflang="x-default">
     <link rel="sitemap"       type="application/xml" href="https://moudiotis.gr/sitemap.xml">
 
-    <link rel="icon"          href="icon-48.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="icon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="icon-48.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
     <link rel="apple-touch-icon" href="icon-180.png" sizes="180x180">
 
     <meta property="og:type"        content="website">
@@ -552,12 +555,28 @@
         </a>
         <div class="nav-links" id="navLinks">
             <a href="#about"    data-i18n="nav.about">Σχετικά</a>
-            <a href="#services" data-i18n="nav.services">Υπηρεσίες</a>
-            <a href="/adeia-treiler-o1-o2/" data-i18n="nav.trailer" data-href-el="/adeia-treiler-o1-o2/" data-href-en="/en/adeia-treiler-o1-o2/">Άδεια Τρέιλερ Ο1/Ο2</a>
-            <a href="/memonomeni-egkrisi-oximatos/" data-i18n="nav.imports" data-href-el="/memonomeni-egkrisi-oximatos/" data-href-en="/en/memonomeni-egkrisi-oximatos/">Εισαγόμενα, Τροχόσπιτα</a>
-            <a href="/deltio-koinopoiisis-tao/" data-i18n="nav.tao" data-href-el="/deltio-koinopoiisis-tao/" data-href-en="/en/deltio-koinopoiisis-tao/">Έγκριση Τύπου, ΤΑΟ</a>
-            <a href="/egkrisi-typou-dikyklon/" data-i18n="nav.moto" data-href-el="/egkrisi-typou-dikyklon/" data-href-en="/en/egkrisi-typou-dikyklon/">Δίκυκλα, Τετράκυκλα</a>
-            <a href="/oximata-eidikou-skopou/" data-i18n="nav.special" data-href-el="/oximata-eidikou-skopou/" data-href-en="/en/oximata-eidikou-skopou/">Ειδικού Σκοπού</a>
+            <div class="nav-dd">
+                <button type="button" class="nav-dd-btn" aria-expanded="false" aria-controls="navDdMenu" aria-haspopup="true"><span data-i18n="nav.services">Υπηρεσίες</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+                <div class="nav-dd-menu" id="navDdMenu">
+                    <div class="nav-dd-col">
+                        <span class="nav-dd-head" data-i18n="nav.dd.g1">Οχήματα</span>
+                        <a href="/deltio-koinopoiisis-tao/" data-i18n="nav.dd.deltio-koinopoiisis-tao" data-href-el="/deltio-koinopoiisis-tao/" data-href-en="/en/deltio-koinopoiisis-tao/">Έγκριση Τύπου και ΤΑΟ</a>
+                        <a href="/memonomeni-egkrisi-oximatos/" data-i18n="nav.dd.memonomeni-egkrisi-oximatos" data-href-el="/memonomeni-egkrisi-oximatos/" data-href-en="/en/memonomeni-egkrisi-oximatos/">Εισαγόμενα και Τροχόσπιτα</a>
+                        <a href="/adeia-treiler-o1-o2/" data-i18n="nav.dd.adeia-treiler-o1-o2" data-href-el="/adeia-treiler-o1-o2/" data-href-en="/en/adeia-treiler-o1-o2/">Άδεια Τρέιλερ Ο1/Ο2</a>
+                        <a href="/egkrisi-typou-dikyklon/" data-i18n="nav.dd.egkrisi-typou-dikyklon" data-href-el="/egkrisi-typou-dikyklon/" data-href-en="/en/egkrisi-typou-dikyklon/">Δίκυκλα και Τετράκυκλα</a>
+                        <a href="/oximata-eidikou-skopou/" data-i18n="nav.dd.oximata-eidikou-skopou" data-href-el="/oximata-eidikou-skopou/" data-href-en="/en/oximata-eidikou-skopou/">Οχήματα Ειδικού Σκοπού</a>
+                        <a href="/ydravliki-platforma/" data-i18n="nav.dd.ydravliki-platforma" data-href-el="/ydravliki-platforma/" data-href-en="/en/ydravliki-platforma/">Υδραυλική Πλατφόρμα</a>
+                    </div>
+                    <div class="nav-dd-col">
+                        <span class="nav-dd-head" data-i18n="nav.dd.g2">Μελέτες και Ασφάλεια</span>
+                        <a href="/texniki-symvouleftiki/" data-i18n="nav.dd.texniki-symvouleftiki" data-href-el="/texniki-symvouleftiki/" data-href-en="/en/texniki-symvouleftiki/">Τεχνική Συμβουλευτική</a>
+                        <a href="/meleti-pyroprostasias/" data-i18n="nav.dd.meleti-pyroprostasias" data-href-el="/meleti-pyroprostasias/" data-href-en="/en/meleti-pyroprostasias/">Μελέτη Πυροπροστασίας</a>
+                        <a href="/texnikos-asfaleias/" data-i18n="nav.dd.texnikos-asfaleias" data-href-el="/texnikos-asfaleias/" data-href-en="/en/texnikos-asfaleias/">Τεχνικός Ασφαλείας</a>
+                        <a href="https://expertease.eu/3dprint" target="_blank" rel="noopener noreferrer" data-i18n="nav.dd.3d">Σχεδιασμός και 3D Printing</a>
+                    </div>
+                    <a class="nav-dd-all" href="#services" data-i18n="nav.dd.all">Όλες οι υπηρεσίες</a>
+                </div>
+            </div>
             <a href="#contact"  class="nav-cta" data-i18n="nav.contact">Επικοινωνία</a>
         </div>
         <div class="lang-toggle" id="langToggle">
@@ -1089,290 +1108,149 @@
         "></div>
     </section>
 
-    <!-- ===== TYPE APPROVAL & TECHNICAL SUPPORT ===== -->
-    <section class="tap-section" id="egkrisi-typou-ochimaton" aria-labelledby="tapHeading">
-        <div class="tap-outer">
-            <div class="tap-box" data-reveal>
+    <!-- ===== ΑΡΧΙΚΗ: ΤΕΣΣΕΡΙΣ ΣΤΙΓΜΕΣ ΥΠΗΡΕΣΙΩΝ (σύντομες — η λεπτομέρεια ζει στις σελίδες) ===== -->
 
-                <!-- TOPBAR -->
-                <div class="tap-topbar">
-                    <span class="tap-badge"><i class="fa-solid fa-stamp"></i>&nbsp;<span data-i18n="tap.badge">ΕΓΚΡΙΣΕΙΣ ΤΥΠΟΥ</span></span>
-                    <span class="tap-kicker" data-i18n-html="tap.kicker">ΟΧΗΜΑΤΑ και ΡΥΜΟΥΛΚΟΥΜΕΝΑ</span>
+    <!-- 1 · Εγκρίσεις τύπου: ευρετήριο -->
+    <section class="hm hm-ta" id="egkrisi-typou-ochimaton" aria-labelledby="hmTaH">
+        <div class="hm-in hm-ta-grid">
+            <div class="hm-ta-lead" data-reveal>
+                <div class="eyebrow"><span data-i18n="hm.ta.eyebrow">Εγκρίσεις τύπου</span></div>
+                <h2 id="hmTaH" class="hm-h" data-i18n-html="hm.ta.h">Από τον φάκελο <em>ως την ταξινόμηση</em></h2>
+                <p class="hm-p" data-i18n="hm.ta.p">Για εισαγωγείς, κατασκευαστές και ιδιώτες. Αναλαμβάνουμε ολόκληρο τον φάκελο έγκρισης, εξ αποστάσεως, σε όλη την Ελλάδα.</p>
+                <a href="#contact" class="hm-link"><span data-i18n="hm.ta.cta">Ζητήστε προσφορά</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                <div class="tap-graphic hm-ta-graphic" id="typeApprovalAnimWrap" aria-hidden="true"></div>
+            </div>
+            <ol class="hm-idx" data-reveal>
+                <li><a href="/deltio-koinopoiisis-tao/" data-href-el="/deltio-koinopoiisis-tao/" data-href-en="/en/deltio-koinopoiisis-tao/">
+                    <span class="hm-idx-n">01</span>
+                    <span class="hm-idx-t"><b data-i18n="hm.ta.1.t">Δελτίο Κοινοποίησης και ΤΑΟ</b><small data-i18n="hm.ta.1.d">Για εισαγωγείς και αντιπροσωπείες</small></span>
+                    <i class="fa-solid fa-arrow-right hm-idx-go" aria-hidden="true"></i>
+                </a></li>
+                <li><a href="/deltio-koinopoiisis-tao/" data-href-el="/deltio-koinopoiisis-tao/" data-href-en="/en/deltio-koinopoiisis-tao/">
+                    <span class="hm-idx-n">02</span>
+                    <span class="hm-idx-t"><b data-i18n="hm.ta.2.t">Εθνική και Ευρωπαϊκή Έγκριση</b><small data-i18n="hm.ta.2.d">Οχήματα, αμαξώματα, ρυμουλκούμενα</small></span>
+                    <i class="fa-solid fa-arrow-right hm-idx-go" aria-hidden="true"></i>
+                </a></li>
+                <li><a href="/memonomeni-egkrisi-oximatos/" data-href-el="/memonomeni-egkrisi-oximatos/" data-href-en="/en/memonomeni-egkrisi-oximatos/">
+                    <span class="hm-idx-n">03</span>
+                    <span class="hm-idx-t"><b data-i18n="hm.ta.3.t">Μεμονωμένη Έγκριση</b><small data-i18n="hm.ta.3.d">Εισαγόμενα και τροχόσπιτα</small></span>
+                    <i class="fa-solid fa-arrow-right hm-idx-go" aria-hidden="true"></i>
+                </a></li>
+                <li><a href="/egkrisi-typou-dikyklon/" data-href-el="/egkrisi-typou-dikyklon/" data-href-en="/en/egkrisi-typou-dikyklon/">
+                    <span class="hm-idx-n">04</span>
+                    <span class="hm-idx-t"><b data-i18n="hm.ta.4.t">Κατηγορία L</b><small data-i18n="hm.ta.4.d">Μοτοσικλέτες, τρίκυκλα, τετράκυκλα</small></span>
+                    <i class="fa-solid fa-arrow-right hm-idx-go" aria-hidden="true"></i>
+                </a></li>
+                <li><a href="/oximata-eidikou-skopou/" data-href-el="/oximata-eidikou-skopou/" data-href-en="/en/oximata-eidikou-skopou/">
+                    <span class="hm-idx-n">05</span>
+                    <span class="hm-idx-t"><b data-i18n="hm.ta.5.t">Ειδικού Σκοπού</b><small data-i18n="hm.ta.5.d">Γερανοφόρα, καντίνες, κινητές μονάδες</small></span>
+                    <i class="fa-solid fa-arrow-right hm-idx-go" aria-hidden="true"></i>
+                </a></li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- 2 · Άδεια τρέιλερ: σκούρα λωρίδα με τα πέντε βήματα -->
+    <section class="hm hm-tr" id="adeia-treyler-o1-o2" aria-labelledby="hmTrH">
+        <div class="hm-in">
+            <div class="hm-tr-top" data-reveal>
+                <div>
+                    <div class="eyebrow"><span data-i18n="hm.tr.eyebrow">Άδεια τρέιλερ Ο1 · Ο2</span></div>
+                    <h2 id="hmTrH" class="hm-h hm-h--light" data-i18n-html="hm.tr.h">Το τρέιλερ σας, <em>νόμιμο</em> σε πέντε βήματα</h2>
+                    <p class="hm-p hm-p--light" data-i18n="hm.tr.p">Ρυμουλκούμενο ή μπαγκαζιέρα έως 3,5 τόνους χωρίς άδεια; Αναλαμβάνουμε τα πάντα, από την επιθεώρηση μέχρι τις πινακίδες.</p>
                 </div>
-
-                <div class="tap-body">
-                    <h2 id="tapHeading" class="tap-title" data-i18n-html="tap.title">Υπηρεσίες Έγκρισης Τύπου και Τεχνικής Υποστήριξης Οχημάτων</h2>
-                    <p class="tap-intro" data-i18n-html="tap.intro">Πέρα από την <strong>έκδοση αδειών τρέιλερ</strong>, το γραφείο αναλαμβάνει το πλήρες φάσμα της <strong>έγκρισης τύπου</strong> και της τεχνικής υποστήριξης οχημάτων — από τη σύνταξη του φακέλου και τη μελέτη, έως την <strong>καταχώρηση στο ΤΑΟ</strong>, το <strong>Δελτίο Κοινοποίησης</strong> και την τελική ταξινόμηση.</p>
-
-                    <!-- Type approval dossier sketch animation -->
-                    <div class="tap-graphic" id="typeApprovalAnimWrap" aria-hidden="true"></div>
-                    <span class="tap-graphic-tag" data-i18n="tap.graphic.tag">ΦΑΚΕΛΟΣ ΕΓΚΡΙΣΗΣ ΤΥΠΟΥ</span>
-
-                    <button class="tap-toggle" id="tapToggle" aria-expanded="true" aria-controls="tapCollapse">
-                        <span data-i18n="tap.expand.hint">ΔΕΣ ΟΛΕΣ ΤΙΣ ΥΠΗΡΕΣΙΕΣ ΕΓΚΡΙΣΕΩΝ ΤΥΠΟΥ ΑΝΑΛΥΤΙΚΑ</span><i class="fa-solid fa-chevron-down tap-chevron" aria-hidden="true"></i>
-                    </button>
-
-                    <div class="tap-collapse is-open" id="tapCollapse">
-                      <div>
-                        <!-- Filled by site-init.js from the same C.services entries that
-                             carry an items[] array, so section and cards never drift. -->
-                        <div class="tap-grid" id="tapGrid"><div class="tap-col" data-reveal=""><div class="tap-col-head"><i class="fa-solid fa-file-circle-check tap-col-icon" aria-hidden="true"></i><h3 class="tap-col-title" data-i18n-html="s1.title">Δελτίο Κοινοποίησης, Καταχώρηση ΤΑΟ και Εγκρίσεις Τύπου</h3></div><ul class="tap-list"><li class="tap-item"><span class="tap-item-num" aria-hidden="true">01</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s1.i1.title">Εθνική και Ευρωπαϊκή Έγκριση Τύπου</span><span class="tap-item-d" data-i18n-html="s1.i1.text">Πλήρης σύνταξη και διαχείριση φακέλου για την έκδοση εθνικών ή ευρωπαϊκών εγκρίσεων τύπου οχημάτων, ρυμουλκούμενων και εξαρτημάτων.</span></span></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">02</span><a class="tap-item-body tap-item-link" href="/memonomeni-egkrisi-oximatos/"><span class="tap-item-t" data-i18n-html="s1.i2.title">Μεμονωμένη Έγκριση Οχημάτων</span><span class="tap-item-d" data-i18n-html="s1.i2.text">Μεμονωμένα, ειδικά, τροποποιημένα ή εισαγόμενα οχήματα πιστοποιούνται ώστε να εκδοθεί άδεια κυκλοφορίας.</span></a></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">03</span><a class="tap-item-body tap-item-link" href="/egkrisi-typou-dikyklon/"><span class="tap-item-t" data-i18n-html="s1.i3.title">Έγκριση Τύπου Κατηγορίας L</span><span class="tap-item-d" data-i18n-html="s1.i3.text">Μοτοποδήλατα, μοτοσικλέτες, τρίκυκλα και τετράκυκλα κατά τον Καν. (ΕΕ) 168/2013 — κατάταξη, τεχνικό αρχείο και καταχώρηση.</span></a></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">04</span><a class="tap-item-body tap-item-link" href="/deltio-koinopoiisis-tao/"><span class="tap-item-t" data-i18n-html="s1.i4.title">Καταχώρηση στο ΤΑΟ</span><span class="tap-item-d" data-i18n-html="s1.i4.text">Καταχώρηση στο Τεχνικό Αρχείο Οχημάτων του Υπουργείου Υποδομών και Μεταφορών. Τη διαδικασία τη διεκπεραιώνουμε εμείς.</span></a></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">05</span><a class="tap-item-body tap-item-link" href="/deltio-koinopoiisis-tao/"><span class="tap-item-t" data-i18n-html="s1.i5.title">Δελτία Κοινοποίησης</span><span class="tap-item-d" data-i18n-html="s1.i5.text">Σύνταξη, υποβολή και έκδοση Δελτίου Κοινοποίησης Έγκρισης Τύπου για την ταξινόμηση οχημάτων.</span></a></li></ul></div><div class="tap-col" data-reveal=""><div class="tap-col-head"><i class="fa-solid fa-compass-drafting tap-col-icon" aria-hidden="true"></i><h3 class="tap-col-title" data-i18n-html="s3.title">Τεχνικές Μελέτες και Ειδικές Κατασκευές</h3></div><ul class="tap-list"><li class="tap-item"><span class="tap-item-num" aria-hidden="true">01</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s3.i1.title">Τεχνικές Μελέτες από την Αρχή</span><span class="tap-item-d" data-i18n-html="s3.i1.text">Ολοκληρωμένος σχεδιασμός, υπολογισμοί αντοχής και σύνταξη τεχνικών υπομνημάτων για νέα οχήματα, αμαξώματα ή ρυμουλκούμενα.</span></span></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">02</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s3.i2.title">Έγκριση Ειδικών Κατασκευών και Μετασκευών</span><span class="tap-item-d" data-i18n-html="s3.i2.text">Ψυγεία, γερανοί, ανατροπές, κινητά συνεργεία, ειδικά ρυμουλκούμενα — πιστοποίηση ειδικών υπερκατασκευών.</span></span></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">03</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s3.i3.title">Μελέτες Τροποποίησης και Συμμόρφωσης</span><span class="tap-item-d" data-i18n-html="s3.i3.text">Τεχνικές μελέτες για αλλαγή αμαξώματος, αλλαγή κινητήρα, προσθήκη ή αφαίρεση αξόνων και μετατροπές ειδικής χρήσης.</span></span></li></ul></div><div class="tap-col" data-reveal=""><div class="tap-col-head"><i class="fa-solid fa-clipboard-check tap-col-icon" aria-hidden="true"></i><h3 class="tap-col-title" data-i18n-html="s5.title">Τεχνική Συμβουλευτική και Πιστοποίηση</h3></div><ul class="tap-list"><li class="tap-item"><span class="tap-item-num" aria-hidden="true">01</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s5.i1.title">Διαχείριση Φακέλων Πιστοποίησης</span><span class="tap-item-d" data-i18n-html="s5.i1.text">Απέναντι σε ελεγκτικούς οργανισμούς, τεχνικές υπηρεσίες και εργαστήρια δοκιμών, το γραφείο σάς εκπροσωπεί και σας υποστηρίζει τεχνικά.</span></span></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">02</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s5.i2.title">Βεβαιώσεις Συμμόρφωσης και Τεχνικά Υπομνήματα</span><span class="tap-item-d" data-i18n-html="s5.i2.text">Έκδοση επίσημων βεβαιώσεων μηχανικού για τελωνεία, ΚΤΕΟ, Διευθύνσεις Μεταφορών και φακέλους ταξινόμησης.</span></span></li></ul></div></div>
-
-                        <div class="tap-cta-row">
-                            <p class="tap-cta-text" data-i18n-html="tap.cta.text">Έχετε όχημα, αμάξωμα ή ρυμουλκούμενο που χρειάζεται έγκριση; Επικοινωνήστε μαζί μας και θα σας πούμε πώς προχωράει.</p>
-                            <a href="#contact" class="tap-cta-btn"><span data-i18n="tap.cta.btn">Ζητήστε προσφορά</span>&nbsp;<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-                        </div>
-                      </div>
-                    </div>
+                <div class="hm-price">
+                    <span class="hm-price-k" data-i18n="hm.tr.price.k">Τελική τιμή</span>
+                    <span class="hm-price-v">400–430 €</span>
+                    <span class="hm-price-s" data-i18n="hm.tr.price.s">με τα παράβολα του Δημοσίου</span>
                 </div>
-
+            </div>
+            <ol class="hm-rail" data-reveal>
+                <li><span class="hm-rail-dot" aria-hidden="true"></span><span class="hm-rail-n">01</span><span class="hm-rail-t" data-i18n="hm.tr.s1">Επιθεώρηση</span></li>
+                <li><span class="hm-rail-dot" aria-hidden="true"></span><span class="hm-rail-n">02</span><span class="hm-rail-t" data-i18n="hm.tr.s2">Αριθμός πλαισίου</span></li>
+                <li><span class="hm-rail-dot" aria-hidden="true"></span><span class="hm-rail-n">03</span><span class="hm-rail-t" data-i18n="hm.tr.s3">Τεχνική περιγραφή</span></li>
+                <li><span class="hm-rail-dot" aria-hidden="true"></span><span class="hm-rail-n">04</span><span class="hm-rail-t" data-i18n="hm.tr.s4">Υποβολή φακέλου</span></li>
+                <li><span class="hm-rail-dot" aria-hidden="true"></span><span class="hm-rail-n">05</span><span class="hm-rail-t" data-i18n="hm.tr.s5">Άδεια και πινακίδες</span></li>
+            </ol>
+            <div class="hm-tr-foot" data-reveal>
+                <p class="hm-tr-warn"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i><span data-i18n="hm.tr.warn">Μέχρι να εκδοθούν άδεια και πινακίδες, το ρυμουλκούμενο δεν κυκλοφορεί.</span></p>
+                <a href="/adeia-treiler-o1-o2/" data-href-el="/adeia-treiler-o1-o2/" data-href-en="/en/adeia-treiler-o1-o2/" class="hm-btn hm-btn--gold"><span data-i18n="hm.tr.cta">Ο πλήρης οδηγός</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Trailer dual-panel row -->
-    <div class="ta-dual-row" id="ergaleia">
-
-    <!-- Trailer Announcement Guide -->
-    <div class="ta-wrap" id="adeia-treyler-o1-o2" data-reveal>
-      <div class="ta-box">
-        <div class="ta-topbar">
-          <span class="ta-badge"><i class="fa-solid fa-file-circle-check"></i>&nbsp;<span data-i18n="ta.badge">ΝΕΟΣ ΝΟΜΟΣ</span></span>
-        </div>
-        <div class="ta-title-row">
-          <h3 class="ta-title" data-i18n="ta.title">ΤΡΕΪΛΕΡ — Οδηγός Νομιμοποίησης και Έκδοσης Άδειας Κυκλοφορίας</h3>
-          <div class="ta-cat-badge">
-            <span class="ta-cat-bv">Ο1 και Ο2</span>
-            <span class="ta-cat-bk" data-i18n="trc.badge.cat">ΚΑΤΗΓΟΡΙΑ</span>
-          </div>
-        </div>
-        <div class="ta-rule"></div>
-        <div class="ta-stat-strip">
-          <div class="ta-stat">
-            <div class="ta-stat-icon"><i class="fa-solid fa-folder-open"></i></div>
-            <div class="ta-stat-body">
-              <div class="ta-stat-val" data-i18n="ta.stat.docs">10–15</div>
-              <div class="ta-stat-lbl" data-i18n="ta.stat.docs.lbl">Δικαιολογητικά</div>
+    <!-- 3 · Έλεγχος Κ.Ο.Κ.: σχέδιο με σημεία -->
+    <section class="hm hm-rc" id="ergaleia" aria-labelledby="hmRcH">
+        <span id="trailer-road-check" class="hm-anchor" aria-hidden="true"></span>
+        <div class="hm-in hm-rc-grid">
+            <div class="hm-rc-art" data-reveal>
+                <svg class="hm-trailer" viewBox="0 0 680 310" fill="none" role="img" aria-label="Ρυμουλκούμενο με τα σημεία ελέγχου">
+                    <g class="hm-draw" stroke="#c9a86c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line pathLength="1" x1="20" y1="266" x2="660" y2="266" stroke-width="1" opacity=".45"/>
+                        <rect pathLength="1" x="190" y="92" width="392" height="108"/>
+                        <line pathLength="1" x1="288" y1="92" x2="288" y2="200" opacity=".5"/>
+                        <line pathLength="1" x1="386" y1="92" x2="386" y2="200" opacity=".5"/>
+                        <line pathLength="1" x1="484" y1="92" x2="484" y2="200" opacity=".5"/>
+                        <rect pathLength="1" x="176" y="200" width="420" height="12"/>
+                        <path pathLength="1" d="M190 206 L64 214 M190 212 L74 218"/>
+                        <circle pathLength="1" cx="54" cy="216" r="9"/>
+                        <path pathLength="1" d="M112 216 L112 244"/>
+                        <circle pathLength="1" cx="112" cy="252" r="9"/>
+                        <circle pathLength="1" cx="400" cy="234" r="31"/>
+                        <circle pathLength="1" cx="400" cy="234" r="11"/>
+                        <rect pathLength="1" x="582" y="184" width="14" height="16"/>
+                        <path pathLength="1" d="M589 160 L597 174 L581 174 Z"/>
+                        <rect pathLength="1" x="596" y="202" width="8" height="22"/>
+                        <rect pathLength="1" x="290" y="202" width="16" height="7"/>
+                    </g>
+                    <g class="hm-leads" stroke="#1d3a5c" stroke-width="1" stroke-dasharray="3 4">
+                        <line x1="54" y1="206" x2="54" y2="132"/>
+                        <line x1="298" y1="212" x2="298" y2="284"/>
+                        <line x1="597" y1="167" x2="646" y2="120"/>
+                        <line x1="596" y1="192" x2="652" y2="178"/>
+                        <line x1="604" y1="214" x2="646" y2="244"/>
+                    </g>
+                    <g class="hm-pins" font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle">
+                        <g><circle cx="54" cy="120" r="13"/><text x="54" y="125">1</text></g>
+                        <g><circle cx="298" cy="294" r="13"/><text x="298" y="299">2</text></g>
+                        <g><circle cx="654" cy="112" r="13"/><text x="654" y="117">3</text></g>
+                        <g><circle cx="662" cy="176" r="13"/><text x="662" y="181">4</text></g>
+                        <g><circle cx="654" cy="252" r="13"/><text x="654" y="257">5</text></g>
+                    </g>
+                </svg>
             </div>
-          </div>
-          <div class="ta-stat-sep"></div>
-          <div class="ta-stat">
-            <div class="ta-stat-icon"><i class="fa-solid fa-euro-sign"></i></div>
-            <div class="ta-stat-body">
-              <div class="ta-stat-val">230€</div>
-              <div class="ta-stat-lbl" data-i18n="ta.stat.fee.lbl">Παράβολα</div>
+            <div class="hm-rc-txt" data-reveal>
+                <div class="eyebrow"><span data-i18n="hm.rc.eyebrow">Έλεγχος Κ.Ο.Κ.</span></div>
+                <h2 id="hmRcH" class="hm-h" data-i18n-html="hm.rc.h">Πριν βγείτε <em>στον δρόμο</em></h2>
+                <p class="hm-p" data-i18n="hm.rc.p">Τα σημεία που πρέπει να είναι σε τάξη ώστε το ρυμουλκούμενο να είναι σύμφωνο με τον Κ.Ο.Κ. και ασφαλές.</p>
+                <ol class="hm-pinlist"><li><span class="hm-pin-n">1</span><span data-i18n="hm.rc.1">Σύστημα ζεύξης</span></li><li><span class="hm-pin-n">2</span><span data-i18n="hm.rc.2">Πλευρικοί ανακλαστήρες</span></li><li><span class="hm-pin-n">3</span><span data-i18n="hm.rc.3">Πίσω τρίγωνα</span></li><li><span class="hm-pin-n">4</span><span data-i18n="hm.rc.4">Πίσω φώτα</span></li><li><span class="hm-pin-n">5</span><span data-i18n="hm.rc.5">Πινακίδα κυκλοφορίας</span></li></ol>
+                <a href="/adeia-treiler-o1-o2/#trailer-road-check" data-href-el="/adeia-treiler-o1-o2/#trailer-road-check" data-href-en="/en/adeia-treiler-o1-o2/#trailer-road-check" class="hm-link"><span data-i18n="hm.rc.cta">Κάντε τον πλήρη έλεγχο</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
-          </div>
-          <div class="ta-stat-sep"></div>
-          <div class="ta-stat">
-            <div class="ta-stat-icon"><i class="fa-regular fa-clock"></i></div>
-            <div class="ta-stat-body">
-              <div class="ta-stat-val" data-i18n="ta.stat.days">3–10</div>
-              <div class="ta-stat-lbl" data-i18n="ta.stat.days.lbl">Ημέρες</div>
-            </div>
-          </div>
-          <div class="ta-stat-sep"></div>
-          <div class="ta-stat">
-            <div class="ta-stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
-            <div class="ta-stat-body">
-              <div class="ta-stat-val" data-i18n="ta.stat.process">Βήμα-βήμα</div>
-              <div class="ta-stat-lbl" data-i18n="ta.stat.process.lbl">Διαδικασία</div>
-            </div>
-          </div>
         </div>
-        <button class="ta-toggle ta-toggle--bar" aria-expanded="true" aria-controls="taCollapse">
-          <span data-i18n="ta.expand.hint">ΔΕΣ ΑΝΑΛΥΤΙΚΑ ΤΑ 5 ΣΤΑΔΙΑ ΤΗΣ ΔΙΑΔΙΚΑΣΙΑΣ</span><i class="fa-solid fa-chevron-down ta-chevron"></i>
-        </button>
-        <div class="ta-collapse is-open" id="taCollapse">
-        <div class="price-offer price-offer--center">
-            <div class="price-offer-head">
-                <span class="price-offer-tag" data-i18n="ta.price.tag">ΤΕΛΙΚΗ ΤΙΜΗ</span>
-                <span class="price-offer-val" data-i18n="ta.price.val">400–430 €</span>
-            </div>
-            <p class="price-offer-note" data-i18n-html="ta.price.note">Για άδεια και πινακίδες ρυμουλκούμενου Ο1 ή Ο2. Συμπεριλαμβάνονται τα παράβολα του Δημοσίου.</p>
-        </div>
-        <div class="ta-col ta-col--cost-mobile">
-            <div class="ta-col-label"><i class="fa-solid fa-clipboard-list"></i><span data-i18n="ta.col2.head">Κόστος και απαιτήσεις</span></div>
-            <ul class="ta-checklist">
-              <li><span class="ta-ck"></span><span data-i18n-html="ta.proc1">Παράβολα συνολικά <strong>230 €</strong>, εκδιδόμενα ηλεκτρονικά μέσω <strong>e-paravolo</strong>.</span></li>
-              <li><span class="ta-ck"></span><span data-i18n-html="ta.proc2">Για οχήματα με ΕΣΡ πριν το <strong>1999</strong>: <strong>πρακτικό επιθεώρησης</strong> από αρμόδια Υπηρεσία Μεταφορών ή <strong>επιτυχής έλεγχος ΚΤΕΟ</strong>.</span></li>
-              <li><span class="ta-ck"></span><span data-i18n-html="ta.proc3">Υποβολή πλήρους φακέλου <strong>δικαιολογητικών</strong> στην αρμόδια υπηρεσία, με σωστή καταγραφή χαρακτηριστικών οχήματος.</span></li>
-            </ul>
-          </div>
-        <div class="ta-rule"></div>
-        <div class="ta-docs">
-          <div class="ta-sec-head"><i class="fa-solid fa-folder-open"></i><span data-i18n="ta.docs.head">Απαιτούμενα δικαιολογητικά</span></div>
-          <div class="ta-docs-grid">
-            <div class="ta-docs-col">
-              <div class="ta-docs-group-head" data-i18n="ta.docs.a.head">Α. Στοιχεία Ιδιοκτήτη</div>
-              <ol class="ta-docs-list" start="1">
-                <li><span data-i18n-html="ta.docs.a1">Φωτοαντίγραφο Αστυνομικής Ταυτότητας ή Διαβατηρίου</span></li>
-                <li><span data-i18n-html="ta.docs.a2">Αριθμός Φορολογικού Μητρώου (ΑΦΜ)</span></li>
-                <li><span data-i18n-html="ta.docs.a3">Στοιχεία επικοινωνίας (τηλέφωνο, e-mail)</span></li>
-              </ol>
-              <div class="ta-docs-group-head" data-i18n="ta.docs.c.head">Γ. Έγγραφα</div>
-              <ol class="ta-docs-list" start="1">
-                <li><span data-i18n-html="ta.docs.c1">Αίτηση με γνήσιο υπογραφής (ΚΕΠ ή gov)</span></li>
-                <li><span data-i18n-html="ta.docs.c2">Εξουσιοδότηση με γνήσιο υπογραφής (ΚΕΠ ή gov)</span></li>
-                <li><span data-i18n-html="ta.docs.c3">ΥΔ ιδιοκτησίας</span></li>
-                <li><span data-i18n-html="ta.docs.c4">Παράβολο <strong>200 €</strong> μέσω e-paravolo, κωδ. <strong>15</strong> — στο ΑΦΜ του ιδιοκτήτη <em>(μπορεί να πληρωθεί αργότερα)</em></span></li>
-                <li><span data-i18n-html="ta.docs.c5">Παράβολο <strong>30 €</strong> μέσω e-paravolo, κωδ. <strong>2992</strong> — στο ΑΦΜ του ιδιοκτήτη <em>(μπορεί να πληρωθεί αργότερα)</em></span></li>
-              </ol>
-            </div>
-            <div class="ta-docs-col">
-              <div class="ta-docs-group-head" data-i18n="ta.docs.b.head">Β. Στοιχεία Οχήματος</div>
-              <ol class="ta-docs-list" start="4">
-                <li><span data-i18n-html="ta.docs.b4"><strong>Πρωτότυπο Σημείωμα Ρυμούλκησης / ΥΔ Μηχανολόγου</strong></span></li>
-                <li><span data-i18n-html="ta.docs.b5">Τιμολόγιο αγοράς ή αποδεικτικό ιδιοκτησίας του τρέιλερ (αν υπάρχει)</span></li>
-                <li><span data-i18n-html="ta.docs.b6">Παλαιός αριθμός πλαισίου — φωτογραφία (αν υπάρχει) <strong>και αποτύπωμα αν είναι δυνατό</strong></span></li>
-                <li><span data-i18n-html="ta.docs.b7">Φωτογραφία παλαιού ταμπελακιού (αν υπάρχει)</span></li>
-                <li><span data-i18n-html="ta.docs.b8">Φωτογραφίες όλων των πλευρών του ρυμουλκούμενου (ολόκληρο, κεντραρισμένο)</span></li>
-                <li><span data-i18n-html="ta.docs.b9">Φωτογραφία σημείου ζεύξης</span></li>
-                <li><span data-i18n-html="ta.docs.b10">Ζυγολόγιο (αν υπάρχει)</span></li>
-                <li><span data-i18n-html="ta.docs.b11">Φωτογραφία άδειας κυκλοφορίας έλκοντος οχήματος</span></li>
-              </ol>
-            </div>
-          </div>
-        </div>
-        <div class="ta-rule"></div>
-        <div class="ta-warning">
-          <div class="ta-warning-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-          <div class="ta-warning-body">
-            <strong data-i18n="ta.warn.title">Προσοχή — Απαγόρευση κυκλοφορίας</strong>
-            <p data-i18n-html="ta.warn.text">Έως την έκδοση της άδειας κυκλοφορίας και των πινακίδων, <strong>απαγορεύεται ρητά η κυκλοφορία</strong> των παραπάνω οχημάτων. Σε ενδεχόμενο ελέγχου, αντιμετωπίζονται ως οχήματα <strong>χωρίς στοιχεία κυκλοφορίας και ανασφάλιστα</strong>, με ό,τι αυτό συνεπάγεται νομικά και οικονομικά.</p>
-          </div>
-        </div>
-        <div class="ta-rule"></div>
-        <div class="ta-sec-head"><i class="fa-solid fa-screwdriver-wrench"></i><span data-i18n="ta.svc.head">Τι αναλαμβάνει το γραφείο μας</span></div>
-        <ul class="ta-steps">
-          <li><span class="ta-step-num">01</span><span data-i18n-html="ta.svc1"><strong>Επιθεώρηση και καταγραφή</strong> — Ελέγχουμε το ρυμουλκούμενο και καταγράφουμε με ακρίβεια όλα τα χαρακτηριστικά του, ώστε η νέα άδεια κυκλοφορίας να εκδοθεί σωστά.</span></li>
-          <li><span class="ta-step-num">02</span><span data-i18n-html="ta.svc2"><strong>Αποτύπωση και πινακίδιο</strong> — Αποτυπώνουμε τον νέο <strong>17ψήφιο αριθμό πλαισίου (VIN)</strong> και τοποθετούμε το πινακίδιο χαρακτηριστικών.</span></li>
-          <li><span class="ta-step-num">03</span><span data-i18n-html="ta.svc3"><strong>Πλήρης μελέτη</strong> — Συντάσσουμε την τεχνική περιγραφή που περιλαμβάνει φωτογραφίες, αποτύπωμα αριθμού πλαισίου και όλα τα απαραίτητα έγγραφα.</span></li>
-          <li><span class="ta-step-num">04</span><span data-i18n-html="ta.svc4"><strong>Υποβολή φακέλου</strong> — Ετοιμάζουμε και υποβάλλουμε τον πλήρη φάκελο στην αρμόδια υπηρεσία. Το μόνο που χρειάζεται να κάνετε είναι να μας <strong>τηλεφωνήσετε</strong>.</span></li>
-        </ul>
-        <div class="ta-cta-row">
-          <p class="ta-cta-text" data-i18n-html="ta.cta.text">Επικοινωνήστε μαζί μας για τη νομιμοποίηση του ρυμουλκούμενου ή της μπαγκαζιέρας σας.</p>
-          <a href="#contact" class="ta-cta-btn"><span data-i18n="ta.cta.btn">Ζητήστε προσφορά</span>&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-        </div><!-- /ta-collapse -->
-        <div class="svc-inline-cta"><a class="svc-inline-btn" href="/adeia-treiler-o1-o2/"><span data-i18n="tool.trailerpage">Δείτε τη σελίδα: Άδεια Τρέιλερ Ο1/Ο2</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
-      </div>
-    </div>
-
-    <!-- ===== TRAILER ROAD CHECK ===== -->
-    <section class="trc-section" id="trailer-road-check" aria-labelledby="trcHeading">
-        <div class="trc-outer trc-outer--dual">
-            <div class="trc-widget" data-reveal>
-
-                <!-- TOPBAR -->
-                <div class="trc-widget-topbar">
-                    <span class="trc-widget-topbar-badge"><i class="fa-solid fa-shield-halved"></i>&nbsp;<span data-i18n="trc.badge">Έλεγχος Κ.Ο.Κ.</span></span>
-                </div>
-
-                <div class="trc-widget-body">
-
-                <!-- TITLE ROW — always visible -->
-                <div class="trc-title-row">
-                    <h2 id="trcHeading" class="trc-h"><span id="trcTitle1">Έλεγχοι </span><em id="trcTitle2">Ρυμουλκούμενων</em></h2>
-                    <div class="trc-cat-badge">
-                        <span class="trc-bk" id="trcBadgeKey">ΚΑΤΗΓΟΡΙΑ</span>
-                        <span class="trc-bv">Ο1 και Ο2</span>
-                    </div>
-                </div>
-
-                <!-- ALWAYS VISIBLE: intro + preview + toggle -->
-                <p class="trc-intro" id="trcIntro">Τα σημεία που ελέγχονται ώστε το ρυμουλκούμενο να είναι <strong>σύμφωνο με τον Κ.Ο.Κ.</strong> και ασφαλές στον δρόμο — ανακλαστήρες, πίσω τρίγωνα, φωτισμός, πινακίδα και σύστημα ζεύξης. Κατηγορία Ο1 και Ο2.</p>
-
-                <!-- CHECKLIST PREVIEW STRIP — always visible -->
-                <div class="trc-preview-strip" id="trcPreviewStrip"></div>
-
-                <button class="trc-main-toggle trc-main-toggle--bar" id="trcMainToggle" aria-expanded="true" aria-controls="trcMainCollapse">
-                    <span id="trcTagline">ΚΑΝΕ ΤΟΝ ΠΛΗΡΗ ΕΛΕΓΧΟ ΚΑΙ ΔΕΣ ΑΝΑΛΥΤΙΚΑ</span>
-                    <i class="fa-solid fa-chevron-down trc-main-chevron"></i>
-                </button>
-
-                <!-- COLLAPSIBLE BODY -->
-                <div class="trc-main-collapse is-open" id="trcMainCollapse">
-
-                    <!-- DIAGRAM -->
-                    <div class="trc-diagram-wrap">
-                        <span class="trc-diagram-tag" id="trcDiagramTag">ΠΛΑΓΙΑ και ΠΙΣΩ ΟΨΗ</span>
-                        <img loading="lazy" src="TRAILER_EXAMPLE.webp" alt="Πλάγια και Πίσω Όψη Ρυμουλκούμενου Κατ. Ο1 και Ο2">
-                    </div>
-
-                    <!-- PROGRESS -->
-                    <div class="trc-progress-row">
-                        <span class="trc-progress-lbl" id="trcProgressLbl">Πρόοδος Ελέγχου</span>
-                        <div class="trc-progress-track"><div class="trc-progress-fill" id="trcFill"></div></div>
-                        <span class="trc-progress-num" id="trcNum">0 / 8</span>
-                        <button class="trc-reset-btn" id="trcResetBtn">ΕΠΑΝΑΦΟΡΑ</button>
-                    </div>
-
-                    <div class="trc-complete-msg" id="trcCompleteMsg">
-                        <span class="trc-complete-star">✦</span>
-                        <span id="trcCompleteText">Το ρυμουλκούμενο είναι έτοιμο για τον δρόμο!</span>
-                    </div>
-
-                    <!-- CHECKLIST LABEL -->
-                    <div class="trc-sec-lbl">
-                        <span class="trc-b">✓</span>
-                        <span id="trcSecLbl">Σημεία Ελέγχου και Νόμιμος Εξοπλισμός</span>
-                    </div>
-
-                    <!-- CHECKLIST GRID — built by trc.js -->
-                    <div class="trc-checks-grid" id="trcChecksGrid"></div>
-
-                    <!-- BOTTOM GRID — expandable as one unit -->
-                    <div class="trc-bottom-single">
-
-                        <button class="trc-b-toggle trc-b-toggle--combined" aria-expanded="true" aria-controls="trcBcCombined" onclick="trcToggleCombined(this)">
-                            <div class="trc-b-combined-labels">
-                                <span class="trc-b-lbl">
-                                    <span class="trc-b">i</span>
-                                    <span id="trcBc0Lbl">Περιοδικός Έλεγχος</span>
-                                </span>
-                                <span class="trc-b-sep">και</span>
-                                <span class="trc-b-lbl trc-b-lbl--warn">
-                                    <span class="trc-b trc-b--warn">!</span>
-                                    <span id="trcBc1Lbl">Ασφάλιση</span>
-                                </span>
-                            </div>
-                            <i class="fa-solid fa-chevron-down trc-b-chevron"></i>
-                        </button>
-
-                        <div class="trc-b-collapse trc-b-collapse--combined" id="trcBcCombined">
-                            <div class="trc-bottom-grid">
-                                <div class="trc-b-inner">
-                                    <div class="trc-b-inner-lbl">
-                                        <span class="trc-b">i</span>
-                                        <span id="trcBc0InnerLbl">Περιοδικός Έλεγχος</span>
-                                    </div>
-                                    <ul class="trc-spec-list" id="trcBc0List"></ul>
-                                </div>
-                                <div class="trc-b-inner">
-                                    <div class="trc-b-inner-lbl trc-b-lbl--warn">
-                                        <span class="trc-b trc-b--warn">!</span>
-                                        <span id="trcBc1InnerLbl">Ασφάλιση</span>
-                                    </div>
-                                    <div class="trc-note-box" id="trcNoteBox">Απαιτείται <b>ξεχωριστή ασφάλιση</b> του ρυμουλκούμενου από το ρυμουλκό όχημα. Ενημερωθείτε από τον ασφαλιστή σας.</div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div><!-- /trc-bottom-single -->
-
-                </div><!-- /trc-main-collapse -->
-                <div class="svc-inline-cta"><a class="svc-inline-btn" href="/adeia-treiler-o1-o2/"><span data-i18n="tool.trailerpage">Δείτε τη σελίδα: Άδεια Τρέιλερ Ο1/Ο2</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
-
-                </div><!-- /trc-widget-body -->
-            </div><!-- /trc-widget -->
-        </div><!-- /trc-outer -->
     </section>
 
-    <div class="ta-wrap" data-reveal id="ypologistis">
-      <div class="ta-box" id="elxiCalc" data-open="false"></div>
-    </div>
-    </div><!-- /ta-dual-row -->
+    <!-- 4 · Υπολογιστής έλξης: η ερώτηση -->
+    <section class="hm hm-q" id="ypologistis" aria-labelledby="hmQH">
+        <div class="hm-in hm-q-in" data-reveal>
+            <div class="eyebrow hm-eb-c"><span data-i18n="hm.q.eyebrow">Υπολογιστής έλξης</span></div>
+            <h2 id="hmQH" class="hm-q-h" data-i18n-html="hm.q.h">Επιτρέπεται να τραβήξω <em>αυτό</em> το ρυμουλκούμενο;</h2>
+            <div class="hm-lic" aria-hidden="true">
+                <div class="hm-card">
+                    <span class="hm-card-k" data-i18n="hm.q.car">Έλκον όχημα</span>
+                    <span class="hm-card-r"><b>O.1</b><i data-i18n="hm.q.o1">Μέγιστη ρυμουλκούμενη, με φρένα</i></span>
+                    <span class="hm-card-r"><b>O.2</b><i data-i18n="hm.q.o2">Μέγιστη ρυμουλκούμενη, χωρίς φρένα</i></span>
+                    <span class="hm-card-r"><b>F.3</b><i data-i18n="hm.q.f3">Μέγιστη μάζα συνδυασμού</i></span>
+                </div>
+                <span class="hm-lic-q">?</span>
+                <div class="hm-card">
+                    <span class="hm-card-k" data-i18n="hm.q.trl">Ρυμουλκούμενο</span>
+                    <span class="hm-card-r"><b>F.2</b><i data-i18n="hm.q.f2">Μέγιστη επιτρεπόμενη μάζα</i></span>
+                </div>
+            </div>
+            <p class="hm-p hm-p--c" data-i18n="hm.q.p">Βάλτε τους κωδικούς από τις δύο άδειες κυκλοφορίας. Η απάντηση βγαίνει αμέσως.</p>
+            <a href="/adeia-treiler-o1-o2/#ypologistis" data-href-el="/adeia-treiler-o1-o2/#ypologistis" data-href-en="/en/adeia-treiler-o1-o2/#ypologistis" class="hm-btn hm-btn--navy"><span data-i18n="hm.q.cta">Ανοίξτε τον υπολογιστή</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+    </section>
 
 
     <!-- ===== TRUST ===== -->
@@ -1779,6 +1657,10 @@
                 <a href="adeia-treiler-o1-o2/">Άδεια Τρέιλερ Ο1/Ο2</a>
                 <a href="egkrisi-typou-dikyklon/">Δίκυκλα και Τετράκυκλα</a>
                 <a href="oximata-eidikou-skopou/">Οχήματα Ειδικού Σκοπού</a>
+                <a href="ydravliki-platforma/">Υδραυλική Πλατφόρμα</a>
+                <a href="texniki-symvouleftiki/">Τεχνική Συμβουλευτική</a>
+                <a href="meleti-pyroprostasias/">Μελέτη Πυροπροστασίας</a>
+                <a href="texnikos-asfaleias/">Τεχνικός Ασφαλείας</a>
             </div>
             <div class="footer-col" role="navigation" aria-label="Το γραφείο">
                 <h4>Το γραφείο</h4>
@@ -1977,8 +1859,6 @@
     <script src="type-approval-animation.js"></script>
     <script src="service-animations.js"></script>
     <script src="hero-anim.js"></script>
-    <script src="trc.js"></script>
-    <script src="elxi-calc.js" defer></script>
     <script src="contact-form.js"></script>
 
     <script>
@@ -2065,5 +1945,6 @@
         </a>
     </nav>
 
+    <script src="nav-dd.js" defer></script>
 </body>
 </html>

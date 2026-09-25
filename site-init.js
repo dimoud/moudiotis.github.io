@@ -65,6 +65,69 @@
     T['nav.moto']     = { el: 'Δίκυκλα, Τετράκυκλα',        en: 'Two-wheelers, Quads' };
     T['nav.special']  = { el: 'Ειδικού Σκοπού',              en: 'Special Purpose' };
 
+
+    // ── ΑΡΧΙΚΗ: ΤΕΣΣΕΡΙΣ ΣΤΙΓΜΕΣ ΥΠΗΡΕΣΙΩΝ ──
+    T["hm.ta.eyebrow"] = { el: "Εγκρίσεις τύπου", en: "Type approvals" };
+    T["hm.ta.h"] = { el: "Από τον φάκελο <em>ως την ταξινόμηση</em>", en: "From the dossier <em>to registration</em>" };
+    T["hm.ta.p"] = { el: "Για εισαγωγείς, κατασκευαστές και ιδιώτες. Αναλαμβάνουμε ολόκληρο τον φάκελο έγκρισης, εξ αποστάσεως, σε όλη την Ελλάδα.", en: "For importers, manufacturers and private owners. We take on the whole approval dossier, remotely, across Greece." };
+    T["hm.ta.cta"] = { el: "Ζητήστε προσφορά", en: "Request a quote" };
+    T["hm.ta.1.t"] = { el: "Δελτίο Κοινοποίησης και ΤΑΟ", en: "Notification and TAO" };
+    T["hm.ta.1.d"] = { el: "Για εισαγωγείς και αντιπροσωπείες", en: "For importers and dealers" };
+    T["hm.ta.2.t"] = { el: "Εθνική και Ευρωπαϊκή Έγκριση", en: "National and EU Approval" };
+    T["hm.ta.2.d"] = { el: "Οχήματα, αμαξώματα, ρυμουλκούμενα", en: "Vehicles, bodies, trailers" };
+    T["hm.ta.3.t"] = { el: "Μεμονωμένη Έγκριση", en: "Individual Approval" };
+    T["hm.ta.3.d"] = { el: "Εισαγόμενα και τροχόσπιτα", en: "Imports and caravans" };
+    T["hm.ta.4.t"] = { el: "Κατηγορία L", en: "Category L" };
+    T["hm.ta.4.d"] = { el: "Μοτοσικλέτες, τρίκυκλα, τετράκυκλα", en: "Motorcycles, tricycles, quads" };
+    T["hm.ta.5.t"] = { el: "Ειδικού Σκοπού", en: "Special Purpose" };
+    T["hm.ta.5.d"] = { el: "Γερανοφόρα, καντίνες, κινητές μονάδες", en: "Crane trucks, catering units, mobile units" };
+    T["hm.tr.eyebrow"] = { el: "Άδεια τρέιλερ Ο1 · Ο2", en: "O1 · O2 trailer licence" };
+    T["hm.tr.h"] = { el: "Το τρέιλερ σας, <em>νόμιμο</em> σε πέντε βήματα", en: "Your trailer, <em>legal</em> in five steps" };
+    T["hm.tr.p"] = { el: "Ρυμουλκούμενο ή μπαγκαζιέρα έως 3,5 τόνους χωρίς άδεια; Αναλαμβάνουμε τα πάντα, από την επιθεώρηση μέχρι τις πινακίδες.", en: "A trailer or cargo box up to 3.5 tonnes without a licence? We handle everything, from inspection to number plates." };
+    T["hm.tr.price.k"] = { el: "Τελική τιμή", en: "Final price" };
+    T["hm.tr.price.s"] = { el: "με τα παράβολα του Δημοσίου", en: "including state fees" };
+    T["hm.tr.s1"] = { el: "Επιθεώρηση", en: "Inspection" };
+    T["hm.tr.s2"] = { el: "Αριθμός πλαισίου", en: "Chassis number" };
+    T["hm.tr.s3"] = { el: "Τεχνική περιγραφή", en: "Technical description" };
+    T["hm.tr.s4"] = { el: "Υποβολή φακέλου", en: "Dossier filing" };
+    T["hm.tr.s5"] = { el: "Άδεια και πινακίδες", en: "Licence and plates" };
+    T["hm.tr.warn"] = { el: "Μέχρι να εκδοθούν άδεια και πινακίδες, το ρυμουλκούμενο δεν κυκλοφορεί.", en: "Until the licence and plates are issued, the trailer may not be driven." };
+    T["hm.tr.cta"] = { el: "Ο πλήρης οδηγός", en: "The full guide" };
+    T["hm.rc.eyebrow"] = { el: "Έλεγχος Κ.Ο.Κ.", en: "Highway Code check" };
+    T["hm.rc.h"] = { el: "Πριν βγείτε <em>στον δρόμο</em>", en: "Before you hit <em>the road</em>" };
+    T["hm.rc.p"] = { el: "Τα σημεία που πρέπει να είναι σε τάξη ώστε το ρυμουλκούμενο να είναι σύμφωνο με τον Κ.Ο.Κ. και ασφαλές.", en: "The points that must be in order for the trailer to comply with the Highway Code and be safe." };
+    T["hm.rc.1"] = { el: "Σύστημα ζεύξης", en: "Coupling system" };
+    T["hm.rc.2"] = { el: "Πλευρικοί ανακλαστήρες", en: "Side reflectors" };
+    T["hm.rc.3"] = { el: "Πίσω τρίγωνα", en: "Rear triangles" };
+    T["hm.rc.4"] = { el: "Πίσω φώτα", en: "Rear lights" };
+    T["hm.rc.5"] = { el: "Πινακίδα κυκλοφορίας", en: "Number plate" };
+    T["hm.rc.cta"] = { el: "Κάντε τον πλήρη έλεγχο", en: "Run the full check" };
+    T["hm.q.eyebrow"] = { el: "Υπολογιστής έλξης", en: "Towing calculator" };
+    T["hm.q.h"] = { el: "Επιτρέπεται να τραβήξω <em>αυτό</em> το ρυμουλκούμενο;", en: "May I tow <em>this</em> trailer?" };
+    T["hm.q.p"] = { el: "Βάλτε τους κωδικούς από τις δύο άδειες κυκλοφορίας. Η απάντηση βγαίνει αμέσως.", en: "Enter the codes from the two registration certificates. You get the answer straight away." };
+    T["hm.q.car"] = { el: "Έλκον όχημα", en: "Towing vehicle" };
+    T["hm.q.trl"] = { el: "Ρυμουλκούμενο", en: "Trailer" };
+    T["hm.q.o1"] = { el: "Μέγιστη ρυμουλκούμενη, με φρένα", en: "Max towable, braked" };
+    T["hm.q.o2"] = { el: "Μέγιστη ρυμουλκούμενη, χωρίς φρένα", en: "Max towable, unbraked" };
+    T["hm.q.f3"] = { el: "Μέγιστη μάζα συνδυασμού", en: "Max combination mass" };
+    T["hm.q.f2"] = { el: "Μέγιστη επιτρεπόμενη μάζα", en: "Max permissible mass" };
+    T["hm.q.cta"] = { el: "Ανοίξτε τον υπολογιστή", en: "Open the calculator" };
+    // ── /ΑΡΧΙΚΗ ──
+    // Αναδυόμενο μενού «Υπηρεσίες»
+    T['nav.dd.g1']  = { el: 'Οχήματα', en: 'Vehicles' };
+    T['nav.dd.g2']  = { el: 'Μελέτες και Ασφάλεια', en: 'Studies and Safety' };
+    T['nav.dd.all'] = { el: 'Όλες οι υπηρεσίες', en: 'All services' };
+    T['nav.dd.deltio-koinopoiisis-tao'] = { el: 'Έγκριση Τύπου και ΤΑΟ', en: 'Type Approval and TAO' };
+    T['nav.dd.memonomeni-egkrisi-oximatos'] = { el: 'Εισαγόμενα και Τροχόσπιτα', en: 'Imports and Caravans' };
+    T['nav.dd.adeia-treiler-o1-o2'] = { el: 'Άδεια Τρέιλερ Ο1/Ο2', en: 'O1/O2 Trailer Licence' };
+    T['nav.dd.egkrisi-typou-dikyklon'] = { el: 'Δίκυκλα και Τετράκυκλα', en: 'Two-wheelers and Quads' };
+    T['nav.dd.oximata-eidikou-skopou'] = { el: 'Οχήματα Ειδικού Σκοπού', en: 'Special Purpose Vehicles' };
+    T['nav.dd.ydravliki-platforma'] = { el: 'Υδραυλική Πλατφόρμα', en: 'Hydraulic Platform' };
+    T['nav.dd.texniki-symvouleftiki'] = { el: 'Τεχνική Συμβουλευτική', en: 'Technical Consulting' };
+    T['nav.dd.meleti-pyroprostasias'] = { el: 'Μελέτη Πυροπροστασίας', en: 'Fire Protection Study' };
+    T['nav.dd.texnikos-asfaleias'] = { el: 'Τεχνικός Ασφαλείας', en: 'Safety Engineer' };
+    T['nav.dd.3d'] = { el: 'Σχεδιασμός και 3D Printing', en: 'Design and 3D Printing' };
+
     // NEWS
     T['news.eyebrow'] = { el: 'ΕΝΗΜΕΡΩΣΗ', en: 'UPDATES' };
     T['news.heading'] = { el: 'Νομοθεσία και <em>νέα</em> του κλάδου', en: 'Industry <em>news</em> and legislation' };
@@ -621,8 +684,9 @@
                 pagesHtml +
                 '</div>' +
                 '</div>';
+            var pageAttr = svcPage ? ' data-page-el="' + (s.urlEl || svcPage) + '" data-page-en="' + (s.urlEn || svcPage) + '"' : '';
             sHtml +=
-                '<' + tag + urlAttr + ' class="service-card' + featuredClass + colClass + ' service-card--expandable" data-reveal' +
+                '<' + tag + urlAttr + pageAttr + ' class="service-card' + featuredClass + colClass + ' service-card--expandable' + (svcPage ? ' service-card--page' : '') + '" data-reveal' +
                 ' itemscope itemtype="https://schema.org/Service" itemprop="itemListElement">' +
                 '<meta itemprop="position" content="' + n + '">' +
                 kwMeta +
@@ -633,7 +697,7 @@
                 '<p class="service-teaser" data-i18n-html="s' + n + '.teaser">' + T['s' + n + '.teaser'].el + '</p>' +
                 featuredBadge +
                 '</div>' +
-                '<i class="fa-solid fa-chevron-down service-chev" aria-hidden="true"></i>' +
+                '<i class="fa-solid ' + (svcPage ? 'fa-arrow-right' : 'fa-chevron-down') + ' service-chev" aria-hidden="true"></i>' +
                 expandContent +
                 '</' + tag + '>';
         });
@@ -642,9 +706,21 @@
         // Wire expand panels — collapsed by default on all screen sizes
         servicesGrid.querySelectorAll('.service-card--expandable').forEach(function (card) {
             card.setAttribute('aria-expanded', 'false');
+            if (card.getAttribute('data-page-el')) {
+                card.setAttribute('role', 'link');
+                card.setAttribute('tabindex', '0');
+                card.removeAttribute('aria-expanded');
+                card.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter') card.click();
+                });
+            }
             card.addEventListener('click', function (e) {
                 /* Κλικ σε κουμπί/σύνδεσμο: άφησέ το να πλοηγηθεί, μην κλείσεις την κάρτα */
                 if (e.target.closest && e.target.closest('a.svc-inline-btn')) return;
+                /* Κάρτα με δική της σελίδα: το κλικ ανοίγει τη σελίδα */
+                var isEnNow = (document.documentElement.lang || '').indexOf('en') === 0;
+                var pg = card.getAttribute(isEnNow ? 'data-page-en' : 'data-page-el');
+                if (pg) { window.location.href = pg; return; }
                 var panel = card.querySelector('.svc-inline-expand');
                 if (!panel) return;
                 var open = panel.classList.toggle('is-open');
