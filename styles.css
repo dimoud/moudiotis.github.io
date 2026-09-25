@@ -5581,3 +5581,9 @@ a.hero-pillar { text-decoration: none; }
     font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #a57e32; }
 .hm-rc-kind span { position: absolute; inset: 0; opacity: 0; transform: translateY(6px); transition: opacity .6s, transform .6s; }
 .hm-rc-kind span.is-shown { opacity: 1; transform: none; }
+
+/* Ετικέτες του hero: στατικές, χωρίς καμία κίνηση — πάντα ορατές */
+.hero-pillars, .hero-pillars .hero-pillar, .hero-cta-block .hero-pillars, .hero-cta-block .hero-pillar,
+.hero-cta-block .hero-pillar:nth-child(n), .hero-pillars .hero-pillar:nth-child(n) {
+    animation: none !important; opacity: 1 !important; transform: none !important; transition: none !important; will-change: auto !important;
+}
