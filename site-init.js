@@ -118,6 +118,7 @@
     T['nav.dd.g1']  = { el: "Εγκρίσεις και Ταξινόμηση", en: "Approvals and Registration" };
     T['nav.dd.g2']  = { el: "Μετατροπές και Ειδικά Οχήματα", en: "Conversions and Special Vehicles" };
     T['nav.dd.all'] = { el: 'Όλες οι υπηρεσίες', en: 'All services' };
+    T['svc.more'] = { el: 'Περισσότερα →', en: 'More →' };
     T['nav.dd.deltio-koinopoiisis-tao'] = { el: "Δελτίο Κοινοποίησης και ΤΑΟ", en: "Notification and TAO" };
     T['nav.dd.ethniki-evropaiki-egkrisi-typou'] = { el: "Εθνική και Ευρωπαϊκή Έγκριση", en: "National and EU Approval" };
     T['nav.dd.memonomeni-egkrisi-oximatos'] = { el: "Μεμονωμένη Έγκριση, Εισαγόμενα", en: "Individual Approval, Imports" };
@@ -128,6 +129,7 @@
     T['nav.dd.oximata-eidikou-skopou'] = { el: "Οχήματα Ειδικού Σκοπού", en: "Special Purpose Vehicles" };
     T['nav.dd.metaskeves-yperkataskeves'] = { el: "Μετασκευές, Υπερκατασκευές", en: "Conversions, Superstructures" };
     T['nav.dd.topothetisi-geranou'] = { el: "Τοποθέτηση Γερανού", en: "Crane Installation" };
+
 
 
 
@@ -703,6 +705,7 @@
                 '</div>' +
                 '<i class="fa-solid ' + (svcPage ? 'fa-arrow-right' : 'fa-chevron-down') + ' service-chev" aria-hidden="true"></i>' +
                 expandContent +
+                (svcPage ? '<span class="svc-more" data-i18n="svc.more">' + T['svc.more'].el + '</span>' : '') +
                 '</' + tag + '>';
         });
         servicesGrid.innerHTML = sHtml;

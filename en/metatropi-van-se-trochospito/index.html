@@ -122,7 +122,7 @@
     <nav id="nav" class="scrolled">
         <a href="../../en/index.html" class="nav-logo">
             <div class="logo-circle">
-                <img class="logo-img" src="../../founder.webp" alt="MOUDIOTIS TECHNICAL OFFICE">
+                <img class="logo-img" src="../../founder.webp" alt="MOUDIOTIS TECHNICAL OFFICE" width="96" height="96">
             </div>
             <div class="logo-text">
                 <span class="name">MOUDIOTIS TECHNICAL OFFICE</span>
@@ -226,6 +226,28 @@
 
         <div class="ta-rule"></div>
 
+        <div class="tap-graphic svc-crane" aria-hidden="true"><svg class="crane-svg" viewBox="0 0 520 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="crane-path" style="--len:480" d="M20 206 L500 206" stroke="currentColor" stroke-width="1" opacity=".45"/>
+                <path class="crane-path" style="--len:1150" d="M70 182 L70 98 Q72 70 102 66 L330 62 Q350 62 364 76 L420 122 Q442 126 452 134 L462 152 L462 182 L426 182 A36 36 0 0 0 354 182 L176 182 A36 36 0 0 0 104 182 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path class="crane-path" style="--len:200" d="M342 78 L400 124 L342 124 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path class="crane-path" style="--len:120" d="M300 70 L300 180" stroke="currentColor" stroke-width="1.2"/>
+                <rect class="crane-path" style="--len:150" x="104" y="82" width="62" height="34" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                <rect class="crane-path" style="--len:190" x="184" y="82" width="90" height="34" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                <path class="crane-path" style="--len:260" d="M112 64 L132 36 L286 36 L306 62" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="6 5"/>
+                <circle class="crane-path" style="--len:160" cx="140" cy="184" r="24" stroke="currentColor" stroke-width="2"/>
+                <circle class="crane-path" style="--len:60" cx="140" cy="184" r="9" stroke="currentColor" stroke-width="1.4"/>
+                <circle class="crane-path" style="--len:160" cx="390" cy="184" r="24" stroke="currentColor" stroke-width="2"/>
+                <circle class="crane-path" style="--len:60" cx="390" cy="184" r="9" stroke="currentColor" stroke-width="1.4"/>
+                <path class="crane-path" style="--len:40" d="M446 140 L458 140" stroke="currentColor" stroke-width="2"/>
+                <g class="crane-dim-line" stroke="currentColor" stroke-width="1" opacity=".7">
+                    <path d="M70 222 L462 222 M70 216 L70 228 M462 216 L462 228" />
+                </g>
+                <text class="crane-dim-line" x="266" y="218" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="2" fill="currentColor">SA</text>
+            </svg></div>
+        <span class="tap-graphic-tag">VAN → MOTOR CARAVAN</span>
+
+        <div class="ta-rule"></div>
+
         <div class="svc-prose">
             <p class="svc-intro">Converting a van into a motor caravan is possible. It is possible <strong>under conditions</strong>, though, and it ends with an inspection and a new registration certificate. Before any work starts, we check whether your vehicle and the conversion you plan can be approved.</p>
             <div class="svc-quick">
@@ -315,7 +337,7 @@
                     <img loading="lazy" src="../../founder_contact.webp" alt="Dimitrios Moudiotis" class="person-photo">
                     <div class="person-details">
                         <h3>Dimitrios Moudiotis and Associates</h3>
-                        <p>Mechanical Engineer AUTH, MSc | Pagkrati, Athens · Greece-wide</p>
+                        <p>Mechanical Engineer AUTH, MSc | Athens - Thessaloniki</p>
                     </div>
                 </div>
 
@@ -347,7 +369,7 @@
                             <span class="cd-label">Office</span>
                             <span class="cd-value">Ymittou 157, Pagkrati, Athens</span>
                             <span class="cd-label">Service area</span>
-                            <span class="cd-value">Greece-wide and abroad</span>
+                            <span class="cd-value">Across Greece and the EU</span>
                         </div>
                     </div>
                     <a class="contact-detail contact-facebook" href="https://www.facebook.com/61550061850076" target="_blank" rel="noopener noreferrer">
@@ -424,11 +446,11 @@
         <div class="footer-top footer-top--cols">
             <div class="footer-brand">
                 <div class="footer-logo-circle">
-                    <img loading="lazy" class="logo-img" src="../../founder.webp" alt="MOUDIOTIS TECHNICAL OFFICE">
+                    <img loading="lazy" class="logo-img" src="../../founder.webp" alt="MOUDIOTIS TECHNICAL OFFICE" width="96" height="96">
                 </div>
                 <div class="footer-brand-text">
                     <p class="fname">Dimitrios Moudiotis and Associates</p>
-                    <p class="ftitle">Mechanical Engineer AUTH, MSc | Pagkrati, Athens · Greece-wide</p>
+                    <p class="ftitle">Mechanical Engineer AUTH, MSc | Athens - Thessaloniki</p>
                     <p class="fdesc">Vehicle type approval, registration and technical studies — Athens, Thessaloniki and remotely across Greece.</p>
                 </div>
             </div>
@@ -670,6 +692,15 @@
             'tap.stamp.foot': { en: 'MIN. OF INFRASTRUCTURE \u00b7 TAO' },
             'tap.graphic.alt':{ en: 'Sketch of a vehicle type approval dossier with approval stamp' }
         };
+    </script>
+    <script>
+    /* Σχέδιο γερανοφόρου: σχεδιάζεται όταν φανεί */
+    (function () {
+        var w = document.querySelector('.svc-crane'); if (!w) return;
+        if (!('IntersectionObserver' in window)) { w.classList.add('crane-draw'); return; }
+        var o = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { w.classList.add('crane-draw'); o.disconnect(); } }); }, { threshold: 0.25 });
+        o.observe(w);
+    })();
     </script>
     <script src="../../contact-form.js" defer></script>
     <!-- Συγκατάθεση cookies + Google Analytics (G-4QBD0G5862), ίδιο με την αρχική -->

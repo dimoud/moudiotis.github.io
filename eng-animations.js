@@ -370,8 +370,9 @@
 
         zipCards.forEach(function (card) { card.classList.add('service-card--zipper-js'); });
 
-        var maxOffset = Math.min(260, Math.max(40, window.innerWidth * 0.18));
+        var maxOffset = zipOffset();
 
+        function zipOffset() { return window.innerWidth <= 768 ? window.innerWidth * 0.32 : Math.min(260, Math.max(40, window.innerWidth * 0.18)); }
         function clamp01(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
 
         /* Η κατεύθυνση βγαίνει από τη ΘΕΣΗ της κάρτας στο πλέγμα, όχι από τη
@@ -390,14 +391,17 @@
                 var r = card.getBoundingClientRect();
                 card.style.transform = tf;
                 var full = r.width > grid.width * 0.7;
-                var oneCol = window.innerWidth <= 768;
-                if (full && !oneCol) { dirs[i] = 0; return; }
-                if (oneCol) { dirs[i] = (alt++ % 2 === 0) ? -1 : 1; return; }
+                var small = window.innerWidth <= 768;
+                /* Κάρτα σε όλο το πλάτος: στον υπολογιστή μόνο εμφάνιση, στο
+                   κινητό εναλλάξ. Δύο στήλες (και στο κινητό): η αριστερή
+                   έρχεται από αριστερά, η δεξιά από δεξιά — κλείνουν στο
+                   κέντρο σαν φερμουάρ. */
+                if (full) { dirs[i] = small ? ((alt++ % 2 === 0) ? -1 : 1) : 0; return; }
                 dirs[i] = (r.left + r.width / 2 < grid.left + grid.width / 2) ? -1 : 1;
             });
         }
         computeDirs();
-        window.addEventListener('resize', function () { maxOffset = Math.min(260, Math.max(40, window.innerWidth * 0.18)); computeDirs(); });
+        window.addEventListener('resize', function () { maxOffset = zipOffset(); computeDirs(); });
 
         function updateZipper() {
             var vh    = window.innerHeight;

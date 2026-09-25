@@ -83,7 +83,7 @@ window.SITE_CONFIG = {
         { el: 'Δελτίο Κοινοποίησης',               en: 'Notification Certificate' },
         { el: 'Ειδικές Κατασκευές και Μετασκευές',   en: 'Special Bodywork and Conversions' },
         { el: 'Ταξινόμηση Τροχόσπιτου',             en: 'Caravan Registration' },
-        { el: 'Τοποθέτηση Γερανού σε Φορτηγό',      en: 'Truck Crane Installation' },
+        { el: 'Τοποθέτηση Γερανού σε Όχημα',      en: 'Vehicle Crane Installation' },
         { el: 'Βαν σε Αυτοκινούμενο Τροχόσπιτο',    en: 'Van to Motor Caravan' },
         // Κρυφά (όχι οχήματα) — για μελλοντική χρήση:
         // { el: 'Τεχνικός Ασφαλείας — ΓΕΕΚ',         en: 'Safety Engineer — Risk Assessment' },
@@ -221,11 +221,11 @@ window.SITE_CONFIG = {
             icon:        'fa-truck-moving',
             urlEl:       '/topothetisi-geranou/',
             urlEn:       '/en/topothetisi-geranou/',
-            titleEl:     'Τοποθέτηση Γερανού σε Φορτηγό',
-            titleEn:     'Crane Installation on a Truck',
+            titleEl:     'Τοποθέτηση Γερανού σε Όχημα',
+            titleEn:     'Crane Installation on a Vehicle',
             textEl:      'Μελέτη φορτίων και ευστάθειας, στερέωση στο πλαίσιο, έλεγχος και <strong class="kw">νέα άδεια κυκλοφορίας</strong>.',
             textEn:      'Load and stability study, chassis mounting, inspection and a <strong class="kw">new registration certificate</strong>.',
-            seoKeywords: 'τοποθέτηση γερανού φορτηγό, γερανοφόρο άδεια, γερανός φορτηγού μελέτη, truck crane installation Greece',
+            seoKeywords: 'τοποθέτηση γερανού σε όχημα, γερανοφόρο άδεια, μελέτη τοποθέτησης γερανού, vehicle crane installation Greece',
         },
         // ── Κρυφές (δεν εμφανίζονται· κρατιούνται για μελλοντική χρήση) ──
         {
@@ -460,10 +460,10 @@ window.SITE_CONFIG = {
             url:     'https://adrbook.com/en/2017/ADR/9.1.2',
             catEl:   'Γερανοί και Ανυψωτικά',
             catEn:   'Cranes and Lifting',
-            titleEl: 'Τοποθέτηση γερανού σε φορτηγό: νέα άδεια κυκλοφορίας',
-            titleEn: 'Crane installation on truck: new circulation permit',
-            textEl:  'Η τοποθέτηση γερανού σε φορτηγό απαιτεί πλήρη μελέτη στατικής επάρκειας, πιστοποιητικό ανύψωσης και έκδοση νέας άδειας κυκλοφορίας.',
-            textEn:  'Installing a crane on a truck requires a full static adequacy study, lifting certificate and issuance of a new circulation permit.',
+            titleEl: 'Τοποθέτηση γερανού σε όχημα: νέα άδεια κυκλοφορίας',
+            titleEn: 'Crane installation on a vehicle: new circulation permit',
+            textEl:  'Η τοποθέτηση γερανού σε όχημα απαιτεί πλήρη μελέτη στατικής επάρκειας, πιστοποιητικό ανύψωσης και έκδοση νέας άδειας κυκλοφορίας.',
+            textEn:  'Installing a crane on a vehicle requires a full static adequacy study, lifting certificate and issuance of a new circulation permit.',
         },
         {
             url:     'https://eur-lex.europa.eu/eli/reg/2018/858/oj/eng',
@@ -634,7 +634,7 @@ window.SITE_CONFIG = {
         { el: 'Καταχώρηση ΤΑΟ / Δελτίο Κοινοποίησης',             en: 'TAO Registration / Notification Certificate' },
         { el: 'Μελέτη Μετασκευής / Ειδικής Κατασκευής',           en: 'Conversion / Special Bodywork Study' },
         { el: 'Βεβαίωση Συμμόρφωσης / Τεχνικό Υπόμνημα',          en: 'Compliance Certificate / Technical Memorandum' },
-        { el: 'Τοποθέτηση Γερανού σε Φορτηγό',                    en: 'Truck Crane Installation' },
+        { el: 'Τοποθέτηση Γερανού σε Όχημα',                    en: 'Vehicle Crane Installation' },
         { el: 'Ταξινόμηση Τροχόσπιτου',                           en: 'Caravan Registration' },
         { el: 'Μετατροπή Βαν σε Αυτοκινούμενο Τροχόσπιτο',        en: 'Van to Motor Caravan Conversion' },
         // Κρυφά (όχι οχήματα) — για μελλοντική χρήση:
