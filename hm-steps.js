@@ -52,3 +52,36 @@
     var art = sec.querySelector('.hm-rc-art') || sec;
     if ('IntersectionObserver' in window) { new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) start(); else stop(); }); }, { threshold: 0.35 }).observe(art); } else { start(); }
 })();
+
+/* Κινητό: οι τέσσερις ετικέτες του hero έρχονται από τα άκρα προς τα μέσα καθώς ο χρήστης κυλά προς τα κάτω */
+(function () {
+    var wrap = document.querySelector('.hero-cta-block .hero-pillars'); if (!wrap) return;
+    var ps = wrap.querySelectorAll('.hero-pillar'); if (!ps.length) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var mq = window.matchMedia('(max-width: 768px)'), D = 200, raf = 0;
+    function measure() {
+        var r = wrap.getBoundingClientRect(), vh = window.innerHeight;
+        var absTop = r.top + window.scrollY;
+        D = Math.max(180, absTop - vh * 0.42);
+    }
+    function ease(t) { return 1 - Math.pow(1 - t, 3); }
+    function paint() {
+        raf = 0;
+        if (!mq.matches) { wrap.classList.remove('hp-scroll'); ps.forEach(function (p) { p.style.transform = ''; p.style.opacity = ''; }); return; }
+        wrap.classList.add('hp-scroll');
+        var W = window.innerWidth, vh = window.innerHeight, a = vh * 0.98, b = vh * 0.52;
+        ps.forEach(function (p, k) {
+            var dir = k % 2 ? 1 : -1;
+            var top = p.getBoundingClientRect().top - (parseFloat(p.dataset.hpY) || 0);
+            var t = Math.min(1, Math.max(0, (a - top) / (a - b)));
+            var e = ease(t);
+            p.style.transform = 'translateX(' + (dir * (1 - e) * W * 0.55).toFixed(1) + 'px)';
+            p.style.opacity = (0.15 + 0.85 * e).toFixed(3);
+        });
+    }
+    function req() { if (!raf) raf = requestAnimationFrame(paint); }
+    measure(); paint();
+    window.addEventListener('scroll', req, { passive: true });
+    window.addEventListener('resize', function () { measure(); req(); });
+    window.addEventListener('load', function () { measure(); req(); });
+})();
