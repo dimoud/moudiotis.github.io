@@ -397,7 +397,10 @@
                    έρχεται από αριστερά, η δεξιά από δεξιά — κλείνουν στο
                    κέντρο σαν φερμουάρ. */
                 if (full) { dirs[i] = small ? ((alt++ % 2 === 0) ? -1 : 1) : 0; return; }
-                dirs[i] = (r.left + r.width / 2 < grid.left + grid.width / 2) ? -1 : 1;
+                var cc = r.left + r.width / 2, gc = grid.left + grid.width / 2;
+                /* μεσαία στήλη (τρεις στήλες): μόνο εμφάνιση, χωρίς ολίσθηση */
+                if (Math.abs(cc - gc) < grid.width * 0.08) { dirs[i] = 0; return; }
+                dirs[i] = cc < gc ? -1 : 1;
             });
         }
         computeDirs();

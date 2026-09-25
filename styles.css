@@ -5293,3 +5293,155 @@ a.hero-pillar { text-decoration: none; }
     .hm-calc-col + .hm-calc-col { border-left: 0; border-top: 1px solid rgba(201,168,108,0.35); }
     .hm-calc-go { padding: 16px 18px; }
 }
+
+/* Hero: οι τέσσερις ετικέτες έρχονται με ολίσθηση από τα άκρα προς το κέντρο
+   (αριστερή στήλη από αριστερά, δεξιά στήλη από δεξιά). */
+@keyframes heroSlideL { from { opacity: 0; transform: translateX(-60px); } to { opacity: 1; transform: none; } }
+@keyframes heroSlideR { from { opacity: 0; transform: translateX(60px); } to { opacity: 1; transform: none; } }
+.hero-cta-block .hero-pillars { overflow: visible; }
+.hero-cta-block .hero-pillar:nth-child(odd)  { animation-name: heroSlideL !important; }
+.hero-cta-block .hero-pillar:nth-child(even) { animation-name: heroSlideR !important; }
+.hero-cta-block .hero-pillar { animation-duration: .8s; animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); animation-fill-mode: both; }
+@media (max-width: 768px) {
+    .hero-cta-block .hero-pillar { animation-duration: .6s !important; }
+    .hero-cta-block .hero-pillar:nth-child(3), .hero-cta-block .hero-pillar:nth-child(4) { animation-delay: .55s !important; }
+    .hero { overflow-x: clip; }
+}
+
+/* ══ ΥΠΗΡΕΣΙΕΣ — ΕΠΑΝΑΣΧΕΔΙΑΣΜΟΣ (όρθια πλακίδια, ελαφριά κίνηση) ═══════════
+   Υπολογιστής: 3 στήλες, η κάρτα-στόχος σκούρα και σε δύο στήλες.
+   Κινητό: 2 στήλες (φερμουάρ). Κίνηση: χρυσή γραμμή που «σχεδιάζεται» στην
+   κορυφή όταν φανεί η κάρτα, διακεκομμένος κύκλος που γυρίζει αργά γύρω από
+   το εικονίδιο, το βέλος «Περισσότερα» που κινείται στο πέρασμα. */
+@keyframes svcSpin { to { transform: rotate(360deg); } }
+#servicesGrid.services-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 18px !important; max-width: 1140px; align-items: stretch; }
+#servicesGrid .service-card,
+#servicesGrid .service-card:nth-child(even),
+#servicesGrid .service-card--featured {
+    display: flex !important; flex-direction: column; align-items: flex-start; gap: 14px;
+    position: relative; overflow: hidden; min-width: 0; height: 100%;
+    padding: 28px 26px 22px !important; border-radius: 12px !important;
+    border: 1px solid rgba(29,58,92,0.10) !important;
+    background: linear-gradient(90deg, #a57e32, #f6e3a8 50%, #c49a45) top left / 0% 2px no-repeat, #fff !important;
+    box-shadow: 0 2px 14px rgba(20,33,52,0.05) !important;
+    transition: background-size 1.1s cubic-bezier(0.16,1,0.3,1), box-shadow .35s, border-color .35s !important;
+}
+#servicesGrid .service-card.visible,
+#servicesGrid .service-card[style*="opacity: 1"] { background-size: 100% 2px, auto !important; }
+#servicesGrid .service-card:hover { border-color: rgba(201,168,108,0.6) !important; box-shadow: 0 22px 48px rgba(17,36,61,0.12) !important; }
+#servicesGrid .service-num {
+    display: block !important; position: absolute; top: 20px; right: 22px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 1px; color: rgba(165,126,50,0.75);
+}
+#servicesGrid .service-icon,
+#servicesGrid .service-card--featured .service-icon {
+    position: relative; width: 54px !important; height: 54px !important; flex: 0 0 54px; border-radius: 50%;
+    display: flex !important; align-items: center; justify-content: center;
+    background: #11243d !important; color: #e7c983 !important; border: 0 !important; font-size: 20px !important;
+    box-shadow: 0 8px 20px rgba(17,36,61,0.18) !important; margin: 4px 0 0 4px;
+}
+#servicesGrid .service-icon::after {
+    content: ''; position: absolute; inset: -7px; border-radius: 50%;
+    border: 1px dashed rgba(201,168,108,0.7); animation: svcSpin 18s linear infinite;
+}
+#servicesGrid .service-card:hover .service-icon::after { animation-duration: 5s; }
+#servicesGrid .service-card-body { display: flex; flex-direction: column; gap: 8px; width: 100%; flex: 1 1 auto; min-width: 0; }
+#servicesGrid .service-card h3 { font-size: 23px !important; line-height: 1.2; font-weight: 500; color: var(--ink) !important; margin: 4px 0 0; }
+#servicesGrid .service-teaser { font-size: 14px !important; line-height: 1.55; color: var(--stone) !important; -webkit-line-clamp: 3 !important; }
+#servicesGrid .service-chev, #servicesGrid .svc-inline-expand { display: none !important; }
+#servicesGrid .svc-more {
+    display: inline-flex !important; align-items: center; gap: 8px; margin-top: auto; padding-top: 14px; width: 100%;
+    border-top: 1px solid rgba(201,168,108,0.25);
+    font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase; color: #a57e32;
+    transition: letter-spacing .35s var(--ease), color .3s;
+}
+#servicesGrid .service-card:hover .svc-more { letter-spacing: 3px; color: #11243d; }
+
+/* κάρτα-στόχος: σκούρα, σε δύο στήλες στον υπολογιστή */
+#servicesGrid .service-card--featured {
+    grid-column: span 2;
+    background: linear-gradient(90deg, #a57e32, #f6e3a8 50%, #c49a45) top left / 0% 2px no-repeat, var(--navy-grad) !important;
+    border-color: rgba(201,162,78,0.55) !important;
+}
+#servicesGrid .service-card--featured h3 { color: #fff !important; font-size: 28px !important; }
+#servicesGrid .service-card--featured .service-teaser { color: rgba(255,255,255,0.72) !important; }
+#servicesGrid .service-card--featured .service-icon { background: var(--gold-metal) !important; color: #0c1726 !important; }
+#servicesGrid .service-card--featured .service-num { color: rgba(231,201,131,0.8); }
+#servicesGrid .service-card--featured .svc-more { color: #e7c983; border-top-color: rgba(231,201,131,0.3); }
+#servicesGrid .service-card--featured:hover .svc-more { color: #fff; }
+#servicesGrid .service-card--featured::before {
+    content: ''; display: block !important; position: absolute; right: -60px; bottom: -60px; width: 240px; height: 240px; pointer-events: none;
+    border-radius: 50%; border: 1px dashed rgba(201,162,78,0.25); animation: svcSpin 60s linear infinite;
+}
+
+@media (max-width: 1024px) {
+    #servicesGrid.services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    #servicesGrid .service-card--featured { grid-column: span 2; }
+}
+@media (max-width: 768px) {
+    #servicesGrid.services-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+    #servicesGrid .service-card--featured { grid-column: span 1; }
+    #servicesGrid .service-card,
+    #servicesGrid .service-card:nth-child(even),
+    #servicesGrid .service-card--featured { padding: 18px 13px 14px !important; gap: 10px; border-radius: 10px !important; }
+    #servicesGrid .service-num { top: 12px; right: 12px; font-size: 11px; }
+    #servicesGrid .service-icon,
+    #servicesGrid .service-card--featured .service-icon { width: 40px !important; height: 40px !important; flex: 0 0 40px; font-size: 15px !important; margin: 5px 0 0 5px; }
+    #servicesGrid .service-icon::after { inset: -5px; }
+    #servicesGrid .service-card h3,
+    #servicesGrid .service-card--featured h3 { font-size: 16.5px !important; line-height: 1.22; overflow-wrap: break-word; hyphens: auto; }
+    #servicesGrid .service-teaser,
+    #servicesGrid .service-card--featured .service-teaser { font-size: 12.5px !important; -webkit-line-clamp: 4 !important; }
+    #servicesGrid .svc-more { font-size: 12px; letter-spacing: 1.6px; padding-top: 10px; }
+    #servicesGrid .service-card--featured::before { width: 160px; height: 160px; right: -50px; bottom: -50px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    #servicesGrid .service-icon::after, #servicesGrid .service-card--featured::before { animation: none; }
+}
+
+/* ══ Τρέιλερ: ο δείκτης περνά από τα βήματα (hm-steps.js) ══ */
+.hm-rail-t { font-variant-numeric: lining-nums; transition: color .6s; }
+.hm-rail li { transition: opacity .6s; }
+.hm-rail-dot { transition: background .5s, box-shadow .5s, transform .5s; }
+.hm-rail-n { transition: color .5s; }
+.hm-rail.is-playing li { opacity: .42; }
+.hm-rail.is-playing li.is-done { opacity: .78; }
+.hm-rail.is-playing li.is-active { opacity: 1; }
+.hm-rail.is-playing li:last-child:not(.is-active):not(.is-done) .hm-rail-dot { background: #0a1728; }
+.hm-rail li.is-done .hm-rail-dot { background: rgba(201,162,78,0.6); }
+.hm-rail li.is-active .hm-rail-dot {
+    background: #e7c983; transform: scale(1.25);
+    box-shadow: 0 0 0 6px rgba(201,162,78,0.18), 0 0 26px rgba(231,201,131,0.65);
+}
+.hm-rail li.is-active .hm-rail-t { color: #f6e3a8; }
+.hm-rail li.is-active .hm-rail-n { color: #f6e3a8; }
+/* γραμμή προόδου πάνω στη ράγα του κινητού */
+@media (max-width: 768px) {
+    .hm-rail::after {
+        content: ''; position: absolute; left: 7px; top: 8px; width: 1px;
+        height: calc((100% - 16px) * var(--hm-prog, 0)); background: #f6e3a8;
+        box-shadow: 0 0 8px rgba(246,227,168,0.8); transition: height 1.2s cubic-bezier(0.16,1,0.3,1);
+    }
+}
+/* στον υπολογιστή: το τμήμα της γραμμής μετά από ολοκληρωμένο βήμα φωτίζεται */
+@media (min-width: 769px) {
+    .hm-rail li.is-done::before, .hm-rail li.is-active::before { background: linear-gradient(90deg, #f6e3a8, rgba(201,162,78,0.35)); }
+    .hm-rail li.is-done::before { background: #e7c983; box-shadow: 0 0 6px rgba(231,201,131,0.6); }
+}
+
+/* Έλεγχος Κ.Ο.Κ.: διαδοχική επισήμανση σημείων */
+.hm-pins > g { transform-box: fill-box; transform-origin: center; transition: transform .55s var(--ease), filter .55s; }
+.hm-pins circle, .hm-pins text { transition: fill .45s; }
+.hm-pins > g.is-active { transform: scale(1.3); filter: drop-shadow(0 0 7px rgba(201,168,108,.75)); }
+.hm-pins > g.is-active circle { fill: #c9a86c; }
+.hm-pins > g.is-active text { fill: #11243d; font-weight: 600; }
+.hm-leads line { transition: stroke .45s, stroke-width .45s; }
+.hm-leads line.is-active { stroke: #c9a86c; stroke-width: 1.8; }
+.hm-pinlist li { padding: 6px 10px; margin: -6px -10px; border-radius: 10px; transform-origin: left center;
+    transition: transform .5s var(--ease), background-color .5s, opacity .5s; }
+.hm-rc.is-cycling .hm-pinlist li { opacity: .55; }
+.hm-rc.is-cycling .hm-pinlist li.is-active { opacity: 1; transform: scale(1.05); background: rgba(201,168,108,.14); }
+.hm-pin-n { transition: background-color .45s, color .45s, box-shadow .45s; }
+.hm-pinlist li.is-active .hm-pin-n { background: #c9a86c; color: #11243d; box-shadow: 0 0 0 4px rgba(201,168,108,.22); }
+@media (prefers-reduced-motion: reduce) { .hm-pins > g, .hm-pinlist li { transition: none; } }
