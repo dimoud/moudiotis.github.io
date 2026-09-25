@@ -1,33 +1,36 @@
-/* Αρχική — «οκτώ βήματα» τρέιλερ: ένας δείκτης περνά αργά από βήμα σε βήμα
-   και το φωτίζει (τα προηγούμενα μένουν «ολοκληρωμένα»), σε συνεχή κύκλο,
-   μόνο όσο η λωρίδα φαίνεται στην οθόνη. */
+/* Βήματα τρέιλερ: η επισήμανση ακολουθεί την κύλιση — κάτω προχωρά, πάνω γυρίζει πίσω */
 (function () {
-    var rail = document.querySelector('.hm-rail');
-    if (!rail) return;
-    var items = rail.querySelectorAll('li');
-    if (!items.length) return;
+    var rail = document.querySelector('.hm-rail'); if (!rail) return;
+    var items = rail.querySelectorAll('li'); if (!items.length) return;
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var i = -1, timer = null, STEP = 1700, PAUSE = 2600;
+    var n = items.length, raf = 0, last = -2;
+    rail.classList.add('is-playing');
     function paint() {
-        items.forEach(function (li, k) {
-            li.classList.toggle('is-active', k === i);
-            li.classList.toggle('is-done', k < i);
-        });
-        rail.style.setProperty('--hm-prog', items.length > 1 ? Math.max(0, i) / (items.length - 1) : 1);
+        raf = 0;
+        var vh = window.innerHeight, i, prog;
+        var r0 = items[0].getBoundingClientRect(), r1 = items[n - 1].getBoundingClientRect();
+        if (r1.top - r0.top > 10) {
+            /* κάθετη λίστα (κινητό): «γραμμή ανάγνωσης» στο 55% της οθόνης */
+            var line = vh * 0.55, c0 = r0.top + r0.height / 2, c1 = r1.top + r1.height / 2;
+            prog = Math.min(1, Math.max(0, (line - c0) / (c1 - c0)));
+            i = -1;
+            for (var k = 0; k < n; k++) { var r = items[k].getBoundingClientRect(); if (r.top <= line) i = k; }
+            if (i < 0 && r0.top < vh * 0.9) i = 0;
+        } else {
+            /* οριζόντια σειρά (υπολογιστής): πρόοδος όσο η σειρά ανεβαίνει από το 85% στο 30% της οθόνης */
+            var rr = rail.getBoundingClientRect();
+            prog = Math.min(1, Math.max(0, (vh * 0.85 - rr.top) / (vh * 0.55)));
+            i = rr.top < vh * 0.9 ? Math.min(n - 1, Math.floor(prog * n)) : -1;
+        }
+        rail.style.setProperty('--hm-prog', prog.toFixed(4));
+        if (i === last) return; last = i;
+        items.forEach(function (li, k) { li.classList.toggle('is-active', k === i); li.classList.toggle('is-done', k < i); });
     }
-    function tick() {
-        i++;
-        if (i >= items.length) { i = -1; paint(); timer = setTimeout(tick, 700); return; }
-        paint();
-        timer = setTimeout(tick, i === items.length - 1 ? PAUSE : STEP);
-    }
-    function start() { if (timer) return; rail.classList.add('is-playing'); timer = setTimeout(tick, 400); }
-    function stop() { clearTimeout(timer); timer = null; }
-    if ('IntersectionObserver' in window) {
-        new IntersectionObserver(function (es) {
-            es.forEach(function (e) { if (e.isIntersecting) start(); else stop(); });
-        }, { threshold: 0.35 }).observe(rail);
-    } else { start(); }
+    function req() { if (!raf) raf = requestAnimationFrame(paint); }
+    window.addEventListener('scroll', req, { passive: true });
+    window.addEventListener('resize', req);
+    window.addEventListener('load', req);
+    paint();
 })();
 
 /* Έλεγχος Κ.Ο.Κ.: τα σημεία φωτίζονται ένα-ένα */

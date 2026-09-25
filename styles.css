@@ -5421,7 +5421,7 @@ a.hero-pillar { text-decoration: none; }
     .hm-rail::after {
         content: ''; position: absolute; left: 7px; top: 8px; width: 1px;
         height: calc((100% - 16px) * var(--hm-prog, 0)); background: #f6e3a8;
-        box-shadow: 0 0 8px rgba(246,227,168,0.8); transition: height 1.2s cubic-bezier(0.16,1,0.3,1);
+        box-shadow: 0 0 8px rgba(246,227,168,0.8); transition: height .15s linear;
     }
 }
 /* στον υπολογιστή: το τμήμα της γραμμής μετά από ολοκληρωμένο βήμα φωτίζεται */
