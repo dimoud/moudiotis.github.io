@@ -59,6 +59,8 @@
 
       var fd = new FormData(form);
       fd.append('_lang', (document.documentElement.lang || 'el').slice(0, 2));   // γλώσσα του αντιγράφου προς τον πελάτη
+      var sel = form.querySelector('select[name="subject"]');   // το κείμενο της επιλογής, όχι ο κωδικός (value="4")
+      if (sel && sel.selectedIndex > 0) fd.set('subject', sel.options[sel.selectedIndex].text.trim());
       fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: fd, signal: ctrl ? ctrl.signal : undefined })
         .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
         .then(function (json) {
