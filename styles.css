@@ -770,6 +770,13 @@ section { padding: 112px 7%; }
     text-shadow: 0 0 18px rgba(201,168,108,0.35);
 }
 .dim-row.ready .dim-value { opacity: 1; transform: scale(1); }
+/* Μακρύ κείμενο έδρας/εξυπηρέτησης: αναδιπλώνεται κεντραρισμένο αντί να ξεχειλίζει */
+.dim-value { white-space: normal; text-align: center; line-height: 1.6; flex: 0 1 auto; min-width: 0; }
+.dim-bar   { min-width: 24px; }
+@media (max-width: 768px) {
+    .dim-value { padding: 0 10px; letter-spacing: 1.5px; }
+    .dim-bar   { min-width: 16px; }
+}
 
 /* ── About section — desktop font boost (+20%) ── */
 @media (min-width: 769px) {
@@ -4297,7 +4304,7 @@ a.ta-cta-btn:hover, a.tap-cta-btn:hover, .svc-quick a.svc-quick-call:hover {
 .about-portrait img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 3px; }
 .about-portrait figcaption { padding: 18px 6px 6px; display: flex; flex-direction: column; gap: 5px; text-align: center; }
 .about-portrait figcaption strong { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--ink); line-height: 1.1; }
-.about-portrait figcaption span { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: var(--warm); }
+.about-portrait figcaption span { font-family: 'Barlow Condensed', sans-serif; font-size: 13.5px; font-weight: 600; letter-spacing: 1px; white-space: nowrap; text-transform: uppercase; color: var(--warm); }
 .about-portrait figcaption em { font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--stone); }
 .ap-badge { position: absolute; top: 26px; right: 26px; padding: 6px 12px; border-radius: 4px;
     background: rgba(20,33,52,0.88); color: #e2c68f; font-family: 'Barlow Condensed', sans-serif;
@@ -4324,7 +4331,7 @@ a.ta-cta-btn:hover, a.tap-cta-btn:hover, .svc-quick a.svc-quick-call:hover {
     .about-portrait img { width: 96px; height: 96px; border-radius: 50%; }
     .about-portrait figcaption { padding: 0; text-align: left; }
     .about-portrait figcaption strong { font-size: 21px; }
-    .about-portrait figcaption span { font-size: 12px; letter-spacing: 1px; }
+    .about-portrait figcaption span { font-size: 12px; letter-spacing: 1px; white-space: normal; }
     .about-portrait figcaption em { font-size: 15px; }
     .ap-badge { position: static; grid-column: 1 / -1; justify-self: start; }
     .ap-corner { width: 16px; height: 16px; }
