@@ -69,7 +69,7 @@
         raf = 0;
         if (!mq.matches) { wrap.classList.remove('hp-scroll'); ps.forEach(function (p) { p.style.transform = ''; p.style.opacity = ''; }); return; }
         wrap.classList.add('hp-scroll');
-        var W = window.innerWidth, vh = window.innerHeight, a = vh * 0.98, b = vh * 0.52;
+        var W = window.innerWidth, vh = window.innerHeight, a = vh * 1.0, b = vh * 0.76;
         ps.forEach(function (p, k) {
             var dir = k % 2 ? 1 : -1;
             var top = p.getBoundingClientRect().top - (parseFloat(p.dataset.hpY) || 0);
@@ -84,4 +84,8 @@
     window.addEventListener('scroll', req, { passive: true });
     window.addEventListener('resize', function () { measure(); req(); });
     window.addEventListener('load', function () { measure(); req(); });
+    /* τα στοιχεία πάνω από τις ετικέτες κινούνται ακόμη στο άνοιγμα της σελίδας· ξαναμετράμε για λίγα δευτερόλεπτα */
+    var t0 = Date.now();
+    (function loop() { paint(); if (Date.now() - t0 < 5000) requestAnimationFrame(loop); })();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(req);
 })();
