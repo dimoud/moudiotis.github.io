@@ -92,3 +92,29 @@
     (function loop() { paint(); if (Date.now() - t0 < 5000) requestAnimationFrame(loop); })();
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(req);
 })();
+
+/* Εγκρίσεις τύπου: η γραμμή που περνά από τη μέση της οθόνης φωτίζεται — ακολουθεί την κύλιση και στις δύο κατευθύνσεις */
+(function () {
+    var list = document.querySelector('.hm-idx'); if (!list) return;
+    var rows = list.querySelectorAll('li'); if (!rows.length) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var raf = 0, last = -2;
+    list.classList.add('is-scrub');
+    function paint() {
+        raf = 0;
+        var vh = window.innerHeight, line = vh * 0.55, i = -1, best = 1e9;
+        rows.forEach(function (li, k) {
+            var r = li.getBoundingClientRect();
+            if (r.bottom < vh * 0.12 || r.top > vh * 0.9) return;
+            var d = Math.abs(r.top + r.height / 2 - line);
+            if (d < best) { best = d; i = k; }
+        });
+        if (i === last) return; last = i;
+        rows.forEach(function (li, k) { li.classList.toggle('is-focus', k === i); });
+    }
+    function req() { if (!raf) raf = requestAnimationFrame(paint); }
+    window.addEventListener('scroll', req, { passive: true });
+    window.addEventListener('resize', req);
+    window.addEventListener('load', req);
+    paint();
+})();
