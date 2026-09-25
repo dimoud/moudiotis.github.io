@@ -82,17 +82,21 @@ window.SITE_CONFIG = {
         { el: 'Καταχώρηση στο ΤΑΟ',                en: 'Technical Vehicle Archive (TAO)' },
         { el: 'Δελτίο Κοινοποίησης',               en: 'Notification Certificate' },
         { el: 'Ειδικές Κατασκευές και Μετασκευές',   en: 'Special Bodywork and Conversions' },
-        { el: 'Τεχνικός Ασφαλείας — ΓΕΕΚ',         en: 'Safety Engineer — Risk Assessment' },
-        { el: '3D Printing and CAD',                  en: '3D Printing and CAD' },
-        { el: 'Laser Cut και Κατεργασία Μετάλλου',   en: 'Laser Cut and Sheet Metal' },
+        { el: 'Ταξινόμηση Τροχόσπιτου',             en: 'Caravan Registration' },
+        { el: 'Τοποθέτηση Γερανού σε Φορτηγό',      en: 'Truck Crane Installation' },
+        { el: 'Βαν σε Αυτοκινούμενο Τροχόσπιτο',    en: 'Van to Motor Caravan' },
+        // Κρυφά (όχι οχήματα) — για μελλοντική χρήση:
+        // { el: 'Τεχνικός Ασφαλείας — ΓΕΕΚ',         en: 'Safety Engineer — Risk Assessment' },
+        // { el: '3D Printing and CAD',                  en: '3D Printing and CAD' },
+        // { el: 'Laser Cut και Κατεργασία Μετάλλου',   en: 'Laser Cut and Sheet Metal' },
     ],
 
     // ── ABOUT ─────────────────────────────────────────────────────────────
     about: {
         headingEl: 'Εμπειρία και <em>Εξειδίκευση</em>',
         headingEn: 'Experience and <em>Expertise</em>',
-        leadEl:    'Με {years}+ χρόνια εμπειρίας, το <strong class="kw">τεχνικό γραφείο</strong> του <strong class="kw">μηχανολόγου μηχανικού</strong> Δημήτρη Μουδιώτη αναλαμβάνει <strong class="kw">έγκριση τύπου οχήματος</strong> και <strong class="kw">έγκριση τύπου ρυμουλκούμενου</strong>, <strong class="kw">άδεια τρέιλερ</strong> Ο1/Ο2, <strong class="kw">άδεια μπαγκαζιέρας</strong>, μελέτες <strong class="kw">οχημάτων ειδικής χρήσης ειδικού σκοπού</strong>, ενεργειακά πιστοποιητικά και κάλυψη τεχνικού ασφαλείας.',
-        leadEn:    'With {years}+ years of experience, the <strong class="kw">technical office</strong> of <strong class="kw">mechanical engineer</strong> Dimitrios Moudiotis handles <strong class="kw">vehicle type approval</strong> and <strong class="kw">trailer type approval</strong>, <strong class="kw">trailer and cargo-box licences</strong> O1/O2, <strong class="kw">special use / special purpose vehicle</strong> studies, energy certificates and safety engineer coverage.',
+        leadEl:    'Με {years}+ χρόνια εμπειρίας, το <strong class="kw">τεχνικό γραφείο</strong> του <strong class="kw">μηχανολόγου μηχανικού</strong> Δημήτρη Μουδιώτη αναλαμβάνει <strong class="kw">έγκριση τύπου οχήματος</strong> και <strong class="kw">έγκριση τύπου ρυμουλκούμενου</strong>, <strong class="kw">άδεια τρέιλερ</strong> Ο1/Ο2, <strong class="kw">άδεια μπαγκαζιέρας</strong>, μελέτες <strong class="kw">οχημάτων ειδικής χρήσης ειδικού σκοπού</strong>, μετασκευές, τροχόσπιτα και τοποθέτηση γερανών.',
+        leadEn:    'With {years}+ years of experience, the <strong class="kw">technical office</strong> of <strong class="kw">mechanical engineer</strong> Dimitrios Moudiotis handles <strong class="kw">vehicle type approval</strong> and <strong class="kw">trailer type approval</strong>, <strong class="kw">trailer and cargo-box licences</strong> O1/O2, <strong class="kw">special use / special purpose vehicle</strong> studies, conversions, caravans and crane installations.',
         features: [
             {
                 icon:    'fa-bolt-lightning',
@@ -121,6 +125,111 @@ window.SITE_CONFIG = {
     // ── SERVICES ──────────────────────────────────────────────────────────
     services: [
         {
+            featured:    true,
+            icon:        'fa-file-circle-check',
+            urlEl:       '/deltio-koinopoiisis-tao/',
+            urlEn:       '/en/deltio-koinopoiisis-tao/',
+            titleEl:     'Δελτίο Κοινοποίησης και Καταχώρηση ΤΑΟ',
+            titleEn:     'Notification Certificate and TAO Registration',
+            textEl:      '<strong class="kw">Δελτίο Κοινοποίησης</strong> έγκρισης τύπου και <strong class="kw">καταχώρηση στο ΤΑΟ</strong> για εισαγωγείς, αντιπροσωπείες και κατασκευαστές. <strong class="kw">Εξ αποστάσεως</strong>, σε όλη την Ελλάδα και για το εξωτερικό.',
+            textEn:      '<strong class="kw">Type approval notification</strong> and <strong class="kw">TAO registration</strong> for importers, dealers and manufacturers. <strong class="kw">Handled remotely</strong>, across Greece and for clients abroad.',
+            seoKeywords: 'δελτίο κοινοποίησης, καταχώρηση ΤΑΟ, Τεχνικό Αρχείο Οχημάτων, ταξινόμηση οχήματος, εισαγωγή οχημάτων, type approval notification Greece, TAO registration',
+        },
+        {
+            icon:        'fa-stamp',
+            urlEl:       '/ethniki-evropaiki-egkrisi-typou/',
+            urlEn:       '/en/ethniki-evropaiki-egkrisi-typou/',
+            titleEl:     'Εθνική και Ευρωπαϊκή Έγκριση Τύπου',
+            titleEn:     'National and EU Type Approval',
+            textEl:      'Φάκελος <strong class="kw">έγκρισης τύπου</strong> για οχήματα, αμαξώματα και ρυμουλκούμενα, κατά τον Κανονισμό (ΕΕ) 2018/858 ή σε εθνικό επίπεδο για μικρές σειρές.',
+            textEn:      '<strong class="kw">Type approval</strong> dossiers for vehicles, bodies and trailers, under Regulation (EU) 2018/858 or at national level for small series.',
+            seoKeywords: 'έγκριση τύπου οχήματος, ευρωπαϊκή έγκριση τύπου, εθνική έγκριση τύπου, μικρή σειρά, κανονισμός 2018/858, vehicle type approval Greece',
+        },
+        {
+            icon:        'fa-car-side',
+            urlEl:       '/memonomeni-egkrisi-oximatos/',
+            urlEn:       '/en/memonomeni-egkrisi-oximatos/',
+            titleEl:     'Μεμονωμένη Έγκριση και Εισαγόμενα Οχήματα',
+            titleEn:     'Individual Approval and Imported Vehicles',
+            textEl:      'Για οχήματα που δεν καλύπτονται από έγκριση τύπου: <strong class="kw">εισαγόμενα</strong>, τροποποιημένα ή μοναδικά, μέχρι την ταξινόμηση.',
+            textEn:      'For vehicles not covered by a type approval: <strong class="kw">imported</strong>, modified or one-off, through to registration.',
+            seoKeywords: 'μεμονωμένη έγκριση οχήματος, εισαγόμενο όχημα ταξινόμηση, όχημα από ΗΠΑ, individual vehicle approval Greece',
+        },
+        {
+            icon:        'fa-motorcycle',
+            urlEl:       '/egkrisi-typou-dikyklon/',
+            urlEn:       '/en/egkrisi-typou-dikyklon/',
+            titleEl:     'Έγκριση Τύπου Κατηγορίας L',
+            titleEn:     'Category L Type Approval',
+            textEl:      '<strong class="kw">Μοτοποδήλατα</strong>, μοτοσικλέτες, τρίκυκλα και τετράκυκλα κατά τον Κανονισμό (ΕΕ) 168/2013.',
+            textEn:      '<strong class="kw">Mopeds</strong>, motorcycles, tricycles and quadricycles under Regulation (EU) 168/2013.',
+            seoKeywords: 'έγκριση τύπου μοτοσικλέτας, κατηγορία L, τετράκυκλο ταξινόμηση, 168/2013, L category type approval Greece',
+        },
+        {
+            badge:       'new',
+            expand:      '0',
+            icon:        'fa-truck-ramp-box',
+            urlEl: '/adeia-treiler-o1-o2/',
+            urlEn: '/en/adeia-treiler-o1-o2/',
+            titleEl:     'Άδεια Τρέιλερ Ο1 και Ο2 — Ταξινόμηση Ρυμουλκούμενου και Μπαγκαζιέρας',
+            titleEn:     'O1 and O2 Trailer Licence — Trailer and Cargo Box Registration',
+            textEl:      'Ξανάνοιξαν οι διαδικασίες <strong class="kw">ταξινόμησης</strong> για <strong class="kw">όλα τα τρέιλερ</strong>. Αναλαμβάνουμε πλήρως: <strong class="kw">Ο1</strong> (έως 750 kg — <strong class="kw">μπαγκαζιέρα</strong>, σκάφος, τροχόσπιτο) και <strong class="kw">Ο2</strong> (έως 3,5 τόνους). <strong class="kw">Έγκριση τύπου ρυμουλκούμενου</strong>, τεχνική μελέτη, υποβολή σε ΥΜΕΔ/ΚΤΕΟ, <strong class="kw">έκδοση άδειας κυκλοφορίας</strong> — από την αρχή ώς το τέλος.',
+            textEn:      'Procedures have reopened for <strong class="kw">all trailers</strong>. We handle everything: <strong class="kw">O1</strong> (up to 750 kg — cargo box, boat, caravan) and <strong class="kw">O2</strong> (up to 3.5 tonnes). <strong class="kw">Trailer type approval</strong>, technical study, submission to YMED/KTEO, <strong class="kw">circulation licence issuance</strong> — end to end.',
+            seoKeywords: 'αδεια τρειλερ, άδεια τρέιλερ, τρέϊλερ, ταξινόμηση ρυμουλκούμενου, έγκριση τύπου ρυμουλκούμενου, αδεια ρυμουλκουμενου Ο1 Ο2, άδεια ρυμουλκούμενου, μπαγκαζιέρα, άδεια μπαγκαζιέρα, νομιμοποίηση τρέιλερ, ταξινόμηση τρέιλερ, έκδοση άδειας κυκλοφορίας, trailer licence Greece, cargo trailer licence Greece',
+        },
+        {
+            icon:        'fa-caravan',
+            urlEl:       '/trochospita/',
+            urlEn:       '/en/trochospita/',
+            titleEl:     'Ταξινόμηση Τροχόσπιτου',
+            titleEn:     'Caravan Registration',
+            textEl:      'Ρυμουλκούμενο <strong class="kw">τροχόσπιτο</strong>, καινούργιο ή εισαγόμενο μεταχειρισμένο: ταξινόμηση, άδεια κυκλοφορίας και πινακίδες.',
+            textEn:      'Trailer <strong class="kw">caravan</strong>, new or imported used: registration, licence and plates.',
+            seoKeywords: 'ταξινόμηση τροχόσπιτου, άδεια τροχόσπιτου, τροχόσπιτο από Γερμανία, caravan registration Greece',
+        },
+        {
+            icon:        'fa-van-shuttle',
+            urlEl:       '/metatropi-van-se-trochospito/',
+            urlEn:       '/en/metatropi-van-se-trochospito/',
+            titleEl:     'Μετατροπή Βαν σε Αυτοκινούμενο Τροχόσπιτο',
+            titleEn:     'Van to Motor Caravan Conversion',
+            textEl:      'Η μετατροπή γίνεται <strong class="kw">υπό προϋποθέσεις</strong> και ολοκληρώνεται με έλεγχο και νέα άδεια κυκλοφορίας. Εξετάζουμε πρώτα το δικό σας όχημα.',
+            textEn:      'The conversion is possible <strong class="kw">under conditions</strong> and ends with an inspection and a new registration. We assess your vehicle first.',
+            seoKeywords: 'μετατροπή βαν σε τροχόσπιτο, αυτοκινούμενο τροχόσπιτο, camper άδεια, van to camper Greece',
+        },
+        {
+            icon:        'fa-truck-medical',
+            urlEl:       '/oximata-eidikou-skopou/',
+            urlEn:       '/en/oximata-eidikou-skopou/',
+            titleEl:     'Οχήματα Ειδικής Χρήσης και Ειδικού Σκοπού',
+            titleEn:     'Special Use and Special Purpose Vehicles',
+            textEl:      '<strong class="kw">Καντίνες</strong>, ασθενοφόρα, κινητές μονάδες, οχήματα οδικής βοήθειας: ταξινόμηση και έγκριση από τη σωστή διαδρομή.',
+            textEn:      '<strong class="kw">Catering units</strong>, ambulances, mobile units, recovery vehicles: registration and approval by the right route.',
+            seoKeywords: 'οχήματα ειδικής χρήσης ειδικού σκοπού, ΕΧΕΣ, καντίνα άδεια, ασθενοφόρο ταξινόμηση, special purpose vehicle registration Greece',
+        },
+        {
+            icon:        'fa-compass-drafting',
+            urlEl:       '/metaskeves-yperkataskeves/',
+            urlEn:       '/en/metaskeves-yperkataskeves/',
+            titleEl:     'Μετασκευές και Υπερκατασκευές',
+            titleEn:     'Conversions and Superstructures',
+            textEl:      'Αλλαγή αμαξώματος, κινητήρα ή αξόνων, ψυγεία, ανατροπές, κινητά συνεργεία. <strong class="kw">Μελέτη αντοχής</strong> και νέα άδεια κυκλοφορίας.',
+            textEn:      'Body, engine or axle changes, refrigerated bodies, tippers, mobile workshops. <strong class="kw">Strength study</strong> and new registration.',
+            seoKeywords: 'μετασκευή οχήματος, αλλαγή αμαξώματος, αλλαγή κινητήρα, προσθήκη άξονα, υπερκατασκευή, vehicle conversion Greece',
+        },
+        {
+            icon:        'fa-truck-moving',
+            urlEl:       '/topothetisi-geranou/',
+            urlEn:       '/en/topothetisi-geranou/',
+            titleEl:     'Τοποθέτηση Γερανού σε Φορτηγό',
+            titleEn:     'Crane Installation on a Truck',
+            textEl:      'Μελέτη φορτίων και ευστάθειας, στερέωση στο πλαίσιο, έλεγχος και <strong class="kw">νέα άδεια κυκλοφορίας</strong>.',
+            textEn:      'Load and stability study, chassis mounting, inspection and a <strong class="kw">new registration certificate</strong>.',
+            seoKeywords: 'τοποθέτηση γερανού φορτηγό, γερανοφόρο άδεια, γερανός φορτηγού μελέτη, truck crane installation Greece',
+        },
+        // ── Κρυφές (δεν εμφανίζονται· κρατιούνται για μελλοντική χρήση) ──
+        {
+            hidden:      true,   // κρυφή (όχι οχήματα) — κρατιέται για μελλοντική χρήση
             featured:    true,
             icon:        'fa-file-circle-check',
             urlEl: '/deltio-koinopoiisis-tao/',
@@ -172,18 +281,7 @@ window.SITE_CONFIG = {
             ],
         },
         {
-            badge:       'new',
-            expand:      '0',
-            icon:        'fa-truck-ramp-box',
-            urlEl: '/adeia-treiler-o1-o2/',
-            urlEn: '/en/adeia-treiler-o1-o2/',
-            titleEl:     'Άδεια Τρέιλερ Ο1 και Ο2 — Ταξινόμηση Ρυμουλκούμενου και Μπαγκαζιέρας',
-            titleEn:     'O1 and O2 Trailer Licence — Trailer and Cargo Box Registration',
-            textEl:      'Ξανάνοιξαν οι διαδικασίες <strong class="kw">ταξινόμησης</strong> για <strong class="kw">όλα τα τρέιλερ</strong>. Αναλαμβάνουμε πλήρως: <strong class="kw">Ο1</strong> (έως 750 kg — <strong class="kw">μπαγκαζιέρα</strong>, σκάφος, τροχόσπιτο) και <strong class="kw">Ο2</strong> (έως 3,5 τόνους). <strong class="kw">Έγκριση τύπου ρυμουλκούμενου</strong>, τεχνική μελέτη, υποβολή σε ΥΜΕΔ/ΚΤΕΟ, <strong class="kw">έκδοση άδειας κυκλοφορίας</strong> — από την αρχή ώς το τέλος.',
-            textEn:      'Procedures have reopened for <strong class="kw">all trailers</strong>. We handle everything: <strong class="kw">O1</strong> (up to 750 kg — cargo box, boat, caravan) and <strong class="kw">O2</strong> (up to 3.5 tonnes). <strong class="kw">Trailer type approval</strong>, technical study, submission to YMED/KTEO, <strong class="kw">circulation licence issuance</strong> — end to end.',
-            seoKeywords: 'αδεια τρειλερ, άδεια τρέιλερ, τρέϊλερ, ταξινόμηση ρυμουλκούμενου, έγκριση τύπου ρυμουλκούμενου, αδεια ρυμουλκουμενου Ο1 Ο2, άδεια ρυμουλκούμενου, μπαγκαζιέρα, άδεια μπαγκαζιέρα, νομιμοποίηση τρέιλερ, ταξινόμηση τρέιλερ, έκδοση άδειας κυκλοφορίας, trailer licence Greece, cargo trailer licence Greece',
-        },
-        {
+            hidden:      true,   // κρυφή (όχι οχήματα) — κρατιέται για μελλοντική χρήση
             expand:      '1',
             urlEl:       '/oximata-eidikou-skopou/',
             urlEn:       '/en/oximata-eidikou-skopou/',
@@ -215,6 +313,7 @@ window.SITE_CONFIG = {
             ],
         },
         {
+            hidden:      true,   // κρυφή (όχι οχήματα) — κρατιέται για μελλοντική χρήση
             urlEl:       '/ydravliki-platforma/',
             urlEn:       '/en/ydravliki-platforma/',
             icon:        'fa-arrows-up-down',
@@ -225,6 +324,7 @@ window.SITE_CONFIG = {
             seoKeywords: 'υδραυλικη πλατφορμα, εγκριση τυπου, EN 1570, πιστοποιηση CE, hydraulic platform study Greece, τεχνική μελέτη υδραυλικής πλατφόρμας',
         },
         {
+            hidden:      true,   // κρυφή (όχι οχήματα) — κρατιέται για μελλοντική χρήση
             urlEl:       '/texniki-symvouleftiki/',
             urlEn:       '/en/texniki-symvouleftiki/',
             icon:        'fa-clipboard-check',
@@ -249,6 +349,7 @@ window.SITE_CONFIG = {
             ],
         },
         {
+            hidden:      true,   // κρυφή (όχι οχήματα) — κρατιέται για μελλοντική χρήση
             urlEl:       '/meleti-pyroprostasias/',
             urlEn:       '/en/meleti-pyroprostasias/',
             icon:        'fa-fire-extinguisher',
@@ -259,6 +360,7 @@ window.SITE_CONFIG = {
             seoKeywords: 'μελετη ενεργητικης πυροπροστασιας, ενεργητική πυροπροστασία, μελέτη πυροπροστασίας, συστημα πυροσβεσης, sprinkler, πυρασφάλεια κτιρίου, fire protection study Greece, μηχανολόγος μηχανικός πυροπροστασία',
         },
         {
+            hidden:      true,   // κρυφή (όχι οχήματα) — κρατιέται για μελλοντική χρήση
             urlEl:       '/texnikos-asfaleias/',
             urlEn:       '/en/texnikos-asfaleias/',
             icon:        'fa-helmet-safety',
@@ -269,6 +371,7 @@ window.SITE_CONFIG = {
             seoKeywords: 'τεχνικος ασφαλειας, ΓΕΕΚ, υγεια ασφαλεια εργασιας, νομος 3850 2010, safety engineer Athens, occupational health safety Greece',
         },
         {
+            hidden:      true,   // κρυφή (όχι οχήματα) — κρατιέται για μελλοντική χρήση
             icon:        'fa-cube',
             url:         'https://expertease.eu/3dprint',
             titleEl:     '<strong>Μηχανολογικός Σχεδιασμός</strong> και 3D Printing',
@@ -531,9 +634,13 @@ window.SITE_CONFIG = {
         { el: 'Καταχώρηση ΤΑΟ / Δελτίο Κοινοποίησης',             en: 'TAO Registration / Notification Certificate' },
         { el: 'Μελέτη Μετασκευής / Ειδικής Κατασκευής',           en: 'Conversion / Special Bodywork Study' },
         { el: 'Βεβαίωση Συμμόρφωσης / Τεχνικό Υπόμνημα',          en: 'Compliance Certificate / Technical Memorandum' },
-        { el: 'Μελέτη Γερανού / Υδραυλικής Πλατφόρμας',          en: 'Crane / Hydraulic Platform Study' },
-        { el: 'Τεχνικός Ασφαλείας / ΓΕΕΚ',                        en: 'Safety Engineer / Risk Assessment' },
-        { el: 'Μηχανολογικός Σχεδιασμός / 3D Print',               en: 'Mechanical Design / 3D Print' },
+        { el: 'Τοποθέτηση Γερανού σε Φορτηγό',                    en: 'Truck Crane Installation' },
+        { el: 'Ταξινόμηση Τροχόσπιτου',                           en: 'Caravan Registration' },
+        { el: 'Μετατροπή Βαν σε Αυτοκινούμενο Τροχόσπιτο',        en: 'Van to Motor Caravan Conversion' },
+        // Κρυφά (όχι οχήματα) — για μελλοντική χρήση:
+        // { el: 'Μελέτη Γερανού / Υδραυλικής Πλατφόρμας',          en: 'Crane / Hydraulic Platform Study' },
+        // { el: 'Τεχνικός Ασφαλείας / ΓΕΕΚ',                        en: 'Safety Engineer / Risk Assessment' },
+        // { el: 'Μηχανολογικός Σχεδιασμός / 3D Print',               en: 'Mechanical Design / 3D Print' },
         { el: 'Άλλο',                                              en: 'Other' },
     ],
 

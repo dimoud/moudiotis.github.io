@@ -35,6 +35,8 @@
     'use strict';
 
     var C = window.SITE_CONFIG;
+    /* Κρυφές υπηρεσίες (hidden: true στο config): κρατιούνται, δεν εμφανίζονται */
+    if (C && C.services) C.services = C.services.filter(function (s) { return !s.hidden; });
     if (!C) {
         console.error('[site-init] window.SITE_CONFIG not found. Did config.js load before site-init.js?');
         return;
@@ -64,7 +66,6 @@
     T['nav.tao']      = { el: 'Έγκριση Τύπου, ΤΑΟ',         en: 'Type Approval, TAO' };
     T['nav.moto']     = { el: 'Δίκυκλα, Τετράκυκλα',        en: 'Two-wheelers, Quads' };
     T['nav.special']  = { el: 'Ειδικού Σκοπού',              en: 'Special Purpose' };
-
 
     // ── ΑΡΧΙΚΗ: ΤΕΣΣΕΡΙΣ ΣΤΙΓΜΕΣ ΥΠΗΡΕΣΙΩΝ ──
     T["hm.ta.eyebrow"] = { el: "Εγκρίσεις τύπου", en: "Type approvals" };
@@ -114,19 +115,21 @@
     T["hm.q.cta"] = { el: "Ανοίξτε τον υπολογιστή", en: "Open the calculator" };
     // ── /ΑΡΧΙΚΗ ──
     // Αναδυόμενο μενού «Υπηρεσίες»
-    T['nav.dd.g1']  = { el: 'Οχήματα', en: 'Vehicles' };
-    T['nav.dd.g2']  = { el: 'Μελέτες και Ασφάλεια', en: 'Studies and Safety' };
+    T['nav.dd.g1']  = { el: "Εγκρίσεις και Ταξινόμηση", en: "Approvals and Registration" };
+    T['nav.dd.g2']  = { el: "Μετατροπές και Ειδικά Οχήματα", en: "Conversions and Special Vehicles" };
     T['nav.dd.all'] = { el: 'Όλες οι υπηρεσίες', en: 'All services' };
-    T['nav.dd.deltio-koinopoiisis-tao'] = { el: 'Έγκριση Τύπου και ΤΑΟ', en: 'Type Approval and TAO' };
-    T['nav.dd.memonomeni-egkrisi-oximatos'] = { el: 'Εισαγόμενα και Τροχόσπιτα', en: 'Imports and Caravans' };
-    T['nav.dd.adeia-treiler-o1-o2'] = { el: 'Άδεια Τρέιλερ Ο1/Ο2', en: 'O1/O2 Trailer Licence' };
-    T['nav.dd.egkrisi-typou-dikyklon'] = { el: 'Δίκυκλα και Τετράκυκλα', en: 'Two-wheelers and Quads' };
-    T['nav.dd.oximata-eidikou-skopou'] = { el: 'Οχήματα Ειδικού Σκοπού', en: 'Special Purpose Vehicles' };
-    T['nav.dd.ydravliki-platforma'] = { el: 'Υδραυλική Πλατφόρμα', en: 'Hydraulic Platform' };
-    T['nav.dd.texniki-symvouleftiki'] = { el: 'Τεχνική Συμβουλευτική', en: 'Technical Consulting' };
-    T['nav.dd.meleti-pyroprostasias'] = { el: 'Μελέτη Πυροπροστασίας', en: 'Fire Protection Study' };
-    T['nav.dd.texnikos-asfaleias'] = { el: 'Τεχνικός Ασφαλείας', en: 'Safety Engineer' };
-    T['nav.dd.3d'] = { el: 'Σχεδιασμός και 3D Printing', en: 'Design and 3D Printing' };
+    T['nav.dd.deltio-koinopoiisis-tao'] = { el: "Δελτίο Κοινοποίησης και ΤΑΟ", en: "Notification and TAO" };
+    T['nav.dd.ethniki-evropaiki-egkrisi-typou'] = { el: "Εθνική και Ευρωπαϊκή Έγκριση", en: "National and EU Approval" };
+    T['nav.dd.memonomeni-egkrisi-oximatos'] = { el: "Μεμονωμένη Έγκριση, Εισαγόμενα", en: "Individual Approval, Imports" };
+    T['nav.dd.egkrisi-typou-dikyklon'] = { el: "Κατηγορία L: Δίκυκλα, Τετράκυκλα", en: "Category L: Motorcycles, Quads" };
+    T['nav.dd.adeia-treiler-o1-o2'] = { el: "Άδεια Τρέιλερ Ο1/Ο2", en: "O1/O2 Trailer Licence" };
+    T['nav.dd.trochospita'] = { el: "Τροχόσπιτα", en: "Caravans" };
+    T['nav.dd.metatropi-van-se-trochospito'] = { el: "Βαν σε Αυτοκινούμενο", en: "Van to Motor Caravan" };
+    T['nav.dd.oximata-eidikou-skopou'] = { el: "Οχήματα Ειδικού Σκοπού", en: "Special Purpose Vehicles" };
+    T['nav.dd.metaskeves-yperkataskeves'] = { el: "Μετασκευές, Υπερκατασκευές", en: "Conversions, Superstructures" };
+    T['nav.dd.topothetisi-geranou'] = { el: "Τοποθέτηση Γερανού", en: "Crane Installation" };
+
+
 
     // NEWS
     T['news.eyebrow'] = { el: 'ΕΝΗΜΕΡΩΣΗ', en: 'UPDATES' };
@@ -145,8 +148,8 @@
        Οι αριθμοί βγαίνουν από το config (κριτικές, έργα, χρόνια), ώστε να μη
        μένουν πίσω όταν αλλάζουν. */
     T['hero.headline'] = {
-        el: 'Εγκρίσεις τύπου και <em>ταξινομήσεις οχημάτων</em>',
-        en: 'Vehicle type approval and <em>registration</em>',
+        el: 'Εγκρίσεις Τύπου <span class="hh-sep">|</span> <em>Ταξινόμηση Οχημάτων</em>',
+        en: 'Type Approval <span class="hh-sep">|</span> <em>Vehicle Registration</em>',
     };
     T['hero.sub'] = {
         el: 'Μεμονωμένη έγκριση, καταχώρηση στο ΤΑΟ, ρυμουλκούμενα, δίκυκλα και οχήματα ειδικού σκοπού. Αναλαμβάνουμε ολόκληρο τον φάκελο, από τη μελέτη ως τις πινακίδες.',
@@ -173,7 +176,8 @@
     T['about.parea']  = { el: 'Αθήνα · Θεσσαλονίκη', en: 'Athens · Thessaloniki' };
     T['hero.p1'] = { el: 'Εγκρίσεις Τύπου',          en: 'Type Approvals' };
     T['hero.p2'] = { el: 'Τεχνικές Μελέτες',         en: 'Technical Studies' };
-    T['hero.p3'] = { el: 'Πλήρης Ανάληψη Φακέλου',   en: 'Full File Handling' };
+    T['hero.p3'] = { el: 'Πλήρης Ανάληψη',           en: 'Full Handling' };
+    T['hero.p4'] = { el: 'Οχήματα Ειδικού Σκοπού',   en: 'Special Purpose Vehicles' };
 
     // MARQUEE
     (C.marquee || []).forEach(function (m, i) {
