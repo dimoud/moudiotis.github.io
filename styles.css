@@ -5445,3 +5445,22 @@ a.hero-pillar { text-decoration: none; }
 .hm-pin-n { transition: background-color .45s, color .45s, box-shadow .45s; }
 .hm-pinlist li.is-active .hm-pin-n { background: #c9a86c; color: #11243d; box-shadow: 0 0 0 4px rgba(201,168,108,.22); }
 @media (prefers-reduced-motion: reduce) { .hm-pins > g, .hm-pinlist li { transition: none; } }
+
+/* Μενού κινητού: ενιαία λίστα υπηρεσιών, χωρίς κατηγορίες και διπλότυπα, με λεπτές οριζόντιες γραμμές */
+@media (max-width: 960px) {
+    .nav-links.open .nav-dd .nav-dd-menu {
+        border-right: 0 !important; padding: 0 !important; margin: 4px 0 8px !important;
+        border-top: 1px solid rgba(255,255,255,0.09);
+    }
+    .nav-links.open .nav-dd-head,
+    .nav-links.open .nav-dd-menu a.nav-dd-all { display: none !important; }
+    .nav-links.open .nav-dd-col { gap: 0; }
+    .nav-links.open .nav-dd-menu a {
+        width: 100%; display: flex !important; align-items: center; justify-content: flex-end;
+        min-height: 48px !important; padding: 12px 0 !important; margin: 0 !important;
+        font-size: 15px !important; line-height: 1.3; text-align: right;
+        color: rgba(255,255,255,0.84) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.09);
+    }
+    .nav-links.open .nav-dd-menu a:active { color: #e7c983 !important; background: rgba(201,168,108,0.06); }
+}
