@@ -62,6 +62,7 @@
     T['nav.trailer']  = { el: 'Άδεια Τρέιλερ Ο1/Ο2',        en: 'Trailer Licence' };
     T['nav.imports']  = { el: 'Εισαγόμενα, Τροχόσπιτα',     en: 'Imports, Caravans' };
     T['nav.tao']      = { el: 'Έγκριση Τύπου, ΤΑΟ',         en: 'Type Approval, TAO' };
+    T['nav.moto']     = { el: 'Δίκυκλα, Τετράκυκλα',        en: 'Two-wheelers, Quads' };
     T['nav.special']  = { el: 'Ειδικού Σκοπού',              en: 'Special Purpose' };
 
     // NEWS
@@ -77,6 +78,39 @@
         en: P.universityEn ? P.professionEn + ' \u2014 ' + P.universityEn : P.professionEn,
     };
     T['hero.cta']     = { el: 'Επικοινωνία',   en: 'Get in Touch' };
+    /* Πρώτη οθόνη: τι κάνουμε, με ποια εγγύηση, και η απόδειξη αμέσως από κάτω.
+       Οι αριθμοί βγαίνουν από το config (κριτικές, έργα, χρόνια), ώστε να μη
+       μένουν πίσω όταν αλλάζουν. */
+    T['hero.headline'] = {
+        el: 'Εγκρίσεις τύπου και <em>ταξινομήσεις οχημάτων</em>',
+        en: 'Vehicle type approval and <em>registration</em>',
+    };
+    T['hero.sub'] = {
+        el: 'Μεμονωμένη έγκριση, καταχώρηση στο ΤΑΟ, ρυμουλκούμενα, δίκυκλα και οχήματα ειδικού σκοπού. Αναλαμβάνουμε ολόκληρο τον φάκελο, από τη μελέτη ως τις πινακίδες.',
+        en: 'Individual approval, TAO registration, trailers, two-wheelers and special purpose vehicles. We take on the whole file, from the study to the plates.',
+    };
+    T['hero.cta.quote'] = { el: 'Ζητήστε προσφορά', en: 'Request a quote' };
+    (function () {
+        var nRev = (C.reviews || []).length;
+        var st = (C.trust && C.trust.stats) || [];
+        var yrs = st[0] ? injectYears(st[0].numEl) : '';
+        var prj = st[1] ? st[1].numEl : '';
+        T['hero.proof'] = {
+            /* Όλες οι κριτικές στη Google είναι 5 αστέρων (επιβεβαιωμένο από τον ιδιοκτήτη) */
+            el: '5,0 · ' + nRev + ' κριτικές στη Google' + (prj ? ' · ' + prj + ' έργα' : '') + (yrs ? ' · ' + yrs + ' χρόνια' : ''),
+            en: '5.0 · ' + nRev + ' Google reviews' + (prj ? ' · ' + prj + ' projects' : '') + (yrs ? ' · ' + yrs + ' years' : ''),
+        };
+    })();
+    T['tools.eyebrow'] = { el: 'Εργαλεία ρυμουλκούμενου', en: 'Trailer tools' };
+    T['tools.tab1']    = { el: 'Οδηγός άδειας',      en: 'Licence guide' };
+    T['tools.tab2']    = { el: 'Έλεγχος Κ.Ο.Κ.',     en: 'Road check' };
+    T['tools.tab3']    = { el: 'Υπολογιστής έλξης',  en: 'Towing calculator' };
+    T['about.pname']  = { el: 'Δημήτριος Μουδιώτης', en: 'Dimitrios Moudiotis' };
+    T['about.ptitle'] = { el: 'Μηχανολόγος Μηχανικός ΑΠΘ, MSc', en: 'Mechanical Engineer AUTH, MSc' };
+    T['about.parea']  = { el: 'Αθήνα · Θεσσαλονίκη', en: 'Athens · Thessaloniki' };
+    T['hero.p1'] = { el: 'Εγκρίσεις Τύπου',          en: 'Type Approvals' };
+    T['hero.p2'] = { el: 'Τεχνικές Μελέτες',         en: 'Technical Studies' };
+    T['hero.p3'] = { el: 'Πλήρης Ανάληψη Φακέλου',   en: 'Full File Handling' };
 
     // MARQUEE
     (C.marquee || []).forEach(function (m, i) {
@@ -157,8 +191,8 @@
     T['ta.svc2']        = { el: '<strong>Αποτύπωση και πινακίδιο</strong> — Αποτυπώνουμε τον νέο <strong>17ψήφιο αριθμό πλαισίου (VIN)</strong> και τοποθετούμε το πινακίδιο χαρακτηριστικών.', en: '<strong>VIN and plate</strong> — We stamp the new <strong>17-digit chassis number (VIN)</strong> and fit the characteristic plate.' };
     T['ta.svc3']        = { el: '<strong>Πλήρης μελέτη</strong> — Συντάσσουμε την τεχνική περιγραφή που περιλαμβάνει φωτογραφίες, αποτύπωμα αριθμού πλαισίου και όλα τα απαραίτητα έγγραφα.', en: '<strong>Full technical study</strong> — We prepare the technical description including photographs, chassis number imprint, and all required documents.' };
     T['ta.svc4']        = { el: '<strong>Υποβολή φακέλου</strong> — Ετοιμάζουμε και υποβάλλουμε τον πλήρη φάκελο στην αρμόδια υπηρεσία. Το μόνο που χρειάζεται να κάνετε είναι να μας <strong>τηλεφωνήσετε</strong>.', en: '<strong>File submission</strong> — We prepare and submit the complete file to the competent authority. All you need to do is <strong>call us</strong>.' };
-    T['ta.cta.text']    = { el: 'Επικοινωνήστε μαζί μας σήμερα για δωρεάν ενημέρωση σχετικά με τη νομιμοποίηση του τρέιλερ ή της μπαγκαζιέρας σας.', en: 'Contact us today for a free consultation on legalizing your trailer or cargo box.' };
-    T['ta.cta.btn']     = { el: 'Επικοινωνία', en: 'Get in Touch' };
+    T['ta.cta.text']    = { el: 'Επικοινωνήστε μαζί μας για τη νομιμοποίηση του ρυμουλκούμενου ή της μπαγκαζιέρας σας.', en: 'Contact us about legalising your trailer or cargo box.' };
+    T['ta.cta.btn']     = { el: 'Ζητήστε προσφορά', en: 'Request a quote' };
 
     // TYPE-APPROVAL SECTION (tap.*)
     T['tap.badge']       = { el: 'ΕΓΚΡΙΣΕΙΣ ΤΥΠΟΥ', en: 'TYPE APPROVALS' };
@@ -168,8 +202,8 @@
     T['tap.expand.hint'] = { el: 'ΔΕΣ ΟΛΕΣ ΤΙΣ ΥΠΗΡΕΣΙΕΣ ΕΓΚΡΙΣΕΩΝ ΤΥΠΟΥ ΑΝΑΛΥΤΙΚΑ', en: 'SEE ALL TYPE APPROVAL SERVICES IN DETAIL' };
     T['tap.graphic.tag'] = { el: 'ΦΑΚΕΛΟΣ ΕΓΚΡΙΣΗΣ ΤΥΠΟΥ', en: 'TYPE APPROVAL DOSSIER' };
     T['tap.graphic.alt'] = { el: 'Σκίτσο φακέλου έγκρισης τύπου οχήματος με σφραγίδα έγκρισης', en: 'Sketch of a vehicle type approval dossier with approval stamp' };
-    T['tap.cta.text']    = { el: 'Έχετε όχημα, αμάξωμα ή ρυμουλκούμενο που χρειάζεται έγκριση; Επικοινωνήστε μαζί μας για δωρεάν τεχνική ενημέρωση.', en: 'Have a vehicle, body or trailer that needs approval? Contact us for a free technical consultation.' };
-    T['tap.cta.btn']     = { el: 'Επικοινωνία', en: 'Get in Touch' };
+    T['tap.cta.text']    = { el: 'Έχετε όχημα, αμάξωμα ή ρυμουλκούμενο που χρειάζεται έγκριση; Επικοινωνήστε μαζί μας και θα σας πούμε πώς προχωράει.', en: 'Have a vehicle, body or trailer that needs approval? Contact us and we will tell you how it can proceed.' };
+    T['tap.cta.btn']     = { el: 'Ζητήστε προσφορά', en: 'Request a quote' };
     // Text baked into the type-approval sketch animation (plain text, no entities)
     T['tap.doc.title']   = { el: 'ΕΓΚΡΙΣΗ ΤΥΠΟΥ', en: 'TYPE APPROVAL' };
     T['tap.doc.sub']     = { el: 'ΤΕΧΝΙΚΟΣ ΦΑΚΕΛΟΣ ΟΧΗΜΑΤΟΣ', en: 'VEHICLE TECHNICAL DOSSIER' };
@@ -185,6 +219,13 @@
         var n = i + 1;
         T['s' + n + '.title'] = { el: s.titleEl, en: s.titleEn };
         T['s' + n + '.text']  = { el: s.textEl,  en: s.textEn };
+        /* Μία γραμμή κάτω από τον τίτλο της κάρτας: οι επιμέρους υπηρεσίες,
+           ή η αρχή της περιγραφής (χωρίς HTML) όπου δεν υπάρχουν. */
+        var plain = function (h) { return (h || '').replace(/<[^>]+>/g, ''); };
+        T['s' + n + '.teaser'] = (s.items && s.items.length)
+            ? { el: s.items.map(function (it) { return plain(it.titleEl); }).join(' · '),
+                en: s.items.map(function (it) { return plain(it.titleEn); }).join(' · ') }
+            : { el: plain(s.textEl), en: plain(s.textEn) };
         (s.items || []).forEach(function (it, j) {
             var k = j + 1;
             T['s' + n + '.i' + k + '.title'] = { el: it.titleEl, en: it.titleEn };
@@ -206,8 +247,8 @@
     T['contact.eyebrow'] = { el: 'Επικοινωνία', en: 'Contact' };
     T['contact.heading'] = { el: 'Μιλήστε <em>μαζί μας</em>', en: 'Let\'s <em>talk</em>' };
     T['contact.lead']    = {
-        el: 'Είμαστε εδώ για κάθε ερώτηση ή ανάγκη. Επικοινωνήστε μαζί μας σήμερα για δωρεάν αρχική ενημέρωση.',
-        en: 'We\'re here for any question or need. Get in touch today for a free initial consultation.',
+        el: 'Είμαστε εδώ για κάθε ερώτηση ή ανάγκη. Επικοινωνήστε μαζί μας και θα εξετάσουμε προσωπικά την περίπτωσή σας.',
+        en: 'We\'re here for any question or need. Get in touch and we will look at your case personally.',
     };
     T['contact.role'] = { el: P.fullTitleEl, en: P.fullTitleEn };
     T['contact.area']    = { el: P.areaEl,               en: P.areaEn };
@@ -257,6 +298,8 @@
     T['reviews.eyebrow'] = { el: 'Κριτικές Πελατών', en: 'Client Reviews' };
     T['reviews.heading'] = { el: 'Τι λένε <em>οι πελάτες</em> μας', en: 'What <em>our clients</em> say' };
     T['reviews.source']  = { el: 'Αξιολόγηση από Google', en: 'Review from Google' };
+    T['reviews.more']    = { el: 'Περισσότερα', en: 'Read more' };
+    T['reviews.less']    = { el: 'Λιγότερα', en: 'Show less' };
     (C.reviews || []).forEach(function (r, i) {
         var n = i + 1;
         T['review' + n + '.text'] = { el: r.textEl, en: r.textEn };
@@ -284,6 +327,7 @@
 
     // SERVICE BADGE (featured card)
     T['service.badge.new'] = { el: 'ΝΕΑ', en: 'NEW' };
+    T['services.meas.area'] = { el: 'Αθήνα — Θεσσαλονίκη', en: 'Athens — Thessaloniki' };
 
     // SERVICE INLINE EXPAND (cards 0 & 1)
     T['svc.expand.0.p1'] = {
@@ -442,7 +486,7 @@
         var sCount = (C.services || []).length;
         servicesMeas.innerHTML =
             sCount + ' <span data-i18n="services.meas">' + T['services.meas'].el + '</span>' +
-            ' \u2014 ' + (sCount * 40).toFixed(2) + ' m\u00B2';
+            ' \u00B7 <span data-i18n="services.meas.area">' + T['services.meas.area'].el + '</span>';
     }
 
     var projectsMeas = document.getElementById('projectsMeasLabel');
@@ -498,9 +542,10 @@
         (C.services || []).forEach(function (s, i) {
             var n   = i + 1;
             var pad = n < 10 ? '0' + n : '' + n;
-            // First card (O1/O2) gets featured class for attention animation
-            var featuredClass = (i === 0) ? ' service-card--featured' : '';
-            var featuredBadge = (i === 0) ?
+            // Η κάρτα-στόχος (featured στο config) μπαίνει πρώτη και ξεχωρίζει·
+            // το σήμα «ΝΕΑ» είναι ξεχωριστό (badge), ώστε να μένει στο τρέιλερ.
+            var featuredClass = s.featured ? ' service-card--featured' : '';
+            var featuredBadge = (s.badge === 'new') ?
                 '<span class="service-badge" data-i18n="service.badge.new">' + T['service.badge.new'].el + '</span>' : '';
             // Odd-index (0,2,4,6) = left column, even-index (1,3,5,7) = right column
             var colClass = (i % 2 === 0) ? ' service-card--odd' : ' service-card--even';
@@ -514,11 +559,11 @@
                 : '';
             // Extra expand content for cards 0 and 1 (goes inside their expand panel)
             var extraExpand = '';
-            if (i === 0) {
+            if (s.expand === '0') {
                 extraExpand =
                     '<p data-i18n-html="svc.expand.0.p1">' + T['svc.expand.0.p1'].el + '</p>' +
                     '<p class="svc-inline-meta" data-i18n-html="svc.expand.0.meta">' + T['svc.expand.0.meta'].el + '</p>';
-            } else if (i === 1) {
+            } else if (s.expand === '1') {
                 extraExpand =
                     '<p data-i18n-html="svc.expand.1.p1">' + T['svc.expand.1.p1'].el + '</p>' +
                     '<p class="svc-inline-meta" data-i18n-html="svc.expand.1.meta">' + T['svc.expand.1.meta'].el + '</p>';
@@ -585,8 +630,10 @@
                 '<i class="fa-solid ' + s.icon + ' service-icon" aria-hidden="true"></i>' +
                 '<div class="service-card-body">' +
                 '<h3 itemprop="name" data-i18n-html="s' + n + '.title">' + s.titleEl + '</h3>' +
+                '<p class="service-teaser" data-i18n-html="s' + n + '.teaser">' + T['s' + n + '.teaser'].el + '</p>' +
                 featuredBadge +
                 '</div>' +
+                '<i class="fa-solid fa-chevron-down service-chev" aria-hidden="true"></i>' +
                 expandContent +
                 '</' + tag + '>';
         });
@@ -777,10 +824,43 @@
                     '</div>' +
                     starsHtml +
                     '<p data-i18n="review' + n + '.text">' + r.textEl + '</p>' +
+                    '<button type="button" class="review-more" aria-expanded="false">' +
+                    '<span class="rm-more" data-i18n="reviews.more">Περισσότερα</span>' +
+                    '<span class="rm-less" data-i18n="reviews.less">Λιγότερα</span>' +
+                    '<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>' +
                     '</div>';
             });
         });
         reviewsTrack.innerHTML = rHtml;
+
+        /* Σταθερό ύψος κάρτας (ως 1/3 της οθόνης). Το κουμπί «Περισσότερα»
+           εμφανίζεται μόνο όταν το κείμενο δεν χωρά· ξαναμετράμε σε αλλαγή
+           μεγέθους και σε αλλαγή γλώσσας (αλλάζει το κείμενο). */
+        var measureReviews = function () {
+            reviewsTrack.querySelectorAll('.review-card').forEach(function (card) {
+                if (card.classList.contains('is-expanded')) return;
+                var p = card.querySelector('p');
+                card.classList.toggle('has-more', p.scrollHeight > p.clientHeight + 2);
+            });
+        };
+        var rvTimer;
+        var remeasure = function () { clearTimeout(rvTimer); rvTimer = setTimeout(measureReviews, 120); };
+        window.addEventListener('resize', remeasure);
+        window.addEventListener('load', remeasure);
+        if ('MutationObserver' in window) {
+            new MutationObserver(remeasure).observe(reviewsTrack, { subtree: true, characterData: true, childList: true });
+        }
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(remeasure);
+        remeasure();
+
+        reviewsTrack.addEventListener('click', function (e) {
+            var btn = e.target.closest && e.target.closest('.review-more');
+            if (!btn) return;
+            var card = btn.closest('.review-card');
+            var open = !card.classList.contains('is-expanded');
+            card.classList.toggle('is-expanded', open);
+            btn.setAttribute('aria-expanded', String(open));
+        });
     }
 
     // ── 15. RENDER FORM DROPDOWN ──────────────────────────────────────────────

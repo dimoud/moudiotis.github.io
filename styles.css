@@ -1665,6 +1665,7 @@ footer {
     .caliper-svg--horizontal { width: 100%; color: var(--gold); overflow: visible; transform: scaleY(-1); }
     .caliper-svg--horizontal text { transform-box: fill-box; transform-origin: center; transform: scaleY(-1); }
     .about-caliper-col { display: none; }
+    .trailer-dim-svg { width: 100%; max-width: 520px; }
     .about-grid--desktop-two { grid-template-columns: 1fr; max-width: 100%; padding-right: 4%; }
     .dim-row { display: flex; margin: 24px 0 8px; }
     .about-features { margin-bottom: 0; }
@@ -1994,7 +1995,7 @@ footer {
     padding: 8px 24px;
 }
 .ta-badge {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -2165,7 +2166,7 @@ button.ta-toggle--bar[aria-expanded="true"] .ta-chevron { transform: rotate(180d
 /* title + intro */
 .ta-body-pad { padding: 18px 24px 0; }
 .ta-box h3.ta-title {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: clamp(17px, 1.8vw, 22px);
     font-weight: 700;
     letter-spacing: .3px;
@@ -2203,7 +2204,7 @@ button.ta-toggle--bar[aria-expanded="true"] .ta-chevron { transform: rotate(180d
     display: flex;
     align-items: center;
     gap: 6px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 9px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -2259,7 +2260,7 @@ button.ta-toggle--bar[aria-expanded="true"] .ta-chevron { transform: rotate(180d
 .ta-sec-head {
     display: flex; align-items: center; gap: 7px;
     padding: 14px 24px 8px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 9px; font-weight: 700;
     letter-spacing: 2px; text-transform: uppercase;
     color: #c9a86c;
@@ -2321,7 +2322,7 @@ button.ta-toggle--bar[aria-expanded="true"] .ta-chevron { transform: rotate(180d
 }
 .ta-docs-col + .ta-docs-col { border-left: 1px solid rgba(201,168,108,.2); padding-left: 24px; }
 .ta-docs-group-head {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 10px; font-weight: 700;
     letter-spacing: 1.5px; text-transform: uppercase;
     color: rgba(28,27,25,.55);
@@ -2389,7 +2390,7 @@ button.ta-toggle--bar[aria-expanded="true"] .ta-chevron { transform: rotate(180d
     align-items: center;
 }
 .trc-widget-topbar-badge {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -3143,7 +3144,7 @@ button.tap-toggle[aria-expanded="true"]:hover .tap-chevron { transform: rotate(1
     .mobile-cta-bar a {
         display: flex; align-items: center; justify-content: center; gap: 8px;
         min-height: 54px; padding: 0 10px;
-        font-family: 'Barlow Condensed', 'Barlow', sans-serif;
+        font-family: 'Barlow Condensed', 'Source Sans 3', sans-serif;
         font-size: 16px; font-weight: 600; letter-spacing: 1.2px;
         text-transform: uppercase; text-decoration: none;
         color: var(--white); -webkit-tap-highlight-color: transparent;
@@ -3174,15 +3175,16 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
    περνούν στο μενού «χάμπουργκερ», γιατί εκεί δεν χωρούν με τίποτα. */
 .nav-links { flex-wrap: nowrap; min-width: 0; }
 .nav-links a { white-space: nowrap; }
-@media (max-width: 1500px) { .nav-links { gap: 24px; } }
+@media (max-width: 1700px) { .nav-links { gap: 26px; } }
+@media (max-width: 1500px) { .nav-links { gap: 18px; } .nav-links a { letter-spacing: 1.6px; } }
 @media (max-width: 1400px) {
-    .nav-links { gap: 18px; }
+    .nav-links { gap: 14px; }
     .nav-links a { font-size: 10px; letter-spacing: 1.5px; }
     .nav-cta { padding: 12px 26px; }
 }
 @media (max-width: 1320px) {
-    .nav-links { gap: 13px; }
-    .nav-links a { font-size: 9.4px; letter-spacing: 1px; }
+    .nav-links { gap: 11px; }
+    .nav-links a { font-size: 9.2px; letter-spacing: .8px; }
     .nav-cta { padding: 11px 18px; }
 }
 
@@ -3190,7 +3192,7 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
    Κάτω από αυτό το πλάτος οι οκτώ σύνδεσμοι δεν χωρούν σε μία γραμμή όσο
    κι αν μικρύνουν. Μόνο η ίδια η μπάρα αλλάζει εδώ — η υπόλοιπη διάταξη
    κινητού μένει στα 768px. */
-@media (max-width: 1240px) {
+@media (max-width: 1300px) {
     .nav-links { display: none; }
     .hamburger { display: flex; }
 
@@ -3329,7 +3331,7 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
        ξεχειλίζει κάτω από το κουτί του· η λεζάντα τοποθετείται σε ποσοστό
        του πλαισίου, ώστε να μη μετακινεί το σχέδιο από το κέντρο. */
     margin-top: 0;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 11.5px; font-weight: 500;
     letter-spacing: 2.6px; text-transform: uppercase;
     color: var(--warm);
@@ -3463,7 +3465,7 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
     color: rgba(28,27,25,0.45); white-space: nowrap;
 }
 .news-card-title {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 17.5px; font-weight: 700; line-height: 1.3;
     color: var(--gold);
 }
@@ -3602,7 +3604,7 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
 .ec-result { padding: 0 24px 6px; }
 .ec-verdict { display: flex; gap: 13px; align-items: flex-start; padding: 16px 18px; border-radius: 5px; margin-bottom: 18px; }
 .ec-verdict i { font-size: 22px; line-height: 1.2; }
-.ec-verdict strong { display: block; font-family: 'Playfair Display', serif; font-size: 19px; margin-bottom: 3px; }
+.ec-verdict strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 19px; margin-bottom: 3px; }
 .ec-verdict span { font-family: 'Source Sans 3', sans-serif; font-size: 14px; line-height: 1.55; }
 .ec-good { background: rgba(46,120,72,.09); color: #22623c; border: 1px solid rgba(46,120,72,.26); }
 .ec-bad  { background: rgba(160,44,44,.08);  color: #932b2b; border: 1px solid rgba(160,44,44,.24); }
@@ -3621,7 +3623,7 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
 .ec-r-ref { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8b95a2; margin-top: 4px; }
 .ec-r-state { flex: 0 0 auto; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: #8b95a2; padding-top: 3px; }
 .ec-after { margin-top: 20px; padding: 16px 18px; background: #f7f6f2; border-left: 3px solid var(--warm); border-radius: 3px; }
-.ec-after strong { display: block; font-family: 'Playfair Display', serif; font-size: 17px; color: var(--gold); margin-bottom: 4px; }
+.ec-after strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--gold); margin-bottom: 4px; }
 .ec-after p { font-family: 'Source Sans 3', sans-serif; font-size: 14px; line-height: 1.6; color: #46505c; margin: 0; }
 
 /* Το κόκκινο πλαίσιο ακουμπούσε στο κάτω περίγραμμα του κουτιού, γιατί το
@@ -3752,10 +3754,1059 @@ a.tap-item-link:focus-visible { outline: 2px solid var(--warm); outline-offset: 
 .trc-extra-list li:hover { padding-left: 10px; }
 .trc-extra-title {
     position: relative;
-    font-family: 'Barlow', sans-serif; font-weight: 600; font-size: 9.5pt; color: #15263f;
+    font-family: 'Source Sans 3', sans-serif; font-weight: 600; font-size: 9.5pt; color: #15263f;
 }
 .trc-extra-desc { position: relative; font-size: 8.8pt; line-height: 1.5; color: #4a5568; }
 
 @media (max-width: 560px) {
     .trc-vtab { min-width: 0; flex: 1 1 100%; font-size: 11.5pt; padding: 10px 12px; }
 }
+
+/* ══ ΟΜΟΙΟΓΕΝΕΙΑ ΚΟΥΤΙΩΝ ΑΡΧΙΚΗΣ ═════════════════════════════════════════
+   Εγκρίσεις τύπου, Τρέιλερ Ο1/Ο2, Έλεγχος Κ.Ο.Κ., Υπολογιστής έλξης:
+   ίδιο πλαίσιο, ίδια μπάρα κορυφής, ίδιος τίτλος, ίδιο σήμα κατηγορίας,
+   ίδιο εισαγωγικό κείμενο, ίδιο κουμπί ανάπτυξης. Μπαίνει τελευταίο ώστε
+   να υπερισχύει των παλιών, ξεχωριστών κανόνων κάθε κουτιού. */
+.tap-box, .ta-box, .trc-widget { border: 4px solid #c9a86c; border-radius: 6px; }
+
+/* μπάρα κορυφής */
+.tap-topbar, .ta-topbar, .trc-widget-topbar {
+    background: #c9a86c; color: #1c1b19; padding: 8px 24px; min-height: 36px;
+}
+.tap-badge, .tap-kicker, .ta-badge, .trc-widget-topbar-badge {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: #1c1b19;
+}
+.tap-kicker { font-weight: 500; opacity: .7; }
+.trc-widget-topbar .share-link, .trc-widget-topbar a, .trc-widget-topbar button { color: #1c1b19; }
+
+/* τίτλος */
+.tap-box .tap-title, .ta-box h3.ta-title, .trc-widget .trc-h {
+    font-family: 'Barlow Condensed', sans-serif; font-size: clamp(17px, 1.8vw, 22px);
+    font-weight: 700; letter-spacing: .3px; line-height: 1.2;
+    text-transform: none; color: #1c1b19;
+}
+.tap-box .tap-title { margin: 0 0 10px; }
+.trc-widget .trc-h em { color: inherit; }
+
+/* σήμα κατηγορίας: τιμή πάνω, λέξη «ΚΑΤΗΓΟΡΙΑ» κάτω */
+.trc-cat-badge, .ta-cat-badge {
+    background: #c9a86c; color: #1c1b19; border-radius: 4px; padding: 6px 14px 8px;
+    display: flex; flex-direction: column; align-items: center; line-height: 1;
+}
+.trc-cat-badge { flex-direction: column-reverse; }
+.trc-cat-badge:hover { box-shadow: none; transform: none; }
+.trc-bv, .ta-cat-bv {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 19pt; line-height: 1; color: #1c1b19;
+}
+.trc-bk, .ta-cat-bk {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 7pt; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase; opacity: 1; margin: 3px 0 0; color: #1c1b19;
+}
+
+/* εισαγωγικό κείμενο */
+.tap-box .tap-intro, .trc-widget .trc-intro, .ta-box .ec-lead, .ta-box p.ta-intro {
+    font-family: 'Source Sans 3', sans-serif; font-size: 15px; line-height: 1.7;
+    font-weight: 400; color: rgba(28,27,25,.72);
+}
+.tap-box .tap-intro strong, .trc-widget .trc-intro strong { color: #1c1b19; font-weight: 600; }
+
+/* κουμπί ανάπτυξης */
+button.tap-toggle, button.ta-toggle--bar, .trc-widget button.trc-main-toggle--bar {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    background: #c9a86c; color: #1c1b19; border: 0; border-radius: 4px;
+    padding: 13px 20px; min-height: 48px;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 10.5pt; font-weight: 700;
+    letter-spacing: .06em; text-transform: uppercase; text-align: left;
+    animation: hb-bar-pulse 2.6s ease-in-out infinite;
+}
+/* ήπιος παλμός μέσα στον χρυσό τόνο — όχι πια χρυσό↔μπλε, που στο ενδιάμεσο
+   έβγαζε γκρι και έμοιαζε ανενεργό κουμπί */
+@keyframes hb-bar-pulse {
+    0%, 100% { background-color: #c9a86c; }
+    50%       { background-color: #b8912f; }
+}
+button.tap-toggle > span { text-align: left; }
+button.tap-toggle:hover, button.ta-toggle--bar:hover, .trc-widget button.trc-main-toggle--bar:hover {
+    animation: none; background: #b8912f; color: #1c1b19; letter-spacing: .06em;
+}
+button.tap-toggle[aria-expanded="true"], button.ta-toggle--bar[aria-expanded="true"],
+.trc-widget button.trc-main-toggle--bar[aria-expanded="true"] { animation: none; background: #c9a86c; color: #1c1b19; }
+.trc-widget .trc-main-toggle--bar .trc-main-chevron, button.tap-toggle .tap-chevron, button.ta-toggle--bar .ta-chevron {
+    color: inherit; font-size: 14px; animation: none;
+}
+
+@media (max-width: 768px) {
+    .tap-topbar, .ta-topbar, .trc-widget-topbar { padding: 8px 16px; }
+    .tap-box .tap-body { padding: 16px 16px 16px; }
+    .tap-kicker { display: none; }
+    .trc-widget .trc-title-row { flex-direction: row; flex-wrap: nowrap; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .trc-widget .trc-widget-body { padding: 14px 16px 20px; }
+    .tap-box .tap-intro, .trc-widget .trc-intro, .ta-box .ec-lead, .ta-box p.ta-intro { font-size: 14px; }
+    .ta-box .ec-lead { margin: 0 16px 14px; }
+    button.tap-toggle, button.ta-toggle--bar, .trc-widget button.trc-main-toggle--bar { padding: 13px 16px; font-size: 9pt; }
+}
+
+/* ── ΜΠΑΡΑ ΚΙΝΗΤΟΥ: ΠΙΟ ΔΙΑΚΡΙΤΙΚΗ ──
+   Χαμηλότερη, μικρότερα γράμματα, ενιαίο σκούρο φόντο· το χρώμα μένει
+   μόνο στα εικονίδια, ώστε να μη «φωνάζει» πάνω από το περιεχόμενο. */
+@media (max-width: 768px) {
+    .mobile-cta-bar { background: rgba(22,33,52,0.96); box-shadow: 0 -1px 10px rgba(0,0,0,0.18);
+        -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+    .mobile-cta-bar a,
+    .mobile-cta-bar a.mcb-call, .mobile-cta-bar a.mcb-viber, .mobile-cta-bar a.mcb-msg {
+        min-height: 42px; font-size: 12px; font-weight: 600; letter-spacing: 1.4px;
+        background: transparent; color: rgba(255,255,255,0.88); gap: 7px;
+    }
+    .mobile-cta-bar a:active { background: rgba(255,255,255,0.06); }
+    .mobile-cta-bar a i { font-size: 13px; }
+    .mobile-cta-bar a.mcb-call i { color: #c9a86c; }
+    .mobile-cta-bar a.mcb-viber i { color: #9d8ff7; }
+    .mobile-cta-bar a.mcb-msg i { color: rgba(255,255,255,0.7); }
+    .mobile-cta-bar a + a { border-left: 1px solid rgba(255,255,255,0.10); }
+    body { padding-bottom: 42px; }
+    #backToTop { bottom: 56px; }
+    .scroll-ruler { bottom: 52px; }
+}
+@media (max-width: 400px) { .mobile-cta-bar a { font-size: 12px; } }
+
+/* ── ΣΤΑΤΙΣΤΙΚΑ ΕΜΠΙΣΤΟΣΥΝΗΣ: ΠΙΟ ΕΝΤΥΠΩΣΙΑΚΑ ──
+   Χρυσοί αριθμοί με λάμψη, κάρτες με φωτεινή γραμμή που «γεμίζει» όταν
+   εμφανίζονται, και εικονίδια πυλώνων σε κύκλο με αργά περιστρεφόμενο
+   διακεκομμένο δαχτυλίδι — σαν σφραγίδα μηχανικού. */
+.trust-stats { gap: 14px; border: none; margin-bottom: 64px; }
+.trust-stat {
+    position: relative; overflow: hidden;
+    border: 1px solid rgba(201,168,108,0.22) !important;
+    border-radius: 6px;
+    background:
+        radial-gradient(120% 90% at 50% 0%, rgba(201,168,108,0.16), transparent 62%),
+        rgba(255,255,255,0.025);
+    transition: transform .4s var(--ease), border-color .4s, box-shadow .4s;
+}
+.trust-stat::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, #e6c98e, #c9a86c, transparent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 1.4s var(--ease) .2s;
+}
+.trust-stat.visible::before { transform: scaleX(1); }
+.trust-stat:hover { transform: translateY(-4px); border-color: rgba(201,168,108,0.5) !important;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(201,168,108,0.12); }
+.trust-stat-num {
+    background: linear-gradient(180deg, #fff3d6 0%, #e6c98e 45%, #b8912f 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: #e6c98e;
+    font-weight: 400; text-shadow: none;
+    filter: drop-shadow(0 0 18px rgba(201,168,108,0.35));
+}
+.trust-stat-label { color: rgba(255,255,255,0.78); }
+
+.trust-pillar-icon {
+    position: relative; width: 64px; height: 64px; border-radius: 50%;
+    border: 1px solid rgba(201,168,108,0.55);
+    background: radial-gradient(circle, rgba(201,168,108,0.18), rgba(201,168,108,0.02) 70%);
+}
+.trust-pillar-icon::after {
+    content: ''; position: absolute; inset: -7px; border-radius: 50%;
+    border: 1px dashed rgba(201,168,108,0.45);
+    animation: trustRing 18s linear infinite;
+}
+@keyframes trustRing { to { transform: rotate(360deg); } }
+.trust-pillar-icon i { font-size: 22px; }
+.trust-pillar h3 { position: relative; padding-bottom: 12px; }
+.trust-pillar h3::after {
+    content: ''; position: absolute; left: 50%; bottom: 0; width: 28px; height: 1px;
+    background: #c9a86c; transform: translateX(-50%);
+}
+@media (prefers-reduced-motion: reduce) {
+    .trust-pillar-icon::after { animation: none; }
+    .trust-stat::before { transition: none; }
+}
+@media (max-width: 768px) {
+    .trust-stats { gap: 8px; margin-bottom: 40px; }
+    .trust-stat { padding: 20px 6px 16px; }
+    .trust-stat-num { font-size: clamp(34px, 11vw, 48px); }
+    .trust-stat-label { font-size: 8.5px; letter-spacing: 1.4px; line-height: 1.4; }
+    .trust-pillars { gap: 14px; }
+    .trust-pillar-icon { width: 46px; height: 46px; }
+    .trust-pillar-icon::after { inset: -5px; }
+    .trust-pillar-icon i { font-size: 16px; }
+    .trust-pillar h3 { font-size: 14px; padding-bottom: 9px; }
+}
+
+/* ── ΚΙΝΗΤΟ: ΕΠΙΛΟΓΗ ΓΛΩΣΣΑΣ ΣΤΟ ΚΕΝΤΡΟ ΤΗΣ ΜΠΑΡΑΣ ──
+   Λογότυπο αριστερά, γλώσσα ακριβώς στη μέση, μενού δεξιά. */
+@media (max-width: 768px) {
+    nav .lang-toggle,
+    nav.menu-open .lang-toggle {
+        position: absolute; left: 50%; top: 50%;
+        transform: translate(-50%, -50%); margin: 0;
+    }
+    nav .hamburger { margin-left: auto; }
+}
+
+/* ── ΜΠΑΡΑ ΥΠΟΛΟΓΙΣΤΗ ΜΕ ΕΝΝΕΑ ΣΥΝΔΕΣΜΟΥΣ ──
+   Με όλες τις σελίδες στην πλοήγηση, από 1301 ως 1919px το όνομα δίπλα στο
+   λογότυπο δεν χωρά μαζί τους· μένει μόνο ο κύκλος του λογότυπου. Κάτω από
+   1300px ανοίγει το μενού «χάμπουργκερ». */
+@media (min-width: 1301px) and (max-width: 1919px) {
+    nav .logo-text { display: none; }
+}
+
+/* ── ΤΙΜΗ ΤΡΕΪΛΕΡ ΣΤΗΝ ΑΡΧΙΚΗ: ΣΤΟ ΚΕΝΤΡΟ ──
+   Εμφανίζεται μόνο μέσα στην ανάπτυξη· ετικέτα, τιμή και σημείωση
+   στοιχισμένες στη μέση του πλαισίου. */
+.price-offer--center {
+    flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; gap: 8px;
+    border-left-width: 1px; border-top: 3px solid var(--warm);
+}
+.price-offer--center .price-offer-head { align-items: center; }
+@media (min-width: 769px) { .price-offer--center { max-width: 620px; margin-left: auto; margin-right: auto; } }
+.price-offer--center .price-offer-note { flex: none; min-width: 0; max-width: 46ch; }
+
+/* ── ΚΡΙΤΙΚΕΣ: ΣΤΑΘΕΡΟ ΥΨΟΣ, ΑΝΑΠΤΥΞΗ ΜΕ ΚΟΥΜΠΙ ──
+   Οι κάρτες τεντώνονταν όλες στο ύψος της μεγαλύτερης κριτικής και στο
+   κινητό έπιαναν όλη την οθόνη. Τώρα έχουν σταθερό ύψος, ως 1/3 της
+   οθόνης· όταν το κείμενο δεν χωρά, σβήνει απαλά και εμφανίζεται
+   «Περισσότερα». Ανοιχτή κάρτα = η ταινία σταματά. */
+.reviews-track { align-items: flex-start; }
+.review-card {
+    height: min(33vh, 300px); min-height: 200px;
+    padding: 22px 22px 16px; gap: 10px; overflow: hidden;
+    transition: box-shadow .3s var(--ease);
+}
+.review-card p {
+    flex: 1 1 auto; min-height: 0; overflow: hidden; margin: 0;
+    font-size: 13.5px; line-height: 1.65;
+}
+.review-card.has-more:not(.is-expanded) p {
+    -webkit-mask-image: linear-gradient(180deg, #000 62%, transparent);
+            mask-image: linear-gradient(180deg, #000 62%, transparent);
+}
+.review-card.is-expanded { height: auto; box-shadow: 0 12px 36px rgba(0,0,0,.10); }
+.review-card.is-expanded p { overflow: visible; }
+.review-more {
+    display: none; align-self: flex-start; align-items: center; gap: 6px;
+    background: none; border: 0; padding: 4px 0; cursor: pointer;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700;
+    letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold);
+}
+.review-more i { font-size: 10px; transition: transform .3s var(--ease); }
+.review-card.has-more .review-more, .review-card.is-expanded .review-more { display: inline-flex; }
+.review-more .rm-less { display: none; }
+.review-card.is-expanded .review-more .rm-more { display: none; }
+.review-card.is-expanded .review-more .rm-less { display: inline; }
+.review-card.is-expanded .review-more i { transform: rotate(180deg); }
+@media (max-width: 768px) {
+    .review-card { width: min(300px, 82vw); padding: 18px 18px 14px; }
+    .review-avatar { width: 36px; height: 36px; font-size: 16px; }
+    .review-card p { font-size: 13px; }
+}
+
+/* ══ ΥΠΗΡΕΣΙΕΣ ΣΕ ΚΑΡΤΕΣ ═══════════════════════════════════════════════════
+   Από λίστα τίτλων σε κάρτες επιλογής: εικονίδιο σε χρυσό κύκλο, τίτλος,
+   μία γραμμή με τις επιμέρους υπηρεσίες, βέλος που ανοίγει τις λεπτομέρειες.
+   Η κάρτα-στόχος (έγκριση τύπου / ΤΑΟ) πιάνει όλο το πλάτος και ξεχωρίζει. */
+#servicesGrid.services-grid {
+    grid-template-columns: 1fr 1fr; gap: 16px; border-top: 0;
+    max-width: 1100px;
+}
+#servicesGrid .service-card,
+#servicesGrid .service-card:nth-child(even) {
+    grid-template-columns: 52px minmax(0, 1fr) 18px; gap: 0 18px; align-items: center;
+    padding: 20px 22px; border: 1px solid rgba(29,58,92,0.10); border-radius: 8px;
+    background: #fff; box-shadow: 0 2px 12px rgba(20,33,52,0.04);
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s;
+    text-decoration: none; color: inherit;
+}
+#servicesGrid .service-card:hover {
+    transform: translateY(-2px); background: #fff;
+    box-shadow: 0 14px 34px rgba(29,58,92,0.10); border-color: rgba(201,168,108,0.55);
+}
+#servicesGrid .service-num { display: none; }
+#servicesGrid .service-icon {
+    width: 52px; height: 52px; border-radius: 50%; padding: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(circle, rgba(201,168,108,0.18), rgba(201,168,108,0.06));
+    border: 1px solid rgba(201,168,108,0.40); color: var(--warm); font-size: 20px;
+}
+#servicesGrid .service-card-body { gap: 5px; min-width: 0; }
+#servicesGrid .service-card h3 { font-size: 22px; line-height: 1.22; font-weight: 500; }
+#servicesGrid .service-teaser {
+    margin: 0; font-family: 'Source Sans 3', sans-serif; font-size: 13.5px; line-height: 1.5;
+    color: var(--stone); font-weight: 400;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+#servicesGrid .service-chev { color: var(--warm); font-size: 13px; transition: transform .35s var(--ease); justify-self: end; }
+#servicesGrid .service-card[aria-expanded="true"] .service-chev { transform: rotate(180deg); }
+#servicesGrid .service-card[aria-expanded="true"] .service-teaser { -webkit-line-clamp: unset; }
+#servicesGrid .svc-inline-expand.is-open { margin-top: 16px; }
+#servicesGrid .service-badge { align-self: flex-start; font-size: 10px; margin: 4px 0 0; }
+
+/* κάρτα-στόχος */
+#servicesGrid .service-card--featured {
+    border: 1px solid rgba(201,168,108,0.65);
+    background: linear-gradient(120deg, rgba(201,168,108,0.13), rgba(255,255,255,0.9) 55%), #fff;
+    padding: 20px 22px;
+}
+#servicesGrid .service-card--featured .service-icon { width: 52px; height: 52px; font-size: 20px; background: var(--warm); color: #fff; border-color: var(--warm); }
+#servicesGrid .service-card--featured h3 { font-size: 22px; color: var(--ink); }
+#servicesGrid .service-card--featured .service-teaser { color: var(--ink2); }
+
+@media (max-width: 768px) {
+    #servicesGrid.services-grid { grid-template-columns: 1fr; gap: 10px; }
+    #servicesGrid .service-card,
+    #servicesGrid .service-card:nth-child(even) {
+        grid-template-columns: 40px minmax(0, 1fr) 14px; gap: 0 12px; padding: 14px 14px;
+    }
+    #servicesGrid .service-icon { width: 40px; height: 40px; font-size: 15px; }
+    #servicesGrid .service-card h3 { font-size: 16px; line-height: 1.25; }
+    #servicesGrid .service-teaser { font-size: 12px; -webkit-line-clamp: 1; }
+    #servicesGrid .service-card--featured { padding: 18px 16px; }
+    #servicesGrid .service-card--featured .service-icon { width: 46px; height: 46px; font-size: 18px; }
+    #servicesGrid .service-card--featured h3 { font-size: 18px; }
+    #servicesGrid .service-card--featured .service-teaser { -webkit-line-clamp: 2; }
+    #servicesGrid .svc-inline-expand p { font-size: 13px; line-height: 1.6; }
+    #servicesGrid .svc-inline-meta { font-size: 11px; }
+}
+/* «Φερμουάρ»: οι κάρτες έρχονται από τα πλάγια με την κύλιση (eng-animations.js,
+   9b). Όσο κινούνται, το hover δεν τις σηκώνει — το transform το ορίζει η κύλιση. */
+#servicesGrid .service-card--zipper-js { transition: box-shadow .3s var(--ease), border-color .3s; will-change: transform, opacity; }
+.services-section { overflow-x: clip; }
+
+/* ══ ΠΡΩΤΗ ΟΘΟΝΗ: ΤΙ ΚΑΝΟΥΜΕ, ΓΙΑΤΙ ΕΜΕΙΣ, ΤΙ ΚΑΝΕΙΣ ΤΩΡΑ ════════════════════
+   Η επωνυμία μένει (μικρότερη, ως υπογραφή)· από κάτω ο τίτλος που λέει την
+   υπηρεσία, μία πρόταση, δύο κουμπιά και η απόδειξη. Στο κάτω μέρος οι τρεις
+   πυλώνες. Στο κινητό φεύγει το μεγάλο μετάλλιο — το λογότυπο είναι ήδη στη
+   μπάρα — ώστε το μήνυμα να φαίνεται χωρίς κύλιση. */
+.hero-name--brand { padding-bottom: clamp(22px, 2.2vw, 34px); margin-bottom: 26px; }
+.hero-name--brand .line1 { font-size: clamp(16px, 1.6vw, 24px); margin-bottom: 6px; letter-spacing: 5px; }
+.hero-name--brand .line2 { font-size: clamp(38px, 4.6vw, 70px); letter-spacing: -1px; }
+.hero-name--brand .line3 { font-size: clamp(14px, 1.3vw, 20px); letter-spacing: 5px; }
+
+.hero-headline {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(28px, 2.9vw, 46px); line-height: 1.12; color: #fff;
+    max-width: 25ch; margin: 0 0 16px;
+    animation: heroFadeUp .8s var(--ease) .9s both;
+}
+.hero-headline em { font-style: italic; color: #e2c68f; }
+.hero-sub {
+    font-family: 'Source Sans 3', sans-serif; font-size: clamp(15px, 1.15vw, 18px); line-height: 1.65;
+    color: rgba(255,255,255,0.78); max-width: 52ch; margin: 0 0 28px; font-weight: 300;
+    animation: heroFadeUp .8s var(--ease) 1.05s both;
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 22px; animation: heroFadeUp .8s var(--ease) 1.2s both; }
+.btn-hero-primary, .btn-hero-ghost {
+    display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+    min-height: 52px; padding: 0 30px; border-radius: 6px; text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700;
+    letter-spacing: 1.6px; text-transform: uppercase;
+    transition: transform .25s var(--ease), box-shadow .25s var(--ease), background .25s, color .25s;
+}
+.btn-hero-primary {
+    background: linear-gradient(180deg, #d9bb80, #c9a86c 55%, #b8912f); color: #14202f;
+    box-shadow: 0 10px 30px rgba(201,168,108,0.30), inset 0 1px 0 rgba(255,255,255,0.35);
+}
+.btn-hero-primary i { font-size: 13px; transition: transform .25s var(--ease); }
+.btn-hero-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(201,168,108,0.42); }
+.btn-hero-primary:hover i { transform: translateX(4px); }
+.btn-hero-ghost { color: #fff; border: 1px solid rgba(255,255,255,0.35); background: rgba(255,255,255,0.04); }
+.btn-hero-ghost i { color: #c9a86c; font-size: 14px; }
+.btn-hero-ghost:hover { border-color: #c9a86c; background: rgba(201,168,108,0.10); }
+.hero-proof {
+    display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+    font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: rgba(255,255,255,0.72);
+    animation: heroFadeUp .8s var(--ease) 1.35s both;
+}
+.hero-proof-stars { color: #e2c68f; letter-spacing: 2px; font-size: 14px; }
+.hero-proof:hover { color: #fff; }
+
+.hero-pillars {
+    display: grid !important; grid-template-columns: repeat(3, 1fr); gap: 0 !important;
+    padding: 22px 0 26px !important; margin-top: 10px !important;
+}
+.hero-pillar {
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 600;
+    letter-spacing: 1.8px; text-transform: uppercase; color: rgba(255,255,255,0.86);
+    padding: 4px 12px;
+}
+.hero-pillar + .hero-pillar { border-left: 1px solid rgba(255,255,255,0.14); }
+.hero-pillar i {
+    width: 42px; height: 42px; border-radius: 50%; flex: none;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(201,168,108,0.55); color: #c9a86c; font-size: 16px;
+    background: rgba(201,168,108,0.08);
+}
+
+@media (max-width: 1100px) {
+    .hero-headline, .hero-sub { margin-left: auto; margin-right: auto; }
+    .hero-actions { justify-content: center; }
+}
+@media (max-width: 768px) {
+    .hero { min-height: auto; padding: 96px 5% 0; gap: 8px; }
+    .hero-photo-col { display: none; }
+    .hero-eyebrow { display: flex; margin-bottom: 14px; }
+    .hero-eyebrow span { font-size: 11px; letter-spacing: 2.2px; }
+    .hero-name--brand { margin-bottom: 18px; padding-bottom: 20px; }
+    .hero-name--brand .line1 { font-size: 13px; letter-spacing: 3px; }
+    .hero-name--brand .line2 { font-size: clamp(30px, 8.6vw, 40px); }
+    .hero-name--brand .line3 { font-size: 12px; letter-spacing: 3px; }
+    .hero-headline { font-size: clamp(25px, 7vw, 31px); max-width: 20ch; }
+    .hero-sub { font-size: 15px; margin-bottom: 22px; }
+    .hero-actions { flex-direction: column; align-items: stretch; width: 100%; max-width: 340px; margin: 0 auto 18px; }
+    .btn-hero-primary, .btn-hero-ghost { min-height: 50px; font-size: 14px; }
+    .hero-proof { font-size: 13px; justify-content: center; flex-wrap: wrap; }
+    .hero-crane-mobile { padding-top: 10px; }
+    .hero-pillars { grid-template-columns: repeat(3, 1fr); padding: 16px 0 20px !important; }
+    .hero-pillar { flex-direction: column; gap: 8px; font-size: 11px; letter-spacing: 1px; text-align: center; padding: 2px 6px; line-height: 1.25; }
+    .hero-pillar i { width: 36px; height: 36px; font-size: 14px; }
+    .scroll-bounce { display: none; }
+}
+
+/* ══ ΕΡΓΑΛΕΙΑ ΡΥΜΟΥΛΚΟΥΜΕΝΟΥ ΣΕ ΚΑΡΤΕΛΕΣ ══════════════════════════════════
+   Οδηγός, έλεγχος Κ.Ο.Κ. και υπολογιστής έλξης: ένα κουτί, τρεις καρτέλες.
+   Ίδια γραμματοσειρά και χρυσός τόνος με τα κουμπιά ανάπτυξης των κουτιών. */
+.tools-tabs-head { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-bottom: 22px; }
+.tools-tabs-head .eyebrow { justify-content: center; }
+.tools-tabbar {
+    display: inline-flex; gap: 4px; padding: 5px; border-radius: 10px;
+    background: #fff; border: 1px solid rgba(201,168,108,0.45); box-shadow: 0 6px 20px rgba(20,33,52,0.06);
+    max-width: 100%; overflow-x: auto; scrollbar-width: none;
+}
+.tools-tabbar::-webkit-scrollbar { display: none; }
+.tools-tab {
+    display: inline-flex; align-items: center; gap: 9px; white-space: nowrap;
+    min-height: 44px; padding: 0 20px; border: 0; border-radius: 7px; cursor: pointer;
+    background: transparent; color: #3b4552;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700;
+    letter-spacing: 1.2px; text-transform: uppercase;
+    transition: background .25s, color .25s;
+}
+.tools-tab i { color: #c9a86c; font-size: 14px; transition: color .25s; }
+.tools-tab:hover { background: rgba(201,168,108,0.12); }
+.tools-tab.is-active { background: #c9a86c; color: #1c1b19; }
+.tools-tab.is-active i { color: #1c1b19; }
+.tools-tab:focus-visible { outline: 2px solid #1f3c63; outline-offset: 2px; }
+.tools-panel-hidden { display: none !important; }
+@media (max-width: 768px) {
+    .tools-tabs-head { margin-bottom: 14px; }
+    .tools-tabbar { display: flex; width: 100%; }
+    .tools-tab { flex: 1 1 0; justify-content: center; padding: 6px 6px; font-size: 12px; letter-spacing: .5px; gap: 6px; white-space: normal; text-align: center; line-height: 1.15; min-width: 0; }
+    .tools-tab i { display: none; }
+}
+
+/* ══ ΑΝΑΓΝΩΣΙΜΟΤΗΤΑ ΣΤΟ ΚΙΝΗΤΟ ══════════════════════════════════════════════
+   Κανένα κείμενο κάτω από 11px, κανένα κουμπί κάτω από 44px ύψος. Τα premium
+   site δεν βάζουν τον επισκέπτη να μισοκλείνει τα μάτια. */
+@media (max-width: 768px) {
+    .marquee-item { font-size: 11px; letter-spacing: 1.6px; }
+    .eyebrow span { font-size: 11px; }
+    .news-card-cat, .news-card-date, .news-card-src { font-size: 11px; }
+    .trust-stat-label { font-size: 11px; letter-spacing: .6px; }
+    .lang-btn .lcode { font-size: 11px; }
+    .review-source { font-size: 12px; }
+    .footer-brand-text .ftitle, #footerYear { font-size: 11px; }
+    .hamburger { width: 44px; height: 44px; margin-right: -6px; }
+    .review-more { min-height: 44px; }
+}
+
+/* ══ ΕΝΑ ΣΥΣΤΗΜΑ ΚΟΥΜΠΙΩΝ ΣΕ ΟΛΕΣ ΤΙΣ ΣΕΛΙΔΕΣ ═══════════════════════════════
+   Κύριο = χρυσό με διαβάθμιση (όπως στην πρώτη οθόνη), δευτερεύον = περίγραμμα.
+   Ίδια γραμματοσειρά, ίδιο ύψος, ίδια γωνία σε αρχική και υποσελίδες. */
+a.ta-cta-btn, a.tap-cta-btn, .svc-quick a.svc-quick-call {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 46px; padding: 0 24px; border-radius: 6px; text-decoration: none;
+    background: linear-gradient(180deg, #d9bb80, #c9a86c 55%, #b8912f); color: #14202f;
+    box-shadow: 0 8px 22px rgba(201,168,108,0.28), inset 0 1px 0 rgba(255,255,255,0.35);
+    font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700;
+    letter-spacing: 1.4px; text-transform: uppercase; border: 0;
+    transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+a.ta-cta-btn:hover, a.tap-cta-btn:hover, .svc-quick a.svc-quick-call:hover {
+    background: linear-gradient(180deg, #e2c68f, #c9a86c 55%, #b8912f); color: #14202f;
+    transform: translateY(-2px); box-shadow: 0 14px 32px rgba(201,168,108,0.38);
+}
+.svc-quick a.svc-quick-msg {
+    min-height: 46px; border-radius: 6px; border: 1px solid #1f3c63; color: #1f3c63;
+    font-size: 14px; font-weight: 700; letter-spacing: 1.4px;
+}
+.svc-quick a.svc-quick-msg:hover { background: #1f3c63; color: #fff; }
+.svc-quick a.svc-quick-viber { min-height: 46px; border-radius: 6px; font-size: 14px; font-weight: 700; letter-spacing: 1.4px; }
+.svc-quick a.svc-quick-call small { font-size: 11px; opacity: .75; }
+/* Στο κινητό οι μακριές λέξεις της λωρίδας στοιχείων («Πανελλαδικά»,
+   «Βήμα-βήμα») έβγαιναν έξω από τη στήλη τους. */
+@media (max-width: 480px) {
+    .ta-stat { min-width: 0; }
+    .ta-stat-body { min-width: 0; }
+    .ta-stat-val { font-size: 17px !important; overflow-wrap: anywhere; hyphens: auto; }
+}
+/* Δεύτερο πέρασμα αναγνωσιμότητας στο κινητό: όριο 12px για κάθε κείμενο
+   (ετικέτες, ημερομηνίες, αριθμοί βημάτων, λεζάντες) και πατήσιμη επιφάνεια
+   44px για τα μικρά κουμπιά (γλώσσα, σύνδεσμος κοινοποίησης). */
+@media (max-width: 768px) {
+    .eyebrow span, .news-card-cat, .news-card-date, .news-card-src,
+    .lang-btn .lcode, .trust-stat-label, .ta-stat-lbl, .cd-label,
+    .ta-docs-group-head, .svc-inline-list-d, .tap-item-d, .trc-c-num, .trc-c-desc,
+    .marquee-item, .footer-brand-text .ftitle, #footerYear, .ta-step-num,
+    .ec-f > label, .ec-f small { font-size: 12px !important; }
+    .ta-step-num { min-width: 26px; }
+    .lang-toggle .lang-btn { min-height: 44px; min-width: 44px; justify-content: center; }
+    button.share-link { min-width: 44px; min-height: 44px; margin: -12px -14px -12px 0; }
+}
+
+/* Υπηρεσίες: 4 κάρτες αριστερά, 4 δεξιά — η κάρτα-στόχος πρώτη στην αριστερή
+   στήλη, με τον ίδιο όγκο· ξεχωρίζει μόνο με το χρώμα. */
+
+/* ══ ΕΜΠΕΙΡΙΑ ΚΑΙ ΕΞΕΙΔΙΚΕΥΣΗ ═══════════════════════════════════════════════
+   Αντί για παχύμετρο: ο μηχανικός που υπογράφει. Φωτογραφία σε πλαίσιο με
+   γωνίες τεχνικού σχεδίου, όνομα και τίτλος σπουδών. Τα τρία πλεονεκτήματα
+   γίνονται κάρτες με εικονίδιο σε χρυσό κύκλο — ίδια γλώσσα με τις υπηρεσίες. */
+.about-grid--desktop-two { grid-template-columns: minmax(0, 1fr) 360px; gap: 64px; align-items: center; }
+#aboutFeatures.about-features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 8px 0 0; }
+#aboutFeatures .feature-row {
+    flex-direction: column; align-items: flex-start; gap: 12px;
+    padding: 24px 22px; border: 1px solid rgba(29,58,92,0.10); border-radius: 8px;
+    background: #fff; box-shadow: 0 2px 12px rgba(20,33,52,0.04);
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s;
+}
+#aboutFeatures .feature-row:first-child { border-top: 1px solid rgba(29,58,92,0.10); }
+#aboutFeatures .feature-row:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(29,58,92,0.10); border-color: rgba(201,168,108,0.55); }
+#aboutFeatures .feature-row::before { content: none; }
+#aboutFeatures .feature-row-header { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; width: 100%; }
+#aboutFeatures .feature-row i {
+    width: 48px; height: 48px; border-radius: 50%; margin: 0;
+    display: flex; align-items: center; justify-content: center; font-size: 18px;
+    color: var(--warm); background: radial-gradient(circle, rgba(201,168,108,0.18), rgba(201,168,108,0.06));
+    border: 1px solid rgba(201,168,108,0.40);
+}
+#aboutFeatures .feature-row-header strong {
+    width: auto; min-width: 0; padding: 0; background: none;
+    font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; line-height: 1.2;
+    color: var(--ink); text-align: left;
+}
+#aboutFeatures .feature-row > span { font-family: 'Source Sans 3', sans-serif; font-size: 14.5px; line-height: 1.65; color: var(--ink2); font-weight: 400; padding: 0; text-align: left; }
+
+.about-portrait-col { display: flex; justify-content: center; }
+.about-portrait { position: relative; margin: 0; padding: 14px; width: 100%; max-width: 360px;
+    background: #fff; border: 1px solid rgba(201,168,108,0.45); border-radius: 6px;
+    box-shadow: 0 22px 60px rgba(20,33,52,0.14); }
+.about-portrait img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 3px; }
+.about-portrait figcaption { padding: 18px 6px 6px; display: flex; flex-direction: column; gap: 5px; text-align: center; }
+.about-portrait figcaption strong { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--ink); line-height: 1.1; }
+.about-portrait figcaption span { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: var(--warm); }
+.about-portrait figcaption em { font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--stone); }
+.ap-badge { position: absolute; top: 26px; right: 26px; padding: 6px 12px; border-radius: 4px;
+    background: rgba(20,33,52,0.88); color: #e2c68f; font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; }
+.ap-corner { position: absolute; width: 22px; height: 22px; border: 0 solid #c9a86c; }
+.ap-tl { top: -8px; left: -8px; border-top-width: 2px; border-left-width: 2px; }
+.ap-tr { top: -8px; right: -8px; border-top-width: 2px; border-right-width: 2px; }
+.ap-bl { bottom: -8px; left: -8px; border-bottom-width: 2px; border-left-width: 2px; }
+.ap-br { bottom: -8px; right: -8px; border-bottom-width: 2px; border-right-width: 2px; }
+
+@media (max-width: 1100px) {
+    .about-grid--desktop-two { grid-template-columns: 1fr; gap: 40px; }
+    #aboutFeatures.about-features { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+    #aboutFeatures.about-features { gap: 10px; }
+    #aboutFeatures .feature-row { padding: 16px; gap: 8px; }
+    #aboutFeatures .feature-row-header { flex-direction: row; align-items: center; gap: 12px; }
+    #aboutFeatures .feature-row i { width: 40px; height: 40px; font-size: 15px; }
+    #aboutFeatures .feature-row-header strong { font-size: 19px; }
+    #aboutFeatures .feature-row > span { font-size: 14px; }
+    /* στο κινητό: οριζόντια κάρτα — στρογγυλή φωτογραφία και στοιχεία δίπλα */
+    .about-portrait { display: grid; grid-template-columns: 96px 1fr; align-items: center; gap: 14px; padding: 14px; max-width: none; box-shadow: 0 8px 24px rgba(20,33,52,0.08); }
+    .about-portrait img { width: 96px; height: 96px; border-radius: 50%; }
+    .about-portrait figcaption { padding: 0; text-align: left; }
+    .about-portrait figcaption strong { font-size: 21px; }
+    .about-portrait figcaption span { font-size: 12px; letter-spacing: 1px; }
+    .about-portrait figcaption em { font-size: 15px; }
+    .ap-badge { position: static; grid-column: 1 / -1; justify-self: start; }
+    .ap-corner { width: 16px; height: 16px; }
+}
+#aboutFeatures .feature-row > span strong { font: inherit; font-weight: 600; color: var(--ink); width: auto; padding: 0; background: none; }
+
+/* ══ ΠΡΩΤΗ ΟΘΟΝΗ — ΔΙΑΤΑΞΗ ΑΡΙΣΤΕΡΑ / ΔΕΞΙΑ ═══════════════════════════════════
+   Αριστερά: το όνομα μεγάλο (το μικρό όνομα λευκό, το επώνυμο χρυσό), η
+   ιδιότητα, μία γραμμή για το τι κάνουμε, τα κουμπιά και οι τρεις υπηρεσίες
+   ως «ετικέτες». Δεξιά: η φωτογραφία σε όλο το ύψος, που σβήνει προς το μπλε.
+   Στο κινητό η φωτογραφία πάει πάνω και το κείμενο από κάτω, στο κέντρο. */
+.hero {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    grid-template-rows: 1fr auto;
+    gap: 0 56px; align-items: center;
+    padding: 120px 0 0 7%; min-height: 100vh;
+}
+.hero-portrait-col {
+    grid-column: 2; grid-row: 1 / span 2; align-self: stretch;
+    position: relative; margin-top: -120px; overflow: hidden; display: block;
+    transform: none !important; animation: heroFadeIn 1.2s ease .2s both;
+}
+.hero-portrait { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+.hero-portrait-col::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background:
+        linear-gradient(90deg, rgba(13,26,45,1) 0%, rgba(13,26,45,0.55) 14%, rgba(13,26,45,0) 38%),
+        linear-gradient(180deg, rgba(13,26,45,0.70) 0%, rgba(13,26,45,0) 20%),
+        linear-gradient(0deg, rgba(13,26,45,0.55) 0%, rgba(13,26,45,0) 30%);
+}
+.hero-inner { grid-column: 1; grid-row: 1; align-self: end; align-items: flex-start; text-align: left; }
+.hero-name--brand { order: 1; margin-bottom: 14px; padding-bottom: clamp(26px, 2.4vw, 38px); }
+.hero-name--brand .line1 { font-size: clamp(15px, 1.3vw, 21px); letter-spacing: 6px; margin-bottom: 10px; }
+.hero-name--brand .line2 {
+    font-size: clamp(66px, 7.6vw, 132px); letter-spacing: -1.5px; line-height: .9;
+    /* μικρό όνομα λευκό, επώνυμο χρυσό: σκληρή αλλαγή χρώματος στη μέση των δύο γραμμών */
+    background: linear-gradient(180deg, #ffffff 0%, #e9e9e9 49.5%, #e8cd92 50.5%, #c9a86c 78%, #a8842e 100%) !important;
+    -webkit-background-clip: text !important; background-clip: text !important;
+    -webkit-text-fill-color: transparent !important; color: transparent;
+}
+.hero-name--brand .line3 { text-align: left; font-size: clamp(14px, 1.2vw, 19px); }
+.hero-eyebrow { order: 2; margin-bottom: 18px; }
+.hero-eyebrow::before { background: #c9a86c; width: 44px; }
+.hero-eyebrow span { color: #e2c68f; font-size: 12px; letter-spacing: 3px; }
+.hero-headline {
+    order: 3; font-family: 'Source Sans 3', sans-serif; font-weight: 400;
+    font-size: clamp(18px, 1.45vw, 23px); line-height: 1.5; color: rgba(255,255,255,0.86);
+    max-width: 40ch; margin: 0 0 28px;
+}
+.hero-headline em { font-style: normal; color: #e2c68f; }
+.hero-actions { order: 4; margin-bottom: 0; }
+.hero-pillars {
+    grid-column: 1 !important; grid-row: 2; align-self: start;
+    display: flex !important; flex-wrap: wrap; gap: 10px !important; justify-content: flex-start;
+    border-top: 0 !important; padding: 22px 0 64px !important; margin: 0 !important;
+}
+.hero-pillar, .hero-pillar + .hero-pillar {
+    border: 1px solid rgba(201,168,108,0.45); border-radius: 4px; background: rgba(13,26,45,0.35);
+    padding: 9px 16px; gap: 10px; font-size: 14px; letter-spacing: 1px; text-transform: none;
+    font-family: 'Source Sans 3', sans-serif; font-weight: 600; color: rgba(255,255,255,0.9);
+}
+.hero-pillar i { width: auto; height: auto; border: 0; background: none; font-size: 15px; }
+.hero .hero-crane-mobile, .hero .scroll-bounce { display: none !important; }
+
+@media (max-width: 1100px) {
+    .hero { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 0 32px; padding-left: 5%; }
+    .hero-inner { align-items: flex-start; text-align: left; }
+    .hero-headline { margin-left: 0; }
+    .hero-actions { justify-content: flex-start; }
+}
+@media (max-width: 768px) {
+    .hero { display: flex; flex-direction: column; padding: 0 0 0; min-height: auto; gap: 0; text-align: center; }
+    .hero-portrait-col { display: block !important; order: -1; width: 100%; height: min(62vh, 470px); margin: 0; flex: none; }
+    .hero-portrait { object-position: 50% 18%; }
+    .hero-portrait-col::after {
+        background: linear-gradient(0deg, rgba(13,26,45,1) 0%, rgba(13,26,45,0.6) 18%, rgba(13,26,45,0) 45%),
+                    linear-gradient(180deg, rgba(13,26,45,0.55) 0%, rgba(13,26,45,0) 22%);
+    }
+    .hero-inner { align-items: center; text-align: center; margin-top: -44px; padding: 0 5%; position: relative; z-index: 3; }
+    .hero-name--brand { margin-bottom: 10px; padding-bottom: 22px; }
+    .hero-name--brand .line1 { font-size: 13px; letter-spacing: 4px; }
+    .hero-name--brand .line2 { font-size: clamp(44px, 13vw, 58px); }
+    .hero-name--brand .line3 { text-align: center; font-size: 12px; }
+    .hero-eyebrow { justify-content: center; margin-bottom: 12px; }
+    .hero-eyebrow::before { display: none; }
+    .hero-headline { font-size: 17px; max-width: 30ch; margin: 0 auto 22px; }
+    .hero-actions { margin: 0 auto; }
+    .hero-pillars { justify-content: center; padding: 18px 5% 28px !important; }
+    .hero-pillar, .hero-pillar + .hero-pillar { flex-direction: row; font-size: 13px; padding: 8px 12px; letter-spacing: .3px; }
+}
+
+/* Η φωτογραφία είναι πλέον στην πρώτη οθόνη· στην ενότητα «Εμπειρία» δεν
+   επαναλαμβάνεται — μένουν οι τρεις κάρτες σε όλο το πλάτος. */
+.about-portrait-col { display: none !important; }
+.about-grid--desktop-two { grid-template-columns: 1fr !important; max-width: 1100px; }
+
+/* ══ ΠΡΩΤΗ ΟΘΟΝΗ: ΕΝΑΛΛΑΓΗ ΦΩΤΟΓΡΑΦΙΑΣ / ΛΟΓΟΤΥΠΟΥ + ΕΦΕ ════════════════════
+   Δύο διαφάνειες στη δεξιά πλευρά, κάθε 5″ (hero-swap.js): η φωτογραφία με
+   αργό ζουμ και το λογότυπο με τον δακτύλιο, τον κομήτη και τα σκίτσα. Η
+   αλλαγή γίνεται με σβήσιμο, μικρή μεγέθυνση και θόλωμα. */
+.hero-swap { position: absolute; inset: 0; opacity: 0; visibility: hidden;
+    transform: scale(1.04); filter: blur(6px);
+    transition: opacity 1.1s var(--ease), transform 1.4s var(--ease), filter 1.1s var(--ease), visibility 0s linear 1.1s; }
+.hero-swap.is-on { opacity: 1; visibility: visible; transform: scale(1); filter: blur(0);
+    transition: opacity 1.1s var(--ease), transform 1.4s var(--ease), filter 1.1s var(--ease), visibility 0s; }
+.hero-swap.is-off { transform: scale(0.97); }
+.hero-swap .hero-portrait { animation: heroKenBurns 16s ease-in-out infinite alternate; }
+@keyframes heroKenBurns { from { transform: scale(1.02) translate(0, 0); } to { transform: scale(1.12) translate(-1.5%, 1%); } }
+.hero-swap--logo { display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(circle at 55% 50%, rgba(46,95,138,0.35), rgba(13,26,45,0) 60%); }
+.hero-swap--logo .hero-photo-wrap { width: min(78%, 480px); animation: none; }
+.hero-portrait-col::after { z-index: 2; }
+.hero-swap-dots { position: absolute; z-index: 4; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; }
+.hero-swap-dots span { width: 28px; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.35); transition: background .4s, width .4s; }
+.hero-swap-dots span.is-on { background: #c9a86c; width: 46px; }
+.hero-swap-timer { position: absolute; z-index: 4; left: 0; bottom: 0; height: 2px; width: 100%;
+    background: linear-gradient(90deg, #c9a86c, #e2c68f); transform-origin: left; transform: scaleX(0); opacity: .8; }
+.hero-swap-timer.run { animation: heroTimer 8s linear forwards; }
+@keyframes heroTimer { to { transform: scaleX(1); } }
+
+/* λάμψη που περνά μέσα από τα γράμματα του ονόματος (μέρος του ίδιου
+   background που κόβεται στο σχήμα των γραμμάτων — δεν βγαίνει έξω από αυτά) */
+.hero-name--brand .line2 {
+    background:
+        linear-gradient(105deg, transparent 42%, rgba(255,255,255,0.85) 50%, transparent 58%) no-repeat,
+        linear-gradient(180deg, #ffffff 0%, #e9e9e9 49.5%, #e8cd92 50.5%, #c9a86c 78%, #a8842e 100%) !important;
+    background-size: 300% 100%, 100% 100% !important;
+    background-position: 150% 0, 0 0 !important;
+    -webkit-background-clip: text !important; background-clip: text !important;
+    animation: heroSheen 7s ease-in-out 2.4s infinite, heroFadeIn 1.3s ease .75s both;
+}
+@keyframes heroSheen { 0% { background-position: 150% 0, 0 0; } 30%, 100% { background-position: -60% 0, 0 0; } }
+/* η χρυσή γραμμή της ιδιότητας «ζωγραφίζεται» */
+.hero-eyebrow::before { transform-origin: left; animation: heroLine 1s var(--ease) 1s both; }
+@keyframes heroLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+/* οι ετικέτες μπαίνουν μία-μία */
+.hero-pillars .hero-pillar { animation: heroFadeUp .7s var(--ease) both; }
+.hero-pillars .hero-pillar:nth-child(1) { animation-delay: 1.45s; }
+.hero-pillars .hero-pillar:nth-child(2) { animation-delay: 1.6s; }
+.hero-pillars .hero-pillar:nth-child(3) { animation-delay: 1.75s; }
+.hero-pillar { transition: border-color .3s, background .3s, transform .3s; }
+.hero-pillar:hover { border-color: #c9a86c; background: rgba(201,168,108,0.12); transform: translateY(-2px); }
+
+/* Τα δύο κουμπιά πιάνουν ακριβώς το πλάτος των τριών ετικετών από κάτω:
+   το μπλοκ παίρνει το πλάτος των ετικετών και τα κουμπιά το μοιράζονται. */
+.hero-cta-block { order: 4; display: inline-grid; grid-template-columns: max-content; gap: 12px; max-width: 100%; }
+.hero-cta-block .hero-actions { display: grid; grid-template-columns: 1.35fr 1fr; gap: 12px; margin: 0; width: auto; max-width: none; }
+.hero-cta-block .hero-actions a { width: 100%; padding: 0 18px; }
+.hero-cta-block .hero-pillars { display: flex !important; flex-wrap: nowrap; gap: 12px !important; padding: 0 !important; margin: 0 !important; }
+.hero-cta-block .hero-pillar { flex: 1 1 auto; justify-content: center; }
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-swap .hero-portrait, .hero-name--brand::after, .hero-swap-timer.run { animation: none; }
+}
+@media (max-width: 768px) {
+    .hero-swap--logo .hero-photo-wrap { width: min(70%, 300px); }
+    .hero-swap-dots { bottom: 58px; }
+    .hero-swap-timer { display: none; }
+    .hero-cta-block { display: grid; grid-template-columns: 1fr; width: 100%; max-width: 360px; margin: 0 auto; }
+    .hero-cta-block .hero-actions { grid-template-columns: 1fr; }
+    .hero-cta-block .hero-pillars { flex-wrap: wrap; justify-content: center; }
+    .hero-cta-block .hero-pillar { flex: 0 1 auto; }
+    .hero-inner { padding-bottom: 28px; }
+}
+
+/* ══ ΕΜΠΕΙΡΙΑ: ΚΑΡΤΕΣ ΜΕ ΚΙΝΗΣΗ ═════════════════════════════════════════════
+   Κάθε κάρτα μπαίνει με καθυστέρηση (01 → 02 → 03), μια χρυσή γραμμή
+   «ζωγραφίζεται» στην κορυφή της, το εικονίδιο έχει δακτύλιο που γυρίζει
+   αργά και ο αύξων αριθμός μετράει σαν ένδειξη σχεδίου. Στο πέρασμα του
+   δείκτη η κάρτα σηκώνεται και φωτίζεται με χρυσή ανταύγεια. */
+#aboutFeatures { counter-reset: feat; }
+#aboutFeatures .feature-row {
+    position: relative; overflow: hidden; counter-increment: feat;
+    opacity: 0; transform: translateY(26px);
+    transition: opacity .8s var(--ease), transform .8s var(--ease), box-shadow .35s var(--ease), border-color .35s;
+}
+#aboutFeatures .feature-row.visible { opacity: 1; transform: none; }
+#aboutFeatures .feature-row:nth-child(2) { transition-delay: .15s, .15s, 0s, 0s; }
+#aboutFeatures .feature-row:nth-child(3) { transition-delay: .3s, .3s, 0s, 0s; }
+#aboutFeatures .feature-row.visible:hover { transform: translateY(-5px); }
+/* χρυσή γραμμή στην κορυφή */
+#aboutFeatures .feature-row::after {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, #b8912f, #e2c68f, #c9a86c);
+    transform: scaleX(0); transform-origin: left; transition: transform 1.2s var(--ease) .5s;
+}
+#aboutFeatures .feature-row.visible::after { transform: scaleX(1); }
+#aboutFeatures .feature-row:nth-child(2)::after { transition-delay: .65s; }
+#aboutFeatures .feature-row:nth-child(3)::after { transition-delay: .8s; }
+/* αύξων αριθμός σαν ένδειξη σχεδίου */
+#aboutFeatures .feature-row::before {
+    content: '0' counter(feat); position: absolute; top: 16px; right: 20px;
+    font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; line-height: 1;
+    color: rgba(201,168,108,0.28); letter-spacing: 1px; transition: color .35s, transform .35s var(--ease);
+}
+#aboutFeatures .feature-row:hover::before { color: rgba(201,168,108,0.6); transform: translateY(-2px); }
+/* δακτύλιος γύρω από το εικονίδιο */
+#aboutFeatures .feature-row i { position: relative; transition: background .35s, color .35s, transform .35s var(--ease); }
+#aboutFeatures .feature-row i::after {
+    content: ''; position: absolute; inset: -6px; border-radius: 50%;
+    border: 1px dashed rgba(201,168,108,0.55); animation: trustRing 16s linear infinite;
+}
+#aboutFeatures .feature-row:hover i { background: #c9a86c; color: #fff; transform: rotate(-8deg) scale(1.06); }
+/* χρυσή ανταύγεια που περνά στο hover */
+#aboutFeatures .feature-row > .feature-row-header::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(115deg, transparent 30%, rgba(201,168,108,0.14) 50%, transparent 70%);
+    transform: translateX(-120%); transition: transform .9s var(--ease);
+}
+#aboutFeatures .feature-row:hover > .feature-row-header::after { transform: translateX(120%); }
+#aboutFeatures .feature-row:hover { border-color: rgba(201,168,108,0.7); box-shadow: 0 20px 44px rgba(29,58,92,0.13); }
+@media (prefers-reduced-motion: reduce) {
+    #aboutFeatures .feature-row { opacity: 1; transform: none; transition: none; }
+    #aboutFeatures .feature-row::after { transform: scaleX(1); transition: none; }
+    #aboutFeatures .feature-row i::after { animation: none; }
+}
+@media (max-width: 768px) {
+    #aboutFeatures .feature-row::before { font-size: 34px; top: 12px; right: 14px; }
+}
+@media (max-width: 768px) {
+    #aboutFeatures .feature-row-header strong { padding-right: 38px; }
+    #aboutFeatures .feature-row::before { font-size: 28px; top: 14px; }
+}
+
+/* Το αριστερό κείμενο στο κέντρο του παραθύρου καθ' ύψος: ίδιο περιθώριο
+   πάνω και κάτω (όσο η μπάρα), μία σειρά πλέγματος, κεντραρισμένο μπλοκ.
+   Η φωτογραφία απλώνεται και πάνω από τα δύο περιθώρια. */
+@media (min-width: 769px) {
+    .hero { grid-template-rows: 1fr; padding-top: 96px; padding-bottom: 96px; min-height: 100vh; }
+    .hero-inner { align-self: center; grid-row: 1; }
+    .hero-portrait-col { grid-row: 1; margin-top: -96px; margin-bottom: -96px; }
+    .hero-bottom:not(.hero-pillars) { display: none; }
+}
+
+/* Η φωτογραφία ΔΕΝ μπαίνει στην πρώτη οθόνη: δεξιά μένει μόνο το λογότυπο με
+   τον δακτύλιο και τα κινούμενα. Η φωτογραφία επιστρέφει στην ενότητα
+   «Εμπειρία και Εξειδίκευση», δεξιά από τις τρεις κάρτες. */
+.about-portrait-col { display: flex !important; }
+.about-grid--desktop-two { grid-template-columns: minmax(0, 1fr) 340px !important; max-width: 1400px; gap: 56px; }
+#aboutFeatures.about-features { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1100px) {
+    .about-grid--desktop-two { grid-template-columns: 1fr !important; }
+    #aboutFeatures.about-features { grid-template-columns: 1fr; }
+}
+.hero-swap--logo { background: none; }
+
+/* ══ ΥΠΟΣΕΛΙΔΟ ΣΕ ΣΤΗΛΕΣ ═════════════════════════════════════════════════════
+   Επωνυμία με μία πρόταση, οι πέντε σελίδες υπηρεσιών, οι ενότητες της
+   αρχικής και τα στοιχεία επικοινωνίας με ωράριο — όπως κλείνει ένα
+   επαγγελματικό site, αντί για λογότυπο και τέσσερα εικονίδια. */
+footer { background: linear-gradient(180deg, #16263d 0%, #0f1c2e 100%); padding: 72px 7% 30px; position: relative; }
+footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, #c9a86c, transparent); }
+.footer-top--cols {
+    display: grid !important; grid-template-columns: 1.5fr 1fr 1fr 1.25fr; gap: 40px 48px;
+    align-items: start; max-width: 1300px; margin: 0 auto 36px; padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+.footer-top--cols .footer-brand { align-items: flex-start; gap: 16px; }
+.footer-top--cols .footer-logo-circle { width: 56px; height: 56px; flex: none; }
+.footer-top--cols .fname { font-size: 22px; line-height: 1.15; }
+.footer-top--cols .ftitle { font-size: 11px; color: #c9a86c; letter-spacing: 1.6px; margin-top: 6px; }
+.footer-top--cols .fdesc { margin-top: 14px; font-family: 'Source Sans 3', sans-serif; font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.62); max-width: 34ch; }
+.footer-col { display: flex; flex-direction: column; gap: 11px; min-width: 0; }
+.footer-col h4 {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2.4px;
+    text-transform: uppercase; color: #c9a86c; margin: 4px 0 8px; position: relative; padding-bottom: 12px;
+}
+.footer-col h4::after { content: ''; position: absolute; left: 0; bottom: 0; width: 28px; height: 1px; background: #c9a86c; }
+.footer-col a, .footer-col span {
+    font-family: 'Source Sans 3', sans-serif; font-size: 14.5px; line-height: 1.45; color: rgba(255,255,255,0.74);
+    text-decoration: none; display: inline-flex; align-items: flex-start; gap: 10px; overflow-wrap: anywhere;
+    transition: color .25s, transform .25s var(--ease);
+}
+.footer-col a:hover { color: #fff; transform: translateX(3px); }
+.footer-col i { color: #c9a86c; font-size: 13px; width: 16px; margin-top: 4px; flex: none; }
+.footer-bottom { max-width: 1300px; margin: 0 auto; justify-content: center; }
+.footer-bottom .social-link { border-radius: 50%; border-color: rgba(201,168,108,0.4); color: #c9a86c; }
+.footer-bottom .social-link:hover { border-color: #c9a86c; background: rgba(201,168,108,0.12); color: #fff; }
+@media (max-width: 1100px) { .footer-top--cols { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 768px) {
+    footer { padding: 52px 6% 96px; }
+    .footer-top--cols { grid-template-columns: 1fr; gap: 30px; padding-bottom: 32px; }
+    .footer-col a, .footer-col span { font-size: 15px; min-height: 30px; }
+}
+
+/* ══ ΕΓΚΡΙΣΕΙΣ ΤΥΠΟΥ: ΚΕΙΜΕΝΟ ΑΡΙΣΤΕΡΑ, ΣΧΕΔΙΟ ΔΕΞΙΑ ════════════════════════
+   Το εισαγωγικό έπιανε μισό πλάτος και από κάτω ένα μεγάλο κενό με το σχέδιο
+   στο κέντρο. Τώρα κείμενο και σχέδιο στέκονται δίπλα-δίπλα στον υπολογιστή. */
+@media (min-width: 900px) {
+    .tap-box .tap-body {
+        display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        grid-template-areas: "title graphic" "intro graphic" "tag graphic" "toggle toggle" "collapse collapse";
+        column-gap: 48px; align-items: start;
+    }
+    .tap-box .tap-title { grid-area: title; align-self: end; }
+    .tap-box .tap-intro { grid-area: intro; max-width: none; }
+    .tap-box .tap-graphic { grid-area: graphic; align-self: center; margin: 0; max-height: 340px; }
+    .tap-box .tap-graphic-tag { grid-area: tag; align-self: start; justify-self: start; margin-top: 18px; }
+    .tap-box button.tap-toggle { grid-area: toggle; margin-top: 28px; }
+    .tap-box .tap-collapse { grid-area: collapse; }
+}
+@media (max-width: 768px) {
+    .footer-top--cols { grid-template-columns: 1fr 1fr; gap: 30px 20px; }
+    .footer-top--cols .footer-brand, .footer-top--cols .footer-col--contact { grid-column: 1 / -1; }
+    .footer-col a, .footer-col span { font-size: 14px; }
+}
+
+/* ══ ΠΡΩΤΗ ΟΘΟΝΗ ΚΑΘΡΕΦΤΙΣΜΕΝΗ: ΛΟΓΟΤΥΠΟ ΑΡΙΣΤΕΡΑ, ΚΕΙΜΕΝΟ ΔΕΞΙΑ ════════════
+   Στον υπολογιστή το μετάλλιο με τα κινούμενα πιάνει την αριστερή πλευρά σε
+   όλο το ύψος και το όνομα, η ιδιότητα και τα κουμπιά στέκονται δεξιά, στο
+   κέντρο καθ' ύψος. Η ένωση των δύο πλευρών σβήνει προς τα δεξιά. Στο
+   κινητό μένει ως έχει: λογότυπο πάνω, κείμενο από κάτω, στο κέντρο. */
+@media (min-width: 769px) {
+    .hero {
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        padding: 96px 7% 96px 0; gap: 0 64px;
+    }
+    .hero-portrait-col { grid-column: 1; grid-row: 1; }
+    .hero-inner { grid-column: 2; grid-row: 1; justify-self: start; }
+    .hero-portrait-col::after {
+        background:
+            linear-gradient(270deg, rgba(13,26,45,0.85) 0%, rgba(13,26,45,0.25) 16%, rgba(13,26,45,0) 34%),
+            linear-gradient(180deg, rgba(13,26,45,0.55) 0%, rgba(13,26,45,0) 18%);
+    }
+    .hero-swap--logo .hero-photo-wrap { width: min(74%, 520px); }
+    /* λεπτή χρυσή κάθετη γραμμή που χωρίζει τις δύο πλευρές */
+    .hero-portrait-col::before {
+        content: ''; position: absolute; z-index: 3; right: 0; top: 18%; bottom: 18%; width: 1px;
+        background: linear-gradient(180deg, transparent, rgba(201,168,108,0.55), transparent);
+    }
+}
+@media (min-width: 769px) and (max-width: 1100px) {
+    .hero { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); padding-right: 5%; gap: 0 32px; }
+}
+/* Μικρότερες οθόνες υπολογιστή/tablet: το μπλοκ κουμπιών ακολουθεί το πλάτος
+   της στήλης (όχι των ετικετών) και οι ετικέτες αναδιπλώνονται. */
+@media (min-width: 769px) and (max-width: 1280px) {
+    .hero-cta-block { display: grid; grid-template-columns: minmax(0, 1fr); width: 100%; }
+    .hero-cta-block .hero-pillars { flex-wrap: wrap; }
+    .hero-cta-block .hero-pillar { flex: 0 1 auto; }
+    .hero-name--brand .line2 { font-size: clamp(52px, 6.6vw, 84px); }
+}
+@media (min-width: 769px) and (max-width: 1280px) { .hero-cta-block .hero-pillar { flex: 1 1 auto; } }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ΜΕΤΑΛΛΙΚΗ ΠΑΛΕΤΑ — βαθύ σκούρο μπλε με διαβαθμίσεις, μεταλλικός χρυσός,
+   βουρτσισμένο ασήμι. Ισχύει σε αρχική και υποσελίδες (κοινό styles.css).
+   Στόχος: εγγύηση, δυναμική, αυτοπεποίθηση — «μετάλλιο», όχι «χαρτί».
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root {
+    --navy-abyss: #050d18;
+    --navy-deep:  #0a1728;
+    --navy-mid:   #11243d;
+    --navy-lift:  #1b3658;
+    --gold-metal: linear-gradient(135deg, #7a5a1f 0%, #c9a24e 18%, #f6e3a8 34%, #c49a45 50%, #8e6a26 64%, #e6c77e 82%, #a57e32 100%);
+    --gold-metal-h: linear-gradient(90deg, #8e6a26, #d8b565 20%, #f6e3a8 42%, #c49a45 62%, #e9cf8a 82%, #9c7530);
+    --gold-text:  linear-gradient(180deg, #fbeec4 0%, #e7c983 34%, #c49a45 58%, #a57e32 78%, #e3c27a 100%);
+    --silver-metal: linear-gradient(135deg, #7d8792 0%, #dfe4ea 22%, #ffffff 36%, #aeb6bf 52%, #eef1f4 70%, #8c96a1 100%);
+    --silver-text: linear-gradient(180deg, #ffffff 0%, #eef1f4 38%, #b9c1ca 62%, #f4f6f8 100%);
+    --navy-grad: radial-gradient(120% 90% at 20% 0%, #1b3658 0%, #0e2138 45%, #07111f 100%);
+}
+
+/* ── σκούρα, «βαθιά» φόντα με διαβάθμιση ── */
+.hero { background-color: var(--navy-abyss); }
+.hero::before {
+    content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background:
+        radial-gradient(60% 70% at 25% 45%, rgba(46,95,138,0.30), transparent 70%),
+        radial-gradient(50% 60% at 85% 30%, rgba(201,162,78,0.10), transparent 70%),
+        linear-gradient(180deg, rgba(5,13,24,0.25), rgba(5,13,24,0.65));
+}
+.trust-section { background: var(--navy-grad) !important; }
+.marquee-wrap { background: linear-gradient(90deg, #07111f, #11243d 50%, #07111f) !important; border-top: 1px solid rgba(201,162,78,0.35); border-bottom: 1px solid rgba(201,162,78,0.35); }
+footer { background: linear-gradient(180deg, #0e2138 0%, #07111f 100%); }
+
+/* ── μπάρα πλοήγησης: σκούρο «γυαλί» και μετά την κύλιση ── */
+nav.scrolled {
+    background: linear-gradient(180deg, rgba(7,17,31,0.94), rgba(11,26,46,0.90)) !important;
+    border-bottom: 1px solid rgba(201,162,78,0.28) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.35) !important;
+}
+nav.scrolled .nav-links a             { color: rgba(255,255,255,0.84); }
+nav.scrolled .nav-links a:hover       { color: #fff; }
+nav.scrolled .nav-links a.nav-spy-active { color: #e7c983 !important; }
+nav.scrolled .nav-cta                 { border-color: rgba(231,201,131,0.6) !important; color: #e7c983 !important; }
+nav.scrolled .nav-cta:hover           { background: rgba(201,162,78,0.14) !important; color: #fff !important; }
+nav.scrolled .logo-text .name         { color: #fff; }
+nav.scrolled .logo-text .title        { color: rgba(231,201,131,0.8); }
+nav.scrolled .hamburger span          { background: #fff; }
+nav.scrolled .lang-toggle             { border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.06); }
+nav.scrolled .lang-btn .lcode         { color: rgba(255,255,255,0.75); }
+nav.scrolled .lang-btn.active         { background: rgba(255,255,255,0.12); }
+nav.scrolled .lang-btn.active .lcode  { color: #e7c983; }
+nav.scrolled .lang-sep                { background: rgba(255,255,255,0.18); }
+
+/* ── μεταλλικός χρυσός στα γράμματα ── */
+.section-heading em, .hero-headline em, .tap-title em {
+    background: var(--gold-text); -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: #c9a24e;
+}
+.trust-stat-num { background: var(--gold-text) !important; -webkit-background-clip: text !important; background-clip: text !important; }
+.eyebrow span { background: var(--gold-metal-h); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.eyebrow::before { background: var(--gold-metal-h) !important; }
+/* όνομα: βουρτσισμένο ασήμι επάνω, μεταλλικός χρυσός κάτω (+ η λάμψη που περνά) */
+.hero-name--brand .line2 {
+    background:
+        linear-gradient(105deg, transparent 42%, rgba(255,255,255,0.9) 50%, transparent 58%) no-repeat,
+        linear-gradient(180deg, #ffffff 0%, #e6eaef 22%, #b6bec8 40%, #f3f5f7 49.4%, #f6e3a8 50.6%, #d9b565 64%, #a57e32 82%, #e6c77e 100%) !important;
+    background-size: 300% 100%, 100% 100% !important;
+    background-position: 150% 0, 0 0 !important;
+    -webkit-background-clip: text !important; background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* ── μεταλλικά κουμπιά με λάμψη ── */
+.btn-hero-primary, a.ta-cta-btn, a.tap-cta-btn, .svc-quick a.svc-quick-call, .ec-go, .contact-form-wrap button[type="submit"] {
+    background: var(--gold-metal) !important; background-size: 180% 180% !important; color: #0c1726 !important;
+    border: 0 !important; position: relative; overflow: hidden;
+    box-shadow: 0 10px 28px rgba(201,162,78,0.30), inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 0 rgba(0,0,0,0.18) !important;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.35);
+    transition: background-position .6s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease) !important;
+}
+.btn-hero-primary:hover, a.ta-cta-btn:hover, a.tap-cta-btn:hover, .svc-quick a.svc-quick-call:hover, .ec-go:hover, .contact-form-wrap button[type="submit"]:hover {
+    background-position: 100% 100% !important; transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(201,162,78,0.42), inset 0 1px 0 rgba(255,255,255,0.6) !important;
+}
+.btn-hero-ghost, .svc-quick a.svc-quick-msg {
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01)) !important;
+    border: 1px solid transparent !important;
+    background-image: linear-gradient(rgba(10,23,40,0.85), rgba(10,23,40,0.85)), var(--silver-metal) !important;
+    background-origin: border-box !important; background-clip: padding-box, border-box !important;
+    color: #fff !important;
+}
+.btn-hero-ghost:hover, .svc-quick a.svc-quick-msg:hover { background-image: linear-gradient(rgba(27,54,88,0.9), rgba(27,54,88,0.9)), var(--gold-metal) !important; }
+
+/* ── κουτιά: μεταλλικό χρυσό περίγραμμα και μπάρα κορυφής ── */
+.tap-box, .ta-box, .trc-widget {
+    border: 3px solid transparent !important;
+    background: linear-gradient(#fff, #fff) padding-box, var(--gold-metal) border-box !important;
+    box-shadow: 0 24px 60px rgba(7,17,31,0.16), 0 2px 0 rgba(255,255,255,0.6) inset !important;
+}
+.tap-topbar, .ta-topbar, .trc-widget-topbar { background: var(--gold-metal-h) !important; }
+.tap-badge, .tap-kicker, .ta-badge, .trc-widget-topbar-badge { color: #0c1726 !important; text-shadow: 0 1px 0 rgba(255,255,255,0.35); }
+.ta-cat-badge, .trc-cat-badge, .service-badge { background: var(--gold-metal) !important; box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 6px 16px rgba(165,126,50,0.25); }
+button.tap-toggle, button.ta-toggle--bar, .trc-widget button.trc-main-toggle--bar {
+    background: var(--gold-metal-h) !important; background-size: 200% 100% !important; color: #0c1726 !important;
+    animation: hbMetalShift 6s ease-in-out infinite !important;
+}
+button.tap-toggle[aria-expanded="true"], button.ta-toggle--bar[aria-expanded="true"], .trc-widget button.trc-main-toggle--bar[aria-expanded="true"] { animation: none !important; }
+@keyframes hbMetalShift { 0%,100% { background-position: 0% 0; } 50% { background-position: 100% 0; } }
+.tools-tab.is-active { background: var(--gold-metal) !important; color: #0c1726 !important; box-shadow: inset 0 1px 0 rgba(255,255,255,0.5); }
+.tools-tabbar { border-color: transparent !important; background: linear-gradient(#fff,#fff) padding-box, var(--gold-metal) border-box !important; border: 1px solid transparent !important; }
+
+/* ── εικονίδια σε κύκλο: μεταλλικός χρυσός στη ρίζα, στο hover γεμίζουν ── */
+#servicesGrid .service-card--featured .service-icon, .ta-stat-icon, .trust-pillar-icon { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4); }
+#servicesGrid .service-card--featured .service-icon { background: var(--gold-metal) !important; color: #0c1726 !important; }
+#aboutFeatures .feature-row:hover i { background: var(--gold-metal) !important; color: #0c1726 !important; }
+#aboutFeatures .feature-row::after { background: var(--gold-metal-h) !important; }
+
+/* ── επικοινωνία σε σκούρο μπλε: η σελίδα κλείνει «βαριά», η φόρμα λευκή κάρτα ── */
+.contact-section { background: var(--navy-grad) !important; color: #fff; }
+.contact-section::before { color: rgba(255,255,255,0.04) !important; }
+.contact-section .section-heading { color: #fff; }
+.contact-section .contact-lead { color: rgba(255,255,255,0.72); }
+.contact-section .person-card { background: rgba(255,255,255,0.04); border-color: rgba(201,162,78,0.35); }
+.contact-section .person-details h3 { color: #fff; }
+.contact-section .contact-detail { border-color: rgba(255,255,255,0.08) !important; }
+.contact-section .cd-label { color: rgba(231,201,131,0.85); }
+.contact-section .cd-value, .contact-section .contact-detail a { color: #fff; }
+.contact-section .cd-icon { background: rgba(201,162,78,0.14); }
+.contact-section .contact-form-wrap {
+    border: 1px solid transparent !important;
+    background: linear-gradient(#fff,#fff) padding-box, var(--gold-metal) border-box !important;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.35) !important;
+}
+.contact-section .contact-map { border-radius: 8px; overflow: hidden; border: 1px solid rgba(201,162,78,0.35); }
+
+/* ── κινητό: μπάρα κλήσης σε βαθύ μπλε με χρυσή κόψη ── */
+@media (max-width: 768px) {
+    .mobile-cta-bar { background: linear-gradient(180deg, #0e2138, #07111f) !important; border-top: 1px solid rgba(201,162,78,0.45); }
+}
+
+/* Τα τρία εργαλεία (οδηγός, έλεγχος Κ.Ο.Κ., υπολογιστής έλξης) ξανά ως
+   ξεχωριστά κουτιά, το ένα κάτω από το άλλο — όλα ορατά. */
+.tools-panel-hidden { display: block !important; }

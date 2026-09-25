@@ -105,8 +105,8 @@
     en: {
       title1:      'Trailer ',
       badgeKey:    'CATEGORY',
-      diagramTag:  'SIDE and REAR VIEW',
-      tagline:     'RUN THE FULL CHECKLIST and SEE DETAILS',
+      diagramTag:  'SIDE AND REAR VIEW',
+      tagline:     'RUN THE FULL CHECKLIST AND SEE DETAILS',
       progressLbl: 'Inspection Progress',
       resetBtn:    'RESET',
       secLbl:      'Check Points and Legal Equipment',
@@ -178,7 +178,7 @@
 
   function getLang() {
     return (window.I18n && window.I18n.getLang()) ||
-           localStorage.getItem('lang') ||
+           (function () { try { return localStorage.getItem('lang'); } catch (e) { return null; } })() ||
            document.documentElement.lang ||
            'el';
   }

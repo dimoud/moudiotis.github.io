@@ -132,7 +132,7 @@
       /* ─── DOCUMENT TEXT (fades in after the sketch) ─── */
       '<g id="tapTexts" fill="' + GOLD + '">',
       '<text class="tap-t" data-i18n="tap.doc.title" x="100" y="80"',
-      '  font-family="\'Oswald\',sans-serif" font-size="27" font-weight="700"',
+      '  font-family="\'Barlow Condensed\',sans-serif" font-size="27" font-weight="700"',
       '  letter-spacing="1.5" opacity="0">' + esc(tr('tap.doc.title')) + '</text>',
       '<text class="tap-t" data-i18n="tap.doc.sub" x="100" y="98"',
       '  font-family="\'IBM Plex Mono\',monospace" font-size="9.5" letter-spacing="2"',
@@ -166,7 +166,7 @@
       '    fill="' + GREEN + '" opacity="0.85">' + esc(tr('tap.stamp.top')) + '</text>',
       '  <text data-i18n="tap.stamp.main" x="632" y="252" text-anchor="middle"',
       /* 18px / 0.6 tracking keeps the longest label (ΕΓΚΡΙΘΗΚΕ) inside r=71 */
-      '    font-family="\'Oswald\',sans-serif" font-size="18" font-weight="700"',
+      '    font-family="\'Barlow Condensed\',sans-serif" font-size="18" font-weight="700"',
       '    letter-spacing="0.6" fill="' + GREEN + '">' + esc(tr('tap.stamp.main')) + '</text>',
       '  <text data-i18n="tap.stamp.sub" x="632" y="284" text-anchor="middle"',
       '    font-family="\'IBM Plex Mono\',monospace" font-size="9" letter-spacing="1.8"',

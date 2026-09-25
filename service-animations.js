@@ -47,7 +47,7 @@
   }
 
   var MONO = "'IBM Plex Mono',monospace";
-  var OSW  = "'Oswald',sans-serif";
+  var OSW  = "'Barlow Condensed',sans-serif";
 
   /* Βοηθός για <text>: txt(x,y,size,content,extra) */
   function txt(x, y, size, content, opts) {

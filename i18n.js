@@ -31,7 +31,9 @@
     /* ─── APPLY TRANSLATIONS ─────────────────────────────────────────────── */
     function applyLang(lang) {
         currentLang = lang;
-        localStorage.setItem('lang', lang);
+        /* Σε ιδιωτική περιήγηση (π.χ. παλιό Safari) το localStorage πετά σφάλμα
+           και θα σταματούσε όλη τη μετάφραση — γι' αυτό σε try/catch. */
+        try { localStorage.setItem('lang', lang); } catch (e) { /* ιδιωτική περιήγηση: συνεχίζουμε χωρίς αποθήκευση */ }
 
         /* text content */
         document.querySelectorAll('[data-i18n]').forEach(function (el) {

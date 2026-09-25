@@ -205,32 +205,26 @@
     var calMobileDimTickR= $('calMobileDimTickR');
     var calMobileVal     = $('caliperMobileVal');
 
+    /* Κινητό: πλάγια όψη τρέιλερ — η διάσταση μήκους «τρέχει» από τον
+       κοτσαδόρο (x=40) ως το πίσω άκρο (x=440) και μετρά ως 4.250 m. */
+    var TRD_X0 = 40, TRD_SPAN = 400, TRD_MAX_M = 4.25;
     function applyMobileCaliperOffset(offset) {
-        if (!calMobileJaw) return;
-        var mVal = (offset / CAL_PX_PER_M).toFixed(3);
-        calMobileJaw.style.transform = 'translateX(' + (-CAL_MAX_OFFSET + offset) + 'px)';
-        var jawX = 350 - (CAL_MAX_OFFSET - offset);
-        var midX = (88 + jawX) / 2;
-        if (calMobileDimLine) {
-            calMobileDimLine.setAttribute('x1', 88);
-            calMobileDimLine.setAttribute('x2', jawX);
-            calMobileDimLine.setAttribute('y1', 14);
-            calMobileDimLine.setAttribute('y2', 14);
-        }
+        if (!calMobileDimLine) return;
+        var p = Math.max(0, Math.min(1, offset / CAL_MAX_OFFSET));
+        var x = TRD_X0 + TRD_SPAN * p;
+        calMobileDimLine.setAttribute('x2', x);
         if (calMobileDimTickR) {
-            calMobileDimTickR.setAttribute('x1', jawX - 4);
-            calMobileDimTickR.setAttribute('x2', jawX + 4);
-            calMobileDimTickR.setAttribute('y1', 10);
-            calMobileDimTickR.setAttribute('y2', 18);
+            calMobileDimTickR.setAttribute('x1', x - 4);
+            calMobileDimTickR.setAttribute('x2', x + 4);
         }
         if (calMobileVal) {
-            calMobileVal.setAttribute('x', midX);
-            calMobileVal.textContent = mVal + ' m';
+            calMobileVal.setAttribute('x', (TRD_X0 + x) / 2);
+            calMobileVal.textContent = 'L = ' + (TRD_MAX_M * p).toFixed(3) + ' m';
         }
     }
 
     function updateMobileCaliper() {
-        if (!calMobileWrap || !calMobileJaw) return;
+        if (!calMobileWrap || !calMobileDimLine) return;
         var rect    = calMobileWrap.getBoundingClientRect();
         var vh      = window.innerHeight;
         var visible = rect.top < vh && rect.bottom > 0;
@@ -380,14 +374,39 @@
 
         function clamp01(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
 
+        /* Η κατεύθυνση βγαίνει από τη ΘΕΣΗ της κάρτας στο πλέγμα, όχι από τη
+           σειρά της: μετά την κάρτα-στόχο που πιάνει όλο το πλάτος, οι μονές/
+           ζυγές κλάσεις δεν αντιστοιχούν πια σε αριστερή/δεξιά στήλη και οι
+           κάρτες έρχονταν από τη λάθος πλευρά, η μία πάνω στην άλλη.
+           Κάρτα σε όλο το πλάτος (υπολογιστής) = μόνο εμφάνιση, χωρίς ολίσθηση·
+           μία στήλη (κινητό) = εναλλάξ αριστερά/δεξιά. */
+        var dirs = [];
+        function computeDirs() {
+            var alt = 0;
+            zipCards.forEach(function (card, i) {
+                var grid = card.parentElement.getBoundingClientRect();
+                /* μέτρηση χωρίς το τρέχον transform */
+                var tf = card.style.transform; card.style.transform = 'none';
+                var r = card.getBoundingClientRect();
+                card.style.transform = tf;
+                var full = r.width > grid.width * 0.7;
+                var oneCol = window.innerWidth <= 768;
+                if (full && !oneCol) { dirs[i] = 0; return; }
+                if (oneCol) { dirs[i] = (alt++ % 2 === 0) ? -1 : 1; return; }
+                dirs[i] = (r.left + r.width / 2 < grid.left + grid.width / 2) ? -1 : 1;
+            });
+        }
+        computeDirs();
+        window.addEventListener('resize', function () { maxOffset = Math.min(260, Math.max(40, window.innerWidth * 0.18)); computeDirs(); });
+
         function updateZipper() {
             var vh    = window.innerHeight;
             var start = vh;         /* card top at viewport bottom  → progress 0 */
             var end   = vh * 0.55;  /* card top at 55% up viewport  → progress 1 */
-            zipCards.forEach(function (card) {
+            zipCards.forEach(function (card, i) {
                 var top = card.getBoundingClientRect().top;
                 var progress = clamp01((start - top) / (start - end));
-                var dir = card.classList.contains('service-card--odd') ? -1 : 1;
+                var dir = dirs[i] || 0;
                 card.style.opacity   = progress.toFixed(3);
                 card.style.transform = 'translateX(' + ((1 - progress) * dir * maxOffset).toFixed(1) + 'px)';
             });
@@ -573,7 +592,8 @@
 
         function startAutoScroll() {
             function tick() {
-                if (!paused && !isDown) {
+                /* όσο μια κριτική είναι ανοιχτή, η ταινία σταματά για να διαβαστεί */
+                if (!paused && !isDown && !track.querySelector('.review-card.is-expanded')) {
                     band.scrollLeft += SPEED;
                     if (band.scrollLeft >= track.scrollWidth / 2) {
                         band.scrollLeft -= track.scrollWidth / 2;

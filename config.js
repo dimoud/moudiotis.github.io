@@ -121,16 +121,7 @@ window.SITE_CONFIG = {
     // ── SERVICES ──────────────────────────────────────────────────────────
     services: [
         {
-            icon:        'fa-truck-ramp-box',
-            urlEl: '/adeia-treiler-o1-o2/',
-            urlEn: '/en/adeia-treiler-o1-o2/',
-            titleEl:     'Άδεια Τρέιλερ Ο1 και Ο2 — Ταξινόμηση Ρυμουλκούμενου και Μπαγκαζιέρας',
-            titleEn:     'O1 and O2 Trailer Licence — Trailer and Cargo Box Registration',
-            textEl:      'Ξανάνοιξαν οι διαδικασίες <strong class="kw">ταξινόμησης</strong> για <strong class="kw">όλα τα τρέιλερ</strong>. Αναλαμβάνουμε πλήρως: <strong class="kw">Ο1</strong> (έως 750 kg — <strong class="kw">μπαγκαζιέρα</strong>, σκάφος, τροχόσπιτο) και <strong class="kw">Ο2</strong> (έως 3,5 τόνους). <strong class="kw">Έγκριση τύπου ρυμουλκούμενου</strong>, τεχνική μελέτη, υποβολή σε ΥΜΕΔ/ΚΤΕΟ, <strong class="kw">έκδοση άδειας κυκλοφορίας</strong> — από την αρχή ώς το τέλος.',
-            textEn:      'Procedures have reopened for <strong class="kw">all trailers</strong>. We handle everything: <strong class="kw">O1</strong> (up to 750 kg — cargo box, boat, caravan) and <strong class="kw">O2</strong> (up to 3.5 tonnes). <strong class="kw">Trailer type approval</strong>, technical study, submission to YMED/KTEO, <strong class="kw">circulation licence issuance</strong> — end to end.',
-            seoKeywords: 'αδεια τρειλερ, άδεια τρέιλερ, τρέϊλερ, ταξινόμηση ρυμουλκούμενου, έγκριση τύπου ρυμουλκούμενου, αδεια ρυμουλκουμενου Ο1 Ο2, άδεια ρυμουλκούμενου, μπαγκαζιέρα, άδεια μπαγκαζιέρα, νομιμοποίηση τρέιλερ, ταξινόμηση τρέιλερ, έκδοση άδειας κυκλοφορίας, trailer licence Greece, cargo trailer licence Greece',
-        },
-        {
+            featured:    true,
             icon:        'fa-file-circle-check',
             urlEl: '/deltio-koinopoiisis-tao/',
             urlEn: '/en/deltio-koinopoiisis-tao/',
@@ -181,6 +172,21 @@ window.SITE_CONFIG = {
             ],
         },
         {
+            badge:       'new',
+            expand:      '0',
+            icon:        'fa-truck-ramp-box',
+            urlEl: '/adeia-treiler-o1-o2/',
+            urlEn: '/en/adeia-treiler-o1-o2/',
+            titleEl:     'Άδεια Τρέιλερ Ο1 και Ο2 — Ταξινόμηση Ρυμουλκούμενου και Μπαγκαζιέρας',
+            titleEn:     'O1 and O2 Trailer Licence — Trailer and Cargo Box Registration',
+            textEl:      'Ξανάνοιξαν οι διαδικασίες <strong class="kw">ταξινόμησης</strong> για <strong class="kw">όλα τα τρέιλερ</strong>. Αναλαμβάνουμε πλήρως: <strong class="kw">Ο1</strong> (έως 750 kg — <strong class="kw">μπαγκαζιέρα</strong>, σκάφος, τροχόσπιτο) και <strong class="kw">Ο2</strong> (έως 3,5 τόνους). <strong class="kw">Έγκριση τύπου ρυμουλκούμενου</strong>, τεχνική μελέτη, υποβολή σε ΥΜΕΔ/ΚΤΕΟ, <strong class="kw">έκδοση άδειας κυκλοφορίας</strong> — από την αρχή ώς το τέλος.',
+            textEn:      'Procedures have reopened for <strong class="kw">all trailers</strong>. We handle everything: <strong class="kw">O1</strong> (up to 750 kg — cargo box, boat, caravan) and <strong class="kw">O2</strong> (up to 3.5 tonnes). <strong class="kw">Trailer type approval</strong>, technical study, submission to YMED/KTEO, <strong class="kw">circulation licence issuance</strong> — end to end.',
+            seoKeywords: 'αδεια τρειλερ, άδεια τρέιλερ, τρέϊλερ, ταξινόμηση ρυμουλκούμενου, έγκριση τύπου ρυμουλκούμενου, αδεια ρυμουλκουμενου Ο1 Ο2, άδεια ρυμουλκούμενου, μπαγκαζιέρα, άδεια μπαγκαζιέρα, νομιμοποίηση τρέιλερ, ταξινόμηση τρέιλερ, έκδοση άδειας κυκλοφορίας, trailer licence Greece, cargo trailer licence Greece',
+        },
+        {
+            expand:      '1',
+            urlEl:       '/oximata-eidikou-skopou/',
+            urlEn:       '/en/oximata-eidikou-skopou/',
             icon:        'fa-compass-drafting',
             titleEl:     'Τεχνικές Μελέτες και Ειδικές Κατασκευές',
             titleEn:     'Technical Studies and Special Bodywork',
@@ -207,6 +213,14 @@ window.SITE_CONFIG = {
                     textEn:  'Technical studies for body replacement, engine replacement, addition or removal of axles and special-use conversions.',
                 },
             ],
+        },
+        {
+            icon:        'fa-arrows-up-down',
+            titleEl:     'Μελέτη Τοποθέτησης Υδραυλικής Πλατφόρμας — Έγκριση Τύπου',
+            titleEn:     'Hydraulic Platform Installation Study — Type Approval',
+            textEl:      'Τεχνική μελέτη για την εγκατάσταση <strong class="kw">υδραυλικών πλατφορμών</strong> σε οχήματα και σε σταθερές εγκαταστάσεις. Συμμόρφωση με το <strong class="kw">ΕΝ 1570</strong>, <strong class="kw">σήμανση CE</strong> και <strong class="kw">έγκριση τύπου</strong>. Αθήνα και Θεσσαλονίκη.',
+            textEn:      'Technical study by a <strong class="kw">mechanical engineer</strong> for <strong class="kw">hydraulic platform</strong> installation on vehicles and fixed installations. Compliance with <strong class="kw">EN 1570</strong>, <strong class="kw">CE certification</strong> and <strong class="kw">type approval</strong> — Athens and Thessaloniki.',
+            seoKeywords: 'υδραυλικη πλατφορμα, εγκριση τυπου, EN 1570, πιστοποιηση CE, hydraulic platform study Greece, τεχνική μελέτη υδραυλικής πλατφόρμας',
         },
         {
             icon:        'fa-clipboard-check',
@@ -245,14 +259,6 @@ window.SITE_CONFIG = {
             textEl:      'Η κάλυψη <strong class="kw">Τεχνικού Ασφαλείας</strong> για <strong class="kw">κάθε επιχείρηση</strong>, ακόμα και με 1 εργαζόμενο είναι υποχρεωτική. Σύνταξη <strong class="kw">ΓΕΕΚ</strong>, εκπαιδεύσεις εργαζομένων, σχέδια εκκένωσης, προετοιμασία ΣΕΠΕ.',
             textEn:      'Mandatory <strong class="kw">Safety Engineer</strong> coverage by a <strong class="kw">mechanical engineer</strong> for <strong class="kw">every business</strong>, even with 1 employee — Athens and Thessaloniki. Written risk assessment (<strong class="kw">GEEK</strong>), employee training, evacuation plans, SEPE preparation.',
             seoKeywords: 'τεχνικος ασφαλειας, ΓΕΕΚ, υγεια ασφαλεια εργασιας, νομος 3850 2010, safety engineer Athens, occupational health safety Greece',
-        },
-        {
-            icon:        'fa-arrows-up-down',
-            titleEl:     'Μελέτη Τοποθέτησης Υδραυλικής Πλατφόρμας — Έγκριση Τύπου',
-            titleEn:     'Hydraulic Platform Installation Study — Type Approval',
-            textEl:      'Τεχνική μελέτη για την εγκατάσταση <strong class="kw">υδραυλικών πλατφορμών</strong> σε οχήματα και σε σταθερές εγκαταστάσεις. Συμμόρφωση με το <strong class="kw">ΕΝ 1570</strong>, <strong class="kw">σήμανση CE</strong> και <strong class="kw">έγκριση τύπου</strong>. Αθήνα και Θεσσαλονίκη.',
-            textEn:      'Technical study by a <strong class="kw">mechanical engineer</strong> for <strong class="kw">hydraulic platform</strong> installation on vehicles and fixed installations. Compliance with <strong class="kw">EN 1570</strong>, <strong class="kw">CE certification</strong> and <strong class="kw">type approval</strong> — Athens and Thessaloniki.',
-            seoKeywords: 'υδραυλικη πλατφορμα, εγκριση τυπου, EN 1570, πιστοποιηση CE, hydraulic platform study Greece, τεχνική μελέτη υδραυλικής πλατφόρμας',
         },
         {
             icon:        'fa-cube',

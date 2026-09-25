@@ -6,6 +6,9 @@
  * -------------------------------------------------------- */
 
 (function () {
+    /* Ασφαλής πρόσβαση στο localStorage: σε ιδιωτική περιήγηση πετά σφάλμα */
+    function _lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+    function _lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* ιδιωτική περιήγηση: συνεχίζουμε χωρίς αποθήκευση */ } }
     var STORAGE_KEY = 'moudiotis_consent';
     var GA_ID       = 'G-4QBD0G5862';
 
@@ -126,7 +129,7 @@
     /* Public helper: call this from other scripts to safely send events.
      * If consent not yet granted the event is queued and fired on grant. */
     window.ccEvent = function (eventName, params) {
-        var stored = localStorage.getItem(STORAGE_KEY);
+        var stored = _lsGet(STORAGE_KEY);
         if (stored === 'granted' && typeof gtag === 'function') {
             gtag('event', eventName, params || {});
         } else if (stored !== 'denied') {
@@ -136,7 +139,7 @@
 
     /* ── dismiss banner ── */
     function dismiss(choice) {
-        localStorage.setItem(STORAGE_KEY, choice);
+        _lsSet(STORAGE_KEY, choice);
         banner.classList.add('cc-hidden');
         if (choice === 'granted') {
             gtagGrant();
@@ -146,7 +149,7 @@
     }
 
     /* ── check existing choice ── */
-    var stored = localStorage.getItem(STORAGE_KEY);
+    var stored = _lsGet(STORAGE_KEY);
 
     if (stored === 'granted') {
         gtagGrant();

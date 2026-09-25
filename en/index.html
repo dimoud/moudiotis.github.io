@@ -12,8 +12,8 @@
     <link rel="alternate"     href="https://moudiotis.gr/" hreflang="x-default">
     <link rel="sitemap"       type="application/xml" href="https://moudiotis.gr/sitemap.xml">
 
-    <link rel="icon"          href="../logo.png" type="image/png" sizes="any">
-    <link rel="apple-touch-icon" href="../logo.png" sizes="180x180">
+    <link rel="icon"          href="../icon-48.png" type="image/png" sizes="48x48">
+    <link rel="apple-touch-icon" href="../icon-180.png" sizes="180x180">
 
     <meta property="og:type"        content="website">
     <meta property="og:url"         content="https://moudiotis.gr/en/">
@@ -45,7 +45,7 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://flagcdn.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600&family=Playfair+Display:wght@400;700;900&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&family=Oswald:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../expertease-credit.css">
@@ -409,6 +409,7 @@
             <a href="/en/adeia-treiler-o1-o2/" data-i18n="nav.trailer" data-href-el="/adeia-treiler-o1-o2/" data-href-en="/en/adeia-treiler-o1-o2/">Trailer Licence</a>
             <a href="/en/memonomeni-egkrisi-oximatos/" data-i18n="nav.imports" data-href-el="/memonomeni-egkrisi-oximatos/" data-href-en="/en/memonomeni-egkrisi-oximatos/">Imports, Caravans</a>
             <a href="/en/deltio-koinopoiisis-tao/" data-i18n="nav.tao" data-href-el="/deltio-koinopoiisis-tao/" data-href-en="/en/deltio-koinopoiisis-tao/">Type Approval, TAO</a>
+            <a href="/en/egkrisi-typou-dikyklon/" data-i18n="nav.moto" data-href-el="/egkrisi-typou-dikyklon/" data-href-en="/en/egkrisi-typou-dikyklon/">Two-wheelers, Quads</a>
             <a href="/en/oximata-eidikou-skopou/" data-i18n="nav.special" data-href-el="/oximata-eidikou-skopou/" data-href-en="/en/oximata-eidikou-skopou/">Special Purpose</a>
             <a href="#contact"  class="nav-cta" data-i18n="nav.contact">Contact</a>
         </div>
@@ -423,12 +424,12 @@
                 <span class="lcode">EN</span>
             </button>
         </div>
-        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Μενού πλοήγησης" data-i18n-aria-label="aria.menu" aria-expanded="false">
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Navigation menu" data-i18n-aria-label="aria.menu" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
     </nav>
 
-    <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Επιστροφή στην κορυφή" data-i18n-aria-label="aria.backToTop">
+    <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" data-i18n-aria-label="aria.backToTop">
         <i class="fa-solid fa-chevron-up"></i>
     </button>
 
@@ -445,7 +446,7 @@
                 <div class="elev-tick major"><span>±0</span></div>
             </div>
         </div>
-        <span class="elev-label">ΥΨ</span>
+        <span class="elev-label">H</span>
     </div>
 
     <!-- ===== HERO ===== -->
@@ -455,8 +456,9 @@
         <div class="hero-grain"     aria-hidden="true"></div>
         <div class="hero-spotlight" aria-hidden="true"></div>
 
-        <div class="hero-photo-col">
-            <div class="hero-photo-wrap" aria-hidden="true">
+        <div class="hero-photo-col hero-portrait-col">
+            <div class="hero-swap hero-swap--logo is-on" data-slide="logo">
+                <div class="hero-photo-wrap" aria-hidden="true">
                 <!-- Orbiting ring SVG -->
                 <svg class="hero-orbit-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -532,18 +534,31 @@
                         </text>
                     </g>
                 </svg>
-                <img id="heroPhoto" src="/founder.webp" fetchpriority="high" alt="Dimitrios Moudiotis — Mechanical Engineer, vehicle type approval, trailer licence Athens" class="hero-photo">
+                <img id="heroPhoto" src="/founder.webp" alt="Dimitrios Moudiotis — Mechanical Engineer, vehicle type approval, trailer licence Athens" class="hero-photo">
+            </div>
             </div>
         </div>
 
         <div class="hero-inner">
             <div class="hero-eyebrow"><span data-i18n="hero.eyebrow">Mechanical Engineer AUTH, MSc</span></div>
-            <h1 class="hero-name">
+            <div class="hero-name hero-name--brand">
                 <span class="line1" data-i18n="hero.name1">TECHNICAL OFFICE</span>
                 <span class="line2" data-i18n="hero.name2">DIMITRIOS
 MOUDIOTIS</span>
                 <span class="line3" data-i18n="hero.name3">and Associates</span>
-            </h1>
+            </div>
+            <h1 class="hero-headline" data-i18n-html="hero.headline">Vehicle type approval and <em>registration</em></h1>
+            <div class="hero-cta-block">
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-hero-primary"><span data-i18n="hero.cta.quote">Request a quote</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="tel:+302107561836" class="btn-hero-ghost" aria-label="Call 210 756 1836"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>210 756 1836</span></a>
+                </div>
+            <div class="hero-pillars">
+                <div class="hero-pillar"><i class="fa-solid fa-file-circle-check" aria-hidden="true"></i><span data-i18n="hero.p1">Type Approvals</span></div>
+                <div class="hero-pillar"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i><span data-i18n="hero.p2">Technical Studies</span></div>
+                <div class="hero-pillar"><i class="fa-solid fa-folder-open" aria-hidden="true"></i><span data-i18n="hero.p3">Full File Handling</span></div>
+                </div>
+            </div>
         </div>
 
         <!-- Crane: mobile hero only -->
@@ -623,8 +638,8 @@ MOUDIOTIS</span>
                         stroke="#38a169" stroke-width="1" fill="rgba(56,161,105,0.09)"
                         stroke-dasharray="4 4"/>
                     <text x="189" y="113" text-anchor="middle"
-                        font-family="'Oswald',sans-serif" font-size="12" font-weight="700"
-                        letter-spacing="1" fill="#38a169">ΑΔΕΙΟΔΟΤΗΘΗΚΕ</text>
+                        font-family="'Barlow Condensed',sans-serif" font-size="12" font-weight="700"
+                        letter-spacing="1" fill="#38a169">LICENSED</text>
                     <text x="189" y="122" text-anchor="middle"
                         font-family="'IBM Plex Mono',monospace" font-size="5" letter-spacing="1.5"
                         fill="#38a169" opacity="0.7">CRANE INSPECTION</text>
@@ -638,10 +653,6 @@ MOUDIOTIS</span>
             </svg>
         </div>
         <br>
-        <div class="hero-bottom">
-            <a href="#contact" class="btn-hero-cta" data-i18n="hero.cta">Get in Touch</a>
-            <div class="hero-bottom-contact" id="heroBottomContact"><a href="tel:+302107561836" class="hbc-item"><span class="hbc-icon"><i class="fa-solid fa-phone"></i></span><span class="hbc-text"><span class="hbc-label" data-i18n="hbc.phone">Landline</span><span class="hbc-val" data-i18n="contact.phone.val">0030 210 756 1836</span></span></a><span class="hbc-item hbc-address"><span class="hbc-icon"><i class="fa-solid fa-location-dot"></i></span><span class="hbc-text"><span class="hbc-label" data-i18n="hbc.service">Service area</span><span class="hbc-val" data-i18n="contact.address">Athens · Thessaloniki | Greece-wide and abroad</span></span></span><a href="mailto:moudiotis.meng@gmail.com" class="hbc-item"><span class="hbc-icon"><i class="fa-solid fa-envelope"></i></span><span class="hbc-text"><span class="hbc-label">Email</span><span class="hbc-val">moudiotis.meng@gmail.com</span></span></a></div>
-        </div>
     </header>
 
     <!-- ===== MARQUEE ===== -->
@@ -662,183 +673,54 @@ MOUDIOTIS</span>
                     <div class="dim-tick"></div>
                 </div>
                 <div class="about-features" id="aboutFeatures"><div class="feature-row" data-reveal=""><div class="feature-row-header"><i class="fa-solid fa-bolt-lightning"></i><strong data-i18n-html="feature.1.label">Fast Service</strong></div><span data-i18n-html="feature.1.text">Rapid response and <strong class="kw">permit issuance</strong> without delays</span></div><div class="feature-row" data-reveal=""><div class="feature-row-header"><i class="fa-solid fa-crosshairs"></i><strong data-i18n-html="feature.2.label">Precision</strong></div><span data-i18n-html="feature.2.text">Every study prepared with <strong class="kw">methodological precision</strong> and full documentation</span></div><div class="feature-row" data-reveal=""><div class="feature-row-header"><i class="fa-solid fa-list-check"></i><strong data-i18n-html="feature.3.label">End-to-End Process</strong></div><span data-i18n-html="feature.3.text">We handle the <strong class="kw">entire process</strong> — from documents to licence issuance</span></div></div>
-                <!-- Mobile-only horizontal caliper -->
+                <!-- Mobile-only: πλάγια όψη τρέιλερ με διάσταση μήκους (κατάταξη Ο1/Ο2) -->
                 <div class="caliper-mobile caliper-wrap" id="caliperMobileWrap" aria-hidden="true">
-                    <svg class="caliper-svg caliper-svg--horizontal" id="caliperMobileSvg" viewBox="0 0 480 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Παχύμετρο, οριζόντιο (κινητά). Σταθερή επιφάνεια x=88, κινητή x=350, διαδρομή 262px. -->
-                        <rect x="46" y="34" width="408" height="11" rx="1.2" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.10)"/>
-                        <line x1="48" y1="36.6" x2="452" y2="36.6" stroke="currentColor" stroke-width="0.6" opacity="0.28"/>
-                        <rect x="39" y="32.4" width="9" height="14.2" rx="1.6" fill="currentColor" opacity="0.92"/>
-                        <g stroke="currentColor">
-                            <line x1="96.0" y1="45" x2="96.0" y2="54.5" stroke-width="1.30" opacity="0.72"/>
-                            <line x1="105.4" y1="45" x2="105.4" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="114.8" y1="45" x2="114.8" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="124.2" y1="45" x2="124.2" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="133.6" y1="45" x2="133.6" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="143.0" y1="45" x2="143.0" y2="54.5" stroke-width="1.30" opacity="0.72"/>
-                            <line x1="152.4" y1="45" x2="152.4" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="161.8" y1="45" x2="161.8" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="171.2" y1="45" x2="171.2" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="180.6" y1="45" x2="180.6" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="190.0" y1="45" x2="190.0" y2="54.5" stroke-width="1.30" opacity="0.72"/>
-                            <line x1="199.4" y1="45" x2="199.4" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="208.8" y1="45" x2="208.8" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="218.2" y1="45" x2="218.2" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="227.6" y1="45" x2="227.6" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="237.0" y1="45" x2="237.0" y2="54.5" stroke-width="1.30" opacity="0.72"/>
-                            <line x1="246.4" y1="45" x2="246.4" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="255.8" y1="45" x2="255.8" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="265.2" y1="45" x2="265.2" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="274.6" y1="45" x2="274.6" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="284.0" y1="45" x2="284.0" y2="54.5" stroke-width="1.30" opacity="0.72"/>
-                            <line x1="293.4" y1="45" x2="293.4" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="302.8" y1="45" x2="302.8" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="312.2" y1="45" x2="312.2" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="321.6" y1="45" x2="321.6" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="331.0" y1="45" x2="331.0" y2="54.5" stroke-width="1.30" opacity="0.72"/>
-                            <line x1="340.4" y1="45" x2="340.4" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="349.8" y1="45" x2="349.8" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="359.2" y1="45" x2="359.2" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="368.6" y1="45" x2="368.6" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="378.0" y1="45" x2="378.0" y2="54.5" stroke-width="1.30" opacity="0.72"/>
-                            <line x1="387.4" y1="45" x2="387.4" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="396.8" y1="45" x2="396.8" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="406.2" y1="45" x2="406.2" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="415.6" y1="45" x2="415.6" y2="50.0" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="425.0" y1="45" x2="425.0" y2="54.5" stroke-width="1.30" opacity="0.72"/>
-                            <line x1="434.4" y1="45" x2="434.4" y2="50.0" stroke-width="0.85" opacity="0.42"/>
+                    <svg class="caliper-svg trailer-dim-svg" id="caliperMobileSvg" viewBox="0 0 480 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Τρέιλερ-μπαγκαζιέρα σε σχέδιο μηχανικού. Ο κοτσαδόρος x=40, το πίσω άκρο x=440. -->
+                        <line x1="20" y1="100" x2="460" y2="100" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 4" opacity="0.35"/>
+                        <!-- ζεύξη και ράβδος έλξης -->
+                        <path d="M34 70 A6 6 0 0 1 46 70" stroke="currentColor" stroke-width="1.8"/>
+                        <line x1="46" y1="70" x2="150" y2="70" stroke="currentColor" stroke-width="1.6"/>
+                        <line x1="46" y1="72" x2="150" y2="77" stroke="currentColor" stroke-width="1.1" opacity="0.6"/>
+                        <!-- ροδάκι στήριξης -->
+                        <line x1="84" y1="70" x2="84" y2="88" stroke="currentColor" stroke-width="1.4"/>
+                        <circle cx="84" cy="94" r="6" stroke="currentColor" stroke-width="1.3" fill="rgba(201,168,108,0.14)"/>
+                        <!-- σασί -->
+                        <rect x="146" y="74" width="296" height="5" rx="1" stroke="currentColor" stroke-width="1.3" fill="rgba(201,168,108,0.18)"/>
+                        <!-- καρότσα -->
+                        <rect x="150" y="34" width="290" height="40" rx="1.5" stroke="currentColor" stroke-width="1.6" fill="rgba(201,168,108,0.10)"/>
+                        <line x1="150" y1="41" x2="440" y2="41" stroke="currentColor" stroke-width="0.8" opacity="0.45"/>
+                        <g stroke="currentColor" stroke-width="0.7" opacity="0.3">
+                            <line x1="222" y1="41" x2="222" y2="74"/>
+                            <line x1="368" y1="41" x2="368" y2="74"/>
                         </g>
-                        <path d="M70 45 L70 15 L79 4 L88 15 L88 45 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="rgba(201,168,108,0.16)"/>
-                        <line x1="88" y1="15" x2="88" y2="45" stroke="currentColor" stroke-width="2.6" opacity="0.92"/>
-                        <g id="calMobileJawGroup" style="transform:translateX(-262px)">
-                            <rect x="350" y="29" width="58" height="25" rx="2.4" stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.22)"/>
-                            <path d="M368 45 L368 15 L359 4 L350 15 L350 45 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="rgba(201,168,108,0.16)"/>
-                            <line x1="350" y1="15" x2="350" y2="45" stroke="currentColor" stroke-width="2.6" opacity="0.92"/>
-                            <g stroke="currentColor" opacity="0.5">
-                                <line x1="374.0" y1="45" x2="374.0" y2="52.0" stroke-width="0.75"/>
-                                <line x1="376.8" y1="45" x2="376.8" y2="49.5" stroke-width="0.75"/>
-                                <line x1="379.6" y1="45" x2="379.6" y2="49.5" stroke-width="0.75"/>
-                                <line x1="382.4" y1="45" x2="382.4" y2="49.5" stroke-width="0.75"/>
-                                <line x1="385.2" y1="45" x2="385.2" y2="49.5" stroke-width="0.75"/>
-                                <line x1="388.0" y1="45" x2="388.0" y2="52.0" stroke-width="0.75"/>
-                                <line x1="390.8" y1="45" x2="390.8" y2="49.5" stroke-width="0.75"/>
-                                <line x1="393.6" y1="45" x2="393.6" y2="49.5" stroke-width="0.75"/>
-                                <line x1="396.4" y1="45" x2="396.4" y2="49.5" stroke-width="0.75"/>
-                                <line x1="399.2" y1="45" x2="399.2" y2="49.5" stroke-width="0.75"/>
-                                <line x1="402.0" y1="45" x2="402.0" y2="52.0" stroke-width="0.75"/>
-                            </g>
-                            <circle cx="360" cy="50" r="4.2" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.22)"/>
-                            <line x1="360" y1="47.4" x2="360" y2="52.6" stroke="currentColor" stroke-width="1.1" opacity="0.75"/>
-                            <rect x="412" y="43" width="20" height="13" rx="2.5" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.16)"/>
-                            <g stroke="currentColor" opacity="0.42" stroke-width="0.7">
-                                <line x1="416.0" y1="45" x2="416.0" y2="54"/>
-                                <line x1="419.6" y1="45" x2="419.6" y2="54"/>
-                                <line x1="423.2" y1="45" x2="423.2" y2="54"/>
-                                <line x1="426.8" y1="45" x2="426.8" y2="54"/>
-                                <line x1="430.4" y1="45" x2="430.4" y2="54"/>
-                            </g>
-                        </g>
-                        <line x1="84" y1="10" x2="92" y2="18" stroke="currentColor" stroke-width="2" opacity="0.8"/>
-                        <line id="calMobileDimLine" x1="88" y1="14" x2="88" y2="14" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.6"/>
-                        <line id="calMobileDimTickR" x1="84" y1="10" x2="92" y2="18" stroke="currentColor" stroke-width="2" opacity="0.8"/>
-                        <text id="caliperMobileVal" x="88" y="10" text-anchor="middle"
+                        <text x="295" y="62" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="11" letter-spacing="3" fill="currentColor" opacity="0.7">O1 · 750 kg</text>
+                        <!-- φανάρι πίσω -->
+                        <rect x="436" y="64" width="6" height="8" rx="1" fill="currentColor" opacity="0.55"/>
+                        <!-- τροχός -->
+                        <circle cx="300" cy="88" r="12" stroke="currentColor" stroke-width="1.6" fill="rgba(201,168,108,0.16)"/>
+                        <circle cx="300" cy="88" r="4" stroke="currentColor" stroke-width="1.2"/>
+                        <!-- βοηθητικές γραμμές διάστασης -->
+                        <line x1="40" y1="64" x2="40" y2="10" stroke="currentColor" stroke-width="0.7" opacity="0.4"/>
+                        <line x1="440" y1="32" x2="440" y2="10" stroke="currentColor" stroke-width="0.7" opacity="0.4"/>
+                        <line x1="36" y1="20" x2="44" y2="12" stroke="currentColor" stroke-width="2" opacity="0.8"/>
+                        <line id="calMobileDimLine" x1="40" y1="16" x2="40" y2="16" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.6"/>
+                        <line id="calMobileDimTickR" x1="36" y1="20" x2="44" y2="12" stroke="currentColor" stroke-width="2" opacity="0.8"/>
+                        <text id="caliperMobileVal" x="40" y="10" text-anchor="middle"
                               font-family="Cormorant Garamond, serif" font-size="12"
-                              letter-spacing="2.5" fill="currentColor" opacity="0.85">0.000 m</text>
+                              letter-spacing="2.5" fill="currentColor" opacity="0.85">L = 0.000 m</text>
                     </svg>
                 </div>
             </div>
-            <div class="about-caliper-col" aria-hidden="true">
-                <div class="caliper-wrap caliper-wrap--vertical" id="caliperWrap">
-                    <svg class="caliper-svg caliper-svg--vertical" id="caliperSvg" viewBox="0 0 72 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Παχύμετρο, κατακόρυφο. Σταθερή επιφάνεια μέτρησης y=88, κινητή y=350, διαδρομή 262px. -->
-                        <!-- Ράβδος με την κύρια κλίμακα -->
-                        <rect x="34" y="46" width="11" height="408" rx="1.2" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.10)"/>
-                        <line x1="36.6" y1="48" x2="36.6" y2="452" stroke="currentColor" stroke-width="0.6" opacity="0.28"/>
-                        <rect x="32.4" y="39" width="14.2" height="9" rx="1.6" fill="currentColor" opacity="0.92"/>
-                        <g stroke="currentColor">
-                            <line x1="45" y1="96.0" x2="54.5" y2="96.0" stroke-width="1.30" opacity="0.72"/>
-                            <line x1="45" y1="105.4" x2="50.0" y2="105.4" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="114.8" x2="50.0" y2="114.8" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="124.2" x2="50.0" y2="124.2" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="133.6" x2="50.0" y2="133.6" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="143.0" x2="54.5" y2="143.0" stroke-width="1.30" opacity="0.72"/>
-                            <line x1="45" y1="152.4" x2="50.0" y2="152.4" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="161.8" x2="50.0" y2="161.8" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="171.2" x2="50.0" y2="171.2" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="180.6" x2="50.0" y2="180.6" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="190.0" x2="54.5" y2="190.0" stroke-width="1.30" opacity="0.72"/>
-                            <line x1="45" y1="199.4" x2="50.0" y2="199.4" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="208.8" x2="50.0" y2="208.8" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="218.2" x2="50.0" y2="218.2" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="227.6" x2="50.0" y2="227.6" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="237.0" x2="54.5" y2="237.0" stroke-width="1.30" opacity="0.72"/>
-                            <line x1="45" y1="246.4" x2="50.0" y2="246.4" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="255.8" x2="50.0" y2="255.8" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="265.2" x2="50.0" y2="265.2" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="274.6" x2="50.0" y2="274.6" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="284.0" x2="54.5" y2="284.0" stroke-width="1.30" opacity="0.72"/>
-                            <line x1="45" y1="293.4" x2="50.0" y2="293.4" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="302.8" x2="50.0" y2="302.8" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="312.2" x2="50.0" y2="312.2" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="321.6" x2="50.0" y2="321.6" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="331.0" x2="54.5" y2="331.0" stroke-width="1.30" opacity="0.72"/>
-                            <line x1="45" y1="340.4" x2="50.0" y2="340.4" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="349.8" x2="50.0" y2="349.8" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="359.2" x2="50.0" y2="359.2" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="368.6" x2="50.0" y2="368.6" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="378.0" x2="54.5" y2="378.0" stroke-width="1.30" opacity="0.72"/>
-                            <line x1="45" y1="387.4" x2="50.0" y2="387.4" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="396.8" x2="50.0" y2="396.8" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="406.2" x2="50.0" y2="406.2" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="415.6" x2="50.0" y2="415.6" stroke-width="0.85" opacity="0.42"/>
-                            <line x1="45" y1="425.0" x2="54.5" y2="425.0" stroke-width="1.30" opacity="0.72"/>
-                            <line x1="45" y1="434.4" x2="50.0" y2="434.4" stroke-width="0.85" opacity="0.42"/>
-                        </g>
-                        <!-- Σταθερή σιαγόνα: επιφάνεια μέτρησης στο y=88 -->
-                        <path d="M45 70 L15 70 L4 79 L15 88 L45 88 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="rgba(201,168,108,0.16)"/>
-                        <line x1="15" y1="88" x2="45" y2="88" stroke="currentColor" stroke-width="2.6" opacity="0.92"/>
-                        <!-- Κινητό σκέλος -->
-                        <g id="calJawGroup" style="transform:translateY(-262px)">
-                            <rect x="29" y="350" width="25" height="58" rx="2.4" stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,108,0.22)"/>
-                            <path d="M45 368 L15 368 L4 359 L15 350 L45 350 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="rgba(201,168,108,0.16)"/>
-                            <line x1="15" y1="350" x2="45" y2="350" stroke="currentColor" stroke-width="2.6" opacity="0.92"/>
-                            <!-- Βερνιέρος -->
-                            <g stroke="currentColor" opacity="0.5">
-                                <line x1="45" y1="374.0" x2="52.0" y2="374.0" stroke-width="0.75"/>
-                                <line x1="45" y1="376.8" x2="49.5" y2="376.8" stroke-width="0.75"/>
-                                <line x1="45" y1="379.6" x2="49.5" y2="379.6" stroke-width="0.75"/>
-                                <line x1="45" y1="382.4" x2="49.5" y2="382.4" stroke-width="0.75"/>
-                                <line x1="45" y1="385.2" x2="49.5" y2="385.2" stroke-width="0.75"/>
-                                <line x1="45" y1="388.0" x2="52.0" y2="388.0" stroke-width="0.75"/>
-                                <line x1="45" y1="390.8" x2="49.5" y2="390.8" stroke-width="0.75"/>
-                                <line x1="45" y1="393.6" x2="49.5" y2="393.6" stroke-width="0.75"/>
-                                <line x1="45" y1="396.4" x2="49.5" y2="396.4" stroke-width="0.75"/>
-                                <line x1="45" y1="399.2" x2="49.5" y2="399.2" stroke-width="0.75"/>
-                                <line x1="45" y1="402.0" x2="52.0" y2="402.0" stroke-width="0.75"/>
-                            </g>
-                            <!-- Βίδα ασφάλισης -->
-                            <circle cx="50" cy="360" r="4.2" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.22)"/>
-                            <line x1="47.4" y1="360" x2="52.6" y2="360" stroke="currentColor" stroke-width="1.1" opacity="0.75"/>
-                            <!-- Τροχός ώθησης -->
-                            <rect x="43" y="412" width="13" height="20" rx="2.5" stroke="currentColor" stroke-width="1.4" fill="rgba(201,168,108,0.16)"/>
-                            <g stroke="currentColor" opacity="0.42" stroke-width="0.7">
-                                <line x1="45" y1="416.0" x2="54" y2="416.0"/>
-                                <line x1="45" y1="419.6" x2="54" y2="419.6"/>
-                                <line x1="45" y1="423.2" x2="54" y2="423.2"/>
-                                <line x1="45" y1="426.8" x2="54" y2="426.8"/>
-                                <line x1="45" y1="430.4" x2="54" y2="430.4"/>
-                            </g>
-                        </g>
-                        <!-- Γραμμή διάστασης -->
-                        <line x1="10" y1="84" x2="18" y2="92" stroke="currentColor" stroke-width="2" opacity="0.8"/>
-                        <line id="calDimLine" x1="14" y1="88" x2="14" y2="88" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.6"/>
-                        <line id="calDimTickR" x1="10" y1="84" x2="18" y2="92" stroke="currentColor" stroke-width="2" opacity="0.8"/>
-                        <text id="caliperVal" x="10" y="88" text-anchor="middle"
-                              font-family="Cormorant Garamond, serif" font-size="12"
-                              letter-spacing="2.5" fill="currentColor" opacity="0.85"
-                              transform="rotate(-90, 10, 88)">0.000 m</text>
-                    </svg>
-                </div>
+            <div class="about-portrait-col">
+                <figure class="about-portrait">
+                    <span class="ap-corner ap-tl" aria-hidden="true"></span><span class="ap-corner ap-tr" aria-hidden="true"></span><span class="ap-corner ap-bl" aria-hidden="true"></span><span class="ap-corner ap-br" aria-hidden="true"></span>
+                    <img src="../founder_contact.webp" alt="Dimitrios Moudiotis, Mechanical Engineer" loading="lazy" width="900" height="894">
+                    <figcaption>
+                        <strong data-i18n="about.pname">Dimitrios Moudiotis</strong>
+                        <span data-i18n="about.ptitle">Mechanical Engineer AUTH, MSc</span>
+                    </figcaption>
+                </figure>
             </div>
         </div>
     </section>
@@ -1044,13 +926,13 @@ MOUDIOTIS</span>
         <div class="sec-meas" data-sec-meas aria-hidden="true">
             <div class="sec-meas-tick"></div>
             <div class="sec-meas-bar bar-l"></div>
-            <span class="sec-meas-label" id="servicesMeasLabel"></span>
+            <span class="sec-meas-label" id="servicesMeasLabel">8 <span data-i18n="services.meas">SERVICES</span> · <span data-i18n="services.meas.area">Athens — Thessaloniki</span></span>
             <div class="sec-meas-bar bar-r"></div>
             <div class="sec-meas-tick"></div>
         </div>
 
         <!-- Trailer Announcement Guide -->
-        <div class="services-grid" id="servicesGrid"><div class="service-card service-card--featured service-card--odd service-card--expandable service-card--zipper-js" data-reveal="" itemscope="" itemtype="https://schema.org/Service" itemprop="itemListElement" aria-expanded="false" style="opacity: 0; transform: translateX(-230.4px);"><meta itemprop="position" content="1"><meta itemprop="keywords" content="αδεια τρειλερ, άδεια τρέιλερ, τρέϊλερ, ταξινόμηση ρυμουλκούμενου, έγκριση τύπου ρυμουλκούμενου, αδεια ρυμουλκουμενου Ο1 Ο2, άδεια ρυμουλκούμενου, μπαγκαζιέρα, άδεια μπαγκαζιέρα, νομιμοποίηση τρέιλερ, ταξινόμηση τρέιλερ, έκδοση άδειας κυκλοφορίας, trailer licence Greece, cargo trailer licence Greece"><div class="service-num" aria-hidden="true">01</div><i class="fa-solid fa-truck-ramp-box service-icon" aria-hidden="true"></i><div class="service-card-body"><h3 itemprop="name" data-i18n-html="s1.title">O1 and O2 Trailer Licence — Trailer and Cargo Box Registration</h3><span class="service-badge" data-i18n="service.badge.new">NEW</span></div><div class="svc-inline-expand"><div class="svc-inline-expand-inner"><p itemprop="description" data-i18n-html="s1.text">Procedures have reopened for <strong class="kw">all trailers</strong>. We handle everything: <strong class="kw">O1</strong> (up to 750 kg — cargo box, boat, caravan) and <strong class="kw">O2</strong> (up to 3.5 tonnes). <strong class="kw">Trailer type approval</strong>, technical study, submission to YMED/KTEO, <strong class="kw">circulation licence issuance</strong> — end to end.</p><p data-i18n-html="svc.expand.0.p1">Every trailer is required by Road Code to have a <strong>registration licence</strong> and plates. <strong>O1</strong>: up to 750 kg (cargo trailer, boats, camping, motorcycle) — <strong>O2</strong>: up to 3,500 kg (caravan, car, heavy industrial). We handle everything: <strong>trailer type approval</strong>, technical study, submission to YMED/KTEO, licence issuance.</p><p class="svc-inline-meta" data-i18n-html="svc.expand.0.meta">Athens and Thessaloniki &nbsp;·&nbsp; AUTH, MSc &nbsp;·&nbsp; Categories O1 and O2</p><div class="svc-inline-cta"><a class="svc-inline-btn" href="/en/adeia-treiler-o1-o2/"><span>Read the full page</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div></div></div><div class="service-card service-card--even service-card--expandable service-card--zipper-js" data-reveal="" itemscope="" itemtype="https://schema.org/Service" itemprop="itemListElement" aria-expanded="false" style="opacity: 0; transform: translateX(230.4px);"><meta itemprop="position" content="2"><meta itemprop="keywords" content="έγκριση τύπου οχήματος, έγκριση τύπου ρυμουλκούμενου, εθνική έγκριση τύπου, ευρωπαϊκή έγκριση τύπου, μεμονωμένη έγκριση οχήματος, καταχώρηση ΤΑΟ, Τεχνικό Αρχείο Οχημάτων, δελτίο κοινοποίησης, ταξινόμηση οχήματος, ταξινομιση αδεας οχηματος, οχήματα ειδικής χρήσης ειδικού σκοπού, εγκριση τυπου, μελετη οχηματος, vehicle type approval Greece, trailer type approval, individual vehicle approval Greece, special purpose vehicle registration Greece"><div class="service-num" aria-hidden="true">02</div><i class="fa-solid fa-file-circle-check service-icon" aria-hidden="true"></i><div class="service-card-body"><h3 itemprop="name" data-i18n-html="s2.title">Type Approval Notification, TAO Registration and Type Approvals</h3></div><div class="svc-inline-expand"><div class="svc-inline-expand-inner"><p itemprop="description" data-i18n-html="s2.text"><strong class="kw">Type approval notification</strong> and <strong class="kw">TAO registration</strong> for importers, dealers and manufacturers — <strong class="kw">handled remotely</strong>, across Greece and for clients abroad. National and European <strong class="kw">type approval</strong>, <strong class="kw">individual approval</strong>, category L. A dossier that forgives no mistakes — we take it on in full.</p><ul class="svc-inline-list"><li><span class="svc-inline-list-t" data-i18n-html="s2.i1.title">National and European Type Approval</span><span class="svc-inline-list-d" data-i18n-html="s2.i1.text">Complete preparation and management of the dossier for issuing national or European type approvals for vehicles, trailers and components.</span></li><li><span class="svc-inline-list-t" data-i18n-html="s2.i2.title">Individual Vehicle Approval</span><span class="svc-inline-list-d" data-i18n-html="s2.i2.text">Individual, special, modified or imported vehicles are certified so that a registration certificate can be issued.</span></li><li><span class="svc-inline-list-t" data-i18n-html="s2.i3.title">Category L Type Approval</span><span class="svc-inline-list-d" data-i18n-html="s2.i3.text">Mopeds, motorcycles, tricycles and quadricycles under Reg. (EU) 168/2013 — classification, technical file and registration.</span></li><li><span class="svc-inline-list-t" data-i18n-html="s2.i4.title">Technical Vehicle Archive (TAO) Registration</span><span class="svc-inline-list-d" data-i18n-html="s2.i4.text">Registration in the Technical Vehicle Archive of the Ministry of Infrastructure and Transport. We handle the procedure.</span></li><li><span class="svc-inline-list-t" data-i18n-html="s2.i5.title">Notification Certificates</span><span class="svc-inline-list-d" data-i18n-html="s2.i5.text">Preparation, submission and issue of the Type Approval Notification Certificate for vehicle registration.</span></li></ul><p data-i18n-html="svc.expand.1.p1">Special use vehicles — crane trucks, platforms, sprayers — require special <strong>registration</strong> and <strong>vehicle type approval</strong>. We also handle <strong>trailer type approval</strong> for custom-built trailers. We prepare technical studies (static analysis, CE, EN 1570) and handle the entire process from start to finish.</p><p class="svc-inline-meta" data-i18n-html="svc.expand.1.meta">Crane trucks &nbsp;·&nbsp; Platforms &nbsp;·&nbsp; Sprayers &nbsp;·&nbsp; Athens and Thessaloniki</p><div class="svc-inline-cta"><a class="svc-inline-btn" href="/en/deltio-koinopoiisis-tao/"><span>Read the full page</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="svc-inline-btn" href="/en/memonomeni-egkrisi-oximatos/"><span>Individual Vehicle Approval</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="svc-inline-btn" href="/en/egkrisi-typou-dikyklon/"><span>Category L Type Approval</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div></div></div><div class="service-card service-card--odd service-card--expandable service-card--zipper-js" data-reveal="" itemscope="" itemtype="https://schema.org/Service" itemprop="itemListElement" aria-expanded="false" style="opacity: 0; transform: translateX(-230.4px);"><meta itemprop="position" content="3"><meta itemprop="keywords" content="τεχνική μελέτη οχήματος, μελέτη αμαξώματος, υπολογισμοί αντοχής, έγκριση ειδικών κατασκευών, μετασκευή οχήματος, υπερκατασκευή, ψυγείο φορτηγού, γερανός οχήματος, ανατροπή, κινητό συνεργείο, ειδικά ρυμουλκούμενα, αλλαγή αμαξώματος, αλλαγή κινητήρα, προσθήκη άξονα, αφαίρεση άξονα, μελέτη τροποποίησης οχήματος, vehicle body study Greece, vehicle conversion approval Greece"><div class="service-num" aria-hidden="true">03</div><i class="fa-solid fa-compass-drafting service-icon" aria-hidden="true"></i><div class="service-card-body"><h3 itemprop="name" data-i18n-html="s3.title">Technical Studies and Special Bodywork</h3></div><div class="svc-inline-expand"><div class="svc-inline-expand-inner"><p itemprop="description" data-i18n-html="s3.text">Design <strong class="kw">from scratch</strong>, strength calculations and certification of <strong class="kw">special superstructures</strong> and <strong class="kw">conversions</strong> — refrigerated bodies, cranes, tippers, mobile workshops, special trailers. <strong class="kw">Modification and compliance studies</strong> for every change to the vehicle.</p><ul class="svc-inline-list"><li><span class="svc-inline-list-t" data-i18n-html="s3.i1.title">Technical Studies from Scratch</span><span class="svc-inline-list-d" data-i18n-html="s3.i1.text">Complete design, strength calculations and preparation of technical memoranda for new vehicles, bodies or trailers.</span></li><li><span class="svc-inline-list-t" data-i18n-html="s3.i2.title">Approval of Special Bodywork and Conversions</span><span class="svc-inline-list-d" data-i18n-html="s3.i2.text">Refrigerated bodies, cranes, tippers, mobile workshops, special trailers — certification of special superstructures.</span></li><li><span class="svc-inline-list-t" data-i18n-html="s3.i3.title">Modification and Compliance Studies</span><span class="svc-inline-list-d" data-i18n-html="s3.i3.text">Technical studies for body replacement, engine replacement, addition or removal of axles and special-use conversions.</span></li></ul></div></div></div><div class="service-card service-card--even service-card--expandable service-card--zipper-js" data-reveal="" itemscope="" itemtype="https://schema.org/Service" itemprop="itemListElement" aria-expanded="false" style="opacity: 0; transform: translateX(230.4px);"><meta itemprop="position" content="4"><meta itemprop="keywords" content="διαχείριση φακέλων πιστοποίησης, τεχνική συμβουλευτική οχημάτων, βεβαίωση μηχανικού, βεβαίωση συμμόρφωσης, τεχνικό υπόμνημα, τελωνείο όχημα, ΚΤΕΟ βεβαίωση, Διεύθυνση Μεταφορών, εργαστήριο δοκιμών, ελεγκτικός οργανισμός, vehicle certification consulting Greece, engineer compliance certificate Greece"><div class="service-num" aria-hidden="true">04</div><i class="fa-solid fa-clipboard-check service-icon" aria-hidden="true"></i><div class="service-card-body"><h3 itemprop="name" data-i18n-html="s4.title">Technical Consulting and Certification</h3></div><div class="svc-inline-expand"><div class="svc-inline-expand-inner"><p itemprop="description" data-i18n-html="s4.text"><strong class="kw">Representation</strong> and technical support before inspection bodies, technical services and testing laboratories. Issuing official <strong class="kw">engineer certificates</strong> for customs, KTEO, Transport Directorates and registration dossiers.</p><ul class="svc-inline-list"><li><span class="svc-inline-list-t" data-i18n-html="s4.i1.title">Certification Dossier Management</span><span class="svc-inline-list-d" data-i18n-html="s4.i1.text">Before inspection bodies, technical services and testing laboratories, the office represents you and provides technical support.</span></li><li><span class="svc-inline-list-t" data-i18n-html="s4.i2.title">Compliance Certificates and Technical Memoranda</span><span class="svc-inline-list-d" data-i18n-html="s4.i2.text">Issuing official engineer certificates for customs, KTEO, Transport Directorates and registration dossiers.</span></li></ul></div></div></div><div class="service-card service-card--odd service-card--expandable service-card--zipper-js" data-reveal="" itemscope="" itemtype="https://schema.org/Service" itemprop="itemListElement" aria-expanded="false" style="opacity: 0; transform: translateX(-230.4px);"><meta itemprop="position" content="5"><meta itemprop="keywords" content="μελετη ενεργητικης πυροπροστασιας, ενεργητική πυροπροστασία, μελέτη πυροπροστασίας, συστημα πυροσβεσης, sprinkler, πυρασφάλεια κτιρίου, fire protection study Greece, μηχανολόγος μηχανικός πυροπροστασία"><div class="service-num" aria-hidden="true">05</div><i class="fa-solid fa-fire-extinguisher service-icon" aria-hidden="true"></i><div class="service-card-body"><h3 itemprop="name" data-i18n-html="s5.title">Active Fire Protection Study — Mechanical Engineer</h3></div><div class="svc-inline-expand"><div class="svc-inline-expand-inner"><p itemprop="description" data-i18n-html="s5.text"><strong class="kw">Active fire protection study</strong> by a <strong class="kw">mechanical engineer</strong> for buildings, industrial facilities and commercial premises. Design of <strong class="kw">fire suppression systems</strong> (sprinklers, foam, CO₂), flow calculations, hydraulic studies — compliant with <strong class="kw">EN 12845</strong> and Greek legislation. Athens and Thessaloniki.</p></div></div></div><div class="service-card service-card--even service-card--expandable service-card--zipper-js" data-reveal="" itemscope="" itemtype="https://schema.org/Service" itemprop="itemListElement" aria-expanded="false" style="opacity: 0; transform: translateX(230.4px);"><meta itemprop="position" content="6"><meta itemprop="keywords" content="τεχνικος ασφαλειας, ΓΕΕΚ, υγεια ασφαλεια εργασιας, νομος 3850 2010, safety engineer Athens, occupational health safety Greece"><div class="service-num" aria-hidden="true">06</div><i class="fa-solid fa-helmet-safety service-icon" aria-hidden="true"></i><div class="service-card-body"><h3 itemprop="name" data-i18n-html="s6.title">Safety Engineer — Occupational Health and Safety (Law 3850/2010)</h3></div><div class="svc-inline-expand"><div class="svc-inline-expand-inner"><p itemprop="description" data-i18n-html="s6.text">Mandatory <strong class="kw">Safety Engineer</strong> coverage by a <strong class="kw">mechanical engineer</strong> for <strong class="kw">every business</strong>, even with 1 employee — Athens and Thessaloniki. Written risk assessment (<strong class="kw">GEEK</strong>), employee training, evacuation plans, SEPE preparation.</p></div></div></div><div class="service-card service-card--odd service-card--expandable service-card--zipper-js" data-reveal="" itemscope="" itemtype="https://schema.org/Service" itemprop="itemListElement" aria-expanded="false" style="opacity: 0; transform: translateX(-230.4px);"><meta itemprop="position" content="7"><meta itemprop="keywords" content="υδραυλικη πλατφορμα, εγκριση τυπου, EN 1570, πιστοποιηση CE, hydraulic platform study Greece, τεχνική μελέτη υδραυλικής πλατφόρμας"><div class="service-num" aria-hidden="true">07</div><i class="fa-solid fa-arrows-up-down service-icon" aria-hidden="true"></i><div class="service-card-body"><h3 itemprop="name" data-i18n-html="s7.title">Hydraulic Platform Installation Study — Type Approval</h3></div><div class="svc-inline-expand"><div class="svc-inline-expand-inner"><p itemprop="description" data-i18n-html="s7.text">Technical study by a <strong class="kw">mechanical engineer</strong> for <strong class="kw">hydraulic platform</strong> installation on vehicles and fixed installations. Compliance with <strong class="kw">EN 1570</strong>, <strong class="kw">CE certification</strong> and <strong class="kw">type approval</strong> — Athens and Thessaloniki.</p></div></div></div><a href="https://expertease.eu/3dprint" target="_blank" rel="noopener noreferrer" class="service-card service-card--even service-card--expandable service-card--zipper-js" data-reveal="" itemscope="" itemtype="https://schema.org/Service" itemprop="itemListElement" aria-expanded="false" style="opacity: 0; transform: translateX(230.4px);"><meta itemprop="position" content="8"><meta itemprop="keywords" content="μηχανολογικος σχεδιασμος, 3D printing Αθηνα, CAD μηχανολογος, rapid prototyping, FEA αναλυση, mechanical design Athens"><div class="service-num" aria-hidden="true">08</div><i class="fa-solid fa-cube service-icon" aria-hidden="true"></i><div class="service-card-body"><h3 itemprop="name" data-i18n-html="s8.title"><strong>Mechanical Design</strong> and 3D Printing</h3></div><div class="svc-inline-expand"><div class="svc-inline-expand-inner"><p itemprop="description" data-i18n-html="s8.text"><strong class="kw">Mechanical engineer</strong> for CAD 3D, FEA strength analysis, <strong class="kw">rapid prototyping</strong>. FDM, SLA, SLS printing for precision parts and prototypes. Laser cutting and sheet metal work — Athens and Thessaloniki.</p></div></div></a></div>
+        <div class="services-grid" id="servicesGrid"><div class="service-card service-card--featured service-card--odd service-card--expandable service-card--zipper-js" data-reveal="" itemscope="" itemtype="https://schema.org/Service" itemprop="itemListElement" aria-expanded="false"><meta itemprop="position" content="1"><meta itemprop="keywords" content="έγκριση τύπου οχήματος, έγκριση τύπου ρυμουλκούμενου, εθνική έγκριση τύπου, ευρωπαϊκή έγκριση τύπου, μεμονωμένη έγκριση οχήματος, καταχώρηση ΤΑΟ, Τεχνικό Αρχείο Οχημάτων, δελτίο κοινοποίησης, ταξινόμηση οχήματος, ταξινομιση αδεας οχηματος, οχήματα ειδικής χρήσης ειδικού σκοπού, εγκριση τυπου, μελετη οχηματος, vehicle type approval Greece, trailer type approval, individual vehicle approval Greece, special purpose vehicle registration Greece"><div class="service-num" aria-hidden="true">01</div><i class="fa-solid fa-file-circle-check service-icon" aria-hidden="true"></i><div class="service-card-body"><h3 itemprop="name" data-i18n-html="s1.title">Type Approval Notification, TAO Registration and Type Approvals</h3><p class="service-teaser" data-i18n-html="s1.teaser">National and European Type Approval · Individual Vehicle Approval · Category L Type Approval · Technical Vehicle Archive (TAO) Registration · Notification Certificates</p></div><i class="fa-solid fa-chevron-down service-chev" aria-hidden="true"></i><div class="svc-inline-expand"><div class="svc-inline-expand-inner"><p itemprop="description" data-i18n-html="s1.text"><strong class="kw">Type approval notification</strong> and <strong class="kw">TAO registration</strong> for importers, dealers and manufacturers — <strong class="kw">handled remotely</strong>, across Greece and for clients abroad. National and European <strong class="kw">type approval</strong>, <strong class="kw">individual approval</strong>, category L. A dossier that forgives no mistakes — we take it on in full.</p><ul class="svc-inline-list"><li><span class="svc-inline-list-t" data-i18n-html="s1.i1.title">National and European Type Approval</span><span class="svc-inline-list-d" data-i18n-html="s1.i1.text">Complete preparation and management of the dossier for issuing national or European type approvals for vehicles, trailers and components.</span></li><li><span class="svc-inline-list-t" data-i18n-html="s1.i2.title">Individual Vehicle Approval</span><span class="svc-inline-list-d" data-i18n-html="s1.i2.text">Individual, special, modified or imported vehicles are certified so that a registration certificate can be issued.</span></li><li><span class="svc-inline-list-t" data-i18n-html="s1.i3.title">Category L Type Approval</span><span class="svc-inline-list-d" data-i18n-html="s1.i3.text">Mopeds, motorcycles, tricycles and quadricycles under Reg. (EU) 168/2013 — classification, technical file and registration.</span></li><li><span class="svc-inline-list-t" data-i18n-html="s1.i4.title">Technical Vehicle Archive (TAO) Registration</span><span class="svc-inline-list-d" data-i18n-html="s1.i4.text">Registration in the Technical Vehicle Archive of the Ministry of Infrastructure and Transport. We handle the procedure.</span></li><li><span class="svc-inline-list-t" data-i18n-html="s1.i5.title">Notification Certificates</span><span class="svc-inline-list-d" data-i18n-html="s1.i5.text">Preparation, submission and issue of the Type Approval Notification Certificate for vehicle registration.</span></li></ul><div class="svc-inline-cta"><a class="svc-inline-btn" href="/en/deltio-koinopoiisis-tao/"><span>Read the full page</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="svc-inline-btn" href="/en/memonomeni-egkrisi-oximatos/"><span>Individual Vehicle Approval</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="svc-inline-btn" href="/en/egkrisi-typou-dikyklon/"><span>Category L Type Approval</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div></div></div><div class="service-card service-card--even service-card--expandable service-card--zipper-js" data-reveal="" itemscope="" itemtype="https://schema.org/Service" itemprop="itemListElement" aria-expanded="false"><meta itemprop="position" content="2"><meta itemprop="keywords" content="αδεια τρειλερ, άδεια τρέιλερ, τρέϊλερ, ταξινόμηση ρυμουλκούμενου, έγκριση τύπου ρυμουλκούμενου, αδεια ρυμουλκουμενου Ο1 Ο2, άδεια ρυμουλκούμενου, μπαγκαζιέρα, άδεια μπαγκαζιέρα, νομιμοποίηση τρέιλερ, ταξινόμηση τρέιλερ, έκδοση άδειας κυκλοφορίας, trailer licence Greece, cargo trailer licence Greece"><div class="service-num" aria-hidden="true">02</div><i class="fa-solid fa-truck-ramp-box service-icon" aria-hidden="true"></i><div class="service-card-body"><h3 itemprop="name" data-i18n-html="s2.title">O1 and O2 Trailer Licence — Trailer and Cargo Box Registration</h3><p class="service-teaser" data-i18n-html="s2.teaser">Procedures have reopened for all trailers. We handle everything: O1 (up to 750 kg — cargo box, boat, caravan) and O2 (up to 3.5 tonnes). Trailer type approval, technical study, submission to YMED/KTEO, circulation licence issuance — end to end.</p><span class="service-badge" data-i18n="service.badge.new">NEW</span></div><i class="fa-solid fa-chevron-down service-chev" aria-hidden="true"></i><div class="svc-inline-expand"><div class="svc-inline-expand-inner"><p itemprop="description" data-i18n-html="s2.text">Procedures have reopened for <strong class="kw">all trailers</strong>. We handle everything: <strong class="kw">O1</strong> (up to 750 kg — cargo box, boat, caravan) and <strong class="kw">O2</strong> (up to 3.5 tonnes). <strong class="kw">Trailer type approval</strong>, technical study, submission to YMED/KTEO, <strong class="kw">circulation licence issuance</strong> — end to end.</p><p data-i18n-html="svc.expand.0.p1">Every trailer is required by Road Code to have a <strong>registration licence</strong> and plates. <strong>O1</strong>: up to 750 kg (cargo trailer, boats, camping, motorcycle) — <strong>O2</strong>: up to 3,500 kg (caravan, car, heavy industrial). We handle everything: <strong>trailer type approval</strong>, technical study, submission to YMED/KTEO, licence issuance.</p><p class="svc-inline-meta" data-i18n-html="svc.expand.0.meta">Athens and Thessaloniki &nbsp;·&nbsp; AUTH, MSc &nbsp;·&nbsp; Categories O1 and O2</p><div class="svc-inline-cta"><a class="svc-inline-btn" href="/en/adeia-treiler-o1-o2/"><span>Read the full page</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div></div></div><div class="service-card service-card--odd service-card--expandable service-card--zipper-js" data-reveal="" itemscope="" itemtype="https://schema.org/Service" itemprop="itemListElement" aria-expanded="false"><meta itemprop="position" content="3"><meta itemprop="keywords" content="τεχνική μελέτη οχήματος, μελέτη αμαξώματος, υπολογισμοί αντοχής, έγκριση ειδικών κατασκευών, μετασκευή οχήματος, υπερκατασκευή, ψυγείο φορτηγού, γερανός οχήματος, ανατροπή, κινητό συνεργείο, ειδικά ρυμουλκούμενα, αλλαγή αμαξώματος, αλλαγή κινητήρα, προσθήκη άξονα, αφαίρεση άξονα, μελέτη τροποποίησης οχήματος, vehicle body study Greece, vehicle conversion approval Greece"><div class="service-num" aria-hidden="true">03</div><i class="fa-solid fa-compass-drafting service-icon" aria-hidden="true"></i><div class="service-card-body"><h3 itemprop="name" data-i18n-html="s3.title">Technical Studies and Special Bodywork</h3><p class="service-teaser" data-i18n-html="s3.teaser">Technical Studies from Scratch · Approval of Special Bodywork and Conversions · Modification and Compliance Studies</p></div><i class="fa-solid fa-chevron-down service-chev" aria-hidden="true"></i><div class="svc-inline-expand"><div class="svc-inline-expand-inner"><p itemprop="description" data-i18n-html="s3.text">Design <strong class="kw">from scratch</strong>, strength calculations and certification of <strong class="kw">special superstructures</strong> and <strong class="kw">conversions</strong> — refrigerated bodies, cranes, tippers, mobile workshops, special trailers. <strong class="kw">Modification and compliance studies</strong> for every change to the vehicle.</p><ul class="svc-inline-list"><li><span class="svc-inline-list-t" data-i18n-html="s3.i1.title">Technical Studies from Scratch</span><span class="svc-inline-list-d" data-i18n-html="s3.i1.text">Complete design, strength calculations and preparation of technical memoranda for new vehicles, bodies or trailers.</span></li><li><span class="svc-inline-list-t" data-i18n-html="s3.i2.title">Approval of Special Bodywork and Conversions</span><span class="svc-inline-list-d" data-i18n-html="s3.i2.text">Refrigerated bodies, cranes, tippers, mobile workshops, special trailers — certification of special superstructures.</span></li><li><span class="svc-inline-list-t" data-i18n-html="s3.i3.title">Modification and Compliance Studies</span><span class="svc-inline-list-d" data-i18n-html="s3.i3.text">Technical studies for body replacement, engine replacement, addition or removal of axles and special-use conversions.</span></li></ul><p data-i18n-html="svc.expand.1.p1">Special use vehicles — crane trucks, platforms, sprayers — require special <strong>registration</strong> and <strong>vehicle type approval</strong>. We also handle <strong>trailer type approval</strong> for custom-built trailers. We prepare technical studies (static analysis, CE, EN 1570) and handle the entire process from start to finish.</p><p class="svc-inline-meta" data-i18n-html="svc.expand.1.meta">Crane trucks &nbsp;·&nbsp; Platforms &nbsp;·&nbsp; Sprayers &nbsp;·&nbsp; Athens and Thessaloniki</p><div class="svc-inline-cta"><a class="svc-inline-btn" href="/en/oximata-eidikou-skopou/"><span>Read the full page</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div></div></div><div class="service-card service-card--even service-card--expandable service-card--zipper-js" data-reveal="" itemscope="" itemtype="https://schema.org/Service" itemprop="itemListElement" aria-expanded="false"><meta itemprop="position" content="4"><meta itemprop="keywords" content="υδραυλικη πλατφορμα, εγκριση τυπου, EN 1570, πιστοποιηση CE, hydraulic platform study Greece, τεχνική μελέτη υδραυλικής πλατφόρμας"><div class="service-num" aria-hidden="true">04</div><i class="fa-solid fa-arrows-up-down service-icon" aria-hidden="true"></i><div class="service-card-body"><h3 itemprop="name" data-i18n-html="s4.title">Hydraulic Platform Installation Study — Type Approval</h3><p class="service-teaser" data-i18n-html="s4.teaser">Technical study by a mechanical engineer for hydraulic platform installation on vehicles and fixed installations. Compliance with EN 1570, CE certification and type approval — Athens and Thessaloniki.</p></div><i class="fa-solid fa-chevron-down service-chev" aria-hidden="true"></i><div class="svc-inline-expand"><div class="svc-inline-expand-inner"><p itemprop="description" data-i18n-html="s4.text">Technical study by a <strong class="kw">mechanical engineer</strong> for <strong class="kw">hydraulic platform</strong> installation on vehicles and fixed installations. Compliance with <strong class="kw">EN 1570</strong>, <strong class="kw">CE certification</strong> and <strong class="kw">type approval</strong> — Athens and Thessaloniki.</p></div></div></div><div class="service-card service-card--odd service-card--expandable service-card--zipper-js" data-reveal="" itemscope="" itemtype="https://schema.org/Service" itemprop="itemListElement" aria-expanded="false"><meta itemprop="position" content="5"><meta itemprop="keywords" content="διαχείριση φακέλων πιστοποίησης, τεχνική συμβουλευτική οχημάτων, βεβαίωση μηχανικού, βεβαίωση συμμόρφωσης, τεχνικό υπόμνημα, τελωνείο όχημα, ΚΤΕΟ βεβαίωση, Διεύθυνση Μεταφορών, εργαστήριο δοκιμών, ελεγκτικός οργανισμός, vehicle certification consulting Greece, engineer compliance certificate Greece"><div class="service-num" aria-hidden="true">05</div><i class="fa-solid fa-clipboard-check service-icon" aria-hidden="true"></i><div class="service-card-body"><h3 itemprop="name" data-i18n-html="s5.title">Technical Consulting and Certification</h3><p class="service-teaser" data-i18n-html="s5.teaser">Certification Dossier Management · Compliance Certificates and Technical Memoranda</p></div><i class="fa-solid fa-chevron-down service-chev" aria-hidden="true"></i><div class="svc-inline-expand"><div class="svc-inline-expand-inner"><p itemprop="description" data-i18n-html="s5.text"><strong class="kw">Representation</strong> and technical support before inspection bodies, technical services and testing laboratories. Issuing official <strong class="kw">engineer certificates</strong> for customs, KTEO, Transport Directorates and registration dossiers.</p><ul class="svc-inline-list"><li><span class="svc-inline-list-t" data-i18n-html="s5.i1.title">Certification Dossier Management</span><span class="svc-inline-list-d" data-i18n-html="s5.i1.text">Before inspection bodies, technical services and testing laboratories, the office represents you and provides technical support.</span></li><li><span class="svc-inline-list-t" data-i18n-html="s5.i2.title">Compliance Certificates and Technical Memoranda</span><span class="svc-inline-list-d" data-i18n-html="s5.i2.text">Issuing official engineer certificates for customs, KTEO, Transport Directorates and registration dossiers.</span></li></ul></div></div></div><div class="service-card service-card--even service-card--expandable service-card--zipper-js" data-reveal="" itemscope="" itemtype="https://schema.org/Service" itemprop="itemListElement" aria-expanded="false"><meta itemprop="position" content="6"><meta itemprop="keywords" content="μελετη ενεργητικης πυροπροστασιας, ενεργητική πυροπροστασία, μελέτη πυροπροστασίας, συστημα πυροσβεσης, sprinkler, πυρασφάλεια κτιρίου, fire protection study Greece, μηχανολόγος μηχανικός πυροπροστασία"><div class="service-num" aria-hidden="true">06</div><i class="fa-solid fa-fire-extinguisher service-icon" aria-hidden="true"></i><div class="service-card-body"><h3 itemprop="name" data-i18n-html="s6.title">Active Fire Protection Study — Mechanical Engineer</h3><p class="service-teaser" data-i18n-html="s6.teaser">Active fire protection study by a mechanical engineer for buildings, industrial facilities and commercial premises. Design of fire suppression systems (sprinklers, foam, CO₂), flow calculations, hydraulic studies — compliant with EN 12845 and Greek legislation. Athens and Thessaloniki.</p></div><i class="fa-solid fa-chevron-down service-chev" aria-hidden="true"></i><div class="svc-inline-expand"><div class="svc-inline-expand-inner"><p itemprop="description" data-i18n-html="s6.text"><strong class="kw">Active fire protection study</strong> by a <strong class="kw">mechanical engineer</strong> for buildings, industrial facilities and commercial premises. Design of <strong class="kw">fire suppression systems</strong> (sprinklers, foam, CO₂), flow calculations, hydraulic studies — compliant with <strong class="kw">EN 12845</strong> and Greek legislation. Athens and Thessaloniki.</p></div></div></div><div class="service-card service-card--odd service-card--expandable service-card--zipper-js" data-reveal="" itemscope="" itemtype="https://schema.org/Service" itemprop="itemListElement" aria-expanded="false"><meta itemprop="position" content="7"><meta itemprop="keywords" content="τεχνικος ασφαλειας, ΓΕΕΚ, υγεια ασφαλεια εργασιας, νομος 3850 2010, safety engineer Athens, occupational health safety Greece"><div class="service-num" aria-hidden="true">07</div><i class="fa-solid fa-helmet-safety service-icon" aria-hidden="true"></i><div class="service-card-body"><h3 itemprop="name" data-i18n-html="s7.title">Safety Engineer — Occupational Health and Safety (Law 3850/2010)</h3><p class="service-teaser" data-i18n-html="s7.teaser">Mandatory Safety Engineer coverage by a mechanical engineer for every business, even with 1 employee — Athens and Thessaloniki. Written risk assessment (GEEK), employee training, evacuation plans, SEPE preparation.</p></div><i class="fa-solid fa-chevron-down service-chev" aria-hidden="true"></i><div class="svc-inline-expand"><div class="svc-inline-expand-inner"><p itemprop="description" data-i18n-html="s7.text">Mandatory <strong class="kw">Safety Engineer</strong> coverage by a <strong class="kw">mechanical engineer</strong> for <strong class="kw">every business</strong>, even with 1 employee — Athens and Thessaloniki. Written risk assessment (<strong class="kw">GEEK</strong>), employee training, evacuation plans, SEPE preparation.</p></div></div></div><a href="https://expertease.eu/3dprint" target="_blank" rel="noopener noreferrer" class="service-card service-card--even service-card--expandable service-card--zipper-js" data-reveal="" itemscope="" itemtype="https://schema.org/Service" itemprop="itemListElement" aria-expanded="false"><meta itemprop="position" content="8"><meta itemprop="keywords" content="μηχανολογικος σχεδιασμος, 3D printing Αθηνα, CAD μηχανολογος, rapid prototyping, FEA αναλυση, mechanical design Athens"><div class="service-num" aria-hidden="true">08</div><i class="fa-solid fa-cube service-icon" aria-hidden="true"></i><div class="service-card-body"><h3 itemprop="name" data-i18n-html="s8.title"><strong>Mechanical Design</strong> and 3D Printing</h3><p class="service-teaser" data-i18n-html="s8.teaser">Mechanical engineer for CAD 3D, FEA strength analysis, rapid prototyping. FDM, SLA, SLS printing for precision parts and prototypes. Laser cutting and sheet metal work — Athens and Thessaloniki.</p></div><i class="fa-solid fa-chevron-down service-chev" aria-hidden="true"></i><div class="svc-inline-expand"><div class="svc-inline-expand-inner"><p itemprop="description" data-i18n-html="s8.text"><strong class="kw">Mechanical engineer</strong> for CAD 3D, FEA strength analysis, <strong class="kw">rapid prototyping</strong>. FDM, SLA, SLS printing for precision parts and prototypes. Laser cutting and sheet metal work — Athens and Thessaloniki.</p></div></div></a></div>
 
         <!-- Trailer sketch animation — O1/O2 licence visual -->
         <div id="trailerAnimWrap" aria-hidden="true" style="
@@ -1087,11 +969,11 @@ MOUDIOTIS</span>
                       <div>
                         <!-- Filled by site-init.js from the same C.services entries that
                              carry an items[] array, so section and cards never drift. -->
-                        <div class="tap-grid" id="tapGrid"><div class="tap-col" data-reveal=""><div class="tap-col-head"><i class="fa-solid fa-file-circle-check tap-col-icon" aria-hidden="true"></i><h3 class="tap-col-title" data-i18n-html="s2.title">Type Approval Notification, TAO Registration and Type Approvals</h3></div><ul class="tap-list"><li class="tap-item"><span class="tap-item-num" aria-hidden="true">01</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s2.i1.title">National and European Type Approval</span><span class="tap-item-d" data-i18n-html="s2.i1.text">Complete preparation and management of the dossier for issuing national or European type approvals for vehicles, trailers and components.</span></span></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">02</span><a class="tap-item-body tap-item-link" href="/en/memonomeni-egkrisi-oximatos/"><span class="tap-item-t" data-i18n-html="s2.i2.title">Individual Vehicle Approval</span><span class="tap-item-d" data-i18n-html="s2.i2.text">Individual, special, modified or imported vehicles are certified so that a registration certificate can be issued.</span></a></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">03</span><a class="tap-item-body tap-item-link" href="/en/egkrisi-typou-dikyklon/"><span class="tap-item-t" data-i18n-html="s2.i3.title">Category L Type Approval</span><span class="tap-item-d" data-i18n-html="s2.i3.text">Mopeds, motorcycles, tricycles and quadricycles under Reg. (EU) 168/2013 — classification, technical file and registration.</span></a></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">04</span><a class="tap-item-body tap-item-link" href="/en/deltio-koinopoiisis-tao/"><span class="tap-item-t" data-i18n-html="s2.i4.title">Technical Vehicle Archive (TAO) Registration</span><span class="tap-item-d" data-i18n-html="s2.i4.text">Registration in the Technical Vehicle Archive of the Ministry of Infrastructure and Transport. We handle the procedure.</span></a></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">05</span><a class="tap-item-body tap-item-link" href="/en/deltio-koinopoiisis-tao/"><span class="tap-item-t" data-i18n-html="s2.i5.title">Notification Certificates</span><span class="tap-item-d" data-i18n-html="s2.i5.text">Preparation, submission and issue of the Type Approval Notification Certificate for vehicle registration.</span></a></li></ul></div><div class="tap-col" data-reveal=""><div class="tap-col-head"><i class="fa-solid fa-compass-drafting tap-col-icon" aria-hidden="true"></i><h3 class="tap-col-title" data-i18n-html="s3.title">Technical Studies and Special Bodywork</h3></div><ul class="tap-list"><li class="tap-item"><span class="tap-item-num" aria-hidden="true">01</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s3.i1.title">Technical Studies from Scratch</span><span class="tap-item-d" data-i18n-html="s3.i1.text">Complete design, strength calculations and preparation of technical memoranda for new vehicles, bodies or trailers.</span></span></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">02</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s3.i2.title">Approval of Special Bodywork and Conversions</span><span class="tap-item-d" data-i18n-html="s3.i2.text">Refrigerated bodies, cranes, tippers, mobile workshops, special trailers — certification of special superstructures.</span></span></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">03</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s3.i3.title">Modification and Compliance Studies</span><span class="tap-item-d" data-i18n-html="s3.i3.text">Technical studies for body replacement, engine replacement, addition or removal of axles and special-use conversions.</span></span></li></ul></div><div class="tap-col" data-reveal=""><div class="tap-col-head"><i class="fa-solid fa-clipboard-check tap-col-icon" aria-hidden="true"></i><h3 class="tap-col-title" data-i18n-html="s4.title">Technical Consulting and Certification</h3></div><ul class="tap-list"><li class="tap-item"><span class="tap-item-num" aria-hidden="true">01</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s4.i1.title">Certification Dossier Management</span><span class="tap-item-d" data-i18n-html="s4.i1.text">Before inspection bodies, technical services and testing laboratories, the office represents you and provides technical support.</span></span></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">02</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s4.i2.title">Compliance Certificates and Technical Memoranda</span><span class="tap-item-d" data-i18n-html="s4.i2.text">Issuing official engineer certificates for customs, KTEO, Transport Directorates and registration dossiers.</span></span></li></ul></div></div>
+                        <div class="tap-grid" id="tapGrid"><div class="tap-col" data-reveal=""><div class="tap-col-head"><i class="fa-solid fa-file-circle-check tap-col-icon" aria-hidden="true"></i><h3 class="tap-col-title" data-i18n-html="s1.title">Type Approval Notification, TAO Registration and Type Approvals</h3></div><ul class="tap-list"><li class="tap-item"><span class="tap-item-num" aria-hidden="true">01</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s1.i1.title">National and European Type Approval</span><span class="tap-item-d" data-i18n-html="s1.i1.text">Complete preparation and management of the dossier for issuing national or European type approvals for vehicles, trailers and components.</span></span></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">02</span><a class="tap-item-body tap-item-link" href="/en/memonomeni-egkrisi-oximatos/"><span class="tap-item-t" data-i18n-html="s1.i2.title">Individual Vehicle Approval</span><span class="tap-item-d" data-i18n-html="s1.i2.text">Individual, special, modified or imported vehicles are certified so that a registration certificate can be issued.</span></a></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">03</span><a class="tap-item-body tap-item-link" href="/en/egkrisi-typou-dikyklon/"><span class="tap-item-t" data-i18n-html="s1.i3.title">Category L Type Approval</span><span class="tap-item-d" data-i18n-html="s1.i3.text">Mopeds, motorcycles, tricycles and quadricycles under Reg. (EU) 168/2013 — classification, technical file and registration.</span></a></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">04</span><a class="tap-item-body tap-item-link" href="/en/deltio-koinopoiisis-tao/"><span class="tap-item-t" data-i18n-html="s1.i4.title">Technical Vehicle Archive (TAO) Registration</span><span class="tap-item-d" data-i18n-html="s1.i4.text">Registration in the Technical Vehicle Archive of the Ministry of Infrastructure and Transport. We handle the procedure.</span></a></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">05</span><a class="tap-item-body tap-item-link" href="/en/deltio-koinopoiisis-tao/"><span class="tap-item-t" data-i18n-html="s1.i5.title">Notification Certificates</span><span class="tap-item-d" data-i18n-html="s1.i5.text">Preparation, submission and issue of the Type Approval Notification Certificate for vehicle registration.</span></a></li></ul></div><div class="tap-col" data-reveal=""><div class="tap-col-head"><i class="fa-solid fa-compass-drafting tap-col-icon" aria-hidden="true"></i><h3 class="tap-col-title" data-i18n-html="s3.title">Technical Studies and Special Bodywork</h3></div><ul class="tap-list"><li class="tap-item"><span class="tap-item-num" aria-hidden="true">01</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s3.i1.title">Technical Studies from Scratch</span><span class="tap-item-d" data-i18n-html="s3.i1.text">Complete design, strength calculations and preparation of technical memoranda for new vehicles, bodies or trailers.</span></span></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">02</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s3.i2.title">Approval of Special Bodywork and Conversions</span><span class="tap-item-d" data-i18n-html="s3.i2.text">Refrigerated bodies, cranes, tippers, mobile workshops, special trailers — certification of special superstructures.</span></span></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">03</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s3.i3.title">Modification and Compliance Studies</span><span class="tap-item-d" data-i18n-html="s3.i3.text">Technical studies for body replacement, engine replacement, addition or removal of axles and special-use conversions.</span></span></li></ul></div><div class="tap-col" data-reveal=""><div class="tap-col-head"><i class="fa-solid fa-clipboard-check tap-col-icon" aria-hidden="true"></i><h3 class="tap-col-title" data-i18n-html="s5.title">Technical Consulting and Certification</h3></div><ul class="tap-list"><li class="tap-item"><span class="tap-item-num" aria-hidden="true">01</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s5.i1.title">Certification Dossier Management</span><span class="tap-item-d" data-i18n-html="s5.i1.text">Before inspection bodies, technical services and testing laboratories, the office represents you and provides technical support.</span></span></li><li class="tap-item"><span class="tap-item-num" aria-hidden="true">02</span><span class="tap-item-body"><span class="tap-item-t" data-i18n-html="s5.i2.title">Compliance Certificates and Technical Memoranda</span><span class="tap-item-d" data-i18n-html="s5.i2.text">Issuing official engineer certificates for customs, KTEO, Transport Directorates and registration dossiers.</span></span></li></ul></div></div>
 
                         <div class="tap-cta-row">
-                            <p class="tap-cta-text" data-i18n-html="tap.cta.text">Have a vehicle, body or trailer that needs approval? Contact us for a free technical consultation.</p>
-                            <a href="#contact" class="tap-cta-btn"><span data-i18n="tap.cta.btn">Get in Touch</span>&nbsp;<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                            <p class="tap-cta-text" data-i18n-html="tap.cta.text">Have a vehicle, body or trailer that needs approval? Contact us and we will tell you how it can proceed.</p>
+                            <a href="#contact" class="tap-cta-btn"><span data-i18n="tap.cta.btn">Request a quote</span>&nbsp;<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                         </div>
                       </div>
                     </div>
@@ -1102,7 +984,7 @@ MOUDIOTIS</span>
     </section>
 
     <!-- Trailer dual-panel row -->
-    <div class="ta-dual-row">
+    <div class="ta-dual-row" id="ergaleia">
 
     <!-- Trailer Announcement Guide -->
     <div class="ta-wrap" id="adeia-treyler-o1-o2" data-reveal>
@@ -1113,8 +995,8 @@ MOUDIOTIS</span>
         <div class="ta-title-row">
           <h3 class="ta-title" data-i18n="ta.title">TRAILER — Legalization and Registration Guide</h3>
           <div class="ta-cat-badge">
-            <span class="ta-cat-bv">Ο1 and Ο2</span>
-            <span class="ta-cat-bk" data-i18n="trc.badge.cat">ΚΑΤΗΓΟΡΙΑ</span>
+            <span class="ta-cat-bv">O1 and O2</span>
+            <span class="ta-cat-bk" data-i18n="trc.badge.cat">CATEGORY</span>
           </div>
         </div>
         <div class="ta-rule"></div>
@@ -1123,7 +1005,7 @@ MOUDIOTIS</span>
             <div class="ta-stat-icon"><i class="fa-solid fa-folder-open"></i></div>
             <div class="ta-stat-body">
               <div class="ta-stat-val" data-i18n="ta.stat.docs">10–15</div>
-              <div class="ta-stat-lbl" data-i18n="ta.stat.docs.lbl">Δικαιολογητικά</div>
+              <div class="ta-stat-lbl" data-i18n="ta.stat.docs.lbl">Documents</div>
             </div>
           </div>
           <div class="ta-stat-sep"></div>
@@ -1131,7 +1013,7 @@ MOUDIOTIS</span>
             <div class="ta-stat-icon"><i class="fa-solid fa-euro-sign"></i></div>
             <div class="ta-stat-body">
               <div class="ta-stat-val">230€</div>
-              <div class="ta-stat-lbl" data-i18n="ta.stat.fee.lbl">Παράβολα</div>
+              <div class="ta-stat-lbl" data-i18n="ta.stat.fee.lbl">Fees</div>
             </div>
           </div>
           <div class="ta-stat-sep"></div>
@@ -1139,29 +1021,29 @@ MOUDIOTIS</span>
             <div class="ta-stat-icon"><i class="fa-regular fa-clock"></i></div>
             <div class="ta-stat-body">
               <div class="ta-stat-val" data-i18n="ta.stat.days">3–10</div>
-              <div class="ta-stat-lbl" data-i18n="ta.stat.days.lbl">Ημέρες</div>
+              <div class="ta-stat-lbl" data-i18n="ta.stat.days.lbl">Days</div>
             </div>
           </div>
           <div class="ta-stat-sep"></div>
           <div class="ta-stat">
             <div class="ta-stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
             <div class="ta-stat-body">
-              <div class="ta-stat-val" data-i18n="ta.stat.process">Βήμα-βήμα</div>
-              <div class="ta-stat-lbl" data-i18n="ta.stat.process.lbl">Διαδικασία</div>
+              <div class="ta-stat-val" data-i18n="ta.stat.process">Step-by-step</div>
+              <div class="ta-stat-lbl" data-i18n="ta.stat.process.lbl">Process</div>
             </div>
           </div>
-        </div>
-        <div class="price-offer">
-            <div class="price-offer-head">
-                <span class="price-offer-tag" data-i18n="ta.price.tag">ΤΕΛΙΚΗ ΤΙΜΗ</span>
-                <span class="price-offer-val" data-i18n="ta.price.val">400–430 €</span>
-            </div>
-            <p class="price-offer-note" data-i18n-html="ta.price.note">Για άδεια και πινακίδες ρυμουλκούμενου Ο1 ή Ο2. Συμπεριλαμβάνονται τα παράβολα του Δημοσίου.</p>
         </div>
         <button class="ta-toggle ta-toggle--bar" aria-expanded="true" aria-controls="taCollapse">
           <span data-i18n="ta.expand.hint">SEE ALL 5 STEPS OF THE PROCESS</span><i class="fa-solid fa-chevron-down ta-chevron"></i>
         </button>
         <div class="ta-collapse is-open" id="taCollapse">
+        <div class="price-offer price-offer--center">
+            <div class="price-offer-head">
+                <span class="price-offer-tag" data-i18n="ta.price.tag">FINAL PRICE</span>
+                <span class="price-offer-val" data-i18n="ta.price.val">400–430 €</span>
+            </div>
+            <p class="price-offer-note" data-i18n-html="ta.price.note">For an O1 or O2 trailer licence and plates. Government fees are included.</p>
+        </div>
         <div class="ta-col ta-col--cost-mobile">
             <div class="ta-col-label"><i class="fa-solid fa-clipboard-list"></i><span data-i18n="ta.col2.head">Cost and requirements</span></div>
             <ul class="ta-checklist">
@@ -1222,8 +1104,8 @@ MOUDIOTIS</span>
           <li><span class="ta-step-num">04</span><span data-i18n-html="ta.svc4"><strong>File submission</strong> — We prepare and submit the complete file to the competent authority. All you need to do is <strong>call us</strong>.</span></li>
         </ul>
         <div class="ta-cta-row">
-          <p class="ta-cta-text" data-i18n-html="ta.cta.text">Contact us today for a free consultation on legalizing your trailer or cargo box.</p>
-          <a href="#contact" class="ta-cta-btn"><span data-i18n="ta.cta.btn">Get in Touch</span>&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+          <p class="ta-cta-text" data-i18n-html="ta.cta.text">Contact us about legalising your trailer or cargo box.</p>
+          <a href="#contact" class="ta-cta-btn"><span data-i18n="ta.cta.btn">Request a quote</span>&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
         </div>
         </div><!-- /ta-collapse -->
         <div class="svc-inline-cta"><a class="svc-inline-btn" href="/en/adeia-treiler-o1-o2/"><span>See the full page: Trailer Licence O1/O2</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
@@ -1237,28 +1119,28 @@ MOUDIOTIS</span>
 
                 <!-- TOPBAR -->
                 <div class="trc-widget-topbar">
-                    <span class="trc-widget-topbar-badge"><i class="fa-solid fa-shield-halved"></i>&nbsp;<span data-i18n="trc.badge">Έλεγχος Κ.Ο.Κ.</span></span>
+                    <span class="trc-widget-topbar-badge"><i class="fa-solid fa-shield-halved"></i>&nbsp;<span data-i18n="trc.badge">Road Code Check</span></span>
                 </div>
 
                 <div class="trc-widget-body">
 
                 <!-- TITLE ROW — always visible -->
                 <div class="trc-title-row">
-                    <h2 id="trcHeading" class="trc-h"><span id="trcTitle1">Έλεγχοι </span><em id="trcTitle2">Ρυμουλκούμενων</em></h2>
+                    <h2 id="trcHeading" class="trc-h"><span id="trcTitle1">Trailer </span><em id="trcTitle2">Road Checks</em></h2>
                     <div class="trc-cat-badge">
-                        <span class="trc-bk" id="trcBadgeKey">ΚΑΤΗΓΟΡΙΑ</span>
-                        <span class="trc-bv">Ο1 and Ο2</span>
+                        <span class="trc-bk" id="trcBadgeKey">CATEGORY</span>
+                        <span class="trc-bv">O1 and O2</span>
                     </div>
                 </div>
 
                 <!-- ALWAYS VISIBLE: intro + preview + toggle -->
-                <p class="trc-intro" id="trcIntro">Τα σημεία που ελέγχονται ώστε το ρυμουλκούμενο να είναι <strong>σύμφωνο με τον Κ.Ο.Κ.</strong> και ασφαλές στον δρόμο — ανακλαστήρες, πίσω τρίγωνα, φωτισμός, πινακίδα και σύστημα ζεύξης. Κατηγορία Ο1 and Ο2.</p>
+                <p class="trc-intro" id="trcIntro">The checkpoints verified to ensure the trailer is <strong>compliant with Road Code</strong> and road-safe — reflectors, rear triangles, lights, number plate, and coupling system. Category O1 and O2.</p>
 
                 <!-- CHECKLIST PREVIEW STRIP — always visible -->
                 <div class="trc-preview-strip" id="trcPreviewStrip"></div>
 
                 <button class="trc-main-toggle trc-main-toggle--bar" id="trcMainToggle" aria-expanded="true" aria-controls="trcMainCollapse">
-                    <span id="trcTagline">ΚΑΝΕ ΤΟΝ ΠΛΗΡΗ ΕΛΕΓΧΟ ΚΑΙ ΔΕΣ ΑΝΑΛΥΤΙΚΑ</span>
+                    <span id="trcTagline">RUN THE FULL CHECKLIST AND SEE DETAILS</span>
                     <i class="fa-solid fa-chevron-down trc-main-chevron"></i>
                 </button>
 
@@ -1267,27 +1149,27 @@ MOUDIOTIS</span>
 
                     <!-- DIAGRAM -->
                     <div class="trc-diagram-wrap">
-                        <span class="trc-diagram-tag" id="trcDiagramTag">ΠΛΑΓΙΑ and ΠΙΣΩ ΟΨΗ</span>
+                        <span class="trc-diagram-tag" id="trcDiagramTag">SIDE AND REAR VIEW</span>
                         <img loading="lazy" src="../TRAILER_EXAMPLE.webp" alt="Side and Rear View of an O1 and O2 Category Trailer">
                     </div>
 
                     <!-- PROGRESS -->
                     <div class="trc-progress-row">
-                        <span class="trc-progress-lbl" id="trcProgressLbl">Πρόοδος Ελέγχου</span>
+                        <span class="trc-progress-lbl" id="trcProgressLbl">Inspection Progress</span>
                         <div class="trc-progress-track"><div class="trc-progress-fill" id="trcFill"></div></div>
                         <span class="trc-progress-num" id="trcNum">0 / 8</span>
-                        <button class="trc-reset-btn" id="trcResetBtn">ΕΠΑΝΑΦΟΡΑ</button>
+                        <button class="trc-reset-btn" id="trcResetBtn">RESET</button>
                     </div>
 
                     <div class="trc-complete-msg" id="trcCompleteMsg">
                         <span class="trc-complete-star">✦</span>
-                        <span id="trcCompleteText">Το ρυμουλκούμενο είναι έτοιμο για τον δρόμο!</span>
+                        <span id="trcCompleteText">The trailer is road-ready!</span>
                     </div>
 
                     <!-- CHECKLIST LABEL -->
                     <div class="trc-sec-lbl">
                         <span class="trc-b">✓</span>
-                        <span id="trcSecLbl">Σημεία Ελέγχου and Νόμιμος Εξοπλισμός</span>
+                        <span id="trcSecLbl">Check Points and Legal Equipment</span>
                     </div>
 
                     <!-- CHECKLIST GRID — built by trc.js -->
@@ -1300,12 +1182,12 @@ MOUDIOTIS</span>
                             <div class="trc-b-combined-labels">
                                 <span class="trc-b-lbl">
                                     <span class="trc-b">i</span>
-                                    <span id="trcBc0Lbl">Περιοδικός Έλεγχος</span>
+                                    <span id="trcBc0Lbl">Periodic Inspection</span>
                                 </span>
                                 <span class="trc-b-sep">and</span>
                                 <span class="trc-b-lbl trc-b-lbl--warn">
                                     <span class="trc-b trc-b--warn">!</span>
-                                    <span id="trcBc1Lbl">Ασφάλιση</span>
+                                    <span id="trcBc1Lbl">Insurance</span>
                                 </span>
                             </div>
                             <i class="fa-solid fa-chevron-down trc-b-chevron"></i>
@@ -1316,16 +1198,16 @@ MOUDIOTIS</span>
                                 <div class="trc-b-inner">
                                     <div class="trc-b-inner-lbl">
                                         <span class="trc-b">i</span>
-                                        <span id="trcBc0InnerLbl">Περιοδικός Έλεγχος</span>
+                                        <span id="trcBc0InnerLbl">Periodic Inspection</span>
                                     </div>
                                     <ul class="trc-spec-list" id="trcBc0List"></ul>
                                 </div>
                                 <div class="trc-b-inner">
                                     <div class="trc-b-inner-lbl trc-b-lbl--warn">
                                         <span class="trc-b trc-b--warn">!</span>
-                                        <span id="trcBc1InnerLbl">Ασφάλιση</span>
+                                        <span id="trcBc1InnerLbl">Insurance</span>
                                     </div>
-                                    <div class="trc-note-box" id="trcNoteBox">Απαιτείται <b>ξεχωριστή ασφάλιση</b> του ρυμουλκούμενου από το ρυμουλκό όχημα. Ενημερωθείτε από τον ασφαλιστή σας.</div>
+                                    <div class="trc-note-box" id="trcNoteBox"><b>Separate insurance</b> is required for the trailer, distinct from the towing vehicle. Contact your insurance provider.</div>
                                 </div>
                             </div>
                         </div>
@@ -1555,8 +1437,8 @@ MOUDIOTIS</span>
                             stroke="#38a169" stroke-width="1" fill="rgba(56,161,105,0.09)"
                             stroke-dasharray="4 4"/>
                         <text x="220" y="160" text-anchor="middle"
-                            font-family="'Oswald',sans-serif" font-size="13" font-weight="700"
-                            letter-spacing="1.5" fill="#38a169">ΑΔΕΙΟΔΟΤΗΘΗΚΕ</text>
+                            font-family="'Barlow Condensed',sans-serif" font-size="13" font-weight="700"
+                            letter-spacing="1.5" fill="#38a169">LICENSED</text>
                         <text x="220" y="171" text-anchor="middle"
                             font-family="'IBM Plex Mono',monospace" font-size="5.5" letter-spacing="1.5"
                             fill="#38a169" opacity="0.7">CRANE INSPECTION</text>
@@ -1593,8 +1475,8 @@ MOUDIOTIS</span>
             <p class="partners-note" data-i18n="partners.note">Businesses the office has worked with on type approvals, vehicle registrations and technical studies.</p>
         </div>
         <div class="partners-grid">
-            <a class="partner-tile" href="https://www.nitsiakos.gr/" target="_blank" rel="noopener noreferrer" title="Νιτσιάκος">
-                <img src="../partners/LOGO-NITSIAKOS-min.webp" alt="Νιτσιάκος" loading="lazy" class="partner-logo">
+            <a class="partner-tile" href="https://www.nitsiakos.gr/" target="_blank" rel="noopener noreferrer" title="Nitsiakos">
+                <img src="../partners/LOGO-NITSIAKOS-min.webp" alt="Nitsiakos" loading="lazy" class="partner-logo">
             </a>
             <a class="partner-tile" href="https://towtiny.com/" target="_blank" rel="noopener noreferrer" title="TowTiny">
                 <img src="../partners/cropped-TOWTINY-LOGO-1.webp" alt="TowTiny" loading="lazy" class="partner-logo">
@@ -1602,14 +1484,14 @@ MOUDIOTIS</span>
             <a class="partner-tile" href="https://drive-electro.com/" target="_blank" rel="noopener noreferrer" title="Drive Electro">
                 <img src="../partners/mainlogo-5.png" alt="Drive Electro" loading="lazy" class="partner-logo">
             </a>
-            <a class="partner-tile" href="https://stavrosmalliaris.gr/" target="_blank" rel="noopener noreferrer" title="Σταύρος Μαλλιάρης">
-                <img src="../partners/Image%202.png" alt="Σταύρος Μαλλιάρης" loading="lazy" class="partner-logo partner-invert">
+            <a class="partner-tile" href="https://stavrosmalliaris.gr/" target="_blank" rel="noopener noreferrer" title="Stavros Malliaris">
+                <img src="../partners/stavros-malliaris.png" alt="Stavros Malliaris" loading="lazy" class="partner-logo partner-invert">
             </a>
             <a class="partner-tile" href="http://www.smartdriveltd.com/el/" target="_blank" rel="noopener noreferrer" title="SmartDrive">
                 <img src="../partners/cropped-smartlogofinal-1-1.png" alt="SmartDrive" loading="lazy" class="partner-logo">
             </a>
-            <a class="partner-tile" href="https://texniki.dionsa.gr/" target="_blank" rel="noopener noreferrer" title="ΔΙΟΝ Τεχνική">
-                <img src="../partners/logo-DION-techniki-1.png" alt="ΔΙΟΝ Τεχνική" loading="lazy" class="partner-logo">
+            <a class="partner-tile" href="https://texniki.dionsa.gr/" target="_blank" rel="noopener noreferrer" title="DION Techniki">
+                <img src="../partners/logo-DION-techniki-1.png" alt="DION Techniki" loading="lazy" class="partner-logo">
             </a>
         </div>
     </section>
@@ -1631,7 +1513,7 @@ MOUDIOTIS</span>
             <div class="contact-info" data-reveal>
                 <div class="eyebrow"><span data-i18n="contact.eyebrow">Contact</span></div>
                 <h2 id="contactHeading" class="section-heading light" data-i18n-html="contact.heading">Let's <em>talk</em></h2>
-                <p class="contact-lead" data-i18n="contact.lead">We're here for any question or need. Get in touch today for a free initial consultation.</p>
+                <p class="contact-lead" data-i18n="contact.lead">We're here for any question or need. Get in touch and we will look at your case personally.</p>
 
                 <div class="person-card">
                     <img id="personPhoto" src="" alt="Dimitrios Moudiotis" class="person-photo">
@@ -1645,7 +1527,7 @@ MOUDIOTIS</span>
                     <a class="contact-detail contact-phone" href="#">
                         <span class="cd-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
                         <div class="contact-detail-text">
-                            <span class="cd-label" data-i18n="hbc.phone">Σταθερό</span>
+                            <span class="cd-label" data-i18n="hbc.phone">Landline</span>
                             <span class="cd-value" data-i18n="contact.phone.val">0030 210 756 1836</span>
                         </div>
                     </a>
@@ -1673,7 +1555,7 @@ MOUDIOTIS</span>
                     <div class="contact-detail">
                         <span class="cd-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
                         <div class="contact-detail-text">
-                            <span class="cd-label">Εξυπηρέτηση</span>
+                            <span class="cd-label">Service area</span>
                             <span class="cd-value" data-i18n="contact.address">Athens · Thessaloniki | Greece-wide and abroad</span>
                         </div>
                     </div>
@@ -1725,7 +1607,7 @@ MOUDIOTIS</span>
 
     <!-- ===== FOOTER ===== -->
     <footer>
-        <div class="footer-top">
+        <div class="footer-top footer-top--cols">
             <div class="footer-brand">
                 <div class="footer-logo-circle">
                     <img class="logo-img" src="" alt="Moudiotis Technical Office — logo">
@@ -1733,14 +1615,31 @@ MOUDIOTIS</span>
                 <div class="footer-brand-text">
                     <p class="fname" id="footerBrandName" data-i18n="footer.brand">Dimitrios Moudiotis and Associates</p>
                     <p class="ftitle" data-i18n="footer.title">Mechanical Engineer AUTH, MSc | Athens - Thessaloniki</p>
+                    <p class="fdesc">Vehicle type approval, registration and technical studies — Athens, Thessaloniki and remotely across Greece.</p>
                 </div>
             </div>
-            <div class="footer-links">
-                <a href="#about"    data-i18n="nav.about">About</a>
-                <a href="#services" data-i18n="nav.services">Services</a>
-                <a href="#egkrisi-typou-ochimaton" data-i18n="nav.approvals">Type Approvals</a>
-                <a href="egkrisi-typou-dikyklon/">Category L Type Approval</a>
-                <a href="#contact"  data-i18n="nav.contact">Contact</a>
+            <div class="footer-col" role="navigation" aria-label="Services">
+                <h4>Services</h4>
+                <a href="deltio-koinopoiisis-tao/">Type Approval and TAO</a>
+                <a href="memonomeni-egkrisi-oximatos/">Imports and Caravans</a>
+                <a href="adeia-treiler-o1-o2/">O1/O2 Trailer Licence</a>
+                <a href="egkrisi-typou-dikyklon/">Two-wheelers and Quads</a>
+                <a href="oximata-eidikou-skopou/">Special Purpose Vehicles</a>
+            </div>
+            <div class="footer-col" role="navigation" aria-label="The office">
+                <h4>The office</h4>
+                <a href="#about">About</a>
+                <a href="#services">All services</a>
+                <a href="#ergaleia">Trailer tools</a>
+                <a href="#reviews">Client reviews</a>
+                <a href="#contact">Contact form</a>
+            </div>
+            <div class="footer-col footer-col--contact">
+                <h4>Contact</h4>
+                <a href="tel:+302107561836"><i class="fa-solid fa-phone" aria-hidden="true"></i>210 756 1836</a>
+                <a href="mailto:moudiotis.meng@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i>moudiotis.meng@gmail.com</a>
+                <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Ymittou 157, Pagkrati, Athens</span>
+                <span><i class="fa-regular fa-clock" aria-hidden="true"></i>Monday – Friday, 10:00 – 20:00</span>
             </div>
         </div>
         <div class="footer-bottom">
@@ -1879,6 +1778,13 @@ MOUDIOTIS</span>
             document.querySelectorAll('.ta-toggle[aria-expanded="true"], #trcMainToggle[aria-expanded="true"]').forEach(function (b) {
                 b.setAttribute('aria-expanded', 'false');
             });
+            /* Εγκρίσεις τύπου: στο κινητό ξεκινά κλειστό */
+            if (window.innerWidth <= 768) {
+                var tc = document.getElementById('tapCollapse');
+                var tt = document.getElementById('tapToggle');
+                if (tc) tc.classList.remove('is-open');
+                if (tt) tt.setAttribute('aria-expanded', 'false');
+            }
             if (window.innerWidth > 768) return;
             document.querySelectorAll('details[open]').forEach(function (d) {
                 d.removeAttribute('open');
