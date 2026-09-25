@@ -93,8 +93,8 @@ window.SITE_CONFIG = {
 
     // ── ABOUT ─────────────────────────────────────────────────────────────
     about: {
-        headingEl: 'Εμπειρία και <em>Εξειδίκευση</em>',
-        headingEn: 'Experience and <em>Expertise</em>',
+        headingEl: 'Εμπειρία &amp; <em>Εξειδίκευση</em>',
+        headingEn: 'Experience &amp; <em>Expertise</em>',
         leadEl:    'Με {years}+ χρόνια εμπειρίας, το <strong class="kw">τεχνικό γραφείο</strong> του <strong class="kw">μηχανολόγου μηχανικού</strong> Δημήτρη Μουδιώτη αναλαμβάνει <strong class="kw">έγκριση τύπου οχήματος</strong> και <strong class="kw">έγκριση τύπου ρυμουλκούμενου</strong>, <strong class="kw">άδεια τρέιλερ</strong> Ο1/Ο2, <strong class="kw">άδεια μπαγκαζιέρας</strong>, μελέτες <strong class="kw">οχημάτων ειδικής χρήσης ειδικού σκοπού</strong>, μετασκευές, τροχόσπιτα και τοποθέτηση γερανών.',
         leadEn:    'With {years}+ years of experience, the <strong class="kw">technical office</strong> of <strong class="kw">mechanical engineer</strong> Dimitrios Moudiotis handles <strong class="kw">vehicle type approval</strong> and <strong class="kw">trailer type approval</strong>, <strong class="kw">trailer and cargo-box licences</strong> O1/O2, <strong class="kw">special use / special purpose vehicle</strong> studies, conversions, caravans and crane installations.',
         features: [

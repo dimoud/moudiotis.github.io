@@ -67,6 +67,9 @@
     T['nav.moto']     = { el: 'Δίκυκλα, Τετράκυκλα',        en: 'Two-wheelers, Quads' };
     T['nav.special']  = { el: 'Ειδικού Σκοπού',              en: 'Special Purpose' };
 
+
+
+
     // ── ΑΡΧΙΚΗ: ΤΕΣΣΕΡΙΣ ΣΤΙΓΜΕΣ ΥΠΗΡΕΣΙΩΝ ──
     T["hm.ta.eyebrow"] = { el: "Εγκρίσεις τύπου", en: "Type approvals" };
     T["hm.ta.h"] = { el: "Από τον φάκελο <em>ως την ταξινόμηση</em>", en: "From the dossier <em>to registration</em>" };
@@ -83,15 +86,16 @@
     T["hm.ta.5.t"] = { el: "Ειδικού Σκοπού", en: "Special Purpose" };
     T["hm.ta.5.d"] = { el: "Γερανοφόρα, καντίνες, κινητές μονάδες", en: "Crane trucks, catering units, mobile units" };
     T["hm.tr.eyebrow"] = { el: "Άδεια τρέιλερ Ο1 · Ο2", en: "O1 · O2 trailer licence" };
-    T["hm.tr.h"] = { el: "Το τρέιλερ σας, <em>νόμιμο</em> σε πέντε βήματα", en: "Your trailer, <em>legal</em> in five steps" };
-    T["hm.tr.p"] = { el: "Ρυμουλκούμενο ή μπαγκαζιέρα έως 3,5 τόνους χωρίς άδεια; Αναλαμβάνουμε τα πάντα, από την επιθεώρηση μέχρι τις πινακίδες.", en: "A trailer or cargo box up to 3.5 tonnes without a licence? We handle everything, from inspection to number plates." };
-    T["hm.tr.price.k"] = { el: "Τελική τιμή", en: "Final price" };
-    T["hm.tr.price.s"] = { el: "με τα παράβολα του Δημοσίου", en: "including state fees" };
-    T["hm.tr.s1"] = { el: "Επιθεώρηση", en: "Inspection" };
-    T["hm.tr.s2"] = { el: "Αριθμός πλαισίου", en: "Chassis number" };
-    T["hm.tr.s3"] = { el: "Τεχνική περιγραφή", en: "Technical description" };
-    T["hm.tr.s4"] = { el: "Υποβολή φακέλου", en: "Dossier filing" };
-    T["hm.tr.s5"] = { el: "Άδεια και πινακίδες", en: "Licence and plates" };
+    T["hm.tr.h"] = { el: "Το τρέιλερ σας, <em>νόμιμο</em> σε οκτώ βήματα", en: "Your trailer, <em>legal</em> in eight steps" };
+    T["hm.tr.p"] = { el: "Ρυμουλκούμενο ή μπαγκαζιέρα έως 3,5 τόνους χωρίς άδεια; Αναλαμβάνουμε τα πάντα, από τα δικαιολογητικά μέχρι τις πινακίδες.", en: "A trailer or cargo box up to 3.5 tonnes without a licence? We handle everything, from the documents to the number plates." };
+    T["hm.tr.s1"] = { el: "Συγκέντρωση δικαιολογητικών", en: "Collecting the documents" };
+    T["hm.tr.s2"] = { el: "Κατάθεση στην υπηρεσία", en: "Filing with the authority" };
+    T["hm.tr.s3"] = { el: "Χάραξη νέου 17ψήφιου αριθμού", en: "Engraving the new 17-digit number" };
+    T["hm.tr.s4"] = { el: "Επιθεώρηση", en: "Inspection" };
+    T["hm.tr.s5"] = { el: "Τεχνικός φάκελος", en: "Technical dossier" };
+    T["hm.tr.s6"] = { el: "Τελική κατάθεση", en: "Final filing" };
+    T["hm.tr.s7"] = { el: "Έλεγχος", en: "Authority check" };
+    T["hm.tr.s8"] = { el: "Πινακίδες", en: "Number plates" };
     T["hm.tr.warn"] = { el: "Μέχρι να εκδοθούν άδεια και πινακίδες, το ρυμουλκούμενο δεν κυκλοφορεί.", en: "Until the licence and plates are issued, the trailer may not be driven." };
     T["hm.tr.cta"] = { el: "Ο πλήρης οδηγός", en: "The full guide" };
     T["hm.rc.eyebrow"] = { el: "Έλεγχος Κ.Ο.Κ.", en: "Highway Code check" };
@@ -217,7 +221,7 @@
     T['ta.proc1']       = { el: 'Παράβολα συνολικά <strong>230 €</strong>, εκδιδόμενα ηλεκτρονικά μέσω <strong>e-paravolo</strong>.', en: 'Total fees of <strong>€230</strong>, issued electronically via <strong>e-paravolo</strong>.' };
     T['ta.proc2']       = { el: 'Για οχήματα με ΕΣΡ πριν το <strong>1999</strong>: <strong>πρακτικό επιθεώρησης</strong> από αρμόδια Υπηρεσία Μεταφορών ή <strong>επιτυχής έλεγχος ΚΤΕΟ</strong>.', en: 'For vehicles with ESR before <strong>1999</strong>: an <strong>inspection report</strong> from the Regional Transport Authority or a <strong>successful KTEO technical check</strong>.' };
     T['ta.proc3']       = { el: 'Υποβολή πλήρους φακέλου <strong>δικαιολογητικών</strong> στην αρμόδια υπηρεσία, με σωστή καταγραφή χαρακτηριστικών οχήματος.', en: 'Submission of a complete <strong>documentation file</strong> to the competent authority, with accurate recording of vehicle characteristics.' };
-    T['ta.expand.hint']      = { el: 'ΔΕΣ ΑΝΑΛΥΤΙΚΑ ΤΑ 5 ΣΤΑΔΙΑ ΤΗΣ ΔΙΑΔΙΚΑΣΙΑΣ', en: 'SEE ALL 5 STEPS OF THE PROCESS' };
+    T['ta.expand.hint']      = { el: 'ΔΕΣ ΑΝΑΛΥΤΙΚΑ ΤΗ ΔΙΑΔΙΚΑΣΙΑ', en: 'SEE THE FULL PROCESS' };
     T['ta.stat.docs']        = { el: '10–15', en: '10–15' };
     T['ta.stat.docs.lbl']    = { el: 'Δικαιολογητικά', en: 'Documents' };
     T['ta.stat.fee.lbl']     = { el: 'Παράβολα', en: 'Fees' };
