@@ -150,6 +150,7 @@
     T['nav.dd.memonomeni-egkrisi-oximatos'] = { el: "Μεμονωμένη Έγκριση, Εισαγόμενα", en: "Individual Approval, Imports" };
     T['nav.dd.egkrisi-typou-dikyklon'] = { el: "Κατηγορία L: Δίκυκλα, Τετράκυκλα", en: "Category L: Motorcycles, Quads" };
     T['nav.dd.adeia-treiler-o1-o2'] = { el: "Άδεια Τρέιλερ Ο1/Ο2", en: "O1/O2 Trailer Licence" };
+    T['nav.dd.kotsadoros-elxi'] = { el: "Κοτσαδόρος και Έλξη", en: "Tow Bar and Towing" };
     T['nav.dd.trochospita'] = { el: "Τροχόσπιτα", en: "Caravans" };
     T['nav.dd.metatropi-van-se-trochospito'] = { el: "Βαν σε Αυτοκινούμενο", en: "Van to Motor Caravan" };
     T['nav.dd.oximata-eidikou-skopou'] = { el: "Οχήματα Ειδικού Σκοπού", en: "Special Purpose Vehicles" };
@@ -247,8 +248,8 @@
     T['ta.stat.docs']        = { el: '10–15', en: '10–15' };
     T['ta.stat.docs.lbl']    = { el: 'Δικαιολογητικά', en: 'Documents' };
     T['ta.stat.fee.lbl']     = { el: 'Παράβολα', en: 'Fees' };
-    T['ta.stat.days']        = { el: '3–10', en: '3–10' };
-    T['ta.stat.days.lbl']    = { el: 'Ημέρες', en: 'Days' };
+    T['ta.stat.days']        = { el: 'ν.5290', en: 'Law 5290' };
+    T['ta.stat.days.lbl']    = { el: 'Άρθρο 14 / 2026', en: 'Art. 14 / 2026' };
     T['ta.stat.process']     = { el: 'Βήμα-βήμα', en: 'Step-by-step' };
     T['ta.stat.process.lbl'] = { el: 'Διαδικασία', en: 'Process' };
     T['partners.eyebrow']    = { el: 'ΣΥΝΕΡΓΑΣΙΕΣ', en: 'PARTNERSHIPS' };
