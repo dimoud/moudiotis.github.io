@@ -5829,3 +5829,20 @@ nav .lang-toggle .lflag { height: 11px !important; object-fit: cover; }
     .about-path--h .ap-dot { left: 50%; top: -30px; margin-left: -5px; }
     .about-path--h .ap-list b { font-size: 18px; }
 }
+
+/* Κινητό: αντί για την πορεία, τρία νούμερα */
+.about-stats { display: none; }
+@media (max-width: 768px) {
+    .about-path--h { display: none !important; }
+    .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); margin: 26px 0 6px; border-top: 1px solid rgba(201,153,134,.35); border-bottom: 1px solid rgba(201,153,134,.35); }
+    .as-i { text-align: center; padding: 16px 4px 14px; }
+    .as-i + .as-i { border-left: 1px solid rgba(201,153,134,.35); }
+    .as-i b { display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; font-size: 44px; line-height: 1; background: var(--gold-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .as-i span { display: block; margin-top: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--stone); }
+}
+@media (max-width: 768px) {
+    .about-stats { gap: 8px; border: 0 !important; margin: 24px 0 4px; }
+    .as-i, .as-i + .as-i { border: 1px solid rgba(201,153,134,.4) !important; border-radius: 10px; background: #fff; padding: 12px 4px 10px; box-shadow: 0 6px 16px rgba(17,36,61,.05); }
+    .as-i b { font-size: 32px; }
+    .as-i span { font-size: 9px; letter-spacing: 1px; }
+}

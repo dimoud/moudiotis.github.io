@@ -124,6 +124,9 @@
     T["hm.q.cta"] = { el: "Ανοίξτε τον υπολογιστή", en: "Open the calculator" };
     // ── /ΑΡΧΙΚΗ ──
     // Πορεία (κάτω από τη φωτογραφία)
+    T['stats.1'] = { el: 'Χρόνια εμπειρίας', en: 'Years of experience' };
+    T['stats.2'] = { el: 'Χώρες', en: 'Countries' };
+    T['stats.3'] = { el: 'Πτυχία', en: 'Degrees' };
     T['path.head'] = { el: 'Πορεία', en: 'Path' };
     T['path.1.t'] = { el: "Μηχανολόγος Μηχανικός", en: "Mechanical Engineer" };
     T['path.1.d'] = { el: "ΑΠΘ · Θεσσαλονίκη", en: "AUTh · Thessaloniki" };
