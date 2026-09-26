@@ -5606,3 +5606,14 @@ body.hp-idle .hero-cta-block .hero-pillar:nth-child(4) i { animation-delay: .6s;
 @media (prefers-reduced-motion: reduce) {
     .hero-cta-block .hero-pillar, .hero-cta-block .hero-pillar:nth-child(n), .hero-cta-block .hero-pillar i, body.hp-idle .hero-cta-block .hero-pillar i { animation: none !important; }
 }
+
+/* «Σχετικά»: τα τρία σημεία μπαίνουν από αριστερά με ορμή (μικρή υπερβολή και επαναφορά) όταν εμφανίζονται — δεν δένεται με την κύλιση */
+#aboutFeatures .feature-row {
+    opacity: 0; transform: translateX(-72px) !important;
+    transition: opacity .55s ease-out, transform 1s cubic-bezier(.34,1.5,.64,1) !important;
+}
+#aboutFeatures .feature-row.visible { opacity: 1; transform: none !important; }
+#aboutFeatures .feature-row:nth-child(1) { transition-delay: 0s !important; }
+#aboutFeatures .feature-row:nth-child(2) { transition-delay: .14s !important; }
+#aboutFeatures .feature-row:nth-child(3) { transition-delay: .28s !important; }
+@media (prefers-reduced-motion: reduce) { #aboutFeatures .feature-row { opacity: 1; transform: none !important; transition: none !important; } }
