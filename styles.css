@@ -5618,3 +5618,13 @@ body.hp-idle .hero-cta-block .hero-pillar:nth-child(4) i { animation-delay: .6s;
 #aboutFeatures .feature-row:nth-child(3) { transition-delay: .28s !important; }
 @media (prefers-reduced-motion: reduce) { #aboutFeatures .feature-row { opacity: 1; transform: none !important; transition: none !important; } }
 #contactForm { scroll-margin-top: 84px; }
+
+/* Επιλογή γλώσσας: 25% μικρότερη, με σημαίες σε όλες τις σελίδες */
+nav .lang-toggle { padding: 3px 5px !important; gap: 2px !important; border-radius: 5px !important; }
+nav .lang-toggle .lang-btn { padding: 3px 7px !important; gap: 6px !important; min-height: 30px !important; min-width: 0 !important; border-radius: 3px !important; }
+nav .lang-toggle .lflag { display: block !important; width: 16px !important; height: auto !important; }
+nav .lang-toggle .lang-btn .lcode { font-size: 10px !important; letter-spacing: 1.2px !important; }
+nav .lang-toggle .lang-sep { height: 12px !important; }
+nav .lang-toggle { padding: 2px 4px !important; }
+nav .lang-toggle .lang-btn { height: 32px !important; min-height: 0 !important; padding: 0 6px !important; gap: 5px !important; line-height: 1 !important; box-sizing: border-box; }
+nav .lang-toggle .lflag { height: 11px !important; object-fit: cover; }
