@@ -5634,3 +5634,6 @@ nav .lang-toggle .lflag { height: 11px !important; object-fit: cover; }
 .footer-top--solo .footer-brand { width: 100%; max-width: none !important; }
 .footer-top--solo .footer-brand-text { flex: 1 1 auto; min-width: 0; max-width: none !important; }
 .footer-top--solo .fdesc { max-width: none !important; }
+
+/* Υπηρεσία μόνο για υπολογιστή: συμπληρώνει την τελευταία σειρά του πλέγματος 3 στηλών */
+@media (max-width: 768px) { #servicesGrid .svc-desktop-only { display: none !important; } }

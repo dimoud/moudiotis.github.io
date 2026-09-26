@@ -297,6 +297,7 @@
         var n = i + 1;
         T['s' + n + '.title'] = { el: s.titleEl, en: s.titleEn };
         T['s' + n + '.text']  = { el: s.textEl,  en: s.textEn };
+        if (s.moreEl) T['s' + n + '.more'] = { el: s.moreEl, en: s.moreEn || s.moreEl };
         /* Μία γραμμή κάτω από τον τίτλο της κάρτας: οι επιμέρους υπηρεσίες,
            ή η αρχή της περιγραφής (χωρίς HTML) όπου δεν υπάρχουν. */
         var plain = function (h) { return (h || '').replace(/<[^>]+>/g, ''); };
@@ -561,7 +562,7 @@
 
     var servicesMeas = document.getElementById('servicesMeasLabel');
     if (servicesMeas) {
-        var sCount = (C.services || []).length;
+        var sCount = (C.services || []).filter(function (x) { return !x.desktopOnly; }).length;
         servicesMeas.innerHTML =
             sCount + ' <span data-i18n="services.meas">' + T['services.meas'].el + '</span>';
     }
@@ -700,7 +701,7 @@
                 '</div>';
             var pageAttr = svcPage ? ' data-page-el="' + (s.urlEl || svcPage) + '" data-page-en="' + (s.urlEn || svcPage) + '"' : '';
             sHtml +=
-                '<' + tag + urlAttr + pageAttr + ' class="service-card' + featuredClass + colClass + ' service-card--expandable' + (svcPage ? ' service-card--page' : '') + '" data-reveal' +
+                '<' + tag + urlAttr + pageAttr + ' class="service-card' + featuredClass + colClass + ' service-card--expandable' + (svcPage ? ' service-card--page' : '') + (s.desktopOnly ? ' svc-desktop-only' : '') + '" data-reveal' +
                 ' itemscope itemtype="https://schema.org/Service" itemprop="itemListElement">' +
                 '<meta itemprop="position" content="' + n + '">' +
                 kwMeta +
@@ -713,7 +714,7 @@
                 '</div>' +
                 '<i class="fa-solid ' + (svcPage ? 'fa-arrow-right' : 'fa-chevron-down') + ' service-chev" aria-hidden="true"></i>' +
                 expandContent +
-                (svcPage ? '<span class="svc-more" data-i18n="svc.more">' + T['svc.more'].el + '</span>' : '') +
+                (svcPage ? (s.moreEl ? '<span class="svc-more" data-i18n="s' + n + '.more">' + s.moreEl + '</span>' : '<span class="svc-more" data-i18n="svc.more">' + T['svc.more'].el + '</span>') : '') +
                 '</' + tag + '>';
         });
         servicesGrid.innerHTML = sHtml;
