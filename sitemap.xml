@@ -155,4 +155,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://moudiotis.gr/en/topothetisi-geranou/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moudiotis.gr/topothetisi-geranou/"/>
   </url>
+  <url>
+    <loc>https://moudiotis.gr/texniki-symvouleftiki/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://moudiotis.gr/texniki-symvouleftiki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moudiotis.gr/en/texniki-symvouleftiki/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moudiotis.gr/texniki-symvouleftiki/"/>
+  </url>
+  <url>
+    <loc>https://moudiotis.gr/en/texniki-symvouleftiki/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://moudiotis.gr/texniki-symvouleftiki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moudiotis.gr/en/texniki-symvouleftiki/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moudiotis.gr/texniki-symvouleftiki/"/>
+  </url>
 </urlset>

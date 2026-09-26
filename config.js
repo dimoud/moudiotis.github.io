@@ -229,7 +229,7 @@ window.SITE_CONFIG = {
         },
         // ── Κρυφές (δεν εμφανίζονται· κρατιούνται για μελλοντική χρήση) ──
         {
-            hidden:      true,   // κρυφή (όχι οχήματα) — η σελίδα της, αν υπάρχει, είναι στο _archive/
+            hidden:      true,   // κρυφή (όχι οχήματα)
             featured:    true,
             icon:        'fa-file-circle-check',
             urlEl: '/deltio-koinopoiisis-tao/',
@@ -281,7 +281,7 @@ window.SITE_CONFIG = {
             ],
         },
         {
-            hidden:      true,   // κρυφή (όχι οχήματα) — η σελίδα της, αν υπάρχει, είναι στο _archive/
+            hidden:      true,   // κρυφή (όχι οχήματα)
             expand:      '1',
             urlEl:       '/oximata-eidikou-skopou/',
             urlEn:       '/en/oximata-eidikou-skopou/',
@@ -313,7 +313,7 @@ window.SITE_CONFIG = {
             ],
         },
         {
-            hidden:      true,   // κρυφή (όχι οχήματα) — η σελίδα της, αν υπάρχει, είναι στο _archive/
+            hidden:      true,   // κρυφή (όχι οχήματα)
             urlEl:       '/ydravliki-platforma/',
             urlEn:       '/en/ydravliki-platforma/',
             icon:        'fa-arrows-up-down',
@@ -324,11 +324,9 @@ window.SITE_CONFIG = {
             seoKeywords: 'υδραυλικη πλατφορμα, εγκριση τυπου, EN 1570, πιστοποιηση CE, hydraulic platform study Greece, τεχνική μελέτη υδραυλικής πλατφόρμας',
         },
         {
-            desktopOnly: true,   // μόνο στον υπολογιστή (>768px): κλείνει συμμετρικά το πλέγμα· η παλιά σελίδα της είναι στο _archive/
-            urlEl:       '#contactForm',
-            urlEn:       '#contactForm',
-            moreEl:      'Ρωτήστε μας →',
-            moreEn:      'Ask us →',
+            desktopOnly: true,   // κάρτα μόνο στον υπολογιστή (>768px): κλείνει συμμετρικά το πλέγμα· η σελίδα της υπάρχει για όλους
+            urlEl:       '/texniki-symvouleftiki/',
+            urlEn:       '/en/texniki-symvouleftiki/',
             icon:        'fa-clipboard-check',
             titleEl:     'Τεχνική Συμβουλευτική και Πιστοποίηση',
             titleEn:     'Technical Consulting and Certification',
@@ -351,7 +349,7 @@ window.SITE_CONFIG = {
             ],
         },
         {
-            hidden:      true,   // κρυφή (όχι οχήματα) — η σελίδα της, αν υπάρχει, είναι στο _archive/
+            hidden:      true,   // κρυφή (όχι οχήματα)
             urlEl:       '/meleti-pyroprostasias/',
             urlEn:       '/en/meleti-pyroprostasias/',
             icon:        'fa-fire-extinguisher',
@@ -362,7 +360,7 @@ window.SITE_CONFIG = {
             seoKeywords: 'μελετη ενεργητικης πυροπροστασιας, ενεργητική πυροπροστασία, μελέτη πυροπροστασίας, συστημα πυροσβεσης, sprinkler, πυρασφάλεια κτιρίου, fire protection study Greece, μηχανολόγος μηχανικός πυροπροστασία',
         },
         {
-            hidden:      true,   // κρυφή (όχι οχήματα) — η σελίδα της, αν υπάρχει, είναι στο _archive/
+            hidden:      true,   // κρυφή (όχι οχήματα)
             urlEl:       '/texnikos-asfaleias/',
             urlEn:       '/en/texnikos-asfaleias/',
             icon:        'fa-helmet-safety',
@@ -373,7 +371,7 @@ window.SITE_CONFIG = {
             seoKeywords: 'τεχνικος ασφαλειας, ΓΕΕΚ, υγεια ασφαλεια εργασιας, νομος 3850 2010, safety engineer Athens, occupational health safety Greece',
         },
         {
-            hidden:      true,   // κρυφή (όχι οχήματα) — η σελίδα της, αν υπάρχει, είναι στο _archive/
+            hidden:      true,   // κρυφή (όχι οχήματα)
             icon:        'fa-cube',
             url:         'https://expertease.eu/3dprint',
             titleEl:     '<strong>Μηχανολογικός Σχεδιασμός</strong> και 3D Printing',
