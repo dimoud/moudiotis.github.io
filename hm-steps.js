@@ -96,3 +96,12 @@
     window.addEventListener('load', req);
     paint();
 })();
+
+/* Hero: όταν ο επισκέπτης δεν κινείται για λίγα δευτερόλεπτα, τα εικονίδια των ετικετών κάνουν έναν διακριτικό χτύπο */
+(function () {
+    if (!document.querySelector('.hero-cta-block .hero-pillar')) return;
+    var t = null, b = document.body;
+    function active() { b.classList.remove('hp-idle'); clearTimeout(t); t = setTimeout(function () { b.classList.add('hp-idle'); }, 3500); }
+    ['scroll', 'touchstart', 'mousemove', 'keydown', 'wheel'].forEach(function (ev) { window.addEventListener(ev, active, { passive: true }); });
+    active();
+})();
