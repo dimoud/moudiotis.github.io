@@ -5857,3 +5857,12 @@ nav .lang-toggle .lflag { height: 11px !important; object-fit: cover; }
 .footer-top--solo .footer-brand-text { flex: 0 1 auto; width: 100%; overflow: visible; }
 .footer-top--solo .fname, .footer-top--solo .ftitle { text-wrap: balance; }
 .footer-top--solo .fdesc { margin-left: auto; margin-right: auto; text-wrap: balance; }
+
+/* ══ Έλεγχος Κ.Ο.Κ. (αρχική) — κινητό: συμπαγής λίστα σε δύο στήλες ══ */
+@media (max-width: 768px) {
+    .hm-rc .hm-p { margin-bottom: 16px; }
+    .hm-rc .hm-pinlist { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 8px; margin: 0 -6px 22px; }
+    .hm-rc .hm-pinlist li { font-size: 13.5px; line-height: 1.25; gap: 8px; padding: 6px; margin: 0; min-width: 0; }
+    .hm-rc .hm-pin-n { flex: 0 0 22px; height: 22px; font-size: 11px; }
+    .hm-rc.is-cycling .hm-pinlist li.is-active { transform: scale(1.03); }
+}
