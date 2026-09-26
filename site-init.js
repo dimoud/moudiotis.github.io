@@ -123,6 +123,18 @@
     T["hm.q.f2"] = { el: "Μέγιστη επιτρεπόμενη μάζα", en: "Max permissible mass" };
     T["hm.q.cta"] = { el: "Ανοίξτε τον υπολογιστή", en: "Open the calculator" };
     // ── /ΑΡΧΙΚΗ ──
+    // Πορεία (κάτω από τη φωτογραφία)
+    T['path.head'] = { el: 'Πορεία', en: 'Path' };
+    T['path.1.t'] = { el: "Μηχανολόγος Μηχανικός", en: "Mechanical Engineer" };
+    T['path.1.d'] = { el: "ΑΠΘ · Θεσσαλονίκη", en: "AUTh · Thessaloniki" };
+    T['path.2.t'] = { el: "MSc", en: "MSc" };
+    T['path.2.d'] = { el: "École Centrale Paris · Γαλλία", en: "École Centrale Paris · France" };
+    T['path.3.t'] = { el: "MSc", en: "MSc" };
+    T['path.3.d'] = { el: "IFP School · Παρίσι", en: "IFP School · Paris" };
+    T['path.4.t'] = { el: "MSc", en: "MSc" };
+    T['path.4.d'] = { el: "Ελλάδα", en: "Greece" };
+    T['path.5.t'] = { el: "Τεχνικό Γραφείο Μουδιώτης", en: "Moudiotis Engineering Office" };
+    T['path.5.d'] = { el: "Αθήνα · Θεσσαλονίκη", en: "Athens · Thessaloniki" };
     // Αναδυόμενο μενού «Υπηρεσίες»
     T['nav.dd.g1']  = { el: "Εγκρίσεις και Ταξινόμηση", en: "Approvals and Registration" };
     T['nav.dd.g2']  = { el: "Μετατροπές και Ειδικά Οχήματα", en: "Conversions and Special Vehicles" };
