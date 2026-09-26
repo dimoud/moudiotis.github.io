@@ -26,7 +26,7 @@
   var RESTART_DELAY = 9000;
   var AUTO_RESTART  = true;
 
-  var GOLD  = '#c9a86c';
+  var GOLD  = '#c99986';
   var NAVY  = '#1d3a5c';
   var GREEN = '#38a169';
   var MUTED = '#9aa3ad';

@@ -22,7 +22,7 @@
   var RESTART_DELAY = 9000;  // ms after the stamp is shown before restarting
   var AUTO_RESTART  = true;
 
-  var GOLD  = '#c9a86c';
+  var GOLD  = '#c99986';
   var GREEN = '#38a169';
 
   /* ── TRANSLATION HELPER ──

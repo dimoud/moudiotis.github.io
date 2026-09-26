@@ -80,7 +80,7 @@
 
 /* ── FAQ (μέσα στο ta-box) ── */
 .svc-faq { padding: 2px 24px 18px; }
-.svc-faq details { border-bottom: 1px solid rgba(201,168,108,.3); padding: 13px 0; }
+.svc-faq details { border-bottom: 1px solid rgba(201,153,134,.3); padding: 13px 0; }
 .svc-faq details:last-child { border-bottom: none; }
 .svc-faq summary {
     cursor: pointer; list-style: none;
@@ -104,7 +104,7 @@
 }
 .svc-related a {
     display: block; background: var(--cream); text-decoration: none;
-    border: 1px solid rgba(201,168,108,.45); padding: 16px 18px;
+    border: 1px solid rgba(201,153,134,.45); padding: 16px 18px;
     transition: border-color .25s, transform .25s, box-shadow .25s;
 }
 .svc-related a:hover { border-color: var(--warm); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.07); }
@@ -168,8 +168,8 @@ html:not(.js) [data-reveal] { opacity: 1 !important; transform: none !important;
 .svc-hero::before {
     content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
     background-image:
-        linear-gradient(rgba(201,168,108,0.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201,168,108,0.055) 1px, transparent 1px);
+        linear-gradient(rgba(201,153,134,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,153,134,0.055) 1px, transparent 1px);
     background-size: 46px 46px;
     mask-image: radial-gradient(ellipse 80% 70% at 30% 50%, #000 20%, transparent 78%);
     -webkit-mask-image: radial-gradient(ellipse 80% 70% at 30% 50%, #000 20%, transparent 78%);
@@ -190,11 +190,11 @@ html:not(.js) [data-reveal] { opacity: 1 !important; transform: none !important;
 }
 .svc-hero-logo::before {
     content: ''; position: absolute; inset: -9px; border-radius: 50%;
-    border: 1px solid rgba(201,168,108,0.42);
+    border: 1px solid rgba(201,153,134,0.42);
 }
 .svc-hero-logo::after {
     content: ''; position: absolute; inset: -19px; border-radius: 50%;
-    border: 1px solid rgba(201,168,108,0.16);
+    border: 1px solid rgba(201,153,134,0.16);
 }
 .svc-hero-logo img { width: 88px; height: 88px; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.45)); }
 
@@ -219,7 +219,7 @@ html:not(.js) [data-reveal] { opacity: 1 !important; transform: none !important;
 
 /* ── Βήματα: υπογράμμιση στο πέρασμα ── */
 .ta-steps > li { transition: background .3s; border-radius: 3px; }
-.ta-steps > li:hover { background: rgba(201,168,108,.07); }
+.ta-steps > li:hover { background: rgba(201,153,134,.07); }
 .ta-step-num { transition: color .3s, transform .3s; }
 .ta-steps > li:hover .ta-step-num { color: var(--gold2); transform: translateY(-1px); }
 
@@ -233,7 +233,7 @@ html:not(.js) [data-reveal] { opacity: 1 !important; transform: none !important;
 .svc-related a:hover::after { opacity: 1; transform: translateX(0); }
 
 /* ── FAQ: απαλό φόντο στο ανοιχτό ── */
-.svc-faq details[open] { background: rgba(201,168,108,.05); border-radius: 3px; padding-left: 10px; padding-right: 10px; }
+.svc-faq details[open] { background: rgba(201,153,134,.05); border-radius: 3px; padding-left: 10px; padding-right: 10px; }
 
 /* ── Lang toggle: σε μικρές οθόνες μόνο οι κωδικοί ── */
 @media (max-width: 560px) {
@@ -423,7 +423,7 @@ body .ta-box .ta-steps > li::before {
     content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0;
     background: var(--warm); transition: width .28s var(--ease);
 }
-body .ta-box .ta-steps > li:hover { background: rgba(201,168,108,.07); }
+body .ta-box .ta-steps > li:hover { background: rgba(201,153,134,.07); }
 body .ta-box .ta-steps > li:hover::before { width: 3px; }
 body .ta-box .ta-steps > li:hover .ta-step-num { transform: scale(1.08); }
 body .ta-box .ta-step-num { transition: transform .28s var(--ease); }
@@ -469,7 +469,7 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
     color: #46505e;
 }
 .svc-table tbody tr:nth-child(odd) { background: rgba(31,60,99,.028); }
-.svc-table tbody tr:hover { background: rgba(201,168,108,.10); }
+.svc-table tbody tr:hover { background: rgba(201,153,134,.10); }
 .svc-table td:first-child {
     white-space: nowrap; color: var(--ink);
     font-family: 'IBM Plex Mono', monospace; font-size: 13px;
@@ -504,13 +504,13 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
 }
 .svc-prose h2 { color: var(--navy-mid) !important; position: relative; padding-left: 16px; }
 .svc-prose h2::before { content: ''; position: absolute; left: 0; top: .2em; bottom: .2em; width: 4px; border-radius: 2px; background: var(--gold-metal); }
-.svc-prose h3 { color: #a57e32 !important; }
+.svc-prose h3 { color: #a56a52 !important; }
 .svc-faq details { transition: background .25s; border-radius: 4px; }
-.svc-faq details[open] { background: linear-gradient(90deg, rgba(201,162,78,0.10), rgba(201,162,78,0.02)); }
-.svc-faq summary::after { color: #c9a24e; }
+.svc-faq details[open] { background: linear-gradient(90deg, rgba(201,138,112,0.10), rgba(201,138,112,0.02)); }
+.svc-faq summary::after { color: #c98a70; }
 .svc-related a {
     border: 1px solid transparent !important; border-radius: 8px;
-    background: linear-gradient(#fff,#fff) padding-box, linear-gradient(135deg, rgba(201,162,78,0.25), rgba(201,162,78,0.6)) border-box !important;
+    background: linear-gradient(#fff,#fff) padding-box, linear-gradient(135deg, rgba(201,138,112,0.25), rgba(201,138,112,0.6)) border-box !important;
     transition: transform .3s var(--ease), box-shadow .3s var(--ease), background .3s;
 }
 .svc-related a:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(7,17,31,0.14);

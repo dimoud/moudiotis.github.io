@@ -459,7 +459,7 @@
 
 
     // ── 4. ASSETS ─────────────────────────────────────────────────────────────
-    var accentColor = (C.theme && C.theme.accent) ? C.theme.accent : '#c9a86c';
+    var accentColor = (C.theme && C.theme.accent) ? C.theme.accent : '#c99986';
     var fallbackInitials =
         '<div style="width:100%;height:100%;background:linear-gradient(135deg,#1a1410,#2d2010);' +
         'display:flex;align-items:center;justify-content:center;font-family:serif;' +

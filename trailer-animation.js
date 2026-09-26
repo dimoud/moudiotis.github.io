@@ -57,7 +57,7 @@
       '     style="width:100%;max-width:820px;overflow:visible;display:block;margin:0 auto">',
 
       /* ─── GROUP: all sketch paths ─── */
-      '<g id="trailerSketch" stroke="#c9a86c" stroke-linecap="round" stroke-linejoin="round" fill="none">',
+      '<g id="trailerSketch" stroke="#c99986" stroke-linecap="round" stroke-linejoin="round" fill="none">',
 
       /* 1. CHASSIS / MAIN FRAME */
       /* top rail */
@@ -159,11 +159,11 @@
       /* ─── DIMENSION LABELS ─── */
       '<text id="trailerDimLabel" x="439" y="332"',
       '  font-family="\'IBM Plex Mono\',monospace" font-size="12" letter-spacing="2.5"',
-      '  fill="#c9a86c" text-anchor="middle" opacity="0"',
+      '  fill="#c99986" text-anchor="middle" opacity="0"',
       '>— 3.500 m (body) —</text>',
       '<text id="trailerDimLabel2" x="362" y="296"',
       '  font-family="\'IBM Plex Mono\',monospace" font-size="10" letter-spacing="2"',
-      '  fill="#c9a86c" text-anchor="middle" opacity="0"',
+      '  fill="#c99986" text-anchor="middle" opacity="0"',
       '>— 5.200 m overall —</text>',
 
       /* ─── APPROVED STAMP ─── */
