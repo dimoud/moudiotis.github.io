@@ -443,8 +443,13 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (!target) return;
     e.preventDefault();
     const offset = 80;
-    const top = target.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top, behavior: 'smooth' });
+    const want = () => target.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: want(), behavior: 'smooth' });
+    /* εικόνες, χάρτης και κινήσεις πάνω από τον στόχο αλλάζουν ύψος στη διαδρομή — διορθώνουμε όπου χρειάζεται */
+    [650, 1300, 2100].forEach(ms => setTimeout(() => {
+      const d = want() - window.scrollY;
+      if (Math.abs(d) > 6) window.scrollTo({ top: want(), behavior: 'smooth' });
+    }, ms));
   });
 });
 
