@@ -5817,3 +5817,15 @@ nav .lang-toggle .lflag { height: 11px !important; object-fit: cover; }
     .hm-q-grid { grid-template-columns: 4fr 7fr !important; gap: 56px !important; }
     .hm-q .hm-q-h { font-size: clamp(30px, 2.9vw, 44px) !important; max-width: 17ch !important; text-wrap: balance; }
 }
+
+/* Πορεία: οριζόντια, σε όλο το πλάτος της ενότητας «Εμπειρία & Εξειδίκευση» (υπολογιστής) */
+.about-path--h { max-width: 1400px !important; width: auto; margin: 44px auto 8px !important; padding: 0 !important; }
+@media (min-width: 769px) {
+    .about-path--h .ap-head { text-align: center; margin-bottom: 26px; }
+    .about-path--h .ap-list { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0 18px; padding: 30px 0 0; }
+    .about-path--h .ap-list::before { left: 0; right: 0; top: 4px; bottom: auto; width: auto; height: 1px; background: linear-gradient(90deg, rgba(201,153,134,.25), var(--warm) 12%, var(--warm) 88%, rgba(201,153,134,.25)); transform: scaleX(0); transform-origin: left; }
+    .about-path--h.visible .ap-list::before { transform: scaleX(1); }
+    .about-path--h .ap-list li { padding: 0; text-align: center; }
+    .about-path--h .ap-dot { left: 50%; top: -30px; margin-left: -5px; }
+    .about-path--h .ap-list b { font-size: 18px; }
+}
