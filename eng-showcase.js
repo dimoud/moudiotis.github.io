@@ -142,9 +142,10 @@
             [t('Κατάσταση', 'Status'), t('Εγκρίθηκε ✓', 'Approved ✓')]] }
     ];
     var TABS = [t('Υπολογισμοί αντοχής', 'Strength calculations'), t('ΕΧΕΣ · Μετατροπές', 'Special vehicles · Conversions'), t('Έγκριση τύπου', 'Type approval')];
+    var TABS_S = [t('Αντοχή', 'Strength'), t('ΕΧΕΣ', 'Special'), t('Έγκριση', 'Approval')];
 
     wrap.innerHTML =
-        '<div class="es-tabs">' + TABS.map(function (s, i) { return '<button type="button" class="es-tab" data-i="' + i + '"><b>0' + (i + 1) + '</b>' + s + '</button>'; }).join('') + '</div>' +
+        '<div class="es-tabs">' + TABS.map(function (s, i) { return '<button type="button" class="es-tab" data-i="' + i + '"><b>0' + (i + 1) + '</b><span class="es-tl">' + s + '</span><span class="es-ts">' + TABS_S[i] + '</span></button>'; }).join('') + '</div>' +
         '<div class="es-screen">' +
         '<div class="es-bar"><i></i><i></i><i></i><span class="es-bar-t"></span><span class="es-bar-r">' + t('ΜΟΥΔΙΩΤΗΣ · ΤΕΧΝΙΚΟ ΓΡΑΦΕΙΟ', 'MOUDIOTIS · ENGINEERING') + '</span></div>' +
         '<div class="es-body"><div class="es-stage"><svg viewBox="0 0 640 430" fill="none" role="img" aria-label="' + t('Υπολογισμοί αντοχής, κέντρο βάρους και έγκριση τύπου', 'Strength calculations, centre of gravity and type approval') + '">' + s1 + s2 + s3 + '</svg></div>' +

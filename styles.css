@@ -5641,7 +5641,9 @@ nav .lang-toggle .lflag { height: 11px !important; object-fit: cover; }
 /* ══ ΒΙΤΡΙΝΑ ΜΗΧΑΝΙΚΟΥ (αρχική, κάτω από τις υπηρεσίες) — eng-showcase.js ══
    «Οθόνη μηχανικού»: σχέδιο + υπολογισμοί που γράφονται ζωντανά. */
 .es-wrap { max-width: 1120px; margin: 60px auto 0; padding: 0 16px; }
-.es-tabs { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+.es-tabs { display: flex; gap: 10px; justify-content: center; flex-wrap: nowrap; margin-bottom: 20px; }
+.es-tab { white-space: nowrap; }
+.es-ts { display: none; }
 .es-tab {
     position: relative; overflow: hidden; cursor: pointer; background: #fff;
     display: inline-flex; align-items: center; gap: 8px;
@@ -5761,7 +5763,10 @@ nav .lang-toggle .lflag { height: 11px !important; object-fit: cover; }
 @media (max-width: 768px) {
     .es-wrap { margin-top: 40px; }
     .es-tabs { gap: 6px; }
-    .es-tab { font-size: 10px; letter-spacing: 1px; padding: 8px 11px 9px; }
+    .es-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .es-tab { font-size: 10.5px; letter-spacing: 1px; padding: 9px 6px 10px; justify-content: center; gap: 6px; }
+    .es-tl { display: none; }
+    .es-ts { display: inline; }
     .es-screen { border-radius: 12px; }
     .es-bar-r { display: none; }
     .es-stage { padding: 8px 4px 4px; }
