@@ -5878,3 +5878,12 @@ nav .lang-toggle .lflag { height: 11px !important; object-fit: cover; }
     .hm-rc-txt .hm-link { justify-content: center; }
     .hm-rc .hm-pinlist li:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; }
 }
+
+/* ══ Hero: τρία αντικείμενα (Εγκρίσεις Τύπου | Ταξινόμηση Οχημάτων | Τεχνικές Μελέτες) ══ */
+.hero-headline { white-space: normal !important; font-size: clamp(17px, 1.55vw, 23px) !important; }
+.hero-headline .hh-p { white-space: nowrap; }
+@media (max-width: 768px) {
+    .hero-headline { font-size: clamp(15px, 4.1vw, 17px) !important; line-height: 1.5; }
+    .hero-headline .hh-sep--2 { display: none; }
+    .hero-headline .hh-p--3 { display: block; }
+}

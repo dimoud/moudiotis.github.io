@@ -109,6 +109,7 @@
     T["hm.rc.5"] = { el: "Πίσω τρίγωνα", en: "Rear triangles" };
     T["hm.rc.6"] = { el: "Πίσω φώτα", en: "Rear lights" };
     T["hm.rc.7"] = { el: "Πινακίδα κυκλοφορίας", en: "Number plate" };
+    T["hm.rc.8"] = { el: "Ξεχωριστή ασφάλιση", en: "Separate insurance" };
     T["hm.rc.k1"] = { el: "Κλειστό ρυμουλκούμενο", en: "Box trailer" };
     T["hm.rc.k2"] = { el: "Τρέιλερ λέμβου", en: "Boat trailer" };
     T["hm.rc.cta"] = { el: "Κάντε τον πλήρη έλεγχο", en: "Run the full check" };
@@ -177,8 +178,8 @@
        Οι αριθμοί βγαίνουν από το config (κριτικές, έργα, χρόνια), ώστε να μη
        μένουν πίσω όταν αλλάζουν. */
     T['hero.headline'] = {
-        el: 'Εγκρίσεις Τύπου <span class="hh-sep">|</span> <em>Ταξινόμηση Οχημάτων</em>',
-        en: 'Type Approval <span class="hh-sep">|</span> <em>Vehicle Registration</em>',
+        el: '<span class="hh-p">Εγκρίσεις Τύπου</span> <span class="hh-sep">|</span> <em class="hh-p">Ταξινόμηση Οχημάτων</em> <span class="hh-sep hh-sep--2">|</span> <span class="hh-p hh-p--3">Τεχνικές Μελέτες</span>',
+        en: '<span class="hh-p">Type Approval</span> <span class="hh-sep">|</span> <em class="hh-p">Vehicle Registration</em> <span class="hh-sep hh-sep--2">|</span> <span class="hh-p hh-p--3">Technical Studies</span>',
     };
     T['hero.sub'] = {
         el: 'Μεμονωμένη έγκριση, καταχώρηση στο ΤΑΟ, ρυμουλκούμενα, δίκυκλα και οχήματα ειδικού σκοπού. Αναλαμβάνουμε ολόκληρο τον φάκελο, από τη μελέτη ως τις πινακίδες.',
@@ -403,7 +404,7 @@
     });
 
     // FOOTER
-    T['footer.title'] = { el: P.fullTitleEl, en: P.fullTitleEn };
+    T['footer.title'] = { el: P.fullTitleEl.split(' | ').join('<br>'), en: P.fullTitleEn.split(' | ').join('<br>') };
 
     // ARIA LABELS
     T['aria.menu']      = { el: 'Μενού πλοήγησης',       en: 'Navigation menu' };
