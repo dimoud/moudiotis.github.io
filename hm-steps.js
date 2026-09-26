@@ -105,3 +105,30 @@
     ['scroll', 'touchstart', 'mousemove', 'keydown', 'wheel'].forEach(function (ev) { window.addEventListener(ev, active, { passive: true }); });
     active();
 })();
+
+/* Hero: ο τίτλος «Εγκρίσεις Τύπου | Ταξινόμηση Οχημάτων | Τεχνικές Μελέτες» σε μία γραμμή,
+   με μέγεθος γραμμάτων τέτοιο ώστε να πιάνει ακριβώς το πλάτος των κουμπιών από κάτω. */
+(function () {
+    var h = document.querySelector('.hero-headline'), ref = document.querySelector('.hero-actions');
+    if (!h || !ref || !document.createRange) return;
+    var busy = false;
+    function fit() {
+        if (busy) return; busy = true;
+        var target = ref.getBoundingClientRect().width;
+        if (target > 0) {
+            h.style.setProperty('font-size', '20px', 'important');
+            var r = document.createRange(); r.selectNodeContents(h);
+            var w = r.getBoundingClientRect().width;
+            if (w > 0) {
+                var fs = Math.max(11, Math.min(34, 20 * target / w));
+                h.style.setProperty('font-size', fs.toFixed(2) + 'px', 'important');
+            }
+        }
+        busy = false;
+    }
+    fit();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    window.addEventListener('load', fit);
+    var t; window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(fit, 80); });
+    if ('MutationObserver' in window) new MutationObserver(function () { if (!busy) fit(); }).observe(h, { childList: true, characterData: true, subtree: true });
+})();
