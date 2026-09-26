@@ -98,8 +98,23 @@
         translations: t,
     };
 
+    /* Αρχική: η αλλαγή γλώσσας πηγαίνει στην αντίστοιχη σελίδα (/ ↔ /en/), ώστε
+       όλα τα κινούμενα σχέδια και οι υπολογιστές να φορτώσουν στη σωστή γλώσσα. */
+    function switchLang(lang) {
+        var native = (window.SITE_CONFIG && window.SITE_CONFIG.meta && window.SITE_CONFIG.meta.lang) || 'el';
+        var p = location.pathname;
+        var isHome = /^\/(index\.html)?$/.test(p) || /^\/en\/(index\.html)?$/.test(p);
+        if (isHome && lang !== native) {
+            try { localStorage.setItem('lang', lang); } catch (e) { /* ιδιωτική περιήγηση */ }
+            location.href = (lang === 'en' ? '/en/' : '/') + location.hash;
+            return;
+        }
+        applyLang(lang);
+    }
+    window.I18n.setLang = switchLang;
+
     /* Global shorthand for onclick="setLang('en')" buttons */
-    window.setLang = applyLang;
+    window.setLang = switchLang;
 
     /* ─── INIT ───────────────────────────────────────────────────────────── */
     /* Apply on DOM ready — handles page reload with saved language preference */
