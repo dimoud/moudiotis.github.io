@@ -183,7 +183,7 @@
     T['tools.tab2']    = { el: 'Έλεγχος Κ.Ο.Κ.',     en: 'Road check' };
     T['tools.tab3']    = { el: 'Υπολογιστής έλξης',  en: 'Towing calculator' };
     T['about.pname']  = { el: 'Δημήτριος Μουδιώτης', en: 'Dimitrios Moudiotis' };
-    T['about.ptitle'] = { el: 'Μηχανολόγος Μηχανικός ΑΠΘ, MSc', en: 'Mechanical Engineer AUTH, MSc' };
+    T['about.ptitle'] = { el: 'Μηχανολόγος Μηχανικός ΑΠΘ, 3× MSc', en: 'Mechanical Engineer AUTH, 3× MSc' };
     T['about.parea']  = { el: 'Αθήνα · Θεσσαλονίκη', en: 'Athens · Thessaloniki' };
     T['hero.p1'] = { el: 'Εγκρίσεις Τύπου',          en: 'Type Approvals' };
     T['hero.p2'] = { el: 'Τεχνικές Μελέτες',         en: 'Technical Studies' };
@@ -414,8 +414,8 @@
         en: 'Every trailer is required by Road Code to have a <strong>registration licence</strong> and plates. <strong>O1</strong>: up to 750 kg (cargo trailer, boats, camping, motorcycle) — <strong>O2</strong>: up to 3,500 kg (caravan, car, heavy industrial). We handle everything: <strong>trailer type approval</strong>, technical study, submission to YMED/KTEO, licence issuance.',
     };
     T['svc.expand.0.meta'] = {
-        el: 'Αθήνα και Θεσσαλονίκη &nbsp;·&nbsp; ΑΠΘ, MSc &nbsp;·&nbsp; Κατηγορίες Ο1 και Ο2',
-        en: 'Athens and Thessaloniki &nbsp;·&nbsp; AUTH, MSc &nbsp;·&nbsp; Categories O1 and O2',
+        el: 'Αθήνα και Θεσσαλονίκη &nbsp;·&nbsp; ΑΠΘ, 3× MSc &nbsp;·&nbsp; Κατηγορίες Ο1 και Ο2',
+        en: 'Athens and Thessaloniki &nbsp;·&nbsp; AUTH, 3× MSc &nbsp;·&nbsp; Categories O1 and O2',
     };
     T['svc.expand.1.p1'] = {
         el: 'Τα οχήματα ειδικής χρήσης — γερανοφόρα, πλατφόρμες, ψεκαστικά — χρειάζονται ειδική <strong>ταξινόμηση</strong> και <strong>έγκριση τύπου οχήματος</strong>. Αναλαμβάνουμε επίσης <strong>έγκριση τύπου ρυμουλκούμενου</strong> για τρέιλερ εκτός σειράς παραγωγής. Εκπονούμε τεχνικές μελέτες (στατική ανάλυση, CE, EN 1570) και αναλαμβάνουμε τη διαδικασία από την αρχή έως το τέλος.',
