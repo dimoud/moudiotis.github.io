@@ -5628,3 +5628,9 @@ nav .lang-toggle .lang-sep { height: 12px !important; }
 nav .lang-toggle { padding: 2px 4px !important; }
 nav .lang-toggle .lang-btn { height: 32px !important; min-height: 0 !important; padding: 0 6px !important; gap: 5px !important; line-height: 1 !important; box-sizing: border-box; }
 nav .lang-toggle .lflag { height: 11px !important; object-fit: cover; }
+
+/* Υποσέλιδο: μόνο το μπλοκ στοιχείων του γραφείου, σε όλο το πλάτος (οι στήλες συνδέσμων αφαιρέθηκαν ως διπλότυπα) */
+.footer-top--solo { grid-template-columns: 1fr !important; }
+.footer-top--solo .footer-brand { width: 100%; max-width: none !important; }
+.footer-top--solo .footer-brand-text { flex: 1 1 auto; min-width: 0; max-width: none !important; }
+.footer-top--solo .fdesc { max-width: none !important; }

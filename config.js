@@ -9,8 +9,8 @@ window.SITE_CONFIG = {
     meta: {
         titleEl:       'Άδεια Τρέιλερ και Έγκριση Τύπου Οχήματος | Μουδιώτης, Αθήνα',
         titleEn:       'Trailer Licence, Vehicle Type Approval | Moudiotis, Athens',
-        descriptionEl: 'Δελτίο κοινοποίησης, καταχώρηση ΤΑΟ και εγκρίσεις τύπου πανελλαδικά, εξ αποστάσεως. Άδεια τρέιλερ Ο1/Ο2 σε Αθήνα και Θεσσαλονίκη.',
-        descriptionEn: 'Type approval notification, TAO registration and vehicle type approval across Greece, handled remotely. O1/O2 trailer licences in Athens and Thessaloniki.',
+        descriptionEl: 'Δελτίο κοινοποίησης, καταχώρηση ΤΑΟ και εγκρίσεις τύπου πανελλαδικά. Άδεια τρέιλερ Ο1/Ο2 σε Αθήνα και Θεσσαλονίκη.',
+        descriptionEn: 'Type approval notification, TAO registration and vehicle type approval across Greece. O1/O2 trailer licences in Athens and Thessaloniki.',
         lang:          'el',
     },
 
@@ -131,8 +131,8 @@ window.SITE_CONFIG = {
             urlEn:       '/en/deltio-koinopoiisis-tao/',
             titleEl:     'Δελτίο Κοινοποίησης και Καταχώρηση ΤΑΟ',
             titleEn:     'Notification Certificate and TAO Registration',
-            textEl:      '<strong class="kw">Δελτίο Κοινοποίησης</strong> έγκρισης τύπου και <strong class="kw">καταχώρηση στο ΤΑΟ</strong> για εισαγωγείς, αντιπροσωπείες και κατασκευαστές. <strong class="kw">Εξ αποστάσεως</strong>, σε όλη την Ελλάδα και για το εξωτερικό.',
-            textEn:      '<strong class="kw">Type approval notification</strong> and <strong class="kw">TAO registration</strong> for importers, dealers and manufacturers. <strong class="kw">Handled remotely</strong>, across Greece and for clients abroad.',
+            textEl:      '<strong class="kw">Δελτίο Κοινοποίησης</strong> έγκρισης τύπου και <strong class="kw">καταχώρηση στο ΤΑΟ</strong> για εισαγωγείς, αντιπροσωπείες και κατασκευαστές, σε όλη την Ελλάδα και για το εξωτερικό.',
+            textEn:      '<strong class="kw">Type approval notification</strong> and <strong class="kw">TAO registration</strong> for importers, dealers and manufacturers, across Greece and for clients abroad.',
             seoKeywords: 'δελτίο κοινοποίησης, καταχώρηση ΤΑΟ, Τεχνικό Αρχείο Οχημάτων, ταξινόμηση οχήματος, εισαγωγή οχημάτων, type approval notification Greece, TAO registration',
         },
         {
@@ -236,8 +236,8 @@ window.SITE_CONFIG = {
             urlEn: '/en/deltio-koinopoiisis-tao/',
             titleEl:     'Δελτίο Κοινοποίησης, Καταχώρηση ΤΑΟ και Εγκρίσεις Τύπου',
             titleEn:     'Type Approval Notification, TAO Registration and Type Approvals',
-            textEl:      '<strong class="kw">Δελτίο Κοινοποίησης</strong> έγκρισης τύπου και <strong class="kw">καταχώρηση στο ΤΑΟ</strong> για εισαγωγείς, αντιπροσωπείες και κατασκευαστές — <strong class="kw">εξ αποστάσεως</strong>, σε όλη την Ελλάδα και για το εξωτερικό. Εθνική και ευρωπαϊκή <strong class="kw">έγκριση τύπου</strong>, <strong class="kw">μεμονωμένη έγκριση</strong>, κατηγορία L. Φάκελος που δεν συγχωρεί λάθη — τον αναλαμβάνουμε ολόκληρο.',
-            textEn:      '<strong class="kw">Type approval notification</strong> and <strong class="kw">TAO registration</strong> for importers, dealers and manufacturers — <strong class="kw">handled remotely</strong>, across Greece and for clients abroad. National and European <strong class="kw">type approval</strong>, <strong class="kw">individual approval</strong>, category L. A dossier that forgives no mistakes — we take it on in full.',
+            textEl:      '<strong class="kw">Δελτίο Κοινοποίησης</strong> έγκρισης τύπου και <strong class="kw">καταχώρηση στο ΤΑΟ</strong> για εισαγωγείς, αντιπροσωπείες και κατασκευαστές, σε όλη την Ελλάδα και για το εξωτερικό. Εθνική και ευρωπαϊκή <strong class="kw">έγκριση τύπου</strong>, <strong class="kw">μεμονωμένη έγκριση</strong>, κατηγορία L. Φάκελος που δεν συγχωρεί λάθη — τον αναλαμβάνουμε ολόκληρο.',
+            textEn:      '<strong class="kw">Type approval notification</strong> and <strong class="kw">TAO registration</strong> for importers, dealers and manufacturers, across Greece and for clients abroad. National and European <strong class="kw">type approval</strong>, <strong class="kw">individual approval</strong>, category L. A dossier that forgives no mistakes — we take it on in full.',
             seoKeywords: 'έγκριση τύπου οχήματος, έγκριση τύπου ρυμουλκούμενου, εθνική έγκριση τύπου, ευρωπαϊκή έγκριση τύπου, μεμονωμένη έγκριση οχήματος, καταχώρηση ΤΑΟ, Τεχνικό Αρχείο Οχημάτων, δελτίο κοινοποίησης, ταξινόμηση οχήματος, ταξινομιση αδεας οχηματος, οχήματα ειδικής χρήσης ειδικού σκοπού, εγκριση τυπου, μελετη οχηματος, vehicle type approval Greece, trailer type approval, individual vehicle approval Greece, special purpose vehicle registration Greece',
             items: [
                 {

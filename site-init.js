@@ -74,7 +74,7 @@
     // ── ΑΡΧΙΚΗ: ΤΕΣΣΕΡΙΣ ΣΤΙΓΜΕΣ ΥΠΗΡΕΣΙΩΝ ──
     T["hm.ta.eyebrow"] = { el: "Εγκρίσεις τύπου", en: "Type approvals" };
     T["hm.ta.h"] = { el: "Από τον φάκελο <em>ως την ταξινόμηση</em>", en: "From the dossier <em>to registration</em>" };
-    T["hm.ta.p"] = { el: "Για εισαγωγείς, κατασκευαστές και ιδιώτες. Αναλαμβάνουμε ολόκληρο τον φάκελο έγκρισης, εξ αποστάσεως, σε όλη την Ελλάδα.", en: "For importers, manufacturers and private owners. We take on the whole approval dossier, remotely, across Greece." };
+    T["hm.ta.p"] = { el: "Για εισαγωγείς, κατασκευαστές και ιδιώτες. Αναλαμβάνουμε ολόκληρο τον φάκελο έγκρισης, σε όλη την Ελλάδα.", en: "For importers, manufacturers and private owners. We take on the whole approval dossier, across Greece." };
     T["hm.ta.cta"] = { el: "Ζητήστε προσφορά", en: "Request a quote" };
     T["hm.ta.1.t"] = { el: "Δελτίο Κοινοποίησης και ΤΑΟ", en: "Notification and TAO" };
     T["hm.ta.1.d"] = { el: "Για εισαγωγείς και αντιπροσωπείες", en: "For importers and dealers" };
