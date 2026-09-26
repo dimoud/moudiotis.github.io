@@ -5790,7 +5790,8 @@ nav .lang-toggle .lflag { height: 11px !important; object-fit: cover; }
 .about-path.visible .ap-list li:nth-child(2) { transition-delay: .7s; }
 .about-path.visible .ap-list li:nth-child(3) { transition-delay: 1.05s; }
 .about-path.visible .ap-list li:nth-child(4) { transition-delay: 1.4s; }
-.about-path.visible .ap-list li:nth-child(5) { transition-delay: 1.75s; }
+.about-path.visible .ap-list li.nth-child(5) { transition-delay: 1.75s; }
+.about-path.visible .ap-list li:nth-child(6) { transition-delay: 2.1s; }
 .ap-dot { position: absolute; left: -21px; top: 5px; width: 9px; height: 9px; border-radius: 50%; background: var(--cream2, #eceae2); border: 1.5px solid var(--warm); }
 .ap-list li:last-child .ap-dot { background: var(--warm); box-shadow: 0 0 0 4px rgba(201,153,134,.2); }
 .ap-list b { display: block; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 17px; line-height: 1.2; color: var(--ink); }
@@ -5799,3 +5800,20 @@ nav .lang-toggle .lflag { height: 11px !important; object-fit: cover; }
 @media (prefers-reduced-motion: reduce) { .ap-list::before, .ap-list li { transform: none !important; opacity: 1 !important; transition: none !important; } }
 .about-portrait-col { display: flex !important; flex-direction: column !important; align-items: center; }
 .about-portrait-col .about-path { width: 100%; max-width: 340px; align-self: center; }
+/* Φωτογραφία 25% μεγαλύτερη */
+@media (min-width: 769px) {
+    .about-grid--desktop-two { grid-template-columns: minmax(0, 1fr) 425px !important; }
+    .about-portrait { max-width: 450px !important; }
+    .about-portrait-col .about-path { max-width: 425px; }
+}
+@media (max-width: 768px) {
+    .about-portrait { grid-template-columns: 120px 1fr !important; }
+    .about-portrait img { width: 120px !important; height: 120px !important; }
+}
+/* Οθόνη μηχανικού: ίδιο πλάτος με το πλέγμα υπηρεσιών από πάνω */
+.es-wrap { max-width: 1140px !important; padding-left: 0 !important; padding-right: 0 !important; }
+/* Υπολογιστής έλξης: μικρότερος τίτλος χωρίς μονή λέξη, φαρδύτερος οδηγός */
+@media (min-width: 769px) {
+    .hm-q-grid { grid-template-columns: 4fr 7fr !important; gap: 56px !important; }
+    .hm-q .hm-q-h { font-size: clamp(30px, 2.9vw, 44px) !important; max-width: 17ch !important; text-wrap: balance; }
+}

@@ -113,7 +113,7 @@
     T["hm.rc.k2"] = { el: "Τρέιλερ λέμβου", en: "Boat trailer" };
     T["hm.rc.cta"] = { el: "Κάντε τον πλήρη έλεγχο", en: "Run the full check" };
     T["hm.q.eyebrow"] = { el: "Υπολογιστής έλξης", en: "Towing calculator" };
-    T["hm.q.h"] = { el: "Επιτρέπεται να τραβήξω <em>αυτό</em> το ρυμουλκούμενο;", en: "May I tow <em>this</em> trailer?" };
+    T["hm.q.h"] = { el: "Επιτρέπεται να τραβήξω <em>αυτό</em> το&nbsp;ρυμουλκούμενο;", en: "May I tow <em>this</em> trailer?" };
     T["hm.q.p"] = { el: "Βάλτε τους κωδικούς από τις δύο άδειες κυκλοφορίας. Η απάντηση βγαίνει αμέσως.", en: "Enter the codes from the two registration certificates. You get the answer straight away." };
     T["hm.q.car"] = { el: "Έλκον όχημα", en: "Towing vehicle" };
     T["hm.q.trl"] = { el: "Ρυμουλκούμενο", en: "Trailer" };
@@ -133,8 +133,10 @@
     T['path.3.d'] = { el: "IFP School · Παρίσι", en: "IFP School · Paris" };
     T['path.4.t'] = { el: "MSc", en: "MSc" };
     T['path.4.d'] = { el: "Ελλάδα", en: "Greece" };
-    T['path.5.t'] = { el: "Τεχνικό Γραφείο Μουδιώτης", en: "Moudiotis Engineering Office" };
-    T['path.5.d'] = { el: "Αθήνα · Θεσσαλονίκη", en: "Athens · Thessaloniki" };
+    T['path.5.t'] = { el: 'MBA', en: 'MBA' };
+    T['path.5.d'] = { el: 'Washington University of Science and Technology · ΗΠΑ', en: 'Washington University of Science and Technology · USA' };
+    T['path.6.t'] = { el: "Τεχνικό Γραφείο Μουδιώτης", en: "Moudiotis Engineering Office" };
+    T['path.6.d'] = { el: "Αθήνα · Θεσσαλονίκη", en: "Athens · Thessaloniki" };
     // Αναδυόμενο μενού «Υπηρεσίες»
     T['nav.dd.g1']  = { el: "Εγκρίσεις και Ταξινόμηση", en: "Approvals and Registration" };
     T['nav.dd.g2']  = { el: "Μετατροπές και Ειδικά Οχήματα", en: "Conversions and Special Vehicles" };
