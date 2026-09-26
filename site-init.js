@@ -563,8 +563,7 @@
     if (servicesMeas) {
         var sCount = (C.services || []).length;
         servicesMeas.innerHTML =
-            sCount + ' <span data-i18n="services.meas">' + T['services.meas'].el + '</span>' +
-            ' \u00B7 <span data-i18n="services.meas.area">' + T['services.meas.area'].el + '</span>';
+            sCount + ' <span data-i18n="services.meas">' + T['services.meas'].el + '</span>';
     }
 
     var projectsMeas = document.getElementById('projectsMeasLabel');
