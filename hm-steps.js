@@ -112,8 +112,24 @@
     var h = document.querySelector('.hero-headline'), ref = document.querySelector('.hero-actions');
     if (!h || !ref || !document.createRange) return;
     var busy = false;
+    var nameLine = document.querySelector('.hero-name .line2'), cta = document.querySelector('.hero-cta-block');
     function fit() {
         if (busy) return; busy = true;
+        /* Υπολογιστής: όνομα, τίτλος, κουμπιά και πλαίσια στο ίδιο πλάτος — το πλάτος της στήλης (ίδια αριστερή και δεξιά ευθεία) */
+        var inner = h.parentNode;
+        if (cta && nameLine) {
+            nameLine.style.removeProperty('font-size');
+            [cta, ref, document.querySelector('.hero-pillars')].forEach(function (el) { if (el) { el.style.removeProperty('width'); el.style.removeProperty('max-width'); } });
+            if (window.innerWidth > 768) {
+                var cs = getComputedStyle(inner), col = inner.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+                [cta, ref, document.querySelector('.hero-pillars')].forEach(function (el) { if (el) { el.style.setProperty('width', col + 'px', 'important'); el.style.setProperty('max-width', 'none', 'important'); } });
+                for (var it = 0; it < 2; it++) {
+                    var nr = document.createRange(); nr.selectNodeContents(nameLine);
+                    var nw = nr.getBoundingClientRect().width, nf = parseFloat(getComputedStyle(nameLine).fontSize);
+                    if (nw > 0) nameLine.style.setProperty('font-size', (nf * col / nw).toFixed(2) + 'px', 'important');
+                }
+            }
+        }
         var target = ref.getBoundingClientRect().width;
         if (target > 0) {
             h.style.setProperty('font-size', '20px', 'important');
