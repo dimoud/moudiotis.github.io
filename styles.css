@@ -5866,3 +5866,15 @@ nav .lang-toggle .lflag { height: 11px !important; object-fit: cover; }
     .hm-rc .hm-pin-n { flex: 0 0 22px; height: 22px; font-size: 11px; }
     .hm-rc.is-cycling .hm-pinlist li.is-active { transform: scale(1.03); }
 }
+
+/* ══ Έλεγχος Κ.Ο.Κ. (αρχική) — κινητό: όλα στο κέντρο ══ */
+@media (max-width: 768px) {
+    .hm-rc-txt { text-align: center; }
+    .hm-rc-txt .eyebrow { justify-content: center; }
+    .hm-rc-txt .eyebrow::after { content: ''; display: block; width: 32px; height: 2px; background: var(--gold-metal-h, var(--warm)); transform: scaleX(0); transform-origin: right; transition: transform 0.55s var(--ease) 0.2s; }
+    [data-reveal].visible .eyebrow::after { transform: scaleX(1); }
+    .hm-rc-grid > * { min-width: 0; }
+    .hm-rc .hm-pinlist { width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; text-align: left; }
+    .hm-rc-txt .hm-link { justify-content: center; }
+    .hm-rc .hm-pinlist li:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; }
+}
