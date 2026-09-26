@@ -5797,3 +5797,5 @@ nav .lang-toggle .lflag { height: 11px !important; object-fit: cover; }
 .ap-list li > span:last-child { display: block; font-family: 'Source Sans 3', sans-serif; font-size: 12.5px; color: var(--stone); letter-spacing: .2px; }
 @media (max-width: 768px) { .about-path { max-width: none; margin-top: 22px; } }
 @media (prefers-reduced-motion: reduce) { .ap-list::before, .ap-list li { transform: none !important; opacity: 1 !important; transition: none !important; } }
+.about-portrait-col { display: flex !important; flex-direction: column !important; align-items: center; }
+.about-portrait-col .about-path { width: 100%; max-width: 340px; align-self: center; }
