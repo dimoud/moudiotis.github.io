@@ -332,6 +332,7 @@ document.querySelectorAll('.nav-links a').forEach(a => {
 });
 // Close menu on scroll
 window.addEventListener('scroll', () => {
+  if (document.activeElement && document.activeElement.closest && document.activeElement.closest('.nav-search')) return;
   document.getElementById('navLinks').classList.remove('open');
   document.getElementById('hamburger').classList.remove('open');
 }, { passive: true });
