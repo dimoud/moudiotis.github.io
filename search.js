@@ -65,16 +65,16 @@
         box.addEventListener('click', function (e) { e.stopPropagation(); });
     });
 
-    /* Κινητό: κουμπί «Αναζήτηση» στην κάτω μπάρα — ανοίγει/κλείνει το πάνελ αναζήτησης */
-    var mb = document.querySelector('.mcb-search'), panel = document.getElementById('mcbSearch');
-    if (mb && panel) {
+    /* Εικονίδιο μεγεθυντικού δίπλα στη γλώσσα: ανοίγει/κλείνει το πεδίο αναζήτησης */
+    var tg = document.querySelector('.search-toggle'), panel = document.getElementById('siteSearch');
+    if (tg && panel) {
         var pin = panel.querySelector('input');
         function setP(on) {
-            panel.hidden = !on; mb.setAttribute('aria-expanded', on ? 'true' : 'false'); mb.classList.toggle('is-on', on);
+            panel.hidden = !on; tg.setAttribute('aria-expanded', on ? 'true' : 'false'); tg.classList.toggle('is-on', on);
             if (on) { load(); setTimeout(function () { pin.focus(); }, 30); } else { pin.blur(); }
         }
-        mb.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); setP(panel.hidden); });
-        document.addEventListener('click', function (e) { if (!panel.hidden && !panel.contains(e.target) && e.target !== mb) setP(false); });
-        document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) setP(false); });
+        tg.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); setP(panel.hidden); });
+        document.addEventListener('click', function (e) { if (!panel.hidden && !panel.contains(e.target) && !tg.contains(e.target)) setP(false); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) { setP(false); tg.focus(); } });
     }
 })();
