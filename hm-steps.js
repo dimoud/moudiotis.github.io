@@ -148,3 +148,20 @@
     var t; window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(fit, 80); });
     if ('MutationObserver' in window) new MutationObserver(function () { if (!busy) fit(); }).observe(h, { childList: true, characterData: true, subtree: true });
 })();
+
+/* Άδεια τρέιλερ (αρχική, υπολογιστής): βήματα και κουμπί «Ο πλήρης οδηγός» μέχρι τη δεξιά άκρη του τίτλου. */
+(function () {
+    var sec = document.querySelector('.hm-tr'), h = document.getElementById('hmTrH');
+    if (!sec || !h || !document.createRange) return;
+    function fit() {
+        if (window.innerWidth <= 768) { sec.style.removeProperty('--hm-tr-w'); return; }
+        var r = document.createRange(); r.selectNodeContents(h);
+        var w = r.getBoundingClientRect().width;
+        if (w > 0) sec.style.setProperty('--hm-tr-w', Math.ceil(w) + 'px');
+    }
+    fit();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    window.addEventListener('load', fit);
+    var t; window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(fit, 80); });
+    if ('MutationObserver' in window) new MutationObserver(fit).observe(h, { childList: true, characterData: true, subtree: true });
+})();

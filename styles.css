@@ -5888,3 +5888,8 @@ nav .lang-toggle .lflag { height: 11px !important; object-fit: cover; }
     .hero-pillars > * { min-width: 0; }
     .hero-pillar span { white-space: normal; text-align: center; line-height: 1.25; }
 }
+
+/* ══ Άδεια τρέιλερ (αρχική): βήματα και κουμπί στην ευθεία του τίτλου — πλάτος από hm-steps.js ══ */
+@media (min-width: 769px) {
+    .hm-tr .hm-rail, .hm-tr .hm-tr-foot { max-width: var(--hm-tr-w, none); }
+}
