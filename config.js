@@ -102,8 +102,8 @@ window.SITE_CONFIG = {
                 icon:    'fa-bolt-lightning',
                 labelEl: 'Άμεση Εξυπηρέτηση',
                 labelEn: 'Fast Service',
-                textEl:  'Γρήγορη ανταπόκριση και <strong class="kw">έκδοση αδειών</strong> χωρίς καθυστερήσεις',
-                textEn:  'Rapid response and <strong class="kw">permit issuance</strong> without delays',
+                textEl:  'Γρήγορη ανταπόκριση και <strong class="kw">ενημέρωση</strong> σε κάθε βήμα',
+                textEn:  'Rapid response and <strong class="kw">updates</strong> at every step',
             },
             {
                 icon:    'fa-crosshairs',
