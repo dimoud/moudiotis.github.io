@@ -526,3 +526,9 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
 @media (min-width: 769px) { .svc-codes { grid-template-columns: 1fr 1fr; } }
 .svc-codes li { display: flex; gap: 12px; align-items: baseline; margin: 0 !important; padding: 6px 0; border-bottom: 1px solid rgba(201,153,134,.25); }
 .svc-codes b { flex: 0 0 34px; font-weight: 700; color: var(--warm); letter-spacing: .04em; }
+
+/* Ρόλος του μηχανικού — σε κάθε σελίδα υπηρεσίας */
+.svc-role { margin: 22px 0 16px; padding: 16px 20px 6px; border-left: 3px solid var(--warm); background: rgba(201,153,134,.08); border-radius: 0 6px 6px 0; }
+.svc-prose .svc-role h2 { margin-top: 0 !important; }
+.svc-role h2 i { color: var(--warm); font-size: .8em; margin-right: 6px; }
+@media (max-width: 768px) { .svc-role { padding: 14px 14px 4px; } }

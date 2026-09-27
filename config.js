@@ -99,18 +99,18 @@ window.SITE_CONFIG = {
         leadEn:    'With {years}+ years of experience, the <strong class="kw">technical office</strong> of <strong class="kw">mechanical engineer</strong> Dimitrios Moudiotis handles <strong class="kw">vehicle type approval</strong> and <strong class="kw">trailer type approval</strong>, <strong class="kw">trailer and cargo-box licences</strong> O1/O2, <strong class="kw">special use / special purpose vehicle</strong> studies, conversions, caravans and crane installations.',
         features: [
             {
+                icon:    'fa-user-gear',
+                labelEl: 'Διπλωματούχος Μηχανολόγος Μηχανικός',
+                labelEn: 'Qualified Mechanical Engineer',
+                textEl:  'Κάθε φάκελος μελετάται προσωπικά από <strong class="kw">διπλωματούχο μηχανολόγο μηχανικό</strong>, με πλήρη τεκμηρίωση και την τεχνική του ευθύνη απέναντι στην Υπηρεσία',
+                textEn:  'Every dossier is studied personally by a <strong class="kw">qualified mechanical engineer</strong>, fully documented and under his technical responsibility before the authority',
+            },
+            {
                 icon:    'fa-bolt-lightning',
                 labelEl: 'Άμεση Εξυπηρέτηση',
                 labelEn: 'Fast Service',
                 textEl:  'Γρήγορη ανταπόκριση και <strong class="kw">ενημέρωση</strong> σε κάθε βήμα',
                 textEn:  'Rapid response and <strong class="kw">updates</strong> at every step',
-            },
-            {
-                icon:    'fa-crosshairs',
-                labelEl: 'Ακρίβεια',
-                labelEn: 'Precision',
-                textEl:  'Κάθε μελέτη εκπονείται με <strong class="kw">μεθοδολογική ακρίβεια</strong> και πλήρη τεκμηρίωση',
-                textEn:  'Every study prepared with <strong class="kw">methodological precision</strong> and full documentation',
             },
             {
                 icon:    'fa-list-check',
