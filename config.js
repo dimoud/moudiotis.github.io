@@ -533,6 +533,11 @@ window.SITE_CONFIG = {
     // ── GOOGLE REVIEWS ────────────────────────────────────────────────────
     reviews: [
         {
+            name: 'Δημήτρης Μωραΐτης',
+            textEl: 'Η ευγένεια το ήθος και ο επαγγελματισμός χαρακτηρίζουν τον κ. Μουδιώτη. Είναι ένας αξιόπιστος μηχανολόγος μηχανικός που μπορείς να εμπιστευτείς με κλειστά τα μάτια. Τον συστήνω ανεπιφύλακτα σε ότι αφορά άδεια τρέιλερ, μπαγκαζιέρας. Ακριβής μεθοδικός και από τιμές αρκετά λογικές σε σχέση με άλλους.',
+            textEn: 'Courtesy, integrity and professionalism are what define Mr Moudiotis. He is a reliable mechanical engineer you can trust with your eyes closed. I recommend him without reservation for trailer and luggage-trailer licences. Precise and methodical, and his prices are quite reasonable compared with others.',
+        },
+        {
             name: 'Miltos Athanasiou',
             textEl: 'Εξαιρετικός επαγγελματίας, μου εκανε δύο άδειες τρέιλερ πολύ άμεσα στην Σαλαμινα, γρήγορη εξυπηρέτηση, άμεση ανταπόκριση και πολύ λογικές τιμές, κανένα παράπονο, ανέλαβε και διεκπαιρεωσε την διαδικασία από την αρχή μέχρι το τέλος.',
             textEn: 'An excellent professional. He issued two trailer licences for me very quickly in Salamina: fast service, immediate response and very reasonable prices. No complaints at all. He took on the whole process and handled it from start to finish.',
