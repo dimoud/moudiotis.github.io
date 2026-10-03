@@ -78,8 +78,8 @@
     T["hm.ta.cta"] = { el: "Ζητήστε προσφορά", en: "Request a quote" };
     T["hm.ta.1.t"] = { el: "Δελτίο Κοινοποίησης και ΤΑΟ", en: "Notification and TAO" };
     T["hm.ta.1.d"] = { el: "Για εισαγωγείς και αντιπροσωπείες", en: "For importers and dealers" };
-    T["hm.ta.2.t"] = { el: "Εθνική και Ευρωπαϊκή Έγκριση", en: "National and EU Approval" };
-    T["hm.ta.2.d"] = { el: "Οχήματα, αμαξώματα, ρυμουλκούμενα", en: "Vehicles, bodies, trailers" };
+    T["hm.ta.2.t"] = { el: "Έγκριση Τύπου Οχήματος", en: "Vehicle Type Approval" };
+    T["hm.ta.2.d"] = { el: "Εθνική και ευρωπαϊκή · οχήματα, αμαξώματα, ρυμουλκούμενα", en: "National and EU · vehicles, bodies, trailers" };
     T["hm.ta.3.t"] = { el: "Μεμονωμένη Έγκριση", en: "Individual Approval" };
     T["hm.ta.3.d"] = { el: "Εισαγόμενα και τροχόσπιτα", en: "Imports and caravans" };
     T["hm.ta.4.t"] = { el: "Κατηγορία L", en: "Category L" };

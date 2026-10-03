@@ -1,8 +1,45 @@
 # moudiotis.gr — Τεχνικό Γραφείο Μουδιώτης
-# Όλο το περιεχόμενο είναι δημόσιο και προς ευρετηρίαση.
+# Όλο το περιεχόμενο είναι δημόσιο και προς ευρετηρίαση,
+# και από μηχανές αναζήτησης και από βοηθούς τεχνητής νοημοσύνης.
 
 User-agent: *
 Allow: /
 Disallow: /_to_delete/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
 
 Sitemap: https://moudiotis.gr/sitemap.xml
