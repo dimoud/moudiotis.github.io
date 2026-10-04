@@ -157,6 +157,7 @@
     T['nav.dd.oximata-eidikou-skopou'] = { el: "Οχήματα Ειδικού Σκοπού", en: "Special Purpose Vehicles" };
     T['nav.dd.metaskeves-yperkataskeves'] = { el: "Μετασκευές, Υπερκατασκευές", en: "Conversions, Superstructures" };
     T['nav.dd.topothetisi-geranou'] = { el: "Τοποθέτηση Γερανού", en: "Crane Installation" };
+    T['nav.dd.texniki-symvouleftiki'] = { el: "Βεβαιώσεις Μηχανικού", en: "Engineer Certificates" };
 
 
 
@@ -928,7 +929,7 @@
                     '<div class="review-head">' +
                     '<div class="review-avatar" aria-hidden="true">' + initial + '</div>' +
                     '<div class="review-head-text">' +
-                    '<h4>' + r.name + '</h4>' +
+                    '<h3>' + r.name + '</h3>' +
                     '<span class="review-source" data-i18n="reviews.source"></span>' +
                     '</div>' +
                     googleIconHtml +

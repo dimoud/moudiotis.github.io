@@ -1152,7 +1152,7 @@ section { padding: 112px 7%; }
     font-size: 18px; font-weight: 600;
 }
 .review-head-text { min-width: 0; flex: 1; }
-.review-head-text h4 {
+.review-head-text h3, .review-head-text h4 {
     font-size: 15px; font-weight: 600;
     color: var(--ink);
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
@@ -5948,3 +5948,6 @@ nav.scrolled .nav-search-in { color: inherit; }
     .site-search-panel .nav-search-in, .site-search-panel .nav-search-in:focus { font-size: 16px; }
 }
 
+
+/* Κινητό: το σχέδιο Κ.Ο.Κ. ξεπερνούσε 4px τη δεξιά άκρη (οριζόντια κύλιση) */
+@media (max-width: 768px) { .hm-rc-stage { overflow-x: clip; } }

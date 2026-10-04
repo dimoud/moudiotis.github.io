@@ -7,8 +7,8 @@ window.SITE_CONFIG = {
 
     // ── META ──────────────────────────────────────────────────────────────
     meta: {
-        titleEl:       'Τεχνικό Γραφείο Μουδιώτης, Αθήνα — Εγκρίσεις Τύπου & Άδεια Τρέιλερ',
-        titleEn:       'Moudiotis Technical Office, Athens Greece — Vehicle Type Approval & Trailers',
+        titleEl:       'Τεχνικό Γραφείο Μουδιώτης, Αθήνα — Εγκρίσεις Τύπου & Καταχώρηση ΤΑΟ',
+        titleEn:       'Moudiotis Technical Office, Athens — Vehicle Type Approval & TAO',
         descriptionEl: 'Τεχνικό γραφείο μηχανικού σε Αθήνα και Θεσσαλονίκη: εγκρίσεις τύπου οχημάτων, δελτίο κοινοποίησης και ΤΑΟ, οχήματα ειδικού σκοπού, άδεια τρέιλερ Ο1/Ο2.',
         descriptionEn: 'Vehicle engineering office in Athens and Thessaloniki, Greece: type approval, notification certificates and TAO registration, special purpose vehicles, O1/O2 trailer licences.',
         lang:          'el',
