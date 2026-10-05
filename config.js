@@ -54,7 +54,7 @@ window.SITE_CONFIG = {
         phoneEn:   '0030 210 756 1836',
         phoneTel:  'tel:+302107561836',
         fax:       '',
-        email:     'moudiotis.meng@gmail.com',
+        email:     'info@moudiotis.gr',
         address:   'Έδρα Αθήνα - Θεσσαλονίκη | Εξυπηρέτηση Πανελλαδικά και εντός Ε.Ε.',
         addressEn: 'Based in Athens - Thessaloniki | Serving all of Greece and the EU',
         facebook:  'https://www.facebook.com/61550061850076',
