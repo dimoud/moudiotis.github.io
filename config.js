@@ -533,6 +533,16 @@ window.SITE_CONFIG = {
     // ── GOOGLE REVIEWS ────────────────────────────────────────────────────
     reviews: [
         {
+            name: 'CvEng',
+            textEl: 'Εξαιρετικός ο Δημήτρης! Ανέλαβε την έγκριση και ταξινόμηση εισαγόμενου οχήματος ειδικού σκοπού σε μια αρκετά μπλεγμένη περίπτωση και έβγαλε άκρη με όλα. Ξέρει πραγματικά τη δουλειά του, ακόμα και σε λεπτομέρειες που δύσκολα βρίσκεις κάποιον να γνωρίζει. Και πολύ ευχάριστος στη συνεργασία! Τον συστήνω ανεπιφύλακτα!',
+            textEn: 'Dimitris is excellent! He took on the approval and registration of an imported special purpose vehicle in a rather complicated case and got it all sorted out. He really knows his job, even down to details you hardly find anyone else who knows. And very pleasant to work with! I recommend him without reservation!',
+        },
+        {
+            name: 'Konstantinos Moustidis',
+            textEl: 'Πολύ καλή εξυπηρέτηση, σας ευχαριστώ για την άμεση ανταπόκριση.',
+            textEn: 'Very good service, thank you for the immediate response.',
+        },
+        {
             name: 'Δημήτρης Μωραΐτης',
             textEl: 'Η ευγένεια το ήθος και ο επαγγελματισμός χαρακτηρίζουν τον κ. Μουδιώτη. Είναι ένας αξιόπιστος μηχανολόγος μηχανικός που μπορείς να εμπιστευτείς με κλειστά τα μάτια. Τον συστήνω ανεπιφύλακτα σε ότι αφορά άδεια τρέιλερ, μπαγκαζιέρας. Ακριβής μεθοδικός και από τιμές αρκετά λογικές σε σχέση με άλλους.',
             textEn: 'Courtesy, integrity and professionalism are what define Mr Moudiotis. He is a reliable mechanical engineer you can trust with your eyes closed. I recommend him without reservation for trailer and luggage-trailer licences. Precise and methodical, and his prices are quite reasonable compared with others.',
