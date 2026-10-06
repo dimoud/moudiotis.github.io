@@ -263,6 +263,7 @@
     T['partners.cat.body']   = { el: 'Αρχή · Τεχνική υπηρεσία', en: 'Authority · Technical service' };
     T['partners.prev']       = { el: 'Προηγούμενοι', en: 'Previous' };
     T['partners.next']       = { el: 'Επόμενοι', en: 'Next' };
+    T['partners.legal']      = { el: 'Τα λογότυπα και οι επωνυμίες ανήκουν στους αντίστοιχους δικαιούχους και εμφανίζονται, στην αρχική τους μορφή, αποκλειστικά για να δηλώσουν τη συνεργασία μας. Η εμφάνισή τους δεν υποδηλώνει εκπροσώπηση, αντιπροσωπεία ή άλλη εξουσιοδότηση πέρα από τη συγκεκριμένη συνεργασία, και αποσύρεται κατόπιν αιτήματος του δικαιούχου.', en: 'Logos and trade names belong to their respective owners and are shown, in their original form, solely to identify our cooperation. Their display does not imply representation, agency or any other authorisation beyond that cooperation, and is withdrawn at the owner’s request.' };
     T['partners.region']     = { el: 'Πελάτες και συνεργάτες', en: 'Clients and partners' };
     T['tool.trailerpage'] = { el: 'Δείτε τη σελίδα: Άδεια Τρέιλερ Ο1/Ο2', en: 'See the full page: Trailer Licence O1/O2' };
     T['ta.price.tag']        = { el: 'ΤΕΛΙΚΗ ΤΙΜΗ', en: 'FINAL PRICE' };
