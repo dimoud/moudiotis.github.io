@@ -6166,3 +6166,6 @@ nav.scrolled .nav-search-in { color: inherit; }
 /* Καρουζέλ χωρίς σβήσιμο στις άκρες — όλες οι λωρίδες (06/10/2026). */
 .news-band, .pc-viewport, .vg-pc .pc-viewport { -webkit-mask-image: none !important; mask-image: none !important; }
 .articles-band::before, .articles-band::after { display: none !important; }
+
+/* Ενότητα «Σχετικά» χωρίς κάρτα ιδρυτή (απενεργοποιημένη 06/10/2026): μία στήλη. */
+.about-grid--desktop-two.about-grid--solo { grid-template-columns: 1fr !important; }
