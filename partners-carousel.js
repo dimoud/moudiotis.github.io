@@ -1,79 +1,50 @@
 /**
- * partners-carousel.js — κυλιόμενη ζώνη «Πελάτες & Συνεργάτες»
+ * partners-carousel.js — συνεχής λωρίδα «Πελάτες & Συνεργάτες»
  *
- * Η ζώνη είναι απλή οριζόντια κύλιση με scroll-snap, οπότε δουλεύει και χωρίς
- * JavaScript (σύρσιμο με το δάχτυλο, τροχός, πληκτρολόγιο). Το σενάριο προσθέτει:
- *   - βέλη που μετακινούν κατά μία «σελίδα» και κρύβονται όταν δεν χρειάζονται·
- *   - αργή αυτόματη μετακίνηση κατά μία κάρτα, που σταματά με τον κέρσορα, την
- *     εστίαση, το άγγιγμα, όταν η ενότητα βγει από το κάδρο ή η καρτέλα πάει
- *     σε δεύτερο πλάνο· με prefers-reduced-motion δεν κινείται καθόλου.
+ * Ίδια συμπεριφορά με τη λωρίδα «Νέα του κλάδου» (news-carousel.js): οι κάρτες
+ * κυλούν συνεχώς από τα αριστερά προς τα δεξιά, η λωρίδα σταματά με τον κέρσορα
+ * ή την εστίαση, όταν βγει από το κάδρο και όταν η καρτέλα πάει σε δεύτερο
+ * πλάνο. Το HTML έχει τις κάρτες μία φορά (για μηχανές αναζήτησης)· εδώ
+ * διπλασιάζονται, με τα αντίγραφα κρυμμένα από αναγνώστες οθόνης και Tab.
+ * Με prefers-reduced-motion δεν κινείται και κυλά με το χέρι.
  */
 (function () {
   'use strict';
-  var DELAY = 3800;
+  var SEC_PER_CARD = 2.6;   // πιο γρήγορη από τα «Νέα» (εκεί ~6,5″ ανά κάρτα)
 
   function init(root) {
     var vp = root.querySelector('[data-pc-viewport]');
-    var prev = root.querySelector('[data-pc-prev]');
-    var next = root.querySelector('[data-pc-next]');
-    if (!vp) return;
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var paused = false, visible = true, timer = null;
+    var track = root.querySelector('.pc-track');
+    if (!vp || !track) return;
+    var items = Array.prototype.slice.call(track.children);
+    if (!items.length) return;
 
-    function step() {
-      var item = vp.querySelector('.pc-item');
-      if (!item) return vp.clientWidth;
-      var gap = parseFloat(getComputedStyle(vp.firstElementChild).columnGap) || 0;
-      return item.getBoundingClientRect().width + gap;
-    }
-    function maxScroll() { return vp.scrollWidth - vp.clientWidth; }
+    var reduced = window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) { root.classList.add('pc-manual'); return; }
 
-    function update() {
-      var max = maxScroll();
-      var overflow = max > 4;
-      root.classList.toggle('pc-static', !overflow);
-      if (prev) prev.disabled = vp.scrollLeft <= 4;
-      if (next) next.disabled = vp.scrollLeft >= max - 4;
-    }
-
-    function page(dir) {
-      var s = step();
-      var n = Math.max(1, Math.floor(vp.clientWidth / s));
-      vp.scrollBy({ left: dir * n * s, behavior: reduce ? 'auto' : 'smooth' });
-    }
-
-    function tick() {
-      if (paused || !visible || document.hidden) return;
-      if (vp.scrollLeft >= maxScroll() - 4) vp.scrollTo({ left: 0, behavior: 'smooth' });
-      else vp.scrollBy({ left: step(), behavior: 'smooth' });
-    }
-    function start() { if (!reduce && !timer) timer = setInterval(tick, DELAY); }
-
-    if (prev) prev.addEventListener('click', function () { page(-1); });
-    if (next) next.addEventListener('click', function () { page(1); });
-    vp.addEventListener('scroll', function () { window.requestAnimationFrame(update); }, { passive: true });
-    window.addEventListener('resize', update);
-
-    ['mouseenter', 'focusin', 'touchstart', 'pointerdown'].forEach(function (ev) {
-      root.addEventListener(ev, function () { paused = true; }, { passive: true });
+    items.forEach(function (li) {
+      var c = li.cloneNode(true);
+      c.setAttribute('aria-hidden', 'true');
+      Array.prototype.forEach.call(c.querySelectorAll('a'), function (a) { a.tabIndex = -1; });
+      Array.prototype.forEach.call(c.querySelectorAll('img'), function (im) { im.loading = 'eager'; });
+      track.appendChild(c);
     });
-    root.addEventListener('mouseleave', function () { paused = false; });
-    root.addEventListener('focusout', function (e) { if (!root.contains(e.relatedTarget)) paused = false; });
+    track.style.animationDuration = (items.length * SEC_PER_CARD).toFixed(1) + 's';
+    root.classList.add('pc-run');
 
-    vp.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowRight') { e.preventDefault(); page(1); }
-      else if (e.key === 'ArrowLeft') { e.preventDefault(); page(-1); }
-    });
-
+    var inView = true, hover = false;
+    function sync() {
+      track.style.animationPlayState = (inView && !hover && !document.hidden) ? 'running' : 'paused';
+    }
+    root.addEventListener('mouseenter', function () { hover = true; sync(); });
+    root.addEventListener('mouseleave', function () { hover = false; sync(); });
+    root.addEventListener('focusin', function () { hover = true; sync(); });
+    root.addEventListener('focusout', function (e) { if (!root.contains(e.relatedTarget)) { hover = false; sync(); } });
+    document.addEventListener('visibilitychange', sync);
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (en) { visible = en[0].isIntersecting; }, { threshold: 0.2 }).observe(root);
+      new IntersectionObserver(function (en) { inView = en[0].isIntersecting; sync(); }, { threshold: 0 }).observe(root);
     }
-    // οι εικόνες φορτώνουν αργότερα (lazy) — ξαναμέτρησε όταν έρθουν
-    Array.prototype.forEach.call(vp.querySelectorAll('img'), function (im) {
-      if (!im.complete) im.addEventListener('load', update, { once: true });
-    });
-    update();
-    start();
   }
 
   function boot() { Array.prototype.forEach.call(document.querySelectorAll('[data-pc]'), init); }

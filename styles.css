@@ -6103,3 +6103,43 @@ nav.scrolled .nav-search-in { color: inherit; }
 @media (max-width: 1000px) { .vg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px)  { .vg-lead { margin: 4px 16px 14px; font-size: 14px; } .ta-box .vg-grid { padding: 0 16px 16px; } }
 @media (max-width: 420px)  { .vg-grid { gap: 10px; } .vg-grid figcaption { padding: 9px 10px 11px; } .vg-grid figcaption strong { font-size: 13.5px; } }
+
+/* ── Ζώνη συνεργατών: συνεχής λωρίδα όπως τα «Νέα του κλάδου» (υπερισχύει
+   των παραπάνω κανόνων .pc-*). Οι κάρτες έχουν σταθερό πλάτος· το
+   partners-carousel.js τις διπλασιάζει και ορίζει τη διάρκεια. */
+.pc { display: block; max-width: none; margin: 0 calc(50% - 50vw); }
+.pc-viewport {
+    overflow: hidden; scroll-snap-type: none; padding: 6px 0 14px;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+.pc-track {
+    display: inline-flex; gap: 18px; padding: 0 9px;
+    grid-auto-flow: unset; grid-auto-columns: unset;
+    will-change: transform;
+}
+.pc-run .pc-track { animation: pcDrift 44s linear infinite; }
+@keyframes pcDrift {
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
+}
+.pc-item { flex: 0 0 auto; width: 210px; scroll-snap-align: none; }
+.pc-card { padding: 20px 14px 16px; }
+.pc-card:hover, .pc-card:focus-visible { transform: translateY(-3px); }
+.pc-manual .pc-viewport { overflow-x: auto; }
+@media (max-width: 1100px) { .pc-track { grid-auto-columns: unset; gap: 14px; } }
+@media (max-width: 760px)  { .pc-track { grid-auto-columns: unset; } }
+@media (max-width: 620px)  {
+    .pc-track { grid-auto-columns: unset; gap: 12px; padding: 0 6px; }
+    .pc-item { width: 164px; }
+    .pc-card { padding: 16px 10px 13px; }
+}
+
+/* Μετρητές «Εμπιστοσύνη»: 4 κάρτες (με «200+ ταξινομημένα ρυμουλκούμενα»).
+   Μικρότερος αριθμός για να χωρά το 100% σε τέταρτο πλάτους· 2×2 στο κινητό. */
+.trust-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.trust-stat-num { font-size: clamp(44px, 4.4vw, 72px); letter-spacing: -1px; }
+@media (max-width: 900px) {
+    .trust-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .trust-stat-num { font-size: clamp(38px, 11vw, 60px); }
+}

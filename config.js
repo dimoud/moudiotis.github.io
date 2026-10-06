@@ -391,6 +391,7 @@ window.SITE_CONFIG = {
         stats: [
             { numEl: '{years}+', numEn: '{years}+', labelEl: 'Χρόνια Εμπειρίας',    labelEn: 'Years of Experience' },
             { numEl: '300+',    numEn: '300+',    labelEl: 'Ολοκληρωμένα Έργα',    labelEn: 'Completed Projects' },
+            { numEl: '200+',    numEn: '200+',    labelEl: 'Ταξινομημένα Ρυμουλκούμενα', labelEn: 'Trailers Registered' },
             { numEl: '100%',    numEn: '100%',    labelEl: 'Επιτυχείς Εγκρίσεις',  labelEn: 'Successful Approvals' },
         ],
         pillars: [
