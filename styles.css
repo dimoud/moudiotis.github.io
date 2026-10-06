@@ -6172,17 +6172,17 @@ nav.scrolled .nav-search-in { color: inherit; }
 
 /* Επωνυμία στο hero (06/10/2026): «ΤΕΧΝΙΚΟ ΓΡΑΦΕΙΟ» και «& ΣΥΝΕΡΓΑΤΕΣ» σε
    αναλογία με το «ΜΟΥΔΙΩΤΗΣ» (≈¼ του ύψους του), όχι υποσημειώσεις. */
-body .hero-name--brand { padding-bottom: clamp(44px, 3.6vw, 60px); }
+body .hero-name--brand { padding-bottom: clamp(50px, 4vw, 68px); }
 body .hero-name--brand .line1,
-body .hero-name--brand .line3 { font-size: clamp(20px, 2vw, 32px); letter-spacing: 8px; }
+body .hero-name--brand .line3 { font-size: clamp(23px, 2.3vw, 37px); letter-spacing: 8px; }
 body .hero-name--brand .line1 { margin-bottom: 12px; }
 @media (min-width: 769px) and (max-width: 1280px) {
-    body .hero-name--brand { padding-bottom: 42px; }
+    body .hero-name--brand { padding-bottom: 48px; }
     body .hero-name--brand .line1,
-    body .hero-name--brand .line3 { font-size: clamp(17px, 1.9vw, 24px); letter-spacing: 6px; }
+    body .hero-name--brand .line3 { font-size: clamp(19.5px, 2.2vw, 27.5px); letter-spacing: 6px; }
 }
 @media (max-width: 768px) {
-    body .hero-name--brand { padding-bottom: 32px; }
+    body .hero-name--brand { padding-bottom: 36px; }
     body .hero-name--brand .line1,
-    body .hero-name--brand .line3 { font-size: clamp(15px, 4.4vw, 19px); letter-spacing: 4px; }
+    body .hero-name--brand .line3 { font-size: clamp(17px, 5vw, 22px); letter-spacing: 4px; }
 }
