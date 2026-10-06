@@ -86,7 +86,13 @@
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduced) { track.style.animation = 'none'; return; }
 
-    track.style.animationDuration = (items.length * SPEED / 4).toFixed(1) + 's';
+    /* Ίδια ταχύτητα με τις κριτικές Google (≈72px/s), ανεξάρτητα από το πλήθος */
+    function setSpeed() {
+      var half = track.scrollWidth / 2;
+      if (half > 0) track.style.animationDuration = (half / 72).toFixed(1) + 's';
+    }
+    setSpeed();
+    window.addEventListener('resize', setSpeed);
 
     var band = document.getElementById('newsBand');
     function play(on) { track.style.animationPlayState = on ? 'running' : 'paused'; }

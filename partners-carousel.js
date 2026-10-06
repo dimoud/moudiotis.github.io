@@ -10,7 +10,7 @@
  */
 (function () {
   'use strict';
-  var SEC_PER_CARD = 2.6;   // πιο γρήγορη από τα «Νέα» (εκεί ~6,5″ ανά κάρτα)
+  var PX_PER_SEC = 72;   // ίδια ταχύτητα με τις κριτικές Google (1,2px/καρέ ≈ 72px/s)
 
   function init(root) {
     var vp = root.querySelector('[data-pc-viewport]');
@@ -30,7 +30,15 @@
       Array.prototype.forEach.call(c.querySelectorAll('img'), function (im) { im.loading = 'eager'; });
       track.appendChild(c);
     });
-    track.style.animationDuration = (items.length * SEC_PER_CARD).toFixed(1) + 's';
+    function setSpeed() {
+      var half = track.scrollWidth / 2;
+      if (half > 0) track.style.animationDuration = (half / PX_PER_SEC).toFixed(1) + 's';
+    }
+    setSpeed();
+    window.addEventListener('resize', setSpeed);
+    Array.prototype.forEach.call(track.querySelectorAll('img'), function (im) {
+      if (!im.complete) im.addEventListener('load', setSpeed, { once: true });
+    });
     root.classList.add('pc-run');
 
     var inView = true, hover = false;
