@@ -254,6 +254,10 @@
     T['ta.stat.days.lbl']    = { el: 'Άρθρο 14 / 2026', en: 'Art. 14 / 2026' };
     T['ta.stat.process']     = { el: 'Βήμα-βήμα', en: 'Step-by-step' };
     T['ta.stat.process.lbl'] = { el: 'Διαδικασία', en: 'Process' };
+    T['about.acc0']  = { el: 'Το Αντικείμενο', en: 'What We Do' };
+    T['about.art.1'] = { el: 'Μελέτη μηχανικού', en: "Engineer’s study" };
+    T['about.art.2'] = { el: 'Άμεση ενημέρωση', en: 'Prompt updates' };
+    T['about.art.3'] = { el: 'Έκδοση άδειας', en: 'Licence issued' };
     T['partners.eyebrow']    = { el: 'ΠΕΛΑΤΕΣ & ΣΥΝΕΡΓΑΤΕΣ', en: 'CLIENTS & PARTNERS' };
     T['partners.heading']    = { el: 'Μας <em>εμπιστεύονται</em>', en: 'They <em>trust us</em>' };
     T['partners.note']       = { el: 'Συνεργασίες σε εγκρίσεις τύπου, ταξινομήσεις και τεχνικές μελέτες οχημάτων. Τα λογότυπα ανήκουν στους δικαιούχους τους και δηλώνουν μόνο τη συνεργασία, όχι εκπροσώπηση.', en: 'Partnerships in type approvals, registrations and vehicle technical studies. Logos belong to their owners and indicate cooperation only, not representation.' };

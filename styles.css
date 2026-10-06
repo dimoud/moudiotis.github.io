@@ -6195,3 +6195,120 @@ body .hero-name--brand .line1 { margin-bottom: 12px; }
     .nav-links .nav-dd-btn i { font-size: 9.5px; }
     .nav-links > a.nav-cta { padding: 14px 38px; }
 }
+
+/* ══ ΕΜΠΕΙΡΙΑ & ΕΞΕΙΔΙΚΕΥΣΗ — ΑΚΟΡΝΤΕΟΝ + ΙΣΟΜΕΤΡΙΚΟ ΣΧΕΔΙΟ (07/10/2026) ══
+   Αριστερά: τέσσερα πτυσσόμενα σε γωνίες τεχνικού σχεδίου. Δεξιά: τρία
+   επίπεδα (01 μελέτη, 02 φάκελος, 03 ρυμουλκούμενο) και σφραγίδα έγκρισης.
+   Σχεδιάζεται μία φορά όταν φανεί και μετά «αναπνέει» ήρεμα. */
+.about-profile { --apf-ink: #1d3a5c; --apf-cu: #b07a63; --apf-cu2: #c99986;
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 56px; align-items: center;
+    max-width: 1240px; margin: 34px auto 8px; text-align: left; }
+.apf-frame { position: relative; padding: 34px; }
+.apf-c { position: absolute; width: 30px; height: 30px; border: 0 solid var(--apf-cu2); }
+.apf-c1 { top: 0; left: 0; border-top-width: 3px; border-left-width: 3px; }
+.apf-c2 { top: 0; right: 0; border-top-width: 3px; border-right-width: 3px; }
+.apf-c3 { bottom: 0; left: 0; border-bottom-width: 3px; border-left-width: 3px; }
+.apf-c4 { bottom: 0; right: 0; border-bottom-width: 3px; border-right-width: 3px; }
+.apf-acc { display: flex; flex-direction: column; gap: 12px; }
+.apf-item { background: #fff; border: 1px solid rgba(29,58,92,.12); border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(20,33,52,.04); transition: border-color .3s, box-shadow .3s; }
+.apf-item:hover { border-color: rgba(201,153,134,.55); }
+.apf-item.is-open { border-color: rgba(201,153,134,.6); box-shadow: 0 14px 34px rgba(29,58,92,.09); }
+.apf-h { margin: 0; font: inherit; }
+.apf-btn { width: 100%; display: flex; align-items: center; gap: 14px; min-height: 64px; padding: 14px 22px;
+    background: none; border: 0; cursor: pointer; text-align: left; color: var(--ink); font: inherit; border-radius: 8px; }
+.apf-btn:focus-visible { outline: 2px solid var(--apf-cu2); outline-offset: 2px; }
+.apf-btn > i:first-child { width: 38px; height: 38px; flex: 0 0 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 15px; color: var(--apf-cu); background: radial-gradient(circle, rgba(201,153,134,.18), rgba(201,153,134,.06)); border: 1px solid rgba(201,153,134,.4); }
+.apf-title { flex: 1; font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; line-height: 1.2; }
+.apf-tag { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 1px; color: var(--apf-cu); }
+.apf-chev { font-size: 12px; color: var(--apf-cu); transition: transform .35s var(--ease); }
+.apf-item.is-open .apf-chev { transform: rotate(180deg); }
+.apf-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease); }
+.apf-item.is-open .apf-body { grid-template-rows: 1fr; }
+.apf-inner { overflow: hidden; }
+.apf-inner p { margin: 0; padding: 2px 24px 20px 74px; font-family: 'Source Sans 3', sans-serif; font-size: 15.5px; line-height: 1.7; color: var(--ink2); }
+.apf-inner p strong { font-weight: 600; color: var(--ink); }
+
+/* ── σχέδιο ── */
+.apf-art { color: var(--apf-ink); }
+.apf-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.apf-l3, .apf-seal { color: var(--apf-cu); }
+.apf-fill { fill: rgba(236,234,226,.92); stroke: none; }
+.apf-l3 .apf-fill { fill: rgba(250,244,240,.95); }
+.apf-paper { fill: #fff; }
+.apf-shadow { fill: rgba(29,58,92,.08); }
+.apf-face-f { fill: rgba(201,153,134,.20); }
+.apf-face-s { fill: rgba(201,153,134,.12); }
+.apf-face-t { fill: #fff; }
+.apf-wheel { fill: #f7f1ec; }
+.apf-lamp { fill: #c0563a; }
+.apf-plate { font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 1.5px; fill: var(--apf-cu); }
+.apf-seal-bg { fill: #fffaf6; }
+.apf-halo { fill: rgba(201,153,134,.16); transform-box: fill-box; transform-origin: center; opacity: 0; }
+.apf-scan { stroke: var(--apf-cu2); opacity: 0; }
+.apf-co circle { fill: var(--apf-ink); }
+.apf-co3 circle { fill: var(--apf-cu); }
+.apf-num { font-family: 'IBM Plex Mono', monospace; font-size: 16px; font-weight: 500; fill: var(--apf-ink); }
+.apf-lbl { font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 600; fill: var(--apf-ink); }
+.apf-co3 .apf-num, .apf-co3 .apf-lbl { fill: var(--apf-cu); }
+.apf-cl3 { stroke: var(--apf-cu); }
+.apf-l, .apf-co, .apf-cl { transition: opacity .45s var(--ease), color .45s var(--ease); }
+
+/* ενεργό επίπεδο (άνοιγμα ή πέρασμα ποντικιού) */
+.apf-art[data-active="1"] .apf-l1, .apf-art[data-hover="1"] .apf-l1,
+.apf-art[data-active="2"] .apf-l2, .apf-art[data-hover="2"] .apf-l2 { color: var(--apf-cu); }
+.apf-art[data-active="1"] .apf-co1 *, .apf-art[data-hover="1"] .apf-co1 *,
+.apf-art[data-active="2"] .apf-co2 *, .apf-art[data-hover="2"] .apf-co2 * { fill: var(--apf-cu); }
+.apf-art[data-active="1"]:not([data-hover]) :is(.apf-l2,.apf-l3,.apf-co2,.apf-co3,.apf-seal),
+.apf-art[data-hover="1"] :is(.apf-l2,.apf-l3,.apf-co2,.apf-co3,.apf-seal),
+.apf-art[data-active="2"]:not([data-hover]) :is(.apf-l1,.apf-l3,.apf-co1,.apf-co3,.apf-seal),
+.apf-art[data-hover="2"] :is(.apf-l1,.apf-l3,.apf-co1,.apf-co3,.apf-seal),
+.apf-art[data-active="3"]:not([data-hover]) :is(.apf-l1,.apf-l2,.apf-co1,.apf-co2),
+.apf-art[data-hover="3"] :is(.apf-l1,.apf-l2,.apf-co1,.apf-co2) { opacity: .28; }
+
+/* εισαγωγή: σχεδίαση γραμμών και εμφάνιση γεμισμάτων */
+.apf-ready:not(.is-in) .d { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.apf-ready:not(.is-in) .f { opacity: 0; }
+.apf-ready.is-in .d { stroke-dasharray: 1; stroke-dashoffset: 1; animation: apfDraw var(--t, .8s) var(--ease) var(--d, 0s) forwards; }
+.apf-ready.is-in .f { opacity: 0; animation: apfFade .7s ease var(--d, 0s) forwards; }
+.f[style*="--o"] { opacity: var(--o); }
+@keyframes apfDraw { to { stroke-dashoffset: 0; } }
+@keyframes apfFade { to { opacity: var(--o, 1); } }
+
+/* συνεχής κίνηση μετά την εισαγωγή */
+.apf-ready.is-in .apf-l3, .apf-ready.is-in .apf-seal { animation: apfFloat 5s ease-in-out 5.6s infinite alternate; }
+.apf-ready.is-in .apf-l2 { animation: apfFloat2 5s ease-in-out 6.4s infinite alternate; }
+.apf-ready.is-in .apf-scan { animation: apfScan 6s linear 5.6s infinite; }
+.apf-ready.is-in .apf-march { animation: apfFade .7s ease 3s forwards, apfMarch 1.6s linear 5.6s infinite; }
+.apf-ready.is-in .apf-halo { animation: apfHalo 3.2s ease-out 5.8s infinite; }
+.apf-ready.is-in .apf-check { animation: apfDraw .5s var(--ease) 5.1s forwards, apfCheck 8s var(--ease) 12s infinite; }
+.apf-ready.is-paused * { animation-play-state: paused !important; }
+@keyframes apfFloat  { from { transform: translateY(0); } to { transform: translateY(-9px); } }
+@keyframes apfFloat2 { from { transform: translateY(0); } to { transform: translateY(-4px); } }
+@keyframes apfScan { 0% { transform: translate(0,0); opacity: 0; } 8% { opacity: .9; } 92% { opacity: .9; } 100% { transform: translate(150px,-66px); opacity: 0; } }
+@keyframes apfMarch { to { stroke-dashoffset: -18; } }
+@keyframes apfHalo { 0% { transform: scale(.7); opacity: .9; } 100% { transform: scale(1.7); opacity: 0; } }
+@keyframes apfCheck { 0%, 82% { stroke-dashoffset: 0; } 88% { stroke-dashoffset: 1; } 100% { stroke-dashoffset: 0; } }
+
+@media (max-width: 1100px) { .about-profile { gap: 32px; } .apf-frame { padding: 26px; } }
+@media (max-width: 900px) {
+    .about-profile { grid-template-columns: 1fr; gap: 18px; margin-top: 22px; }
+    .apf-art { max-width: 460px; width: 100%; margin: 0 auto; }
+    .apf-lbl { display: none; }
+    .apf-num { font-size: 26px; }
+    .caliper-mobile { display: none !important; }
+}
+@media (max-width: 600px) {
+    .apf-frame { padding: 18px 14px; }
+    .apf-c { width: 22px; height: 22px; }
+    .apf-btn { gap: 12px; padding: 12px 14px; min-height: 58px; }
+    .apf-btn > i:first-child { width: 34px; height: 34px; flex-basis: 34px; font-size: 14px; }
+    .apf-title { font-size: 19px; }
+    .apf-inner p { padding: 0 16px 16px; font-size: 15px; }
+}
+@media (prefers-reduced-motion: reduce) { .apf-art * { animation: none !important; transition: none !important; } }
+.apf-face-in { fill: rgba(201,153,134,.10); }
+.apf-face-fl { fill: rgba(201,153,134,.22); }
+.apf-face-f { fill: #f6ece6; }
+.apf-face-s { fill: #fbf5f1; }
