@@ -6297,3 +6297,9 @@ body .hero-name--brand .line1 { margin-bottom: 12px; }
     .apf-tb .apf-tb2, .apf-plate { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .apf-art * { animation: none !important; transition: none !important; } }
+/* φορτηγό Ν3: γέμισμα καμπίνας, κόκκινο στον άξονα που υπερφορτώνεται */
+.apf-cabfill { fill: rgba(29,58,92,.06); }
+.apf-art[data-state="f"] .apf-fa, .apf-art[data-state="r"] .apf-ra { stroke: var(--apf-bad); }
+.apf-art[data-state="f"] .apf-fa.apf-head, .apf-art[data-state="r"] .apf-ra.apf-head,
+.apf-art[data-state="f"] .apf-fa-t, .apf-art[data-state="r"] .apf-ra-t { fill: var(--apf-bad); }
+.apf-chk em.is-f, .apf-chk em.is-r { color: var(--apf-bad); }
