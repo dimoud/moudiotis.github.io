@@ -1,45 +1,39 @@
-# moudiotis.gr — Τεχνικό Γραφείο Μουδιώτης
-# Όλο το περιεχόμενο είναι δημόσιο και προς ευρετηρίαση,
-# και από μηχανές αναζήτησης και από βοηθούς τεχνητής νοημοσύνης.
+# moudiotis.gr — Τεχνικό Γραφείο Μουδιώτης / Moudiotis Technical Office
+# Όλο το δημόσιο περιεχόμενο είναι ανοιχτό σε μηχανές αναζήτησης και σε
+# βοηθούς τεχνητής νοημοσύνης (αναζήτηση, απαντήσεις, εκπαίδευση).
+# Σύνοψη για μοντέλα: https://moudiotis.gr/llms.txt
+#
+# Μία ομάδα κανόνων για όλους: ένα ρομπότ με δική του ενότητα αγνοεί
+# την ενότητα «*», γι' αυτό οι εξαιρέσεις γράφονται εδώ μία φορά.
 
+# Μηχανές αναζήτησης
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Bingbot
+User-agent: DuckDuckBot
+User-agent: Applebot
+User-agent: YandexBot
+# Βοηθοί ΤΝ — αναζήτηση και ανάκτηση κατά το αίτημα χρήστη
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: DuckAssistBot
+User-agent: MistralAI-User
+# Βοηθοί ΤΝ — εκπαίδευση και γείωση μοντέλων
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: Meta-ExternalAgent
+User-agent: Amazonbot
+# Όλοι οι υπόλοιποι
 User-agent: *
 Allow: /
 Disallow: /_to_delete/
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: GPTBot
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-SearchBot
-Allow: /
-
-User-agent: Claude-User
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Perplexity-User
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
+Disallow: /Claude%20outputs/
 
 Sitemap: https://moudiotis.gr/sitemap.xml
