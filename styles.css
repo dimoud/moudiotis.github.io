@@ -6162,3 +6162,7 @@ nav.scrolled .nav-search-in { color: inherit; }
 .vg-track figcaption strong { font-family: 'Source Sans 3', sans-serif; font-size: 14.5px; font-weight: 600; color: var(--ink); }
 .vg-track figcaption span { font-size: 13px; color: rgba(28,27,25,0.66); }
 @media (max-width: 620px) { .vg-item { width: 220px; } }
+
+/* Καρουζέλ χωρίς σβήσιμο στις άκρες — όλες οι λωρίδες (06/10/2026). */
+.news-band, .pc-viewport, .vg-pc .pc-viewport { -webkit-mask-image: none !important; mask-image: none !important; }
+.articles-band::before, .articles-band::after { display: none !important; }
