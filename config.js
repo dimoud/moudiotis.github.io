@@ -1,5 +1,5 @@
 /**
- * config.js — Δημήτριος Μουδιώτης & Συνεργάτες
+ * config.js — Τεχνικό Γραφείο Μουδιώτης & Συνεργάτες
  * ════════════════════════════════════════════════════════════════════════════
  */
 
@@ -25,8 +25,8 @@ window.SITE_CONFIG = {
         initials:      'ΔΜ',
         navBrandEl:    'ΤΕΧΝΙΚΟ ΓΡΑΦΕΙΟ ΜΟΥΔΙΩΤΗΣ',
         navBrandEn:    'MOUDIOTIS TECHNICAL OFFICE',
-        displayNameEl: 'Δημήτριος Μουδιώτης και Συνεργάτες',
-        displayNameEn: 'Dimitrios Moudiotis and Associates',
+        displayNameEl: 'Τεχνικό Γραφείο Μουδιώτης & Συνεργάτες',
+        displayNameEn: 'Moudiotis & Associates Technical Office',
         professionEl:  'Μηχανολόγος Μηχανικός ΑΠΘ, 3× MSc',
         professionEn:  'Mechanical Engineer AUTH, 3× MSc',
         fullTitleEl:   'Μηχανολόγος Μηχανικός ΑΠΘ, 3× MSc | Έδρα Αθήνα - Θεσσαλονίκη | Εξυπηρέτηση Πανελλαδικά και εντός Ε.Ε.',
@@ -95,8 +95,8 @@ window.SITE_CONFIG = {
     about: {
         headingEl: 'Εμπειρία &amp; <em>Εξειδίκευση</em>',
         headingEn: 'Experience &amp; <em>Expertise</em>',
-        leadEl:    'Με {years}+ χρόνια εμπειρίας, το <strong class="kw">τεχνικό γραφείο</strong> του <strong class="kw">μηχανολόγου μηχανικού</strong> Δημήτρη Μουδιώτη αναλαμβάνει <strong class="kw">έγκριση τύπου οχήματος</strong> και <strong class="kw">έγκριση τύπου ρυμουλκούμενου</strong>, <strong class="kw">άδεια τρέιλερ</strong> Ο1/Ο2, <strong class="kw">άδεια μπαγκαζιέρας</strong>, μελέτες <strong class="kw">οχημάτων ειδικής χρήσης ειδικού σκοπού</strong>, μετασκευές, τροχόσπιτα και τοποθέτηση γερανών.',
-        leadEn:    'With {years}+ years of experience, the <strong class="kw">technical office</strong> of <strong class="kw">mechanical engineer</strong> Dimitrios Moudiotis handles <strong class="kw">vehicle type approval</strong> and <strong class="kw">trailer type approval</strong>, <strong class="kw">trailer and cargo-box licences</strong> O1/O2, <strong class="kw">special use / special purpose vehicle</strong> studies, conversions, caravans and crane installations.',
+        leadEl:    'Με {years}+ χρόνια εμπειρίας, το <strong class="kw">τεχνικό γραφείο</strong> Μουδιώτης &amp; Συνεργάτες, με επικεφαλής <strong class="kw">μηχανολόγο μηχανικό</strong>, αναλαμβάνει <strong class="kw">έγκριση τύπου οχήματος</strong> και <strong class="kw">έγκριση τύπου ρυμουλκούμενου</strong>, <strong class="kw">άδεια τρέιλερ</strong> Ο1/Ο2, <strong class="kw">άδεια μπαγκαζιέρας</strong>, μελέτες <strong class="kw">οχημάτων ειδικής χρήσης ειδικού σκοπού</strong>, μετασκευές, τροχόσπιτα και τοποθέτηση γερανών.',
+        leadEn:    'With {years}+ years of experience, the <strong class="kw">technical office</strong> Moudiotis &amp; Associates, led by a <strong class="kw">mechanical engineer</strong>, handles <strong class="kw">vehicle type approval</strong> and <strong class="kw">trailer type approval</strong>, <strong class="kw">trailer and cargo-box licences</strong> O1/O2, <strong class="kw">special use / special purpose vehicle</strong> studies, conversions, caravans and crane installations.',
         features: [
             {
                 icon:    'fa-user-gear',
