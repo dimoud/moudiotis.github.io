@@ -6186,3 +6186,12 @@ body .hero-name--brand .line1 { margin-bottom: 12px; }
     body .hero-name--brand .line1,
     body .hero-name--brand .line3 { font-size: clamp(17px, 5vw, 22px); letter-spacing: 4px; }
 }
+
+/* ── ΜΕΓΑΛΥΤΕΡΑ ΓΡΑΜΜΑΤΑ ΣΤΗΝ ΚΥΡΙΑ ΜΠΑΡΑ (07/10/2026) ──
+   Σχετικά · Υπηρεσίες · Επικοινωνία: 10.5px → 13px. Μόνο στην οθόνη
+   υπολογιστή· το συρτάρι του κινητού μένει ως έχει. */
+@media (min-width: 961px) {
+    .nav-links > a, .nav-links .nav-dd-btn { font-size: 13px; letter-spacing: 2.2px; }
+    .nav-links .nav-dd-btn i { font-size: 9.5px; }
+    .nav-links > a.nav-cta { padding: 14px 38px; }
+}
