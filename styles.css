@@ -6196,12 +6196,12 @@ body .hero-name--brand .line1 { margin-bottom: 12px; }
     .nav-links > a.nav-cta { padding: 14px 38px; }
 }
 
-/* ══ ΕΜΠΕΙΡΙΑ & ΕΞΕΙΔΙΚΕΥΣΗ — ΑΚΟΡΝΤΕΟΝ + ΙΣΟΜΕΤΡΙΚΟ ΣΧΕΔΙΟ (07/10/2026) ══
-   Αριστερά: τέσσερα πτυσσόμενα σε γωνίες τεχνικού σχεδίου. Δεξιά: τρία
-   επίπεδα (01 μελέτη, 02 φάκελος, 03 ρυμουλκούμενο) και σφραγίδα έγκρισης.
-   Σχεδιάζεται μία φορά όταν φανεί και μετά «αναπνέει» ήρεμα. */
-.about-profile { --apf-ink: #1d3a5c; --apf-cu: #b07a63; --apf-cu2: #c99986;
-    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 56px; align-items: center;
+/* ══ ΕΜΠΕΙΡΙΑ & ΕΞΕΙΔΙΚΕΥΣΗ — ΑΚΟΡΝΤΕΟΝ + ΣΧΕΔΙΟ ΥΠΟΛΟΓΙΣΜΟΥ (07/10/2026) ══
+   Αριστερά: πτυσσόμενα σε γωνίες τεχνικού σχεδίου. Δεξιά: πλάγια όψη
+   ρυμουλκούμενου Ο1 σε χαρτί σχεδίου, με κέντρο βάρους, δυνάμεις S, R, G,
+   διαστάσεις και ζωντανό υπολογισμό φορτίου ζεύξης (about-profile.js). */
+.about-profile { --apf-ink: #1d3a5c; --apf-cu: #a8705a; --apf-cu2: #c99986; --apf-bad: #b8442c;
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 48px; align-items: center;
     max-width: 1240px; margin: 34px auto 8px; text-align: left; }
 .apf-frame { position: relative; padding: 34px; }
 .apf-c { position: absolute; width: 30px; height: 30px; border: 0 solid var(--apf-cu2); }
@@ -6221,7 +6221,6 @@ body .hero-name--brand .line1 { margin-bottom: 12px; }
 .apf-btn > i:first-child { width: 38px; height: 38px; flex: 0 0 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
     font-size: 15px; color: var(--apf-cu); background: radial-gradient(circle, rgba(201,153,134,.18), rgba(201,153,134,.06)); border: 1px solid rgba(201,153,134,.4); }
 .apf-title { flex: 1; font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; line-height: 1.2; }
-.apf-tag { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 1px; color: var(--apf-cu); }
 .apf-chev { font-size: 12px; color: var(--apf-cu); transition: transform .35s var(--ease); }
 .apf-item.is-open .apf-chev { transform: rotate(180deg); }
 .apf-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease); }
@@ -6231,72 +6230,56 @@ body .hero-name--brand .line1 { margin-bottom: 12px; }
 .apf-inner p strong { font-weight: 600; color: var(--ink); }
 
 /* ── σχέδιο ── */
-.apf-art { color: var(--apf-ink); }
-.apf-svg { display: block; width: 100%; height: auto; overflow: visible; }
-.apf-l3, .apf-seal { color: var(--apf-cu); }
-.apf-fill { fill: rgba(236,234,226,.92); stroke: none; }
-.apf-l3 .apf-fill { fill: rgba(250,244,240,.95); }
-.apf-paper { fill: #fff; }
-.apf-shadow { fill: rgba(29,58,92,.08); }
-.apf-face-f { fill: rgba(201,153,134,.20); }
-.apf-face-s { fill: rgba(201,153,134,.12); }
-.apf-face-t { fill: #fff; }
-.apf-wheel { fill: #f7f1ec; }
+.apf-art { margin: 0; color: var(--apf-ink); background: #f8f6f0; border: 1px solid rgba(29,58,92,.18); border-radius: 6px;
+    box-shadow: 0 18px 44px rgba(20,33,52,.08); overflow: hidden; }
+.apf-svg { display: block; width: 100%; height: auto; }
+.apf-grid path { stroke: rgba(29,58,92,.07); }
+.apf-tb text { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1.6px; fill: var(--apf-ink); }
+.apf-tb .apf-tb2 { fill: var(--apf-cu); font-size: 10px; }
+.apf-thin { stroke-width: 1.2; }
+.apf-cu { stroke: var(--apf-cu); }
+.apf-boxfill { fill: rgba(201,153,134,.10); }
 .apf-lamp { fill: #c0563a; }
-.apf-plate { font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 1.5px; fill: var(--apf-cu); }
-.apf-seal-bg { fill: #fffaf6; }
-.apf-halo { fill: rgba(201,153,134,.16); transform-box: fill-box; transform-origin: center; opacity: 0; }
-.apf-scan { stroke: var(--apf-cu2); opacity: 0; }
-.apf-co circle { fill: var(--apf-ink); }
-.apf-co3 circle { fill: var(--apf-cu); }
-.apf-num { font-family: 'IBM Plex Mono', monospace; font-size: 16px; font-weight: 500; fill: var(--apf-ink); }
-.apf-lbl { font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 600; fill: var(--apf-ink); }
-.apf-co3 .apf-num, .apf-co3 .apf-lbl { fill: var(--apf-cu); }
-.apf-cl3 { stroke: var(--apf-cu); }
-.apf-l, .apf-co, .apf-cl { transition: opacity .45s var(--ease), color .45s var(--ease); }
+.apf-plate { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 1.5px; fill: var(--apf-cu); }
+.apf-dim { stroke: var(--apf-ink); }
+.apf-dtx, .apf-ftx { font-family: 'IBM Plex Mono', monospace; font-size: 13px; fill: var(--apf-ink); }
+.apf-cu-t, .apf-g-t { fill: var(--apf-cu); }
+.apf-s { stroke: var(--apf-cu); stroke-width: 2.6; } .apf-s.apf-head { fill: var(--apf-cu); }
+.apf-s-t { fill: var(--apf-cu); font-weight: 600; }
+.apf-r { stroke: var(--apf-ink); stroke-width: 2.6; } .apf-r.apf-head { fill: var(--apf-ink); }
+.apf-g { stroke: var(--apf-cu); stroke-width: 2.6; } .apf-g.apf-head { fill: var(--apf-cu); }
+.apf-cgc { fill: #fff; stroke: var(--apf-ink); stroke-width: 1.8; }
+.apf-cgq { fill: var(--apf-ink); }
+.apf-art[data-state="lo"] .apf-s, .apf-art[data-state="hi"] .apf-s { stroke: var(--apf-bad); }
+.apf-art[data-state="lo"] .apf-s.apf-head, .apf-art[data-state="hi"] .apf-s.apf-head,
+.apf-art[data-state="lo"] .apf-s-t, .apf-art[data-state="hi"] .apf-s-t { fill: var(--apf-bad); }
 
-/* ενεργό επίπεδο (άνοιγμα ή πέρασμα ποντικιού) */
-.apf-art[data-active="1"] .apf-l1, .apf-art[data-hover="1"] .apf-l1,
-.apf-art[data-active="2"] .apf-l2, .apf-art[data-hover="2"] .apf-l2 { color: var(--apf-cu); }
-.apf-art[data-active="1"] .apf-co1 *, .apf-art[data-hover="1"] .apf-co1 *,
-.apf-art[data-active="2"] .apf-co2 *, .apf-art[data-hover="2"] .apf-co2 * { fill: var(--apf-cu); }
-.apf-art[data-active="1"]:not([data-hover]) :is(.apf-l2,.apf-l3,.apf-co2,.apf-co3,.apf-seal),
-.apf-art[data-hover="1"] :is(.apf-l2,.apf-l3,.apf-co2,.apf-co3,.apf-seal),
-.apf-art[data-active="2"]:not([data-hover]) :is(.apf-l1,.apf-l3,.apf-co1,.apf-co3,.apf-seal),
-.apf-art[data-hover="2"] :is(.apf-l1,.apf-l3,.apf-co1,.apf-co3,.apf-seal),
-.apf-art[data-active="3"]:not([data-hover]) :is(.apf-l1,.apf-l2,.apf-co1,.apf-co2),
-.apf-art[data-hover="3"] :is(.apf-l1,.apf-l2,.apf-co1,.apf-co2) { opacity: .28; }
+/* φύλλο υπολογισμού */
+.apf-calc { border-top: 1px solid rgba(29,58,92,.18); padding: 16px 22px 18px; background: #fff;
+    font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; color: var(--apf-ink); }
+.apf-calc-h { font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--apf-cu); margin-bottom: 10px; }
+.apf-eq { display: grid; grid-template-columns: 92px 1fr; gap: 12px; padding: 5px 0; border-bottom: 1px dashed rgba(29,58,92,.14); }
+.apf-eq > span:first-child { color: var(--stone); }
+.apf-eq b { font-weight: 600; color: var(--apf-cu); font-variant-numeric: tabular-nums; }
+.apf-chk em { font-style: normal; font-weight: 600; }
+.apf-chk em.is-ok { color: #2f7a4f; }
+.apf-chk em.is-lo, .apf-chk em.is-hi { color: var(--apf-bad); }
+.apf-note { margin: 10px 0 6px; font-family: 'Source Sans 3', sans-serif; font-size: 13.5px; line-height: 1.5; color: var(--stone); }
+.apf-range { width: 100%; accent-color: var(--apf-cu); cursor: pointer; margin: 4px 0 0; }
 
-/* εισαγωγή: σχεδίαση γραμμών και εμφάνιση γεμισμάτων */
+/* εισαγωγή: σχεδίαση γραμμών και εμφάνιση στοιχείων */
+.f[style*="--o"] { opacity: var(--o); }
 .apf-ready:not(.is-in) .d { stroke-dasharray: 1; stroke-dashoffset: 1; }
 .apf-ready:not(.is-in) .f { opacity: 0; }
 .apf-ready.is-in .d { stroke-dasharray: 1; stroke-dashoffset: 1; animation: apfDraw var(--t, .8s) var(--ease) var(--d, 0s) forwards; }
 .apf-ready.is-in .f { opacity: 0; animation: apfFade .7s ease var(--d, 0s) forwards; }
-.f[style*="--o"] { opacity: var(--o); }
 @keyframes apfDraw { to { stroke-dashoffset: 0; } }
 @keyframes apfFade { to { opacity: var(--o, 1); } }
 
-/* συνεχής κίνηση μετά την εισαγωγή */
-.apf-ready.is-in .apf-l3, .apf-ready.is-in .apf-seal { animation: apfFloat 5s ease-in-out 5.6s infinite alternate; }
-.apf-ready.is-in .apf-l2 { animation: apfFloat2 5s ease-in-out 6.4s infinite alternate; }
-.apf-ready.is-in .apf-scan { animation: apfScan 6s linear 5.6s infinite; }
-.apf-ready.is-in .apf-march { animation: apfFade .7s ease 3s forwards, apfMarch 1.6s linear 5.6s infinite; }
-.apf-ready.is-in .apf-halo { animation: apfHalo 3.2s ease-out 5.8s infinite; }
-.apf-ready.is-in .apf-check { animation: apfDraw .5s var(--ease) 5.1s forwards, apfCheck 8s var(--ease) 12s infinite; }
-.apf-ready.is-paused * { animation-play-state: paused !important; }
-@keyframes apfFloat  { from { transform: translateY(0); } to { transform: translateY(-9px); } }
-@keyframes apfFloat2 { from { transform: translateY(0); } to { transform: translateY(-4px); } }
-@keyframes apfScan { 0% { transform: translate(0,0); opacity: 0; } 8% { opacity: .9; } 92% { opacity: .9; } 100% { transform: translate(150px,-66px); opacity: 0; } }
-@keyframes apfMarch { to { stroke-dashoffset: -18; } }
-@keyframes apfHalo { 0% { transform: scale(.7); opacity: .9; } 100% { transform: scale(1.7); opacity: 0; } }
-@keyframes apfCheck { 0%, 82% { stroke-dashoffset: 0; } 88% { stroke-dashoffset: 1; } 100% { stroke-dashoffset: 0; } }
-
-@media (max-width: 1100px) { .about-profile { gap: 32px; } .apf-frame { padding: 26px; } }
+@media (max-width: 1100px) { .about-profile { gap: 28px; } .apf-frame { padding: 26px; } }
 @media (max-width: 900px) {
     .about-profile { grid-template-columns: 1fr; gap: 18px; margin-top: 22px; }
-    .apf-art { max-width: 460px; width: 100%; margin: 0 auto; }
-    .apf-lbl { display: none; }
-    .apf-num { font-size: 26px; }
+    .apf-art { max-width: 620px; width: 100%; margin: 0 auto; }
     .caliper-mobile { display: none !important; }
 }
 @media (max-width: 600px) {
@@ -6306,9 +6289,11 @@ body .hero-name--brand .line1 { margin-bottom: 12px; }
     .apf-btn > i:first-child { width: 34px; height: 34px; flex-basis: 34px; font-size: 14px; }
     .apf-title { font-size: 19px; }
     .apf-inner p { padding: 0 16px 16px; font-size: 15px; }
+    .apf-calc { padding: 14px 14px 16px; font-size: 12.5px; }
+    .apf-eq { grid-template-columns: 58px 1fr; gap: 8px; }
+    .apf-range { height: 32px; }
+    .apf-dtx, .apf-ftx { font-size: 19px; }
+    .apf-tb text { font-size: 15px; letter-spacing: 1px; }
+    .apf-tb .apf-tb2, .apf-plate { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .apf-art * { animation: none !important; transition: none !important; } }
-.apf-face-in { fill: rgba(201,153,134,.10); }
-.apf-face-fl { fill: rgba(201,153,134,.22); }
-.apf-face-f { fill: #f6ece6; }
-.apf-face-s { fill: #fbf5f1; }
