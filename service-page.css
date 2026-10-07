@@ -543,3 +543,22 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
 .svc-legal strong { color: var(--ink); }
 .svc-legal ul { margin: 6px 0 10px; }
 @media (max-width: 768px) { .svc-legal { padding: 14px 14px 6px; } }
+
+/* Σελίδα όρων χρήσης / απορρήτου / cookies */
+.lg-page { max-width: 860px; }
+.lg-intro { font-size: 17px; }
+.lg-toc { margin: 18px 0 26px; padding: 16px 22px; border: 1px solid rgba(29,58,92,.12); border-radius: 8px; background: #fff; }
+.lg-toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 32px; }
+.lg-toc li { margin: 3px 0; break-inside: avoid; }
+.lg-page h2 { scroll-margin-top: 90px; }
+.lg-page h3 { margin: 20px 0 6px; font-size: 18px; }
+.lg-table-wrap { overflow-x: auto; margin: 10px 0 16px; -webkit-overflow-scrolling: touch; }
+.lg-table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 620px; }
+.lg-table th, .lg-table td { text-align: left; vertical-align: top; padding: 9px 10px; border-bottom: 1px solid rgba(29,58,92,.12); }
+.lg-table th { background: rgba(201,153,134,.12); font-weight: 600; }
+.lg-table code { font-size: 13px; }
+.lg-btn { display: inline-flex; align-items: center; gap: 4px; padding: 11px 20px; min-height: 44px; border-radius: 6px; border: 1px solid var(--gold); background: var(--gold); color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+.lg-btn:hover { background: #fff; color: var(--gold); }
+mark.ph { background: #ffe9a8; color: #5a3d00; padding: 0 3px; border-radius: 3px; }
+.lg-updated { margin-top: 28px; font-style: italic; color: var(--stone); }
+@media (max-width: 640px) { .lg-toc ol { columns: 1; } }

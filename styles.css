@@ -6303,3 +6303,7 @@ body .hero-name--brand .line1 { margin-bottom: 12px; }
 .apf-art[data-state="f"] .apf-fa.apf-head, .apf-art[data-state="r"] .apf-ra.apf-head,
 .apf-art[data-state="f"] .apf-fa-t, .apf-art[data-state="r"] .apf-ra-t { fill: var(--apf-bad); }
 .apf-chk em.is-f, .apf-chk em.is-r { color: var(--apf-bad); }
+
+/* Υποσέλιδο: νομική σημείωση και σύνδεσμος όρων σε όλες τις σελίδες */
+.ft-legal { max-width: 900px; margin: 14px auto 16px; padding: 0 20px; text-align: center; font-size: 12.5px; line-height: 1.55; color: rgba(245,244,239,.62); }
+.ft-legal a { color: #e8af99; text-decoration: underline; white-space: nowrap; }

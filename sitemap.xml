@@ -183,4 +183,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://moudiotis.gr/en/kotsadoros-elxi/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moudiotis.gr/kotsadoros-elxi/"/>
   </url>
+  <url>
+    <loc>https://moudiotis.gr/oroi-xrisis/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://moudiotis.gr/oroi-xrisis/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moudiotis.gr/en/oroi-xrisis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moudiotis.gr/oroi-xrisis/"/>
+  </url>
+  <url>
+    <loc>https://moudiotis.gr/en/oroi-xrisis/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://moudiotis.gr/oroi-xrisis/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moudiotis.gr/en/oroi-xrisis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moudiotis.gr/oroi-xrisis/"/>
+  </url>
 </urlset>

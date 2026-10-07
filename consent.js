@@ -20,13 +20,13 @@
     var copy = {
         el: {
             title:  'Χρησιμοποιούμε cookies',
-            body:   'Χρησιμοποιούμε cookies ανάλυσης για να κατανοούμε πώς χρησιμοποιείται ο ιστότοπος και να βελτιώνουμε τις υπηρεσίες μας. Δεν μοιραζόμαστε προσωπικά δεδομένα με τρίτους.',
+            body:   'Με την αποδοχή ενεργοποιούνται cookies στατιστικών (Google Analytics), ώστε να βλέπουμε πώς χρησιμοποιείται ο ιστότοπος. Δεν χρησιμοποιούμε cookies διαφήμισης. Μπορείτε να αλλάξετε την επιλογή σας οποιαδήποτε στιγμή. <a href="/oroi-xrisis/#cookies">Απόρρητο και cookies</a>',
             accept: 'Αποδοχή',
             reject: 'Απόρριψη',
         },
         en: {
             title:  'We use cookies',
-            body:   'We use analytics cookies to understand how the site is used and to improve our services. We do not share personal data with third parties.',
+            body:   'Accepting enables analytics cookies (Google Analytics) so we can see how the site is used. We do not use advertising cookies. You can change your choice at any time. <a href="/en/oroi-xrisis/#cookies">Privacy and cookies</a>',
             accept: 'Accept',
             reject: 'Decline',
         },
@@ -44,6 +44,7 @@
         '#cc-banner.cc-hidden{display:none}',
         '#cc-text{flex:1;min-width:200px}',
         '#cc-text strong{display:block;font-size:15px;margin-bottom:4px;color:#e8af99}',
+        '#cc-text a{color:#e8af99;text-decoration:underline;white-space:nowrap}',
         '#cc-btns{display:flex;gap:10px;flex-shrink:0}',
         '#cc-accept,#cc-reject{',
         '  padding:9px 20px;border:none;border-radius:4px;',
@@ -95,7 +96,7 @@
         if (typeof gtag === 'function') {
             gtag('consent', 'update', {
                 analytics_storage: 'granted',
-                ad_storage:        'granted',
+                ad_storage:        'denied',   /* καμία διαφήμιση */
             });
         }
         /* load GA4 script now if not already loaded */
@@ -147,6 +148,29 @@
             gtagDeny();
         }
     }
+
+    /* ── αλλαγή / ανάκληση επιλογής (κουμπί στη σελίδα όρων) ──
+       Σβήνει την επιλογή και τα cookies του Google Analytics και ξαναδείχνει
+       τη μπάρα. */
+    window.ccReset = function () {
+        try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+        gtagDeny();
+        var host = location.hostname, parts = host.split('.');
+        var dom = parts.length > 1 ? '.' + parts.slice(-2).join('.') : host;
+        document.cookie.split(';').forEach(function (c) {
+            var n = c.split('=')[0].trim();
+            if (/^_ga/.test(n)) {
+                [host, dom, ''].forEach(function (d) {
+                    document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + (d ? '; domain=' + d : '');
+                });
+            }
+        });
+        location.reload();
+    };
+    document.addEventListener('click', function (e) {
+        var b = e.target.closest ? e.target.closest('[data-cc-reset]') : null;
+        if (b) { e.preventDefault(); window.ccReset(); }
+    });
 
     /* ── check existing choice ── */
     var stored = _lsGet(STORAGE_KEY);
