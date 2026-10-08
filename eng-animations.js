@@ -767,6 +767,8 @@
                 if (!entry.isIntersecting) return;
                 var el      = entry.target;
                 var text    = el.textContent.trim();
+                /* Βαθμολογία με δεκαδικό (π.χ. «5,0★») δεν μετράει — αλλιώς θα έδειχνε 50 */
+                if (/★|^\d[.,]\d\b/.test(text)) { statObs.unobserve(el); return; }
                 /* Strip thousands separators (. or ,) before parsing */
                 var cleaned = text.replace(/[.,\s]/g, '');
                 var num     = parseInt(cleaned, 10);
