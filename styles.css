@@ -6307,3 +6307,23 @@ body .hero-name--brand .line1 { margin-bottom: 12px; }
 /* Υποσέλιδο: νομική σημείωση και σύνδεσμος όρων σε όλες τις σελίδες */
 .ft-legal { max-width: 900px; margin: 14px auto 16px; padding: 0 20px; text-align: center; font-size: 12.5px; line-height: 1.55; color: rgba(245,244,239,.62); }
 .ft-legal a { color: #e8af99; text-decoration: underline; white-space: nowrap; }
+
+/* ══ ΜΕΤΑΛΛΙΚΟΣ ΧΑΛΚΟΣ — ΟΡΙΖΟΝΤΙΑ ΔΙΑΒΑΘΜΙΣΗ (11/10/2026) ══════════════
+   Δείγμα του χρήστη: σκούρος χαλκός στις άκρες, φωτεινή σαμπανιά στη μέση,
+   κατά πλάτος της λέξης (όχι πάνω-κάτω). Χρώματα μετρημένα από την εικόνα:
+   άκρες #a3644a, μέση #f2cfba. Σε ανοιχτό φόντο η ίδια μορφή, πιο σκούρα,
+   για να διαβάζεται. */
+:root {
+    --gold-text:    linear-gradient(90deg, #a3644a 0%, #bd8266 17%, #dfa98d 33%, #f2cfba 50%, #e4b8a0 60%, #c7896b 76%, #a8694e 92%, #a3644a 100%);
+    --gold-metal-h: linear-gradient(90deg, #a3644a 0%, #c99074 25%, #f2cfba 50%, #c7896b 75%, #a3644a 100%);
+    --gold-text-light: linear-gradient(90deg, #8a4f37 0%, #a86a4f 20%, #c98d70 38%, #dba487 50%, #c98d70 62%, #a86a4f 80%, #8a4f37 100%);
+}
+.hero-name--brand .line2 {
+    display: inline-block;
+    background-image:
+        linear-gradient(105deg, transparent 42%, rgba(255,255,255,0.55) 50%, transparent 58%),
+        var(--gold-text) !important;
+    -webkit-text-fill-color: transparent !important;
+}
+.trust-stat-num { background-image: var(--gold-text) !important; }
+.section-heading.light em, .about-section .section-heading em { background: var(--gold-text-light) !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent; }
