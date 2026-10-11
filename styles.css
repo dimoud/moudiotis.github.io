@@ -6396,3 +6396,9 @@ body .hero-name--brand .line1 { margin-bottom: 12px; }
 .trc-note-box b { color: #8a5210; }
 .trc-b-sep { color: #5f6e87; }
 @media (max-width: 768px) { .sec-meas-label { font-size: 12px; } }
+
+/* Κινητό/tablet: το λογότυπο της αρχικής έπεφτε κάτω από τη μπάρα (γλώσσα,
+   αναζήτηση). Κατεβαίνει ώστε ο δακτύλιος να ξεκινά κάτω από τη μπάρα. */
+@media (max-width: 768px) {
+    .hero-photo-col { margin-top: 48px; }
+}
