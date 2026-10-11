@@ -520,14 +520,21 @@
         }, 80);
 
         /* ── Auto-scroll RAF loop ── */
+        /* istoselides v2.11: το μισό πλάτος μετριέται μία φορά (και σε αλλαγή μεγέθους), όχι σε κάθε
+           καρέ — η ανάγνωση scrollWidth μετά από εγγραφή scrollLeft επέβαλλε διάταξη 60 φορές/δευτ.
+           Η λωρίδα τρέχει μόνο όταν φαίνεται. */
+        var visible = true;
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function (en) { visible = en[0].isIntersecting; }, { rootMargin: '200px 0px' }).observe(band);
+        }
+        window.addEventListener('resize', function () { half = track.scrollWidth / 2; });
+        if ('ResizeObserver' in window) new ResizeObserver(function () { half = track.scrollWidth / 2; }).observe(track);
         function startAutoScroll() {
             function tick() {
-                if (!paused && !isDown) {
-                    band.scrollLeft += SPEED;
+                if (visible && !paused && !isDown && half > 0) {
+                    var x = band.scrollLeft + SPEED;
                     /* Seamless loop: when we've scrolled one full copy, jump back */
-                    if (band.scrollLeft >= track.scrollWidth / 2) {
-                        band.scrollLeft -= track.scrollWidth / 2;
-                    }
+                    band.scrollLeft = x >= half ? x - half : x;
                 }
                 requestAnimationFrame(tick);
             }
@@ -600,14 +607,21 @@
             startAutoScroll();
         }, 80);
 
+        /* istoselides v2.11: μισό πλάτος σε μνήμη, λωρίδα μόνο όταν φαίνεται (όπως παραπάνω) */
+        var half2 = 0, visible2 = true;
+        function measure2() { half2 = track.scrollWidth / 2; }
+        if ('ResizeObserver' in window) new ResizeObserver(measure2).observe(track);
+        window.addEventListener('resize', measure2);
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function (en) { visible2 = en[0].isIntersecting; }, { rootMargin: '200px 0px' }).observe(band);
+        }
         function startAutoScroll() {
+            measure2();
             function tick() {
                 /* όσο μια κριτική είναι ανοιχτή, η ταινία σταματά για να διαβαστεί */
-                if (!paused && !isDown && !track.querySelector('.review-card.is-expanded')) {
-                    band.scrollLeft += SPEED;
-                    if (band.scrollLeft >= track.scrollWidth / 2) {
-                        band.scrollLeft -= track.scrollWidth / 2;
-                    }
+                if (visible2 && half2 > 0 && !paused && !isDown && !track.querySelector('.review-card.is-expanded')) {
+                    var x = band.scrollLeft + SPEED;
+                    band.scrollLeft = x >= half2 ? x - half2 : x;
                 }
                 requestAnimationFrame(tick);
             }

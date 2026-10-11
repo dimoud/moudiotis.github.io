@@ -34,10 +34,9 @@
     <meta name="format-detection" content="telephone=yes, email=yes, address=yes">
     <meta name="theme-color" content="#1d3a5c">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../fonts.css" media="print" onload="this.media='all'" data-async-css>
+    <noscript><link rel="stylesheet" href="../fonts.css"></noscript>
+    <link rel="stylesheet" href="../fa-subset.css">
     <script>document.documentElement.className += ' js';</script>
     <link rel="stylesheet" href="../styles.css?v=202610110100">
     <link rel="stylesheet" href="../expertease-credit.css?v=202610110100">
@@ -145,58 +144,58 @@
     <div id="progress"></div>
 
     <!-- ===== NAVIGATION (ίδιο markup με την αρχική) ===== -->
-    <nav id="nav" class="scrolled">
-        <a href="../index.html" class="nav-logo">
+    <nav id="nav">
+        <a href="../" class="nav-logo">
             <div class="logo-circle">
-                <img class="logo-img" src="../founder.webp" alt="ΤΕΧΝΙΚΟ ΓΡΑΦΕΙΟ ΜΟΥΔΙΩΤΗΣ" width="96" height="96">
+                <img class="logo-img" src="../logo-192.webp" alt="Τεχνικό Γραφείο Μουδιώτης — λογότυπο" width="96" height="96">
             </div>
             <div class="logo-text">
-                <span class="name">ΤΕΧΝΙΚΟ ΓΡΑΦΕΙΟ ΜΟΥΔΙΩΤΗΣ</span>
-                <span class="title">Μηχανολόγος Μηχανικός ΑΠΘ, 3× MSc</span>
+                <span class="name" id="navBrandName" data-i18n="nav.brand">ΤΕΧΝΙΚΟ ΓΡΑΦΕΙΟ ΜΟΥΔΙΩΤΗΣ</span>
+                <span class="title" data-i18n="nav.title">Μηχανολόγος Μηχανικός ΑΠΘ, 3× MSc</span>
             </div>
         </a>
         <div class="nav-links" id="navLinks">
-            <a href="../index.html">Αρχική</a>
+            <a href="../#about"    data-i18n="nav.about">Σχετικά</a>
             <div class="nav-dd">
-                <button type="button" class="nav-dd-btn" aria-expanded="false" aria-controls="navDdMenu" aria-haspopup="true"><span>Υπηρεσίες</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+                <button type="button" class="nav-dd-btn" aria-expanded="false" aria-controls="navDdMenu" aria-haspopup="true"><span data-i18n="nav.services">Υπηρεσίες</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
                 <div class="nav-dd-menu" id="navDdMenu">
                     <div class="nav-dd-col">
-                        <span class="nav-dd-head">Εγκρίσεις και Ταξινόμηση</span>
-                        <a href="../deltio-koinopoiisis-tao/">Δελτίο Κοινοποίησης και ΤΑΟ</a>
-                        <a href="../ethniki-evropaiki-egkrisi-typou/" aria-current="page">Εθνική και Ευρωπαϊκή Έγκριση</a>
-                        <a href="../memonomeni-egkrisi-oximatos/">Μεμονωμένη Έγκριση, Εισαγόμενα</a>
-                        <a href="../egkrisi-typou-dikyklon/">Κατηγορία L: Δίκυκλα, Τετράκυκλα</a>
-                        <a href="../adeia-treiler-o1-o2/">Άδεια Τρέιλερ Ο1/Ο2</a>
-                        <a href="../kotsadoros-elxi/">Κοτσαδόρος και Έλξη</a>
+                        <span class="nav-dd-head" data-i18n="nav.dd.g1">Εγκρίσεις και Ταξινόμηση</span>
+                        <a href="../deltio-koinopoiisis-tao/" data-i18n="nav.dd.deltio-koinopoiisis-tao">Δελτίο Κοινοποίησης και ΤΑΟ</a>
+                        <a href="./" data-i18n="nav.dd.ethniki-evropaiki-egkrisi-typou" aria-current="page">Εθνική και Ευρωπαϊκή Έγκριση</a>
+                        <a href="../memonomeni-egkrisi-oximatos/" data-i18n="nav.dd.memonomeni-egkrisi-oximatos">Μεμονωμένη Έγκριση, Εισαγόμενα</a>
+                        <a href="../egkrisi-typou-dikyklon/" data-i18n="nav.dd.egkrisi-typou-dikyklon">Κατηγορία L: Δίκυκλα, Τετράκυκλα</a>
+                        <a href="../adeia-treiler-o1-o2/" data-i18n="nav.dd.adeia-treiler-o1-o2">Άδεια Τρέιλερ Ο1/Ο2</a>
+                        <a href="../kotsadoros-elxi/" data-i18n="nav.dd.kotsadoros-elxi">Κοτσαδόρος και Έλξη</a>
                     </div>
                     <div class="nav-dd-col">
-                        <span class="nav-dd-head">Μετατροπές και Ειδικά Οχήματα</span>
-                        <a href="../trochospita/">Τροχόσπιτα</a>
-                        <a href="../metatropi-van-se-trochospito/">Βαν σε Αυτοκινούμενο</a>
-                        <a href="../oximata-eidikou-skopou/">Οχήματα Ειδικού Σκοπού</a>
-                        <a href="../metaskeves-yperkataskeves/">Μετασκευές, Υπερκατασκευές</a>
-                        <a href="../topothetisi-geranou/">Τοποθέτηση Γερανού</a>
-                        <a href="../texniki-symvouleftiki/">Βεβαιώσεις Μηχανικού</a>
+                        <span class="nav-dd-head" data-i18n="nav.dd.g2">Μετατροπές και Ειδικά Οχήματα</span>
+                        <a href="../trochospita/" data-i18n="nav.dd.trochospita">Τροχόσπιτα</a>
+                        <a href="../metatropi-van-se-trochospito/" data-i18n="nav.dd.metatropi-van-se-trochospito">Βαν σε Αυτοκινούμενο</a>
+                        <a href="../oximata-eidikou-skopou/" data-i18n="nav.dd.oximata-eidikou-skopou">Οχήματα Ειδικού Σκοπού</a>
+                        <a href="../metaskeves-yperkataskeves/" data-i18n="nav.dd.metaskeves-yperkataskeves">Μετασκευές, Υπερκατασκευές</a>
+                        <a href="../topothetisi-geranou/" data-i18n="nav.dd.topothetisi-geranou">Τοποθέτηση Γερανού</a>
+                        <a href="../texniki-symvouleftiki/" data-i18n="nav.dd.texniki-symvouleftiki">Βεβαιώσεις Μηχανικού</a>
                     </div>
-                    <a class="nav-dd-all" href="../#services">Όλες οι υπηρεσίες</a>
+                    <a class="nav-dd-all" href="../#services" data-i18n="nav.dd.all">Όλες οι υπηρεσίες</a>
                 </div>
             </div>
-            <a href="../#contact" class="nav-cta">Επικοινωνία</a>
+            <a href="../#contact"  class="nav-cta" data-i18n="nav.contact">Επικοινωνία</a>
         </div>
         <div class="lang-toggle" id="langToggle">
-            <a class="lang-btn active" href="#" hreflang="el" aria-label="Ελληνικά">
-                <img src="../flags/gr.svg" class="lflag" alt="" width="20" height="15">
+            <a class="lang-btn active" data-lang="el" href="./" hreflang="el" lang="el" aria-label="Ελληνικά">
+                <img src="../flags/gr.svg" class="lflag" alt="GR" width="20" height="15">
                 <span class="lcode">ΕΛ</span>
             </a>
             <div class="lang-sep"></div>
-            <a class="lang-btn" href="../en/ethniki-evropaiki-egkrisi-typou/" hreflang="en" aria-label="English">
-                <img src="../flags/gb.svg" class="lflag" alt="" width="20" height="15">
+            <a class="lang-btn" data-lang="en" href="../en/ethniki-evropaiki-egkrisi-typou/" hreflang="en" lang="en" aria-label="English">
+                <img src="../flags/gb.svg" class="lflag" alt="EN" width="20" height="15">
                 <span class="lcode">EN</span>
             </a>
             <button type="button" class="search-toggle" aria-label="Αναζήτηση στον ιστότοπο" aria-expanded="false" aria-controls="siteSearch"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
         </div>
         <div class="site-search-panel" id="siteSearch" hidden><form class="nav-search" role="search" action="#" autocomplete="off"><svg viewBox="0 0 24 24" width="15" height="15" class="nav-search-ico" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><input type="search" class="nav-search-in" placeholder="Αναζήτηση στον ιστότοπο…" aria-label="Αναζήτηση στον ιστότοπο" enterkeyhint="search"><div class="nav-search-res" hidden></div></form></div>
-        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Μενού πλοήγησης" aria-expanded="false">
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Μενού πλοήγησης" data-i18n-aria-label="aria.menu" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
     </nav>
@@ -473,23 +472,32 @@
         <div class="footer-top footer-top--cols footer-top--solo">
             <div class="footer-brand">
                 <div class="footer-logo-circle">
-                    <img loading="lazy" class="logo-img" src="../founder.webp" alt="ΤΕΧΝΙΚΟ ΓΡΑΦΕΙΟ ΜΟΥΔΙΩΤΗΣ" width="96" height="96">
+                    <img class="logo-img" src="../logo-192.webp" alt="Τεχνικό Γραφείο Μουδιώτης — λογότυπο" width="96" height="96">
                 </div>
                 <div class="footer-brand-text">
-                    <p class="fname">Τεχνικό Γραφείο Μουδιώτης &amp; Συνεργάτες</p>
-                    <p class="ftitle">Μηχανολόγος Μηχανικός ΑΠΘ, 3× MSc<br>Έδρα Αθήνα - Θεσσαλονίκη<br>Εξυπηρέτηση Πανελλαδικά και εντός Ε.Ε.</p>
+                    <p class="fname" id="footerBrandName" data-i18n="footer.brand">Τεχνικό Γραφείο Μουδιώτης &amp; Συνεργάτες</p>
+                    <p class="ftitle" data-i18n-html="footer.title">Μηχανολόγος Μηχανικός ΑΠΘ, 3× MSc<br>Έδρα Αθήνα - Θεσσαλονίκη<br>Εξυπηρέτηση Πανελλαδικά και εντός Ε.Ε.</p>
                     <p class="fdesc">Εγκρίσεις τύπου, ταξινομήσεις οχημάτων και τεχνικές μελέτες.</p>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="footer-socials">
-                <a href="mailto:info@moudiotis.gr" class="social-link" title="Email"><i class="fa-solid fa-envelope"></i></a>
-                <a href="tel:+302107561836" class="social-link" title="Phone"><i class="fa-solid fa-phone"></i></a>
-                <a href="https://www.facebook.com/61550061850076" class="social-link" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://expertease.eu" class="social-link" target="_blank" rel="noopener noreferrer" title="Expertease Designs"><i class="fa-solid fa-globe"></i></a>
+                <a id="footerEmail" href="mailto:info@moudiotis.gr" class="social-link" title="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a id="footerPhone" href="tel:+302107561836" class="social-link" title="Phone">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a id="footerFacebook" href="https://www.facebook.com/61550061850076" class="social-link" target="_blank" rel="noopener noreferrer" title="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://expertease.eu" class="social-link" target="_blank" rel="noopener noreferrer" title="Expertease Designs">
+                    <i class="fa-solid fa-globe"></i>
+                </a>
             </div>
         </div>
+
         <p class="ft-legal">Οι πληροφορίες του ιστότοπου έχουν ενημερωτικό χαρακτήρα, δεν αποτελούν νομική συμβουλή και ενδέχεται να μην αποτυπώνουν την πιο πρόσφατη νομοθεσία. <a href="../oroi-xrisis/">Όροι χρήσης, απόρρητο και cookies</a></p>
         <hr class="ec-rule">
         <div class="expertease-credit">
@@ -503,7 +511,9 @@
             </a>
           </div>
           <div class="ec-layer ec-layer--ad">
-            <div class="ec-ad-ring"><div class="ec-ad-logo"><img loading="lazy" src="../logo_expertease.webp" alt="Expertease Designs" width="256" height="253"></div></div>
+            <div class="ec-ad-ring">
+              <div class="ec-ad-logo"><img loading="lazy" src="../logo_expertease.webp" alt="Expertease Designs" width="256" height="253"></div>
+            </div>
             <div class="ec-ad-text">
               <span class="ec-ad-question">Like this site?</span>
               <a href="https://expertease.eu/webdesign" target="_blank" rel="noopener noreferrer" class="ec-ad-cta">

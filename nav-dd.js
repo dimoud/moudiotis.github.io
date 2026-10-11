@@ -47,3 +47,16 @@
         if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.5) close();
     }, { passive: true });
 })();
+
+/* istoselides v2.11: η μπάρα γίνεται συμπαγής μετά από 60 px κύλισης, σε ΟΛΕΣ τις σελίδες
+   (ίδιο μενού παντού). Στην αρχική το κάνει και το eng-animations.js, με το ίδιο όριο. */
+(function () {
+    var nav = document.getElementById('nav');
+    if (!nav) return;
+    var ticking = false;
+    function upd() { nav.classList.toggle('scrolled', window.scrollY > 60); ticking = false; }
+    window.addEventListener('scroll', function () {
+        if (!ticking) { ticking = true; requestAnimationFrame(upd); }
+    }, { passive: true });
+    upd();
+})();

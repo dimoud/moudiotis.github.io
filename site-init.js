@@ -709,6 +709,12 @@
                 for (var q = 0; q < pageBtns.length; q++) { if (pageBtns[q].href === u) return; }
                 pageBtns.push({ href: u, label: isEn ? it.titleEn : it.titleEl });
             });
+            // Σχετικές σελίδες χωρίς δική τους κάρτα (π.χ. κοτσαδόρος μέσα στην κάρτα του τρέιλερ):
+            // κουμπί στην ίδια κάρτα, ώστε το πλέγμα να μένει συμμετρικό.
+            (s.links || []).forEach(function (l) {
+                var u = isEn ? l.urlEn : l.urlEl;
+                if (u) pageBtns.push({ href: u, label: isEn ? l.labelEn : l.labelEl });
+            });
             var pagesHtml = '';
             if (pageBtns.length) {
                 pagesHtml = '<div class="svc-inline-cta">';

@@ -55,7 +55,17 @@
     }
   }
 
-  function boot() { Array.prototype.forEach.call(document.querySelectorAll('[data-pc]'), init); }
+  /* istoselides v2.11: η λωρίδα στήνεται όταν πλησιάσει στο κάδρο — αλλιώς τα αντίγραφα (eager)
+     κατέβαζαν ~130 KB λογοτύπων πριν από την πρώτη εικόνα της σελίδας */
+  function boot() {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-pc]'), function (root) {
+      if (!('IntersectionObserver' in window)) return init(root);
+      var io = new IntersectionObserver(function (en) {
+        if (en[0].isIntersecting) { io.disconnect(); init(root); }
+      }, { rootMargin: '800px 0px' });
+      io.observe(root);
+    });
+  }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();

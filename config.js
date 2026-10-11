@@ -42,7 +42,7 @@ window.SITE_CONFIG = {
 
     // ── ASSETS ────────────────────────────────────────────────────────────
     assets: {
-        logo:         '/logo.webp',
+        logo:         '/logo-192.webp',
         photo:        '/founder.webp',
         contactPhoto: '/founder_contact.webp',
         heroSlides:   [],
@@ -171,6 +171,7 @@ window.SITE_CONFIG = {
             icon:        'fa-truck-ramp-box',
             urlEl: '/adeia-treiler-o1-o2/',
             urlEn: '/en/adeia-treiler-o1-o2/',
+            links: [ { urlEl: '/kotsadoros-elxi/', urlEn: '/en/kotsadoros-elxi/', labelEl: 'Κοτσαδόρος και Έλξη', labelEn: 'Tow Bar and Towing' } ],
             titleEl:     'Άδεια Τρέιλερ Ο1 και Ο2 — Ταξινόμηση Ρυμουλκούμενου και Μπαγκαζιέρας',
             titleEn:     'O1 and O2 Trailer Licence — Trailer and Cargo Box Registration',
             textEl:      'Ξανάνοιξαν οι διαδικασίες <strong class="kw">ταξινόμησης</strong> για <strong class="kw">όλα τα τρέιλερ</strong>. Αναλαμβάνουμε πλήρως: <strong class="kw">Ο1</strong> (έως 750 kg — <strong class="kw">μπαγκαζιέρα</strong>, σκάφος, τροχόσπιτο) και <strong class="kw">Ο2</strong> (έως 3,5 τόνους). <strong class="kw">Έγκριση τύπου ρυμουλκούμενου</strong>, τεχνική μελέτη, υποβολή σε ΥΜΕΔ/ΚΤΕΟ, <strong class="kw">έκδοση άδειας κυκλοφορίας</strong> — από την αρχή ώς το τέλος.',

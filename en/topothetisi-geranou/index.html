@@ -34,10 +34,9 @@
     <meta name="format-detection" content="telephone=yes, email=yes, address=yes">
     <meta name="theme-color" content="#1d3a5c">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../fonts.css" media="print" onload="this.media='all'" data-async-css>
+    <noscript><link rel="stylesheet" href="../../fonts.css"></noscript>
+    <link rel="stylesheet" href="../../fa-subset.css">
     <script>document.documentElement.className += ' js';</script>
     <link rel="stylesheet" href="../../styles.css?v=202610110100">
     <link rel="stylesheet" href="../../expertease-credit.css?v=202610110100">
@@ -145,58 +144,58 @@
     <div id="progress"></div>
 
     <!-- ===== NAVIGATION (ίδιο markup με την αρχική) ===== -->
-    <nav id="nav" class="scrolled">
-        <a href="../../en/index.html" class="nav-logo">
+    <nav id="nav">
+        <a href="../" class="nav-logo">
             <div class="logo-circle">
-                <img class="logo-img" src="../../founder.webp" alt="MOUDIOTIS TECHNICAL OFFICE" width="96" height="96">
+                <img class="logo-img" src="../../logo-192.webp" alt="Moudiotis Technical Office — logo" width="96" height="96">
             </div>
             <div class="logo-text">
-                <span class="name">MOUDIOTIS TECHNICAL OFFICE</span>
-                <span class="title">Mechanical Engineer AUTH, 3× MSc</span>
+                <span class="name" id="navBrandName" data-i18n="nav.brand">MOUDIOTIS TECHNICAL OFFICE</span>
+                <span class="title" data-i18n="nav.title">Mechanical Engineer AUTH, 3× MSc</span>
             </div>
         </a>
         <div class="nav-links" id="navLinks">
-            <a href="../../en/index.html">Home</a>
+            <a href="../#about"    data-i18n="nav.about">About</a>
             <div class="nav-dd">
-                <button type="button" class="nav-dd-btn" aria-expanded="false" aria-controls="navDdMenu" aria-haspopup="true"><span>Services</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+                <button type="button" class="nav-dd-btn" aria-expanded="false" aria-controls="navDdMenu" aria-haspopup="true"><span data-i18n="nav.services">Services</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
                 <div class="nav-dd-menu" id="navDdMenu">
                     <div class="nav-dd-col">
-                        <span class="nav-dd-head">Approvals and Registration</span>
-                        <a href="../deltio-koinopoiisis-tao/">Notification and TAO</a>
-                        <a href="../ethniki-evropaiki-egkrisi-typou/">National and EU Approval</a>
-                        <a href="../memonomeni-egkrisi-oximatos/">Individual Approval, Imports</a>
-                        <a href="../egkrisi-typou-dikyklon/">Category L: Motorcycles, Quads</a>
-                        <a href="../adeia-treiler-o1-o2/">O1/O2 Trailer Licence</a>
-                        <a href="../kotsadoros-elxi/">Tow Bar and Towing</a>
+                        <span class="nav-dd-head" data-i18n="nav.dd.g1">Approvals and Registration</span>
+                        <a href="../deltio-koinopoiisis-tao/" data-i18n="nav.dd.deltio-koinopoiisis-tao">Notification and TAO</a>
+                        <a href="../ethniki-evropaiki-egkrisi-typou/" data-i18n="nav.dd.ethniki-evropaiki-egkrisi-typou">National and EU Approval</a>
+                        <a href="../memonomeni-egkrisi-oximatos/" data-i18n="nav.dd.memonomeni-egkrisi-oximatos">Individual Approval, Imports</a>
+                        <a href="../egkrisi-typou-dikyklon/" data-i18n="nav.dd.egkrisi-typou-dikyklon">Category L: Motorcycles, Quads</a>
+                        <a href="../adeia-treiler-o1-o2/" data-i18n="nav.dd.adeia-treiler-o1-o2">O1/O2 Trailer Licence</a>
+                        <a href="../kotsadoros-elxi/" data-i18n="nav.dd.kotsadoros-elxi">Tow Bar and Towing</a>
                     </div>
                     <div class="nav-dd-col">
-                        <span class="nav-dd-head">Conversions and Special Vehicles</span>
-                        <a href="../trochospita/">Caravans</a>
-                        <a href="../metatropi-van-se-trochospito/">Van to Motor Caravan</a>
-                        <a href="../oximata-eidikou-skopou/">Special Purpose Vehicles</a>
-                        <a href="../metaskeves-yperkataskeves/">Conversions, Superstructures</a>
-                        <a href="../topothetisi-geranou/" aria-current="page">Crane Installation</a>
-                        <a href="../texniki-symvouleftiki/" aria-current="page">Engineer Certificates</a>
+                        <span class="nav-dd-head" data-i18n="nav.dd.g2">Conversions and Special Vehicles</span>
+                        <a href="../trochospita/" data-i18n="nav.dd.trochospita">Caravans</a>
+                        <a href="../metatropi-van-se-trochospito/" data-i18n="nav.dd.metatropi-van-se-trochospito">Van to Motor Caravan</a>
+                        <a href="../oximata-eidikou-skopou/" data-i18n="nav.dd.oximata-eidikou-skopou">Special Purpose Vehicles</a>
+                        <a href="../metaskeves-yperkataskeves/" data-i18n="nav.dd.metaskeves-yperkataskeves">Conversions, Superstructures</a>
+                        <a href="./" data-i18n="nav.dd.topothetisi-geranou" aria-current="page">Crane Installation</a>
+                        <a href="../texniki-symvouleftiki/" data-i18n="nav.dd.texniki-symvouleftiki">Engineer Certificates</a>
                     </div>
-                    <a class="nav-dd-all" href="../../en/#services">All services</a>
+                    <a class="nav-dd-all" href="../#services" data-i18n="nav.dd.all">All services</a>
                 </div>
             </div>
-            <a href="../../en/#contact" class="nav-cta">Contact</a>
+            <a href="../#contact"  class="nav-cta" data-i18n="nav.contact">Contact</a>
         </div>
         <div class="lang-toggle" id="langToggle">
-            <a class="lang-btn" href="../../topothetisi-geranou/" hreflang="el" aria-label="Ελληνικά">
-                <img src="../../flags/gr.svg" class="lflag" alt="" width="20" height="15">
+            <a class="lang-btn" data-lang="el" href="../../topothetisi-geranou/" hreflang="el" lang="el" aria-label="Ελληνικά">
+                <img src="../../flags/gr.svg" class="lflag" alt="GR" width="20" height="15">
                 <span class="lcode">ΕΛ</span>
             </a>
             <div class="lang-sep"></div>
-            <a class="lang-btn active" href="#" hreflang="en" aria-label="English">
-                <img src="../../flags/gb.svg" class="lflag" alt="" width="20" height="15">
+            <a class="lang-btn active" data-lang="en" href="./" hreflang="en" lang="en" aria-label="English">
+                <img src="../../flags/gb.svg" class="lflag" alt="EN" width="20" height="15">
                 <span class="lcode">EN</span>
             </a>
             <button type="button" class="search-toggle" aria-label="Search the site" aria-expanded="false" aria-controls="siteSearch"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
         </div>
         <div class="site-search-panel" id="siteSearch" hidden><form class="nav-search" role="search" action="#" autocomplete="off"><svg viewBox="0 0 24 24" width="15" height="15" class="nav-search-ico" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><input type="search" class="nav-search-in" placeholder="Search the site…" aria-label="Search the site" enterkeyhint="search"><div class="nav-search-res" hidden></div></form></div>
-        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Navigation menu" aria-expanded="false">
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Navigation menu" data-i18n-aria-label="aria.menu" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
     </nav>
@@ -556,23 +555,29 @@
         <div class="footer-top footer-top--cols footer-top--solo">
             <div class="footer-brand">
                 <div class="footer-logo-circle">
-                    <img loading="lazy" class="logo-img" src="../../founder.webp" alt="MOUDIOTIS TECHNICAL OFFICE" width="96" height="96">
+                    <img class="logo-img" src="../../logo-192.webp" alt="Moudiotis Technical Office — logo" width="96" height="96">
                 </div>
                 <div class="footer-brand-text">
-                    <p class="fname">Moudiotis &amp; Associates Technical Office</p>
-                    <p class="ftitle">Mechanical Engineer AUTH, 3× MSc<br>Based in Athens - Thessaloniki<br>Serving all of Greece and the EU</p>
+                    <p class="fname" id="footerBrandName" data-i18n="footer.brand">Moudiotis &amp; Associates Technical Office</p>
+                    <p class="ftitle" data-i18n-html="footer.title">Mechanical Engineer AUTH, 3× MSc<br>Based in Athens - Thessaloniki<br>Serving all of Greece and the EU</p>
                     <p class="fdesc">Vehicle type approval, registration and technical studies.</p>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="footer-socials">
-                <a href="mailto:info@moudiotis.gr" class="social-link" title="Email"><i class="fa-solid fa-envelope"></i></a>
-                <a href="tel:+302107561836" class="social-link" title="Phone"><i class="fa-solid fa-phone"></i></a>
-                <a href="https://www.facebook.com/61550061850076" class="social-link" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://expertease.eu" class="social-link" target="_blank" rel="noopener noreferrer" title="Expertease Designs"><i class="fa-solid fa-globe"></i></a>
+                <a id="footerEmail" href="mailto:info@moudiotis.gr" class="social-link" title="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a id="footerPhone" href="tel:+302107561836" class="social-link" title="Phone">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a href="https://expertease.eu" class="social-link" target="_blank" rel="noopener noreferrer" title="Expertease Designs">
+                    <i class="fa-solid fa-globe"></i>
+                </a>
             </div>
         </div>
+
         <p class="ft-legal">Website information is for general guidance, is not legal advice and may not reflect the latest legislation. <a href="../oroi-xrisis/">Terms of use, privacy and cookies</a></p>
         <hr class="ec-rule">
         <div class="expertease-credit">
@@ -586,7 +591,9 @@
             </a>
           </div>
           <div class="ec-layer ec-layer--ad">
-            <div class="ec-ad-ring"><div class="ec-ad-logo"><img loading="lazy" src="../../logo_expertease.webp" alt="Expertease Designs" width="256" height="253"></div></div>
+            <div class="ec-ad-ring">
+              <div class="ec-ad-logo"><img loading="lazy" src="../../logo_expertease.webp" alt="Expertease Designs" width="256" height="253"></div>
+            </div>
             <div class="ec-ad-text">
               <span class="ec-ad-question">Like this site?</span>
               <a href="https://expertease.eu/webdesign" target="_blank" rel="noopener noreferrer" class="ec-ad-cta">
