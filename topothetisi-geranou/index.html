@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Τοποθέτηση Γερανού σε Όχημα — Μελέτη και Νέα Άδεια Κυκλοφορίας</title>
+    <link rel="preload" as="image" href="../hero-bg-900.webp" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="../688bc305-6129-4485-a56f-d72fdc729791.webp" media="(min-width: 769px)" fetchpriority="high">
     <meta name="description" content="Τοποθέτηση γερανού σε όχημα: μελέτη φορτίων και ευστάθειας, στερέωση στο πλαίσιο, έλεγχος και νέα άδεια κυκλοφορίας. Σε όλη την Ελλάδα.">
 
     <link rel="canonical" href="https://moudiotis.gr/topothetisi-geranou/">
@@ -34,7 +36,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>document.documentElement.className += ' js';</script>
     <link rel="stylesheet" href="../styles.css?v=202610110100">
@@ -206,6 +208,8 @@
             <div class="svc-hero-txt">
                 <p class="svc-kicker">ΓΕΡΑΝΟΦΟΡΑ ΟΧΗΜΑΤΑ · ΝΕΑ ΑΔΕΙΑ ΚΥΚΛΟΦΟΡΙΑΣ</p>
                 <h1>Τοποθέτηση Γερανού σε Όχημα</h1>
+                
+                <div class="svc-hero-cta"><a href="#contact" class="svc-cta-primary">Ζητήστε προσφορά</a><a href="tel:+302107561836" class="svc-cta-tel" aria-label="Κλήση 210 756 1836"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>210 756 1836</span></a></div>
             </div>
         </div>
     </header>
@@ -316,7 +320,7 @@
                     <line x1="44"  y1="208" x2="44"  y2="216" stroke="currentColor" stroke-width="1.5"/>
                     <line x1="334" y1="208" x2="334" y2="216" stroke="currentColor" stroke-width="1.5"/>
                     <text x="189" y="208" text-anchor="middle" dominant-baseline="auto"
-                          font-family="Cormorant Garamond, serif" font-size="10" letter-spacing="2"
+                          font-family="EB Garamond, serif" font-size="10" letter-spacing="2"
                           fill="currentColor" opacity="0.9">7.200 m</text>
                 </g>
 
@@ -329,10 +333,10 @@
                         stroke="#38a169" stroke-width="1" fill="rgba(56,161,105,0.09)"
                         stroke-dasharray="4 4"/>
                     <text x="189" y="113" text-anchor="middle"
-                        font-family="'Barlow Condensed',sans-serif" font-size="12" font-weight="700"
+                        font-family="'Roboto Condensed',sans-serif" font-size="12" font-weight="700"
                         letter-spacing="1" fill="#38a169">ΑΔΕΙΟΔΟΤΗΘΗΚΕ</text>
                     <text x="189" y="122" text-anchor="middle"
-                        font-family="'IBM Plex Mono',monospace" font-size="5" letter-spacing="1.5"
+                        font-family="'JetBrains Mono',monospace" font-size="5" letter-spacing="1.5"
                         fill="#38a169" opacity="0.7">CRANE INSPECTION</text>
                 </g>
             </svg></div>
@@ -612,6 +616,7 @@
                 (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
                 rv.forEach(function (el) { el.classList.add('visible'); });
             } else {
+                document.documentElement.classList.add('anim-ready');   /* istoselides v2.11 (ΜΗ-01) */
                 var io = new IntersectionObserver(function (entries) {
                     entries.forEach(function (e) {
                         if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }

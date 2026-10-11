@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tow Bar in Greece: Licence Rules and When an Engineer Is Needed</title>
+    <link rel="preload" as="image" href="../../hero-bg-900.webp" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="../../688bc305-6129-4485-a56f-d72fdc729791.webp" media="(min-width: 769px)" fetchpriority="high">
     <meta name="description" content="Does a tow bar need a licence in Greece? What Regulation 2805/2021 says on towable mass (O.1, O.2), removable or folding tow bars, and when an engineer is needed.">
 
     <link rel="canonical" href="https://moudiotis.gr/en/kotsadoros-elxi/">
@@ -34,7 +36,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>document.documentElement.className += ' js';</script>
     <link rel="stylesheet" href="../../styles.css?v=202610110100">
@@ -230,6 +232,8 @@
             <div class="svc-hero-txt">
                 <p class="svc-kicker">MINISTERIAL DECISION 2805/2021 AS IN FORCE · TRAILER TOWING</p>
                 <h1>Tow Bar: The Rules and Whether a Licence Is Needed</h1>
+                
+                <div class="svc-hero-cta"><a href="#contact" class="svc-cta-primary">Request a quote</a><a href="tel:+302107561836" class="svc-cta-tel" aria-label="Call +30 210 756 1836"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>210 756 1836</span></a></div>
             </div>
         </div>
     </header>
@@ -575,6 +579,7 @@
                 (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
                 rv.forEach(function (el) { el.classList.add('visible'); });
             } else {
+                document.documentElement.classList.add('anim-ready');   /* istoselides v2.11 (ΜΗ-01) */
                 var io = new IntersectionObserver(function (entries) {
                     entries.forEach(function (e) {
                         if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }

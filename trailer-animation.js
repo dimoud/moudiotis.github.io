@@ -158,11 +158,11 @@
 
       /* ─── DIMENSION LABELS ─── */
       '<text id="trailerDimLabel" x="439" y="332"',
-      '  font-family="\'IBM Plex Mono\',monospace" font-size="12" letter-spacing="2.5"',
+      '  font-family="\'JetBrains Mono\',monospace" font-size="12" letter-spacing="2.5"',
       '  fill="#c99986" text-anchor="middle" opacity="0"',
       '>— 3.500 m (body) —</text>',
       '<text id="trailerDimLabel2" x="362" y="296"',
-      '  font-family="\'IBM Plex Mono\',monospace" font-size="10" letter-spacing="2"',
+      '  font-family="\'JetBrains Mono\',monospace" font-size="10" letter-spacing="2"',
       '  fill="#c99986" text-anchor="middle" opacity="0"',
       '>— 5.200 m overall —</text>',
 
@@ -175,10 +175,10 @@
       '    stroke="#38a169" stroke-width="1.5" fill="rgba(56,161,105,0.09)"',
       '    stroke-dasharray="5 5"/>',
       '  <text x="440" y="175" text-anchor="middle"',
-      '    font-family="\'Barlow Condensed\',sans-serif" font-size="44" font-weight="700"',
+      '    font-family="\'Roboto Condensed\',sans-serif" font-size="44" font-weight="700"',
       '    letter-spacing="8" fill="#38a169">' + tr('ΑΔΕΙΟΔΟΤΗΘΗΚΕ','LICENSED') + '</text>',
       '  <text x="440" y="202" text-anchor="middle"',
-      '    font-family="\'IBM Plex Mono\',monospace" font-size="12" letter-spacing="4"',
+      '    font-family="\'JetBrains Mono\',monospace" font-size="12" letter-spacing="4"',
       '    fill="#38a169" opacity="0.7">' + tr('ΑΔΕΙΑ Ο1 / Ο2','O1 / O2 LICENCE') + '</text>',
       '</g>',
 

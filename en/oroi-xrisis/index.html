@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Use, Privacy and Cookies | Moudiotis Technical Office</title>
+    <link rel="preload" as="image" href="../../hero-bg-900.webp" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="../../688bc305-6129-4485-a56f-d72fdc729791.webp" media="(min-width: 769px)" fetchpriority="high">
     <meta name="description" content="Terms of use of moudiotis.gr, disclaimer on legal information, currency of legislation, privacy policy (GDPR) and cookie policy.">
 
     <link rel="canonical" href="https://moudiotis.gr/en/oroi-xrisis/">
@@ -34,7 +36,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>document.documentElement.className += ' js';</script>
     <link rel="stylesheet" href="../../styles.css?v=202610110100">
@@ -161,7 +163,7 @@
 
 <h2 id="apopoiisi">2. Legal information and how current it is</h2>
 <p>We carefully publish information on vehicle legislation and procedures, because we believe good information helps. It is <strong>general information only</strong> and is not individual legal advice, nor a substitute for the advice of a lawyer or other competent professional. Every case depends on its own facts, so before an important decision we suggest we look at your case together.</p>
-<p>Legislation changes often. We try to keep our pages up to date, but some information may have been written before a recent change that we have not yet had time to reflect. The binding text is always the Government Gazette (ΦΕΚ) and the instructions of the competent authority. If you notice something that has changed, we would be grateful if you let us know.</p>
+<p>Legislation changes often. We try to keep our pages up to date, but some information may have been written before a recent change that we have not yet had time to reflect. The binding text is always the Government Gazette (<span lang="el">ΦΕΚ</span>) and the instructions of the competent authority. If you notice something that has changed, we would be grateful if you let us know.</p>
 
 <h2 id="periorismos">3. Liability</h2>
 <p>To the extent permitted by law, we are not liable for decisions taken solely on the basis of the general content of this website, or for the content of third-party websites we link to. Nothing in these terms limits any liability or right that the law does not allow to be limited, such as liability for intent or gross negligence and your rights as a consumer.</p>
@@ -180,7 +182,8 @@
 
 <h2 id="cookies">6. Cookies</h2>
 <p>We do not use advertising cookies. Google Analytics loads only if you click “Accept”.</p>
-<div class="lg-table-wrap"><table class="lg-table">
+<div class="lg-table-wrap" tabindex="0" role="region" aria-label="Table">
+<table class="lg-table">
 <thead><tr><th>What</th><th>Purpose</th><th>Duration</th></tr></thead>
 <tbody>
 <tr><td><code>moudiotis_consent</code> — necessary</td><td>Remembers your cookie choice</td><td>Until you change it</td></tr>
@@ -380,6 +383,7 @@
                 (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
                 rv.forEach(function (el) { el.classList.add('visible'); });
             } else {
+                document.documentElement.classList.add('anim-ready');   /* istoselides v2.11 (ΜΗ-01) */
                 var io = new IntersectionObserver(function (entries) {
                     entries.forEach(function (e) {
                         if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }

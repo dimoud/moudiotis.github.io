@@ -490,33 +490,40 @@
         'display:flex;align-items:center;justify-content:center;font-family:serif;' +
         'font-size:18px;font-weight:700;color:' + accentColor + '">' + P.initials + '</div>';
 
+    /* istoselides v2.11 (ΜΗ-32): ΣΧΕΤΙΚΕΣ διαδρομές (ανοίγει και χωρίς διακομιστή) και ΤΟΠΙΚΗ
+       εφεδρεία, μία φορά — πριν, το onerror φόρτωνε Unsplash/Flaticon και, αν αποτύγχανε κι αυτό,
+       ξανάτρεχε σε βρόχο (229 αιτήματα σε 30″ με file://). */
+    var _ROOT = /\/en\/(index\.html)?$/.test(location.pathname) ? '../' : '';
+    function _rel(u) { return (u && u.charAt(0) === '/' && u.charAt(1) !== '/') ? _ROOT + u.slice(1) : u; }
+    var _FALLBACK = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" fill="#0d1a2d"/>' +
+        '<text x="60" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="34" fill="#c99986">ΤΓΜ</text></svg>');
+    function _fallbackOnce() { if (this.getAttribute('data-fallback')) return; this.setAttribute('data-fallback', '1'); this.src = _FALLBACK; }
+    window.__imgFallbackOnce = _fallbackOnce;
+
     document.querySelectorAll('.logo-img').forEach(function (img) {
-        img.src = C.assets.logo;
+        img.src = _rel(C.assets.logo);
         img.alt = P.displayNameEl + ' Logo';
         img.onerror = function () { this.parentElement.innerHTML = fallbackInitials; };
     });
 
     var heroPhoto = document.getElementById('heroPhoto');
     if (heroPhoto) {
-        heroPhoto.src = C.assets.photo;
+        heroPhoto.src = _rel(C.assets.photo);
         heroPhoto.alt = P.displayNameEl;
-        heroPhoto.onerror = function () {
-            this.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600&h=800';
-        };
+        heroPhoto.onerror = _fallbackOnce;
     }
 
     var slides = document.querySelectorAll('.hero-slide');
     (C.assets.heroSlides || []).forEach(function (src, i) {
-        if (slides[i]) slides[i].style.backgroundImage = "url('" + src + "')";
+        if (slides[i]) slides[i].style.backgroundImage = "url('" + _rel(src) + "')";
     });
 
     var personPhoto = document.getElementById('personPhoto');
     if (personPhoto) {
-        personPhoto.src = C.assets.contactPhoto || C.assets.photo;
+        personPhoto.src = _rel(C.assets.contactPhoto || C.assets.photo);
         personPhoto.alt = P.displayNameEl;
-        personPhoto.onerror = function () {
-            this.src = 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png';
-        };
+        personPhoto.onerror = _fallbackOnce;
     }
 
 
@@ -845,7 +852,7 @@
             pHtml +=
                 '<div class="project-card" data-reveal>' +
                 '<img src="' + p.image + '" alt="" ' +
-                'onerror="this.src=\'https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=800\'">' +
+                'onerror="window.__imgFallbackOnce && window.__imgFallbackOnce.call(this)">' +
                 '<div class="project-card-overlay"></div>' +
                 '<div class="project-card-info">' +
                 '<div class="project-cat" data-i18n="p' + n + '.cat">'  + p.catEl   + '</div>' +

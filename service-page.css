@@ -24,12 +24,12 @@
 .svc-hero-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .svc-hero-txt { min-width: 0; }
 .svc-hero .svc-kicker {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: 12.5px; letter-spacing: 3.4px; text-transform: uppercase;
     color: var(--warm); font-weight: 600; margin: 0 0 10px;
 }
 .svc-hero h1 {
-    font-family: 'Cormorant Garamond', serif; font-weight: 700;
+    font-family: 'EB Garamond', serif; font-weight: 700;
     font-size: clamp(26px, 4.2vw, 42px); line-height: 1.14;
     color: var(--white); margin: 0 0 14px;
 }
@@ -57,13 +57,13 @@
 /* ── Κείμενο μέσα στο .ta-box — ΠΛΗΡΕΣ πλάτος, ίδιο padding 24px ── */
 .svc-prose { padding: 6px 24px 2px; }
 .svc-prose h2 {
-    font-family: 'Cormorant Garamond', serif; font-weight: 700;
+    font-family: 'EB Garamond', serif; font-weight: 700;
     font-size: clamp(20px, 2.7vw, 27px); line-height: 1.3;
     color: var(--gold); margin: 20px 0 12px;
 }
 .svc-prose h2:first-child { margin-top: 6px; }
 .svc-prose h3 {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+    font-family: 'Roboto Condensed', sans-serif; font-weight: 600;
     font-size: 18px; letter-spacing: 1.3px; text-transform: uppercase;
     color: var(--gold2); margin: 22px 0 8px;
 }
@@ -84,7 +84,7 @@
 .svc-faq details:last-child { border-bottom: none; }
 .svc-faq summary {
     cursor: pointer; list-style: none;
-    font-family: 'Barlow Condensed', sans-serif; font-size: 18px;
+    font-family: 'Roboto Condensed', sans-serif; font-size: 18px;
     letter-spacing: 0.7px; color: var(--gold);
     display: flex; justify-content: space-between; align-items: center; gap: 14px;
 }
@@ -109,7 +109,7 @@
 }
 .svc-related a:hover { border-color: var(--warm); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.07); }
 .svc-related b {
-    display: block; font-family: 'Barlow Condensed', sans-serif;
+    display: block; font-family: 'Roboto Condensed', sans-serif;
     font-size: 17px; letter-spacing: 0.8px; color: var(--gold); margin-bottom: 4px;
 }
 .svc-related span { font-family: 'Source Sans 3', sans-serif; font-size: 14.5px; color: var(--stone); line-height: 1.55; }
@@ -305,7 +305,7 @@ body .svc-crumb { padding-top: 20px; padding-bottom: 0; }
 .svc-prose h2,
 .svc-prose h3,
 .svc-faq summary {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'EB Garamond', Georgia, serif;
     color: var(--gold);
     text-transform: none;
     letter-spacing: 0;
@@ -337,7 +337,7 @@ body .svc-crumb { padding-top: 20px; padding-bottom: 0; }
 .svc-quick a {
     display: inline-flex; align-items: center; gap: 9px;
     min-height: 45px; padding: 0 19px; border-radius: 5px; text-decoration: none;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: 13px; font-weight: 600; line-height: 1;
     letter-spacing: 1.3px; text-transform: uppercase;
     transition: background .25s, border-color .25s, color .25s, transform .25s;
@@ -347,7 +347,7 @@ body .svc-crumb { padding-top: 20px; padding-bottom: 0; }
 .svc-quick-call i { font-size: 11px; }
 .svc-quick-call span { display: flex; flex-direction: column; gap: 2px; }
 .svc-quick-call small {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: 9px; font-weight: 500; letter-spacing: 1.3px;
     text-transform: uppercase; opacity: .68; line-height: 1;
 }
@@ -363,7 +363,7 @@ body .svc-crumb { padding-top: 20px; padding-bottom: 0; }
    Πριν: το τρέχον κείμενο εμφανιζόταν σε δύο ασύνδετα μεγέθη (16,5px στην
    πρόζα, 12,5px στα βήματα, στην προειδοποίηση και στο κλείσιμο) και οι
    μικρές ετικέτες κεφαλαίων σε τέσσερις διαφορετικές γραμματοσειρές
-   (Oswald 9px, Oswald 11px, IBM Plex Mono 9,5px, Source Sans 10,7px).
+   (Oswald 9px, Oswald 11px, JetBrains Mono 9,5px, Source Sans 10,7px).
    Τώρα: δύο μεγέθη κειμένου και μία γραμματοσειρά για κάθε μικρή ετικέτα.
    Ο κανόνας μένει στο service-page.css, άρα ισχύει μόνο στις σελίδες
    υπηρεσιών — η κεντρική σελίδα δεν θίγεται. */
@@ -376,14 +376,14 @@ body .ta-box .ta-cta-text {
 body .ta-box .ta-stat-lbl,
 body .ta-box .ta-badge span,
 body .tap-graphic-tag {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 10.5px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 body .ta-box .ta-warning-body > strong {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1.4px;
@@ -456,7 +456,7 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
 }
 .svc-table th {
     text-align: left;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     font-weight: 700; font-size: 12.5pt; letter-spacing: .05em; text-transform: uppercase;
     color: #fff; background: var(--gold);
     padding: 9px 12px;
@@ -472,11 +472,11 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
 .svc-table tbody tr:hover { background: rgba(201,153,134,.10); }
 .svc-table td:first-child {
     white-space: nowrap; color: var(--ink);
-    font-family: 'IBM Plex Mono', monospace; font-size: 13px;
+    font-family: 'JetBrains Mono', monospace; font-size: 13px;
 }
 .svc-table td b { color: var(--ink); font-weight: 600; }
 .svc-code {
-    font-family: 'IBM Plex Mono', monospace; font-size: 13px;
+    font-family: 'JetBrains Mono', monospace; font-size: 13px;
     background: rgba(31,60,99,.07); border: 1px solid rgba(31,60,99,.16);
     border-radius: 3px; padding: 1px 6px; color: var(--ink); white-space: nowrap;
 }
@@ -562,3 +562,37 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
 mark.ph { background: #ffe9a8; color: #5a3d00; padding: 0 3px; border-radius: 3px; }
 .lg-updated { margin-top: 28px; font-style: italic; color: var(--stone); }
 @media (max-width: 640px) { .lg-toc ol { columns: 1; } }
+
+/* ── istoselides v2.11: πρώτο κάδρο με ενέργεια (K12) ─────────────────────────
+   Κάθε σελίδα υπηρεσίας δείχνει στην πρώτη οθόνη πώς επικοινωνεί ο επισκέπτης. */
+.svc-hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.svc-hero-cta a { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px;
+    padding: 12px 26px; border-radius: 2px; font-family: 'Roboto Condensed', sans-serif; font-weight: 600;
+    font-size: 13px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
+    transition: background-color .25s, color .25s, border-color .25s; }
+.svc-cta-primary { background: #c99986; color: #0c1726; border: 1px solid #c99986; }
+.svc-cta-primary:hover { background: #e2b7a6; border-color: #e2b7a6; }
+.svc-cta-tel { color: #f5f4ef; border: 1px solid rgba(245,244,239,.45); }
+.svc-cta-tel:hover { border-color: #c99986; color: #e2b7a6; }
+@media (max-width: 768px) {
+    .svc-hero { padding: 96px 0 34px; }
+    .svc-hero-cta { flex-direction: column; gap: 10px; }
+    .svc-hero-cta a { width: 100%; min-height: 50px; }
+}
+/* σύνδεσμοι διαδρομής: αντίθεση ≥ 4,5:1 και υπογράμμιση (axe color-contrast, link-in-text-block) */
+.svc-crumb { color: #4a4844; }
+.svc-crumb a { color: #1d3a5c; text-decoration: underline; text-underline-offset: 3px; }
+
+/* LCP (ΜΗ-03): ο τίτλος του svc-hero κινείται μόνο με transform */
+@keyframes svcUpLcp { from { transform: translateY(16px); } to { transform: none; } }
+.js .svc-hero h1 { animation-name: svcUpLcp; }
+
+/* istoselides v2.11 — μικρότερη εικόνα φόντου στο κινητό */
+@media (max-width: 768px) {
+    .svc-hero {
+        background-image:
+            radial-gradient(70% 90% at 15% 0%, rgba(46,95,138,0.45), transparent 70%),
+            linear-gradient(115deg, rgba(5,13,24,0.94) 0%, rgba(14,33,56,0.82) 55%, rgba(5,13,24,0.92) 100%),
+            url('hero-bg-900.webp') !important;
+    }
+}

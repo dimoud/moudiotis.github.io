@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Όροι Χρήσης, Απόρρητο και Cookies | Τεχνικό Γραφείο Μουδιώτης</title>
+    <link rel="preload" as="image" href="../hero-bg-900.webp" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="../688bc305-6129-4485-a56f-d72fdc729791.webp" media="(min-width: 769px)" fetchpriority="high">
     <meta name="description" content="Όροι χρήσης του moudiotis.gr, αποποίηση ευθύνης για τις νομικές πληροφορίες, επικαιρότητα νομοθεσίας, πολιτική απορρήτου (ΓΚΠΔ) και πολιτική cookies.">
 
     <link rel="canonical" href="https://moudiotis.gr/oroi-xrisis/">
@@ -34,7 +36,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>document.documentElement.className += ' js';</script>
     <link rel="stylesheet" href="../styles.css?v=202610110100">
@@ -180,7 +182,8 @@
 
 <h2 id="cookies">6. Cookies</h2>
 <p>Δεν χρησιμοποιούμε cookies διαφήμισης. Το Google Analytics φορτώνεται μόνο αν πατήσετε «Αποδοχή».</p>
-<div class="lg-table-wrap"><table class="lg-table">
+<div class="lg-table-wrap" tabindex="0" role="region" aria-label="Πίνακας">
+<table class="lg-table">
 <thead><tr><th>Τι</th><th>Σκοπός</th><th>Διάρκεια</th></tr></thead>
 <tbody>
 <tr><td><code>moudiotis_consent</code> — απαραίτητο</td><td>Θυμάται την επιλογή σας για τα cookies</td><td>Μέχρι να την αλλάξετε</td></tr>
@@ -380,6 +383,7 @@
                 (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
                 rv.forEach(function (el) { el.classList.add('visible'); });
             } else {
+                document.documentElement.classList.add('anim-ready');   /* istoselides v2.11 (ΜΗ-01) */
                 var io = new IntersectionObserver(function (entries) {
                     entries.forEach(function (e) {
                         if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }

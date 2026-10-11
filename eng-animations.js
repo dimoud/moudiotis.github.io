@@ -30,6 +30,9 @@
 
 (function () {
     'use strict';
+    /* istoselides v2.11 (ΜΗ-01): από εδώ και πέρα επιτρέπεται η κρυφή αρχική κατάσταση των [data-reveal] */
+    if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) && 'IntersectionObserver' in window)
+        document.documentElement.classList.add('anim-ready');
 
     /* ─── HELPERS ────────────────────────────────────────────────────────── */
     function $(id) { return document.getElementById(id); }

@@ -21,12 +21,14 @@
         el: {
             title:  'Χρησιμοποιούμε cookies',
             body:   'Με την αποδοχή ενεργοποιούνται cookies στατιστικών (Google Analytics), ώστε να βλέπουμε πώς χρησιμοποιείται ο ιστότοπος. Δεν χρησιμοποιούμε cookies διαφήμισης. Μπορείτε να αλλάξετε την επιλογή σας οποιαδήποτε στιγμή. <a href="/oroi-xrisis/#cookies">Απόρρητο και cookies</a>',
+            short:  'Cookies στατιστικών (Google Analytics) μόνο με τη συγκατάθεσή σας. <a href="/oroi-xrisis/#cookies">Απόρρητο</a>',
             accept: 'Αποδοχή',
             reject: 'Απόρριψη',
         },
         en: {
             title:  'We use cookies',
             body:   'Accepting enables analytics cookies (Google Analytics) so we can see how the site is used. We do not use advertising cookies. You can change your choice at any time. <a href="/en/oroi-xrisis/#cookies">Privacy and cookies</a>',
+            short:  'Analytics cookies (Google Analytics) only with your consent. <a href="/en/oroi-xrisis/#cookies">Privacy</a>',
             accept: 'Accept',
             reject: 'Decline',
         },
@@ -47,17 +49,21 @@
         '#cc-text a{color:#e8af99;text-decoration:underline;white-space:nowrap}',
         '#cc-btns{display:flex;gap:10px;flex-shrink:0}',
         '#cc-accept,#cc-reject{',
-        '  padding:9px 20px;border:none;border-radius:4px;',
+        '  min-height:44px;padding:9px 20px;border:none;border-radius:4px;',
         '  font-family:"Source Sans 3",sans-serif;',
         '  font-size:13px;font-weight:600;cursor:pointer;transition:opacity .2s;',
         '}',
         '#cc-accept{background:#c99986;color:#1c1b19}',
         '#cc-reject{background:transparent;color:#f5f4ef;border:1px solid rgba(245,244,239,.4)}',
         '#cc-accept:hover,#cc-reject:hover{opacity:.8}',
-        '@media(max-width:480px){',
-        '  #cc-banner{flex-direction:column;align-items:flex-start}',
+        '.cc-short{display:none}',
+        /* Κινητό: ΣΥΜΠΑΓΗΣ μπάρα (≤ 25% της οθόνης) — δεν σκεπάζει το κουμπί κλήσης (istoselides ΜΗ-23) */
+        '@media(max-width:768px){',
+        '  #cc-banner{padding:10px 14px;gap:10px;font-size:13px;line-height:1.4}',
+        '  #cc-text strong,.cc-long{display:none}',
+        '  .cc-short{display:inline}',
         '  #cc-btns{width:100%}',
-        '  #cc-accept,#cc-reject{flex:1;text-align:center}',
+        '  #cc-accept,#cc-reject{flex:1;text-align:center;padding:8px 12px}',
         '}',
     ].join('');
 
@@ -75,7 +81,8 @@
     banner.innerHTML =
         '<div id="cc-text">' +
             '<strong>' + t.title + '</strong>' +
-            t.body +
+            '<span class="cc-long">' + t.body + '</span>' +
+            '<span class="cc-short">' + t.short + '</span>' +
         '</div>' +
         '<div id="cc-btns">' +
             '<button id="cc-reject">' + t.reject + '</button>' +

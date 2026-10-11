@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Μετατροπή Βαν σε Αυτοκινούμενο Τροχόσπιτο — Άδεια και Έλεγχος</title>
+    <link rel="preload" as="image" href="../hero-bg-900.webp" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="../688bc305-6129-4485-a56f-d72fdc729791.webp" media="(min-width: 769px)" fetchpriority="high">
     <meta name="description" content="Μετατροπή βαν σε αυτοκινούμενο τροχόσπιτο (camper): γίνεται υπό προϋποθέσεις και ολοκληρώνεται με έλεγχο και νέα άδεια κυκλοφορίας. Εξετάζουμε το όχημά σας.">
 
     <link rel="canonical" href="https://moudiotis.gr/metatropi-van-se-trochospito/">
@@ -34,7 +36,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>document.documentElement.className += ' js';</script>
     <link rel="stylesheet" href="../styles.css?v=202610110100">
@@ -214,6 +216,8 @@
             <div class="svc-hero-txt">
                 <p class="svc-kicker">ΑΥΤΟΚΙΝΟΥΜΕΝΟ ΤΡΟΧΟΣΠΙΤΟ · CAMPER</p>
                 <h1>Μετατροπή Βαν σε Αυτοκινούμενο Τροχόσπιτο</h1>
+                
+                <div class="svc-hero-cta"><a href="#contact" class="svc-cta-primary">Ζητήστε προσφορά</a><a href="tel:+302107561836" class="svc-cta-tel" aria-label="Κλήση 210 756 1836"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>210 756 1836</span></a></div>
             </div>
         </div>
     </header>
@@ -278,7 +282,7 @@
                 <g class="crane-dim-line" stroke="currentColor" stroke-width="1" opacity=".7">
                     <path d="M70 222 L462 222 M70 216 L70 228 M462 216 L462 228" />
                 </g>
-                <text class="crane-dim-line" x="266" y="218" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="2" fill="currentColor">SA</text>
+                <text class="crane-dim-line" x="266" y="218" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="2" fill="currentColor">SA</text>
             </svg></div>
         <span class="tap-graphic-tag">ΒΑΝ → ΑΥΤΟΚΙΝΟΥΜΕΝΟ ΤΡΟΧΟΣΠΙΤΟ</span>
 
@@ -568,6 +572,7 @@
                 (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
                 rv.forEach(function (el) { el.classList.add('visible'); });
             } else {
+                document.documentElement.classList.add('anim-ready');   /* istoselides v2.11 (ΜΗ-01) */
                 var io = new IntersectionObserver(function (entries) {
                     entries.forEach(function (e) {
                         if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
