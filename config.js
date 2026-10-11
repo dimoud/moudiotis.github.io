@@ -534,6 +534,11 @@ window.SITE_CONFIG = {
     // ── GOOGLE REVIEWS ────────────────────────────────────────────────────
     reviews: [
         {
+            name: 'Arisstotelis Theodorakis',
+            textEl: 'Εμπειρία · Αμεσότητα · Αποτελεσματικότητα',
+            textEn: 'Experience · Promptness · Effectiveness',
+        },
+        {
             name: 'CvEng',
             textEl: 'Εξαιρετικός ο Δημήτρης! Ανέλαβε την έγκριση και ταξινόμηση εισαγόμενου οχήματος ειδικού σκοπού σε μια αρκετά μπλεγμένη περίπτωση και έβγαλε άκρη με όλα. Ξέρει πραγματικά τη δουλειά του, ακόμα και σε λεπτομέρειες που δύσκολα βρίσκεις κάποιον να γνωρίζει. Και πολύ ευχάριστος στη συνεργασία! Τον συστήνω ανεπιφύλακτα!',
             textEn: 'Dimitris is excellent! He took on the approval and registration of an imported special purpose vehicle in a rather complicated case and got it all sorted out. He really knows his job, even down to details you hardly find anyone else who knows. And very pleasant to work with! I recommend him without reservation!',
