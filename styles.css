@@ -6397,3 +6397,8 @@ html.anim-ready [data-reveal].visible.anim-off { animation-play-state: running !
 @media (max-width: 768px) {
     .hero-photo-col { margin-top: 48px; }
 }
+
+/* Κινητό: απόσταση ανάμεσα στο λογότυπο (δακτύλιος) και στο «ΤΕΧΝΙΚΟ ΓΡΑΦΕΙΟ» */
+@media (max-width: 768px) {
+    .hero-photo-col { margin-bottom: 34px; }
+}

@@ -389,7 +389,7 @@
        down to mobile — see styles.css). Skipped only for reduced-motion
        users, in which case the one-shot reveal above still applies normally. */
     (function () {
-        if (reduceMotion || !SCRUB_OK) return;   /* κινητό/αφή: απλή εμφάνιση v2 (ΜΗ-35) */
+        if (reduceMotion) return;   /* φερμουάρ και στο κινητό (επιλογή του πελάτη)· γεωμετρία από μνήμης, μόνο scrollY ανά καρέ */
 
         var zipCards = document.querySelectorAll(
             '.service-card--odd[data-reveal], .service-card--even[data-reveal]'
