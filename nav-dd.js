@@ -52,7 +52,7 @@
    (ίδιο μενού παντού). Στην αρχική το κάνει και το eng-animations.js, με το ίδιο όριο. */
 (function () {
     var nav = document.getElementById('nav');
-    if (!nav) return;
+    if (!nav || window.ScrollFrame) return;   /* η αρχική έχει ήδη το κοινό καρέ του eng-animations.js */
     var ticking = false;
     function upd() { nav.classList.toggle('scrolled', window.scrollY > 60); ticking = false; }
     window.addEventListener('scroll', function () {

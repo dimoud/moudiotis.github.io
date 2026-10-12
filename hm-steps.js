@@ -1,36 +1,49 @@
-/* Βήματα τρέιλερ: η επισήμανση ακολουθεί την κύλιση — κάτω προχωρά, πάνω γυρίζει πίσω */
+/* Βήματα τρέιλερ: η επισήμανση ακολουθεί την κύλιση — κάτω προχωρά, πάνω γυρίζει πίσω.
+   istoselides v2.11 (references/15 §Β/Γ — ΜΗ-35/36): γεωμετρία μετρημένη ΜΙΑ φορά (και σε
+   resize/load/αλλαγή μεγέθους)· ανά καρέ μόνο scrollY και αλλαγή κλάσης μόνο όταν αλλάζει το βήμα. */
 (function () {
     var rail = document.querySelector('.hm-rail'); if (!rail) return;
     var items = rail.querySelectorAll('li'); if (!items.length) return;
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var n = items.length, raf = 0, last = -2;
+    var n = items.length, raf = 0, last = -2, lastProg = -1;
+    var G = { vertical: false, tops: [], mids: [], railTop: 0 };
     rail.classList.add('is-playing');
-    function paint() {
+    function measure() {
+        var sy = window.scrollY, r0 = items[0].getBoundingClientRect(), r1 = items[n - 1].getBoundingClientRect();
+        G.vertical = r1.top - r0.top > 10;
+        G.tops = []; G.mids = [];
+        for (var k = 0; k < n; k++) { var r = items[k].getBoundingClientRect(); G.tops[k] = r.top + sy; G.mids[k] = r.top + r.height / 2 + sy; }
+        G.railTop = rail.getBoundingClientRect().top + sy;
+    }
+    function paint(sy) {
         raf = 0;
         var vh = window.innerHeight, i, prog;
-        var r0 = items[0].getBoundingClientRect(), r1 = items[n - 1].getBoundingClientRect();
-        if (r1.top - r0.top > 10) {
+        if (G.vertical) {
             /* κάθετη λίστα (κινητό): «γραμμή ανάγνωσης» στο 55% της οθόνης */
-            var line = vh * 0.55, c0 = r0.top + r0.height / 2, c1 = r1.top + r1.height / 2;
+            var line = vh * 0.55, c0 = G.mids[0] - sy, c1 = G.mids[n - 1] - sy;
             prog = Math.min(1, Math.max(0, (line - c0) / (c1 - c0)));
             i = -1;
-            for (var k = 0; k < n; k++) { var r = items[k].getBoundingClientRect(); if (r.top <= line) i = k; }
-            if (i < 0 && r0.top < vh * 0.9) i = 0;
+            for (var k = 0; k < n; k++) { if (G.tops[k] - sy <= line) i = k; }
+            if (i < 0 && G.tops[0] - sy < vh * 0.9) i = 0;
         } else {
             /* οριζόντια σειρά (υπολογιστής): πρόοδος όσο η σειρά ανεβαίνει από το 85% στο 30% της οθόνης */
-            var rr = rail.getBoundingClientRect();
-            prog = Math.min(1, Math.max(0, (vh * 0.85 - rr.top) / (vh * 0.55)));
-            i = rr.top < vh * 0.9 ? Math.min(n - 1, Math.floor(prog * n)) : -1;
+            var top = G.railTop - sy;
+            prog = Math.min(1, Math.max(0, (vh * 0.85 - top) / (vh * 0.55)));
+            i = top < vh * 0.9 ? Math.min(n - 1, Math.floor(prog * n)) : -1;
         }
-        rail.style.setProperty('--hm-prog', prog.toFixed(4));
+        if (Math.abs(prog - lastProg) > 0.002) { lastProg = prog; rail.style.setProperty('--hm-prog', prog.toFixed(4)); }
         if (i === last) return; last = i;
         items.forEach(function (li, k) { li.classList.toggle('is-active', k === i); li.classList.toggle('is-done', k < i); });
     }
-    function req() { if (!raf) raf = requestAnimationFrame(paint); }
-    window.addEventListener('scroll', req, { passive: true });
-    window.addEventListener('resize', req);
-    window.addEventListener('load', req);
-    paint();
+    function req() { if (!raf) raf = requestAnimationFrame(function () { paint(window.scrollY); }); }
+    function remeasure() { measure(); req(); }
+    /* κοινό καρέ κύλισης του eng-animations.js (μία ανάγνωση θέσης ανά καρέ) — αλλιώς δικός μας ακροατής */
+    if (window.ScrollFrame) window.ScrollFrame.add(function (y) { paint(y); });
+    else window.addEventListener('scroll', req, { passive: true });
+    window.addEventListener('resize', remeasure);
+    window.addEventListener('load', remeasure);
+    if ('ResizeObserver' in window) new ResizeObserver(remeasure).observe(document.body);
+    measure(); paint(window.scrollY);
 })();
 
 /* Έλεγχος Κ.Ο.Κ.: τα σημεία φωτίζονται ένα-ένα· μετά εναλλάσσεται το σχέδιο (κλειστό ρυμουλκούμενο ↔ τρέιλερ λέμβου) */
@@ -71,30 +84,39 @@
     if ('IntersectionObserver' in window) { new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) start(); else stop(); }); }, { threshold: 0.3 }).observe(art); } else { start(); }
 })();
 
-/* Εγκρίσεις τύπου: η γραμμή που περνά από τη μέση της οθόνης φωτίζεται — ακολουθεί την κύλιση και στις δύο κατευθύνσεις */
+/* Εγκρίσεις τύπου: η γραμμή που περνά από τη μέση της οθόνης φωτίζεται — ακολουθεί την κύλιση και στις δύο κατευθύνσεις.
+   istoselides v2.11 (ΜΗ-36): θέσεις από μνήμης, ανά καρέ μόνο scrollY. */
 (function () {
     var list = document.querySelector('.hm-idx'); if (!list) return;
     var rows = list.querySelectorAll('li'); if (!rows.length) return;
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var raf = 0, last = -2;
+    var raf = 0, last = -2, T = [], H = [];
     list.classList.add('is-scrub');
-    function paint() {
+    function measure() {
+        var sy = window.scrollY;
+        rows.forEach(function (li, k) { var r = li.getBoundingClientRect(); T[k] = r.top + sy; H[k] = r.height; });
+    }
+    function paint(sy) {
         raf = 0;
         var vh = window.innerHeight, line = vh * 0.55, i = -1, best = 1e9;
-        rows.forEach(function (li, k) {
-            var r = li.getBoundingClientRect();
-            if (r.bottom < vh * 0.12 || r.top > vh * 0.9) return;
-            var d = Math.abs(r.top + r.height / 2 - line);
+        for (var k = 0; k < rows.length; k++) {
+            var top = T[k] - sy, bottom = top + H[k];
+            if (bottom < vh * 0.12 || top > vh * 0.9) continue;
+            var d = Math.abs(top + H[k] / 2 - line);
             if (d < best) { best = d; i = k; }
-        });
+        }
         if (i === last) return; last = i;
         rows.forEach(function (li, k) { li.classList.toggle('is-focus', k === i); });
     }
-    function req() { if (!raf) raf = requestAnimationFrame(paint); }
-    window.addEventListener('scroll', req, { passive: true });
-    window.addEventListener('resize', req);
-    window.addEventListener('load', req);
-    paint();
+    function req() { if (!raf) raf = requestAnimationFrame(function () { paint(window.scrollY); }); }
+    function remeasure() { measure(); req(); }
+    /* κοινό καρέ κύλισης του eng-animations.js (μία ανάγνωση θέσης ανά καρέ) — αλλιώς δικός μας ακροατής */
+    if (window.ScrollFrame) window.ScrollFrame.add(function (y) { paint(y); });
+    else window.addEventListener('scroll', req, { passive: true });
+    window.addEventListener('resize', remeasure);
+    window.addEventListener('load', remeasure);
+    if ('ResizeObserver' in window) new ResizeObserver(remeasure).observe(document.body);
+    measure(); paint(window.scrollY);
 })();
 
 /* Hero: όταν ο επισκέπτης δεν κινείται για λίγα δευτερόλεπτα, τα εικονίδια των ετικετών κάνουν έναν διακριτικό χτύπο */

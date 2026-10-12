@@ -158,9 +158,10 @@ html:not(.js) [data-reveal] { opacity: 1 !important; transform: none !important;
 
 /* ── Μπάρα προόδου ανάγνωσης ── */
 #progress {
-    position: fixed; top: 0; left: 0; height: 2px; width: 0%;
+    position: fixed; top: 0; left: 0; height: 2px; width: 100%;
     background: linear-gradient(90deg, var(--warm), var(--warm2));
-    z-index: 9999; transition: width 0.1s linear;
+    transform: scaleX(0); transform-origin: 0 50%;   /* μόνο transform (ΜΗ-36) */
+    z-index: 9999; will-change: transform;
 }
 
 /* ── HERO: βάθος, πλέγμα σχεδίασης, χρυσή βάση ── */

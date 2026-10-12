@@ -54,7 +54,8 @@ a { text-decoration: none; color: inherit; }
 #progress {
     position: fixed; top: 0; left: 0; height: 2px;
     background: linear-gradient(90deg, var(--warm), var(--warm2));
-    width: 0%; z-index: 9999; transition: width 0.1s linear;
+    width: 100%; transform: scaleX(0); transform-origin: 0 50%;
+    z-index: 9999; will-change: transform;   /* μόνο transform (ΜΗ-04/ΜΗ-36) */
 }
 
 /* ===== NAVIGATION ===== */
@@ -641,54 +642,26 @@ section { padding: 112px 7%; }
 }
 .seo-desc strong { font-weight: 500; }
 
-/* istoselides v2.11 (ΜΗ-01): η κρυφή αρχική κατάσταση ΜΟΝΟ όταν το eng-animations.js έχει αναλάβει */
-html.anim-ready [data-reveal] {
-    opacity: 0; transform: translateY(28px);
-    transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+/* ── Εμφάνιση v2 (istoselides — references/15 §Α, ΜΗ-01, ΜΗ-34) ─────────────────
+   Κρυφή αρχική κατάσταση ΜΟΝΟ κάτω από html.anim-ready. Η κίνηση είναι animation στην
+   ιδιότητα translate: κανένα transition άλλου κανόνα δεν την ακυρώνει (οι κάρτες υπηρεσιών
+   εμφανίζονταν χωρίς σβήσιμο) και τα δικά τους transform των στοιχείων μένουν ανέπαφα.
+   Οι κάρτες με φερμουάρ (υπολογιστής) κινούνται από το eng-animations.js και εξαιρούνται. */
+@keyframes rvUp   { from { opacity: 0; translate: 0 var(--rv-y, 20px); } to { opacity: 1; translate: 0 0; } }
+@keyframes rvSide { from { opacity: 0; translate: var(--rv-x, 20px) 0; } to { opacity: 1; translate: 0 0; } }
+html.anim-ready [data-reveal]:not(.visible):not(.service-card--zipper-js),
+html.anim-ready [data-reveal-r]:not(.visible) { opacity: 0; }
+html.anim-ready [data-reveal].visible {
+    animation: rvUp var(--rv-t, .65s) cubic-bezier(.22,.61,.36,1) var(--rv-delay, 0ms) both;
 }
-html.anim-ready [data-reveal].visible { opacity: 1; transform: translateY(0); }
-html.anim-ready [data-reveal-r] {
-    opacity: 0; transform: translateX(28px);
-    transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+html.anim-ready [data-reveal-r].visible {
+    animation: rvSide var(--rv-t, .65s) cubic-bezier(.22,.61,.36,1) var(--rv-delay, 0ms) both;
 }
-html.anim-ready [data-reveal-r].visible { opacity: 1; transform: translateX(0); }
-
-/* ── Service card reveal — slide from left/right edge (desktop only) ── */
-@media (min-width: 769px) {
-    html.anim-ready .service-card--odd[data-reveal] {
-        opacity: 0;
-        transform: translateX(-48px);
-        transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
-    }
-    html.anim-ready .service-card--even[data-reveal] {
-        opacity: 0;
-        transform: translateX(48px);
-        transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
-    }
-    html.anim-ready .service-card--odd[data-reveal].visible,
-    html.anim-ready .service-card--even[data-reveal].visible {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* ── "Zipper" variant — JS (see eng-animations.js) drives transform/opacity
-   inline, continuously tied to scroll position, on desktop when JS runs and
-   the user has no reduced-motion preference. The rule above stays as the
-   no-JS fallback (one-shot slide-in on first reveal). ── */
-html.anim-ready .service-card--zipper-js[data-reveal] {
-    transition: none;
-}
-/* Mobile: simple fade */
-@media (max-width: 768px) {
-    html.anim-ready .service-card[data-reveal] {
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
-    html.anim-ready .service-card[data-reveal].visible {
-        opacity: 1;
-        transform: none;
-    }
+html.anim-ready .rv-now { animation: none !important; }
+/* κινητό: μικρότερη, μόνο κατακόρυφη κίνηση — καμία πλάγια ολίσθηση (ΜΗ-35) */
+@media (max-width: 768px) { :root { --rv-y: 12px; --rv-x: 0px; --rv-t: .5s; } }
+@media (prefers-reduced-motion: reduce) {
+    html.anim-ready [data-reveal], html.anim-ready [data-reveal-r] { opacity: 1 !important; animation: none !important; }
 }
 
 /* ===== ABOUT ===== */
@@ -1424,16 +1397,15 @@ footer {
     background: rgba(29,58,92,0.12);
 }
 .elev-fill {
-    position: absolute; bottom: 0; left: 0; right: 0;
+    position: absolute; bottom: 0; left: 0; right: 0; height: 100%;
     background: rgba(29,58,92,0.4);
-    transition: height 0.12s linear;
+    transform: scaleY(var(--p, 0)); transform-origin: 50% 100%;   /* μόνο transform */
 }
 .elev-dot {
     position: absolute; left: 50%; width: 8px; height: 8px;
     background: var(--gold); border-radius: 50%;
-    transform: translate(-50%, 50%); bottom: 0%;
+    bottom: 0; transform: translate(-50%, calc(50% - var(--p, 0) * 180px));   /* 180px = ύψος .elev-track */
     box-shadow: 0 0 10px rgba(29,58,92,0.5);
-    transition: bottom 0.12s linear;
 }
 .elev-ticks {
     position: absolute; inset: 0;
@@ -1472,8 +1444,9 @@ footer {
     background: rgba(29,58,92,0.1);
 }
 .sr-fill {
-    position: absolute; left: 0; top: 0; height: 100%;
-    background: rgba(29,58,92,0.45); transition: width 0.1s linear;
+    position: absolute; left: 0; top: 0; height: 100%; width: 100%;
+    background: rgba(29,58,92,0.45);
+    transform: scaleX(var(--p, 0)); transform-origin: 0 50%;   /* μόνο transform */
 }
 .sr-ticks {
     position: absolute; top: -10px; left: 0; right: 0;
@@ -6397,8 +6370,30 @@ body .hero-name--brand .line1 { margin-bottom: 12px; }
 .trc-b-sep { color: #5f6e87; }
 @media (max-width: 768px) { .sec-meas-label { font-size: 12px; } }
 
+/* istoselides v2.11 — εμφάνιση v2 και στις κάρτες «Σχετικά» (ΜΗ-34/35): ο κοινός μηχανισμός
+   αντί για δικό τους transition — στο κινητό χωρίς πλάγια ολίσθηση 72 px με αναπήδηση */
+#aboutFeatures .feature-row { opacity: 1; transform: none !important; transition: box-shadow .35s var(--ease), border-color .35s !important; }
+html.anim-ready #aboutFeatures .feature-row:not(.visible) { opacity: 0; }
+@media (min-width: 769px) { html.anim-ready #aboutFeatures .feature-row.visible { animation-name: rvSide; --rv-x: -48px; } }
+
+/* istoselides v2.11 (references/15 §Γ5 — ΜΗ-37): οι κινήσεις μιας ενότητας σταματούν όσο
+   δεν φαίνεται (το eng-animations.js βάζει .anim-off) — δεν ξανασχεδιάζονται σε κάθε καρέ κύλισης */
+.anim-off, .anim-off *, .anim-off *::before, .anim-off *::after { animation-play-state: paused !important; }
+/* οι ΕΜΦΑΝΙΣΕΙΣ τελειώνουν πάντα: μια παύση στη μέση άφηνε κείμενο μισοφανές μέχρι να ξαναγυρίσει ο επισκέπτης */
+html.anim-ready .anim-off [data-reveal].visible, html.anim-ready .anim-off [data-reveal-r].visible,
+html.anim-ready [data-reveal].visible.anim-off { animation-play-state: running !important; }
+
+/* istoselides v2.11 (references/15 §Γ6 — ΜΗ-37): στο κινητό/αφή καμία ΣΥΝΕΧΗΣ κίνηση σε ιδιότητα
+   που ξανασχεδιάζει (background-position, box-shadow) — υφή πλέγματος, «κόκκος», αναπνοή σκιάς,
+   φωτεινό περίγραμμα. Μένουν οι κινήσεις σε transform/opacity. */
+@media (max-width: 768px), (hover: none) {
+    .hero-blueprint { animation: blueprintPulse 8s ease-in-out infinite !important; }
+    .hero-grain, .hero-photo { animation: none !important; }
+    .service-card--featured::after { animation: none !important; opacity: 0 !important; }
+}
+
 /* Κινητό/tablet: το λογότυπο της αρχικής έπεφτε κάτω από τη μπάρα (γλώσσα,
-   αναζήτηση). Κατεβαίνει ώστε ο δακτύλιος να ξεκινά κάτω από τη μπάρα. */
+   αναζήτηση). Κατεβαίνει ώστε ο δακτύλιος να ξεκινά κάτω από τη μπάρα. (d34410e) */
 @media (max-width: 768px) {
     .hero-photo-col { margin-top: 48px; }
 }

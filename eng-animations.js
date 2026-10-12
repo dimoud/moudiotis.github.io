@@ -37,6 +37,28 @@
     /* ─── HELPERS ────────────────────────────────────────────────────────── */
     function $(id) { return document.getElementById(id); }
     function raf(fn) { requestAnimationFrame(fn); }
+    var root = document.documentElement;
+    var reduceMotion = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+    /* istoselides v2.11 (references/15 §Β — ΜΗ-35): στο κινητό και σε οθόνη αφής ΚΑΜΙΑ κίνηση
+       δεμένη στη θέση κύλισης — τρέχει στον κύριο νήμα και μένει πίσω από το δάχτυλο. */
+    var SCRUB_OK = !(window.matchMedia && matchMedia('(max-width: 768px), (hover: none)').matches);
+    /* μετρήσεις διάταξης ΜΙΑ φορά (και σε resize/load/αλλαγή ύψους), όχι σε κάθε καρέ (ΜΗ-36) */
+    var _maxScroll = 1;
+    function measure() { _maxScroll = Math.max(1, root.scrollHeight - window.innerHeight); }
+    measure();
+    /* η θέση κύλισης διαβάζεται ΜΙΑ φορά στην αρχή κάθε καρέ (window.scrollY μετά από εγγραφή
+       στυλ αναγκάζει νέα διάταξη — ΜΗ-36)· όλες οι συναρτήσεις του καρέ χρησιμοποιούν το Y */
+    var Y = window.scrollY;
+
+    /* Παύση κινήσεων εκτός οθόνης (references/15 §Γ5 — ΜΗ-37): οι συνεχείς κινήσεις CSS
+       (περιστροφές, πλέγμα, «κόκκος», παλμοί) σταματούν όταν η ενότητά τους δεν φαίνεται —
+       αλλιώς ξανασχεδιάζονται σε κάθε καρέ κύλισης. */
+    if ('IntersectionObserver' in window) {
+        var _zio = new IntersectionObserver(function (es) {
+            es.forEach(function (e) { e.target.classList.toggle('anim-off', !e.isIntersecting); });
+        }, { rootMargin: '25% 0px 25% 0px' });
+        document.querySelectorAll('header.hero, main > section, main > div, footer, .svc-hero').forEach(function (z) { _zio.observe(z); });
+    }
 
     /* ─── 1. SCROLL ELEVATION METER ──────────────────────────────────────── */
     var elevMeter = $('scrollElev');
@@ -46,14 +68,13 @@
 
     function updateElevation() {
         if (!elevMeter) return;
-        var total = document.documentElement.scrollHeight - window.innerHeight;
-        var pct   = total > 0 ? (window.scrollY / total) * 100 : 0;
-        if (Math.abs(pct - _lastPct) < 0.1) return;
+        var pct = Math.min(1, Y / _maxScroll);
+        if (Math.abs(pct - _lastPct) < 0.001) return;
         _lastPct = pct;
 
-        elevMeter.classList.toggle('show', window.scrollY > 120);
-        if (elevFill) elevFill.style.height = pct + '%';
-        if (elevDot)  elevDot.style.bottom  = pct + '%';
+        elevMeter.classList.toggle('show', Y > 120);
+        /* μόνο transform μέσω --p (scaleY / translateY στο CSS) — ΜΗ-04 */
+        elevMeter.style.setProperty('--p', pct.toFixed(4));
     }
 
     /* ─── 2. DIMENSION LINES ─────────────────────────────────────────────── */
@@ -99,11 +120,10 @@
 
     function updateRuler() {
         if (!scrollRuler) return;
-        var total = document.documentElement.scrollHeight - window.innerHeight;
-        var pct   = total > 0 ? window.scrollY / total : 0;
+        var pct = Math.min(1, Y / _maxScroll);
 
-        scrollRuler.classList.toggle('show', window.scrollY > 120);
-        if (srFill)  srFill.style.width = (pct * 100) + '%';
+        scrollRuler.classList.toggle('show', Y > 120);
+        if (srFill)  srFill.style.setProperty('--p', pct.toFixed(4));
         if (srValue) srValue.textContent = (pct * RULER_MAX_M).toFixed(3) + ' m';
     }
 
@@ -181,7 +201,7 @@
 
     /* Scroll-driven caliper: opens as element scrolls into view */
     function updateCaliper() {
-        if (!calWrap || !calJaw) return;
+        if (!SCRUB_OK || !calWrap || !calJaw) return;
         var rect  = calWrap.getBoundingClientRect();
         var vh    = window.innerHeight;
         var visible = rect.top < vh && rect.bottom > 0;
@@ -226,8 +246,33 @@
         }
     }
 
+    /* Κινητό / αφή: τα καλίπερ ανοίγουν ΜΙΑ φορά, με χρόνο (1,2 s), όταν μπουν στην οθόνη */
+    function openOnce(wrap, apply) {
+        if (!wrap) return;
+        function go() {
+            wrap.classList.add('vis');
+            if (reduceMotion) { apply(CAL_MAX_OFFSET); return; }
+            var t0 = null;
+            requestAnimationFrame(function step(ts) {
+                if (t0 === null) t0 = ts;
+                var k = Math.min(1, (ts - t0) / 1200);
+                apply(easeInOut(k) * CAL_MAX_OFFSET);
+                if (k < 1) requestAnimationFrame(step);
+            });
+        }
+        if (!('IntersectionObserver' in window)) { go(); return; }
+        var io = new IntersectionObserver(function (es) {
+            if (es[0].isIntersecting) { io.disconnect(); go(); }
+        }, { rootMargin: '0px 0px -10% 0px' });
+        io.observe(wrap);
+    }
+    if (!SCRUB_OK) {
+        if (calJaw) openOnce(calWrap, applyCaliperOffset);
+        if (calMobileDimLine) openOnce(calMobileWrap, applyMobileCaliperOffset);
+    }
+
     function updateMobileCaliper() {
-        if (!calMobileWrap || !calMobileDimLine) return;
+        if (!SCRUB_OK || !calMobileWrap || !calMobileDimLine) return;
         var rect    = calMobileWrap.getBoundingClientRect();
         var vh      = window.innerHeight;
         var visible = rect.top < vh && rect.bottom > 0;
@@ -300,58 +345,39 @@
         }, 10000);
     }
 
-    /* ─── 9. REVEAL ON SCROLL ────────────────────────────────────────────── */
-    var revealEls    = document.querySelectorAll('[data-reveal]:not(.service-card), [data-reveal-r]');
-    var serviceCards = document.querySelectorAll('.service-card[data-reveal]');
-
-    function makeRevealHandler(isServiceCard) {
-        return function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    var siblings = Array.prototype.filter.call(
-                        entry.target.parentElement.children,
-                        function (el) {
-                            return el.hasAttribute('data-reveal') || el.hasAttribute('data-reveal-r');
-                        }
-                    );
-                    var idx = siblings.indexOf(entry.target);
-                    var delay;
-                    if (isServiceCard) {
-                        /* Stagger by row (pairs of 2), 180ms per row */
-                        var row = Math.floor(idx / 2);
-                        delay = row * 180;
-                    } else {
-                        delay = idx * 120;
-                    }
-                    setTimeout(function () {
-                        entry.target.classList.add('visible');
-                    }, delay);
-                    this.unobserve(entry.target);
-                }
-            }.bind(this));
-        };
-    }
-
-    if ('IntersectionObserver' in window) {
-        /* General reveal — fires early (8% visible) */
-        if (revealEls.length) {
-            var revealObs = new IntersectionObserver(makeRevealHandler(false), { threshold: 0.08 });
-            revealEls.forEach(function (el) { revealObs.observe(el); });
+    /* ─── 9. REVEAL ON SCROLL v2 (references/15 §Α — ΜΗ-34) ───────────────
+       · ξεκινά ΠΡΙΝ μπει στην οθόνη (rootMargin +12%, κατώφλι 0) — πριν: -15% και 18%
+       · CSS animation στην ιδιότητα translate (όχι transition): κανένας άλλος κανόνας
+         transition δεν την ακυρώνει (οι κάρτες υπηρεσιών εμφανίζονταν χωρίς σβήσιμο)
+       · κλιμάκωση ΜΟΝΟ ανάμεσα σε όσα μπαίνουν μαζί: 60 ms, έως 2 βήματα, καθόλου σε γρήγορη
+         κύλιση — πριν: θέση στο DOM × 120 ms και 180 ms ανά σειρά καρτών (έως 0,9 s)
+       · ό,τι φαίνεται ήδη στη φόρτωση: χωρίς κίνηση (rv-now) */
+    function revealInit(sel) {
+        var els = Array.prototype.slice.call(document.querySelectorAll(sel));
+        if (!els.length) return;
+        if (!root.classList.contains('anim-ready')) {
+            els.forEach(function (el) { el.classList.add('visible'); });
+            return;
         }
-
-        /* Service cards — fire only after user has scrolled well into the section:
-           rootMargin "-20% 0px -10% 0px" means the trigger zone is the middle 70%
-           of the viewport, so cards won't animate until they're clearly on screen. */
-        if (serviceCards.length) {
-            var serviceObs = new IntersectionObserver(makeRevealHandler(true), {
-                threshold: 0.18,
-                rootMargin: '-15% 0px -15% 0px'
-            });
-            serviceCards.forEach(function (el) { serviceObs.observe(el); });
-        }
-    } else {
-        document.querySelectorAll('[data-reveal], [data-reveal-r]').forEach(function (el) {
-            el.classList.add('visible');
+        var lastY = Y, lastT = performance.now();
+        var io = new IntersectionObserver(function (entries) {
+            var now = performance.now(), y = Y;   /* Y του τελευταίου καρέ — καμία νέα ανάγνωση */
+            var fast = Math.abs(y - lastY) / Math.max(1, now - lastT) > 1.2;   /* px/ms */
+            lastY = y; lastT = now;
+            entries.filter(function (e) { return e.isIntersecting; })
+                .sort(function (p, q) { return p.boundingClientRect.top - q.boundingClientRect.top; })
+                .forEach(function (e, k) {
+                    var el = e.target;
+                    el.style.setProperty('--rv-delay', (fast ? 0 : Math.min(k, 2) * 60) + 'ms');
+                    el.classList.add('visible');
+                    io.unobserve(el);
+                });
+        }, { rootMargin: '0px 0px 12% 0px', threshold: 0 });
+        var vh = window.innerHeight;
+        els.forEach(function (el) {
+            var r = el.getBoundingClientRect();
+            if (r.top < vh && r.bottom > 0) el.classList.add('visible', 'rv-now');
+            else io.observe(el);
         });
     }
 
@@ -363,8 +389,7 @@
        down to mobile — see styles.css). Skipped only for reduced-motion
        users, in which case the one-shot reveal above still applies normally. */
     (function () {
-        var reduceMq = window.matchMedia('(prefers-reduced-motion: reduce)');
-        if (reduceMq.matches) return;
+        if (reduceMotion || !SCRUB_OK) return;   /* κινητό/αφή: απλή εμφάνιση v2 (ΜΗ-35) */
 
         var zipCards = document.querySelectorAll(
             '.service-card--odd[data-reveal], .service-card--even[data-reveal]'
@@ -407,14 +432,26 @@
             });
         }
         computeDirs();
-        window.addEventListener('resize', function () { maxOffset = zipOffset(); computeDirs(); });
+        /* θέσεις των καρτών στη σελίδα: μία μέτρηση (και σε resize/load/αλλαγή μεγέθους) — ανά καρέ μόνο scrollY */
+        var tops = [];
+        function measureTops() {
+            zipCards.forEach(function (card, i) {
+                var tf = card.style.transform; card.style.transform = 'none';
+                tops[i] = card.getBoundingClientRect().top + window.scrollY;
+                card.style.transform = tf;
+            });
+        }
+        measureTops();
+        window.addEventListener('resize', function () { maxOffset = zipOffset(); computeDirs(); measureTops(); onScroll(); });
+        window.addEventListener('load', function () { measureTops(); onScroll(); });
+        if ('ResizeObserver' in window) new ResizeObserver(function () { measureTops(); onScroll(); }).observe(zipCards[0].parentElement);
 
         function updateZipper() {
-            var vh    = window.innerHeight;
+            var vh    = window.innerHeight, sy = window.scrollY;
             var start = vh;         /* card top at viewport bottom  → progress 0 */
             var end   = vh * 0.55;  /* card top at 55% up viewport  → progress 1 */
             zipCards.forEach(function (card, i) {
-                var top = card.getBoundingClientRect().top;
+                var top = tops[i] - sy;
                 var progress = clamp01((start - top) / (start - end));
                 var dir = dirs[i] || 0;
                 card.style.opacity   = progress.toFixed(3);
@@ -430,41 +467,48 @@
         }
 
         window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('resize', onScroll);
         updateZipper();
     })();
+
+    /* εμφάνιση v2: μετά το φερμουάρ, ώστε οι κάρτες του να εξαιρούνται */
+    revealInit('[data-reveal]:not(.service-card--zipper-js), [data-reveal-r]');
 
     /* ─── 0. SCROLL PROGRESS BAR ─────────────────────────────────────────── */
     var progressBar = $('progress');
 
     function updateProgress() {
         if (!progressBar) return;
-        var total = document.documentElement.scrollHeight - window.innerHeight;
-        progressBar.style.width = (total > 0 ? (window.scrollY / total * 100) : 0) + '%';
+        progressBar.style.transform = 'scaleX(' + Math.min(1, Y / _maxScroll).toFixed(4) + ')';
     }
 
     /* ─── NAV SCROLL CLASS ───────────────────────────────────────────────── */
     var navEl = document.getElementById('nav');
 
     function updateNav() {
-        if (navEl) navEl.classList.toggle('scrolled', window.scrollY > 60);
+        if (navEl) navEl.classList.toggle('scrolled', Y > 60);
     }
 
     /* ─── BACK TO TOP ────────────────────────────────────────────────────── */
     var backToTop = document.getElementById('backToTop');
     function updateBackToTop() {
-        if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 500);
+        if (backToTop) backToTop.classList.toggle('visible', Y > 500);
     }
 
     /* ─── SCROLL SPY — highlight active nav link ─────────────────────────── */
     var spySections = document.querySelectorAll('section[id], header[id]');
     var spyLinks    = document.querySelectorAll('.nav-links a[href^="#"]');
+    var spyTops = [];
+    function measureSpy() { spyTops = Array.prototype.map.call(spySections, function (s) { return s.offsetTop; }); }
+    measureSpy();
+    var _spyLast = null;
     function updateScrollSpy() {
-        var scrollY  = window.scrollY + 140;   /* offset for fixed nav */
+        var scrollY  = Y + 140;   /* offset for fixed nav */
         var current  = '';
-        spySections.forEach(function (s) {
-            if (s.offsetTop <= scrollY) current = s.id;
+        spyTops.forEach(function (t, i) {
+            if (t <= scrollY) current = spySections[i].id;
         });
+        if (current === _spyLast) return;
+        _spyLast = current;
         spyLinks.forEach(function (a) {
             var href = a.getAttribute('href');
             a.classList.toggle('nav-spy-active', href === '#' + current);
@@ -472,19 +516,34 @@
     }
 
     /* ─── COMBINED SCROLL HANDLER ────────────────────────────────────────── */
-    function onScroll() {
+    var _subs = [];
+    /* κοινό καρέ κύλισης για τα άλλα σενάρια (hm-steps, nav-dd): ScrollFrame.add(function (y) {…}) */
+    window.ScrollFrame = { add: function (fn) { _subs.push(fn); onScroll(); } };
+    function update() {
+        Y = window.scrollY;       /* ΜΙΑ ανάγνωση, πριν από κάθε εγγραφή */
+        updateCaliper();          /* ΠΡΩΤΑ οι αναγνώσεις (getBoundingClientRect) — ΜΗ-36 */
+        updateMobileCaliper();
         updateElevation();
         updateRuler();
         updateProgress();
         updateNav();
-        updateCaliper();
-        updateMobileCaliper();
         updateBackToTop();
         updateScrollSpy();
+        for (var i = 0; i < _subs.length; i++) _subs[i](Y);
     }
-
+    /* ένας ακροατής, ένα καρέ (πριν: όλα σε ΚΑΘΕ γεγονός κύλισης, με width/height/bottom) */
+    var _ticking = false;
+    function onScroll() {
+        if (_ticking) return;
+        _ticking = true;
+        requestAnimationFrame(function () { update(); _ticking = false; });
+    }
+    function remeasure() { measure(); measureSpy(); onScroll(); }
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); /* init */
+    window.addEventListener('resize', remeasure, { passive: true });
+    window.addEventListener('load', remeasure);
+    if ('ResizeObserver' in window) new ResizeObserver(function () { measure(); measureSpy(); }).observe(document.body);
+    update(); /* init */
 
     /* ─── PUBLIC API ─────────────────────────────────────────────────────── */
     window.EngAnimations = {
@@ -523,7 +582,7 @@
         /* istoselides v2.11: το μισό πλάτος μετριέται μία φορά (και σε αλλαγή μεγέθους), όχι σε κάθε
            καρέ — η ανάγνωση scrollWidth μετά από εγγραφή scrollLeft επέβαλλε διάταξη 60 φορές/δευτ.
            Η λωρίδα τρέχει μόνο όταν φαίνεται. */
-        var visible = true;
+        var visible = true, pos = -1;
         if ('IntersectionObserver' in window) {
             new IntersectionObserver(function (en) { visible = en[0].isIntersecting; }, { rootMargin: '200px 0px' }).observe(band);
         }
@@ -532,10 +591,11 @@
         function startAutoScroll() {
             function tick() {
                 if (visible && !paused && !isDown && half > 0) {
-                    var x = band.scrollLeft + SPEED;
-                    /* Seamless loop: when we've scrolled one full copy, jump back */
-                    band.scrollLeft = x >= half ? x - half : x;
-                }
+                    /* θέση σε μεταβλητή: μόνο εγγραφή scrollLeft, καμία ανάγνωση ανά καρέ (ΜΗ-36) */
+                    if (pos < 0) pos = band.scrollLeft;
+                    pos += SPEED; if (pos >= half) pos -= half;
+                    band.scrollLeft = pos;
+                } else pos = -1;   /* σύρσιμο ή παύση: ξαναδιαβάζεται όταν συνεχίσει */
                 requestAnimationFrame(tick);
             }
             requestAnimationFrame(tick);
@@ -608,7 +668,11 @@
         }, 80);
 
         /* istoselides v2.11: μισό πλάτος σε μνήμη, λωρίδα μόνο όταν φαίνεται (όπως παραπάνω) */
-        var half2 = 0, visible2 = true;
+        var half2 = 0, visible2 = true, pos2 = -1, expanded = false;
+        /* «ανοιχτή κριτική»: κλάση που αλλάζει σπάνια — παρακολουθείται, όχι querySelector σε κάθε καρέ */
+        if ('MutationObserver' in window) new MutationObserver(function () {
+            expanded = !!track.querySelector('.review-card.is-expanded');
+        }).observe(track, { attributes: true, subtree: true, attributeFilter: ['class'] });
         function measure2() { half2 = track.scrollWidth / 2; }
         if ('ResizeObserver' in window) new ResizeObserver(measure2).observe(track);
         window.addEventListener('resize', measure2);
@@ -619,10 +683,11 @@
             measure2();
             function tick() {
                 /* όσο μια κριτική είναι ανοιχτή, η ταινία σταματά για να διαβαστεί */
-                if (visible2 && half2 > 0 && !paused && !isDown && !track.querySelector('.review-card.is-expanded')) {
-                    var x = band.scrollLeft + SPEED;
-                    band.scrollLeft = x >= half2 ? x - half2 : x;
-                }
+                if (visible2 && half2 > 0 && !paused && !isDown && !expanded) {
+                    if (pos2 < 0) pos2 = band.scrollLeft;
+                    pos2 += SPEED; if (pos2 >= half2) pos2 -= half2;
+                    band.scrollLeft = pos2;
+                } else pos2 = -1;
                 requestAnimationFrame(tick);
             }
             requestAnimationFrame(tick);

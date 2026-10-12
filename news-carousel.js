@@ -57,7 +57,7 @@
       '</span>' +
       '<span class="news-card-title">' + title + '</span>' +
       '<span class="news-card-sum">' + esc(pick(it.summary)) + '</span>' +
-      (it.source ? '<span class="news-card-src">' + esc(it.source) + '</span>' : '');
+      (it.source ? '<span class="news-card-src"' + (/[\u0370-\u03FF]/.test(it.source) ? ' lang="el"' : '') + '>' + esc(it.source) + '</span>' : '');
 
     if (!url) return '<div class="news-card">' + body + '</div>';
     var href = isEn() && url.charAt(0) === '/' ? '/en' + url : url;

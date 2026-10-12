@@ -501,16 +501,19 @@
     function _fallbackOnce() { if (this.getAttribute('data-fallback')) return; this.setAttribute('data-fallback', '1'); this.src = _FALLBACK; }
     window.__imgFallbackOnce = _fallbackOnce;
 
+    /* istoselides v2.12: alt στη γλώσσα της σελίδας (G2 — η αγγλική έπαιρνε το ελληνικό όνομα) */
+    var _EN = !!(C.meta && C.meta.lang === 'en');
+    var _NAME = _EN ? (P.displayNameEn || P.displayNameEl) : P.displayNameEl;
     document.querySelectorAll('.logo-img').forEach(function (img) {
         img.src = _rel(C.assets.logo);
-        img.alt = P.displayNameEl + ' Logo';
+        img.alt = _NAME + (_EN ? ' — logo' : ' — λογότυπο');
         img.onerror = function () { this.parentElement.innerHTML = fallbackInitials; };
     });
 
     var heroPhoto = document.getElementById('heroPhoto');
     if (heroPhoto) {
         heroPhoto.src = _rel(C.assets.photo);
-        heroPhoto.alt = P.displayNameEl;
+        heroPhoto.alt = _NAME;
         heroPhoto.onerror = _fallbackOnce;
     }
 
@@ -522,7 +525,7 @@
     var personPhoto = document.getElementById('personPhoto');
     if (personPhoto) {
         personPhoto.src = _rel(C.assets.contactPhoto || C.assets.photo);
-        personPhoto.alt = P.displayNameEl;
+        personPhoto.alt = _NAME;
         personPhoto.onerror = _fallbackOnce;
     }
 
@@ -947,7 +950,8 @@
                     '<div class="review-head">' +
                     '<div class="review-avatar" aria-hidden="true">' + initial + '</div>' +
                     '<div class="review-head-text">' +
-                    '<h3>' + r.name + '</h3>' +
+                    /* ελληνικό όνομα σε αγγλική σελίδα: lang="el" (G1) */
+                    '<h3' + (/[\u0370-\u03FF\u1F00-\u1FFF]/.test(r.name) ? ' lang="el"' : '') + '>' + r.name + '</h3>' +
                     '<span class="review-source" data-i18n="reviews.source"></span>' +
                     '</div>' +
                     googleIconHtml +

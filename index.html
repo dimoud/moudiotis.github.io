@@ -48,8 +48,8 @@
     <link rel="stylesheet" href="fonts.css" media="print" onload="this.media='all'" data-async-css>
     <noscript><link rel="stylesheet" href="fonts.css"></noscript>
     <link rel="stylesheet" href="fa-subset.css">
-    <link rel="stylesheet" href="styles.css?v=202610120100">
-    <link rel="stylesheet" href="expertease-credit.css?v=202610120100">
+    <link rel="stylesheet" href="styles.css?v=202610120200">
+    <link rel="stylesheet" href="expertease-credit.css?v=202610120200">
 
     <script type="application/ld+json">
 {
@@ -1810,11 +1810,14 @@
                 if (hb) { hb.classList.remove('open'); hb.setAttribute('aria-expanded', 'false'); }
             }
 
-            var last = window.scrollY;
+            /* istoselides v2.11 (ΜΗ-36): η θέση κύλισης διαβάζεται ΜΟΝΟ όσο το μενού είναι ανοιχτό */
+            var last = null;
             window.addEventListener('scroll', function () {
-                if (!menu.classList.contains('open')) { last = window.scrollY; return; }
-                if (document.activeElement && document.activeElement.closest && document.activeElement.closest('.nav-search')) { last = window.scrollY; return; }
-                if (Math.abs(window.scrollY - last) < 8) return;
+                if (!menu.classList.contains('open')) { last = null; return; }
+                if (document.activeElement && document.activeElement.closest && document.activeElement.closest('.nav-search')) { last = null; return; }
+                var y = window.scrollY;
+                if (last === null) { last = y; return; }
+                if (Math.abs(y - last) < 8) return;
                 shut();
             }, { passive: true });
 
@@ -1879,26 +1882,27 @@
             el.addEventListener('click', () => {
                 document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
             });
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 80) el.classList.add('hidden');
-                else el.classList.remove('hidden');
-            }, { passive: true });
+            /* κοινό καρέ κύλισης (ΜΗ-36)· αλλαγή κλάσης μόνο όταν αλλάζει η κατάσταση */
+            let hid = null;
+            const upd = y => { const h = y > 80; if (h !== hid) { hid = h; el.classList.toggle('hidden', h); } };
+            if (window.ScrollFrame) window.ScrollFrame.add(upd);
+            else window.addEventListener('scroll', () => upd(window.scrollY), { passive: true });
         }
     </script>
-    <script src="share-link.js?v=202610120100" defer></script>
-    <script src="config.js?v=202610120100"></script>
-    <script src="consent.js?v=202610120100"></script>
-    <script src="site-init.js?v=202610120100"></script>
-    <script src="news-carousel.js?v=202610120100" defer></script>
-    <script src="about-profile.js?v=202610120100" defer></script>
-    <script src="partners-carousel.js?v=202610120100" defer></script>
-    <script src="i18n.js?v=202610120100"></script>
-    <script src="eng-animations.js?v=202610120100"></script>
-    <script src="eng-showcase.js?v=202610120100" defer></script>
-    <script src="type-approval-animation.js?v=202610120100"></script>
-    <script src="service-animations.js?v=202610120100"></script>
-    <script src="hero-anim.js?v=202610120100"></script>
-    <script src="contact-form.js?v=202610120100"></script>
+    <script src="share-link.js?v=202610120200" defer></script>
+    <script src="config.js?v=202610120200"></script>
+    <script src="consent.js?v=202610120200"></script>
+    <script src="site-init.js?v=202610120200"></script>
+    <script src="news-carousel.js?v=202610120200" defer></script>
+    <script src="about-profile.js?v=202610120200" defer></script>
+    <script src="partners-carousel.js?v=202610120200" defer></script>
+    <script src="i18n.js?v=202610120200"></script>
+    <script src="eng-animations.js?v=202610120200"></script>
+    <script src="eng-showcase.js?v=202610120200" defer></script>
+    <script src="type-approval-animation.js?v=202610120200"></script>
+    <script src="service-animations.js?v=202610120200"></script>
+    <script src="hero-anim.js?v=202610120200"></script>
+    <script src="contact-form.js?v=202610120200"></script>
 
     <script>
     /* Typewriter animation for .line3 (& Associates / & ΣΥΝΕΡΓΑΤΕΣ) */
@@ -1984,9 +1988,9 @@
         </a>
     </nav>
 
-    <script src="search.js?v=202610120100" defer></script>
+    <script src="search.js?v=202610120200" defer></script>
 
-    <script src="nav-dd.js?v=202610120100" defer></script>
-    <script src="hm-steps.js?v=202610120100" defer></script>
+    <script src="nav-dd.js?v=202610120200" defer></script>
+    <script src="hm-steps.js?v=202610120200" defer></script>
 </body>
 </html>

@@ -38,9 +38,9 @@
     <noscript><link rel="stylesheet" href="../fonts.css"></noscript>
     <link rel="stylesheet" href="../fa-subset.css">
     <script>document.documentElement.className += ' js';</script>
-    <link rel="stylesheet" href="../styles.css?v=202610120100">
-    <link rel="stylesheet" href="../expertease-credit.css?v=202610120100">
-    <link rel="stylesheet" href="../service-page.css?v=202610120100">
+    <link rel="stylesheet" href="../styles.css?v=202610120200">
+    <link rel="stylesheet" href="../expertease-credit.css?v=202610120200">
+    <link rel="stylesheet" href="../service-page.css?v=202610120200">
 
     <script type="application/ld+json">
 {
@@ -631,7 +631,7 @@
                     entries.forEach(function (e) {
                         if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
                     });
-                }, { threshold: 0.01, rootMargin: '0px 0px -6% 0px' });
+                }, { threshold: 0, rootMargin: '0px 0px 12% 0px' });   /* ξεκινά πριν μπει στην οθόνη (ΜΗ-34) */
                 rv.forEach(function (el) { io.observe(el); });
                 /* Ένα κουτί ψηλότερο από την οθόνη δεν φτάνει ποτέ ποσοστό
                    ορατότητας 12%: με το παλιό κατώφλι η πρώτη οθόνη σε κινητό
@@ -640,7 +640,7 @@
                 rv.forEach(function (el) {
                     var r = el.getBoundingClientRect();
                     if (r.top < window.innerHeight && r.bottom > 0) {
-                        el.classList.add('visible');
+                        el.classList.add('visible', 'rv-now');
                         io.unobserve(el);
                     }
                 });
@@ -661,13 +661,16 @@
         (function () {
             var bar = document.getElementById('progress');
             if (!bar) return;
-            function upd() {
-                var h = document.documentElement.scrollHeight - window.innerHeight;
-                bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
-            }
-            window.addEventListener('scroll', upd, { passive: true });
-            window.addEventListener('resize', upd);
-            upd();
+            /* istoselides v2.11 (ΜΗ-36): ύψος μετρημένο μία φορά, ένα καρέ ανά κύλιση, μόνο transform */
+            var max = 1, tk = false;
+            function measure() { max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight); }
+            function upd() { tk = false; bar.style.transform = 'scaleX(' + Math.min(1, window.scrollY / max).toFixed(4) + ')'; }
+            function req() { if (!tk) { tk = true; requestAnimationFrame(upd); } }
+            window.addEventListener('scroll', req, { passive: true });
+            window.addEventListener('resize', function () { measure(); req(); });
+            window.addEventListener('load', function () { measure(); req(); });
+            if ('ResizeObserver' in window) new ResizeObserver(function () { measure(); }).observe(document.body);
+            measure(); upd();
         })();
 
         /* Μέτρηση των αριθμητικών στατιστικών όταν εμφανιστούν */
@@ -779,13 +782,13 @@
         o.observe(w);
     })();
     </script>
-    <script src="../contact-form.js?v=202610120100" defer></script>
+    <script src="../contact-form.js?v=202610120200" defer></script>
     <!-- Συγκατάθεση cookies + Google Analytics (G-4QBD0G5862), ίδιο με την αρχική -->
-    <script src="../share-link.js?v=202610120100" defer></script>
-    <script src="../consent.js?v=202610120100" defer></script>
+    <script src="../share-link.js?v=202610120200" defer></script>
+    <script src="../consent.js?v=202610120200" defer></script>
 
-    <script src="../search.js?v=202610120100" defer></script>
+    <script src="../search.js?v=202610120200" defer></script>
 
-    <script src="../nav-dd.js?v=202610120100" defer></script>
+    <script src="../nav-dd.js?v=202610120200" defer></script>
 </body>
 </html>
