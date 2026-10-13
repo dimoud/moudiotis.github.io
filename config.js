@@ -7,9 +7,9 @@ window.SITE_CONFIG = {
 
     // ── META ──────────────────────────────────────────────────────────────
     meta: {
-        titleEl:       'Τεχνικό Γραφείο Μουδιώτης, Αθήνα — Εγκρίσεις Τύπου & Καταχώρηση ΤΑΟ',
+        titleEl:       'Τεχνικό Γραφείο Μουδιώτης Αθήνα | Εγκρίσεις Τύπου, ΤΑΟ, ΕΧΕΣ',
         titleEn:       'Moudiotis Technical Office, Athens — Vehicle Type Approval & TAO',
-        descriptionEl: 'Τεχνικό γραφείο μηχανικού σε Αθήνα και Θεσσαλονίκη: εγκρίσεις τύπου οχημάτων, δελτίο κοινοποίησης και ΤΑΟ, οχήματα ειδικού σκοπού, άδεια τρέιλερ Ο1/Ο2.',
+        descriptionEl: 'Τεχνικό γραφείο εξειδικευμένου μηχανολόγου μηχανικού σε Αθήνα και Θεσσαλονίκη: εγκρίσεις τύπου, δελτίο κοινοποίησης, ΤΑΟ, οχήματα ειδικού σκοπού, μετασκευές.',
         descriptionEn: 'Vehicle engineering office in Athens and Thessaloniki, Greece: type approval, notification certificates and TAO registration, special purpose vehicles, O1/O2 trailer licences.',
         lang:          'el',
     },
@@ -331,15 +331,15 @@ window.SITE_CONFIG = {
             icon:        'fa-clipboard-check',
             titleEl:     'Τεχνική Συμβουλευτική και Πιστοποίηση',
             titleEn:     'Technical Consulting and Certification',
-            textEl:      '<strong class="kw">Εκπροσώπηση</strong> και τεχνική υποστήριξη έναντι ελεγκτικών οργανισμών, τεχνικών υπηρεσιών και εργαστηρίων δοκιμών. Έκδοση επίσημων <strong class="kw">βεβαιώσεων μηχανικού</strong> για τελωνεία, ΚΤΕΟ, Διευθύνσεις Μεταφορών και φακέλους ταξινόμησης.',
-            textEn:      '<strong class="kw">Representation</strong> and technical support before inspection bodies, technical services and testing laboratories. Issuing official <strong class="kw">engineer certificates</strong> for customs, KTEO, Transport Directorates and registration dossiers.',
+            textEl:      '<strong class="kw">Τεχνική υποστήριξη</strong> και διαχείριση φακέλων έναντι ελεγκτικών οργανισμών, τεχνικών υπηρεσιών και εργαστηρίων δοκιμών. Έκδοση επίσημων <strong class="kw">βεβαιώσεων μηχανικού</strong> για τελωνεία, ΚΤΕΟ, Διευθύνσεις Μεταφορών και φακέλους ταξινόμησης.',
+            textEn:      '<strong class="kw">Technical support</strong> and dossier management before inspection bodies, technical services and testing laboratories. Issuing official <strong class="kw">engineer certificates</strong> for customs, KTEO, Transport Directorates and registration dossiers.',
             seoKeywords: 'διαχείριση φακέλων πιστοποίησης, τεχνική συμβουλευτική οχημάτων, βεβαίωση μηχανικού, βεβαίωση συμμόρφωσης, τεχνικό υπόμνημα, τελωνείο όχημα, ΚΤΕΟ βεβαίωση, Διεύθυνση Μεταφορών, εργαστήριο δοκιμών, ελεγκτικός οργανισμός, vehicle certification consulting Greece, engineer compliance certificate Greece',
             items: [
                 {
                     titleEl: 'Διαχείριση Φακέλων Πιστοποίησης',
                     titleEn: 'Certification Dossier Management',
-                    textEl:  'Απέναντι σε ελεγκτικούς οργανισμούς, τεχνικές υπηρεσίες και εργαστήρια δοκιμών, το γραφείο σάς εκπροσωπεί και σας υποστηρίζει τεχνικά.',
-                    textEn:  'Before inspection bodies, technical services and testing laboratories, the office represents you and provides technical support.',
+                    textEl:  'Απέναντι σε ελεγκτικούς οργανισμούς, τεχνικές υπηρεσίες και εργαστήρια δοκιμών, το γραφείο χειρίζεται τον φάκελο και σας υποστηρίζει τεχνικά.',
+                    textEn:  'Before inspection bodies, technical services and testing laboratories, the office handles the dossier and provides technical support.',
                 },
                 {
                     titleEl: 'Βεβαιώσεις Συμμόρφωσης και Τεχνικά Υπομνήματα',
@@ -663,6 +663,7 @@ window.SITE_CONFIG = {
         // { el: 'Μελέτη Γερανού / Υδραυλικής Πλατφόρμας',          en: 'Crane / Hydraulic Platform Study' },
         // { el: 'Τεχνικός Ασφαλείας / ΓΕΕΚ',                        en: 'Safety Engineer / Risk Assessment' },
         // { el: 'Μηχανολογικός Σχεδιασμός / 3D Print',               en: 'Mechanical Design / 3D Print' },
+        { el: 'Τεχνική Γνωμοδότηση / Επιστολή προς Υπηρεσία',    en: 'Technical Opinion / Letter to an Authority' },
         { el: 'Άλλο',                                              en: 'Other' },
     ],
 
