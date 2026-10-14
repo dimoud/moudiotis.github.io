@@ -214,17 +214,17 @@
       next.classList.remove('is-entering');
       next.classList.add('is-active');
       setTimeout(function () { prev.classList.remove('is-leaving'); }, SLIDE_MS);
-      /* v2.15: το λογότυπο είναι τροχός — φεύγει και ξαναμπαίνει κυλώντας (hero-trochos.js) */
-      if (window.HeroTrochos) {
-        if (prev.classList.contains('hero-slide--logo')) window.HeroTrochos.exit();
-        if (next.classList.contains('hero-slide--logo')) window.HeroTrochos.enter();
+      /* v2.15: το λογότυπο είναι τροχός — φεύγει και ξαναμπαίνει κυλώντας (trochos-kylisi.js, βιβλιοθήκη #31) */
+      if (window.TrochosKylisi) {
+        if (prev.classList.contains('hero-slide--logo')) window.TrochosKylisi.exit();
+        if (next.classList.contains('hero-slide--logo')) window.TrochosKylisi.enter();
       }
       markArt(next);
       if (next.classList.contains('hero-slide--art')) revealSlide(next);
     }
 
     function tick() {
-      var busy = window.HeroTrochos && window.HeroTrochos.busy();   /* όχι στη μέση κύλισης ή συρσίματος */
+      var busy = window.TrochosKylisi && window.TrochosKylisi.busy();   /* όχι στη μέση κύλισης ή συρσίματος */
       if (!paused && inView && !document.hidden && !busy) go();
       timer = setTimeout(tick, INTERVAL);
     }

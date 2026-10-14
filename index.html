@@ -42,18 +42,22 @@
     <meta name="theme-color"    content="#0d2035" media="(prefers-color-scheme: dark)">
 
     <link rel="preload" as="image" href="founder.webp" imagesrcset="founder-480.webp 480w, founder.webp 720w" imagesizes="(max-width: 768px) 260px, 420px" fetchpriority="high">
+    <!-- v2.15: γραμματοσειρές της πρώτης οθόνης νωρίς — αλλαγή γραμματοσειράς μετά την πρώτη απόδοση μετατόπιζε το hero (CLS) -->
+    <link rel="preload" as="font" type="font/woff2" href="fonts/eb-garamond-greek-wght-normal.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="fonts/eb-garamond-greek-wght-italic.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="fonts/source-sans-3-greek-wght-normal.woff2" crossorigin>
     <link rel="preload" as="image" href="hero-bg-900.webp" media="(max-width: 768px)" fetchpriority="high">
     <link rel="preload" as="image" href="688bc305-6129-4485-a56f-d72fdc729791.webp" media="(min-width: 769px)" fetchpriority="high">
 
     <link rel="stylesheet" href="fonts.css" media="print" onload="this.media='all'" data-async-css>
     <noscript><link rel="stylesheet" href="fonts.css"></noscript>
     <link rel="stylesheet" href="fa-subset.css">
-    <script>if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('ht-pre');</script>
+    <script>if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('tk-pre');</script>
     <link rel="stylesheet" href="styles.css?v=202610120300">
     <link rel="stylesheet" href="expertease-credit.css?v=202610120300">
     <link rel="stylesheet" href="sxediasi.css?v=20261013"><!-- πιλοτικό v2.14 -->
-    <link rel="stylesheet" href="hero-trochos.css?v=20261014"><!-- v2.15: τροχός στην πρώτη οθόνη -->
-    <link rel="stylesheet" href="kinisi.css?v=20261014"><!-- v2.15: ησυχία στις ενότητες (Α3–Α7) -->
+    <link rel="stylesheet" href="trochos-kylisi.css?v=20261014"><!-- v2.15: τροχός στην πρώτη οθόνη (βιβλιοθήκη #31) -->
+    <link rel="stylesheet" href="kinisi.css?v=20261014c"><!-- v2.15: κίνηση, ειδικά του ιστότοπου -->
 
     <script type="application/ld+json">
 {
@@ -706,9 +710,10 @@
 
         <div class="hero-photo-col hero-portrait-col">
             <div class="hero-swap hero-swap--logo is-on" data-slide="logo">
-                <div class="hero-photo-wrap" aria-hidden="true">
+                <div class="hero-photo-wrap" aria-hidden="true" data-trochos data-tk-elastiko="205/55 R16" data-tk-pedisi="0.36" data-tk-r="0.46"
+                     data-tk-sima="E23" data-tk-sima-el="ΕΓΚΡΙΣΗ ΤΥΠΟΥ · ΕΛΛΑΔΑ" data-tk-sima-en="TYPE APPROVAL · GREECE" data-tk-endeixeis>
                 <!-- Orbiting ring SVG -->
-                <svg class="hero-orbit-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                <svg class="hero-orbit-svg" data-tk-meros viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <path id="orbitTopArc"    d="M 50,250 A 200,200 0 0,1 450,250"/>
                         <path id="orbitBottomArc" d="M 450,250 A 200,200 0 0,1 50,250"/>
@@ -782,7 +787,7 @@
                         </text>
                     </g>
                 </svg>
-                <img id="heroPhoto" src="founder.webp" srcset="founder-480.webp 480w, founder.webp 720w" sizes="(max-width: 768px) 260px, 420px" alt="Δημήτριος Μουδιώτης — Μηχανολόγος Μηχανικός, έγκριση τύπου οχήματος, άδεια τρέιλερ Αθήνα" class="hero-photo">
+                <img id="heroPhoto" data-tk-meros src="founder.webp" srcset="founder-480.webp 480w, founder.webp 720w" sizes="(max-width: 768px) 260px, 420px" alt="Δημήτριος Μουδιώτης — Μηχανολόγος Μηχανικός, έγκριση τύπου οχήματος, άδεια τρέιλερ Αθήνα" class="hero-photo">
             </div>
             </div>
         </div>
@@ -1891,7 +1896,7 @@
     <script src="service-animations.js?v=202610120300"></script>
     <script src="hero-anim.js?v=20261014"></script>
     <script src="elatirio.js?v=20261014"></script>
-    <script src="hero-trochos.js?v=20261014"></script>
+    <script src="trochos-kylisi.js?v=20261014"></script>
     <script src="contact-form.js?v=202610120300"></script>
 
     <script>
@@ -1916,6 +1921,11 @@
             el.textContent = fullText; el.classList.add('typing-started'); return;
         }
 
+        /* μετά τις γραμματοσειρές: αλλαγή γραμματοσειράς στη μέση της πρώτης οθόνης μετατοπίζει τη διάταξη
+           (CLS 0,06 στο κινητό όταν το γράψιμο ξεκινούσε πριν φορτώσουν — μετρήθηκε 14/10/2026) */
+        var t0 = performance.now();
+        Promise.race([document.fonts ? document.fonts.ready : Promise.resolve(),
+                      new Promise(function (r) { setTimeout(r, 2500); })]).then(function () {
         setTimeout(function () {
             el.classList.add('typing-started'); /* slide up into place */
             var i = 0;
@@ -1928,7 +1938,8 @@
                 }
             }
             type();
-        }, delay);
+        }, Math.max(0, delay - (performance.now() - t0)));
+        });
     });
     </script>
 

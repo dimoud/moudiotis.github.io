@@ -1,6 +1,37 @@
-/* kinisi.css — v2.15: ησυχία στις ενότητες κάτω από την πρώτη οθόνη (πρόταση Α3–Α7)
-   Ό,τι επαναλαμβανόταν ατέρμονα παίζει μία φορά ή λίγες, ό,τι ξανασχεδίαζε σε κάθε καρέ φεύγει.
-   Φορτώνει μετά το styles.css / sxediasi.css. */
+/* kinisi.css — moudiotis.gr v2.15: ό,τι αφορά την κίνηση και είναι ειδικό του ιστότοπου.
+   Πρώτη οθόνη γύρω από το χαρακτηριστικό trochos-kylisi (βιβλιοθήκη #31) + ησυχία στις ενότητες (Α3–Α7).
+   Ένα αρχείο, όχι δύο: κάθε επιπλέον CSS στην <head> καθυστερεί την πρώτη απόδοση. Φορτώνει μετά το trochos-kylisi.css. */
+
+/* ── 1. Τέλος οι ατέρμονες κινήσεις που ξανασχεδιάζουν σε κάθε καρέ (ΜΗ-37, ΜΗ-02) ──
+   κάνναβος (background-position + opacity), κόκκος (background-position), φωτοστέφανο,
+   δακτύλιοι, κουκκίδες (r), κομήτης (stroke, r), περιστροφή κειμένου, σκιά λογοτύπου. */
+html .hero .hero-blueprint { animation: none !important; opacity: .8; }
+html .hero .hero-grain     { animation: none !important; }
+html .hero .orbit-halo,
+html .hero .orbit-ring-outer,
+html .hero .orbit-ring-main,
+html .hero .orbit-dot,
+html .hero .orbit-text-group,
+html .hero .orbit-comet-tail,
+html .hero .orbit-comet-head { animation: none !important; }
+html .hero .orbit-comet-group { display: none; }          /* γενικό μοτίβο χωρίς μηχανισμό (ΜΗ-39) */
+html .hero .hero-photo { animation: none !important; }
+/* εικονίδια κάτω από τα κουμπιά: η «αναπνοή» αδράνειας το πολύ δύο φορές (03 §Άπειροι βρόχοι) */
+body.hp-idle .hero-cta-block .hero-pillar i { animation-iteration-count: 2 !important; }
+
+/* ── 2. Ο τροχός μέσα στην εναλλαγή του hero-anim.js ── */
+/* φεύγει κυλώντας, δεν σβήνει */
+html.tk-on .hero-photo-wrap.art-active .hero-orbit-svg { opacity: 1 !important; }
+html.tk-on .hero-slide--logo,
+html.tk-on .hero-slide--logo.is-leaving,
+html.tk-on .hero-slide--logo.is-entering {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+}
+/* ενδείξεις κάτω από το SVG (που ξεχειλίζει 15 % από το πλαίσιο) */
+.hero .hero-photo-wrap { --tk-endeixeis-top: calc(115% + 6px); }
+.hero-photo-wrap.art-active .tk-endeixeis { visibility: hidden; }
+
+/* ── Ενότητες κάτω από την πρώτη οθόνη (πρόταση Α3–Α7): ό,τι επαναλαμβανόταν ατέρμονα παίζει μία φορά ή λίγες ── */
 
 /* Α3 Υπηρεσίες: κάρτα featured — φως που γυρίζει στο περίγραμμα (background-position σε κάθε καρέ)
    μία φορά· ο διακεκομμένος κύκλος πίσω της και γύρω από το εικονίδιο σταματούν */
@@ -24,3 +55,8 @@
 
 /* Α7 Εμπιστοσύνη: οι διακεκομμένοι κύκλοι γύρω από τα τρία εικονίδια δεν περιστρέφονται */
 .trust-pillar-icon::after { animation: none !important; }
+
+/* ── Σταθερή διάταξη στη φόρτωση: η ταινία γεμίζει από το JS (30 → 53/59 px) και έσπρωχνε ό,τι
+   ακολουθεί· μαζί με την αλλαγή γραμματοσειράς στο hero έδινε CLS ως 0,06 στο κινητό (14/10/2026) ── */
+.marquee-wrap { min-height: 53px; }
+@media (min-width: 769px) { .marquee-wrap { min-height: 59px; } }
