@@ -57,19 +57,21 @@ p { text-wrap: pretty; }
 .trust-pillar h3, .hm-idx-t b, #servicesGrid .service-card-body h3,
 #servicesGrid .service-card--featured .service-card-body h3 { font-size: var(--sx-sub) !important; }
 .nav-links a, .nav-dd-btn, .nav-dd-btn span, .nav-cta, .skip-link, .ft-legal, .ft-legal a, .sec-meas-label span { font-size: var(--sx-note) !important; }
-.hm-btn span, .hm-calc-go span, .hm-calc-r b, .hm-tr-warn span { font-size: 16px !important; }
+.hm-calc-go span, .hm-calc-r b, .hm-tr-warn span { font-size: 16px !important; }
 .contact-lead { font-size: var(--sx-body) !important; }
 
 /* Κεφαλαία μόνο στο φρύδι κάθε ενότητας και στο όνομα (17 §Γ5, S3 ≤ 2/ενότητα) */
 body * { text-transform: none !important; }
 body .eyebrow span, body .hero-eyebrow span, body .hero-name span, body .svc-hero .svc-kicker,
-body .hero .btn-hero-primary span, body .hero .btn-hero-ghost span { text-transform: uppercase !important; }
+body .hero .btn-hero-primary span, body .hero .btn-hero-ghost span,
+body .dim-value, body .dim-value span, body .btn-submit, body .btn-submit span,
+body #adeia-treyler-o1-o2 .hm-btn, body #adeia-treyler-o1-o2 .hm-btn span { text-transform: uppercase !important; }   /* όπως ήταν (14/10) */
 .news-card-cat, .marquee-item, .svc-more, .rm-more, .cd-label, .field label, .trust-stat-label,
 .hero-art-label, .es-tl, .hm-link, .hm-calc-k, .nav-links a, .nav-dd-btn, .nav-cta,
-.hm-btn, .btn-submit, .hm-calc-go, .ta-stat-lbl, .ta-sec-head,
+.hm-calc-go, .ta-stat-lbl, .ta-sec-head,
 .ta-badge, .ta-docs-group-head, .ta-cta-btn, .ta-cat-bk, .ta-toggle, .ec-col-h, .trc-vtab, .trc-b-lbl,
 .trc-b-inner-lbl, .svc-cta-primary, .svc-cta-tel, .svc-quick a, .tap-graphic-tag, .person-details p,
-.dim-value, .sec-meas-label, .service-badge, .hm-rc-kind, .apf-calc-h, .ec-copy, .ec-label, .ec-name,
+ .sec-meas-label, .service-badge, .hm-rc-kind, .apf-calc-h, .ec-copy, .ec-label, .ec-name,
 .ec-ad-question, .footer-col h4, .pc-cat, .partners-stat, .review-more, .share-link, .tools-tab,
 .svc-hero-cta a, .svc-table th, .mobile-cta-bar a {
     letter-spacing: 0.01em !important;
@@ -78,7 +80,7 @@ body .hero .btn-hero-primary span, body .hero .btn-hero-ghost span { text-transf
 /* Δύο οικογένειες + mono μόνο στα όργανα (S7): Roboto Condensed → Source Sans 3 */
 #servicesGrid .svc-more, .about-portrait figcaption span, .ap-badge,
 .ec-clear, .ec-col-h, .ec-go, .ec-r-state, .es-stamp-t, .footer-col h4, .hero-art-label,
-.hm-btn, .hm-calc-go, .hm-calc-k, .hm-card-k, .hm-link, .mobile-cta-bar a, .nav-dd-head, .news-card-cat,
+.hm-calc-go, .hm-calc-k, .hm-card-k, .hm-link, .mobile-cta-bar a, .nav-dd-head, .news-card-cat,
 .partners-stat, .pc-cat, .pc-wordmark, .price-offer-tag, .price-offer-val, .review-more, .share-link,
 .svc-inline-btn, .svc-quick-viber, .ta-badge, .ta-box h3.ta-title, .ta-cat-bk, .ta-cat-bv, .ta-col-label,
 .ta-docs-group-head, .ta-sec-head, .ta-stat-val, .tap-badge, .tap-kicker, .trc-widget-topbar-badge,
@@ -88,13 +90,13 @@ body .hero .btn-hero-primary span, body .hero .btn-hero-ghost span { text-transf
 .trc-widget button.trc-main-toggle--bar, .svc-faq summary, .svc-hero .svc-kicker, .svc-hero-cta a,
 .svc-prose h3, .svc-quick a, .svc-quick-call small, .svc-related b, .svc-table th,
 body .ta-box .ta-stat-lbl, body .ta-box .ta-badge span, body .tap-graphic-tag,
-body .ta-box .ta-warning-body > strong, .news-card-date, .news-card-src, .service-num, .hm-rail-n {
+body .ta-box .ta-warning-body > strong, .news-card-date, .news-card-src, .service-num {
     font-family: 'Source Sans 3', system-ui, sans-serif !important;
 }
 .news-card-date, .news-card-src { font-variant-numeric: tabular-nums; }
 
 /* ── 4. Ένα ζεύγος ενεργειών (17 §Ε, S1 ≤ 4) ── */
-.hm-btn, .btn-submit, .ta-cta-btn, a.tap-cta-btn, .svc-cta-primary, .hm-calc-go, .ec-go {
+.ta-cta-btn, a.tap-cta-btn, .svc-cta-primary, .hm-calc-go, .ec-go {
     min-height: 48px !important; height: 48px; padding-block: 0 !important; display: inline-flex !important; align-items: center;
     border-radius: var(--sx-radius-btn) !important;
     font-size: 16px !important; font-weight: 600 !important;
@@ -105,19 +107,19 @@ body .ta-box .ta-warning-body > strong, .news-card-date, .news-card-src, .servic
     min-height: 44px !important; border-radius: 999px !important; font-size: 14px !important;
 }
 .hm-link::after, .svc-more::after { content: none; }
-body .contact-section .btn-submit, body form .btn-submit, body .btn-submit:hover,
-body a.ta-cta-btn, body a.tap-cta-btn, body .svc-quick a.svc-quick-call, body .hm-btn--gold { box-shadow: none !important; }
+body a.ta-cta-btn, body a.tap-cta-btn, body .svc-quick a.svc-quick-call { box-shadow: none !important; }
 .apf-item.is-open { box-shadow: 0 14px 34px rgba(0,0,0,0.08) !important; }
 
 /* ── 5. Ένα αριστερό άκρο (17 §Δ2, S2) ── */
 .hm-in { max-width: none !important; padding-inline: var(--sx-edge) !important; }
+#adeia-treyler-o1-o2 .hm-in { max-width: 1180px !important; padding-inline: 48px !important; }   /* όπως ήταν (απόφαση 14/10) */
 @media (min-width: 1025px) {
     .hm-rc-grid { grid-template-columns: 5fr 7fr !important; }
     .hm-rc-grid .hm-rc-txt { order: -1; }                         /* τίτλος αριστερά, σχέδιο δεξιά */
 }
 
 /* ── 6. Ρυθμός ενοτήτων: 2 τιμές (17 §Δ1, S6) ── */
-.services-section, .hm, .trust-section, #trust, .reviews-section, #reviews, .contact-section {
+.services-section, .hm:not(#adeia-treyler-o1-o2), .trust-section, #trust, .reviews-section, #reviews, .contact-section {
     padding-top: var(--sx-sec-t) !important; padding-bottom: var(--sx-sec-b) !important;
 }
 #partners, #newsSection, .about-section {
@@ -125,7 +127,7 @@ body a.ta-cta-btn, body a.tap-cta-btn, body .svc-quick a.svc-quick-call, body .h
 }
 
 /* ── 7. Πάνελ αντί για περιγράμματα (17 §Δ3, S5) ── */
-.review-card, .news-card, .pc-card, .person-card, .contact-map, .trust-pillar-icon {
+.review-card, .news-card, .person-card, .contact-map, .trust-pillar-icon {
     border-width: 0 !important; border-radius: var(--sx-radius-panel) !important;
 }
 .trust-pillar-icon { background: none !important; }
@@ -134,21 +136,20 @@ body a.ta-cta-btn, body a.tap-cta-btn, body .svc-quick a.svc-quick-call, body .h
     border-width: 0 !important; border-radius: var(--sx-radius-panel) !important;
     background-color: color-mix(in srgb, currentColor 4%, transparent) !important; box-shadow: none !important;
 }
-.review-card, .news-card, .pc-card { background: color-mix(in srgb, currentColor 5%, transparent) !important; box-shadow: none !important; }
+.review-card, .news-card { background: color-mix(in srgb, currentColor 5%, transparent) !important; box-shadow: none !important; }
 
 /* ── 8. Υπηρεσίες: τίτλος πρώτος, χωρίς εικονίδιο-σε-κύκλο και χωρίς «01–04» (17 §Θ) ── */
 #servicesGrid .service-icon, .service-icon { display: none !important; }
 .about-section::before, .services-section::before, .trust-section::before, .contact-section::before { content: none !important; display: none !important; }
 
 /* ── 9. Μεταλλικό κείμενο ΜΟΝΟ στο όνομα του hero και στους αριθμούς εμπιστοσύνης (S8) ── */
-.eyebrow span, .hm-h--light em, .section-heading em, .tap-title em,
+.eyebrow span:not(#adeia-treyler-o1-o2 *), .section-heading em, .tap-title em,
 .section-heading.light em, .about-section .section-heading em, .hm-price-v, .as-i b,
 #aboutFeatures .feature-row::before, .svc-hero .svc-kicker, .svc-hero h1 {
     background: none !important; -webkit-background-clip: border-box !important; background-clip: border-box !important;
     -webkit-text-fill-color: currentColor !important; color: var(--sx-copper-ink) !important;
 }
 /* σκούρο φόντο → ανοιχτός χαλκός · ο τίτλος της υποσελίδας μένει λευκός */
-#adeia-treyler-o1-o2 .eyebrow span, #adeia-treyler-o1-o2 em,
 #ypologistis .eyebrow span, #ypologistis em, .contact-section .eyebrow span, .contact-section em,
 .svc-hero .svc-kicker { color: var(--sx-copper-light) !important; }
 .svc-hero h1 { color: #fff !important; }
@@ -159,7 +160,7 @@ body a.ta-cta-btn, body a.tap-cta-btn, body .svc-quick a.svc-quick-call, body .h
     position: absolute; right: 12px; bottom: 8px; z-index: 3; width: 44px; height: 44px; border-radius: 999px;
     border: 0; background: rgba(5,13,24,.55); color: #fff; font: 600 14px/1 'Source Sans 3', system-ui, sans-serif; cursor: pointer;
 }
-.sx-pp:focus-visible, .sx-nb:focus-visible, .sx-localbar a:focus-visible { outline: 2px solid var(--sx-copper-light); outline-offset: 2px; }
+.sx-pp:focus-visible, .sx-nb:focus-visible { outline: 2px solid var(--sx-copper-light); outline-offset: 2px; }
 .marquee-wrap { position: relative; }
 .pc-viewport + .sx-pp { position: static; display: block; margin: 12px var(--sx-edge) 0 auto; background: color-mix(in srgb, currentColor 10%, transparent); color: inherit; }
 .ec-layer--credit { animation: none !important; opacity: 1 !important; transform: none !important; }
@@ -175,20 +176,6 @@ body a.ta-cta-btn, body a.tap-cta-btn, body .svc-quick a.svc-quick-call, body .h
 .sx-nb { width: 44px; height: 44px; border-radius: 999px; border: 0; cursor: pointer;
     background: color-mix(in srgb, currentColor 8%, transparent); color: inherit; font-size: 18px; }
 .sx-nb[disabled] { opacity: .35; cursor: default; }
-
-/* ── 11. Υποσελίδες: τοπική μπάρα με κεφάλαια και κλήση (17 §Ε) ── */
-.sx-localbar {
-    position: sticky; top: var(--sx-nav-h, 64px); z-index: 900;
-    display: flex; align-items: center; gap: 24px; min-height: 52px; padding: 0 var(--sx-edge);
-    background: rgba(10,23,40,.94); color: #fff; font: 500 14px/1.2 'Source Sans 3', system-ui, sans-serif;
-}
-.sx-localbar b { font-weight: 600; white-space: nowrap; }
-.sx-localbar .sx-lb-links { display: flex; gap: 20px; overflow-x: auto; scrollbar-width: none; flex: 1; }
-.sx-localbar .sx-lb-links a { color: rgba(255,255,255,.78); text-decoration: none; white-space: nowrap; padding: 16px 0; }
-.sx-localbar .sx-lb-links a:hover, .sx-localbar .sx-lb-links a.is-on { color: var(--sx-copper-light); }
-.sx-localbar .sx-lb-call { margin-left: auto; white-space: nowrap; background: var(--sx-copper-light); color: #0a1728;
-    border-radius: var(--sx-radius-btn); padding: 0 16px; min-height: 36px; display: inline-flex; align-items: center; font-weight: 600; text-decoration: none; }
-@media (max-width: 1024px) { .sx-localbar { display: none; } }   /* στο κινητό υπάρχει η κάτω μπάρα κλήσης */
 
 /* ── 12. Μειωμένη κίνηση ── */
 @media (prefers-reduced-motion: reduce) {

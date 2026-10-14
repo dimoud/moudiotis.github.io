@@ -1,6 +1,6 @@
 /* sxediasi.js — ΠΙΛΟΤΙΚΟ istoselides v2.14 (references/17), 13/10/2026.
    1) κουμπί παύσης στις ατέρμονες ταινίες (ΜΗ-02)  2) ειδήσεις: συλλογή με snap + κουμπιά (17 §ΣΤ)
-   3) υποσελίδες: τοπική μπάρα με κεφάλαια και κλήση (17 §Ε)  4) διακοσμητικός χάρακας ύψους: aria-hidden
+   3) διακοσμητικός χάρακας ύψους: aria-hidden
    Αφαίρεση = revert του commit. */
 (function () {
   'use strict';
@@ -58,47 +58,9 @@
     return true;
   }
 
-  /* 3. Υποσελίδα υπηρεσίας: τοπική μπάρα (όνομα · κεφάλαια · κλήση). Ένα μόνο <nav> στη σελίδα (κανόνας 15). */
-  function localBar() {
-    var main = document.querySelector('main'), h1 = document.querySelector('.svc-hero h1, main h1');
-    if (!main || !h1 || !document.querySelector('.svc-hero')) return;
-    var hs = Array.prototype.filter.call(main.querySelectorAll('h2'), function (h) {
-      return !h.closest('.contact-section, #contact') && h.offsetParent !== null;
-    });
-    if (hs.length < 2) return;
-    var tel = document.querySelector('a[href^="tel:"]');
-    var bar = document.createElement('div');
-    bar.className = 'sx-localbar'; bar.setAttribute('role', 'navigation'); bar.setAttribute('aria-label', T.sections);
-    var name = (h1.textContent || '').split(/[:—–]/)[0].trim();
-    var links = hs.map(function (h, i) {
-      if (!h.id) h.id = 'sx-k' + (i + 1);
-      var txt = h.textContent.trim(); if (txt.length > 34) txt = txt.slice(0, 32).replace(/\s+\S*$/, '') + '…';
-      return '<a href="#' + h.id + '">' + txt.replace(/</g, '&lt;') + '</a>';
-    }).join('');
-    bar.innerHTML = '<b>' + name.replace(/</g, '&lt;') + '</b><div class="sx-lb-links">' + links + '</div>' +
-      (tel ? '<a class="sx-lb-call" href="' + tel.getAttribute('href') + '">' + T.call + '</a>' : '');
-    var hero = document.querySelector('.svc-hero');
-    hero.parentNode.insertBefore(bar, hero.nextSibling);
-    var nav = document.querySelector('nav');
-    function navH() { document.documentElement.style.setProperty('--sx-nav-h', (nav ? nav.offsetHeight : 64) + 'px'); }
-    navH(); window.addEventListener('resize', navH);
-    hs.forEach(function (h) { h.style.scrollMarginTop = '140px'; });
-    if ('IntersectionObserver' in window) {
-      var as = bar.querySelectorAll('.sx-lb-links a');
-      var io = new IntersectionObserver(function (en) {
-        en.forEach(function (e) {
-          if (!e.isIntersecting) return;
-          Array.prototype.forEach.call(as, function (a) { a.classList.toggle('is-on', a.getAttribute('href') === '#' + e.target.id); });
-        });
-      }, { rootMargin: '-30% 0px -60% 0px' });
-      hs.forEach(function (h) { io.observe(h); });
-    }
-  }
-
   function init() {
     Array.prototype.forEach.call(document.querySelectorAll('button.sx-pp[data-sx-target]'), wirePause);
     var el = document.getElementById('scrollElev'); if (el) el.setAttribute('aria-hidden', 'true');
-    localBar();
     /* οι ειδήσεις χτίζονται ασύγχρονα (news.json): περίμενε τις κάρτες */
     if (!newsGallery()) {
       var track = document.getElementById('newsTrack');
