@@ -3,6 +3,20 @@
    τις σχετικές σελίδες στη γλώσσα της σελίδας. Χωρίς εξωτερικές υπηρεσίες. */
 (function () {
     'use strict';
+    /* Κινητό (≤ 960 px, πλαϊνό μενού): το πεδίο μπαίνει πρώτο μέσα στο μενού, κάτω από το «Χ».
+       Αντίγραφο του πεδίου της κεφαλίδας, ώστε οι 28 σελίδες να μένουν ίδιες· το CSS το δείχνει
+       μόνο μέσα στο ανοιχτό μενού και κρύβει τότε το εικονίδιο της κεφαλίδας. */
+    var nl = document.getElementById('navLinks'), src = document.querySelector('#siteSearch .nav-search');
+    if (nl && src && !nl.querySelector('.nav-search')) {
+        var mf = src.cloneNode(true), cb = nl.querySelector('.nav-close');
+        mf.classList.add('nav-search--menu');
+        var mr = mf.querySelector('.nav-search-res'); if (mr) mr.hidden = true;
+        nl.insertBefore(mf, cb ? cb.nextSibling : nl.firstChild);
+        /* επιλογή αποτελέσματος: κλείνει το μενού (και για αποτέλεσμα στην ίδια σελίδα) */
+        mf.addEventListener('click', function (e) {
+            if (e.target.closest && e.target.closest('.nav-search-res a') && typeof window.closeMenu === 'function') window.closeMenu();
+        });
+    }
     var boxes = document.querySelectorAll('.nav-search');
     if (!boxes.length) return;
     var EN = (document.documentElement.lang || 'el').indexOf('en') === 0;
