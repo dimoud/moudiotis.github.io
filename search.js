@@ -11,6 +11,8 @@
         var mf = src.cloneNode(true), cb = nl.querySelector('.nav-close');
         mf.classList.add('nav-search--menu');
         var mr = mf.querySelector('.nav-search-res'); if (mr) mr.hidden = true;
+        var mi = mf.querySelector('input');   /* σύντομη ένδειξη· η πλήρης μένει στο aria-label */
+        if (mi) mi.placeholder = (document.documentElement.lang || 'el').indexOf('en') === 0 ? 'Search' : 'Αναζήτηση';
         nl.insertBefore(mf, cb ? cb.nextSibling : nl.firstChild);
         /* επιλογή αποτελέσματος: κλείνει το μενού (και για αποτέλεσμα στην ίδια σελίδα) */
         mf.addEventListener('click', function (e) {
