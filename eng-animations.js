@@ -740,6 +740,8 @@
 
     function startCraneLoop(col) {
         var paths = col.querySelectorAll('.crane-path');
+        /* v2.15: μειωμένη κίνηση → τελική εικόνα· εκτός κάδρου ή σε κρυφή καρτέλα → παύση (ΜΗ-37) */
+        var craneReduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
         /* pick whichever stamp lives inside this column */
         var stamp = col.querySelector('#craneStamp, #craneStampMobile');
         /* pivot and final transform differ per instance */
@@ -784,12 +786,19 @@
         }
 
         function eraseOut() {
+            if (col.__craneInView === false || document.hidden) { col.__craneResume = eraseOut; return; }
             applyStagger(false);
             col.classList.remove('crane-draw');
             /* after erase + gap, draw again */
             setTimeout(drawIn, CRANE_ERASE_MS + CRANE_GAP_MS);
         }
 
+        if (craneReduced) {
+            paths.forEach(function (p) { p.style.transition = 'none'; });
+            col.classList.add('crane-draw');
+            if (stamp) { stamp.style.transition = 'none'; stamp.style.opacity = '1'; stamp.setAttribute('transform', pivot); }
+            return;
+        }
         drawIn();
     }
 
@@ -798,9 +807,12 @@
     if (trustCraneCol && 'IntersectionObserver' in window) {
         var craneObs = new IntersectionObserver(function (entries) {
             entries.forEach(function (e) {
-                if (e.isIntersecting) {
+                trustCraneCol.__craneInView = e.isIntersecting;
+                if (e.isIntersecting && !trustCraneCol.__craneStarted) {
+                    trustCraneCol.__craneStarted = true;
                     startCraneLoop(trustCraneCol);
-                    craneObs.unobserve(trustCraneCol);
+                } else if (e.isIntersecting && trustCraneCol.__craneResume) {
+                    var r = trustCraneCol.__craneResume; trustCraneCol.__craneResume = null; r();
                 }
             });
         }, { threshold: 0.15 });
@@ -809,7 +821,8 @@
 
     /* Hero mobile — start loop after page load */
     var heroCraneMobile = $('heroCraneMobile');
-    if (heroCraneMobile) {
+    /* v2.15: μόνο αν φαίνεται — από τη v2.14 είναι display:none σε όλα τα πλάτη */
+    if (heroCraneMobile && heroCraneMobile.getClientRects().length) {
         heroCraneMobile.classList.add('crane-ready');
         setTimeout(function () { startCraneLoop(heroCraneMobile); }, 700);
     }

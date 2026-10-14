@@ -214,12 +214,18 @@
       next.classList.remove('is-entering');
       next.classList.add('is-active');
       setTimeout(function () { prev.classList.remove('is-leaving'); }, SLIDE_MS);
+      /* v2.15: το λογότυπο είναι τροχός — φεύγει και ξαναμπαίνει κυλώντας (hero-trochos.js) */
+      if (window.HeroTrochos) {
+        if (prev.classList.contains('hero-slide--logo')) window.HeroTrochos.exit();
+        if (next.classList.contains('hero-slide--logo')) window.HeroTrochos.enter();
+      }
       markArt(next);
       if (next.classList.contains('hero-slide--art')) revealSlide(next);
     }
 
     function tick() {
-      if (!paused && inView && !document.hidden) go();
+      var busy = window.HeroTrochos && window.HeroTrochos.busy();   /* όχι στη μέση κύλισης ή συρσίματος */
+      if (!paused && inView && !document.hidden && !busy) go();
       timer = setTimeout(tick, INTERVAL);
     }
     timer = setTimeout(tick, INTERVAL);

@@ -48,9 +48,12 @@
     <link rel="stylesheet" href="../fonts.css" media="print" onload="this.media='all'" data-async-css>
     <noscript><link rel="stylesheet" href="../fonts.css"></noscript>
     <link rel="stylesheet" href="../fa-subset.css">
+    <script>if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('ht-pre');</script>
     <link rel="stylesheet" href="../styles.css?v=202610120300">
     <link rel="stylesheet" href="../expertease-credit.css?v=202610120300">
     <link rel="stylesheet" href="../sxediasi.css?v=20261013"><!-- πιλοτικό v2.14 -->
+    <link rel="stylesheet" href="../hero-trochos.css?v=20261014"><!-- v2.15: τροχός στην πρώτη οθόνη -->
+    <link rel="stylesheet" href="../kinisi.css?v=20261014"><!-- v2.15: ησυχία στις ενότητες (Α3–Α7) -->
 
     <script type="application/ld+json">
 {
@@ -1740,25 +1743,7 @@
         }());
 </script>
 
-    <script type="module">
-        import { animate, spring } from 'https://cdn.jsdelivr.net/npm/animejs@4/+esm';
-        const el = document.getElementById('scrollBounce');
-        if (el) {
-            animate(el, {
-                y: [0, 14, 0],
-                loop: true,
-                ease: spring({ bounce: 0.39, duration: 628 })
-            });
-            el.addEventListener('click', () => {
-                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-            });
-            /* κοινό καρέ κύλισης (ΜΗ-36)· αλλαγή κλάσης μόνο όταν αλλάζει η κατάσταση */
-            let hid = null;
-            const upd = y => { const h = y > 80; if (h !== hid) { hid = h; el.classList.toggle('hidden', h); } };
-            if (window.ScrollFrame) window.ScrollFrame.add(upd);
-            else window.addEventListener('scroll', () => upd(window.scrollY), { passive: true });
-        }
-    </script>
+    <!-- v2.15: αφαιρέθηκε το anime.js από CDN (ατέρμονη αναπήδηση σε #scrollBounce, που είναι κρυφό σε όλα τα πλάτη) -->
     <script src="../share-link.js?v=202610120300" defer></script>
     <script src="../config.js?v=202610120300"></script>
     <script>window.SITE_CONFIG.meta.lang = 'en';</script>   <!-- ΑΜΕΣΩΣ μετά το config.js (ΜΗ-38) -->
@@ -1768,11 +1753,13 @@
     <script src="../about-profile.js?v=202610120300" defer></script>
     <script src="../partners-carousel.js?v=202610120300" defer></script>
     <script src="../i18n.js?v=202610120300"></script>
-    <script src="../eng-animations.js?v=202610120300"></script>
+    <script src="../eng-animations.js?v=20261014"></script>
     <script src="../eng-showcase.js?v=202610120300" defer></script>
-    <script src="../type-approval-animation.js?v=202610120300"></script>
+    <script src="../type-approval-animation.js?v=20261014"></script>
     <script src="../service-animations.js?v=202610120300"></script>
-    <script src="../hero-anim.js?v=202610120300"></script>
+    <script src="../hero-anim.js?v=20261014"></script>
+    <script src="../elatirio.js?v=20261014"></script>
+    <script src="../hero-trochos.js?v=20261014"></script>
     <script src="../contact-form.js?v=202610120300"></script>
 
     <script>
@@ -1782,18 +1769,28 @@
         if (!el) return;
 
         var fullText = el.textContent || '';
+        /* v2.15: το υπόλοιπο κείμενο μένει στη θέση του, αόρατο — καμία μετατόπιση διάταξης (CLS) */
+        var shown = document.createElement('span'), rest = document.createElement('span');
+        rest.style.opacity = '0';
         el.textContent = '';
+        el.appendChild(shown); el.appendChild(rest);
+        rest.textContent = fullText;
         el.style.visibility = 'visible';
 
-        var delay = 2000;       /* 2s initial delay */
-        var charDelay = 120;    /* ms per character — slower typing */
+        /* v2.15: ξεκινά τη στιγμή που ο τροχός σταματά και τελειώνει σε ~1,8 s (ήταν 3,6 s) */
+        var delay = 1100;
+        var charDelay = 50;
+        if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            el.textContent = fullText; el.classList.add('typing-started'); return;
+        }
 
         setTimeout(function () {
             el.classList.add('typing-started'); /* slide up into place */
             var i = 0;
             function type() {
                 if (i <= fullText.length) {
-                    el.textContent = fullText.slice(0, i);
+                    shown.textContent = fullText.slice(0, i);
+                    rest.textContent  = fullText.slice(i);
                     i++;
                     setTimeout(type, charDelay);
                 }

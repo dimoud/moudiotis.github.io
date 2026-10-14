@@ -303,7 +303,12 @@
           setTimeout(function () {
             showStamp(stamp);
             if (AUTO_RESTART) {
-              setTimeout(start, RESTART_DELAY);
+              /* v2.15: επανάληψη μόνο αν η σκηνή φαίνεται και η καρτέλα είναι ενεργή (ΜΗ-37)·
+                 αλλιώς περιμένει να ξαναμπεί στο κάδρο */
+              setTimeout(function () {
+                if (container.__tapInView !== false && !document.hidden) start();
+                else container.__tapPending = start;
+              }, RESTART_DELAY);
             }
           }, STAMP_DELAY);
         });
@@ -319,9 +324,12 @@
       var started = false;
       var obs = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
+          wrapper.__tapInView = e.isIntersecting;
           if (e.isIntersecting && !started) {
             started = true;
             runSequence(wrapper);
+          } else if (e.isIntersecting && wrapper.__tapPending) {
+            var go = wrapper.__tapPending; wrapper.__tapPending = null; go();
           }
         });
       }, { threshold: 0.25 });

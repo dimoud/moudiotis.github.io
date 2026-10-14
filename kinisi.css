@@ -1,0 +1,26 @@
+/* kinisi.css — v2.15: ησυχία στις ενότητες κάτω από την πρώτη οθόνη (πρόταση Α3–Α7)
+   Ό,τι επαναλαμβανόταν ατέρμονα παίζει μία φορά ή λίγες, ό,τι ξανασχεδίαζε σε κάθε καρέ φεύγει.
+   Φορτώνει μετά το styles.css / sxediasi.css. */
+
+/* Α3 Υπηρεσίες: κάρτα featured — φως που γυρίζει στο περίγραμμα (background-position σε κάθε καρέ)
+   μία φορά· ο διακεκομμένος κύκλος πίσω της και γύρω από το εικονίδιο σταματούν */
+#servicesGrid .service-card--featured::after,
+.service-card--featured.is-visible::after { animation-iteration-count: 1 !important; }
+#servicesGrid .service-card--featured::before,
+#servicesGrid .service-card--featured .service-icon::after,
+#servicesGrid .service-card--featured i::after,
+.services-section .fa-file-circle-check::after { animation: none !important; }
+
+/* Α3 Υπολογισμός στις υπηρεσίες: ο δρομέας αναβοσβήνει 4 φορές (≈ 3 s) και μένει αναμμένος */
+.es-calc-l li.on .es-v::after { animation-iteration-count: 4 !important; }
+
+/* Α4 Εγκρίσεις τύπου: το βελάκι του ενεργού στοιχείου «σπρώχνει» τρεις φορές, όχι για πάντα */
+.hm-idx li.is-focus .hm-idx-go { animation-iteration-count: 3 !important; }
+
+/* Α6 Έλεγχος Κ.Ο.Κ.: χωρίς drop-shadow στο ενεργό σημείο (φίλτρο που ξαναζωγραφίζεται σε κάθε
+   καρέ της μετάβασης)· μένουν η μεγέθυνση και το χρώμα */
+.hm-pins > g { transition: transform .55s var(--ease) !important; }
+.hm-pins > g.is-active { filter: none !important; }
+
+/* Α7 Εμπιστοσύνη: οι διακεκομμένοι κύκλοι γύρω από τα τρία εικονίδια δεν περιστρέφονται */
+.trust-pillar-icon::after { animation: none !important; }
