@@ -1647,7 +1647,7 @@ footer {
     .caliper-svg--horizontal text { transform-box: fill-box; transform-origin: center; transform: scaleY(-1); }
     .about-caliper-col { display: none; }
     .trailer-dim-svg { width: 100%; max-width: 520px; }
-    .about-grid--desktop-two { grid-template-columns: 1fr; max-width: 100%; padding-right: 4%; }
+    .about-grid--desktop-two { grid-template-columns: 1fr; max-width: 100%; padding-right: 0; } /* συμμετρία: όχι κενό μόνο δεξιά */
     .dim-row { display: flex; margin: 24px 0 8px; }
     .about-features { margin-bottom: 0; }
 
@@ -1719,8 +1719,8 @@ footer {
     .cd-icon i, .cd-icon .fa-brands { font-size: 16px; }
     .cd-value { font-size: 13.5px; }
     .contact-map iframe { height: 220px; }
-    /* Person card: scale down 15% to prevent overflow */
-    .person-card { transform: scale(0.85); transform-origin: left center; margin-left: 0; margin-right: auto; margin-bottom: 10px; }
+    /* Person card: πλήρες πλάτος στήλης, συμμετρική (όχι scale με αγκύρωση αριστερά) */
+    .person-card { transform: none; width: 100%; box-sizing: border-box; margin: 0 0 10px; padding: 24px 20px; gap: 16px; }
     .contact-form-wrap { padding: 32px 22px; width: 100%; margin: 0; box-sizing: border-box; grid-column: 1; justify-self: stretch; }
     .contact-map { justify-self: stretch; width: 100%; box-sizing: border-box; }
     .form-row { grid-template-columns: 1fr; }
@@ -4377,7 +4377,8 @@ a.ta-cta-btn:hover, a.tap-cta-btn:hover, .svc-quick a.svc-quick-call:hover {
         background: linear-gradient(0deg, rgba(13,26,45,1) 0%, rgba(13,26,45,0.6) 18%, rgba(13,26,45,0) 45%),
                     linear-gradient(180deg, rgba(13,26,45,0.55) 0%, rgba(13,26,45,0) 22%);
     }
-    .hero-inner { align-items: center; text-align: center; margin-top: -44px; padding: 0 5%; position: relative; z-index: 3; }
+    .hero-inner { align-items: center; text-align: center; margin-top: -44px; padding: 0 5%; position: relative; z-index: 3;
+                  align-self: stretch; width: 100%; box-sizing: border-box; } /* συμμετρία: το align-self:end του πλέγματος υπολογιστή σε flex-στήλη σπρώχνει δεξιά */
     .hero-name--brand { margin-bottom: 10px; padding-bottom: 22px; }
     .hero-name--brand .line1 { font-size: 13px; letter-spacing: 4px; }
     .hero-name--brand .line2 { font-size: clamp(44px, 13vw, 58px); }

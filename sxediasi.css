@@ -208,3 +208,27 @@ body a.ta-cta-btn, body a.tap-cta-btn, body .svc-quick a.svc-quick-call { box-sh
     .sx-pp { display: none; }
     .sx-trfig .draw, .sx-trfig .st, .sx-trfig .slot { transition: none !important; }
 }
+
+/* ── 13. Συμμετρία κεντραρισμένων τίτλων (eyebrow) ──
+   Κεντραρισμένο eyebrow με γραμμή μόνο αριστερά μετατοπίζει το κείμενο κατά (32 + 14)/2 = 23 px δεξιά.
+   Καθρεφτίζεται η γραμμή δεξιά, και αντισταθμίζεται η ουρά του letter-spacing μετά το τελευταίο γράμμα. */
+.services-header .eyebrow, .trust-header .eyebrow, .reviews-heading-wrap .eyebrow,
+.news-heading-wrap .eyebrow, .partners-head .eyebrow, .tools-tabs-head .eyebrow { justify-content: center; }
+.services-header .eyebrow::after, .trust-header .eyebrow::after, .reviews-heading-wrap .eyebrow::after,
+.news-heading-wrap .eyebrow::after, .partners-head .eyebrow::after, .tools-tabs-head .eyebrow::after {
+    content: ''; display: block; width: 32px; height: 2px;
+    background: var(--gold-metal-h, var(--warm));
+    transform: scaleX(0); transform-origin: right;
+    transition: transform 0.55s var(--ease) 0.2s;
+}
+[data-reveal].visible .eyebrow::after,
+.services-header.visible .eyebrow::after, .reviews-heading-wrap.visible .eyebrow::after,
+.news-heading-wrap.visible .eyebrow::after, .partners-head.visible .eyebrow::after { transform: scaleX(1); }
+.services-header .eyebrow span, .trust-header .eyebrow span, .reviews-heading-wrap .eyebrow span,
+.news-heading-wrap .eyebrow span, .partners-head .eyebrow span, .tools-tabs-head .eyebrow span,
+.hm-rc-txt .eyebrow span { margin-right: -3.5px; }
+@media (prefers-reduced-motion: reduce) { .eyebrow::after { transition: none; transform: scaleX(1); } }
+/* οι κεφαλίδες αυτές δεν έχουν data-reveal: οι γραμμές φαίνονται άμεσα, και οι δύο */
+.reviews-heading-wrap .eyebrow::before, .reviews-heading-wrap .eyebrow::after,
+.partners-head .eyebrow::before, .partners-head .eyebrow::after,
+.news-heading-wrap .eyebrow::before, .news-heading-wrap .eyebrow::after { transform: scaleX(1); }
