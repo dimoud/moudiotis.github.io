@@ -112,14 +112,13 @@ body a.ta-cta-btn, body a.tap-cta-btn, body .svc-quick a.svc-quick-call { box-sh
 
 /* ── 5. Ένα αριστερό άκρο (17 §Δ2, S2) ── */
 .hm-in { max-width: none !important; padding-inline: var(--sx-edge) !important; }
-#adeia-treyler-o1-o2 .hm-in { max-width: 1180px !important; padding-inline: 48px !important; }   /* όπως ήταν (απόφαση 14/10) */
 @media (min-width: 1025px) {
     .hm-rc-grid { grid-template-columns: 5fr 7fr !important; }
     .hm-rc-grid .hm-rc-txt { order: -1; }                         /* τίτλος αριστερά, σχέδιο δεξιά */
 }
 
 /* ── 6. Ρυθμός ενοτήτων: 2 τιμές (17 §Δ1, S6) ── */
-.services-section, .hm:not(#adeia-treyler-o1-o2), .trust-section, #trust, .reviews-section, #reviews, .contact-section {
+.services-section, .hm, .trust-section, #trust, .reviews-section, #reviews, .contact-section {
     padding-top: var(--sx-sec-t) !important; padding-bottom: var(--sx-sec-b) !important;
 }
 #partners, #newsSection, .about-section {
@@ -177,7 +176,35 @@ body a.ta-cta-btn, body a.tap-cta-btn, body .svc-quick a.svc-quick-call { box-sh
     background: color-mix(in srgb, currentColor 8%, transparent); color: inherit; font-size: 18px; }
 .sx-nb[disabled] { opacity: .35; cursor: default; }
 
+/* ── 11. Τρέιλερ: σχέδιο που ακολουθεί τα 8 βήματα (δεξιά, μόνο υπολογιστής ≥ 1100px) ── */
+.sx-trfig { display: none; }
+@media (min-width: 1600px) { #adeia-treyler-o1-o2 .hm-in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; } }
+@media (min-width: 1100px) {
+    #adeia-treyler-o1-o2 .hm-in { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); column-gap: clamp(40px, 5vw, 96px); }
+    #adeia-treyler-o1-o2 .hm-in > :not(.sx-trfig) { grid-column: 1; }
+    #adeia-treyler-o1-o2 .hm-rail, #adeia-treyler-o1-o2 .hm-tr-foot { max-width: none !important; }   /* η σειρά γεμίζει την αριστερή στήλη */
+    .sx-trfig { display: block; grid-column: 2; grid-row: 1 / span 3; align-self: center; margin: 0; max-width: 620px; justify-self: end; width: 100%; }
+}
+.sx-trfig svg { width: 100%; height: auto; display: block; overflow: visible; }
+.sx-trfig .ln { fill: none; stroke: #c99986; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.sx-trfig .ln--dim { stroke: rgba(201,153,134,.35); stroke-width: 1; }
+.sx-trfig .draw { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.4s cubic-bezier(.65,0,.35,1); }
+.sx-trfig.is-on .draw { stroke-dashoffset: 0; }
+.sx-trfig text { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; fill: rgba(255,255,255,.72); letter-spacing: .04em; }
+.sx-trfig text.hd { fill: #e7b39f; font-size: 13px; letter-spacing: .14em; }
+.sx-trfig text.big { font-family: 'EB Garamond', Georgia, serif; font-size: 30px; letter-spacing: 0; fill: #fff; }
+.sx-trfig .st { opacity: 0; transform: translateY(6px); transition: opacity .5s cubic-bezier(.16,1,.3,1), transform .5s cubic-bezier(.16,1,.3,1); }
+.sx-trfig .st.on { opacity: .55; transform: none; }
+.sx-trfig .st.cur { opacity: 1; transform: none; }
+.sx-trfig .ok { fill: none; stroke: #7fd1a0; stroke-width: 2; }
+.sx-trfig .okt { fill: #7fd1a0 !important; }
+.sx-trfig .slot { fill: rgba(201,153,134,.18); transition: fill .2s linear; }
+.sx-trfig .slot.f { fill: #e7b39f; }
+.sx-trfig .plate { fill: #f4f1ea; stroke: #0a1728; stroke-width: 1.5; }
+.sx-trfig figcaption { margin-top: 10px; font: 500 12px/1.4 'JetBrains Mono', ui-monospace, monospace; color: rgba(255,255,255,.6); letter-spacing: .06em; }
+
 /* ── 12. Μειωμένη κίνηση ── */
 @media (prefers-reduced-motion: reduce) {
     .sx-pp { display: none; }
+    .sx-trfig .draw, .sx-trfig .st, .sx-trfig .slot { transition: none !important; }
 }
