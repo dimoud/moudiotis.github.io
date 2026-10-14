@@ -1,0 +1,183 @@
+/* ==========================================================================
+   sxediasi.css — ΠΙΛΟΤΙΚΟ istoselides v2.14 (references/17), 13/10/2026
+   Ένα στρώμα που φορτώνει ΤΕΛΕΥΤΑΙΟ σε κάθε σελίδα. Αφαίρεση = revert του commit.
+   Ταυτότητα: «Μετάλλιο» (κρατιέται). Κανόνες: 17 §Γ κλίμακα · §Δ ρυθμός/άκρο ·
+   §Ε ζεύγος ενεργειών · §Θ χωρίς «αισθητική ΤΝ». Καμία αλλαγή SEO (ΜΗ-21).
+   ========================================================================== */
+:root {
+    /* κλίμακα 6 βαθμίδων: υπολογιστής → κινητό */
+    --sx-statement: 80px;  --sx-title: 60px;  --sx-sub: 24px;
+    --sx-body: 17px;       --sx-note: 14px;   --sx-min: 12px;
+    /* ρυθμός ενοτήτων (κάτω > πάνω) · ταινίες */
+    --sx-sec-t: 112px; --sx-sec-b: 144px; --sx-band-t: 72px; --sx-band-b: 96px;
+    --sx-edge: 7%;                         /* ένα αριστερό άκρο για όλα */
+    --sx-radius-panel: 18px; --sx-radius-btn: 6px;
+    /* συμπαγής χαλκός: σε ανοιχτό φόντο / σε σκούρο φόντο (αντίθεση ≥ 4,5:1) */
+    --sx-copper-ink: #8a4f37; --sx-copper-light: #e7b39f;
+    --sx-ui-ease: cubic-bezier(.4,0,.6,1);
+}
+@media (max-width: 768px) {
+    :root { --sx-statement: 40px; --sx-title: 32px; --sx-sub: 20px; --sx-body: 16px;
+            --sx-sec-t: 72px; --sx-sec-b: 96px; --sx-band-t: 48px; --sx-band-b: 64px; }
+}
+
+/* ── 1. Πρώτη οθόνη: ΚΡΑΤΙΕΤΑΙ ΩΣ ΕΧΕΙ (απόφαση χρήστη 13/10/2026) — μπλοκ ενεργειών, κουμπιά, πλακίδια
+         και γραμμή υπηρεσιών του hero δεν αγγίζονται. Αλλάζει μόνο το ύψος του εμβλήματος στο κινητό. ── */
+@media (max-width: 768px) {
+    .hero-photo-col { height: 200px !important; }                 /* ~24% του κάδρου 844px */
+    .hero-photo-wrap { width: 132px !important; height: 132px !important; }
+    .hero-swap--logo { height: 200px !important; }
+}
+
+/* ── 2. Γράμματα ≥ 12px (ΜΗ-09) ── */
+.apf-calc-h, .ec-copy, .ec-label, .ec-copy span, #footerYear,
+.es-calc-l li::before { font-size: var(--sx-min) !important; }
+
+/* ── 3. Τυπογραφία: δύο βαθμίδες τίτλων, διάστιχο αντίστροφο του μεγέθους (17 §Γ) ── */
+.services-section .section-heading, .reviews-section .section-heading, #reviews .section-heading,
+#partners .section-heading, #newsSection .section-heading, .about-section .section-heading,
+#about .section-heading, #about .section-heading em {
+    font-size: var(--sx-statement) !important; letter-spacing: -0.015em; line-height: 1.02; text-wrap: balance;
+}
+.contact-section .section-heading, .hm-h {
+    font-size: var(--sx-title) !important; letter-spacing: -0.01em; line-height: 1.05; text-wrap: balance;
+}
+#ypologistis .hm-q-h, #ypologistis .hm-q-h em { font-size: 40px !important; line-height: 1.1; letter-spacing: -0.01em; text-wrap: balance; }
+main h2:not([class]) { font-size: 32px !important; line-height: 1.15; letter-spacing: -0.005em; text-wrap: balance; }
+@media (max-width: 768px) {
+    #ypologistis .hm-q-h, #ypologistis .hm-q-h em { font-size: 32px !important; }
+    main h2:not([class]) { font-size: var(--sx-sub) !important; }
+}
+p { text-wrap: pretty; }
+/* μικρές ενδιάμεσες τιμές → βαθμίδες της κλίμακας (S4) */
+.svc-more, .hm-idx-n, .hm-calc-k, .hm-calc-k span { font-size: var(--sx-note) !important; }
+.review-head-text h3, .pc-name, .cd-value { font-size: 16px !important; }
+.news-card-title { font-size: var(--sx-body) !important; }
+.person-details h3, .apf-title, .contact-form-wrap h3, .footer-brand-text .fname, .service-card-body h3,
+.trust-pillar h3, .hm-idx-t b, #servicesGrid .service-card-body h3,
+#servicesGrid .service-card--featured .service-card-body h3 { font-size: var(--sx-sub) !important; }
+.nav-links a, .nav-dd-btn, .nav-dd-btn span, .nav-cta, .skip-link, .ft-legal, .ft-legal a, .sec-meas-label span { font-size: var(--sx-note) !important; }
+.hm-calc-go span, .hm-calc-r b, .hm-tr-warn span { font-size: 16px !important; }
+.contact-lead { font-size: var(--sx-body) !important; }
+
+/* Κεφαλαία μόνο στο φρύδι κάθε ενότητας και στο όνομα (17 §Γ5, S3 ≤ 2/ενότητα) */
+body * { text-transform: none !important; }
+body .eyebrow span, body .hero-eyebrow span, body .hero-name span, body .svc-hero .svc-kicker,
+body .hero .btn-hero-primary span, body .hero .btn-hero-ghost span,
+body .dim-value, body .dim-value span, body .btn-submit, body .btn-submit span,
+body #adeia-treyler-o1-o2 .hm-btn, body #adeia-treyler-o1-o2 .hm-btn span { text-transform: uppercase !important; }   /* όπως ήταν (14/10) */
+.news-card-cat, .marquee-item, .svc-more, .rm-more, .cd-label, .field label, .trust-stat-label,
+.hero-art-label, .es-tl, .hm-link, .hm-calc-k, .nav-links a, .nav-dd-btn, .nav-cta,
+.hm-calc-go, .ta-stat-lbl, .ta-sec-head,
+.ta-badge, .ta-docs-group-head, .ta-cta-btn, .ta-cat-bk, .ta-toggle, .ec-col-h, .trc-vtab, .trc-b-lbl,
+.trc-b-inner-lbl, .svc-cta-primary, .svc-cta-tel, .svc-quick a, .tap-graphic-tag, .person-details p,
+ .sec-meas-label, .service-badge, .hm-rc-kind, .apf-calc-h, .ec-copy, .ec-label, .ec-name,
+.ec-ad-question, .footer-col h4, .pc-cat, .partners-stat, .review-more, .share-link, .tools-tab,
+.svc-hero-cta a, .svc-table th, .mobile-cta-bar a {
+    letter-spacing: 0.01em !important;
+}
+
+/* Δύο οικογένειες + mono μόνο στα όργανα (S7): Roboto Condensed → Source Sans 3 */
+#servicesGrid .svc-more, .about-portrait figcaption span, .ap-badge,
+.ec-clear, .ec-col-h, .ec-go, .ec-r-state, .es-stamp-t, .footer-col h4, .hero-art-label,
+.hm-calc-go, .hm-calc-k, .hm-card-k, .hm-link, .mobile-cta-bar a, .nav-dd-head, .news-card-cat,
+.partners-stat, .pc-cat, .pc-wordmark, .price-offer-tag, .price-offer-val, .review-more, .share-link,
+.svc-inline-btn, .svc-quick-viber, .ta-badge, .ta-box h3.ta-title, .ta-cat-bk, .ta-cat-bv, .ta-col-label,
+.ta-docs-group-head, .ta-sec-head, .ta-stat-val, .tap-badge, .tap-kicker, .trc-widget-topbar-badge,
+.tap-box .tap-title, .trc-widget .trc-h, .tools-tab, .trc-b-inner-lbl, .trc-b-lbl, .trc-b-sep, .trc-bk,
+.trc-bv, .trc-complete-msg, .trc-h, .trc-main-toggle, .trc-sec-lbl, .trc-vtab, a.ta-cta-btn, a.tap-cta-btn,
+.svc-quick a.svc-quick-call, button.ta-toggle, button.ta-toggle--bar, button.tap-toggle,
+.trc-widget button.trc-main-toggle--bar, .svc-faq summary, .svc-hero .svc-kicker, .svc-hero-cta a,
+.svc-prose h3, .svc-quick a, .svc-quick-call small, .svc-related b, .svc-table th,
+body .ta-box .ta-stat-lbl, body .ta-box .ta-badge span, body .tap-graphic-tag,
+body .ta-box .ta-warning-body > strong, .news-card-date, .news-card-src, .service-num {
+    font-family: 'Source Sans 3', system-ui, sans-serif !important;
+}
+.news-card-date, .news-card-src { font-variant-numeric: tabular-nums; }
+
+/* ── 4. Ένα ζεύγος ενεργειών (17 §Ε, S1 ≤ 4) ── */
+.ta-cta-btn, a.tap-cta-btn, .svc-cta-primary, .hm-calc-go, .ec-go {
+    min-height: 48px !important; height: 48px; padding-block: 0 !important; display: inline-flex !important; align-items: center;
+    border-radius: var(--sx-radius-btn) !important;
+    font-size: 16px !important; font-weight: 600 !important;
+    box-shadow: none !important;                                  /* χωρίς λάμψη χαλκού (S8) */
+    transition: background-color 240ms var(--sx-ui-ease), color 240ms var(--sx-ui-ease), transform 240ms var(--sx-ui-ease) !important;
+}
+.apf-btn, .es-tab, button.ta-toggle, .trc-vtab, .trc-main-toggle, .trc-b-toggle, .ec-clear {
+    min-height: 44px !important; border-radius: 999px !important; font-size: 14px !important;
+}
+.hm-link::after, .svc-more::after { content: none; }
+body a.ta-cta-btn, body a.tap-cta-btn, body .svc-quick a.svc-quick-call { box-shadow: none !important; }
+.apf-item.is-open { box-shadow: 0 14px 34px rgba(0,0,0,0.08) !important; }
+
+/* ── 5. Ένα αριστερό άκρο (17 §Δ2, S2) ── */
+.hm-in { max-width: none !important; padding-inline: var(--sx-edge) !important; }
+#adeia-treyler-o1-o2 .hm-in { max-width: 1180px !important; padding-inline: 48px !important; }   /* όπως ήταν (απόφαση 14/10) */
+@media (min-width: 1025px) {
+    .hm-rc-grid { grid-template-columns: 5fr 7fr !important; }
+    .hm-rc-grid .hm-rc-txt { order: -1; }                         /* τίτλος αριστερά, σχέδιο δεξιά */
+}
+
+/* ── 6. Ρυθμός ενοτήτων: 2 τιμές (17 §Δ1, S6) ── */
+.services-section, .hm:not(#adeia-treyler-o1-o2), .trust-section, #trust, .reviews-section, #reviews, .contact-section {
+    padding-top: var(--sx-sec-t) !important; padding-bottom: var(--sx-sec-b) !important;
+}
+#partners, #newsSection, .about-section {
+    padding-top: var(--sx-band-t) !important; padding-bottom: var(--sx-band-b) !important;
+}
+
+/* ── 7. Πάνελ αντί για περιγράμματα (17 §Δ3, S5) ── */
+.review-card, .news-card, .person-card, .contact-map, .trust-pillar-icon {
+    border-width: 0 !important; border-radius: var(--sx-radius-panel) !important;
+}
+.trust-pillar-icon { background: none !important; }
+/* υποσελίδες: κουτιά και κάρτες ως πάνελ· οι προειδοποιήσεις κρατούν το περίγραμμά τους (σημασία) */
+.ta-box, .trc-check-card, .trc-preview-item, .svc-related a, .trc-bottom-single, .trc-note-box {
+    border-width: 0 !important; border-radius: var(--sx-radius-panel) !important;
+    background-color: color-mix(in srgb, currentColor 4%, transparent) !important; box-shadow: none !important;
+}
+.review-card, .news-card { background: color-mix(in srgb, currentColor 5%, transparent) !important; box-shadow: none !important; }
+
+/* ── 8. Υπηρεσίες: τίτλος πρώτος, χωρίς εικονίδιο-σε-κύκλο και χωρίς «01–04» (17 §Θ) ── */
+#servicesGrid .service-icon, .service-icon { display: none !important; }
+.about-section::before, .services-section::before, .trust-section::before, .contact-section::before { content: none !important; display: none !important; }
+
+/* ── 9. Μεταλλικό κείμενο ΜΟΝΟ στο όνομα του hero και στους αριθμούς εμπιστοσύνης (S8) ── */
+.eyebrow span:not(#adeia-treyler-o1-o2 *), .section-heading em, .tap-title em,
+.section-heading.light em, .about-section .section-heading em, .hm-price-v, .as-i b,
+#aboutFeatures .feature-row::before, .svc-hero .svc-kicker, .svc-hero h1 {
+    background: none !important; -webkit-background-clip: border-box !important; background-clip: border-box !important;
+    -webkit-text-fill-color: currentColor !important; color: var(--sx-copper-ink) !important;
+}
+/* σκούρο φόντο → ανοιχτός χαλκός · ο τίτλος της υποσελίδας μένει λευκός */
+#ypologistis .eyebrow span, #ypologistis em, .contact-section .eyebrow span, .contact-section em,
+.svc-hero .svc-kicker { color: var(--sx-copper-light) !important; }
+.svc-hero h1 { color: #fff !important; }
+
+/* ── 10. Συνεχείς κινήσεις: παύση με κουμπί (ΜΗ-02), ειδήσεις ως συλλογή (17 §ΣΤ) ── */
+.sx-paused, .sx-paused * { animation-play-state: paused !important; }   /* ΜΗ-02: κουμπί παύσης με aria-pressed */
+.sx-pp {
+    position: absolute; right: 12px; bottom: 8px; z-index: 3; width: 44px; height: 44px; border-radius: 999px;
+    border: 0; background: rgba(5,13,24,.55); color: #fff; font: 600 14px/1 'Source Sans 3', system-ui, sans-serif; cursor: pointer;
+}
+.sx-pp:focus-visible, .sx-nb:focus-visible { outline: 2px solid var(--sx-copper-light); outline-offset: 2px; }
+.marquee-wrap { position: relative; }
+.pc-viewport + .sx-pp { position: static; display: block; margin: 12px var(--sx-edge) 0 auto; background: color-mix(in srgb, currentColor 10%, transparent); color: inherit; }
+.ec-layer--credit { animation: none !important; opacity: 1 !important; transform: none !important; }
+.ec-layer--ad { display: none !important; }
+
+#newsBand.sx-gallery { overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--sx-edge);
+    padding-inline: var(--sx-edge); -webkit-mask-image: none !important; mask-image: none !important; scrollbar-width: none; }
+#newsBand.sx-gallery::-webkit-scrollbar { display: none; }
+#newsBand.sx-gallery .news-track { animation: none !important; transform: none !important; }
+#newsBand.sx-gallery .news-card { scroll-snap-align: start; }
+#newsBand.sx-gallery .sx-dup { display: none !important; }
+.sx-nav { display: flex; justify-content: flex-end; gap: 8px; padding: 12px var(--sx-edge) 0; }
+.sx-nb { width: 44px; height: 44px; border-radius: 999px; border: 0; cursor: pointer;
+    background: color-mix(in srgb, currentColor 8%, transparent); color: inherit; font-size: 18px; }
+.sx-nb[disabled] { opacity: .35; cursor: default; }
+
+/* ── 12. Μειωμένη κίνηση ── */
+@media (prefers-reduced-motion: reduce) {
+    .sx-pp { display: none; }
+}
