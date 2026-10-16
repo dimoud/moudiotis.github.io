@@ -63,7 +63,7 @@ html.wdx-bg *, .wdx-off, .wdx-off *, .wdx-off *::before { animation-play-state: 
    Απόφαση 16/10/2026 (Δ. Μουδιώτης): απλή χορογραφία, όλα «φτάνουν» από δεξιά στη θέση τους με ορμή που σβήνει,
    το ένα μετά το άλλο. Κανένα ελατήριο/pop σε κείμενο ή κουμπί.
      0,05  ΤΕΧΝΙΚΟ ΓΡΑΦΕΙΟ  από 210 px δεξιά → θέση σε 1,5 s (μόνο translate: LCP)
-     0,30  ΜΟΥΔΙΩΤΗΣ        από 290 px δεξιά → θέση σε 1,7 s
+     0,05  ΜΟΥΔΙΩΤΗΣ        από 290 px δεξιά → θέση σε 1,7 s (ξεκινά μαζί με την πρώτη γραμμή, φτάνει δεύτερο)
      1,10  & ΣΥΝΕΡΓΑΤΕΣ     γραφομηχανή (υπάρχον σενάριο της σελίδας, 50 ms/χαρακτήρα)
      1,60  Εγκρίσεις Τύπου · 1,80 Ταξινόμηση Οχημάτων · 2,00 Τεχνικές Μελέτες: από 126 px δεξιά και 48 px κάτω, 1,4 s
      2,45  «Ζητήστε προσφορά» · 2,65 τηλέφωνο: ίδια άφιξη (108/36 px)
@@ -76,7 +76,7 @@ html.wdx-bg *, .wdx-off, .wdx-off *, .wdx-off *::before { animation-play-state: 
   @keyframes wxArrive  { from { opacity: 0; translate: calc(var(--ax, 126px) * var(--wx-ad)) calc(var(--ay, 48px) * var(--wx-ad)); } 30% { opacity: 1; } }
 
   html .hero-name .line1 { animation: wxArriveX 1.5s var(--wx-arrive) calc(.05s * var(--wx-k)) backwards !important; --ax: 210px; }
-  html .hero-name .line2 { animation: wxArriveX 1.7s var(--wx-arrive) calc(.3s * var(--wx-k)) backwards !important; --ax: 290px; }
+  html .hero-name .line2 { animation: wxArriveX 1.7s var(--wx-arrive) calc(.05s * var(--wx-k)) backwards !important; --ax: 290px; }   /* ξεκινά μαζί με τη γραμμή 1, φτάνει 0,2 s μετά (μεγαλύτερη διαδρομή) */
   html .hero-eyebrow { animation: wxArrive 1.2s var(--wx-arrive) calc(1.3s * var(--wx-k)) backwards !important; --ax: 72px; --ay: 18px; }
   html .hero-eyebrow::before { animation-delay: calc(1.6s * var(--wx-k)) !important; }
 
