@@ -878,11 +878,14 @@
     var trustStats = document.getElementById('trustStats');
     if (trustStats && TR.stats) {
         var tsHtml = '';
+        /* χορογραφία (xoro.css/js): μέσα σε σκηνή .wdx τα πλαίσια «χτίζονται» και οι αριθμοί «10+» μετρούν — όχι data-reveal */
+        var tsXo = !!trustStats.closest('.wdx');
         (TR.stats || []).forEach(function (s, i) {
-            var n = i + 1;
+            var n = i + 1, m = tsXo ? /^(\d+)(\D*)$/.exec(injectYears(String(s.numEl)).trim()) : null;
             tsHtml +=
-                '<div class="trust-stat" data-reveal itemscope itemtype="https://schema.org/QuantitativeValue">' +
-                '<span class="trust-stat-num" data-i18n="trust.stat' + n + '.num" itemprop="value">' + s.numEl + '</span>' +
+                '<div class="trust-stat" ' + (tsXo ? 'data-v="build"' : 'data-reveal') + ' itemscope itemtype="https://schema.org/QuantitativeValue">' +
+                '<span class="trust-stat-num" data-i18n="trust.stat' + n + '.num" itemprop="value"' +
+                (m ? ' data-count="' + m[1] + '" data-suffix="' + m[2] + '" data-delay="350"' : '') + '>' + s.numEl + '</span>' +
                 '<span class="trust-stat-label" data-i18n="trust.stat' + n + '.label" itemprop="unitText">' + s.labelEl + '</span>' +
                 '</div>';
         });
@@ -893,12 +896,13 @@
     var trustPillars = document.getElementById('trustPillars');
     if (trustPillars && TR.pillars) {
         var tpHtml = '';
+        var tpXo = !!trustPillars.closest('.wdx');   /* χορογραφία: ο δίσκος πετάγεται (ελατήριο), ο τίτλος ανεβαίνει */
         (TR.pillars || []).forEach(function (p, i) {
             var n = i + 1;
             tpHtml +=
-                '<div class="trust-pillar" data-reveal itemscope itemtype="https://schema.org/Thing">' +
-                '<div class="trust-pillar-icon" aria-hidden="true"><i class="fa-solid ' + p.icon + '"></i></div>' +
-                '<h3 itemprop="name" data-i18n-html="trust.p' + n + '.title">' + p.titleEl + '</h3>' +
+                '<div class="trust-pillar" ' + (tpXo ? '' : 'data-reveal ') + 'itemscope itemtype="https://schema.org/Thing">' +
+                '<div class="trust-pillar-icon" aria-hidden="true"' + (tpXo ? ' data-v="pop"' : '') + '><i class="fa-solid ' + p.icon + '"></i></div>' +
+                '<h3 itemprop="name" data-i18n-html="trust.p' + n + '.title"' + (tpXo ? ' data-v="rise"' : '') + '>' + p.titleEl + '</h3>' +
                 '<p itemprop="description" data-i18n-html="trust.p' + n + '.text">'   + p.textEl  + '</p>' +
                 '</div>';
         });

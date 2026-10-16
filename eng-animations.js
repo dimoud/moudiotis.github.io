@@ -855,7 +855,7 @@
     });
 
     /* ─── 10. TRUST STAT COUNTER ─────────────────────────────────────────── */
-    var statNums = document.querySelectorAll('.trust-stat-num');
+    var statNums = document.querySelectorAll('.trust-stat-num:not([data-count])');
     if (statNums.length && 'IntersectionObserver' in window) {
         var statObs = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
