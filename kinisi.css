@@ -60,3 +60,40 @@ html.tk-on .hero-slide--logo.is-entering {
    ακολουθεί· μαζί με την αλλαγή γραμματοσειράς στο hero έδινε CLS ως 0,06 στο κινητό (14/10/2026) ── */
 .marquee-wrap { min-height: 53px; }
 @media (min-width: 769px) { .marquee-wrap { min-height: 59px; } }
+
+/* ── Κινήσεις αρχικής (Οκτ 2026): λίγες, μία φορά η καθεμία, μόνο transform/opacity/background-size ──
+   Ο τροχός και το «φερμουάρ» των υπηρεσιών δεν αγγίζονται. Όλα σβήνουν με prefers-reduced-motion. */
+@keyframes knPop  { 0% { scale: .55; opacity: 0; } 55% { scale: 1.12; opacity: 1; } 100% { scale: 1; opacity: 1; } }
+@keyframes knSlide{ from { opacity: 0; translate: -12px 0; } to { opacity: 1; translate: 0 0; } }
+@media (prefers-reduced-motion: no-preference) {
+    /* 1. Τίτλοι ενοτήτων: η πλάγια λέξη υπογραμμίζεται με γραμμή που «τραβιέται» μία φορά */
+    html.kn-js .section-heading em {
+        background: linear-gradient(var(--warm), var(--warm)) 0 100% / 0% 1px no-repeat;
+        padding-bottom: .08em;
+        transition: background-size .9s cubic-bezier(.22,.61,.36,1) .25s;
+    }
+    html.kn-js .section-heading.kn-in em { background-size: 100% 1px; }
+
+    /* 2. Εμπιστοσύνη: τα τρία εικονίδια «πετάγονται» με ελατήριο, με σειρά */
+    html.anim-ready .trust-pillar:not(.visible) .trust-pillar-icon { opacity: 0; }
+    html.anim-ready .trust-pillar.visible .trust-pillar-icon {
+        animation: knPop .6s cubic-bezier(.34,1.56,.64,1) calc(var(--rv-delay, 0ms) + 120ms) both;
+    }
+
+    /* 3. Δείκτες ενοτήτων (έγκριση τύπου / ρυμουλκούμενα): οι γραμμές μπαίνουν η μία μετά την άλλη */
+    html.anim-ready .hm-idx:not(.visible) > li,
+    html.anim-ready .hm-rail:not(.visible) > li { opacity: 0; }
+    html.anim-ready .hm-idx.visible > li,
+    html.anim-ready .hm-rail.visible > li { animation: knSlide .5s cubic-bezier(.22,.61,.36,1) both; }
+    html.anim-ready .hm-idx.visible > li:nth-child(1), html.anim-ready .hm-rail.visible > li:nth-child(1) { animation-delay: .10s; }
+    html.anim-ready .hm-idx.visible > li:nth-child(2), html.anim-ready .hm-rail.visible > li:nth-child(2) { animation-delay: .18s; }
+    html.anim-ready .hm-idx.visible > li:nth-child(3), html.anim-ready .hm-rail.visible > li:nth-child(3) { animation-delay: .26s; }
+    html.anim-ready .hm-idx.visible > li:nth-child(4), html.anim-ready .hm-rail.visible > li:nth-child(4) { animation-delay: .34s; }
+    html.anim-ready .hm-idx.visible > li:nth-child(n+5), html.anim-ready .hm-rail.visible > li:nth-child(n+5) { animation-delay: .42s; }
+
+    /* 4. Αφή: τα κουμπιά «πατιούνται», το βέλος της κάρτας υπηρεσίας προχωρά */
+    .btn-hero-primary, .btn-hero-ghost, .btn-gold, .btn-submit, .svc-inline-btn { transition: transform .2s var(--ease), box-shadow .3s var(--ease), background .3s, color .3s, border-color .3s; }
+    .btn-hero-primary:active, .btn-hero-ghost:active, .btn-gold:active, .btn-submit:active, .svc-inline-btn:active { transform: translateY(0) scale(.97); }
+    .svc-inline-btn i { transition: transform .3s var(--ease); }
+    .svc-inline-btn:hover i { transform: translateX(4px); }
+}
