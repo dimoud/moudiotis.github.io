@@ -59,67 +59,63 @@ html.wdx-bg *, .wdx-off, .wdx-off *, .wdx-off *::before { animation-play-state: 
 @keyframes wxDock  { from { opacity: 0; translate: var(--dx, 14%) 0; rotate: var(--rot, 6deg); } }
 @keyframes wxDraw  { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
 
-/* ══════════ 0 · ΠΡΩΤΗ ΟΘΟΝΗ — μία πράξη τη φορά ══════════
-   Πριν: επωνυμία, τίτλος, κουμπιά και ετικέτες έμπαιναν όλα μέσα στο 0,1–1,4 s, μαζί με τον τροχό. Το μάτι δεν προλάβαινε.
-   Τώρα (υπολογιστής, ×0,78 στο κινητό):
-     0,0–1,2  ο τροχός κυλά και φρενάρει (trochos-kylisi) · η επωνυμία ανεβαίνει (LCP, 0,1–0,3)
-     1,00     η χρυσή γραμμή της ιδιότητας σχεδιάζεται (υπάρχον)
-     1,15     τίτλος: «Εγκρίσεις Τύπου» ↙ από αριστερά · 1,30 «Ταξινόμηση Οχημάτων» ↑ · 1,45 «Τεχνικές Μελέτες» ↘ από δεξιά
-     1,75     οι δύο διαχωριστικές γραμμές «σκάνε» (ελατήριο)
-     2,00     «Ζητήστε προσφορά» πετάγεται με ελατήριο (μάζα) · 2,15 το τηλέφωνο κουμπώνει από δεξιά
-     2,45–2,8 οι τέσσερις ετικέτες κουμπώνουν στη θέση τους από κάτω, 110 ms η μία μετά την άλλη, το εικονίδιο μετά
-     3,0      τέλος· καμία συνεχής κίνηση (ο παλμός αδράνειας των εικονιδίων μένει όπως ήταν, 2 φορές)
-   Μόνο translate/scale/rotate/opacity· ο τίτλος χωρίς opacity (LCP). Κάθε στοιχείο ένα ρήμα. */
+/* ══════════ 0 · ΠΡΩΤΗ ΟΘΟΝΗ — διαδοχική άφιξη, μία γλώσσα ══════════
+   Απόφαση 16/10/2026 (Δ. Μουδιώτης): απλή χορογραφία, όλα «φτάνουν» από δεξιά στη θέση τους με ορμή που σβήνει,
+   το ένα μετά το άλλο. Κανένα ελατήριο/pop σε κείμενο ή κουμπί.
+     0,05  ΤΕΧΝΙΚΟ ΓΡΑΦΕΙΟ  από δεξιά → θέση (μόνο translate: LCP)
+     0,25  ΜΟΥΔΙΩΤΗΣ        από δεξιά → θέση
+     1,10  & ΣΥΝΕΡΓΑΤΕΣ     γραφομηχανή (υπάρχον σενάριο της σελίδας, 50 ms/χαρακτήρα)
+     1,55  Εγκρίσεις Τύπου · 1,70 Ταξινόμηση Οχημάτων · 1,85 Τεχνικές Μελέτες: ανεβαίνουν και φτάνουν από δεξιά
+     2,20  «Ζητήστε προσφορά» · 2,35 τηλέφωνο: ίδια άφιξη
+     2,55–2,88 οι τέσσερις ετικέτες ολόκληρες, ανά 110 ms
+   Καμπύλη «ορμή που σβήνει»: έξοδος expo με ελάχιστη υπέρβαση (1 %), ποτέ αναπήδηση. ×0,78 στο κινητό. */
 @media (prefers-reduced-motion: no-preference) {
+  :root { --wx-arrive: cubic-bezier(.2, 1.01, .3, 1); }
+  @keyframes wxArriveX { from { translate: var(--ax, 70px) 0; } }
+  @keyframes wxArrive  { from { opacity: 0; translate: var(--ax, 42px) var(--ay, 16px); } 35% { opacity: 1; } }
+
+  html .hero-name .line1 { animation: wxArriveX .85s var(--wx-arrive) calc(.05s * var(--wx-k)) backwards !important; --ax: 70px; }
+  html .hero-name .line2 { animation: wxArriveX .95s var(--wx-arrive) calc(.25s * var(--wx-k)) backwards !important; --ax: 96px; }
+  /* η ιδιότητα και η χρυσή της γραμμή μετά το όνομα, πριν από τον τίτλο */
+  html .hero-eyebrow { animation: wxArrive .7s var(--wx-arrive) calc(1.25s * var(--wx-k)) backwards !important; --ax: 24px; --ay: 6px; }
+  html .hero-eyebrow::before { animation-delay: calc(1.4s * var(--wx-k)) !important; }
+
+  html .hero-headline { animation: none !important; opacity: 1 !important; }
   .hero-headline .hh-p, .hero-headline .hh-sep { display: inline-block; }
-  .hero-headline .hh-p:nth-of-type(1) { animation: wxHhL .85s var(--wx-out) calc(1.15s * var(--wx-k)) backwards; }
-  .hero-headline em.hh-p              { animation: wxHhU .85s var(--wx-out) calc(1.30s * var(--wx-k)) backwards; }
-  .hero-headline .hh-p--3             { animation: wxHhR .85s var(--wx-out) calc(1.45s * var(--wx-k)) backwards; }
-  .hero-headline .hh-sep              { animation: wxHhSep .7s var(--wx-spring) calc(1.75s * var(--wx-k)) backwards; }
-  .hero-headline .hh-sep--2           { animation-delay: calc(1.85s * var(--wx-k)); }
-  @keyframes wxHhL   { from { translate: -44px 0; } }
-  @keyframes wxHhR   { from { translate: 44px 0; } }
-  @keyframes wxHhU   { from { translate: 0 28px; } }
-  @keyframes wxHhSep { from { scale: 0; } }
+  .hero-headline span.hh-p:nth-of-type(1) { animation: wxArrive .8s var(--wx-arrive) calc(1.55s * var(--wx-k)) backwards; }
+  .hero-headline em.hh-p              { animation: wxArrive .8s var(--wx-arrive) calc(1.70s * var(--wx-k)) backwards; }
+  .hero-headline .hh-p--3             { animation: wxArrive .8s var(--wx-arrive) calc(1.85s * var(--wx-k)) backwards; }
+  .hero-headline .hh-sep              { animation: wxFade .5s ease-out calc(1.75s * var(--wx-k)) backwards; }
+  .hero-headline .hh-sep--2           { animation-delay: calc(1.9s * var(--wx-k)); }
+  @keyframes wxFade { from { opacity: 0; } }
 
-  /* τα κουμπιά: το δοχείο δεν κινείται πια (κινούνταν ολόκληρο με fade)· κινείται το καθένα με δικό του ρήμα */
   html .hero-actions { animation: none !important; opacity: 1 !important; }
-  html .hero-actions .btn-hero-primary { animation: wxPop .95s var(--wx-spring) calc(2.0s * var(--wx-k)) backwards !important; transform-origin: 50% 60%; }
-  html .hero-actions .btn-hero-ghost   { animation: wxDock 1s var(--wx-out) calc(2.15s * var(--wx-k)) backwards !important; --dx: 18%; --rot: 4deg; }
-  /* το βέλος της προσφοράς σπρώχνει τρεις φορές αφού όλα έχουν κάτσει */
-  html .hero-actions .btn-hero-primary i { animation: wxNudge .7s ease-in-out calc(3.4s * var(--wx-k)) 3; }
-  @keyframes wxNudge { 0%, 100% { translate: 0 0; } 50% { translate: 6px 0; } }
+  html .hero-actions .btn-hero-primary { animation: wxArrive .8s var(--wx-arrive) calc(2.2s * var(--wx-k)) backwards !important; --ax: 36px; --ay: 12px; }
+  html .hero-actions .btn-hero-ghost   { animation: wxArrive .8s var(--wx-arrive) calc(2.35s * var(--wx-k)) backwards !important; --ax: 36px; --ay: 12px; }
+  html .hero-actions .btn-hero-primary i { animation: none !important; }
 
-  /* οι τέσσερις ετικέτες: ΟΛΟΚΛΗΡΟ το κουμπί κουμπώνει από κάτω με ελατήριο και μικρή στροφή, το εικονίδιο «σκάει» αμέσως μετά */
-  html .hero-cta-block .hero-pillar:nth-child(n) { animation: wxPillar .9s var(--wx-spring) backwards !important; transform-origin: 50% 100%; }
-  html .hero-cta-block .hero-pillar:nth-child(1) { animation-delay: calc(2.45s * var(--wx-k)) !important; }
-  html .hero-cta-block .hero-pillar:nth-child(2) { animation-delay: calc(2.56s * var(--wx-k)) !important; }
-  html .hero-cta-block .hero-pillar:nth-child(3) { animation-delay: calc(2.67s * var(--wx-k)) !important; }
-  html .hero-cta-block .hero-pillar:nth-child(4) { animation-delay: calc(2.78s * var(--wx-k)) !important; }
-  html .hero-cta-block .hero-pillar:nth-child(1) i { animation-delay: calc(2.75s * var(--wx-k)); }
-  html .hero-cta-block .hero-pillar:nth-child(2) i { animation-delay: calc(2.86s * var(--wx-k)); }
-  html .hero-cta-block .hero-pillar:nth-child(3) i { animation-delay: calc(2.97s * var(--wx-k)); }
-  html .hero-cta-block .hero-pillar:nth-child(4) i { animation-delay: calc(3.08s * var(--wx-k)); }
-  @keyframes wxPillar { from { opacity: 0; translate: 0 26px; rotate: -3deg; scale: .9; } 25% { opacity: 1; } }
+  html .hero-cta-block .hero-pillar:nth-child(n) { animation: wxArrive .8s var(--wx-arrive) backwards !important; --ax: 32px; --ay: 12px; }
+  html .hero-cta-block .hero-pillar:nth-child(1) { animation-delay: calc(2.55s * var(--wx-k)) !important; }
+  html .hero-cta-block .hero-pillar:nth-child(2) { animation-delay: calc(2.66s * var(--wx-k)) !important; }
+  html .hero-cta-block .hero-pillar:nth-child(3) { animation-delay: calc(2.77s * var(--wx-k)) !important; }
+  html .hero-cta-block .hero-pillar:nth-child(4) { animation-delay: calc(2.88s * var(--wx-k)) !important; }
+  /* το εικονίδιο φτάνει μαζί με την ετικέτα του, όχι χωριστά */
+  html .hero-cta-block .hero-pillar i { animation: none; }
 
-  /* αφή: ολόκληρη η ετικέτα ανασηκώνεται και γέρνει προς το μέρος του δείκτη· το εικονίδιο γυρίζει μαζί της */
-  .hero-cta-block .hero-pillar { transition: border-color .3s, background .3s, translate .35s var(--wx-out), rotate .35s var(--wx-out), box-shadow .35s; }
-  .hero-cta-block .hero-pillar:hover { translate: 0 -4px; rotate: -1.2deg; box-shadow: 0 14px 28px -12px rgba(201,153,134,.5); }
-  .hero-cta-block .hero-pillar i { transition: rotate .45s var(--wx-spring), scale .45s var(--wx-spring); }
-  .hero-cta-block .hero-pillar:hover i { rotate: -12deg; scale: 1.2; }
-  .btn-hero-ghost { transition: transform .25s var(--wx-out), box-shadow .3s; }
+  /* αφή: ολόκληρη η ετικέτα ανασηκώνεται ελαφρά· τίποτα δεν γυρίζει ή πετάγεται */
+  .hero-cta-block .hero-pillar { transition: border-color .3s, background .3s, translate .3s var(--wx-arrive), box-shadow .3s; }
+  .hero-cta-block .hero-pillar:hover { translate: 0 -3px; box-shadow: 0 12px 24px -12px rgba(201,153,134,.45); }
+  .btn-hero-ghost { transition: transform .25s var(--wx-arrive), box-shadow .3s; }
   .btn-hero-ghost:hover { transform: translateY(-2px); }
-  .btn-hero-ghost i { transform-origin: 50% 60%; transition: rotate .4s var(--wx-spring); }
-  .btn-hero-ghost:hover i { rotate: -14deg; }
 }
 
 /* ══════════ 1 · ΕΜΠΕΙΡΙΑ & ΕΞΕΙΔΙΚΕΥΣΗ ══════════
    Πρωταγωνιστής ο τίτλος (μάσκα). Η γραμμή διάστασης «ανοίγει» από το κέντρο σαν μετροταινία, οι τέσσερις γωνίες
-   του πλαισίου κουμπώνουν (ελατήριο), οι τρεις πτυχές μπαίνουν από αριστερά, το τεχνικό σχέδιο ακουμπά (κλίση),
+   του πλαισίου ανεβαίνουν, οι τρεις πτυχές μπαίνουν από αριστερά, το τεχνικό σχέδιο ακουμπά (κλίση),
    οι αριθμοί μετρούν. Ρήματα: mask-up · grow · pop · slide · tilt · rise + μετρητής. */
 #about .section-heading { --t: .95s; --d: .05s; }
 #about .dim-row { --o: 50% 50%; --t: .85s; --d: .4s; }
-#about .apf-c   { --t: .8s; --d: calc(.55s + var(--k, 0) * .08s); }
+#about .apf-c   { --dy: 10px; --t: .6s; --d: calc(.55s + var(--k, 0) * .08s); }
 #about .apf-c1 { --k: 0; --o: 0 0; } #about .apf-c2 { --k: 1; --o: 100% 0; } #about .apf-c3 { --k: 2; --o: 0 100%; } #about .apf-c4 { --k: 3; --o: 100% 100%; }
 #about .apf-item { --dx: -28px; --t: .65s; --d: calc(.7s + var(--j, 0) * .12s); }
 #about .apf-art  { --t: 1.05s; --d: .85s; }
@@ -131,12 +127,10 @@ html.wdx-bg *, .wdx-off, .wdx-off *, .wdx-off *::before { animation-play-state: 
 
 /* ══════════ 3 · ΕΜΠΙΣΤΟΣΥΝΗ ══════════
    Τα τέσσερα πλαίσια χτίζονται από κάτω προς τα πάνω σαν τοίχος, οι αριθμοί μετρούν ώς την τιμή τους (μηχανισμός: το
-   μέγεθος), τα τρία εικονίδια-δίσκοι πετάγονται με ελατήριο και οι τίτλοι τους ανεβαίνουν. */
+   μέγεθος), οι τρεις δίσκοι και οι τίτλοι τους ανεβαίνουν στη θέση τους (χωρίς pop: απόφαση 16/10). */
 #trust .trust-stat { --r: 4px; --c0: inset(100% 0 0 0 round 4px); --t: .8s; --d: calc(var(--j, 0) * .11s); }
-#trust .trust-pillar-icon { --t: .9s; --d: calc(.55s + var(--j, 0) * .14s); }
+#trust .trust-pillar-icon { --dy: 18px; --t: .8s; --d: calc(.55s + var(--j, 0) * .14s); }
 #trust .trust-pillar h3   { --dy: 12px; --t: .6s; --d: calc(.8s + var(--j, 0) * .14s); }
-#trust .trust-pillar-icon { transition: border-color .3s, background .3s, rotate .5s var(--wx-spring), scale .5s var(--wx-spring); }
-#trust .trust-pillar:hover .trust-pillar-icon { rotate: 12deg; scale: 1.08; }
 
 /* ══════════ 4 · ΚΡΙΤΙΚΕΣ · ΣΥΝΕΡΓΑΤΕΣ ══════════ ίδια γλώσσα τίτλου· η λωρίδα των συνεργατών κινείται ήδη */
 #reviews .eyebrow, #partners .eyebrow { --dx: -16px; --t: .6s; --d: 0s; }
@@ -146,7 +140,7 @@ html.wdx-bg *, .wdx-off, .wdx-off *, .wdx-off *::before { animation-play-state: 
 
 /* ══════════ 5 · ΕΠΙΚΟΙΝΩΝΙΑ ══════════
    Αριστερά: τίτλος (μάσκα), η κάρτα του μηχανικού ακουμπά (κλίση), τα στοιχεία επαφής γλιστρούν από αριστερά.
-   Δεξιά: ο τίτλος της φόρμας, τα πεδία χτίζονται εναλλάξ από αριστερά/δεξιά (clip), το κουμπί αποστολής πετάγεται (μάζα). */
+   Δεξιά: ο τίτλος της φόρμας, τα πεδία χτίζονται εναλλάξ από αριστερά/δεξιά (clip), το κουμπί αποστολής ανεβαίνει (χωρίς pop). */
 #contact .contact-info .eyebrow { --dx: -16px; --t: .6s; --d: 0s; }
 #contact .section-heading { --t: .95s; --d: .1s; }
 #contact .contact-lead { --dy: 14px; --t: .7s; --d: .35s; }
@@ -154,4 +148,4 @@ html.wdx-bg *, .wdx-off, .wdx-off *, .wdx-off *::before { animation-play-state: 
 #contact .contact-detail { --dx: -22px; --t: .6s; --d: calc(.8s + var(--j, 0) * .08s); }
 #contact .contact-form-wrap h3 { --dy: 12px; --t: .65s; --d: .2s; }
 #contact .form-fields .field { --r: 4px; --t: .7s; --d: calc(.4s + var(--j, 0) * .1s); }   /* χτίζονται εναλλάξ από αριστερά/δεξιά (--c0 από το JS) */
-#contact .btn-submit { --t: .95s; --d: .95s; transform-origin: 50% 60%; }
+#contact .btn-submit { --dy: 14px; --t: .7s; --d: .95s; }

@@ -901,7 +901,7 @@
             var n = i + 1;
             tpHtml +=
                 '<div class="trust-pillar" ' + (tpXo ? '' : 'data-reveal ') + 'itemscope itemtype="https://schema.org/Thing">' +
-                '<div class="trust-pillar-icon" aria-hidden="true"' + (tpXo ? ' data-v="pop"' : '') + '><i class="fa-solid ' + p.icon + '"></i></div>' +
+                '<div class="trust-pillar-icon" aria-hidden="true"' + (tpXo ? ' data-v="rise"' : '') + '><i class="fa-solid ' + p.icon + '"></i></div>' +
                 '<h3 itemprop="name" data-i18n-html="trust.p' + n + '.title"' + (tpXo ? ' data-v="rise"' : '') + '>' + p.titleEl + '</h3>' +
                 '<p itemprop="description" data-i18n-html="trust.p' + n + '.text">'   + p.textEl  + '</p>' +
                 '</div>';
