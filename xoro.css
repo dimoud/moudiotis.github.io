@@ -62,52 +62,51 @@ html.wdx-bg *, .wdx-off, .wdx-off *, .wdx-off *::before { animation-play-state: 
 /* ══════════ 0 · ΠΡΩΤΗ ΟΘΟΝΗ — διαδοχική άφιξη, μία γλώσσα ══════════
    Απόφαση 16/10/2026 (Δ. Μουδιώτης): απλή χορογραφία, όλα «φτάνουν» από δεξιά στη θέση τους με ορμή που σβήνει,
    το ένα μετά το άλλο. Κανένα ελατήριο/pop σε κείμενο ή κουμπί.
-     0,05  ΤΕΧΝΙΚΟ ΓΡΑΦΕΙΟ  από δεξιά → θέση (μόνο translate: LCP)
-     0,25  ΜΟΥΔΙΩΤΗΣ        από δεξιά → θέση
+     0,05  ΤΕΧΝΙΚΟ ΓΡΑΦΕΙΟ  από 210 px δεξιά → θέση σε 1,5 s (μόνο translate: LCP)
+     0,30  ΜΟΥΔΙΩΤΗΣ        από 290 px δεξιά → θέση σε 1,7 s
      1,10  & ΣΥΝΕΡΓΑΤΕΣ     γραφομηχανή (υπάρχον σενάριο της σελίδας, 50 ms/χαρακτήρα)
-     1,55  Εγκρίσεις Τύπου · 1,70 Ταξινόμηση Οχημάτων · 1,85 Τεχνικές Μελέτες: ανεβαίνουν και φτάνουν από δεξιά
-     2,20  «Ζητήστε προσφορά» · 2,35 τηλέφωνο: ίδια άφιξη
-     2,55–2,88 οι τέσσερις ετικέτες ολόκληρες, ανά 110 ms
+     1,60  Εγκρίσεις Τύπου · 1,80 Ταξινόμηση Οχημάτων · 2,00 Τεχνικές Μελέτες: από 126 px δεξιά και 48 px κάτω, 1,4 s
+     2,45  «Ζητήστε προσφορά» · 2,65 τηλέφωνο: ίδια άφιξη (108/36 px)
+     2,90–3,35 οι τέσσερις ετικέτες ολόκληρες, ανά 150 ms (96/36 px)· τέλος ≈ 4,7 s
    Καμπύλη «ορμή που σβήνει»: έξοδος expo με ελάχιστη υπέρβαση (1 %), ποτέ αναπήδηση. ×0,78 στο κινητό. */
 @media (prefers-reduced-motion: no-preference) {
-  :root { --wx-arrive: cubic-bezier(.2, 1.01, .3, 1); }
-  @keyframes wxArriveX { from { translate: var(--ax, 70px) 0; } }
-  @keyframes wxArrive  { from { opacity: 0; translate: var(--ax, 42px) var(--ay, 16px); } 35% { opacity: 1; } }
+  /* 16/10 β: πιο αργή και πιο μεγάλη διαδρομή (×3 την πρώτη εκδοχή)· --wx-ad κλιμακώνει τις αποστάσεις (κινητό 0,45) */
+  :root { --wx-arrive: cubic-bezier(.2, 1.01, .3, 1); --wx-ad: 1; }
+  @keyframes wxArriveX { from { translate: calc(var(--ax, 210px) * var(--wx-ad)) 0; } }
+  @keyframes wxArrive  { from { opacity: 0; translate: calc(var(--ax, 126px) * var(--wx-ad)) calc(var(--ay, 48px) * var(--wx-ad)); } 30% { opacity: 1; } }
 
-  html .hero-name .line1 { animation: wxArriveX .85s var(--wx-arrive) calc(.05s * var(--wx-k)) backwards !important; --ax: 70px; }
-  html .hero-name .line2 { animation: wxArriveX .95s var(--wx-arrive) calc(.25s * var(--wx-k)) backwards !important; --ax: 96px; }
-  /* η ιδιότητα και η χρυσή της γραμμή μετά το όνομα, πριν από τον τίτλο */
-  html .hero-eyebrow { animation: wxArrive .7s var(--wx-arrive) calc(1.25s * var(--wx-k)) backwards !important; --ax: 24px; --ay: 6px; }
-  html .hero-eyebrow::before { animation-delay: calc(1.4s * var(--wx-k)) !important; }
+  html .hero-name .line1 { animation: wxArriveX 1.5s var(--wx-arrive) calc(.05s * var(--wx-k)) backwards !important; --ax: 210px; }
+  html .hero-name .line2 { animation: wxArriveX 1.7s var(--wx-arrive) calc(.3s * var(--wx-k)) backwards !important; --ax: 290px; }
+  html .hero-eyebrow { animation: wxArrive 1.2s var(--wx-arrive) calc(1.3s * var(--wx-k)) backwards !important; --ax: 72px; --ay: 18px; }
+  html .hero-eyebrow::before { animation-delay: calc(1.6s * var(--wx-k)) !important; }
 
   html .hero-headline { animation: none !important; opacity: 1 !important; }
   .hero-headline .hh-p, .hero-headline .hh-sep { display: inline-block; }
-  .hero-headline span.hh-p:nth-of-type(1) { animation: wxArrive .8s var(--wx-arrive) calc(1.55s * var(--wx-k)) backwards; }
-  .hero-headline em.hh-p              { animation: wxArrive .8s var(--wx-arrive) calc(1.70s * var(--wx-k)) backwards; }
-  .hero-headline .hh-p--3             { animation: wxArrive .8s var(--wx-arrive) calc(1.85s * var(--wx-k)) backwards; }
-  .hero-headline .hh-sep              { animation: wxFade .5s ease-out calc(1.75s * var(--wx-k)) backwards; }
-  .hero-headline .hh-sep--2           { animation-delay: calc(1.9s * var(--wx-k)); }
+  .hero-headline span.hh-p:nth-of-type(1) { animation: wxArrive 1.4s var(--wx-arrive) calc(1.6s * var(--wx-k)) backwards; }
+  .hero-headline em.hh-p                  { animation: wxArrive 1.4s var(--wx-arrive) calc(1.8s * var(--wx-k)) backwards; }
+  .hero-headline .hh-p--3                 { animation: wxArrive 1.4s var(--wx-arrive) calc(2.0s * var(--wx-k)) backwards; }
+  .hero-headline .hh-sep                  { animation: wxFade .8s ease-out calc(2.1s * var(--wx-k)) backwards; }
+  .hero-headline .hh-sep--2               { animation-delay: calc(2.3s * var(--wx-k)); }
   @keyframes wxFade { from { opacity: 0; } }
 
   html .hero-actions { animation: none !important; opacity: 1 !important; }
-  html .hero-actions .btn-hero-primary { animation: wxArrive .8s var(--wx-arrive) calc(2.2s * var(--wx-k)) backwards !important; --ax: 36px; --ay: 12px; }
-  html .hero-actions .btn-hero-ghost   { animation: wxArrive .8s var(--wx-arrive) calc(2.35s * var(--wx-k)) backwards !important; --ax: 36px; --ay: 12px; }
+  html .hero-actions .btn-hero-primary { animation: wxArrive 1.4s var(--wx-arrive) calc(2.45s * var(--wx-k)) backwards !important; --ax: 108px; --ay: 36px; }
+  html .hero-actions .btn-hero-ghost   { animation: wxArrive 1.4s var(--wx-arrive) calc(2.65s * var(--wx-k)) backwards !important; --ax: 108px; --ay: 36px; }
   html .hero-actions .btn-hero-primary i { animation: none !important; }
 
-  html .hero-cta-block .hero-pillar:nth-child(n) { animation: wxArrive .8s var(--wx-arrive) backwards !important; --ax: 32px; --ay: 12px; }
-  html .hero-cta-block .hero-pillar:nth-child(1) { animation-delay: calc(2.55s * var(--wx-k)) !important; }
-  html .hero-cta-block .hero-pillar:nth-child(2) { animation-delay: calc(2.66s * var(--wx-k)) !important; }
-  html .hero-cta-block .hero-pillar:nth-child(3) { animation-delay: calc(2.77s * var(--wx-k)) !important; }
-  html .hero-cta-block .hero-pillar:nth-child(4) { animation-delay: calc(2.88s * var(--wx-k)) !important; }
-  /* το εικονίδιο φτάνει μαζί με την ετικέτα του, όχι χωριστά */
+  html .hero-cta-block .hero-pillar:nth-child(n) { animation: wxArrive 1.4s var(--wx-arrive) backwards !important; --ax: 96px; --ay: 36px; }
+  html .hero-cta-block .hero-pillar:nth-child(1) { animation-delay: calc(2.9s * var(--wx-k)) !important; }
+  html .hero-cta-block .hero-pillar:nth-child(2) { animation-delay: calc(3.05s * var(--wx-k)) !important; }
+  html .hero-cta-block .hero-pillar:nth-child(3) { animation-delay: calc(3.2s * var(--wx-k)) !important; }
+  html .hero-cta-block .hero-pillar:nth-child(4) { animation-delay: calc(3.35s * var(--wx-k)) !important; }
   html .hero-cta-block .hero-pillar i { animation: none; }
 
-  /* αφή: ολόκληρη η ετικέτα ανασηκώνεται ελαφρά· τίποτα δεν γυρίζει ή πετάγεται */
   .hero-cta-block .hero-pillar { transition: border-color .3s, background .3s, translate .3s var(--wx-arrive), box-shadow .3s; }
   .hero-cta-block .hero-pillar:hover { translate: 0 -3px; box-shadow: 0 12px 24px -12px rgba(201,153,134,.45); }
   .btn-hero-ghost { transition: transform .25s var(--wx-arrive), box-shadow .3s; }
   .btn-hero-ghost:hover { transform: translateY(-2px); }
 }
+@media (max-width: 768px) { :root { --wx-ad: .45; } }
 
 /* ══════════ 1 · ΕΜΠΕΙΡΙΑ & ΕΞΕΙΔΙΚΕΥΣΗ ══════════
    Πρωταγωνιστής ο τίτλος (μάσκα). Η γραμμή διάστασης «ανοίγει» από το κέντρο σαν μετροταινία, οι τέσσερις γωνίες
