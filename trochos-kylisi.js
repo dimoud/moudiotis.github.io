@@ -12,8 +12,10 @@
  *   + στη <head>, πριν από τα CSS (κρύβει τον τροχό μόνο αν θα τρέξει η κίνηση — ΜΗ-01):
  *   <script>if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('tk-pre');</script>
  *
- * Φυσική (references/19): θ = x/R· σταθερή επιβράδυνση a = πέδηση·g από v₀ = √(2·a·πD)· στη στάση
- * ταλάντωση στρέψης του ελαστικού (1,2°, ζ = 0,35). Όλα σε μέτρα, με κλίμακα S = 2R/D px/m, άρα ίδιος
+ * Φυσική (references/19): θ = x/R· σταθερή επιβράδυνση a = πέδηση·g από v₀ = √(vᵣ² + 2·a·πD) ως τη θέση
+ * ηρεμίας, που ο τροχός περνά με υπολειπόμενη ορμή vᵣ (data-tk-ormi, km/h)· την απορροφά ελατήριο
+ * ζ = 0,4, tₛ = 0,8 s (προχωρά λίγο πέρα, κυλά πίσω, κάθεται) + ταλάντωση στρέψης του ελαστικού
+ * (1,2°, ζ = 0,35). Όλα σε μέτρα, με κλίμακα S = 2R/D px/m, άρα ίδιος
  * χρόνος σε κάθε μέγεθος οθόνης. Η τροχιά υπολογίζεται εκ των προτέρων σε Web Animations (compositor).
  * Μειωμένη κίνηση: τελική κατάσταση αμέσως. Εκτός οθόνης δεν τρέχει τίποτα (καμία συνεχής κίνηση).
  * Προαιρετικό: elatirio.js (#30) — σύρσιμο και ακριβής ταλάντωση· χωρίς αυτό, χωρίς σύρσιμο.
@@ -21,7 +23,7 @@
  */
 (function () {
     'use strict';
-    var G = 9.81, WIND0 = 1.2, WIND_Z = 0.35, WIND_TS = 0.5;
+    var G = 9.81, WIND0 = 1.2, WIND_Z = 0.35, WIND_TS = 0.5, SET_Z = 0.4, SET_TS = 0.8, ORMI = 2.5;
     var NS = 'http://www.w3.org/2000/svg';
     var root = document.documentElement;
     var reduced = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
@@ -36,6 +38,12 @@
         return m ? (+m[3] * 25.4 + 2 * +m[1] * +m[2] / 100) / 1000 : 0;
     }
     function wnOf(z, ts) { return window.Elatirio ? Elatirio.wn(z, ts) : 4.8 / (z * ts); }
+    /* στάση με ορμή: x(0) = 0, ẋ(0) = vᵣ, ελατήριο ζ = SET_Z, tₛ = SET_TS — θέση (m) και ταχύτητα (m/s) */
+    function setX(w, vr, t) { var wd = w * Math.sqrt(1 - SET_Z * SET_Z); return vr / wd * Math.exp(-SET_Z * w * t) * Math.sin(wd * t); }
+    function setV(w, vr, t) {
+        var wd = w * Math.sqrt(1 - SET_Z * SET_Z), e = Math.exp(-SET_Z * w * t);
+        return vr * e * (Math.cos(wd * t) - SET_Z * w / wd * Math.sin(wd * t));
+    }
     function damp(z, w, x0, t) {
         return window.Elatirio ? Elatirio.analytic(z, w, x0, 0, t)
                                : x0 * Math.exp(-z * w * t) * Math.cos(w * Math.sqrt(1 - z * z) * t);
@@ -49,6 +57,7 @@
         var spec = ds.tkElastiko || '';
         var D = parseFloat(ds.tkDiametros) || tyreD(spec) || 0.632;
         var A = (parseFloat(ds.tkPedisi) || 0.36) * G;
+        var VR = (isNaN(parseFloat(ds.tkOrmi)) ? ORMI : Math.max(0, Math.min(8, parseFloat(ds.tkOrmi)))) / 3.6;   /* ορμή στη θέση ηρεμίας, m/s */
         var RR = parseFloat(ds.tkR) || 0.46;               /* R / πλάτος του πρώτου μέρους */
         var svg = parts.filter(function (p) { return p.tagName.toLowerCase() === 'svg'; })[0];
         var state = 'seat', anims = [], spring = null;
@@ -64,19 +73,24 @@
         function pose(x, R, extra) { var t = tf(x, R, extra); parts.forEach(function (p) { p.style.transform = t; }); }
         function stop() { anims.forEach(function (a) { try { a.cancel(); } catch (e) {} }); anims = []; }
 
-        /* ── είσοδος: πέδηση ως τη στάση μετά από μία περιστροφή + ταλάντωση ελαστικού ── */
+        /* ── είσοδος: πέδηση ως τη θέση ηρεμίας με ορμή vᵣ → ελατήριο: πέρα, πίσω, στάση + ταλάντωση ελαστικού ── */
         function frames(g) {
-            var d = Math.PI * D, T = Math.sqrt(2 * d / A), v0 = A * T, w = wnOf(WIND_Z, WIND_TS);
-            var Tt = T + WIND_TS, N = 54, M = 18, k = [];
+            var d = Math.PI * D, vr = VR, v0 = Math.sqrt(vr * vr + 2 * A * d), T = (v0 - vr) / A;
+            var w = wnOf(WIND_Z, WIND_TS), ws = wnOf(SET_Z, SET_TS), wd = ws * Math.sqrt(1 - SET_Z * SET_Z);
+            var Tt = T + SET_TS, N = 48, M = 40, k = [];
             for (var i = 0; i <= N; i++) {
                 var t = T * i / N, s = v0 * t - 0.5 * A * t * t;
                 k.push({ offset: t / Tt, transform: tf((s - d) * g.S, g.R) });
             }
             for (var j = 1; j <= M; j++) {
-                var tw = WIND_TS * j / M;
-                k.push({ offset: (T + tw) / Tt, transform: tf(0, g.R, j === M ? 0 : damp(WIND_Z, w, WIND0, tw)) });
+                var tw = SET_TS * j / M, last = j === M;
+                k.push({ offset: (T + tw) / Tt,
+                         transform: tf(last ? 0 : setX(ws, vr, tw) * g.S, g.R, last ? 0 : damp(WIND_Z, w, WIND0, tw)) });
             }
-            return { k: k, T: T, Tt: Tt, v0: v0, d: d };
+            return { k: k, T: T, Tt: Tt, v0: v0, d: d, vr: vr,
+                     tStamp: T + (vr ? Math.PI / wd : 0.04) + 0.04,          /* σφραγίδα: όταν ο τροχός ξαναπεράσει τη θέση ηρεμίας */
+                     st: function (t) { return t <= T ? v0 * t - 0.5 * A * t * t : d + setX(ws, vr, t - T); },
+                     vt: function (t) { return t <= T ? v0 - A * t : Math.abs(setV(ws, vr, t - T)); } };
         }
         function enter(first) {
             if (reduced) return;
@@ -89,7 +103,7 @@
             });
             out.live(f);
             anims[0].finished.then(function () { if (state === 'in') { stop(); pose(0, g.R); state = 'seat'; } }, function () {});
-            if (first) setTimeout(stamp, (f.T + 0.08) * 1000);
+            if (first) setTimeout(stamp, f.tStamp * 1000);
         }
         /* ── έξοδος: ώθηση από ηρεμία προς τα αριστερά, ως έξω από το πλαίσιο ── */
         function exit() {
@@ -171,9 +185,9 @@
                     f = fr; box.classList.add('is-on'); cancelAnimationFrame(raf);
                     var last = 0;
                     (function tick(now) {
-                        var a = anims[0], t = a && a.currentTime != null ? a.currentTime / 1000 : f.T;
-                        if (t >= f.T || state !== 'in') { line(0, f.d, true); return; }
-                        if (now - last > 33) { last = now; line(f.v0 - A * t, f.v0 * t - 0.5 * A * t * t, false); }
+                        var a = anims[0], t = a && a.currentTime != null ? a.currentTime / 1000 : f.Tt;
+                        if (t >= f.Tt || state !== 'in') { line(0, f.d, true); return; }
+                        if (now - last > 33) { last = now; line(f.vt(t), f.st(t), false); }
                         raf = requestAnimationFrame(tick);
                     })(0);
                 },
