@@ -44,7 +44,7 @@ window.SITE_CONFIG = {
     assets: {
         logo:         '/logo-192.webp',
         photo:        '/founder.webp',
-        contactPhoto: '/founder_contact.webp',
+        contactPhoto: '/founder_contact.webp?v=20261016',
         heroSlides:   [],
     },
 
