@@ -61,39 +61,120 @@ html.tk-on .hero-slide--logo.is-entering {
 .marquee-wrap { min-height: 53px; }
 @media (min-width: 769px) { .marquee-wrap { min-height: 59px; } }
 
-/* ── Κινήσεις αρχικής (Οκτ 2026): λίγες, μία φορά η καθεμία, μόνο transform/opacity/background-size ──
-   Ο τροχός και το «φερμουάρ» των υπηρεσιών δεν αγγίζονται. Όλα σβήνουν με prefers-reduced-motion. */
-@keyframes knPop  { 0% { scale: .55; opacity: 0; } 55% { scale: 1.12; opacity: 1; } 100% { scale: 1; opacity: 1; } }
-@keyframes knSlide{ from { opacity: 0; translate: -12px 0; } to { opacity: 1; translate: 0 0; } }
-@media (prefers-reduced-motion: no-preference) {
-    /* 1. Τίτλοι ενοτήτων: η πλάγια λέξη υπογραμμίζεται με γραμμή που «τραβιέται» μία φορά */
-    html.kn-js .section-heading em {
-        background: linear-gradient(var(--warm), var(--warm)) 0 100% / 0% 1px no-repeat;
-        padding-bottom: .08em;
-        transition: background-size .9s cubic-bezier(.22,.61,.36,1) .25s;
-    }
-    html.kn-js .section-heading.kn-in em { background-size: 100% 1px; }
+/* ── Κινήσεις αρχικής (Οκτ 2026) ──
+   Κάθε κίνηση ξεκινά ΜΟΝΟ όταν το στοιχείο φαίνεται πράγματι (το κατώφλι ορίζεται στο kinisi-arxikis.js:
+   ≥ 30 % μέσα στην οθόνη και 14 % πάνω από το κάτω άκρο) και παίζει μία φορά.
+   Ο τροχός και το «φερμουάρ» των υπηρεσιών δεν αγγίζονται. Όλα σβήνουν με prefers-reduced-motion
+   (το JS δεν ενεργοποιεί την κλάση kn-js και τα στοιχεία μένουν στατικά). */
+@keyframes knPop    { 0% { scale: .3; opacity: 0; rotate: -25deg; } 55% { scale: 1.25; opacity: 1; rotate: 6deg; } 100% { scale: 1; opacity: 1; rotate: 0deg; } }
+@keyframes knRise   { from { opacity: 0; translate: 0 34px; } to { opacity: 1; translate: 0 0; } }
+@keyframes knScaleIn{ from { opacity: 0; scale: .86; translate: 0 30px; } to { opacity: 1; scale: 1; translate: 0 0; } }
+@keyframes knSlide  { from { opacity: 0; translate: -48px 0; } to { opacity: 1; translate: 0 0; } }
+@keyframes knCorner { from { opacity: 0; scale: 0; } to { opacity: 1; scale: 1; } }
+@keyframes knWipe   { from { opacity: 1; clip-path: inset(-.2em 100% -.2em 0); } to { opacity: 1; clip-path: inset(-.2em -.2em -.2em 0); } }
+@keyframes knFace   { from { opacity: 0; scale: .6; } to { opacity: 1; scale: 1; } }
 
-    /* 2. Εμπιστοσύνη: τα τρία εικονίδια «πετάγονται» με ελατήριο, με σειρά */
-    html.anim-ready .trust-pillar:not(.visible) .trust-pillar-icon { opacity: 0; }
-    html.anim-ready .trust-pillar.visible .trust-pillar-icon {
-        animation: knPop .6s cubic-bezier(.34,1.56,.64,1) calc(var(--rv-delay, 0ms) + 120ms) both;
+@media (prefers-reduced-motion: no-preference) {
+    /* 1. Τίτλοι ενοτήτων: το κείμενο «ξεδιπλώνεται» από αριστερά και η πλάγια λέξη υπογραμμίζεται */
+    html.kn-js .section-heading:not(.kn-in) { opacity: 0; }   /* όχι clip-path: ο παρατηρητής θα έβλεπε μηδενική επιφάνεια */
+    html.kn-js .section-heading.kn-in { animation: knWipe .85s cubic-bezier(.22,.61,.36,1) both; }
+    html.kn-js .section-heading em {
+        background: linear-gradient(var(--warm), var(--warm)) 0 100% / 0% 2px no-repeat;
+        padding-bottom: .1em;
+        transition: background-size .8s cubic-bezier(.22,.61,.36,1) .7s;
     }
+    html.kn-js .section-heading.kn-in em { background-size: 100% 2px; }
+
+    /* 2. Εμπιστοσύνη: τα εικονίδια «πετάγονται» με ελατήριο, με σειρά */
+    html.kn-js .trust-pillar:not(.kn-in) .trust-pillar-icon { opacity: 0; }
+    html.kn-js .trust-pillar.kn-in .trust-pillar-icon { animation: knPop .65s cubic-bezier(.34,1.56,.64,1) .1s both; }
+    html.kn-js .trust-pillar:nth-child(2).kn-in .trust-pillar-icon { animation-delay: .25s; }
+    html.kn-js .trust-pillar:nth-child(3).kn-in .trust-pillar-icon { animation-delay: .4s; }
 
     /* 3. Δείκτες ενοτήτων (έγκριση τύπου / ρυμουλκούμενα): οι γραμμές μπαίνουν η μία μετά την άλλη */
-    html.anim-ready .hm-idx:not(.visible) > li,
-    html.anim-ready .hm-rail:not(.visible) > li { opacity: 0; }
-    html.anim-ready .hm-idx.visible > li,
-    html.anim-ready .hm-rail.visible > li { animation: knSlide .5s cubic-bezier(.22,.61,.36,1) both; }
-    html.anim-ready .hm-idx.visible > li:nth-child(1), html.anim-ready .hm-rail.visible > li:nth-child(1) { animation-delay: .10s; }
-    html.anim-ready .hm-idx.visible > li:nth-child(2), html.anim-ready .hm-rail.visible > li:nth-child(2) { animation-delay: .18s; }
-    html.anim-ready .hm-idx.visible > li:nth-child(3), html.anim-ready .hm-rail.visible > li:nth-child(3) { animation-delay: .26s; }
-    html.anim-ready .hm-idx.visible > li:nth-child(4), html.anim-ready .hm-rail.visible > li:nth-child(4) { animation-delay: .34s; }
-    html.anim-ready .hm-idx.visible > li:nth-child(n+5), html.anim-ready .hm-rail.visible > li:nth-child(n+5) { animation-delay: .42s; }
+    html.kn-js .hm-idx:not(.kn-in) > li,
+    html.kn-js .hm-rail:not(.kn-in) > li { opacity: 0; }
+    html.kn-js .hm-idx.kn-in > li,
+    html.kn-js .hm-rail.kn-in > li { animation: knSlide .55s cubic-bezier(.22,.61,.36,1) both; }
+    html.kn-js .kn-in > li:nth-child(1) { animation-delay: .05s; }
+    html.kn-js .kn-in > li:nth-child(2) { animation-delay: .17s; }
+    html.kn-js .kn-in > li:nth-child(3) { animation-delay: .29s; }
+    html.kn-js .kn-in > li:nth-child(4) { animation-delay: .41s; }
+    html.kn-js .kn-in > li:nth-child(n+5) { animation-delay: .53s; }
 
-    /* 4. Αφή: τα κουμπιά «πατιούνται», το βέλος της κάρτας υπηρεσίας προχωρά */
-    .btn-hero-primary, .btn-hero-ghost, .btn-gold, .btn-submit, .svc-inline-btn { transition: transform .2s var(--ease), box-shadow .3s var(--ease), background .3s, color .3s, border-color .3s; }
-    .btn-hero-primary:active, .btn-hero-ghost:active, .btn-gold:active, .btn-submit:active, .svc-inline-btn:active { transform: translateY(0) scale(.97); }
+    /* 4. Πορτραίτο: οι τέσσερις γωνίες «κουμπώνουν» στη θέση τους, η φωτογραφία επικοινωνίας μεγαλώνει με ελατήριο */
+    html.kn-js .about-portrait:not(.kn-in) .ap-corner { opacity: 0; }
+    html.kn-js .about-portrait.kn-in .ap-corner { animation: knCorner .5s cubic-bezier(.34,1.56,.64,1) .15s both; }
+    html.kn-js .about-portrait .ap-tl { transform-origin: 0 0; }
+    html.kn-js .about-portrait .ap-tr { transform-origin: 100% 0; }
+    html.kn-js .about-portrait .ap-bl { transform-origin: 0 100%; }
+    html.kn-js .about-portrait .ap-br { transform-origin: 100% 100%; }
+    html.kn-js .person-photo:not(.kn-in) { opacity: 0; }
+    html.kn-js .person-photo.kn-in { animation: knFace .7s cubic-bezier(.34,1.56,.64,1) .1s both; }
+
+    /* 4β. Αριθμοί εμπιστοσύνης και στατιστικά «Σχετικά»: «σκάνε» με ελατήριο, ο ένας μετά τον άλλο */
+    html.kn-js .trust-stats:not(.kn-in) .trust-stat-num,
+    html.kn-js .about-stats:not(.kn-in) .as-i b { opacity: 0; }
+    html.kn-js .trust-stats.kn-in .trust-stat-num,
+    html.kn-js .about-stats.kn-in .as-i b { animation: knPop .7s cubic-bezier(.34,1.56,.64,1) both; }
+    html.kn-js .kn-in > :nth-child(2) .trust-stat-num, html.kn-js .kn-in > :nth-child(2) b { animation-delay: .12s; }
+    html.kn-js .kn-in > :nth-child(3) .trust-stat-num, html.kn-js .kn-in > :nth-child(3) b { animation-delay: .24s; }
+    html.kn-js .kn-in > :nth-child(4) .trust-stat-num { animation-delay: .36s; }
+
+    /* 4γ. Εμπιστοσύνη: ολόκληρη η στήλη ανεβαίνει, το εικονίδιο γυρίζει καθώς πετάγεται */
+    html.kn-js .trust-pillar:not(.kn-in) h3, html.kn-js .trust-pillar:not(.kn-in) p { opacity: 0; }
+    html.kn-js .trust-pillar.kn-in h3, html.kn-js .trust-pillar.kn-in p { animation: knRise .6s cubic-bezier(.22,.61,.36,1) .35s both; }
+    html.kn-js .trust-pillar:nth-child(2).kn-in h3, html.kn-js .trust-pillar:nth-child(2).kn-in p { animation-delay: .5s; }
+    html.kn-js .trust-pillar:nth-child(3).kn-in h3, html.kn-js .trust-pillar:nth-child(3).kn-in p { animation-delay: .65s; }
+
+    /* 4δ. Έγκριση τύπου / ρυμουλκούμενα: το σχέδιο μεγαλώνει από πίσω, ο υπολογιστής γεμίζει γραμμή-γραμμή */
+    html.kn-js .hm-rc-art:not(.kn-in) .hm-rc-stage { opacity: 0; }
+    html.kn-js .hm-rc-art.kn-in .hm-rc-stage { animation: knScaleIn .9s cubic-bezier(.22,.61,.36,1) both; }
+    html.kn-js .hm-calc:not(.kn-in) .hm-calc-r, html.kn-js .hm-calc:not(.kn-in) .hm-calc-k { opacity: 0; }
+    html.kn-js .hm-calc.kn-in .hm-calc-r, html.kn-js .hm-calc.kn-in .hm-calc-k { animation: knRise .55s cubic-bezier(.22,.61,.36,1) both; }
+    html.kn-js .hm-calc.kn-in .hm-calc-col:nth-child(1) .hm-calc-k { animation-delay: .05s; }
+    html.kn-js .hm-calc.kn-in .hm-calc-col:nth-child(1) .hm-calc-r:nth-of-type(1) { animation-delay: .15s; }
+    html.kn-js .hm-calc.kn-in .hm-calc-col:nth-child(1) .hm-calc-r:nth-of-type(2) { animation-delay: .25s; }
+    html.kn-js .hm-calc.kn-in .hm-calc-col:nth-child(1) .hm-calc-r:nth-of-type(3) { animation-delay: .35s; }
+    html.kn-js .hm-calc.kn-in .hm-calc-col:nth-child(2) .hm-calc-k { animation-delay: .2s; }
+    html.kn-js .hm-calc.kn-in .hm-calc-col:nth-child(2) .hm-calc-r:nth-of-type(1) { animation-delay: .3s; }
+    html.kn-js .hm-calc.kn-in .hm-calc-col:nth-child(2) .hm-calc-r:nth-of-type(2) { animation-delay: .4s; }
+    html.kn-js .hm-calc.kn-in .hm-calc-col:nth-child(2) .hm-calc-r:nth-of-type(3) { animation-delay: .5s; }
+
+    /* 4ε. Συνεργάτες: οι κάρτες μπαίνουν σε σειρά */
+    html.kn-js .pc:not(.kn-in) .pc-item { opacity: 0; }
+    html.kn-js .pc.kn-in .pc-item { animation: knRise .6s cubic-bezier(.22,.61,.36,1) both; }
+    html.kn-js .pc.kn-in .pc-item:nth-child(2) { animation-delay: .08s; }
+    html.kn-js .pc.kn-in .pc-item:nth-child(3) { animation-delay: .16s; }
+    html.kn-js .pc.kn-in .pc-item:nth-child(4) { animation-delay: .24s; }
+    html.kn-js .pc.kn-in .pc-item:nth-child(5) { animation-delay: .32s; }
+    html.kn-js .pc.kn-in .pc-item:nth-child(6) { animation-delay: .40s; }
+    html.kn-js .pc.kn-in .pc-item:nth-child(n+7) { animation-delay: .48s; }
+
+    /* 4στ. Επικοινωνία: τα πεδία της φόρμας ανεβαίνουν ένα-ένα */
+    html.kn-js .contact-form-wrap:not(.kn-in) .field, html.kn-js .contact-form-wrap:not(.kn-in) .btn-submit { opacity: 0; }
+    html.kn-js .contact-form-wrap.kn-in .field, html.kn-js .contact-form-wrap.kn-in .btn-submit { animation: knRise .55s cubic-bezier(.22,.61,.36,1) both; }
+    html.kn-js .contact-form-wrap.kn-in .form-row:nth-of-type(1) .field { animation-delay: .1s; }
+    html.kn-js .contact-form-wrap.kn-in .form-row:nth-of-type(2) .field { animation-delay: .25s; }
+    html.kn-js .contact-form-wrap.kn-in .form-row:nth-of-type(n+3) .field { animation-delay: .4s; }
+    html.kn-js .contact-form-wrap.kn-in .btn-submit { animation-delay: .55s; }
+
+    /* 5. Αφή: κάρτες υπηρεσιών, κουμπιά */
+    #servicesGrid .service-icon { transition: transform .5s cubic-bezier(.34,1.56,.64,1), color .3s; }
+    #servicesGrid .service-card:hover .service-icon { transform: rotate(-10deg) scale(1.25); }
+    #servicesGrid .service-card:hover .service-num { transform: translateX(6px); }
+    #servicesGrid .service-num { transition: transform .4s var(--ease), opacity .3s; }
+    html .btn-hero-primary, html .btn-gold, html .btn-submit, html .btn-hero-cta {
+        background-image: linear-gradient(110deg, transparent 38%, rgba(255,255,255,.38) 50%, transparent 62%) !important;
+        background-size: 260% 100% !important; background-position: 160% 0 !important; background-repeat: no-repeat !important;
+        transition: transform .2s var(--ease), box-shadow .3s var(--ease), background-color .3s, color .3s, border-color .3s, background-position .9s cubic-bezier(.22,.61,.36,1);
+    }
+    html .btn-hero-primary:hover, html .btn-gold:hover, html .btn-submit:hover, html .btn-hero-cta:hover { background-position: -60% 0 !important; }
+    .btn-hero-ghost, .svc-inline-btn { transition: transform .2s var(--ease), box-shadow .3s var(--ease), background .3s, color .3s, border-color .3s; }
+    .btn-hero-primary:active, .btn-hero-ghost:active, .btn-gold:active, .btn-submit:active, .svc-inline-btn:active { transform: translateY(0) scale(.96); }
     .svc-inline-btn i { transition: transform .3s var(--ease); }
-    .svc-inline-btn:hover i { transform: translateX(4px); }
+    .svc-inline-btn:hover i { transform: translateX(5px); }
+
+    /* Ό,τι ήδη προσπεράστηκε με κύλιση (πάνω από την οθόνη) εμφανίζεται χωρίς κίνηση */
+    html.kn-js .kn-skip, html.kn-js .kn-skip *, html.kn-js .kn-skip > li { animation: none !important; transition: none !important; }
 }
