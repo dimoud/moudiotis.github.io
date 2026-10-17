@@ -616,3 +616,7 @@ mark.ph { background: #ffe9a8; color: #5a3d00; padding: 0 3px; border-radius: 3p
 .svc-katalogos-table tbody tr:hover { background: rgba(201,153,134,.08); }
 .svc-katalogos-src { font-size: 13px; color: var(--stone); padding-bottom: 14px !important; }
 @media (max-width: 600px) { .svc-katalogos-table { font-size: 14px; } .svc-katalogos-table th, .svc-katalogos-table td { padding: 7px 6px; } }
+
+/* ορισμός οχήματος ειδικού σκοπού (17/10/2026) */
+.svc-orismos { margin: 1rem 0 1.1rem; padding: .9rem 1.2rem; border-left: 3px solid var(--accent, #c8a24a); background: rgba(255,255,255,.04); border-radius: 0 6px 6px 0; }
+.svc-orismos p { margin: 0; font-size: 1.05em; line-height: 1.6; }
