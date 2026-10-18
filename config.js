@@ -8,9 +8,9 @@ window.SITE_CONFIG = {
     // ── META ──────────────────────────────────────────────────────────────
     meta: {
         titleEl:       'Τεχνικό Γραφείο Μουδιώτης Αθήνα | Εγκρίσεις Τύπου, ΤΑΟ, ΕΧΕΣ',
-        titleEn:       'Moudiotis Technical Office, Athens — Vehicle Type Approval & TAO',
+        titleEn:       'Vehicle Type Approval & TAO in Greece and the EU | Moudiotis',   /* ίδιο με το στατικό <title> της /en/ */
         descriptionEl: 'Τεχνικό γραφείο εξειδικευμένου μηχανολόγου μηχανικού σε Αθήνα και Θεσσαλονίκη: εγκρίσεις τύπου, δελτίο κοινοποίησης, ΤΑΟ, οχήματα ειδικού σκοπού, μετασκευές.',
-        descriptionEn: 'Vehicle engineering office in Athens and Thessaloniki, Greece: type approval, notification certificates and TAO registration, special purpose vehicles, O1/O2 trailer licences.',
+        descriptionEn: 'Vehicle engineering office in Athens and Thessaloniki, serving all of Greece and the EU: type approval, TAO registration, special vehicles, trailers.',
         lang:          'el',
     },
 

@@ -33,7 +33,5 @@ User-agent: Amazonbot
 # Όλοι οι υπόλοιποι
 User-agent: *
 Allow: /
-Disallow: /_to_delete/
-Disallow: /Claude%20outputs/
 
 Sitemap: https://moudiotis.gr/sitemap.xml
