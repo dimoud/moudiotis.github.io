@@ -6437,3 +6437,55 @@ html.anim-ready [data-reveal].visible.anim-off { animation-play-state: running !
 .hero-swap--es:not(.is-on) .es-scene { opacity: 0 !important; }
 @media (max-width: 1100px) { .es-wrap--hero .es-calc { display: none; } .es-wrap--hero .es-body { grid-template-columns: 1fr; } }
 @media (max-width: 768px) { .hero-swap--es { padding: 70px 14px 70px; } }
+
+/* ═══ ΜΠΑΡΑ ΠΛΟΗΓΗΣΗΣ (18/10/2026) ════════════════════════════════════════
+   Αναζήτηση στη δεξιά γωνία, μετά τη γλώσσα· «Επικοινωνία» λεπτότερο και
+   πιο σφιχτό· μεγαλύτερα γράμματα σε όλα τα στοιχεία της μπάρας. */
+@media (min-width: 961px) {
+    nav .lang-toggle { margin-right: 54px; }
+    nav .search-toggle {
+        right: auto; left: 100%; margin-right: 0; margin-left: 14px;
+        width: 40px; height: 40px;
+    }
+    nav .search-toggle svg { width: 19px; height: 19px; }
+    nav .nav-links > a, nav .nav-links .nav-dd-btn { font-size: 16px !important; letter-spacing: .6px !important; }
+    nav .nav-links .nav-dd-btn span { font-size: 16px !important; letter-spacing: .6px !important; text-transform: none !important; }
+    nav .nav-links .nav-dd-btn i { font-size: 12px; }
+    nav .nav-links > a.nav-cta {
+        padding: 7px 18px !important; line-height: 1.25; border-radius: 4px;
+        border-width: 1px !important;
+        border-color: rgba(231,179,159,.55) !important;
+    }
+    nav:not(.scrolled) .nav-links > a.nav-cta { border-color: rgba(255,255,255,.38) !important; }
+    nav .lang-toggle .lang-btn .lcode { font-size: 14px !important; letter-spacing: .8px; }
+}
+
+/* ═══ ΚΟΥΜΠΙΑ ΜΑΤ ΧΑΛΚΟΣ, ΧΩΡΙΣ ΒΕΛΗ (18/10/2026) ═══════════════════════════
+   Ο «μεταλλικός» χαλκός με τη λάμψη έφευγε σε κόσμημα. Τα κουμπιά και τα
+   διακριτικά παίρνουν ήπια διαβάθμιση χαλκού χωρίς ανταύγεια, χωρίς σκιά
+   κειμένου, χωρίς κινούμενη γυαλάδα· τα βέλη μέσα στα κουμπιά αφαιρούνται. */
+:root {
+    --cu-matt: linear-gradient(180deg, #c3907a 0%, #b27c65 100%);
+    --cu-matt-h: #a46d57;
+}
+.btn-hero-primary, a.ta-cta-btn, a.tap-cta-btn, .svc-quick a.svc-quick-call, .ec-go,
+.contact-form-wrap button[type="submit"], .svc-cta-primary, .hm-btn--gold,
+button.tap-toggle, button.ta-toggle--bar, .trc-widget button.trc-main-toggle--bar, .tools-tab.is-active {
+    background: var(--cu-matt) !important; background-size: auto !important;
+    color: #0c1726 !important; text-shadow: none !important;
+    box-shadow: 0 3px 10px rgba(110,62,44,.16) !important;
+    animation: none !important;
+}
+.btn-hero-primary:hover, a.ta-cta-btn:hover, a.tap-cta-btn:hover, .svc-quick a.svc-quick-call:hover, .ec-go:hover,
+.contact-form-wrap button[type="submit"]:hover, .svc-cta-primary:hover, .hm-btn--gold:hover,
+button.tap-toggle:hover, button.ta-toggle--bar:hover, .trc-widget button.trc-main-toggle--bar:hover {
+    background: var(--cu-matt-h) !important; color: #fff !important;
+    box-shadow: 0 5px 14px rgba(110,62,44,.22) !important;
+}
+.ta-cat-badge, .trc-cat-badge, .service-badge {
+    background: var(--cu-matt) !important; box-shadow: none !important; text-shadow: none !important;
+}
+.btn-hero-primary i.fa-arrow-right, a.ta-cta-btn i.fa-arrow-right, a.tap-cta-btn i.fa-arrow-right,
+.svc-inline-btn i.fa-arrow-right, .hm-btn i.fa-arrow-right, .hm-calc-go i.fa-arrow-right,
+.ec-go i.fa-arrow-right, .contact-form-wrap button[type="submit"] i { display: none !important; }
+.svc-cta-primary::after { content: none !important; }

@@ -909,8 +909,8 @@ nav .hamburger span { background: #fff; }
 }
 
 /* Το κουτί δεν ξαναδείχνει την ετικέτα: την έχει ήδη το hero */
-body .ta-box > .ta-topbar { display: none; }
-body .ta-wrap:first-of-type { padding-top: 8px; }
+body .svc-hero + .ta-wrap > .ta-box > .ta-topbar { display: none; }
+body .svc-hero + .ta-wrap { padding-top: 8px; }
 body .ta-box .ta-stat-strip { padding-top: 26px; padding-bottom: 26px; }
 
 /* ── Βήματα: στήλες με μεγάλους λεπτούς αριθμούς, όπως ένα τεχνικό γραφείο
@@ -954,3 +954,59 @@ body .ta-box .ta-steps > li { border-left: 0 !important; border-right: 0 !import
 /* ── Βιτρίνα μηχανικού μέσα στο κείμενο της υποσελίδας (μία σκηνή) ── */
 .svc-es { margin: 34px 0 10px; }
 .svc-es .es-wrap { max-width: none; margin: 0; padding: 0; }
+
+/* ═══ v3.1 (18/10/2026) ══════════════════════════════════════════════════
+   1. Σημάδι τίτλου: τετράγωνο, ίσες πλευρές σε όλους τους τίτλους.
+   2. Βιτρίνα μηχανικού δεξιά, το κείμενο ρέει αριστερά της. */
+.svc-prose h2::before { width: 12px !important; height: 12px !important; margin-right: 16px !important; vertical-align: .14em !important; }
+@media (max-width: 768px) { .svc-prose h2::before { width: 10px !important; height: 10px !important; margin-right: 12px !important; } }
+
+.svc-prose::after { content: ''; display: block; clear: both; }
+@media (min-width: 1000px) {
+    .svc-prose > .svc-es {
+        float: right; clear: right;
+        width: min(46%, 620px);
+        margin: 46px 0 28px 52px;
+    }
+    .svc-prose > .svc-es .es-body { grid-template-columns: 1fr; }
+    .svc-prose > .svc-es .es-calc { border-left: 0; border-top: 1px solid rgba(120,160,210,.14); }
+    .svc-prose > .svc-es + h2 { margin-top: 46px !important; }
+}
+
+/* ═══ v3.2 (18/10/2026) — ΡΥΘΜΟΣ ΦΟΝΤΟΥ ══════════════════════════════════
+   Hero σε χαρτί σχεδίου (κρεμ) → κύριο κείμενο σε λευκό → «Τι αναλαμβάνει»
+   με την ενέργεια σε κρεμ ζώνη → συχνές ερωτήσεις σε λευκό → σχετικές
+   υπηρεσίες σε κρεμ. Οι ζώνες απλώνονται σε όλο το πλάτος της οθόνης χωρίς
+   να αλλάζει ο άξονας του περιεχομένου (σκιά 100vmax + clip-path). */
+body .ta-wrap {
+    background: #fff;
+    box-shadow: 0 0 0 100vmax #fff;
+    clip-path: inset(0 -100vmax);
+}
+body .ta-wrap + .ta-wrap > .ta-box { border-top: 0 !important; padding-top: 8px; }
+body .ta-wrap + .ta-wrap { padding-top: 64px; padding-bottom: 56px; }
+body .svc-hero + .ta-wrap { padding-bottom: 0; }
+
+/* Κρεμ ζώνη: γραμμή → επικεφαλίδα βημάτων → βήματα → γραμμή ενέργειας */
+body .ta-wrap > .ta-box > .ta-rule:has(+ .ta-sec-head + .ta-steps),
+body .ta-wrap > .ta-box > .ta-sec-head:has(+ .ta-steps),
+body .ta-wrap > .ta-box > .ta-steps,
+body .ta-wrap > .ta-box > .ta-steps + .ta-cta-row {
+    background: var(--cream) !important;
+    box-shadow: 0 0 0 100vmax var(--cream);
+    clip-path: inset(0 -100vmax);
+}
+body .ta-wrap > .ta-box > .ta-rule:has(+ .ta-sec-head + .ta-steps) { height: 56px; margin: 0 !important; }
+body .ta-wrap > .ta-box > .ta-sec-head:has(+ .ta-steps) { padding-top: 0; }
+body .ta-wrap > .ta-box > .ta-steps + .ta-cta-row { border-top-color: rgba(201,153,134,.45) !important; padding-top: 22px !important; padding-bottom: 60px !important; margin-top: 0; }
+
+/* Σχετικές υπηρεσίες σε κρεμ, οι κάρτες λευκές πάνω της */
+body .ta-wrap:has(.svc-related) { background: var(--cream); box-shadow: 0 0 0 100vmax var(--cream); }
+
+/* Ο πίνακας στοιχείων πατά στο λευκό με λεπτή γραμμή κάτω */
+body .ta-box .ta-stat-strip + .ta-rule { margin-top: 0; }
+@media (max-width: 768px) {
+    body .ta-wrap > .ta-box > .ta-rule:has(+ .ta-sec-head + .ta-steps) { height: 36px; }
+    body .ta-wrap > .ta-box > .ta-steps + .ta-cta-row { padding-bottom: 40px !important; }
+    body .ta-wrap + .ta-wrap { padding-top: 44px; padding-bottom: 40px; }
+}
