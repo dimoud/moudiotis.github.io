@@ -1396,3 +1396,22 @@ body .ta-box > .ta-steps { margin-top: 0 !important; padding-top: 6px !important
     .svc-hero[data-v3] .svc-cta-tel { margin-left: 26px; padding-left: 26px; text-align: left; }   /* κουμπί και τηλέφωνο μαζί, αριστερά */
     .svc-hero[data-v3]:not(.svc-hero--art) .svc-hero-in { justify-content: start; }
 }
+
+/* ═══ v3.8 (18/10/2026) — ΖΩΝΗ ΒΗΜΑΤΩΝ ΩΣ ΠΛΑΙΣΙΟ ═══════════════════════════════
+   Η κρεμ ζώνη «Τι αναλαμβάνει το γραφείο μας» έβγαινε σε όλο το πλάτος της
+   οθόνης, έξω από τον άξονα του υπόλοιπου περιεχομένου. Τώρα: πλαίσιο στο
+   πλάτος του περιέκτη (ίδιες ακμές με τα στοιχεία πάνω και κάτω), κρεμ φόντο,
+   αχνό περίγραμμα, ίδια εσοχή με το πλαίσιο του ρόλου μηχανικού. */
+body .ta-box > .ta-steps-zone {
+    background: var(--cream); border: 1px solid rgba(17,36,61,.13); border-radius: 3px;
+    padding: 0 32px; margin: 36px 0 8px;
+}
+body .ta-steps-zone > .ta-rule { height: 34px !important; margin: 0 !important; border: 0 !important; background: none !important; }
+body .ta-steps-zone > .ta-sec-head { padding-top: 0 !important; }
+body .ta-steps-zone > .ta-steps { margin-top: 0 !important; padding-top: 6px !important; }
+body .ta-steps-zone > .ta-cta-row { border-top: 1px solid rgba(201,153,134,.45); padding-top: 22px !important; padding-bottom: 32px !important; margin-top: 0; }
+@media (max-width: 768px) {
+    body .ta-box > .ta-steps-zone { padding: 0 18px; margin-top: 28px; }
+    body .ta-steps-zone > .ta-rule { height: 24px !important; }
+    body .ta-steps-zone > .ta-cta-row { padding-bottom: 24px !important; }
+}
