@@ -57,13 +57,13 @@ hr.ec-rule {
 
 /* Layer A: credit — visible first */
 .ec-layer--credit {
-  animation: ec-fade-credit 9s ease-in-out infinite;
+  animation: ec-fade-credit 9s ease-in-out 3 both;   /* 3 κύκλοι και σταματά στο credit (ΜΗ-02, WCAG 2.2.2) */
 }
 
 /* Layer B: ad — offset by 4.5s (half cycle) */
 .ec-layer--ad {
   opacity: 0;
-  animation: ec-fade-ad 9s ease-in-out infinite;
+  animation: ec-fade-ad 9s ease-in-out 3 both;
 }
 
 @keyframes ec-fade-credit {
@@ -80,7 +80,7 @@ hr.ec-rule {
 
 /* ── copyright text ── */
 .ec-copy {
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 1.6px;
   text-transform: uppercase;
   color: var(--ec-muted);
@@ -98,7 +98,7 @@ hr.ec-rule {
 
 /* ── "designed by" label ── */
 .ec-label {
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--ec-muted);
@@ -164,7 +164,7 @@ hr.ec-rule {
 }
 
 .ec-ad-ring::after {
-  animation: ec-ring-pulse 2.4s ease-out infinite;
+  animation: ec-ring-pulse 2.4s ease-out 3;
 }
 
 @keyframes ec-ring-pulse {
@@ -195,7 +195,7 @@ hr.ec-rule {
 }
 
 .ec-ad-question {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1.8px;
   text-transform: uppercase;
   color: var(--ec-muted);
@@ -248,7 +248,7 @@ hr.ec-rule {
     transparent 100%
   );
   transform: skewX(-12deg);
-  animation: ec-sweep 7s ease-in-out infinite;
+  animation: ec-sweep 7s ease-in-out 3;
   pointer-events: none;
   z-index: 0;
 }
@@ -261,10 +261,25 @@ hr.ec-rule {
 }
 
 /* ── responsive ── */
-@media (max-width: 480px) {
-  .expertease-credit { height: auto; padding: 12px 5%; }
-  .ec-layer          { position: relative; inset: auto; padding: 0; }
+@media (max-width: 640px) {
+  .expertease-credit {
+    height: auto;
+    padding: 18px 5% 22px;
+    margin-bottom: 0 !important;  /* page ends here — no white space below */
+  }
+  .ec-layer          { position: relative; inset: auto; padding: 0; flex-direction: column; gap: 6px; }
   .ec-layer--ad      { display: none; }
   .ec-layer--credit  { animation: none; opacity: 1; transform: none; }
   .ec-divider        { display: none; }
+  /* Bigger credits on mobile */
+  .ec-copy  { font-size: 13px; letter-spacing: 1px; }
+  .ec-label { font-size: 12px; letter-spacing: 0.8px; }
+  .ec-name  { font-size: 14px; letter-spacing: 1px; }
+  .ec-logo  { height: 22px; }
+}
+
+/* ── κινητό/τάμπλετ: στόχος αφής ≥44px και γράμματα ≥12px (kinito K2/K3· διόρθωση από nakou, 10/2026) ── */
+.ec-brand { min-height: 44px; display: inline-flex; align-items: center; }
+@media (max-width: 1024px) {
+  .ec-copy, .ec-label, .ec-name, .ec-ad-question, .ec-ad-cta { font-size: 12px; }
 }

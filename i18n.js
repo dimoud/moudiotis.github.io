@@ -89,6 +89,9 @@
             var descEl = document.querySelector('meta[name="description"]');
             if (descEl && M['description' + key]) descEl.content = M['description' + key];
         }
+        /* συντονισμός με το πρόσθετο (istoselides lib/i18n.js, 17/10/2026): τα εξαρτήματα που χτίζουν δικό τους DOM
+           (trochos-kylisi.js, μπάρα cookies) ακούνε το 'langchange' — χωρίς αυτό οι ετικέτες τους έμεναν στην αρχική γλώσσα. */
+        try { document.dispatchEvent(new CustomEvent('langchange', { detail: { lang: lang } })); } catch (e) { /* πολύ παλιός περιηγητής */ }
     }
 
     /* ─── PUBLIC API ─────────────────────────────────────────────────────── */
