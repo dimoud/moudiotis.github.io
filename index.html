@@ -52,7 +52,7 @@
     <link rel="stylesheet" href="fonts.css"><!-- σύγχρονα: οι @font-face φτάνουν μαζί με τις προφορτώσεις, χωρίς μετατόπιση όταν αλλάζει γραμματοσειρά -->
     <link rel="stylesheet" href="fa-subset.css">
     <script>if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('tk-pre');document.documentElement.classList.add('wdx-js');setTimeout(function(){var r=document.documentElement;if(!r.classList.contains('wdx-ok'))r.classList.add('wdx-fail')},3500);</script>
-    <link rel="stylesheet" href="styles.css?v=20261018h">
+    <link rel="stylesheet" href="styles.css?v=20261018j">
     <link rel="stylesheet" href="expertease-credit.css?v=202610120300">
     <link rel="stylesheet" href="sxediasi.css?v=20261014s"><!-- πιλοτικό v2.14 -->
     <link rel="stylesheet" href="trochos-kylisi.css?v=20261014"><!-- v2.15: τροχός στην πρώτη οθόνη (βιβλιοθήκη #31) -->
@@ -1332,215 +1332,115 @@
                 <div class="trust-pillars" id="trustPillars"><div class="trust-pillar" itemscope="" itemtype="https://schema.org/Thing"><div class="trust-pillar-icon" aria-hidden="true" data-v="rise"><i class="fa-solid fa-gear"></i></div><h3 itemprop="name" data-i18n-html="trust.p1.title" data-v="rise">Τεχνική Επάρκεια</h3><p itemprop="description" data-i18n-html="trust.p1.text">Εξειδικευμένες γνώσεις σε κάθε τύπο οχήματος και μηχανήματος — από απλές βεβαιώσεις έως σύνθετες μελέτες ειδικού εξοπλισμού.</p></div><div class="trust-pillar" itemscope="" itemtype="https://schema.org/Thing"><div class="trust-pillar-icon" aria-hidden="true" data-v="rise"><i class="fa-solid fa-scale-balanced"></i></div><h3 itemprop="name" data-i18n-html="trust.p2.title" data-v="rise">Νομική Ασφάλεια</h3><p itemprop="description" data-i18n-html="trust.p2.text">Πλήρης συμμόρφωση με την ισχύουσα νομοθεσία. Κάθε μελέτη και έγκριση εκδίδεται με ακρίβεια και νομική κάλυψη.</p></div><div class="trust-pillar" itemscope="" itemtype="https://schema.org/Thing"><div class="trust-pillar-icon" aria-hidden="true" data-v="rise"><i class="fa-solid fa-handshake"></i></div><h3 itemprop="name" data-i18n-html="trust.p3.title" data-v="rise">Αξιοπιστία και Συνέπεια</h3><p itemprop="description" data-i18n-html="trust.p3.text">Τηρούμε προθεσμίες, ενημερώνουμε συνεχώς και παρακολουθούμε κάθε υπόθεση από την αρχή έως την έκδοση της τελικής άδειας.</p></div></div>
             </div>
             <div class="trust-crane-col" id="trustCraneCol" aria-hidden="true">
-                <svg class="crane-svg" id="craneSvg" viewBox="0 0 440 340" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-                    <!-- ── GROUND LINE ── -->
-                    <line x1="20" y1="268" x2="430" y2="268" stroke="currentColor" stroke-width="1" opacity="0.25" class="crane-dim-line"/>
-
-                    <!-- ── CHASSIS FRAME ── -->
-                    <path class="crane-path" style="--len:900"
-                          d="M55 238 L385 238 L385 252 L55 252 Z"
-                          stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="rgba(201,153,134,0.10)"/>
-                    <line class="crane-path" style="--len:330" x1="55" y1="256" x2="385" y2="256" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
-
-                    <!-- ── FLATBED DECK ── -->
-                    <path class="crane-path" style="--len:700"
-                          d="M55 220 L278 220 L278 238 L55 238 Z"
-                          stroke="currentColor" stroke-width="2" fill="rgba(201,153,134,0.09)"/>
-                    <g stroke="currentColor" stroke-width="0.7" opacity="0.2">
-                        <line class="crane-path" style="--len:22" x1="85"  y1="220" x2="85"  y2="238"/>
-                        <line class="crane-path" style="--len:22" x1="112" y1="220" x2="112" y2="238"/>
-                        <line class="crane-path" style="--len:22" x1="139" y1="220" x2="139" y2="238"/>
-                        <line class="crane-path" style="--len:22" x1="166" y1="220" x2="166" y2="238"/>
-                        <line class="crane-path" style="--len:22" x1="193" y1="220" x2="193" y2="238"/>
-                        <line class="crane-path" style="--len:22" x1="220" y1="220" x2="220" y2="238"/>
-                        <line class="crane-path" style="--len:22" x1="250" y1="220" x2="250" y2="238"/>
-                    </g>
-
-                    <!-- ── CAB ── -->
-                    <path class="crane-path" style="--len:950"
-                          d="M280 154 L280 238 L395 238 L395 178 L374 154 Z"
-                          stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" fill="rgba(201,153,134,0.10)"/>
-                    <!-- windscreen -->
-                    <path class="crane-path" style="--len:420"
-                          d="M294 162 L294 206 L382 206 L382 182 L364 162 Z"
-                          stroke="currentColor" stroke-width="1.4" fill="rgba(201,153,134,0.20)" opacity="0.8"/>
-                    <!-- cab door -->
-                    <path class="crane-path" style="--len:260"
-                          d="M280 178 L280 238 L322 238 L322 178 Z"
-                          stroke="currentColor" stroke-width="1" fill="none" opacity="0.35"/>
-                    <!-- door handle -->
-                    <rect class="crane-path" style="--len:16" x="308" y="210" width="9" height="3" rx="1.5"
-                          stroke="currentColor" stroke-width="1" fill="none" opacity="0.7"/>
-                    <!-- roof line -->
-                    <line class="crane-path" style="--len:100" x1="294" y1="154" x2="374" y2="154" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
-                    <!-- mirror -->
-                    <line class="crane-path" style="--len:16" x1="392" y1="180" x2="408" y2="178" stroke="currentColor" stroke-width="1.2" opacity="0.6"/>
-                    <rect class="crane-path" style="--len:28" x="408" y="174" width="13" height="8" rx="1.5"
-                          stroke="currentColor" stroke-width="1" fill="rgba(201,153,134,0.12)"/>
-                    <!-- headlight -->
-                    <rect class="crane-path" style="--len:38" x="390" y="208" width="11" height="8" rx="1.5"
-                          stroke="currentColor" stroke-width="1.3" fill="rgba(201,153,134,0.35)"/>
-                    <!-- bumper -->
-                    <path class="crane-path" style="--len:65"
-                          d="M390 238 L420 238 L420 250 L390 250 Z"
-                          stroke="currentColor" stroke-width="1.5" fill="rgba(201,153,134,0.08)"/>
-                    <!-- cab step -->
-                    <rect class="crane-path" style="--len:42" x="280" y="238" width="20" height="8" rx="1"
-                          stroke="currentColor" stroke-width="1" fill="rgba(201,153,134,0.08)" opacity="0.6"/>
-
-                    <!-- ── OUTRIGGER LEGS (deployed) ── -->
-                    <path class="crane-path" style="--len:100" d="M92 252 L92 268 L70 268" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/>
-                    <rect class="crane-path" style="--len:38" x="62" y="266" width="22" height="5" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="rgba(201,153,134,0.22)"/>
-                    <path class="crane-path" style="--len:100" d="M240 252 L240 268 L262 268" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/>
-                    <rect class="crane-path" style="--len:38" x="254" y="266" width="22" height="5" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="rgba(201,153,134,0.22)"/>
-                    <!-- horizontal beams -->
-                    <line class="crane-path" style="--len:42" x1="55" y1="256" x2="92" y2="256" stroke="currentColor" stroke-width="3.5" opacity="0.45"/>
-                    <line class="crane-path" style="--len:42" x1="240" y1="256" x2="280" y2="256" stroke="currentColor" stroke-width="3.5" opacity="0.45"/>
-
-                    <!-- ── WHEELS ── -->
-                    <!-- rear dual -->
-                    <circle class="crane-path" style="--len:120" cx="125" cy="268" r="20" stroke="currentColor" stroke-width="2.5" fill="rgba(201,153,134,0.07)"/>
-                    <circle class="crane-path" style="--len:72"  cx="125" cy="268" r="11" stroke="currentColor" stroke-width="1.3" fill="rgba(201,153,134,0.05)"/>
-                    <circle class="crane-path" style="--len:28"  cx="125" cy="268" r="4.5" stroke="currentColor" stroke-width="1.3" fill="rgba(201,153,134,0.28)"/>
-                    <circle class="crane-path" style="--len:100" cx="147" cy="268" r="17" stroke="currentColor" stroke-width="1.8" fill="rgba(201,153,134,0.04)" opacity="0.55"/>
-                    <!-- front -->
-                    <circle class="crane-path" style="--len:120" cx="358" cy="268" r="20" stroke="currentColor" stroke-width="2.5" fill="rgba(201,153,134,0.07)"/>
-                    <circle class="crane-path" style="--len:72"  cx="358" cy="268" r="11" stroke="currentColor" stroke-width="1.3" fill="rgba(201,153,134,0.05)"/>
-                    <circle class="crane-path" style="--len:28"  cx="358" cy="268" r="4.5" stroke="currentColor" stroke-width="1.3" fill="rgba(201,153,134,0.28)"/>
-                    <!-- lug nuts -->
-                    <g stroke="currentColor" stroke-width="0.8" opacity="0.4">
-                        <circle class="crane-path" style="--len:10" cx="125" cy="257" r="2"/>
-                        <circle class="crane-path" style="--len:10" cx="136" cy="261" r="2"/>
-                        <circle class="crane-path" style="--len:10" cx="136" cy="275" r="2"/>
-                        <circle class="crane-path" style="--len:10" cx="125" cy="279" r="2"/>
-                        <circle class="crane-path" style="--len:10" cx="114" cy="275" r="2"/>
-                        <circle class="crane-path" style="--len:10" cx="114" cy="261" r="2"/>
-                    </g>
-
-                    <!-- ── TURRET / SLEWING RING ── -->
-                    <rect class="crane-path" style="--len:200" x="145" y="198" width="56" height="24" rx="3"
-                          stroke="currentColor" stroke-width="2.2" fill="rgba(201,153,134,0.14)"/>
-                    <circle class="crane-path" style="--len:90" cx="173" cy="210" r="9"
-                            stroke="currentColor" stroke-width="1.6" fill="rgba(201,153,134,0.10)"/>
-                    <circle class="crane-path" style="--len:28" cx="173" cy="210" r="3.5"
-                            stroke="currentColor" stroke-width="1" fill="rgba(201,153,134,0.35)"/>
-                    <!-- turret housing box -->
-                    <rect class="crane-path" style="--len:170" x="154" y="182" width="38" height="18" rx="2.5"
-                          stroke="currentColor" stroke-width="2" fill="rgba(201,153,134,0.11)"/>
-
-                    <!-- ── BOOM (3 telescoping sections, ~55°) ── -->
-                    <!-- outer -->
-                    <path class="crane-path" style="--len:520"
-                          d="M160 180 L144 72 L168 65 L186 172 Z"
-                          stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="rgba(201,153,134,0.11)"/>
-                    <!-- mid -->
-                    <path class="crane-path" style="--len:430"
-                          d="M162 176 L148 88 L166 84 L182 168 Z"
-                          stroke="currentColor" stroke-width="1.6" fill="rgba(201,153,134,0.07)" opacity="0.85"/>
-                    <!-- inner tip -->
-                    <path class="crane-path" style="--len:330"
-                          d="M164 172 L152 102 L164 99 L176 166 Z"
-                          stroke="currentColor" stroke-width="1.2" fill="rgba(201,153,134,0.05)" opacity="0.75"/>
-                    <!-- centreline -->
-                    <line class="crane-path" style="--len:195" x1="173" y1="176" x2="156" y2="68"
-                          stroke="currentColor" stroke-width="0.8" stroke-dasharray="5 3" opacity="0.28"/>
-                    <!-- pivot pin -->
-                    <circle class="crane-path" style="--len:44" cx="173" cy="183" r="5.5"
-                            stroke="currentColor" stroke-width="1.8" fill="rgba(201,153,134,0.22)"/>
-                    <!-- hydraulic cylinder -->
-                    <line class="crane-path" style="--len:105" x1="187" y1="198" x2="172" y2="144"
-                          stroke="currentColor" stroke-width="4" opacity="0.30"/>
-                    <line class="crane-path" style="--len:85"  x1="185" y1="198" x2="170" y2="150"
-                          stroke="currentColor" stroke-width="1.6" opacity="0.55"/>
-                    <!-- cylinder clevis -->
-                    <circle class="crane-path" style="--len:22" cx="187" cy="200" r="4" stroke="currentColor" stroke-width="1.2" fill="rgba(201,153,134,0.15)"/>
-
-                    <!-- ── PIVOT ARM at boom tip ── -->
-                    <path class="crane-path" style="--len:90"
-                          d="M150 70 L132 57 L142 46 L160 59 Z"
-                          stroke="currentColor" stroke-width="1.6" fill="rgba(201,153,134,0.13)"/>
-
-                    <!-- ── BASKET ── -->
-                    <path class="crane-path" style="--len:310"
-                          d="M90 22 L90 64 L142 64 L142 22 Z"
-                          stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" fill="rgba(201,153,134,0.13)"/>
-                    <!-- floor -->
-                    <line class="crane-path" style="--len:52" x1="90" y1="58" x2="142" y2="58"
-                          stroke="currentColor" stroke-width="2.2" opacity="0.65"/>
-                    <!-- mid rail -->
-                    <line class="crane-path" style="--len:52" x1="90" y1="42" x2="142" y2="42"
-                          stroke="currentColor" stroke-width="1" opacity="0.45"/>
-                    <!-- guard rails (vertical posts) -->
-                    <line class="crane-path" style="--len:30" x1="102" y1="22" x2="102" y2="10" stroke="currentColor" stroke-width="1.8"/>
-                    <line class="crane-path" style="--len:30" x1="116" y1="22" x2="116" y2="6"  stroke="currentColor" stroke-width="1.8"/>
-                    <line class="crane-path" style="--len:30" x1="130" y1="22" x2="130" y2="10" stroke="currentColor" stroke-width="1.8"/>
-                    <!-- top rail -->
-                    <line class="crane-path" style="--len:40" x1="98" y1="10" x2="134" y2="10" stroke="currentColor" stroke-width="1.8"/>
-                    <!-- operator -->
-                    <circle class="crane-path" style="--len:32" cx="116" cy="38" r="6" stroke="currentColor" stroke-width="1.4" fill="rgba(201,153,134,0.18)"/>
-                    <line class="crane-path" style="--len:22" x1="116" y1="44" x2="116" y2="58" stroke="currentColor" stroke-width="1.4" opacity="0.6"/>
-                    <!-- safety light -->
-                    <circle class="crane-path" style="--len:24" cx="142" cy="26" r="4.5" stroke="currentColor" stroke-width="1.4" fill="rgba(201,153,134,0.50)"/>
-
-                    <!-- ── DIMENSION LINES ── -->
-                    <!-- overall length -->
-                    <g class="crane-dim-line">
-                        <line x1="55" y1="295" x2="420" y2="295" stroke="currentColor" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
-                        <line x1="55"  y1="290" x2="55"  y2="300" stroke="currentColor" stroke-width="1.8"/>
-                        <line x1="420" y1="290" x2="420" y2="300" stroke="currentColor" stroke-width="1.8"/>
-                        <text x="237" y="312" text-anchor="middle" font-family="EB Garamond, serif"
-                              font-size="12" letter-spacing="2" fill="currentColor" opacity="0.9">7.200 m</text>
-                    </g>
-                    <!-- vehicle height -->
-                    <g class="crane-dim-line">
-                        <line x1="32" y1="22" x2="32" y2="238" stroke="currentColor" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
-                        <line x1="26" y1="22"  x2="38" y2="22"  stroke="currentColor" stroke-width="1.8"/>
-                        <line x1="26" y1="238" x2="38" y2="238" stroke="currentColor" stroke-width="1.8"/>
-                        <text x="18" y="135" text-anchor="middle" font-family="EB Garamond, serif"
-                              font-size="12" letter-spacing="1.5" fill="currentColor" opacity="0.9"
-                              transform="rotate(-90,18,135)">10.500 m</text>
-                    </g>
-                    <!-- boom angle -->
-                    <g class="crane-dim-line">
-                        <path d="M173 183 A55 55 0 0 0 228 183" stroke="currentColor" stroke-width="1" fill="none" opacity="0.55"/>
-                        <text x="220" y="172" text-anchor="middle" font-family="EB Garamond, serif"
-                              font-size="11" letter-spacing="1" fill="currentColor" opacity="0.85">55°</text>
-                    </g>
-                    <!-- boom reach (horizontal from turret to basket) -->
-                    <g class="crane-dim-line">
-                        <line x1="116" y1="320" x2="173" y2="320" stroke="currentColor" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
-                        <line x1="116" y1="315" x2="116" y2="325" stroke="currentColor" stroke-width="1.5"/>
-                        <line x1="173" y1="315" x2="173" y2="325" stroke="currentColor" stroke-width="1.5"/>
-                        <text x="144" y="334" text-anchor="middle" font-family="EB Garamond, serif"
-                              font-size="10" letter-spacing="1.5" fill="currentColor" opacity="0.75">1.600 m</text>
-                    </g>
-                    <!-- basket working height -->
-                    <g class="crane-dim-line">
-                        <line x1="430" y1="22" x2="430" y2="64" stroke="currentColor" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
-                        <line x1="425" y1="22" x2="435" y2="22" stroke="currentColor" stroke-width="1.5"/>
-                        <line x1="425" y1="64" x2="435" y2="64" stroke="currentColor" stroke-width="1.5"/>
-                        <text x="438" y="46" text-anchor="start" font-family="EB Garamond, serif"
-                              font-size="10" letter-spacing="1" fill="currentColor" opacity="0.75">2.0 m</text>
-                    </g>
-
-                    <!-- ── APPROVED STAMP ── -->
-                    <g id="craneStamp" opacity="0" transform="rotate(-15,220,160)">
-                        <rect x="165" y="139" width="110" height="36" rx="5"
-                            stroke="#38a169" stroke-width="3" fill="none"
-                            stroke-dasharray="6 3"/>
-                        <rect x="170" y="144" width="100" height="26" rx="3"
-                            stroke="#38a169" stroke-width="1" fill="rgba(56,161,105,0.09)"
-                            stroke-dasharray="4 4"/>
-                        <text x="220" y="160" text-anchor="middle"
-                            font-family="'Roboto Condensed',sans-serif" font-size="13" font-weight="700"
-                            letter-spacing="1.5" fill="#38a169">ΑΔΕΙΟΔΟΤΗΘΗΚΕ</text>
-                        <text x="220" y="171" text-anchor="middle"
-                            font-family="'JetBrains Mono',monospace" font-size="5.5" letter-spacing="1.5"
-                            fill="#38a169" opacity="0.7">CRANE INSPECTION</text>
-                    </g>
-
-                </svg>
+                <svg class="crane-svg" id="craneSvg" viewBox="0 0 440 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>.cr-t{font:500 7px "JetBrains Mono",monospace;letter-spacing:.6px;fill:currentColor;opacity:.85}.cr-s{font-size:5.5px;opacity:.7}.cr-m{font-size:7.5px;fill:#e7b39f;opacity:1}</style>
+<line class="crane-dim-line" x1="8" y1="270" x2="432" y2="270" stroke="currentColor" stroke-width=".9" stroke-opacity=".5"/>
+<path class="crane-dim-line" d="M18 270 l-7 7 M27 270 l-7 7 M36 270 l-7 7 M45 270 l-7 7 M54 270 l-7 7 M63 270 l-7 7 M72 270 l-7 7 M81 270 l-7 7 M90 270 l-7 7 M99 270 l-7 7 M108 270 l-7 7 M117 270 l-7 7 M126 270 l-7 7 M135 270 l-7 7 M144 270 l-7 7 M153 270 l-7 7 M162 270 l-7 7 M171 270 l-7 7 M180 270 l-7 7 M189 270 l-7 7 M198 270 l-7 7 M207 270 l-7 7 M216 270 l-7 7 M225 270 l-7 7 M234 270 l-7 7 M243 270 l-7 7 M252 270 l-7 7 M261 270 l-7 7 M270 270 l-7 7 M279 270 l-7 7 M288 270 l-7 7 M297 270 l-7 7 M306 270 l-7 7 M315 270 l-7 7 M324 270 l-7 7 M333 270 l-7 7 M342 270 l-7 7 M351 270 l-7 7 M360 270 l-7 7 M369 270 l-7 7 M378 270 l-7 7 M387 270 l-7 7 M396 270 l-7 7 M405 270 l-7 7 M414 270 l-7 7 M423 270 l-7 7 " stroke="currentColor" stroke-width=".5" stroke-opacity=".28"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M129 249 A21 21 0 1 1 171 249 A21 21 0 1 1 129 249" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M135.5 249 A14.5 14.5 0 1 1 164.5 249 A14.5 14.5 0 1 1 135.5 249" stroke="currentColor" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M145 249 A5 5 0 1 1 155 249 A5 5 0 1 1 145 249" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="crane-dim-line" cx="159.5" cy="249.0" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<circle class="crane-dim-line" cx="154.8" cy="257.2" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<circle class="crane-dim-line" cx="145.2" cy="257.2" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<circle class="crane-dim-line" cx="140.5" cy="249.0" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<circle class="crane-dim-line" cx="145.2" cy="240.8" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<circle class="crane-dim-line" cx="154.8" cy="240.8" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M175 249 A21 21 0 1 1 217 249 A21 21 0 1 1 175 249" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M181.5 249 A14.5 14.5 0 1 1 210.5 249 A14.5 14.5 0 1 1 181.5 249" stroke="currentColor" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M191 249 A5 5 0 1 1 201 249 A5 5 0 1 1 191 249" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="crane-dim-line" cx="205.5" cy="249.0" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<circle class="crane-dim-line" cx="200.8" cy="257.2" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<circle class="crane-dim-line" cx="191.2" cy="257.2" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<circle class="crane-dim-line" cx="186.5" cy="249.0" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<circle class="crane-dim-line" cx="191.2" cy="240.8" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<circle class="crane-dim-line" cx="200.8" cy="240.8" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M341 249 A21 21 0 1 1 383 249 A21 21 0 1 1 341 249" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M347.5 249 A14.5 14.5 0 1 1 376.5 249 A14.5 14.5 0 1 1 347.5 249" stroke="currentColor" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M357 249 A5 5 0 1 1 367 249 A5 5 0 1 1 357 249" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="crane-dim-line" cx="371.5" cy="249.0" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<circle class="crane-dim-line" cx="366.8" cy="257.2" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<circle class="crane-dim-line" cx="357.2" cy="257.2" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<circle class="crane-dim-line" cx="352.5" cy="249.0" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<circle class="crane-dim-line" cx="357.2" cy="240.8" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<circle class="crane-dim-line" cx="366.8" cy="240.8" r="1.1" fill="currentColor" fill-opacity=".7"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M124 228 Q173 214 222 228" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M336 230 A28 28 0 0 1 388 230" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M44 222 L404 222 L404 232 L44 232 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M44 222 L404 222 L404 232 L44 232 Z" fill="currentColor" fill-opacity="0.1" class="crane-dim-line"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M60 232 L60 238 M100 232 L100 238 M240 232 L240 238 M290 232 L290 238" stroke="currentColor" stroke-width="0.9" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M36 206 L282 206 L282 222 L36 222 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M36 206 L282 206 L282 222 L36 222 Z" fill="currentColor" fill-opacity="0.06" class="crane-dim-line"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M36 206 L36 186 M282 206 L282 186 M36 186 L118 186 M128 186 L200 186 M210 186 L282 186" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M118 186 L118 206 M128 186 L128 206 M200 186 L200 206 M210 186 L210 206" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M44 196 L274 196" stroke="currentColor" stroke-width="0.6" stroke-linejoin="round" stroke-linecap="round" opacity=".55"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M300 222 L300 150 L352 150 Q366 150 374 162 L392 196 Q398 206 404 208 L410 210 L410 222 Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M300 222 L300 150 L352 150 Q366 150 374 162 L392 196 Q398 206 404 208 L410 210 L410 222 Z" fill="currentColor" fill-opacity="0.09" class="crane-dim-line"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M308 158 L346 158 Q356 158 362 168 L376 194 L308 194 Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M308 158 L346 158 Q356 158 362 168 L376 194 L308 194 Z" fill="currentColor" fill-opacity="0.12" class="crane-dim-line"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M330 158 L330 194" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M304 200 L304 218 M336 206 L344 206" stroke="currentColor" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M404 210 L412 210 L412 216 L404 216" stroke="currentColor" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M410 222 L414 222 L414 230 L404 230" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M378 172 L386 170 L386 182 L380 182" stroke="currentColor" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M302 150 L302 138 L318 138 L318 150" stroke="currentColor" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M272 232 L272 252 M266 252 L292 252" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M262 226 L262 258 M254 258 L270 258 L272 266 L252 266 Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M252 266 L272 266 L270 258 L254 258 Z" fill="currentColor" fill-opacity="0.15" class="crane-dim-line"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M38 226 L38 258 M30 258 L46 258 L48 266 L28 266 Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M28 266 L48 266 L46 258 L30 258 Z" fill="currentColor" fill-opacity="0.15" class="crane-dim-line"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M266 206 L298 206 L298 196 L266 196 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M266 196 L298 196 L298 206 L266 206 Z" fill="currentColor" fill-opacity="0.14" class="crane-dim-line"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M270 196 L272 120 L292 120 L294 196" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M270 196 L272 120 L292 120 L294 196 Z" fill="currentColor" fill-opacity="0.1" class="crane-dim-line"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M276 122 A6 6 0 1 1 288 122 A6 6 0 1 1 276 122" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M285.3 115.8 L154.3 47.7 L149.7 56.3 L278.7 128.2 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M285.3 115.8 L154.3 47.7 L149.7 56.3 L278.7 128.2 Z" fill="currentColor" fill-opacity="0.1" class="crane-dim-line"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M219.4 82.6 L153.9 48.5" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" opacity=".7"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M147 52 A5 5 0 1 1 157 52 A5 5 0 1 1 147 52" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M286 176 L246 108" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" opacity=".55"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M286 176 L262 136" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M283 176 A3 3 0 1 1 289 176 A3 3 0 1 1 283 176" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M243 108 A3 3 0 1 1 249 108 A3 3 0 1 1 243 108" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M149.2 47.8 L83.8 92.7 L88.2 99.3 L154.8 56.2 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M149.2 47.8 L83.8 92.7 L88.2 99.3 L154.8 56.2 Z" fill="currentColor" fill-opacity="0.1" class="crane-dim-line"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M176 70 L132 58" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" opacity=".55"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M176 70 L156 65" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M82.5 96 A3.5 3.5 0 1 1 89.5 96 A3.5 3.5 0 1 1 82.5 96" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M86 99 L86 126" stroke="currentColor" stroke-width="0.9" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M80 126 L92 126 L90 136 L82 136 Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M86 136 L86 142 Q86 150 80 148" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M86 142 L64 160 M86 142 L108 160" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round" opacity=".75"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M58 160 L114 160 L114 178 L58 178 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M58 160 L114 160 L114 178 L58 178 Z" fill="currentColor" fill-opacity="0.12" class="crane-dim-line"/>
+<path class="crane-path" pathLength="1" style="--len:1" d="M58 169 L114 169 M86 160 L86 178" stroke="currentColor" stroke-width="0.6" stroke-linejoin="round" stroke-linecap="round" opacity=".6"/>
+<path class="crane-dim-line" d="M262 122 A20 20 0 0 1 264 112" stroke="currentColor" stroke-width=".8" fill="none" stroke-opacity=".8"/>
+<text class="crane-dim-line cr-t" x="240" y="104" text-anchor="start">28°</text>
+<g class="crane-dim-line" stroke="currentColor" stroke-width=".7" stroke-opacity=".75"><line x1="86" y1="30" x2="282" y2="30" stroke-dasharray="3 2.5"/>
+<line x1="86" y1="26" x2="86" y2="34"/><line x1="282" y1="26" x2="282" y2="34"/>
+</g><text class="crane-dim-line cr-t" x="184" y="24" text-anchor="middle">R 9,4 m</text>
+<line class="crane-dim-line" x1="86" y1="30" x2="86" y2="92" stroke="currentColor" stroke-width=".5" stroke-dasharray="2 3" stroke-opacity=".5"/>
+<line class="crane-dim-line" x1="282" y1="30" x2="282" y2="114" stroke="currentColor" stroke-width=".5" stroke-dasharray="2 3" stroke-opacity=".5"/>
+<g class="crane-dim-line" stroke="currentColor" stroke-width=".7" stroke-opacity=".75"><line x1="18" y1="52" x2="18" y2="270" stroke-dasharray="3 2.5"/>
+<line x1="14" y1="52" x2="22" y2="52"/><line x1="14" y1="270" x2="22" y2="270"/>
+</g><text class="crane-dim-line cr-t" x="12" y="160" text-anchor="middle" transform="rotate(-90 12 160)">H 11,8 m</text>
+<g class="crane-dim-line" stroke="currentColor" stroke-width=".7" stroke-opacity=".75"><line x1="36" y1="288" x2="414" y2="288" stroke-dasharray="3 2.5"/>
+<line x1="36" y1="284" x2="36" y2="292"/><line x1="414" y1="284" x2="414" y2="292"/>
+</g><text class="crane-dim-line cr-t" x="225" y="298" text-anchor="middle">L 8.250 mm</text>
+<g class="crane-dim-line" stroke="currentColor" stroke-width=".7" stroke-opacity=".75"><line x1="150" y1="280" x2="362" y2="280" stroke-dasharray="3 2.5"/>
+<line x1="150" y1="276" x2="150" y2="284"/><line x1="362" y1="276" x2="362" y2="284"/>
+</g><text class="crane-dim-line cr-t" x="256" y="277" text-anchor="middle">WB 4.600</text>
+<text class="crane-dim-line cr-t" x="96" y="116" text-anchor="start">Q 1.250 kg</text>
+<g class="crane-dim-line"><circle cx="232" cy="214" r="5" fill="none" stroke="currentColor" stroke-width=".8"/><path d="M232 209 A5 5 0 0 1 237 214 L232 214 Z M232 219 A5 5 0 0 1 227 214 L232 214 Z" fill="currentColor"/></g>
+<text class="crane-dim-line cr-t cr-s" x="240" y="216" text-anchor="start">CG</text>
+<text class="crane-dim-line cr-t cr-m" x="300" y="40" text-anchor="start">M = 11,8 t·m</text>
+<text class="crane-dim-line cr-t cr-s" x="300" y="52" text-anchor="start">ΣΥΝΤΕΛ. ΕΥΣΤΑΘΕΙΑΣ 1,43</text>
+<g id="craneStamp" opacity="0" transform="rotate(-15,220,160)"><g transform="translate(-42,-26)">
+<rect x="165" y="139" width="110" height="36" rx="5" stroke="#38a169" stroke-width="3" fill="rgba(10,20,34,.55)" stroke-dasharray="6 3"/>
+<rect x="170" y="144" width="100" height="26" rx="3" stroke="#38a169" stroke-width="1" fill="rgba(56,161,105,0.09)" stroke-dasharray="4 4"/>
+<text x="220" y="160" text-anchor="middle" font-family="'Roboto Condensed',sans-serif" font-size="13" font-weight="700" letter-spacing="1.5" fill="#38a169">ΑΔΕΙΟΔΟΤΗΘΗΚΕ</text>
+<text x="220" y="171" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="5.5" letter-spacing="1.5" fill="#38a169" opacity="0.8">CRANE INSPECTION</text>
+</g></g>
+</svg>
             </div>
         </div>
     </section>

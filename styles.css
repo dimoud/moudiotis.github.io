@@ -6502,3 +6502,5 @@ button.tap-toggle:hover, button.ta-toggle--bar:hover, .trc-widget button.trc-mai
 /* διάγραμμα ελέγχου τρέιλερ: η νέα εικόνα (TRAILER_EXAMPLE.webp, διαφανές φόντο, 1600×551) μπαίνει ολόκληρη — καμία περικοπή */
 .trc-diagram-wrap { height: auto !important; padding-bottom: 0 !important; }
 .trc-diagram-wrap img { position: static !important; width: 100% !important; height: auto !important; top: auto !important; }
+/* γερανοφόρο (ενότητα εμπιστοσύνης): το κάτω μέρος του σχεδίου στην ευθεία των κειμένων από αριστερά */
+.trust-crane-col { align-self: flex-end !important; margin-top: 0 !important; position: static !important; width: 520px; }
