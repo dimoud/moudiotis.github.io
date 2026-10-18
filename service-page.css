@@ -1332,11 +1332,14 @@ body .ta-cat-bk, body .trc-bk { font-size: 12px !important; }
 }
 
 /* ═══ v3.5 (18/10/2026, απόφαση Δ. Μουδιώτη) — ΣΤΟΙΧΙΣΗ ΤΙΤΛΩΝ ═══════════════
-   ΑΝΤΙΣΤΡΟΦΗ του v3.4: ο ΚΥΡΙΟΣ τίτλος (hero) στο κέντρο, μαζί με την ετικέτα,
-   το εισαγωγικό και τις ενέργειές του· ΟΛΟΙ οι άλλοι τίτλοι (H2, H3, ετικέτες
+   ΑΝΤΙΣΤΡΟΦΗ του v3.4: ο ΚΥΡΙΟΣ τίτλος (hero) στο κέντρο, μαζί με την ετικέτα
+   και τις ενέργειές του· το εισαγωγικό από κάτω αριστερά· ΟΛΟΙ οι άλλοι τίτλοι (H2, H3, ετικέτες
    ενοτήτων, «ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ») αριστερά, στον άξονα του κειμένου. Παντού,
    και στο κινητό. */
 .svc-hero[data-v3] .svc-hero-txt { text-align: center; }
+/* το εισαγωγικό κάτω από τον τίτλο: ΑΡΙΣΤΕΡΑ (όχι κέντρο, όχι πλήρης στοίχιση — χωρίς ελληνικό
+   συλλαβισμό η πλήρης ανοίγει κενά ανάμεσα στις λέξεις στο κινητό) */
+.svc-hero[data-v3] .svc-hero-txt .svc-lede { text-align: left !important; }
 .svc-hero[data-v3] .svc-hero-txt h1 { margin-left: auto !important; margin-right: auto !important; text-wrap: balance; }
 .svc-hero[data-v3] .svc-kicker { justify-content: center; text-align: center; }
 .svc-hero[data-v3] .svc-lede { margin-left: auto !important; margin-right: auto !important; }
