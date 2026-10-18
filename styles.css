@@ -6489,3 +6489,10 @@ button.tap-toggle:hover, button.ta-toggle--bar:hover, .trc-widget button.trc-mai
 .svc-inline-btn i.fa-arrow-right, .hm-btn i.fa-arrow-right, .hm-calc-go i.fa-arrow-right,
 .ec-go i.fa-arrow-right, .contact-form-wrap button[type="submit"] i { display: none !important; }
 .svc-cta-primary::after { content: none !important; }
+
+/* ═══ Ελάχιστο αναγνώσιμο μέγεθος 12 px (έλεγχος πριν την παράδοση, 18/10/2026) ═══
+   Έλεγχος τρέιλερ (trc-*): ήταν 7,3–11,7 px σε όλα τα πλάτη· λεζάντες βιτρίνας (es-*): 11 px.
+   Ο διακοσμητικός χάρακας ύψους (.elev-*) μένει, είναι aria-hidden. */
+.trc-diagram-tag, .trc-b, .trc-reset-btn, .trc-c-desc, .trc-c-num, .trc-preview-lbl,
+.trc-progress-lbl, .trc-progress-num, .trc-spec-lbl, .trc-spec-val { font-size: 12px !important; }
+.es-bar-t, .es-calc-h { font-size: 12px; }
