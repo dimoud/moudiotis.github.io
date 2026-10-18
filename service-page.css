@@ -1010,3 +1010,72 @@ body .ta-box .ta-stat-strip + .ta-rule { margin-top: 0; }
     body .ta-wrap > .ta-box > .ta-steps + .ta-cta-row { padding-bottom: 40px !important; }
     body .ta-wrap + .ta-wrap { padding-top: 44px; padding-bottom: 40px; }
 }
+
+/* ═══ v3.3 (18/10/2026) — HERO ΥΠΟΣΕΛΙΔΩΝ: ΤΥΠΟΓΡΑΦΙΚΗ ΙΕΡΑΡΧΙΑ ΚΑΙ ΙΣΟΡΡΟΠΙΑ ═══
+   1. Τίτλος σε Source Sans 3 (ελληνικά, αυτοφιλοξενούμενη), ελεγχόμενο μέγεθος,
+      έως δύο γραμμές σε υπολογιστή, ισόρροπη αλλαγή γραμμής (text-wrap: balance).
+   2. Πλέγμα 48 / 52: κείμενο αριστερά, σχέδιο δεξιά, κοινός κατακόρυφος ρυθμός (8px).
+   3. Ένα εισαγωγικό· το δεύτερο γίνεται υποστηρικτικό (μικρότερο, ηπιότερο).
+   4. Μία κυρίαρχη ενέργεια, ματ, χωρίς βέλος· τηλέφωνο δευτερεύον στην ίδια γραμμή.
+   5. Σχέδιο χωρίς διακοσμητικά γωνιακά σημάδια· λεζάντα στον ίδιο άξονα. */
+.svc-hero[data-v3] { padding: 112px 0 72px !important; }
+.svc-hero[data-v3] .svc-crumb { padding-bottom: 40px !important; }
+@media (min-width: 901px) {
+    .svc-hero[data-v3] .svc-hero-in {
+        display: grid; grid-template-columns: 48fr 52fr;
+        column-gap: clamp(40px, 5vw, 80px); align-items: center;
+    }
+}
+.svc-hero[data-v3] .svc-hero-txt > * { max-width: 600px; }
+.svc-hero[data-v3] .svc-kicker { margin-bottom: 24px; }
+.svc-hero[data-v3] h1 {
+    font-family: 'Source Sans 3', 'Segoe UI', Arial, sans-serif !important;
+    font-weight: 600 !important;
+    font-size: clamp(28px, 2.55vw, 40px) !important;
+    line-height: 1.18 !important; letter-spacing: -0.4px !important;
+    text-wrap: balance; hyphens: manual;
+    margin: 0 0 24px !important;
+}
+.svc-hero[data-v3] .svc-lede {
+    font-size: 18px; line-height: 1.65; color: var(--ink); margin: 0 0 16px;
+}
+.svc-hero[data-v3] .svc-lede + .svc-lede {
+    font-size: 15.5px; line-height: 1.6; color: var(--ink2);
+}
+.svc-hero[data-v3] .svc-lede:last-of-type { margin-bottom: 32px; }
+
+.svc-hero[data-v3] .svc-cta-primary {
+    background: var(--navy-mid) !important; color: #fff !important;
+    box-shadow: none !important; border-radius: 2px;
+    min-height: 52px; padding: 14px 30px;
+    transition: background-color .2s var(--ease) !important;
+}
+.svc-hero[data-v3] .svc-cta-primary::after { content: none !important; }
+.svc-hero[data-v3] .svc-cta-primary:hover { background: #8e5843 !important; transform: none; }
+.svc-hero[data-v3] .svc-cta-tel {
+    font-family: 'Source Sans 3', 'Segoe UI', Arial, sans-serif !important;
+    font-size: 20px; font-weight: 600;
+    margin-left: 24px; padding-left: 24px;
+}
+
+.svc-hero-art .tap-graphic {
+    padding: 28px 28px 22px !important;
+    background: rgba(255,255,255,0.78) !important;
+    border: 1px solid rgba(17,36,61,0.10);
+}
+.svc-hero-art .tap-graphic::before, .svc-hero-art .tap-graphic::after { content: none !important; }
+.svc-hero-art .tap-graphic svg { max-height: 340px !important; }
+.svc-hero-art figcaption {
+    border: 0 !important; background: none !important;
+    padding-top: 12px; font-size: 10.5px; color: var(--stone);
+}
+.svc-hero-art figcaption span { padding: 0; margin-right: 12px; background: none; color: #8e5843; }
+
+@media (max-width: 900px) {
+    .svc-hero[data-v3] { padding: 88px 0 44px !important; }
+    .svc-hero[data-v3] .svc-crumb { padding-bottom: 24px !important; }
+    .svc-hero[data-v3] .svc-hero-txt > * { max-width: none; }
+    .svc-hero[data-v3] h1 { font-size: clamp(26px, 6.6vw, 32px) !important; }
+    .svc-hero[data-v3] .svc-lede { font-size: 16.5px; }
+    .svc-hero[data-v3] .svc-cta-tel { margin-left: 0; padding-left: 0; }
+}
