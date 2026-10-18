@@ -620,3 +620,337 @@ mark.ph { background: #ffe9a8; color: #5a3d00; padding: 0 3px; border-radius: 3p
 /* ορισμός οχήματος ειδικού σκοπού (17/10/2026) */
 .svc-orismos { margin: 1rem 0 1.1rem; padding: .9rem 1.2rem; border-left: 3px solid var(--accent, #c8a24a); background: rgba(255,255,255,.04); border-radius: 0 6px 6px 0; }
 .svc-orismos p { margin: 0; font-size: 1.05em; line-height: 1.6; }
+
+/* ═══ ΥΠΟΣΕΛΙΔΕΣ v3 (18/10/2026) — ΧΩΡΙΣ ΠΛΑΙΣΙΑ, ΙΔΙΑ ΓΛΩΣΣΑ ΜΕ ΤΗΝ ΑΡΧΙΚΗ ══════
+   Το περιεχόμενο πατά απευθείας στο φόντο της σελίδας, όπως οι ενότητες της
+   αρχικής: κανένα λευκό κουτί, κανένα περίγραμμα, καμία σκιά. Οι ενότητες
+   χωρίζονται με λεπτές γραμμές. Οι επικεφαλίδες ενοτήτων ακολουθούν το
+   «eyebrow» της αρχικής· πριν από κάθε τίτλο, ορθογώνιο σε μεταλλικό χρυσό
+   αντί για την κάθετη γραμμή. Όλο το μπλοκ αναιρείται διαγράφοντάς το. */
+
+/* ── 1. Το εξωτερικό κουτί φεύγει ── */
+body .ta-box, body .tap-box, body .trc-widget {
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+}
+body .ta-wrap { padding-top: 40px; padding-bottom: 8px; }
+body .ta-wrap + .ta-wrap { padding-top: 56px; }
+body .ta-wrap + .ta-wrap > .ta-box { border-top: 1px solid rgba(201,153,134,.38) !important; padding-top: 44px; }
+
+/* ── 2. Η μεταλλική μπάρα κορυφής γίνεται eyebrow της αρχικής ── */
+body .ta-topbar, body .tap-topbar {
+    background: none !important;
+    padding: 0 0 6px !important;
+    justify-content: flex-start;
+}
+body .ta-badge {
+    display: flex; align-items: center; gap: 14px;
+    text-shadow: none !important;
+}
+body .ta-badge > i { display: none; }
+body .ta-badge::before {
+    content: ''; display: block; flex-shrink: 0;
+    width: 32px; height: 2px; background: var(--gold-metal-h);
+}
+body .ta-badge span {
+    font-size: 12px !important; font-weight: 600 !important; letter-spacing: 3.5px !important;
+    background: var(--gold-metal-h); -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ── 3. Κάθε εσωτερικό περιθώριο ευθυγραμμίζεται στον άξονα της σελίδας ── */
+body .ta-box .ta-stat-strip,
+body .ta-box .ta-sec-head,
+body .ta-box .svc-prose,
+body .ta-box .svc-faq,
+body .ta-box .svc-related { padding-left: 0; padding-right: 0; }
+body .ta-box .ta-rule { margin-left: 0; margin-right: 0; }
+body .ta-box .ta-stat-strip { padding-top: 22px; padding-bottom: 22px; }
+body .ta-box .ta-steps > li { padding-left: 0; padding-right: 24px; }
+body .ta-box .ta-steps > li:nth-child(even) { padding-left: 24px; padding-right: 0; }
+
+/* ── 4. Επικεφαλίδες ενοτήτων (ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ κ.λπ.): eyebrow της αρχικής ── */
+body .ta-box .ta-sec-head {
+    gap: 14px; padding-top: 18px; padding-bottom: 14px;
+    font-size: 12px; font-weight: 600; letter-spacing: 3.5px;
+}
+body .ta-box .ta-sec-head > i { display: none; }
+body .ta-box .ta-sec-head::before {
+    content: ''; display: block; flex-shrink: 0;
+    width: 32px; height: 2px; background: var(--gold-metal-h);
+}
+body .ta-box .ta-sec-head span {
+    background: var(--gold-metal-h); -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ── 5. Τίτλοι: ορθογώνιο αντί για κάθετη γραμμή, τυπογραφία της αρχικής ── */
+.svc-prose h2 {
+    padding-left: 0 !important;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-weight: 400 !important;
+    font-size: clamp(26px, 2.9vw, 38px) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -.4px;
+    color: var(--ink) !important;
+    margin: 46px 0 16px !important;
+}
+.svc-prose h2::before {
+    content: '' !important;
+    position: static !important;
+    display: inline-block;
+    width: 26px; height: 11px;
+    margin: 0 16px 0 0;
+    vertical-align: .16em;
+    border-radius: 0 !important;
+    background: var(--gold-metal) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.45);
+}
+.svc-prose h2 i { display: none; }
+.svc-prose h3 { color: var(--ink2) !important; }
+
+/* ── 6. Εσωτερικά πλαίσια: ανοίγουν ── */
+.svc-prose .svc-intro {
+    border-left: 0 !important; padding-left: 0 !important;
+    font-size: clamp(17.5px, 1.5vw, 20px) !important; line-height: 1.65 !important;
+    color: var(--ink2) !important; margin: 10px 0 24px !important;
+}
+.svc-role, .svc-legal, .svc-orismos, .svc-katalogos {
+    background: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.svc-katalogos { border-top: 1px solid rgba(201,153,134,.38) !important; border-bottom: 1px solid rgba(201,153,134,.38) !important; margin: 24px 0 32px !important; }
+.svc-katalogos summary { padding-left: 0; padding-right: 0; }
+.svc-katalogos > p, .svc-katalogos-wrap { padding-left: 0; padding-right: 0; }
+.svc-orismos { margin: 16px 0 !important; }
+.svc-orismos p { font-size: clamp(17.5px, 1.5vw, 20px); color: var(--ink2); }
+/* Νομιμότητα: το κόκκινο μένει στον τίτλο και στο ορθογώνιο, όχι σε κουτί */
+.svc-prose .svc-legal h2 { color: #8f3220 !important; }
+.svc-prose .svc-legal h2::before { background: #b8442c !important; box-shadow: none; }
+
+/* ── 7. Προειδοποίηση: γραμμή, όχι κουτί ── */
+body .ta-box .ta-warning, .svc-prose .ta-warning {
+    background: none !important;
+    border: 0 !important;
+    border-top: 2px solid #b83228 !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 16px 0 6px !important;
+}
+
+/* ── 8. Βήματα: χωρίς κάθετη γραμμή στο πέρασμα ── */
+body .ta-box .ta-steps > li::before { display: none; }
+body .ta-box .ta-steps > li:hover { background: none; }
+body .ta-box .ta-steps > li { border-bottom-color: rgba(201,153,134,.3); }
+
+/* ── 9. Γραμμή κλεισίματος με το κουμπί ── */
+body .ta-box .ta-cta-row {
+    background: none !important;
+    border-top: 1px solid rgba(201,153,134,.38) !important;
+    padding-left: 0 !important; padding-right: 0 !important;
+    margin-top: 8px;
+}
+
+/* ── 10. Συχνές ερωτήσεις: σειρές όπως η λίστα της αρχικής ── */
+.svc-faq details { border-radius: 0 !important; border-bottom: 1px solid rgba(201,153,134,.3) !important; padding: 18px 0 !important; }
+.svc-faq details:last-child { border-bottom: 0 !important; }
+.svc-faq details[open] { background: none !important; padding-left: 0 !important; padding-right: 0 !important; }
+.svc-faq summary { font-weight: 400 !important; font-size: clamp(19px, 1.9vw, 23px) !important; color: var(--ink) !important; }
+
+/* ── 11. Σχετικές υπηρεσίες: κάρτες όπως οι υπηρεσίες της αρχικής ── */
+.svc-related { gap: 18px; }
+.svc-related a {
+    border-radius: 4px !important;
+    padding: 22px 34px 22px 22px !important;
+    background: linear-gradient(#fff,#fff) padding-box, linear-gradient(90deg, rgba(201,138,112,.15), rgba(201,138,112,.55) 50%, rgba(201,138,112,.15)) border-box !important;
+    border: 0 !important; border-top: 2px solid transparent !important;
+    box-shadow: 0 6px 22px rgba(13,26,45,.06);
+}
+.svc-related b { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 21px; letter-spacing: 0; color: var(--ink); }
+
+/* ── 12. Σελίδα όρων: ο πίνακας περιεχομένων χωρίς κουτί ── */
+.lg-toc { background: none !important; border: 0 !important; border-top: 1px solid rgba(201,153,134,.38) !important; border-bottom: 1px solid rgba(201,153,134,.38) !important; border-radius: 0 !important; padding: 16px 0 !important; }
+
+/* ── 13. Κινητό ── */
+@media (max-width: 768px) {
+    body .ta-box .ta-steps > li,
+    body .ta-box .ta-steps > li:nth-child(even) { padding-left: 0; padding-right: 0; }
+    body .ta-wrap + .ta-wrap { padding-top: 36px; }
+    body .ta-wrap + .ta-wrap > .ta-box { padding-top: 28px; }
+    .svc-prose h2 { margin-top: 36px !important; }
+    .svc-prose h2::before { width: 20px; height: 9px; margin-right: 12px; }
+}
+/* Τίτλοι μέσα στις πρώην ενότητες-πλαίσια: ίδιο κενό από πάνω με τους υπόλοιπους */
+.svc-prose .svc-role h2, .svc-prose .svc-legal h2 { margin-top: 46px !important; }
+/* Ετικέτες eyebrow σε ανοιχτό φόντο: συμπαγής χαλκός για αναγνωσιμότητα (≥ 4,5:1) */
+body .ta-badge span, body .ta-box .ta-sec-head span {
+    background: none !important; -webkit-text-fill-color: #8e5843 !important; color: #8e5843 !important;
+}
+@media (max-width: 768px) { .svc-prose .svc-role h2, .svc-prose .svc-legal h2 { margin-top: 36px !important; } }
+
+/* ═══ v3 — HERO ΣΥΝΤΑΚΤΙΚΟΥ ΤΥΠΟΥ ΜΕ ΤΕΧΝΙΚΟ ΣΧΕΔΙΟ ═══════════════════════════
+   Ανοιχτό φόντο σχεδιαστηρίου, κείμενο αριστερά, σχέδιο δεξιά. Μία κύρια
+   ενέργεια (κουμπί)· το τηλέφωνο δευτερεύον, ως κείμενο. */
+
+/* Η μπάρα πλοήγησης πάντα σκούρα, αφού το hero είναι πλέον ανοιχτό */
+nav, nav:not(.scrolled) {
+    background: linear-gradient(180deg, rgba(7,17,31,0.97), rgba(11,26,46,0.95)) !important;
+    border-bottom: 1px solid rgba(201,138,112,0.28) !important;
+}
+nav .logo-text .name { color: #fff; }
+nav .logo-text .title { color: rgba(231,179,159,0.8); }
+nav .hamburger span { background: #fff; }
+
+.svc-hero[data-v3] {
+    background: var(--cream) !important;
+    background-image:
+        linear-gradient(rgba(17,36,61,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,36,61,0.045) 1px, transparent 1px) !important;
+    background-size: 28px 28px !important;
+    padding: 96px 0 56px !important;
+    border-bottom: 1px solid rgba(201,153,134,.38);
+}
+.svc-hero[data-v3]::before {
+    background:
+        radial-gradient(55% 80% at 82% 40%, rgba(201,138,112,0.10), transparent 70%),
+        linear-gradient(90deg, var(--cream) 0%, rgba(245,244,239,0.82) 45%, rgba(245,244,239,0.35) 100%) !important;
+    -webkit-mask-image: none; mask-image: none;
+}
+.svc-hero[data-v3]::after { display: none; }
+
+/* Διαδρομή στην κορυφή του hero, στον ίδιο άξονα */
+.svc-hero[data-v3] .svc-crumb {
+    position: relative; z-index: 1;
+    margin: 0 auto; padding: 0 48px 30px !important;
+    color: var(--stone);
+}
+.svc-hero[data-v3] .svc-crumb a { color: var(--navy-mid); }
+
+.svc-hero[data-v3] .svc-hero-in { align-items: center; gap: 56px; }
+.svc-hero--art .svc-hero-txt { flex: 1 1 52%; }
+.svc-hero-art { flex: 1 1 48%; margin: 0; min-width: 0; }
+
+.svc-hero[data-v3] .svc-kicker {
+    display: flex; align-items: center; gap: 14px;
+    background: none !important; -webkit-text-fill-color: #8e5843 !important; color: #8e5843 !important;
+    font-size: 12px; letter-spacing: 3.5px; margin-bottom: 22px;
+}
+.svc-hero[data-v3] .svc-kicker::before { content: ''; width: 32px; height: 2px; flex-shrink: 0; background: var(--gold-metal-h); }
+.svc-hero[data-v3] h1 {
+    background: none !important; -webkit-text-fill-color: var(--navy-mid) !important; color: var(--navy-mid) !important;
+    font-family: 'EB Garamond', Georgia, serif; font-weight: 400 !important;
+    font-size: clamp(34px, 4.4vw, 62px) !important; line-height: 1.04 !important; letter-spacing: -1px;
+    margin: 0 0 22px;
+}
+.svc-hero[data-v3] .svc-lede {
+    font-size: clamp(16.5px, 1.35vw, 19px); line-height: 1.68;
+    color: var(--ink2); margin: 0 0 30px; max-width: 62ch !important;
+}
+.svc-hero[data-v3] .svc-lede strong { color: var(--ink); font-weight: 600; }
+
+/* Μία κύρια ενέργεια· το τηλέφωνο δίπλα, χωρισμένο με λεπτή γραμμή */
+.svc-hero[data-v3] .svc-hero-cta { align-items: center; gap: 0; margin-top: 0; }
+.svc-hero[data-v3] .svc-cta-primary {
+    background: var(--gold-metal) !important; background-size: 180% 180% !important;
+    color: #0c1726 !important; border: 0 !important; border-radius: 3px;
+    min-height: 54px; padding: 14px 32px;
+    box-shadow: 0 10px 28px rgba(201,138,112,0.30), inset 0 1px 0 rgba(255,255,255,0.55);
+    transition: background-position .6s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.svc-hero[data-v3] .svc-cta-primary::after { content: '\2192'; font-size: 16px; letter-spacing: 0; transition: transform .25s var(--ease); }
+.svc-hero[data-v3] .svc-cta-primary:hover { background-position: 100% 100% !important; transform: translateY(-2px); }
+.svc-hero[data-v3] .svc-cta-primary:hover::after { transform: translateX(4px); }
+.svc-hero[data-v3] .svc-cta-tel {
+    border: 0 !important; border-left: 1px solid rgba(201,153,134,.55) !important; border-radius: 0;
+    margin-left: 28px; padding: 4px 0 4px 28px; min-height: 0;
+    color: var(--navy-mid) !important; letter-spacing: 0; text-transform: none;
+    font-family: 'EB Garamond', Georgia, serif; font-size: 26px; font-weight: 500;
+}
+.svc-hero[data-v3] .svc-cta-tel i { color: var(--warm); font-size: 15px; }
+.svc-hero[data-v3] .svc-cta-tel span { display: flex; flex-direction: column; line-height: 1.05; }
+.svc-hero[data-v3] .svc-cta-tel small {
+    font-family: 'Roboto Condensed', sans-serif; font-size: 10.5px; font-weight: 600;
+    letter-spacing: 2.4px; text-transform: uppercase; color: var(--stone); margin-bottom: 3px;
+}
+.svc-hero[data-v3] .svc-cta-tel:hover { color: #8e5843 !important; }
+
+/* Το τεχνικό σχέδιο: φύλλο σχεδίου με σημάδια γωνιών και πινακίδα */
+.svc-hero-art .tap-graphic {
+    position: relative; padding: 34px 30px 26px !important;
+    color: #a56a52;
+    background:
+        linear-gradient(rgba(17,36,61,0.06) 1px, transparent 1px) 0 0 / 14px 14px,
+        linear-gradient(90deg, rgba(17,36,61,0.06) 1px, transparent 1px) 0 0 / 14px 14px,
+        rgba(255,255,255,0.72);
+    border: 1px solid rgba(17,36,61,0.14);
+    transition: none !important; transform: none !important;
+}
+.svc-hero-art .tap-graphic::before, .svc-hero-art .tap-graphic::after {
+    content: ''; position: absolute; width: 18px; height: 18px; border: 0 solid var(--warm);
+}
+.svc-hero-art .tap-graphic::before { top: -1px; left: -1px; border-top-width: 2px; border-left-width: 2px; }
+.svc-hero-art .tap-graphic::after  { bottom: -1px; right: -1px; border-bottom-width: 2px; border-right-width: 2px; }
+.svc-hero-art .tap-graphic svg { max-height: 300px !important; width: 100%; display: block; }
+.svc-hero-art figcaption {
+    display: flex; align-items: center; gap: 0;
+    border: 1px solid rgba(17,36,61,0.14); border-top: 0;
+    background: rgba(255,255,255,0.85);
+    font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px;
+    letter-spacing: 1.6px; text-transform: uppercase; color: var(--ink2);
+}
+.svc-hero-art figcaption span {
+    padding: 10px 14px; margin-right: 14px; color: #fff; background: var(--navy-mid); letter-spacing: 1.2px;
+}
+
+/* Το κουτί δεν ξαναδείχνει την ετικέτα: την έχει ήδη το hero */
+body .ta-box > .ta-topbar { display: none; }
+body .ta-wrap:first-of-type { padding-top: 8px; }
+body .ta-box .ta-stat-strip { padding-top: 26px; padding-bottom: 26px; }
+
+/* ── Βήματα: στήλες με μεγάλους λεπτούς αριθμούς, όπως ένα τεχνικό γραφείο
+   παρουσιάζει διαδικασία ── */
+body .ta-box .ta-steps {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0 36px; margin-top: 6px;
+}
+body .ta-box .ta-steps > li,
+body .ta-box .ta-steps > li:nth-child(even) {
+    flex-direction: column; gap: 12px;
+    padding: 20px 0 22px !important;
+    border-bottom: 0; border-top: 1px solid rgba(201,153,134,.45);
+    font-size: 16px !important; line-height: 1.6 !important; color: var(--ink2);
+}
+body .ta-box .ta-step-num {
+    background: none !important; color: #b88471 !important; padding: 0 !important;
+    width: auto !important; height: auto !important; border-radius: 0 !important; box-shadow: none !important;
+    font-family: 'EB Garamond', Georgia, serif !important; font-weight: 400 !important;
+    font-size: 46px !important; line-height: 1 !important; letter-spacing: -1px;
+}
+body .ta-box .ta-steps > li:hover .ta-step-num { transform: none; color: #8e5843 !important; }
+
+/* Κινητό: σχέδιο κάτω από το κουμπί, ώστε η ενέργεια να μένει στο πρώτο κάδρο */
+@media (max-width: 900px) {
+    .svc-hero[data-v3] .svc-crumb { padding: 0 16px 22px !important; }
+    .svc-hero[data-v3] .svc-hero-in { flex-direction: column; align-items: stretch; gap: 30px; }
+}
+@media (max-width: 768px) {
+    .svc-hero[data-v3] { padding: 84px 0 36px !important; background-image:
+        linear-gradient(rgba(17,36,61,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,36,61,0.045) 1px, transparent 1px) !important; }
+    .svc-hero[data-v3] .svc-hero-cta { flex-direction: column; align-items: stretch; gap: 16px; }
+    .svc-hero[data-v3] .svc-cta-tel { border-left: 0 !important; margin-left: 0; padding: 0; justify-content: center; }
+    .svc-hero-art .tap-graphic { padding: 20px 14px 16px !important; }
+    .svc-hero-art .tap-graphic svg { max-height: 200px !important; }
+    .svc-hero-art figcaption { font-size: 10px; }
+}
+body .ta-box .ta-steps > li { border-left: 0 !important; border-right: 0 !important; }
+
+/* ── Βιτρίνα μηχανικού μέσα στο κείμενο της υποσελίδας (μία σκηνή) ── */
+.svc-es { margin: 34px 0 10px; }
+.svc-es .es-wrap { max-width: none; margin: 0; padding: 0; }

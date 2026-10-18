@@ -6427,3 +6427,13 @@ html.anim-ready [data-reveal].visible.anim-off { animation-play-state: running !
     .nav-links.open .nav-search--menu .nav-search-res a b,
     .nav-links.open .nav-search--menu .nav-search-res a span { white-space: normal !important; overflow: visible; text-overflow: clip; overflow-wrap: anywhere; }
 }
+
+/* ═══ v3 (18/10/2026) — Η ΒΙΤΡΙΝΑ ΜΗΧΑΝΙΚΟΥ ΩΣ ΔΙΑΦΑΝΕΙΑ ΤΟΥ HERO ═════════════
+   Μετά το έμβλημα, η δεξιά πλευρά της πρώτης οθόνης δείχνει την «ανάλυση
+   αντοχής πλαισίου» (eng-showcase.js, data-scene="0"), ζωντανά. */
+.hero-swap--es { display: flex; align-items: center; justify-content: center; padding: 96px 5% 76px; }
+.es-wrap--hero { width: 100%; max-width: 780px; margin: 0; padding: 0; }
+.es-wrap--hero .es-screen { box-shadow: 0 30px 80px rgba(0,0,0,.5), 0 0 0 1px rgba(201,138,112,.22); }
+.hero-swap--es:not(.is-on) .es-scene { opacity: 0 !important; }
+@media (max-width: 1100px) { .es-wrap--hero .es-calc { display: none; } .es-wrap--hero .es-body { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .hero-swap--es { padding: 70px 14px 70px; } }

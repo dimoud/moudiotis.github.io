@@ -7,8 +7,11 @@
  * Στυλ: styles.css «ΒΙΤΡΙΝΑ ΜΗΧΑΝΙΚΟΥ». Ξεκινά μόνο όταν φανεί στην οθόνη. */
 (function () {
     'use strict';
-    var wrap = document.getElementById('engShowcase');
-    if (!wrap) return;
+    function init(wrap) {
+    /* data-scene="0|1|2": μία μόνο σκηνή, χωρίς καρτέλες (υποσελίδες, hero αρχικής) */
+    var SC = wrap.hasAttribute('data-scene') ? +wrap.getAttribute('data-scene') : -1;
+    /* μέσα σε διαφάνεια του hero: ξεκινά/σταματά με τα γεγονότα es:play / es:stop */
+    var GATED = !!(wrap.closest && wrap.closest('.hero-swap'));
     var EN = (document.documentElement.getAttribute('lang') || 'el').toLowerCase().indexOf('en') === 0;
     function t(el, en) { return EN ? en : el; }
     function n(s) { return EN ? s : s.replace(/(\d)\.(\d)/g, '$1,$2'); }
@@ -145,7 +148,7 @@
     var TABS_S = [t('Αντοχή', 'Strength'), t('ΕΧΕΣ', 'Special'), t('Έγκριση', 'Approval')];
 
     wrap.innerHTML =
-        '<div class="es-tabs">' + TABS.map(function (s, i) { return '<button type="button" class="es-tab" data-i="' + i + '"><b>0' + (i + 1) + '</b><span class="es-tl">' + s + '</span><span class="es-ts">' + TABS_S[i] + '</span></button>'; }).join('') + '</div>' +
+        (SC >= 0 ? '' : '<div class="es-tabs">' + TABS.map(function (s, i) { return '<button type="button" class="es-tab" data-i="' + i + '"><b>0' + (i + 1) + '</b><span class="es-tl">' + s + '</span><span class="es-ts">' + TABS_S[i] + '</span></button>'; }).join('') + '</div>') +
         '<div class="es-screen">' +
         '<div class="es-bar"><i></i><i></i><i></i><span class="es-bar-t"></span><span class="es-bar-r">' + t('ΜΟΥΔΙΩΤΗΣ · ΤΕΧΝΙΚΟ ΓΡΑΦΕΙΟ', 'MOUDIOTIS · ENGINEERING') + '</span></div>' +
         '<div class="es-body"><div class="es-stage"><svg viewBox="0 0 640 430" fill="none" role="img" aria-label="' + t('Υπολογισμοί αντοχής, κέντρο βάρους και έγκριση τύπου', 'Strength calculations, centre of gravity and type approval') + '">' + s1 + s2 + s3 + '</svg></div>' +
@@ -203,19 +206,26 @@
         tabEls.forEach(function (b) { b.classList.remove('is-on'); });
         void wrap.offsetWidth;
         scenes[i].classList.add('is-on');
-        tabEls[i].classList.add('is-on');
+        if (tabEls[i]) tabEls[i].classList.add('is-on');
         probe.style.opacity = 0;
         typeCalc(i);
         if (i === 0) runProbe();
     }
-    function next() { show((cur + 1) % scenes.length); schedule(); }
+    function next() { show(SC >= 0 ? SC : (cur + 1) % scenes.length); schedule(); }
     function schedule() { clearTimeout(timer); if (running && !reduce) timer = setTimeout(next, DUR); }
-    function start() { if (running) return; running = true; wrap.classList.add('is-running'); if (cur < 0) show(0); else if (cur === 0) runProbe(); schedule(); }
+    function start() { if (running) return; running = true; wrap.classList.add('is-running'); if (cur < 0) show(SC >= 0 ? SC : 0); else if (cur === 0) runProbe(); schedule(); }
     function stop() { running = false; wrap.classList.remove('is-running'); clearTimeout(timer); cancelAnimationFrame(pRaf); }
 
     tabEls.forEach(function (b) { b.addEventListener('click', function () { show(+b.getAttribute('data-i')); schedule(); }); });
-    if (reduce) { wrap.classList.add('es-static'); show(0); return; }
+    if (reduce) { wrap.classList.add('es-static'); show(SC >= 0 ? SC : 0); return; }
+    if (GATED) {
+        wrap.addEventListener('es:play', function () { stop(); cur = -1; start(); });
+        wrap.addEventListener('es:stop', stop);
+        return;
+    }
     if ('IntersectionObserver' in window) {
         new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) start(); else stop(); }); }, { threshold: 0.25 }).observe(wrap);
     } else { start(); }
+    }
+    [].forEach.call(document.querySelectorAll('.es-wrap'), init);
 })();
