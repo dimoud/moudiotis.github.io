@@ -372,7 +372,7 @@
                     el.classList.add('visible');
                     io.unobserve(el);
                 });
-        }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
+        }, { rootMargin: '0px 0px 12% 0px', threshold: 0 });   /* ΜΗ-34: ξεκινά πριν μπει στην οθόνη */
         var vh = window.innerHeight;
         els.forEach(function (el) {
             var r = el.getBoundingClientRect();

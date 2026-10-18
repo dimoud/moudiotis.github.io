@@ -1317,3 +1317,16 @@ body .ta-badge::after { content: ''; display: block; flex-shrink: 0; width: 32px
 /* καμία οριζόντια κύλιση όσο «φτάνουν» στοιχεία από δεξιά (βιτρίνα, hero) */
 body .ta-wrap, .svc-hero { overflow-x: clip; }
 @media (max-width: 768px) { .wdx .svc-es[data-v] { --dx: 0px; } }
+/* αντίθεση WCAG AA (axe): κωδικοί σε λευκό ≥ 4,5:1 · μεγάλοι αριθμοί βημάτων ≥ 3:1 */
+.svc-codes b, .svc-prose > .svc-codes b { color: #94573f !important; }
+body .ta-box .ta-step-num { color: #a8705a !important; }
+/* κινητό (kinito K3/K12): καμία γραφή < 12 px· κουμπί κλήσης στο πρώτο κάδρο και με μακρύ τίτλο */
+.svc-hero[data-v3] .svc-cta-tel small { font-size: 12px !important; }
+body .ta-cat-bk, body .trc-bk { font-size: 12px !important; }
+@media (max-width: 480px) {
+    .svc-hero[data-v3] h1 { font-size: clamp(25px, 7vw, 30px) !important; margin-bottom: 14px !important; }
+    .svc-hero[data-v3] h1.svc-h1-long { font-size: 24px !important; }
+    .svc-hero[data-v3] .svc-lede { font-size: 16px !important; line-height: 1.6; margin-bottom: 22px !important; }
+    .svc-hero[data-v3] .svc-crumb { padding-bottom: 16px !important; }
+    .svc-hero[data-v3] { padding-top: 76px !important; }
+}
