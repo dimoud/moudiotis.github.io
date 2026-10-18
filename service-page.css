@@ -1011,71 +1011,176 @@ body .ta-box .ta-stat-strip + .ta-rule { margin-top: 0; }
     body .ta-wrap + .ta-wrap { padding-top: 44px; padding-bottom: 40px; }
 }
 
-/* ═══ v3.3 (18/10/2026) — HERO ΥΠΟΣΕΛΙΔΩΝ: ΤΥΠΟΓΡΑΦΙΚΗ ΙΕΡΑΡΧΙΑ ΚΑΙ ΙΣΟΡΡΟΠΙΑ ═══
-   1. Τίτλος σε Source Sans 3 (ελληνικά, αυτοφιλοξενούμενη), ελεγχόμενο μέγεθος,
-      έως δύο γραμμές σε υπολογιστή, ισόρροπη αλλαγή γραμμής (text-wrap: balance).
-   2. Πλέγμα 48 / 52: κείμενο αριστερά, σχέδιο δεξιά, κοινός κατακόρυφος ρυθμός (8px).
-   3. Ένα εισαγωγικό· το δεύτερο γίνεται υποστηρικτικό (μικρότερο, ηπιότερο).
-   4. Μία κυρίαρχη ενέργεια, ματ, χωρίς βέλος· τηλέφωνο δευτερεύον στην ίδια γραμμή.
-   5. Σχέδιο χωρίς διακοσμητικά γωνιακά σημάδια· λεζάντα στον ίδιο άξονα. */
-.svc-hero[data-v3] { padding: 112px 0 72px !important; }
+/* ═══ v3.2 (18/10/2026) — HERO: ΤΥΠΟΓΡΑΦΙΚΗ ΙΕΡΑΡΧΙΑ ΚΑΙ ΙΣΟΡΡΟΠΙΑ ═══════════
+   Τίτλος σε Source Sans 3 (ήδη φορτωμένη, πλήρη ελληνικά), έως δύο γραμμές
+   στον υπολογιστή, ισορροπημένες αλλαγές γραμμής. Πλέγμα 48/52, κοινό
+   αριστερό άξονα για ετικέτα, τίτλο, εισαγωγικό, κουμπί και τηλέφωνο.
+   Ένα εισαγωγικό· το σχέδιο χωρίς πλαίσιο, γωνίες και λεζάντα. */
+.svc-hero[data-v3] { padding: 92px 0 64px !important; }
 .svc-hero[data-v3] .svc-crumb { padding-bottom: 40px !important; }
-@media (min-width: 901px) {
-    .svc-hero[data-v3] .svc-hero-in {
-        display: grid; grid-template-columns: 48fr 52fr;
-        column-gap: clamp(40px, 5vw, 80px); align-items: center;
-    }
+
+.svc-hero[data-v3] .svc-hero-in {
+    display: grid; grid-template-columns: minmax(0, 48fr) minmax(0, 52fr);
+    align-items: center; column-gap: clamp(32px, 4vw, 72px); row-gap: 32px;
 }
-.svc-hero[data-v3] .svc-hero-txt > * { max-width: 600px; }
-.svc-hero[data-v3] .svc-kicker { margin-bottom: 24px; }
+.svc-hero[data-v3]:not(.svc-hero--art) .svc-hero-in { grid-template-columns: minmax(0, 760px); }
+.svc-hero[data-v3] .svc-hero-txt > * { max-width: 600px !important; }
+
+.svc-hero[data-v3] .svc-kicker { margin: 0 0 18px; }
 .svc-hero[data-v3] h1 {
     font-family: 'Source Sans 3', 'Segoe UI', Arial, sans-serif !important;
     font-weight: 600 !important;
-    font-size: clamp(28px, 2.55vw, 40px) !important;
-    line-height: 1.18 !important; letter-spacing: -0.4px !important;
-    text-wrap: balance; hyphens: manual;
-    margin: 0 0 24px !important;
+    font-size: clamp(30px, 2.55vw, 42px) !important;
+    line-height: 1.14 !important;
+    letter-spacing: -.6px !important;
+    color: var(--navy-mid) !important; -webkit-text-fill-color: var(--navy-mid) !important;
+    text-wrap: balance;
+    margin: 0 0 20px !important;
 }
 .svc-hero[data-v3] .svc-lede {
-    font-size: 18px; line-height: 1.65; color: var(--ink); margin: 0 0 16px;
+    font-size: clamp(16.5px, 1.2vw, 18.5px); line-height: 1.62;
+    color: #3d4450; margin: 0 0 30px;
 }
-.svc-hero[data-v3] .svc-lede + .svc-lede {
-    font-size: 15.5px; line-height: 1.6; color: var(--ink2);
-}
-.svc-hero[data-v3] .svc-lede:last-of-type { margin-bottom: 32px; }
 
-.svc-hero[data-v3] .svc-cta-primary {
-    background: var(--navy-mid) !important; color: #fff !important;
-    box-shadow: none !important; border-radius: 2px;
-    min-height: 52px; padding: 14px 30px;
-    transition: background-color .2s var(--ease) !important;
-}
-.svc-hero[data-v3] .svc-cta-primary::after { content: none !important; }
-.svc-hero[data-v3] .svc-cta-primary:hover { background: #8e5843 !important; transform: none; }
+/* Κουμπί και τηλέφωνο στον ίδιο οριζόντιο άξονα, ίδιο ύψος */
+.svc-hero[data-v3] .svc-hero-cta { align-items: center; }
+.svc-hero[data-v3] .svc-cta-primary { min-height: 52px; padding: 0 30px; font-size: 13.5px; letter-spacing: 1.6px; border-radius: 4px; }
 .svc-hero[data-v3] .svc-cta-tel {
-    font-family: 'Source Sans 3', 'Segoe UI', Arial, sans-serif !important;
-    font-size: 20px; font-weight: 600;
-    margin-left: 24px; padding-left: 24px;
+    font-family: 'Source Sans 3', sans-serif !important; font-weight: 600; font-size: 22px; letter-spacing: .2px;
+    min-height: 52px; margin-left: 26px; padding: 0 0 0 26px;
 }
+.svc-hero[data-v3] .svc-cta-tel small { font-size: 10.5px; letter-spacing: 2px; margin-bottom: 2px; }
 
+/* Σχέδιο: καθαρό, χωρίς πλαίσιο· το πλέγμα σβήνει προς τις άκρες */
 .svc-hero-art .tap-graphic {
-    padding: 28px 28px 22px !important;
-    background: rgba(255,255,255,0.78) !important;
-    border: 1px solid rgba(17,36,61,0.10);
+    border: 0 !important; background: none !important; padding: 0 !important; position: relative;
 }
-.svc-hero-art .tap-graphic::before, .svc-hero-art .tap-graphic::after { content: none !important; }
-.svc-hero-art .tap-graphic svg { max-height: 340px !important; }
-.svc-hero-art figcaption {
-    border: 0 !important; background: none !important;
-    padding-top: 12px; font-size: 10.5px; color: var(--stone);
+.svc-hero-art .tap-graphic::before {
+    content: '' !important; position: absolute; inset: -6% -4%; width: auto; height: auto; border: 0 !important; z-index: -1;
+    background:
+        linear-gradient(rgba(17,36,61,0.07) 1px, transparent 1px) 0 0 / 22px 22px,
+        linear-gradient(90deg, rgba(17,36,61,0.07) 1px, transparent 1px) 0 0 / 22px 22px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 35%, transparent 80%);
+            mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 35%, transparent 80%);
 }
-.svc-hero-art figcaption span { padding: 0; margin-right: 12px; background: none; color: #8e5843; }
+.svc-hero-art .tap-graphic::after { display: none !important; }
+.svc-hero-art .tap-graphic svg { max-height: 360px !important; }
+.svc-hero-art figcaption { display: none !important; }
+
+/* Δεύτερη παράγραφος του παλιού hero, τώρα πρώτη του κειμένου */
+.svc-prose > .svc-intro2 {
+    font-size: clamp(17px, 1.3vw, 19px); line-height: 1.65; color: var(--ink2);
+    margin: 8px 0 8px; max-width: 70ch;
+}
 
 @media (max-width: 900px) {
-    .svc-hero[data-v3] { padding: 88px 0 44px !important; }
-    .svc-hero[data-v3] .svc-crumb { padding-bottom: 24px !important; }
-    .svc-hero[data-v3] .svc-hero-txt > * { max-width: none; }
-    .svc-hero[data-v3] h1 { font-size: clamp(26px, 6.6vw, 32px) !important; }
-    .svc-hero[data-v3] .svc-lede { font-size: 16.5px; }
-    .svc-hero[data-v3] .svc-cta-tel { margin-left: 0; padding-left: 0; }
+    .svc-hero[data-v3] .svc-hero-in { grid-template-columns: minmax(0, 1fr); }
+    .svc-hero[data-v3] .svc-hero-txt > * { max-width: none !important; }
+    .svc-hero[data-v3] h1 { font-size: clamp(28px, 6.4vw, 36px) !important; }
+    .svc-hero-art .tap-graphic svg { max-height: 240px !important; }
 }
+@media (max-width: 768px) {
+    .svc-hero[data-v3] { padding: 80px 0 40px !important; }
+    .svc-hero[data-v3] .svc-crumb { padding-bottom: 24px !important; }
+    .svc-hero[data-v3] .svc-cta-tel { margin-left: 0; padding: 0; justify-content: center; }
+}
+@media (min-width: 901px) {
+    .svc-hero[data-v3] h1.svc-h1-long { font-size: clamp(28px, 2.15vw, 31px) !important; }
+    .svc-hero[data-v3] .svc-hero-txt > h1 { max-width: none !important; }
+}
+
+/* ═══ v3.3 (18/10/2026) — ΧΟΡΟΓΡΑΦΙΑ ΥΠΟΣΕΛΙΔΩΝ ═══════════════════════════════
+   Μηχανή της αρχικής (xoro.js/xoro.css, βιβλιοθήκη #32 xorografia). Κανόνες:
+   ό,τι κινείται, κινείται ολόκληρο· διαδοχικά, όχι ταυτόχρονα· άφιξη από δεξιά
+   ή από κάτω με ορμή που σβήνει, κανένα «pop»· παίζει μόνο όταν φαίνεται. */
+
+/* ── 0 · HERO: δική του χρονογραμμή (όπως η πρώτη οθόνη της αρχικής) ──
+   0,10 διαδρομή · 0,25 ετικέτα · 0,40 τίτλος (μόνο μετατόπιση: LCP) · 0,75 εισαγωγικό
+   1,05 κουμπί · 1,20 τηλέφωνο · 0,55 σχέδιο από δεξιά (σχεδιάζεται με το δικό του σενάριο) */
+@media (prefers-reduced-motion: no-preference) {
+    @keyframes svArrive  { from { opacity: 0; translate: calc(var(--ax, 90px) * var(--wx-ad, 1)) calc(var(--ay, 24px) * var(--wx-ad, 1)); } 35% { opacity: 1; } }
+    @keyframes svArriveX { from { translate: calc(var(--ax, 140px) * var(--wx-ad, 1)) 0; } }
+    .svc-hero[data-v3] .svc-crumb     { animation: svArrive 1s   var(--wx-arrive, cubic-bezier(.2,1.01,.3,1)) calc(.10s * var(--wx-k, 1)) backwards; --ax: 40px; --ay: 0px; }
+    .svc-hero[data-v3] .svc-kicker    { animation: svArrive 1.2s var(--wx-arrive, cubic-bezier(.2,1.01,.3,1)) calc(.25s * var(--wx-k, 1)) backwards; --ax: 72px; --ay: 14px; }
+    .svc-hero[data-v3] .svc-kicker::before { animation: wxGrowT .7s var(--wx-out, ease-out) calc(.6s * var(--wx-k, 1)) backwards; transform-origin: left; }
+    .svc-hero[data-v3] h1             { animation: svArriveX 1.5s var(--wx-arrive, cubic-bezier(.2,1.01,.3,1)) calc(.40s * var(--wx-k, 1)) backwards !important; --ax: 160px; }
+    .svc-hero[data-v3] .svc-lede      { animation: svArrive 1.3s var(--wx-arrive, cubic-bezier(.2,1.01,.3,1)) calc(.75s * var(--wx-k, 1)) backwards; --ax: 110px; --ay: 30px; }
+    .svc-hero[data-v3] .svc-cta-primary { animation: svArrive 1.3s var(--wx-arrive, cubic-bezier(.2,1.01,.3,1)) calc(1.05s * var(--wx-k, 1)) backwards !important; --ax: 100px; --ay: 30px; }
+    .svc-hero[data-v3] .svc-cta-tel   { animation: svArrive 1.3s var(--wx-arrive, cubic-bezier(.2,1.01,.3,1)) calc(1.20s * var(--wx-k, 1)) backwards; --ax: 100px; --ay: 30px; }
+    .svc-hero[data-v3] .svc-hero-art  { animation: svArrive 1.6s var(--wx-arrive, cubic-bezier(.2,1.01,.3,1)) calc(.55s * var(--wx-k, 1)) backwards; --ax: 120px; --ay: 0px; }
+}
+
+/* ── 1 · ΣΚΗΝΕΣ: χρόνοι ανά ρήμα και κλιμάκωση μέσα στις ομάδες ── */
+.wdx .ta-stat          { --dy: 18px; --t: .75s; }
+.wdx .ta-stat:nth-child(1) { --d: .05s; } .wdx .ta-stat:nth-child(3) { --d: .17s; }
+.wdx .ta-stat:nth-child(5) { --d: .29s; } .wdx .ta-stat:nth-child(7) { --d: .41s; }
+.wdx .svc-prose [data-v="rise"] { --dy: 18px; --t: .75s; }
+.wdx .svc-prose h2[data-v]      { --dy: 22px; --t: .85s; }
+.wdx .svc-prose h2[data-v] + [data-v] { --d: .12s; }
+.wdx .svc-prose h2[data-v] + [data-v] + [data-v] { --d: .22s; }
+.wdx .svc-es[data-v]   { --dx: 90px; --rot: 0deg; --t: 1.2s; --d: .1s; --e: var(--wx-arrive, cubic-bezier(.2,1.01,.3,1)); }
+.wdx .ta-warning[data-v] { --t: .9s; --c0: inset(0 100% 0 0); }
+.wdx .ta-sec-head[data-v] { --dx: -18px; --t: .6s; }
+.wdx .ta-steps > li[data-v] { --dy: 22px; --t: .8s; }
+.wdx .ta-steps > li:nth-child(2) { --d: .12s; } .wdx .ta-steps > li:nth-child(3) { --d: .24s; }
+.wdx .ta-steps > li:nth-child(4) { --d: .36s; } .wdx .ta-steps > li:nth-child(n+5) { --d: .48s; }
+.wdx .ta-cta-row[data-v] { --dy: 14px; --t: .7s; --d: .45s; }
+.wdx .svc-faq details[data-v] { --dx: -22px; --t: .6s; }
+.wdx .svc-faq details:nth-child(2) { --d: .06s; } .wdx .svc-faq details:nth-child(3) { --d: .12s; }
+.wdx .svc-faq details:nth-child(4) { --d: .18s; } .wdx .svc-faq details:nth-child(n+5) { --d: .24s; }
+.wdx .svc-related a[data-v] { --dy: 20px; --t: .75s; }
+.wdx .svc-related a:nth-child(2) { --d: .1s; } .wdx .svc-related a:nth-child(3) { --d: .2s; } .wdx .svc-related a:nth-child(4) { --d: .3s; }
+/* κελιά πινάκων κατηγοριών: διαδοχικά */
+.wdx .svc-fam > div:nth-child(2) [data-v] { --d: .08s; } .wdx .svc-fam > div:nth-child(3) [data-v] { --d: .16s; }
+.wdx .svc-fam > div:nth-child(4) [data-v] { --d: .24s; } .wdx .svc-fam > div:nth-child(n+5) [data-v] { --d: .32s; }
+/* οι υποσελίδες δεν έχουν την .eyebrow της αρχικής· η γενική εμφάνιση [data-reveal] δεν ισχύει μέσα στις σκηνές */
+.wdx[data-reveal] { opacity: 1 !important; animation: none !important; }
+
+/* ═══ ΠΙΝΑΚΕΣ ΚΑΤΗΓΟΡΙΩΝ ΚΑΙ ΚΩΔΙΚΩΝ: αχνό πλαίσιο, όλο το πλάτος ═══════════
+   Οι ομάδες (π.χ. «Κατηγορίες οχημάτων ειδικής χρήσης») διαβάζονται ως πίνακας:
+   κελιά με λεπτή γραμμή, ίσα ύψη, ποτέ στριμωγμένα δίπλα στη βιτρίνα. */
+.svc-prose > .svc-fam, .svc-prose > .svc-codes, .svc-prose > .svc-table-wrap,
+.svc-prose > .svc-katalogos, .svc-prose > .ta-warning, .svc-prose > .svc-legal { clear: both; }
+.svc-prose > .svc-fam {
+    display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0 !important; margin: 18px 0 28px !important;
+    border-top: 1px solid rgba(17,36,61,.13); border-left: 1px solid rgba(17,36,61,.13);
+}
+.svc-prose > .svc-fam > div {
+    background: #fff; padding: 22px 24px 18px;
+    border-right: 1px solid rgba(17,36,61,.13); border-bottom: 1px solid rgba(17,36,61,.13);
+}
+@media (max-width: 1100px) { .svc-prose > .svc-fam { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+@media (max-width: 640px)  { .svc-prose > .svc-fam { grid-template-columns: minmax(0, 1fr) !important; } }
+.svc-prose > .svc-fam h3 {
+    margin: 0 0 8px !important; font-family: 'Source Sans 3', sans-serif !important;
+    font-weight: 600 !important; font-size: 18px !important; color: var(--navy-mid) !important;
+}
+.svc-prose > .svc-fam h3::before { content: ''; display: inline-block; width: 8px; height: 8px; margin-right: 10px; vertical-align: .12em; background: var(--warm); }
+.svc-prose > .svc-fam p { margin: 0 !important; font-size: 15.5px !important; line-height: 1.6 !important; color: #4a5260 !important; }
+.svc-prose > .svc-codes {
+    gap: 0 !important; margin: 14px 0 28px !important;
+    border-top: 1px solid rgba(17,36,61,.13); border-left: 1px solid rgba(17,36,61,.13);
+}
+.svc-prose > .svc-codes li { background: #fff; padding: 12px 18px !important;
+    border-right: 1px solid rgba(17,36,61,.13); border-bottom: 1px solid rgba(17,36,61,.13) !important; }
+.svc-prose > .svc-codes li:hover { transform: none; background: #fbf8f6; }
+
+/* ═══ ΡΟΛΟΣ ΤΟΥ ΜΗΧΑΝΙΚΟΥ: ΞΕΧΩΡΙΣΤΟ ΠΛΑΙΣΙΟ ═══════════════════════════════
+   Η ενότητα ξεχωρίζει από το υπόλοιπο κείμενο: αχνό πλαίσιο, navy γραμμή
+   κορυφής, απαλό φόντο, navy τετράγωνο στον τίτλο. Πατά δίπλα στη βιτρίνα
+   χωρίς να περνά κάτω από αυτήν (flow-root). */
+.svc-prose .svc-role {
+    display: flow-root;
+    margin: 40px 0 32px !important;
+    padding: 26px 32px 14px !important;
+    background: #f8f6f3 !important;
+    border: 1px solid rgba(17,36,61,.14) !important;
+    border-top: 3px solid var(--navy-mid) !important;
+    border-radius: 0 0 4px 4px !important;
+}
+.svc-prose .svc-role h2 { margin-top: 0 !important; color: var(--navy-mid) !important; }
+.svc-prose .svc-role h2::before { background: var(--navy-mid) !important; box-shadow: none !important; }
+.svc-prose .svc-role h3 { margin-top: 22px !important; }
+.svc-prose .svc-role > :last-child { margin-bottom: 12px !important; }
+@media (max-width: 768px) { .svc-prose .svc-role { padding: 20px 18px 8px !important; } }
