@@ -1404,7 +1404,7 @@ body .ta-box > .ta-steps { margin-top: 0 !important; padding-top: 6px !important
    αχνό περίγραμμα, ίδια εσοχή με το πλαίσιο του ρόλου μηχανικού. */
 body .ta-box > .ta-steps-zone {
     background: var(--cream); border: 1px solid rgba(17,36,61,.13); border-radius: 3px;
-    padding: 0 32px; margin: 36px 0 8px;
+    padding: 0 32px; margin: 36px 0 0;   /* όχι κάτω περιθώριο: διέρρεε έξω από το λευκό τμήμα και άφηνε κρεμ γραμμή σε όλο το πλάτος */
 }
 body .ta-steps-zone > .ta-rule { height: 34px !important; margin: 0 !important; border: 0 !important; background: none !important; }
 body .ta-steps-zone > .ta-sec-head { padding-top: 0 !important; }
@@ -1415,3 +1415,4 @@ body .ta-steps-zone > .ta-cta-row { border-top: 1px solid rgba(201,153,134,.45);
     body .ta-steps-zone > .ta-rule { height: 24px !important; }
     body .ta-steps-zone > .ta-cta-row { padding-bottom: 24px !important; }
 }
+body .ta-wrap:has(> .ta-box > .ta-steps-zone:last-child) { padding-bottom: 8px; }
