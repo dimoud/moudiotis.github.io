@@ -1355,3 +1355,27 @@ body .ta-box .ta-sec-head::after, body .ta-badge::after { content: none !importa
     /* η ετικέτα σπάει σε δύο γραμμές: η γραμμή-σημάδι πάνω της, στο κέντρο */
     .svc-hero[data-v3] .svc-kicker { flex-direction: column; align-items: center; gap: 10px; text-wrap: balance; }
 }
+
+/* ═══ v3.6 (18/10/2026) — ΕΝΑΣ ΑΡΙΣΤΕΡΟΣ ΑΞΟΝΑΣ ═══════════════════════════════
+   Με τίτλους αριστερά, η κεντραρισμένη στήλη των 860 px έδινε τρεις αριστερές
+   ακμές στην ίδια σελίδα (68 / 101 / 290 px στα 1440): «Ποιους αφορά» δίπλα στη
+   βιτρίνα στα 68, το εισαγωγικό από πάνω στα 290, οι «Συχνές ερωτήσεις» στα 290,
+   τα βήματα στα 68. Τώρα όλα ξεκινούν από την ακμή του περιέκτη· η στήλη
+   κειμένου κρατά το μέγιστο πλάτος της (≤ 80 χαρακτήρες), όχι το κέντρο. */
+.svc-prose > p, .svc-prose > ul, .svc-prose > ol, .svc-prose > h2, .svc-prose > h3, .svc-prose > .svc-intro2,
+.svc-prose > .svc-role, .svc-prose > .svc-legal, .svc-prose > .svc-orismos,
+.svc-faq, body .ta-box > .ta-warning, .ta-box .ta-sec-head:has(+ .svc-faq),
+.svc-prose.lg-page { margin-left: 0 !important; margin-right: auto !important; }
+.svc-prose > h2 { max-width: var(--sv-col, 860px) !important; }
+.svc-related { max-width: none; }
+@media (max-width: 1100px) { .svc-split-txt { margin: 0; } }
+/* πίνακας κωδικών σε όλο το πλάτος, όπως ο πίνακας κατηγοριών (κανόνας 16) */
+.svc-prose > ul.svc-codes { max-width: none !important; }
+/* δύο διαδοχικές γραμμές-διαχωριστές (πρότυπο): μένει μία */
+body .ta-box > .ta-rule + .ta-rule { display: none; }
+/* ημερομηνία ενημέρωσης στα ίχνη: με διαχωριστικό στον υπολογιστή, σε δική της γραμμή στο κινητό (χωρίς ορφανή τελεία) */
+.svc-crumb-date { white-space: nowrap; }
+.svc-crumb-date::before { content: '\00a0·\00a0 '; }
+@media (max-width: 768px) { .svc-crumb-date { display: block; margin-top: 4px; } .svc-crumb-date::before { content: none; } }
+/* hero χωρίς σχέδιο (νομική σελίδα): η στήλη κειμένου στο κέντρο της σελίδας, όχι στο αριστερό μισό */
+.svc-hero[data-v3]:not(.svc-hero--art) .svc-hero-in { grid-template-columns: minmax(0, 760px); justify-content: center; }
