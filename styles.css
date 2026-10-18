@@ -6499,3 +6499,6 @@ button.tap-toggle:hover, button.ta-toggle--bar:hover, .trc-widget button.trc-mai
 /* βιτρίνα: οι τρεις καρτέλες χωρούν και στα 360 px (αγγλικά «Strength/Approval» έκοβαν 4 px) */
 @media (max-width: 400px) { .es-tab { letter-spacing: .4px !important; padding-left: 4px !important; padding-right: 4px !important; gap: 4px !important; } }
 @media (max-width: 340px) { html body .es-wrap .es-tabs .es-tab { font-size: 12px !important; } }
+/* διάγραμμα ελέγχου τρέιλερ: η νέα εικόνα (TRAILER_EXAMPLE.webp, διαφανές φόντο, 1600×551) μπαίνει ολόκληρη — καμία περικοπή */
+.trc-diagram-wrap { height: auto !important; padding-bottom: 0 !important; }
+.trc-diagram-wrap img { position: static !important; width: 100% !important; height: auto !important; top: auto !important; }

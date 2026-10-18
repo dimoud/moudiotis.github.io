@@ -1379,3 +1379,20 @@ body .ta-box > .ta-rule + .ta-rule { display: none; }
 @media (max-width: 768px) { .svc-crumb-date { display: block; margin-top: 4px; } .svc-crumb-date::before { content: none; } }
 /* hero χωρίς σχέδιο (νομική σελίδα): η στήλη κειμένου στο κέντρο της σελίδας, όχι στο αριστερό μισό */
 .svc-hero[data-v3]:not(.svc-hero--art) .svc-hero-in { grid-template-columns: minmax(0, 760px); justify-content: center; }
+/* κρεμ ζώνη βημάτων ενιαία: το κενό 6 px πάνω από τα βήματα άφηνε λευκή γραμμή σε όλο το πλάτος */
+body .ta-box > .ta-steps { margin-top: 0 !important; padding-top: 6px !important; }
+
+/* ═══ v3.7 (18/10/2026, απόφαση Δ. Μουδιώτη) — ΥΠΟΛΟΓΙΣΤΗΣ: HERO ΑΡΙΣΤΕΡΑ ═══════
+   Στον υπολογιστή ΟΛΟΙ οι τίτλοι αριστερά, και ο κύριος: ετικέτα, H1, εισαγωγικό
+   στον αριστερό άξονα· κουμπί προσφοράς και τηλέφωνο μαζί αριστερά,
+   δίπλα του, με τη λεπτή κάθετη γραμμή ανάμεσα. Το κινητό μένει
+   όπως στη v3.5 (τίτλος στο κέντρο). */
+@media (min-width: 769px) {
+    .svc-hero[data-v3] .svc-hero-txt { text-align: left; }
+    .svc-hero[data-v3] .svc-hero-txt h1 { margin-left: 0 !important; margin-right: 0 !important; text-wrap: balance; }
+    .svc-hero[data-v3] .svc-kicker { justify-content: flex-start; text-align: left; }
+    .svc-hero[data-v3] .svc-lede { margin-left: 0 !important; margin-right: 0 !important; }
+    .svc-hero[data-v3] .svc-hero-cta { justify-content: flex-start; }
+    .svc-hero[data-v3] .svc-cta-tel { margin-left: 26px; padding-left: 26px; text-align: left; }   /* κουμπί και τηλέφωνο μαζί, αριστερά */
+    .svc-hero[data-v3]:not(.svc-hero--art) .svc-hero-in { justify-content: start; }
+}
