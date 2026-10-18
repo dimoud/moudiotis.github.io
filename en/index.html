@@ -49,8 +49,7 @@
     <link rel="preload" as="image" href="../hero-bg-900.webp" media="(max-width: 768px)" fetchpriority="high">
     <link rel="preload" as="image" href="../688bc305-6129-4485-a56f-d72fdc729791.webp" media="(min-width: 769px)" fetchpriority="high">
 
-    <link rel="stylesheet" href="../fonts.css" media="print" onload="this.media='all'" data-async-css>
-    <noscript><link rel="stylesheet" href="../fonts.css"></noscript>
+    <link rel="stylesheet" href="../fonts.css"><!-- σύγχρονα: οι @font-face φτάνουν μαζί με τις προφορτώσεις, χωρίς μετατόπιση όταν αλλάζει γραμματοσειρά -->
     <link rel="stylesheet" href="../fa-subset.css">
     <script>if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('tk-pre');</script>
     <link rel="stylesheet" href="../styles.css?v=20261018e">
@@ -1741,13 +1740,14 @@
                 b.setAttribute('aria-expanded', 'false');
             });
             /* Εγκρίσεις τύπου: στο κινητό ξεκινά κλειστό */
-            if (window.innerWidth <= 768) {
+            var mob = window.matchMedia('(max-width: 768px)').matches;   /* όχι innerWidth: επιβάλλει διάταξη όλης της σελίδας */
+            if (mob) {
                 var tc = document.getElementById('tapCollapse');
                 var tt = document.getElementById('tapToggle');
                 if (tc) tc.classList.remove('is-open');
                 if (tt) tt.setAttribute('aria-expanded', 'false');
             }
-            if (window.innerWidth > 768) return;
+            if (!mob) return;
             document.querySelectorAll('details[open]').forEach(function (d) {
                 d.removeAttribute('open');
             });
@@ -1764,7 +1764,7 @@
     <script src="../about-profile.js?v=202610120300" defer></script>
     <script src="../partners-carousel.js?v=202610120300" defer></script>
     <script src="../i18n.js?v=202610120300"></script>
-    <script src="../eng-animations.js?v=20261018h"></script>
+    <script src="../eng-animations.js?v=20261018i"></script>
     <script src="../eng-showcase.js?v=20261018a" defer></script>
     <script src="../hero-swap.js?v=20261018a" defer></script>
     <script src="../type-approval-animation.js?v=20261014"></script>

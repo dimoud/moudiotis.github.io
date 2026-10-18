@@ -412,12 +412,13 @@
         var dirs = [];
         function computeDirs() {
             var alt = 0;
+            /* μέτρηση χωρίς το τρέχον transform — όλες μαζί: ένας υπολογισμός ύφους, όχι 2 ανά κάρτα */
+            var tfs = [], rs = [], gs = [];
+            zipCards.forEach(function (card, i) { tfs[i] = card.style.transform; card.style.transform = 'none'; });
+            zipCards.forEach(function (card, i) { rs[i] = card.getBoundingClientRect(); gs[i] = card.parentElement.getBoundingClientRect(); });
+            zipCards.forEach(function (card, i) { card.style.transform = tfs[i]; });
             zipCards.forEach(function (card, i) {
-                var grid = card.parentElement.getBoundingClientRect();
-                /* μέτρηση χωρίς το τρέχον transform */
-                var tf = card.style.transform; card.style.transform = 'none';
-                var r = card.getBoundingClientRect();
-                card.style.transform = tf;
+                var grid = gs[i], r = rs[i];
                 var full = r.width > grid.width * 0.7;
                 var small = window.innerWidth <= 768;
                 /* Κάρτα σε όλο το πλάτος: στον υπολογιστή μόνο εμφάνιση, στο
@@ -435,11 +436,10 @@
         /* θέσεις των καρτών στη σελίδα: μία μέτρηση (και σε resize/load/αλλαγή μεγέθους) — ανά καρέ μόνο scrollY */
         var tops = [];
         function measureTops() {
-            zipCards.forEach(function (card, i) {
-                var tf = card.style.transform; card.style.transform = 'none';
-                tops[i] = card.getBoundingClientRect().top + window.scrollY;
-                card.style.transform = tf;
-            });
+            var tfs = [], y = window.scrollY;
+            zipCards.forEach(function (card, i) { tfs[i] = card.style.transform; card.style.transform = 'none'; });
+            zipCards.forEach(function (card, i) { tops[i] = card.getBoundingClientRect().top + y; });
+            zipCards.forEach(function (card, i) { card.style.transform = tfs[i]; });
         }
         measureTops();
         window.addEventListener('resize', function () { maxOffset = zipOffset(); computeDirs(); measureTops(); onScroll(); });
