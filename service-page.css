@@ -1184,3 +1184,136 @@ body .ta-box .ta-stat-strip + .ta-rule { margin-top: 0; }
 .svc-prose .svc-role h3 { margin-top: 22px !important; }
 .svc-prose .svc-role > :last-child { margin-bottom: 12px !important; }
 @media (max-width: 768px) { .svc-prose .svc-role { padding: 20px 18px 8px !important; } }
+
+/* ═══ ΤΙΤΛΟΙ ΣΤΟ ΚΕΝΤΡΟ (18/10/2026, απόφαση Δ. Μουδιώτη) ══════════════════
+   Στις υποσελίδες κάθε τίτλος ενότητας (H2, H3 του κειμένου, ετικέτες όπως
+   «ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ») στοιχίζεται στο κέντρο· το κείμενο μένει αριστερά.
+   Το hero κρατά τον κοινό αριστερό άξονα του πλέγματος 48/52. Τα κελιά των
+   πινάκων κατηγοριών μένουν αριστερά (είναι ετικέτες κελιών, όχι τίτλοι). */
+.svc-prose h2, .svc-prose > h3, .svc-prose .svc-role > h3 { text-align: center; text-wrap: balance; }
+.svc-prose h2 { margin-left: auto !important; margin-right: auto !important; max-width: 38ch; }
+body .ta-box .ta-sec-head { justify-content: center; }
+body .ta-box .ta-sec-head::after {
+    content: ''; display: block; flex-shrink: 0; width: 32px; height: 2px; background: var(--gold-metal-h);
+}
+/* τίτλος δίπλα στη βιτρίνα: κέντρο της στήλης κειμένου, όχι πάνω από τη βιτρίνα */
+.svc-prose > .svc-es + h2 { max-width: none; }
+/* τίτλος που εισάγει πίνακα: κάτω από τη βιτρίνα, μαζί με τον πίνακά του */
+.svc-prose > h2:has(+ .svc-fam), .svc-prose > h2:has(+ p + .svc-fam),
+.svc-prose > h2:has(+ .svc-codes), .svc-prose > h2:has(+ p + .svc-codes),
+.svc-prose > h2:has(+ .svc-table-wrap), .svc-prose > h2:has(+ p + .svc-table-wrap) { clear: both; }
+
+/* ═══ v3.4 (18/10/2026) — ΤΥΠΟΓΡΑΦΙΚΟ ΣΥΣΤΗΜΑ, ΣΥΜΜΕΤΡΙΑ, ΟΜΟΙΟΜΟΡΦΙΑ ═══════
+   Μετά από μέτρηση σε όλες τις σελίδες (91 συνδυασμοί γραμματοσειράς/μεγέθους/
+   βάρους, τίτλοι H2 σε δύο μεγέθη, H3 σε τρεις μορφές). Κανόνες υποσελίδων:
+   · ΜΙΑ οικογένεια για όλο το περιεχόμενο: Source Sans 3. JetBrains Mono μόνο
+     για κωδικούς/τεχνικές τιμές. Το EB Garamond μένει στην ταυτότητα (αρχική,
+     μπλοκ επικοινωνίας). Roboto Condensed: καμία χρήση στις υποσελίδες.
+   · Κλίμακα: H1 36,5 · H2 30 · H3 19 · εισαγωγικό 17,5 · κείμενο 16,5 ·
+     δευτερεύον 15 · ετικέτες 12 (κεφαλαία, αραιά) — βάρη 400/600 μόνο.
+   · Μήκος γραμμής κειμένου ≤ 80 χαρακτήρες· στήλη κειμένου κεντραρισμένη,
+     πίνακες σε όλο το πλάτος· βιτρίνα και κείμενο σε πλέγμα δύο στηλών. */
+:root {
+    --sv-sans: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+    --sv-mono: 'JetBrains Mono', ui-monospace, monospace;
+    --sv-h2: clamp(24px, 2.1vw, 30px);
+    --sv-h3: 19px;
+    --sv-body: 16.5px;
+    --sv-small: 15px;
+    --sv-col: 860px;
+}
+
+/* ── οικογένεια ── */
+.svc-hero, .ta-wrap, .ta-wrap *:not(i):not([class*="fa-"]) { font-family: var(--sv-sans); }
+.ta-wrap td:first-child, .svc-codes b, .svc-code, .svc-katalogos-table td:nth-child(2),
+.ta-wrap code, .ta-wrap [class*="mono"], .es-wrap, .es-wrap *, .trc-diagram-tag,
+.trc-spec-val, .trc-progress-lbl, .trc-progress-num, .trc-reset-btn, .ec-f-key { font-family: var(--sv-mono) !important; }
+
+/* ── τίτλοι ── */
+.svc-prose h2, .svc-prose .svc-role h2, .svc-prose .svc-legal h2 {
+    font-family: var(--sv-sans) !important; font-weight: 600 !important;
+    font-size: var(--sv-h2) !important; line-height: 1.22 !important; letter-spacing: -.3px !important;
+    margin: 52px auto 18px !important;
+}
+.svc-prose h2:first-child, .svc-split-txt > h2:first-child, .svc-prose .svc-role h2 { margin-top: 0 !important; }
+.svc-prose h2::before { width: 11px !important; height: 11px !important; vertical-align: .12em !important; margin-right: 14px !important; }
+.svc-prose h3, .svc-prose .svc-fam h3, .svc-faq summary, .svc-related b, .ta-title, .trc-h {
+    font-family: var(--sv-sans) !important; font-weight: 600 !important;
+    font-size: var(--sv-h3) !important; line-height: 1.35 !important; letter-spacing: 0 !important;
+    color: var(--navy-mid) !important; text-transform: none !important;
+}
+.svc-prose h3 { margin: 30px auto 12px !important; }
+
+/* ── κείμενο ── */
+.svc-prose p, .svc-prose li, .svc-faq details p, .ta-box .ta-steps > li,
+.ta-box .ta-warning-body > p, .svc-prose .svc-intro2, .svc-orismos p {
+    font-size: var(--sv-body) !important; line-height: 1.7 !important; font-weight: 400;
+}
+.svc-prose .svc-intro2, .svc-orismos p { font-size: 17.5px !important; }
+.svc-prose .svc-fam p, .svc-related span, .ta-box .ta-cta-text, .svc-table, .svc-katalogos-table,
+.svc-prose > .svc-codes li, .lg-table { font-size: var(--sv-small) !important; line-height: 1.6 !important; }
+.ta-box .ta-warning-body > strong, .svc-table th, .svc-katalogos-table th, .lg-table th {
+    font-family: var(--sv-sans) !important; font-size: 12px !important; font-weight: 600 !important;
+    letter-spacing: 1.6px !important; text-transform: uppercase;
+}
+
+/* ── ετικέτες: μία μορφή παντού ── */
+.svc-hero .svc-kicker, .ta-box .ta-sec-head, .ta-box .ta-sec-head span, .ta-badge span, .tap-graphic-tag {
+    font-size: 12px !important; font-weight: 600 !important; letter-spacing: 3px !important; text-transform: uppercase !important;
+}
+.ta-box .ta-stat-lbl { font-size: 13px !important; font-weight: 400 !important; letter-spacing: .2px !important; text-transform: none !important; color: var(--stone); }
+.ta-box .ta-stat-val { font-size: 22px !important; font-weight: 600 !important; }
+.svc-hero[data-v3] .svc-cta-tel small { font-family: var(--sv-sans) !important; font-size: 11px !important; font-weight: 600; letter-spacing: 2px; }
+
+/* ── αριθμοί βημάτων: ίδια οικογένεια, λεπτό βάρος ── */
+body .ta-box .ta-step-num { font-family: var(--sv-sans) !important; font-weight: 300 !important; font-size: 44px !important; letter-spacing: -1px; font-variant-numeric: tabular-nums; }
+
+/* ── κουμπιά: ένα μέγεθος ── */
+.svc-hero[data-v3] .svc-cta-primary, a.ta-cta-btn, .ta-cta-btn span, .svc-inline-btn, .lg-btn {
+    font-family: var(--sv-sans) !important; font-size: 15px !important; font-weight: 600 !important;
+    letter-spacing: .4px !important; text-transform: none !important;
+}
+
+/* ── στήλη κειμένου: κεντραρισμένη, ≤ 80 χαρακτήρες ── */
+.svc-prose > p, .svc-prose > ul, .svc-prose > h3, .svc-prose > .svc-intro2,
+.svc-prose > .svc-role, .svc-prose > .svc-legal, .svc-prose > .svc-orismos {
+    max-width: var(--sv-col); margin-left: auto !important; margin-right: auto !important;
+}
+.svc-faq, body .ta-box > .ta-warning { max-width: var(--sv-col); margin-left: auto !important; margin-right: auto !important; }
+.ta-box .ta-sec-head:has(+ .svc-faq) { max-width: var(--sv-col); margin-left: auto; margin-right: auto; }
+
+/* ── βιτρίνα + κείμενο: πλέγμα δύο στηλών ── */
+.svc-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 560px); column-gap: 56px; align-items: start; margin: 8px 0 12px; }
+.svc-split-txt > h2 { text-align: center; max-width: none !important; }
+.svc-split-txt > :last-child { margin-bottom: 0 !important; }
+.svc-split-art { position: sticky; top: 104px; }
+.svc-split-art .svc-es { float: none !important; width: auto !important; margin: 6px 0 0 !important; }
+.svc-split-art .es-body { grid-template-columns: 1fr; }
+.svc-split-art .es-calc { border-left: 0; border-top: 1px solid rgba(120,160,210,.14); }
+.svc-split-txt .svc-role { margin: 36px 0 28px !important; }
+@media (max-width: 1100px) {
+    .svc-split { grid-template-columns: minmax(0, 1fr); row-gap: 36px; }
+    .svc-split-art { position: static; order: 2; }
+    .svc-split-txt { max-width: var(--sv-col); margin: 0 auto; }
+}
+
+/* ── συμμετρία ενοτήτων: ίσο κενό πάνω/κάτω από κάθε επικεφαλίδα ενότητας ── */
+body .ta-box .ta-sec-head { padding-top: 22px !important; padding-bottom: 22px !important; }
+.svc-related { max-width: 1200px; margin-left: auto; margin-right: auto; }
+@media (max-width: 768px) {
+    :root { --sv-body: 16px; --sv-small: 14.5px; --sv-h3: 18px; }
+    .svc-prose h2 { margin-top: 40px !important; }
+    body .ta-box .ta-step-num { font-size: 36px !important; }
+}
+/* κύριο κουμπί hero: ματ χαλκός όπως όλα τα κουμπιά (το v3 είχε μείνει μεταλλικό) */
+.svc-hero[data-v3] .svc-cta-primary { background: var(--cu-matt, linear-gradient(180deg,#c3907a,#b27c65)) !important; background-size: auto !important; box-shadow: 0 3px 10px rgba(110,62,44,.16) !important; color: #0c1726 !important; }
+.svc-hero[data-v3] .svc-cta-primary:hover { background: var(--cu-matt-h, #a46d57) !important; color: #fff !important; transform: none; }
+/* σελίδα όρων: η στήλη κειμένου στο κέντρο */
+.svc-prose.lg-page { margin-left: auto !important; margin-right: auto !important; max-width: var(--sv-col) !important; }
+.svc-prose.lg-page > * { max-width: none; }
+/* ετικέτες κορυφής εργαλείων (π.χ. «ΝΕΟΣ ΝΟΜΟΣ», «ΣΧΕΤΙΚΗ ΝΟΜΟΘΕΣΙΑ»): στο κέντρο, όπως οι επικεφαλίδες ενοτήτων */
+body .ta-box > .ta-topbar { justify-content: center !important; }
+body .ta-badge::after { content: ''; display: block; flex-shrink: 0; width: 32px; height: 2px; background: var(--gold-metal-h); }
+/* καμία οριζόντια κύλιση όσο «φτάνουν» στοιχεία από δεξιά (βιτρίνα, hero) */
+body .ta-wrap, .svc-hero { overflow-x: clip; }
+@media (max-width: 768px) { .wdx .svc-es[data-v] { --dx: 0px; } }
