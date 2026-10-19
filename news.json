@@ -1,7 +1,18 @@
 {
   "_comment": "Πηγή δεδομένων για το καρουζέλ ενημερώσεων της αρχικής σελίδας. Ενημερώνεται εβδομαδιαία. Κάθε εγγραφή τροφοδοτεί και τις αναρτήσεις στο Facebook. Πεδία: id (μοναδικό), date (ISO, ημερομηνία ΦΕΚ/έκδοσης), category (el/en), title (el/en), summary (el/en, 1-2 προτάσεις), source (πηγή αναφοράς, κείμενο), url (εσωτερικός σύνδεσμος προς σελίδα υπηρεσίας ή, αν δεν ταιριάζει καμία, εξωτερικός προς την επίσημη πηγή), fb (true αν είναι κατάλληλο για ανάρτηση), fbPosted (ημερομηνία ανάρτησης ή κενό).",
-  "updated": "2026-10-05",
+  "updated": "2026-10-19",
   "items": [
+    {
+      "id": "kya-161204-2026-teli",
+      "date": "2026-10-09",
+      "category": { "el": "Ειδικού σκοπού", "en": "Special purpose" },
+      "title": { "el": "Απαλλαγή από τέλη χρήσης για οχήματα ειδικού σκοπού και μηχανήματα έργων πολιτικής προστασίας", "en": "Usage-fee exemption for civil-protection special purpose vehicles and works machinery" },
+      "summary": { "el": "Πυροσβεστικά, κινητοί γερανοί, κλιμακοφόρα και μηχανήματα έργων εθελοντικών οργανώσεων του ΜΕΟΠΠ απαλλάσσονται από τα τέλη, με ισχύ από 1.4.2026. Βεβαίωση εκδίδει η ΔΤΕΠΕ.", "en": "Fire engines, mobile cranes, aerial ladders and works machinery of registered civil-protection volunteer bodies (MEOPP) are exempt from usage fees, effective 1.4.2026. The certificate is issued by the regional technical works directorate." },
+      "source": "ΚΥΑ 161204/2026 (ΦΕΚ Β΄6129/9.10.2026)",
+      "url": "/oximata-eidikou-skopou/",
+      "fb": false,
+      "fbPosted": ""
+    },
     {
       "id": "n5290-2026-art14",
       "date": "2026-03-30",
