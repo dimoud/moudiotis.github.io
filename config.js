@@ -8,9 +8,9 @@ window.SITE_CONFIG = {
     // ── META ──────────────────────────────────────────────────────────────
     meta: {
         titleEl:       'Τεχνικό Γραφείο Μουδιώτης Αθήνα | Εγκρίσεις Τύπου, ΤΑΟ, ΕΧΕΣ',
-        titleEn:       'Vehicle Type Approval & TAO in Greece and the EU | Moudiotis',   /* ίδιο με το στατικό <title> της /en/ */
+        titleEn:       'Vehicle Type & Individual Approval in Greece | Moudiotis',   /* ίδιο με το στατικό <title> της /en/ */
         descriptionEl: 'Τεχνικό γραφείο εξειδικευμένου μηχανολόγου μηχανικού σε Αθήνα και Θεσσαλονίκη: εγκρίσεις τύπου, δελτίο κοινοποίησης, ΤΑΟ, οχήματα ειδικού σκοπού, μετασκευές.',
-        descriptionEn: 'Vehicle engineering office in Athens and Thessaloniki, serving all of Greece and the EU: type approval, TAO registration, special vehicles, trailers.',
+        descriptionEn: 'Engineering office in Athens and Thessaloniki: EU and national type approval, individual vehicle approval, TAO registration, special purpose vehicles, trailers.',
         lang:          'el',
     },
 
@@ -95,7 +95,7 @@ window.SITE_CONFIG = {
     about: {
         headingEl: 'Εμπειρία &amp; <em>Εξειδίκευση</em>',
         headingEn: 'Experience &amp; <em>Expertise</em>',
-        leadEl:    'Με {years}+ χρόνια εμπειρίας, το <strong class="kw">τεχνικό γραφείο</strong> Μουδιώτης &amp; Συνεργάτες, με επικεφαλής <strong class="kw">μηχανολόγο μηχανικό</strong>, αναλαμβάνει <strong class="kw">έγκριση τύπου οχήματος</strong> και <strong class="kw">έγκριση τύπου ρυμουλκούμενου</strong>, <strong class="kw">άδεια τρέιλερ</strong> Ο1/Ο2, <strong class="kw">άδεια μπαγκαζιέρας</strong>, μελέτες <strong class="kw">οχημάτων ειδικής χρήσης ειδικού σκοπού</strong>, μετασκευές, τροχόσπιτα και τοποθέτηση γερανών.',
+        leadEl:    'Με {years}+ χρόνια εμπειρίας, το <strong class="kw">τεχνικό γραφείο</strong> Μουδιώτης &amp; Συνεργάτες, με επικεφαλής <strong class="kw">μηχανολόγο μηχανικό</strong>, αναλαμβάνει <a href="ethniki-evropaiki-egkrisi-typou/"><strong class="kw">έγκριση τύπου οχήματος</strong></a> και <strong class="kw">έγκριση τύπου ρυμουλκούμενου</strong>, <strong class="kw">άδεια τρέιλερ</strong> Ο1/Ο2, <strong class="kw">άδεια μπαγκαζιέρας</strong>, μελέτες <strong class="kw">οχημάτων ειδικής χρήσης ειδικού σκοπού</strong>, μετασκευές, τροχόσπιτα και τοποθέτηση γερανών.',
         leadEn:    'With {years}+ years of experience, the <strong class="kw">technical office</strong> Moudiotis &amp; Associates, led by a <strong class="kw">mechanical engineer</strong>, handles <strong class="kw">vehicle type approval</strong> and <strong class="kw">trailer type approval</strong>, <strong class="kw">trailer and cargo-box licences</strong> O1/O2, <strong class="kw">special use / special purpose vehicle</strong> studies, conversions, caravans and crane installations.',
         features: [
             {
