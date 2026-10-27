@@ -535,6 +535,16 @@ window.SITE_CONFIG = {
     // ── GOOGLE REVIEWS ────────────────────────────────────────────────────
     reviews: [
         {
+            name: 'Ioanna Peraki',
+            textEl: 'Άμεση εξυπηρέτηση, ευγένεια και επαγγελματισμός! Ήταν απόλυτα κατατοπιστικοί σχετικά με τη διαδικασία και τα βήματα που έπρεπε να ακολουθήσω.',
+            textEn: 'Prompt service, courtesy and professionalism! They explained the process and the steps I needed to follow in full detail.',
+        },
+        {
+            name: 'Panagiotis Kaloudis',
+            textEl: 'Άψογη συνεργασία με τον κ. Μουδιώτη. Άμεσος, συνεπής και πολύ καλά καταρτισμένος στο αντικείμενο. Πλήρως καθοδηγητικός σε όλη τη διαδικασία, με συνεχή ενημέρωση και χωρίς περιττές καθυστερήσεις. Πολύ λογική χρέωση για την ποιότητα της υπηρεσίας. Τον συνιστώ ανεπιφύλακτα!',
+            textEn: 'Flawless collaboration with Mr. Moudiotis. Prompt, consistent and very knowledgeable in his field. He guided me through the entire process, with constant updates and no unnecessary delays. A very reasonable fee for the quality of the service. I recommend him without reservation!',
+        },
+        {
             name: 'Arisstotelis Theodorakis',
             textEl: 'Εμπειρία · Αμεσότητα · Αποτελεσματικότητα',
             textEn: 'Experience · Promptness · Effectiveness',
