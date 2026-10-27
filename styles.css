@@ -6654,3 +6654,14 @@ html:not(#z) body .svc-legal h2,
 html:not(#z) body .as-i b {
     background: linear-gradient(180deg, #d0a18b 0%, #bd876f 46%, #ad7660 100%) !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important; color: transparent !important; -webkit-box-decoration-break: clone; box-decoration-break: clone; text-shadow: none !important;
 }
+/* ===== Αρχική: Οχήματα ειδικής χρήσης (ΕΧΕΣ) — 27/10/2026 ===== */
+.hm-ex { background: #fff; }
+.hm-ex .hm-p + .hm-p { margin-top: 14px; }
+.hm-ex .hm-btn { margin-top: 28px; }
+.hm-ex-box { border-top: 2px solid var(--copper, #C16D48); padding-top: 20px; }
+.hm-ex .hm-ex-h { font-size: 13px !important; font-weight: 600 !important; letter-spacing: .02em !important; text-transform: none !important; color: #475569 !important; margin: 0 0 10px !important; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size-adjust: none; }
+.hm-ex-codes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; }
+.hm-ex-codes li { display: grid; grid-template-columns: 3em 1fr; align-items: baseline; gap: 10px; padding: 13px 0; border-bottom: 1px solid rgba(20,43,69,0.12); }
+.hm-ex-codes b { font-family: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace; font-size-adjust: none; font-weight: 600; font-size: 15px; color: var(--navy, #142B45); letter-spacing: .02em; }
+.hm-ex-codes span { font-size: 15px; line-height: 1.4; color: #334155; }
+@media (max-width: 640px) { .hm-ex-codes { grid-template-columns: 1fr; } }
