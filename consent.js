@@ -53,7 +53,7 @@
         '  font-family:"Inter",sans-serif;',
         '  font-size:13px;font-weight:600;cursor:pointer;transition:opacity .2s;',
         '}',
-        '#cc-accept{background:#a55a38;color:#fff}',
+        '#cc-accept{background:linear-gradient(180deg,#c3907a,#b27c65);color:#0c1726}',
         '#cc-reject{background:transparent;color:#f5f7f9;border:1px solid rgba(245,247,249,.4)}',
         '#cc-accept:hover,#cc-reject:hover{opacity:.8}',
         '.cc-short{display:none}',

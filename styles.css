@@ -6560,3 +6560,30 @@ svg text, svg tspan, svg textPath { font-size-adjust: none !important; }
         linear-gradient(90deg, #a3644a 0%, #bd8266 17%, #dfa98d 33%, #f2cfba 50%, #e4b8a0 60%, #c7896b 76%, #a8694e 92%, #a3644a 100%) !important;
     -webkit-text-fill-color: transparent !important;
 }
+/* ===== Κουμπιά δράσης (27/10/2026): ο προηγούμενος ματ χαλκός με σκούρο κείμενο (≥5:1) ·
+   hover χωρίς άλμα: μόνο φωτεινότητα και σκιά, 150 ms, χωρίς μετατόπιση ή αλλαγή χρώματος κειμένου ===== */
+.btn-hero-primary, a.ta-cta-btn, a.tap-cta-btn, .svc-quick a.svc-quick-call, .ec-go,
+.contact-form-wrap button[type="submit"], .svc-cta-primary, .hm-btn--gold, .svc-hero[data-v3] .svc-cta-primary,
+button.tap-toggle, button.ta-toggle--bar, .trc-widget button.trc-main-toggle--bar, .tools-tab.is-active,
+.ta-cat-badge, .trc-cat-badge, .service-badge {
+    background: linear-gradient(180deg, #c3907a 0%, #b27c65 100%) !important;
+    color: #0c1726 !important; -webkit-text-fill-color: #0c1726 !important; text-shadow: none !important;
+    transition: filter .15s ease, box-shadow .15s ease !important; animation: none !important;
+}
+.btn-hero-primary:hover, a.ta-cta-btn:hover, a.tap-cta-btn:hover, .svc-quick a.svc-quick-call:hover, .ec-go:hover,
+.contact-form-wrap button[type="submit"]:hover, .svc-cta-primary:hover, .hm-btn--gold:hover, .svc-hero[data-v3] .svc-cta-primary:hover,
+button.tap-toggle:hover, button.ta-toggle--bar:hover, .trc-widget button.trc-main-toggle--bar:hover {
+    background: linear-gradient(180deg, #c3907a 0%, #b27c65 100%) !important;
+    color: #0c1726 !important; -webkit-text-fill-color: #0c1726 !important;
+    filter: brightness(1.07); transform: none !important;
+    box-shadow: 0 2px 8px rgba(110,62,44,.22) !important;
+}
+.btn-hero-ghost, .btn-hero-ghost:hover, .svc-quick a:hover, .hero-quick a:hover { transform: none !important; }
+.btn-hero-ghost { transition: background-color .15s ease, border-color .15s ease !important; }
+.btn-submit::after, .nav-cta::after { display: none !important; }
+body .svc-hero[data-v3] .svc-cta-primary, body .svc-hero[data-v3] .svc-cta-primary:hover {
+    background: linear-gradient(180deg, #c3907a 0%, #b27c65 100%) !important;
+    color: #0c1726 !important; -webkit-text-fill-color: #0c1726 !important; transform: none !important;
+    transition: filter .15s ease, box-shadow .15s ease !important;
+}
+body .svc-hero[data-v3] .svc-cta-primary:hover { filter: brightness(1.07); }

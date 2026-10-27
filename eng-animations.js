@@ -831,21 +831,31 @@
     var heroEl       = document.querySelector('.hero');
     var spotlightEl  = document.querySelector('.hero-spotlight');
     if (heroEl && spotlightEl) {
+        /* Μεταβλητές μόνο στο στοιχείο της λάμψης και μία φορά ανά καρέ:
+           αλλιώς κάθε κίνηση του ποντικιού ξαναϋπολόγιζε όλο το hero (κουμπιά «κολλούσαν») */
+        var spotPending = false, spotX = 0, spotY = 0;
         heroEl.addEventListener('mousemove', function (e) {
             var rect = heroEl.getBoundingClientRect();
-            heroEl.style.setProperty('--cx', (e.clientX - rect.left) + 'px');
-            heroEl.style.setProperty('--cy', (e.clientY - rect.top)  + 'px');
+            spotX = e.clientX - rect.left; spotY = e.clientY - rect.top;
+            if (spotPending) return;
+            spotPending = true;
+            requestAnimationFrame(function () {
+                spotlightEl.style.setProperty('--cx', spotX + 'px');
+                spotlightEl.style.setProperty('--cy', spotY + 'px');
+                spotPending = false;
+            });
         }, { passive: true });
         heroEl.addEventListener('mouseleave', function () {
-            heroEl.style.setProperty('--cx', '-100%');
-            heroEl.style.setProperty('--cy', '-100%');
+            spotlightEl.style.setProperty('--cx', '-100%');
+            spotlightEl.style.setProperty('--cy', '-100%');
         });
     }
 
     /* 3D tilt removed */
 
     /* ─── 13. MAGNETIC BUTTON GLOW ──────────────────────────────────────── */
-    var glowBtns = document.querySelectorAll('.nav-cta, .btn-submit');
+    /* Καταργήθηκε (2026-10-27): η λάμψη που ακολουθούσε τον κέρσορα έκανε το hover να κολλάει */
+    var glowBtns = [];
     glowBtns.forEach(function (btn) {
         btn.addEventListener('mousemove', function (e) {
             var rect = btn.getBoundingClientRect();
