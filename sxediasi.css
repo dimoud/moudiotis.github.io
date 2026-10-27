@@ -13,7 +13,7 @@
     --sx-edge: 7%;                         /* ένα αριστερό άκρο για όλα */
     --sx-radius-panel: 18px; --sx-radius-btn: 6px;
     /* συμπαγής χαλκός: σε ανοιχτό φόντο / σε σκούρο φόντο (αντίθεση ≥ 4,5:1) */
-    --sx-copper-ink: #A55A38; --sx-copper-light: #D98B67;
+    --sx-copper-ink: #c16d48; --sx-copper-light: #D98B67;
     --sx-ui-ease: cubic-bezier(.4,0,.6,1);
 }
 @media (max-width: 768px) {

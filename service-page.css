@@ -343,7 +343,7 @@ body .svc-crumb { padding-top: 20px; padding-bottom: 0; }
     letter-spacing: 1.3px; text-transform: uppercase;
     transition: background .25s, border-color .25s, color .25s, transform .25s;
 }
-.svc-quick-call { background: #a55a38; color: #fff; }
+.svc-quick-call { background: #c16d48; color: #fff; }
 .svc-quick-call:hover { background: var(--warm2); transform: translateY(-1px); }
 .svc-quick-call i { font-size: 11px; }
 .svc-quick-call span { display: flex; flex-direction: column; gap: 2px; }
@@ -505,7 +505,7 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
 }
 .svc-prose h2 { color: var(--navy-mid) !important; position: relative; padding-left: 16px; }
 .svc-prose h2::before { content: ''; position: absolute; left: 0; top: .2em; bottom: .2em; width: 4px; border-radius: 2px; background: var(--gold-metal); }
-.svc-prose h3 { color: #a55a38 !important; }
+.svc-prose h3 { color: #c16d48 !important; }
 .svc-faq details { transition: background .25s; border-radius: 4px; }
 .svc-faq details[open] { background: linear-gradient(90deg, rgba(193,109,72,0.10), rgba(193,109,72,0.02)); }
 .svc-faq summary::after { color: #c16d48; }
@@ -540,7 +540,7 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
 /* Ενότητα νομιμότητας (π.χ. μετατροπή βαν): κόκκινη πλάγια γραμμή — η
    κυκλοφορία χωρίς νέα άδεια είναι παράβαση, πρέπει να διαβάζεται αμέσως. */
 .svc-legal { margin: 22px 0 16px; padding: 16px 20px 8px; border-left: 3px solid #b8442c; background: rgba(184,68,44,.06); border-radius: 0 6px 6px 0; }
-.svc-prose .svc-legal h2 { margin-top: 0 !important; color: #884627; }
+.svc-prose .svc-legal h2 { margin-top: 0 !important; color: #c16d48; }
 .svc-legal strong { color: var(--ink); }
 .svc-legal ul { margin: 6px 0 10px; }
 @media (max-width: 768px) { .svc-legal { padding: 14px 14px 6px; } }
@@ -571,7 +571,7 @@ mark.ph { background: #ffe9a8; color: #5a3d00; padding: 0 3px; border-radius: 3p
     padding: 12px 26px; border-radius: 2px; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.66; font-weight: 600;
     font-size: 13px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
     transition: background-color .25s, color .25s, border-color .25s; }
-.svc-cta-primary { background: #a55a38; color: #fff; border: 1px solid #c16d48; }
+.svc-cta-primary { background: #c16d48; color: #fff; border: 1px solid #c16d48; }
 .svc-cta-primary:hover { background: #e2b9a6; border-color: #e2b9a6; }
 .svc-cta-tel { color: #f5f7f9; border: 1px solid rgba(245,247,249,.45); }
 .svc-cta-tel:hover { border-color: #c16d48; color: #e2b9a6; }
@@ -731,7 +731,7 @@ body .ta-box .ta-sec-head span {
 .svc-orismos { margin: 16px 0 !important; }
 .svc-orismos p { font-size: clamp(17.5px, 1.5vw, 20px); color: var(--ink2); }
 /* Νομιμότητα: το κόκκινο μένει στον τίτλο και στο ορθογώνιο, όχι σε κουτί */
-.svc-prose .svc-legal h2 { color: #884627 !important; }
+.svc-prose .svc-legal h2 { color: #c16d48 !important; }
 .svc-prose .svc-legal h2::before { background: #b8442c !important; box-shadow: none; }
 
 /* ── 7. Προειδοποίηση: γραμμή, όχι κουτί ── */
@@ -790,7 +790,7 @@ body .ta-box .ta-cta-row {
 .svc-prose .svc-role h2, .svc-prose .svc-legal h2 { margin-top: 46px !important; }
 /* Ετικέτες eyebrow σε ανοιχτό φόντο: συμπαγής χαλκός για αναγνωσιμότητα (≥ 4,5:1) */
 body .ta-badge span, body .ta-box .ta-sec-head span {
-    background: none !important; -webkit-text-fill-color: #a55a38 !important; color: #a55a38 !important;
+    background: none !important; -webkit-text-fill-color: #c16d48 !important; color: #c16d48 !important;
 }
 @media (max-width: 768px) { .svc-prose .svc-role h2, .svc-prose .svc-legal h2 { margin-top: 36px !important; } }
 
@@ -838,7 +838,7 @@ nav .hamburger span { background: #fff; }
 
 .svc-hero[data-v3] .svc-kicker {
     display: flex; align-items: center; gap: 14px;
-    background: none !important; -webkit-text-fill-color: #a55a38 !important; color: #a55a38 !important;
+    background: none !important; -webkit-text-fill-color: #c16d48 !important; color: #c16d48 !important;
     font-size: 12px; letter-spacing: 3.5px; margin-bottom: 22px;
 }
 .svc-hero[data-v3] .svc-kicker::before { content: ''; width: 32px; height: 2px; flex-shrink: 0; background: var(--gold-metal-h); }
@@ -857,7 +857,7 @@ nav .hamburger span { background: #fff; }
 /* Μία κύρια ενέργεια· το τηλέφωνο δίπλα, χωρισμένο με λεπτή γραμμή */
 .svc-hero[data-v3] .svc-hero-cta { align-items: center; gap: 0; margin-top: 0; }
 .svc-hero[data-v3] .svc-cta-primary {
-    background: #a55a38 !important; background-size: 180% 180% !important;
+    background: #c16d48 !important; background-size: 180% 180% !important;
     color: #fff !important; border: 0 !important; border-radius: 3px;
     min-height: 54px; padding: 14px 32px;
     box-shadow: 0 5px 14px rgba(193,109,72,0.12), inset 0 1px 0 rgba(255,255,255,0.55);
@@ -878,12 +878,12 @@ nav .hamburger span { background: #fff; }
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.66; font-size: 10.5px; font-weight: 600;
     letter-spacing: 2.4px; text-transform: uppercase; color: var(--stone); margin-bottom: 3px;
 }
-.svc-hero[data-v3] .svc-cta-tel:hover { color: #a55a38 !important; }
+.svc-hero[data-v3] .svc-cta-tel:hover { color: #c16d48 !important; }
 
 /* Το τεχνικό σχέδιο: φύλλο σχεδίου με σημάδια γωνιών και πινακίδα */
 .svc-hero-art .tap-graphic {
     position: relative; padding: 34px 30px 26px !important;
-    color: #a55a38;
+    color: #c16d48;
     background:
         linear-gradient(rgba(17,38,61,0.06) 1px, transparent 1px) 0 0 / 14px 14px,
         linear-gradient(90deg, rgba(17,38,61,0.06) 1px, transparent 1px) 0 0 / 14px 14px,
@@ -932,7 +932,7 @@ body .ta-box .ta-step-num {
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif !important; font-size-adjust: cap-height 0.64; font-style: normal; font-weight: 600 !important;
     font-size: 46px !important; line-height: 1 !important; letter-spacing: -1px;
 }
-body .ta-box .ta-steps > li:hover .ta-step-num { transform: none; color: #a55a38 !important; }
+body .ta-box .ta-steps > li:hover .ta-step-num { transform: none; color: #c16d48 !important; }
 
 /* Κινητό: σχέδιο κάτω από το κουμπί, ώστε η ενέργεια να μένει στο πρώτο κάδρο */
 @media (max-width: 900px) {
@@ -1306,7 +1306,7 @@ body .ta-box .ta-sec-head { padding-top: 22px !important; padding-bottom: 22px !
     body .ta-box .ta-step-num { font-size: 36px !important; }
 }
 /* κύριο κουμπί hero: ματ χαλκός όπως όλα τα κουμπιά (το v3 είχε μείνει μεταλλικό) */
-.svc-hero[data-v3] .svc-cta-primary { background: #a55a38 !important; background-size: auto !important; box-shadow: 0 3px 10px rgba(112,64,42,.16) !important; color: #fff !important; }
+.svc-hero[data-v3] .svc-cta-primary { background: #c16d48 !important; background-size: auto !important; box-shadow: 0 3px 10px rgba(112,64,42,.16) !important; color: #fff !important; }
 .svc-hero[data-v3] .svc-cta-primary:hover { background: var(--cu-matt-h, #b66945) !important; color: #fff !important; transform: none; }
 /* σελίδα όρων: η στήλη κειμένου στο κέντρο */
 .svc-prose.lg-page { margin-left: auto !important; margin-right: auto !important; max-width: var(--sv-col) !important; }
@@ -1318,7 +1318,7 @@ body .ta-badge::after { content: ''; display: block; flex-shrink: 0; width: 32px
 body .ta-wrap, .svc-hero { overflow-x: clip; }
 @media (max-width: 768px) { .wdx .svc-es[data-v] { --dx: 0px; } }
 /* αντίθεση WCAG AA (axe): κωδικοί σε λευκό ≥ 4,5:1 · μεγάλοι αριθμοί βημάτων ≥ 3:1 */
-.svc-codes b, .svc-prose > .svc-codes b { color: #99583a !important; }
+.svc-codes b, .svc-prose > .svc-codes b { color: #c16d48 !important; }
 body .ta-box .ta-step-num { color: #ba6c48 !important; }
 /* κινητό (kinito K3/K12): καμία γραφή < 12 px· κουμπί κλήσης στο πρώτο κάδρο και με μακρύ τίτλο */
 .svc-hero[data-v3] .svc-cta-tel small { font-size: 12px !important; }
