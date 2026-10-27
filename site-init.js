@@ -484,9 +484,9 @@
 
 
     // ── 4. ASSETS ─────────────────────────────────────────────────────────────
-    var accentColor = (C.theme && C.theme.accent) ? C.theme.accent : '#c99986';
+    var accentColor = (C.theme && C.theme.accent) ? C.theme.accent : '#c16d48';
     var fallbackInitials =
-        '<div style="width:100%;height:100%;background:linear-gradient(135deg,#1a1410,#2d2010);' +
+        '<div style="width:100%;height:100%;background:linear-gradient(135deg,#0a1420,#0f1d2e);' +
         'display:flex;align-items:center;justify-content:center;font-family:serif;' +
         'font-size:18px;font-weight:700;color:' + accentColor + '">' + P.initials + '</div>';
 
@@ -496,8 +496,8 @@
     var _ROOT = /\/en\/(index\.html)?$/.test(location.pathname) ? '../' : '';
     function _rel(u) { return (u && u.charAt(0) === '/' && u.charAt(1) !== '/') ? _ROOT + u.slice(1) : u; }
     var _FALLBACK = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" fill="#0d1a2d"/>' +
-        '<text x="60" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="34" fill="#c99986">ΤΓΜ</text></svg>');
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" fill="#0d1c2d"/>' +
+        '<text x="60" y="72" text-anchor="middle" font-family="Inter,sans-serif" font-size="34" fill="#c16d48">ΤΓΜ</text></svg>');
     function _fallbackOnce() { if (this.getAttribute('data-fallback')) return; this.setAttribute('data-fallback', '1'); this.src = _FALLBACK; }
     window.__imgFallbackOnce = _fallbackOnce;
 

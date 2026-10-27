@@ -26,7 +26,7 @@ html.tk-pre [data-trochos] [data-tk-meros] {
 .tk-sima.is-on { opacity: 1; }
 .tk-sima-in { transform-box: fill-box; transform-origin: center; }
 .tk-sima-c { fill: rgba(56,161,105,.14); stroke: var(--tk-sima, #48bb78); stroke-width: 1.8; }
-.tk-sima-t { font-family: var(--tk-sima-font, 'Roboto Condensed', sans-serif); font-weight: 700;  /* μέγεθος: μονάδες viewBox */
+.tk-sima-t { font-family: var(--tk-sima-font, 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif); font-size-adjust: cap-height 0.66; font-weight: 700;  /* μέγεθος: μονάδες viewBox */
              letter-spacing: .6px; fill: var(--tk-sima, #48bb78); }
 
 /* ενδείξεις τεχνικού σχεδίου κάτω από τον τροχό (υπολογιστής) */
@@ -34,7 +34,7 @@ html.tk-pre [data-trochos] [data-tk-meros] {
     position: absolute; left: 50%; top: var(--tk-endeixeis-top, calc(100% + 8px));
     transform: translateX(-50%);
     display: flex; flex-direction: column; align-items: center; gap: 2px;
-    font: 500 12px/1.5 var(--tk-mono, 'JetBrains Mono', ui-monospace, monospace);
+    font: 500 12px/1.5 var(--tk-mono, 'IBM Plex Mono', ui-monospace, monospace);
     letter-spacing: .6px; white-space: nowrap;
     color: var(--tk-endeixeis-1, rgba(255,255,255,.58));
     pointer-events: none;

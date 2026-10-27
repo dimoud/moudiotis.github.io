@@ -102,7 +102,7 @@ html.wdx-bg *, .wdx-off, .wdx-off *, .wdx-off *::before { animation-play-state: 
   html .hero-cta-block .hero-pillar i { animation: none; }
 
   .hero-cta-block .hero-pillar { transition: border-color .3s, background .3s, translate .3s var(--wx-arrive), box-shadow .3s; }
-  .hero-cta-block .hero-pillar:hover { translate: 0 -3px; box-shadow: 0 12px 24px -12px rgba(201,153,134,.45); }
+  .hero-cta-block .hero-pillar:hover { translate: 0 -3px; box-shadow: 0 6px 12px -12px rgba(193,109,72,0.18); }
   .btn-hero-ghost { transition: transform .25s var(--wx-arrive), box-shadow .3s; }
   .btn-hero-ghost:hover { transform: translateY(-2px); }
 }

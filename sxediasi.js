@@ -95,7 +95,7 @@
       /* 02 κατάθεση */
       '<g class="st" data-k="1"><g transform="rotate(-8 92 64)"><rect class="ln" x="34" y="52" width="116" height="26" rx="3"/><text class="hd" x="44" y="70">' + L.stamp + '</text></g></g>' +
       /* 03 χάραξη 17ψήφιου */
-      '<g class="st" data-k="2"><text x="20" y="196">' + L.vin + '</text>' + slots + '<path class="ln ln--dim" d="M150 222L160 340"/><circle cx="160" cy="341" r="3" fill="#e7b39f"/></g>' +
+      '<g class="st" data-k="2"><text x="20" y="196">' + L.vin + '</text>' + slots + '<path class="ln ln--dim" d="M150 222L160 340"/><circle cx="160" cy="341" r="3" fill="#e4b7a2"/></g>' +
       /* 04 επιθεώρηση: όρια */
       '<g class="st" data-k="3"><path class="ln" d="M82 402H540M82 396V408M540 396V408"/><text x="250" y="422">' + L.len + '</text>' +
         '<path class="ln" d="M' + X0 + ' 60H' + x3500 + '"/><path class="ln" d="M' + X0 + ' 54V66M' + x750.toFixed(2) + ' 54V66M' + x3500 + ' 54V66"/>' +
@@ -107,7 +107,7 @@
       /* 07 έλεγχος: ζεύξη, φανός, τροχός */
       '<g class="st" data-k="6">' + pin(82, 318) + pin(516, 282) + pin(400, 308) + '</g>' +
       /* 08 πινακίδες */
-      '<g class="st" data-k="7"><rect class="plate" x="430" y="440" width="150" height="38" rx="4"/><text x="472" y="464" style="fill:#0a1728">' + L.plate + '</text>' +
+      '<g class="st" data-k="7"><rect class="plate" x="430" y="440" width="150" height="38" rx="4"/><text x="472" y="464" style="fill:#0a1828">' + L.plate + '</text>' +
         '<circle class="ok" cx="34" cy="458" r="14"/><path class="ok" d="M27 458l5 5 9-10"/><text class="big okt" x="58" y="468">' + L.ok + '</text></g>' +
       '</svg>';
     var fig = document.createElement('figure');

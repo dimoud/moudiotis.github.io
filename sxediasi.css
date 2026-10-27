@@ -13,7 +13,7 @@
     --sx-edge: 7%;                         /* ένα αριστερό άκρο για όλα */
     --sx-radius-panel: 18px; --sx-radius-btn: 6px;
     /* συμπαγής χαλκός: σε ανοιχτό φόντο / σε σκούρο φόντο (αντίθεση ≥ 4,5:1) */
-    --sx-copper-ink: #8a4f37; --sx-copper-light: #e7b39f;
+    --sx-copper-ink: #A55A38; --sx-copper-light: #D98B67;
     --sx-ui-ease: cubic-bezier(.4,0,.6,1);
 }
 @media (max-width: 768px) {
@@ -77,7 +77,7 @@ body #adeia-treyler-o1-o2 .hm-btn, body #adeia-treyler-o1-o2 .hm-btn span { text
     letter-spacing: 0.01em !important;
 }
 
-/* Δύο οικογένειες + mono μόνο στα όργανα (S7): Roboto Condensed → Source Sans 3 */
+/* Δύο οικογένειες + mono μόνο στα όργανα (S7): Inter → Inter */
 #servicesGrid .svc-more, .about-portrait figcaption span, .ap-badge,
 .ec-clear, .ec-col-h, .ec-go, .ec-r-state, .es-stamp-t, .footer-col h4, .hero-art-label,
 .hm-calc-go, .hm-calc-k, .hm-card-k, .hm-link, .mobile-cta-bar a, .nav-dd-head, .news-card-cat,
@@ -91,7 +91,7 @@ body #adeia-treyler-o1-o2 .hm-btn, body #adeia-treyler-o1-o2 .hm-btn span { text
 .svc-prose h3, .svc-quick a, .svc-quick-call small, .svc-related b, .svc-table th,
 body .ta-box .ta-stat-lbl, body .ta-box .ta-badge span, body .tap-graphic-tag,
 body .ta-box .ta-warning-body > strong, .news-card-date, .news-card-src, .service-num {
-    font-family: 'Source Sans 3', system-ui, sans-serif !important;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif !important; font-size-adjust: ex-height 0.49;
 }
 .news-card-date, .news-card-src { font-variant-numeric: tabular-nums; }
 
@@ -108,7 +108,7 @@ body .ta-box .ta-warning-body > strong, .news-card-date, .news-card-src, .servic
 }
 .hm-link::after, .svc-more::after { content: none; }
 body a.ta-cta-btn, body a.tap-cta-btn, body .svc-quick a.svc-quick-call { box-shadow: none !important; }
-.apf-item.is-open { box-shadow: 0 14px 34px rgba(0,0,0,0.08) !important; }
+.apf-item.is-open { box-shadow: 0 7px 17px rgba(0,0,0,0.08) !important; }
 
 /* ── 5. Ένα αριστερό άκρο (17 §Δ2, S2) ── */
 .hm-in { max-width: none !important; padding-inline: var(--sx-edge) !important; }
@@ -149,15 +149,18 @@ body a.ta-cta-btn, body a.tap-cta-btn, body .svc-quick a.svc-quick-call { box-sh
     -webkit-text-fill-color: currentColor !important; color: var(--sx-copper-ink) !important;
 }
 /* σκούρο φόντο → ανοιχτός χαλκός · ο τίτλος της υποσελίδας μένει λευκός */
-#ypologistis .eyebrow span, #ypologistis em, .contact-section .eyebrow span, .contact-section em,
+body .contact-section .eyebrow span, body .contact-section .section-heading em, body .contact-section em,
+body #adeia-treyler-o1-o2 .eyebrow span, body #trust .eyebrow span, body #trust .section-heading em,
 .svc-hero .svc-kicker { color: var(--sx-copper-light) !important; }
+/* #ypologistis: ανοιχτό φόντο → σκούρος χαλκός (2026-10) */
+body #ypologistis .eyebrow span, body #ypologistis em { color: var(--sx-copper-ink) !important; }
 .svc-hero h1 { color: #fff !important; }
 
 /* ── 10. Συνεχείς κινήσεις: παύση με κουμπί (ΜΗ-02), ειδήσεις ως συλλογή (17 §ΣΤ) ── */
 .sx-paused, .sx-paused * { animation-play-state: paused !important; }   /* ΜΗ-02: κουμπί παύσης με aria-pressed */
 .sx-pp {
     position: absolute; right: 12px; bottom: 8px; z-index: 3; width: 44px; height: 44px; border-radius: 999px;
-    border: 0; background: rgba(5,13,24,.55); color: #fff; font: 600 14px/1 'Source Sans 3', system-ui, sans-serif; cursor: pointer;
+    border: 0; background: rgba(6,14,23,.55); color: #fff; font: 600 14px/1 'Inter', system-ui, sans-serif; cursor: pointer;
 }
 .sx-pp:focus-visible, .sx-nb:focus-visible { outline: 2px solid var(--sx-copper-light); outline-offset: 2px; }
 .marquee-wrap { position: relative; }
@@ -186,22 +189,22 @@ body a.ta-cta-btn, body a.tap-cta-btn, body .svc-quick a.svc-quick-call { box-sh
     .sx-trfig { display: block; grid-column: 2; grid-row: 1 / span 3; align-self: center; margin: 0; max-width: 620px; justify-self: end; width: 100%; }
 }
 .sx-trfig svg { width: 100%; height: auto; display: block; overflow: visible; }
-.sx-trfig .ln { fill: none; stroke: #c99986; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.sx-trfig .ln--dim { stroke: rgba(201,153,134,.35); stroke-width: 1; }
+.sx-trfig .ln { fill: none; stroke: #c16d48; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.sx-trfig .ln--dim { stroke: rgba(193,109,72,.35); stroke-width: 1; }
 .sx-trfig .draw { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.4s cubic-bezier(.65,0,.35,1); }
 .sx-trfig.is-on .draw { stroke-dashoffset: 0; }
-.sx-trfig text { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; fill: rgba(255,255,255,.72); letter-spacing: .04em; }
-.sx-trfig text.hd { fill: #e7b39f; font-size: 13px; letter-spacing: .14em; }
-.sx-trfig text.big { font-family: 'EB Garamond', Georgia, serif; font-size: 30px; letter-spacing: 0; fill: #fff; }
+.sx-trfig text { font-family: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace; font-size-adjust: none; font-size: 14px; fill: rgba(255,255,255,.72); letter-spacing: .04em; }
+.sx-trfig text.hd { fill: #e4b7a2; font-size: 13px; letter-spacing: .14em; }
+.sx-trfig text.big { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.64; font-style: normal; font-size: 30px; letter-spacing: 0; fill: #fff; }
 .sx-trfig .st { opacity: 0; transform: translateY(6px); transition: opacity .5s cubic-bezier(.16,1,.3,1), transform .5s cubic-bezier(.16,1,.3,1); }
 .sx-trfig .st.on { opacity: .55; transform: none; }
 .sx-trfig .st.cur { opacity: 1; transform: none; }
 .sx-trfig .ok { fill: none; stroke: #7fd1a0; stroke-width: 2; }
 .sx-trfig .okt { fill: #7fd1a0 !important; }
-.sx-trfig .slot { fill: rgba(201,153,134,.18); transition: fill .2s linear; }
-.sx-trfig .slot.f { fill: #e7b39f; }
-.sx-trfig .plate { fill: #f4f1ea; stroke: #0a1728; stroke-width: 1.5; }
-.sx-trfig figcaption { margin-top: 10px; font: 500 12px/1.4 'JetBrains Mono', ui-monospace, monospace; color: rgba(255,255,255,.6); letter-spacing: .06em; }
+.sx-trfig .slot { fill: rgba(193,109,72,.18); transition: fill .2s linear; }
+.sx-trfig .slot.f { fill: #e4b7a2; }
+.sx-trfig .plate { fill: #ebeff3; stroke: #0a1828; stroke-width: 1.5; }
+.sx-trfig figcaption { margin-top: 10px; font: 500 12px/1.4 'IBM Plex Mono', ui-monospace, monospace; color: rgba(255,255,255,.6); letter-spacing: .06em; }
 
 /* ── 12. Μειωμένη κίνηση ── */
 @media (prefers-reduced-motion: reduce) {

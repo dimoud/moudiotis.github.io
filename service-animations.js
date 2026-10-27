@@ -26,11 +26,11 @@
   var RESTART_DELAY = 9000;
   var AUTO_RESTART  = true;
 
-  var GOLD  = '#c99986';
-  var NAVY  = '#1d3a5c';
+  var GOLD  = '#c16d48';
+  var NAVY  = '#142b45';
   var GREEN = '#38a169';
   var MUTED = '#9aa3ad';
-  var CREAM = '#f5f4ef';
+  var CREAM = '#f5f7f9';
 
   function isEn() {
     return (document.documentElement.getAttribute('lang') || 'el')
@@ -46,15 +46,15 @@
       .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
-  var MONO = "'JetBrains Mono',monospace";
-  var OSW  = "'Roboto Condensed',sans-serif";
+  var MONO = "'IBM Plex Mono',monospace";
+  var OSW  = "'Inter',sans-serif";
 
   /* Βοηθός για <text>: txt(x,y,size,content,extra) */
   function txt(x, y, size, content, opts) {
     opts = opts || {};
     return '<text class="sv-t" x="' + x + '" y="' + y + '"' +
       ' font-family="' + (opts.font || MONO) + '"' +
-      ' font-size="' + size + '"' +
+      ' font-size="' + (opts.font === OSW ? Math.round(size * 1.7) / 2 : size) + '"' +  /* Inter φαρδύτερη από τη στενή γραμματοσειρά: ×0,85 */
       ' letter-spacing="' + (opts.ls !== undefined ? opts.ls : 1.6) + '"' +
       (opts.weight ? ' font-weight="' + opts.weight + '"' : '') +
       (opts.anchor ? ' text-anchor="' + opts.anchor + '"' : '') +
@@ -162,9 +162,9 @@
       s.push('<circle cx="' + cx + '" cy="' + cy + '" r="1.5" fill="' + GOLD + '"/>');
     }
     s.push('<text x="540" y="284" text-anchor="middle" font-family="' + OSW + '"',
-           ' font-size="13" font-weight="700" letter-spacing="1" fill="' + GOLD + '">GR</text>');
+           ' font-size="11" font-weight="700" letter-spacing="1" fill="' + GOLD + '">GR</text>');
     s.push('<text x="678" y="272" text-anchor="middle" font-family="' + OSW + '"',
-           ' font-size="34" font-weight="700" letter-spacing="5" fill="' + NAVY + '">ΙΖΡ 4471</text>');
+           ' font-size="29" font-weight="700" letter-spacing="5" fill="' + NAVY + '">ΙΖΡ 4471</text>');
     s.push('<circle cx="789" cy="293" r="17" fill="' + GREEN + '"/>');
     s.push('<path d="M781 293 L787 299 L797 287" stroke="#fff" stroke-width="3"',
            ' stroke-linecap="round" stroke-linejoin="round" fill="none"/>');
@@ -293,12 +293,12 @@
     s.push('<rect x="' + (sgx - 17) + '" y="310" width="34" height="23" rx="4"',
            ' fill="rgba(56,161,105,0.12)" stroke="' + GREEN + '" stroke-width="2.4"/>');
     s.push('<text x="' + sgx + '" y="326" text-anchor="middle" font-family="' + OSW + '"',
-           ' font-size="12" font-weight="700" letter-spacing="1" fill="' + GREEN + '">SG</text>');
+           ' font-size="10" font-weight="700" letter-spacing="1" fill="' + GREEN + '">SG</text>');
     /* Ο όρος γράφεται ολόκληρος· η συντομογραφία δεν λέει τίποτα στον πελάτη. */
     s.push('<rect x="352" y="157" width="174" height="36" rx="6" fill="' + CREAM + '"',
            ' stroke="' + GREEN + '" stroke-width="3"/>');
     s.push('<text x="439" y="181" text-anchor="middle" font-family="' + OSW + '"',
-           ' font-size="13" font-weight="700" letter-spacing="1.6" fill="' + GREEN + '">' +
+           ' font-size="11" font-weight="700" letter-spacing="1.6" fill="' + GREEN + '">' +
            esc(t(['ΕΙΔΙΚΟΥ ΣΚΟΠΟΥ', 'SPECIAL PURPOSE'])) + '</text>');
     s.push('</g>');
 

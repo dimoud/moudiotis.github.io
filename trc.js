@@ -379,7 +379,7 @@
       'width:'  + size + 'px;height:' + size + 'px;' +
       'left:'   + (e.clientX - r.left - size / 2) + 'px;' +
       'top:'    + (e.clientY - r.top  - size / 2) + 'px;' +
-      'background:rgba(31,60,99,.09);';
+      'background:rgba(20,43,69,.09);';
     card.appendChild(dot);
     setTimeout(function () { dot.remove(); }, 700);
   }

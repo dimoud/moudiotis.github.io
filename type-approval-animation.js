@@ -22,7 +22,7 @@
   var RESTART_DELAY = 9000;  // ms after the stamp is shown before restarting
   var AUTO_RESTART  = true;
 
-  var GOLD  = '#c99986';
+  var GOLD  = '#c16d48';
   var GREEN = '#38a169';
 
   /* ── TRANSLATION HELPER ──
@@ -132,25 +132,25 @@
       /* ─── DOCUMENT TEXT (fades in after the sketch) ─── */
       '<g id="tapTexts" fill="' + GOLD + '">',
       '<text class="tap-t" data-i18n="tap.doc.title" x="100" y="80"',
-      '  font-family="\'Roboto Condensed\',sans-serif" font-size="27" font-weight="700"',
+      '  font-family="\'Inter\',sans-serif" font-size="23" font-weight="700"',
       '  letter-spacing="1.5" opacity="0">' + esc(tr('tap.doc.title')) + '</text>',
       '<text class="tap-t" data-i18n="tap.doc.sub" x="100" y="98"',
-      '  font-family="\'JetBrains Mono\',monospace" font-size="9.5" letter-spacing="2"',
+      '  font-family="\'IBM Plex Mono\',monospace" font-size="9.5" letter-spacing="2"',
       '  opacity="0">' + esc(tr('tap.doc.sub')) + '</text>',
       '<text class="tap-t" data-i18n="tap.doc.field" x="100" y="126"',
-      '  font-family="\'JetBrains Mono\',monospace" font-size="8.5" letter-spacing="1.8"',
+      '  font-family="\'IBM Plex Mono\',monospace" font-size="8.5" letter-spacing="1.8"',
       '  opacity="0">' + esc(tr('tap.doc.field')) + '</text>',
       '<text class="tap-t" x="250" y="159" text-anchor="middle"',
-      '  font-family="\'JetBrains Mono\',monospace" font-size="19" letter-spacing="1.5"',
+      '  font-family="\'IBM Plex Mono\',monospace" font-size="19" letter-spacing="1.5"',
       '  opacity="0">e13*2018/858*00123</text>',
       '<text class="tap-t" data-i18n="tap.doc.chk1" x="126" y="257"',
-      '  font-family="\'JetBrains Mono\',monospace" font-size="9.5" letter-spacing="1.4"',
+      '  font-family="\'IBM Plex Mono\',monospace" font-size="9.5" letter-spacing="1.4"',
       '  opacity="0">' + esc(tr('tap.doc.chk1')) + '</text>',
       '<text class="tap-t" data-i18n="tap.doc.chk2" x="126" y="283"',
-      '  font-family="\'JetBrains Mono\',monospace" font-size="9.5" letter-spacing="1.4"',
+      '  font-family="\'IBM Plex Mono\',monospace" font-size="9.5" letter-spacing="1.4"',
       '  opacity="0">' + esc(tr('tap.doc.chk2')) + '</text>',
       '<text class="tap-t" data-i18n="tap.dim.label" x="632" y="156" text-anchor="middle"',
-      '  font-family="\'JetBrains Mono\',monospace" font-size="10" letter-spacing="1.8"',
+      '  font-family="\'IBM Plex Mono\',monospace" font-size="10" letter-spacing="1.8"',
       '  opacity="0">' + esc(tr('tap.dim.label')) + '</text>',
       '</g>',
 
@@ -162,17 +162,17 @@
       '  <path d="M572 222 L692 222" stroke="' + GREEN + '" stroke-width="1.4"/>',
       '  <path d="M572 266 L692 266" stroke="' + GREEN + '" stroke-width="1.4"/>',
       '  <text data-i18n="tap.stamp.top" x="632" y="210" text-anchor="middle"',
-      '    font-family="\'JetBrains Mono\',monospace" font-size="8" letter-spacing="1.4"',
+      '    font-family="\'IBM Plex Mono\',monospace" font-size="8" letter-spacing="1.4"',
       '    fill="' + GREEN + '" opacity="0.85">' + esc(tr('tap.stamp.top')) + '</text>',
       '  <text data-i18n="tap.stamp.main" x="632" y="252" text-anchor="middle"',
       /* 18px / 0.6 tracking keeps the longest label (ΕΓΚΡΙΘΗΚΕ) inside r=71 */
-      '    font-family="\'Roboto Condensed\',sans-serif" font-size="18" font-weight="700"',
+      '    font-family="\'Inter\',sans-serif" font-size="15.5" font-weight="700"',
       '    letter-spacing="0.6" fill="' + GREEN + '">' + esc(tr('tap.stamp.main')) + '</text>',
       '  <text data-i18n="tap.stamp.sub" x="632" y="284" text-anchor="middle"',
-      '    font-family="\'JetBrains Mono\',monospace" font-size="9" letter-spacing="1.8"',
+      '    font-family="\'IBM Plex Mono\',monospace" font-size="9" letter-spacing="1.8"',
       '    fill="' + GREEN + '">' + esc(tr('tap.stamp.sub')) + '</text>',
       '  <text data-i18n="tap.stamp.foot" x="632" y="303" text-anchor="middle"',
-      '    font-family="\'JetBrains Mono\',monospace" font-size="7.5" letter-spacing="1.1"',
+      '    font-family="\'IBM Plex Mono\',monospace" font-size="7.5" letter-spacing="1.1"',
       '    fill="' + GREEN + '" opacity="0.75">' + esc(tr('tap.stamp.foot')) + '</text>',
       '</g>',
 

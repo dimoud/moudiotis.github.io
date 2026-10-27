@@ -37,9 +37,9 @@
         '<g class="es-scene" data-s="0">' +
         '<defs><linearGradient id="esHeat" x1="60" x2="600" y1="0" y2="0" gradientUnits="userSpaceOnUse">' +
         '<stop offset="0" stop-color="#1b4f8f"/><stop offset=".13" stop-color="#2a7fc4"/><stop offset=".3" stop-color="#3fb68b"/>' +
-        '<stop offset=".45" stop-color="#f1c84b"/><stop offset=".55" stop-color="#e2562e"/><stop offset=".66" stop-color="#f1c84b"/>' +
+        '<stop offset=".45" stop-color="#f1c84b"/><stop offset=".55" stop-color="#c97047"/><stop offset=".66" stop-color="#f1c84b"/>' +
         '<stop offset=".8" stop-color="#3fb68b"/><stop offset=".9" stop-color="#2a7fc4"/><stop offset="1" stop-color="#1b4f8f"/></linearGradient>' +
-        '<linearGradient id="esLegend" x1="0" x2="1"><stop offset="0" stop-color="#1b4f8f"/><stop offset=".35" stop-color="#3fb68b"/><stop offset=".7" stop-color="#f1c84b"/><stop offset="1" stop-color="#e2562e"/></linearGradient></defs>' +
+        '<linearGradient id="esLegend" x1="0" x2="1"><stop offset="0" stop-color="#1b4f8f"/><stop offset=".35" stop-color="#3fb68b"/><stop offset=".7" stop-color="#f1c84b"/><stop offset="1" stop-color="#c97047"/></linearGradient></defs>' +
         '<g class="es-ln">' +
         D('M20 330 L620 330', 0, GR) +
         D('M60 250 L60 150 Q62 118 92 112 L150 108 Q166 108 172 126 L180 250', 0.1) +

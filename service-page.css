@@ -10,7 +10,7 @@
     position: relative;
     background-color: var(--gold);
     background-image:
-        linear-gradient(to right, rgba(13,26,45,0.86) 0%, rgba(13,26,45,0.60) 60%, rgba(13,26,45,0.80) 100%),
+        linear-gradient(to right, rgba(13,28,45,0.86) 0%, rgba(13,28,45,0.60) 60%, rgba(13,28,45,0.80) 100%),
         url('688bc305-6129-4485-a56f-d72fdc729791.webp');
     background-size: cover;
     background-position: center center;
@@ -24,17 +24,17 @@
 .svc-hero-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .svc-hero-txt { min-width: 0; }
 .svc-hero .svc-kicker {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.66;
     font-size: 12.5px; letter-spacing: 3.4px; text-transform: uppercase;
     color: var(--warm); font-weight: 600; margin: 0 0 10px;
 }
 .svc-hero h1 {
-    font-family: 'EB Garamond', serif; font-weight: 700;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.64; font-style: normal; font-weight: 700;
     font-size: clamp(26px, 4.2vw, 42px); line-height: 1.14;
-    color: var(--white); margin: 0 0 14px;
+    color: var(--white); margin: 0 0 14px; letter-spacing: -0.015em;
 }
 .svc-hero .svc-lede {
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: ex-height 0.49;
     font-size: clamp(15.5px, 1.7vw, 18px); line-height: 1.66;
     color: rgba(255,255,255,0.88); margin: 0;
 }
@@ -49,7 +49,7 @@
 /* ── Breadcrumb ── */
 .svc-crumb {
     max-width: 1100px; margin: 0 auto; padding: 18px 24px 0;
-    font-family: 'Source Sans 3', sans-serif; font-size: 13px; color: var(--stone);
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: ex-height 0.49; font-size: 13px; color: var(--stone);
 }
 .svc-crumb a { color: var(--gold2); text-decoration: none; }
 .svc-crumb a:hover { text-decoration: underline; }
@@ -57,19 +57,19 @@
 /* ── Κείμενο μέσα στο .ta-box — ΠΛΗΡΕΣ πλάτος, ίδιο padding 24px ── */
 .svc-prose { padding: 6px 24px 2px; }
 .svc-prose h2 {
-    font-family: 'EB Garamond', serif; font-weight: 700;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.64; font-style: normal; font-weight: 700;
     font-size: clamp(20px, 2.7vw, 27px); line-height: 1.3;
-    color: var(--gold); margin: 20px 0 12px;
+    color: var(--gold); margin: 20px 0 12px; letter-spacing: -0.015em;
 }
 .svc-prose h2:first-child { margin-top: 6px; }
 .svc-prose h3 {
-    font-family: 'Roboto Condensed', sans-serif; font-weight: 600;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.66; font-weight: 600;
     font-size: 18px; letter-spacing: 1.3px; text-transform: uppercase;
     color: var(--gold2); margin: 22px 0 8px;
 }
 .svc-prose p,
 .svc-prose li {
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: ex-height 0.49;
     font-size: 16.5px; line-height: 1.74; color: var(--ink2);
 }
 .svc-prose p  { margin: 0 0 13px; }
@@ -80,11 +80,11 @@
 
 /* ── FAQ (μέσα στο ta-box) ── */
 .svc-faq { padding: 2px 24px 18px; }
-.svc-faq details { border-bottom: 1px solid rgba(201,153,134,.3); padding: 13px 0; }
+.svc-faq details { border-bottom: 1px solid rgba(193,109,72,.3); padding: 13px 0; }
 .svc-faq details:last-child { border-bottom: none; }
 .svc-faq summary {
     cursor: pointer; list-style: none;
-    font-family: 'Roboto Condensed', sans-serif; font-size: 18px;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.66; font-size: 18px;
     letter-spacing: 0.7px; color: var(--gold);
     display: flex; justify-content: space-between; align-items: center; gap: 14px;
 }
@@ -92,7 +92,7 @@
 .svc-faq summary::after { content: '+'; font-size: 21px; color: var(--warm); flex-shrink: 0; line-height: 1; }
 .svc-faq details[open] summary::after { content: '\2212'; }
 .svc-faq details p {
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: ex-height 0.49;
     margin: 11px 0 2px; font-size: 16px; line-height: 1.72; color: var(--ink2);
 }
 .svc-faq details p strong { color: var(--ink); font-weight: 600; }
@@ -104,15 +104,15 @@
 }
 .svc-related a {
     display: block; background: var(--cream); text-decoration: none;
-    border: 1px solid rgba(201,153,134,.45); padding: 16px 18px;
+    border: 1px solid rgba(193,109,72,.45); padding: 16px 18px;
     transition: border-color .25s, transform .25s, box-shadow .25s;
 }
-.svc-related a:hover { border-color: var(--warm); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.07); }
+.svc-related a:hover { border-color: var(--warm); transform: translateY(-2px); box-shadow: 0 3px 10px rgba(0,0,0,.07); }
 .svc-related b {
-    display: block; font-family: 'Roboto Condensed', sans-serif;
+    display: block; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.66;
     font-size: 17px; letter-spacing: 0.8px; color: var(--gold); margin-bottom: 4px;
 }
-.svc-related span { font-family: 'Source Sans 3', sans-serif; font-size: 14.5px; color: var(--stone); line-height: 1.55; }
+.svc-related span { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: ex-height 0.49; font-size: 14.5px; color: var(--stone); line-height: 1.55; }
 
 /* ── Οι κάρτες του tapGrid όταν γίνονται σύνδεσμοι ── */
 a.tap-item-link { text-decoration: none; color: inherit; display: block; transition: opacity .2s; }
@@ -169,8 +169,8 @@ html:not(.js) [data-reveal] { opacity: 1 !important; transform: none !important;
 .svc-hero::before {
     content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
     background-image:
-        linear-gradient(rgba(201,153,134,0.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201,153,134,0.055) 1px, transparent 1px);
+        linear-gradient(rgba(193,109,72,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(193,109,72,0.055) 1px, transparent 1px);
     background-size: 46px 46px;
     mask-image: radial-gradient(ellipse 80% 70% at 30% 50%, #000 20%, transparent 78%);
     -webkit-mask-image: radial-gradient(ellipse 80% 70% at 30% 50%, #000 20%, transparent 78%);
@@ -187,15 +187,15 @@ html:not(.js) [data-reveal] { opacity: 1 !important; transform: none !important;
     position: relative; width: 108px; height: 108px;
     display: flex; align-items: center; justify-content: center;
     border-radius: 50%;
-    background: radial-gradient(circle at 50% 45%, rgba(46,95,138,0.42), rgba(29,58,92,0) 68%);
+    background: radial-gradient(circle at 50% 45%, rgba(46,89,138,0.42), rgba(20,43,69,0) 68%);
 }
 .svc-hero-logo::before {
     content: ''; position: absolute; inset: -9px; border-radius: 50%;
-    border: 1px solid rgba(201,153,134,0.42);
+    border: 1px solid rgba(193,109,72,0.42);
 }
 .svc-hero-logo::after {
     content: ''; position: absolute; inset: -19px; border-radius: 50%;
-    border: 1px solid rgba(201,153,134,0.16);
+    border: 1px solid rgba(193,109,72,0.16);
 }
 .svc-hero-logo img { width: 88px; height: 88px; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.45)); }
 
@@ -211,7 +211,7 @@ html:not(.js) [data-reveal] { opacity: 1 !important; transform: none !important;
 }
 
 /* ── Το κουτί περιεχομένου: περισσότερο βάθος ── */
-.ta-box { box-shadow: 0 18px 60px rgba(13,26,45,.16), 0 3px 10px rgba(13,26,45,.07); }
+.ta-box { box-shadow: 0 9px 30px rgba(13,28,45,.16), 0 3px 10px rgba(13,28,45,.07); }
 
 /* ── Στατιστικά ──
    Η χρυσή γραμμή που έμπαινε κάτω δεξιά από κάθε στοιχείο αφαιρέθηκε:
@@ -220,7 +220,7 @@ html:not(.js) [data-reveal] { opacity: 1 !important; transform: none !important;
 
 /* ── Βήματα: υπογράμμιση στο πέρασμα ── */
 .ta-steps > li { transition: background .3s; border-radius: 3px; }
-.ta-steps > li:hover { background: rgba(201,153,134,.07); }
+.ta-steps > li:hover { background: rgba(193,109,72,.07); }
 .ta-step-num { transition: color .3s, transform .3s; }
 .ta-steps > li:hover .ta-step-num { color: var(--gold2); transform: translateY(-1px); }
 
@@ -234,7 +234,7 @@ html:not(.js) [data-reveal] { opacity: 1 !important; transform: none !important;
 .svc-related a:hover::after { opacity: 1; transform: translateX(0); }
 
 /* ── FAQ: απαλό φόντο στο ανοιχτό ── */
-.svc-faq details[open] { background: rgba(201,153,134,.05); border-radius: 3px; padding-left: 10px; padding-right: 10px; }
+.svc-faq details[open] { background: rgba(193,109,72,.05); border-radius: 3px; padding-left: 10px; padding-right: 10px; }
 
 /* ── Lang toggle: σε μικρές οθόνες μόνο οι κωδικοί ── */
 @media (max-width: 560px) {
@@ -306,7 +306,7 @@ body .svc-crumb { padding-top: 20px; padding-bottom: 0; }
 .svc-prose h2,
 .svc-prose h3,
 .svc-faq summary {
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.64; font-style: normal;
     color: var(--gold);
     text-transform: none;
     letter-spacing: 0;
@@ -338,17 +338,17 @@ body .svc-crumb { padding-top: 20px; padding-bottom: 0; }
 .svc-quick a {
     display: inline-flex; align-items: center; gap: 9px;
     min-height: 45px; padding: 0 19px; border-radius: 5px; text-decoration: none;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.66;
     font-size: 13px; font-weight: 600; line-height: 1;
     letter-spacing: 1.3px; text-transform: uppercase;
     transition: background .25s, border-color .25s, color .25s, transform .25s;
 }
-.svc-quick-call { background: var(--warm); color: var(--ink); }
+.svc-quick-call { background: #a55a38; color: #fff; }
 .svc-quick-call:hover { background: var(--warm2); transform: translateY(-1px); }
 .svc-quick-call i { font-size: 11px; }
 .svc-quick-call span { display: flex; flex-direction: column; gap: 2px; }
 .svc-quick-call small {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.66;
     font-size: 9px; font-weight: 500; letter-spacing: 1.3px;
     text-transform: uppercase; opacity: .68; line-height: 1;
 }
@@ -364,7 +364,7 @@ body .svc-crumb { padding-top: 20px; padding-bottom: 0; }
    Πριν: το τρέχον κείμενο εμφανιζόταν σε δύο ασύνδετα μεγέθη (16,5px στην
    πρόζα, 12,5px στα βήματα, στην προειδοποίηση και στο κλείσιμο) και οι
    μικρές ετικέτες κεφαλαίων σε τέσσερις διαφορετικές γραμματοσειρές
-   (Oswald 9px, Oswald 11px, JetBrains Mono 9,5px, Source Sans 10,7px).
+   (Oswald 9px, Oswald 11px, IBM Plex Mono 9,5px, Source Sans 10,7px).
    Τώρα: δύο μεγέθη κειμένου και μία γραμματοσειρά για κάθε μικρή ετικέτα.
    Ο κανόνας μένει στο service-page.css, άρα ισχύει μόνο στις σελίδες
    υπηρεσιών — η κεντρική σελίδα δεν θίγεται. */
@@ -377,14 +377,14 @@ body .ta-box .ta-cta-text {
 body .ta-box .ta-stat-lbl,
 body .ta-box .ta-badge span,
 body .tap-graphic-tag {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.66;
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 body .ta-box .ta-warning-body > strong {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.66;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1.4px;
@@ -424,7 +424,7 @@ body .ta-box .ta-steps > li::before {
     content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0;
     background: var(--warm); transition: width .28s var(--ease);
 }
-body .ta-box .ta-steps > li:hover { background: rgba(201,153,134,.07); }
+body .ta-box .ta-steps > li:hover { background: rgba(193,109,72,.07); }
 body .ta-box .ta-steps > li:hover::before { width: 3px; }
 body .ta-box .ta-steps > li:hover .ta-step-num { transform: scale(1.08); }
 body .ta-box .ta-step-num { transition: transform .28s var(--ease); }
@@ -457,7 +457,7 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
 }
 .svc-table th {
     text-align: left;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.66;
     font-weight: 700; font-size: 12.5pt; letter-spacing: .05em; text-transform: uppercase;
     color: #fff; background: var(--gold);
     padding: 9px 12px;
@@ -465,20 +465,20 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
 }
 .svc-table td {
     padding: 9px 12px;
-    border-bottom: 1px solid rgba(31,60,99,.14);
+    border-bottom: 1px solid rgba(20,43,69,.14);
     vertical-align: top;
-    color: #46505e;
+    color: #46515e;
 }
-.svc-table tbody tr:nth-child(odd) { background: rgba(31,60,99,.028); }
-.svc-table tbody tr:hover { background: rgba(201,153,134,.10); }
+.svc-table tbody tr:nth-child(odd) { background: rgba(20,43,69,.028); }
+.svc-table tbody tr:hover { background: rgba(193,109,72,.10); }
 .svc-table td:first-child {
     white-space: nowrap; color: var(--ink);
-    font-family: 'JetBrains Mono', monospace; font-size: 13px;
+    font-family: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace; font-size-adjust: none; font-size: 13px;
 }
 .svc-table td b { color: var(--ink); font-weight: 600; }
 .svc-code {
-    font-family: 'JetBrains Mono', monospace; font-size: 13px;
-    background: rgba(31,60,99,.07); border: 1px solid rgba(31,60,99,.16);
+    font-family: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace; font-size-adjust: none; font-size: 13px;
+    background: rgba(20,43,69,.07); border: 1px solid rgba(20,43,69,.16);
     border-radius: 3px; padding: 1px 6px; color: var(--ink); white-space: nowrap;
 }
 @media (max-width: 768px) {
@@ -492,8 +492,8 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
    συχνές ερωτήσεις και σχετικές σελίδες ως κάρτες. */
 .svc-hero {
     background-image:
-        radial-gradient(70% 90% at 15% 0%, rgba(46,95,138,0.45), transparent 70%),
-        linear-gradient(115deg, rgba(5,13,24,0.94) 0%, rgba(14,33,56,0.82) 55%, rgba(5,13,24,0.92) 100%),
+        radial-gradient(70% 90% at 15% 0%, rgba(46,89,138,0.45), transparent 70%),
+        linear-gradient(115deg, rgba(6,14,23,0.94) 0%, rgba(14,34,56,0.82) 55%, rgba(6,14,23,0.92) 100%),
         url('688bc305-6129-4485-a56f-d72fdc729791.webp') !important;
     padding: 136px 0 64px !important;
 }
@@ -505,16 +505,16 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
 }
 .svc-prose h2 { color: var(--navy-mid) !important; position: relative; padding-left: 16px; }
 .svc-prose h2::before { content: ''; position: absolute; left: 0; top: .2em; bottom: .2em; width: 4px; border-radius: 2px; background: var(--gold-metal); }
-.svc-prose h3 { color: #a56a52 !important; }
+.svc-prose h3 { color: #a55a38 !important; }
 .svc-faq details { transition: background .25s; border-radius: 4px; }
-.svc-faq details[open] { background: linear-gradient(90deg, rgba(201,138,112,0.10), rgba(201,138,112,0.02)); }
-.svc-faq summary::after { color: #c98a70; }
+.svc-faq details[open] { background: linear-gradient(90deg, rgba(193,109,72,0.10), rgba(193,109,72,0.02)); }
+.svc-faq summary::after { color: #c16d48; }
 .svc-related a {
     border: 1px solid transparent !important; border-radius: 8px;
-    background: linear-gradient(#fff,#fff) padding-box, linear-gradient(135deg, rgba(201,138,112,0.25), rgba(201,138,112,0.6)) border-box !important;
+    background: linear-gradient(#fff,#fff) padding-box, linear-gradient(135deg, rgba(193,109,72,0.25), rgba(193,109,72,0.6)) border-box !important;
     transition: transform .3s var(--ease), box-shadow .3s var(--ease), background .3s;
 }
-.svc-related a:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(7,17,31,0.14);
+.svc-related a:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(8,18,30,0.14);
     background: linear-gradient(#fff,#fff) padding-box, var(--gold-metal) border-box !important; }
 @media (max-width: 700px) { .svc-hero { padding: 100px 0 44px !important; } }
 
@@ -525,11 +525,11 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
 .svc-fam p { margin: 0 0 8px; }
 .svc-codes { list-style: none; padding: 0 !important; display: grid; grid-template-columns: 1fr; gap: 6px 28px; }
 @media (min-width: 769px) { .svc-codes { grid-template-columns: 1fr 1fr; } }
-.svc-codes li { display: flex; gap: 12px; align-items: baseline; margin: 0 !important; padding: 6px 0; border-bottom: 1px solid rgba(201,153,134,.25); }
+.svc-codes li { display: flex; gap: 12px; align-items: baseline; margin: 0 !important; padding: 6px 0; border-bottom: 1px solid rgba(193,109,72,.25); }
 .svc-codes b { flex: 0 0 34px; font-weight: 700; color: var(--warm); letter-spacing: .04em; }
 
 /* Ρόλος του μηχανικού — σε κάθε σελίδα υπηρεσίας */
-.svc-role { margin: 22px 0 16px; padding: 16px 20px 6px; border-left: 3px solid var(--warm); background: rgba(201,153,134,.08); border-radius: 0 6px 6px 0; }
+.svc-role { margin: 22px 0 16px; padding: 16px 20px 6px; border-left: 3px solid var(--warm); background: rgba(193,109,72,.08); border-radius: 0 6px 6px 0; }
 .svc-prose .svc-role h2 { margin-top: 0 !important; }
 .svc-role h2 i { color: var(--warm); font-size: .8em; margin-right: 6px; }
 @media (max-width: 768px) { .svc-role { padding: 14px 14px 4px; } }
@@ -540,7 +540,7 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
 /* Ενότητα νομιμότητας (π.χ. μετατροπή βαν): κόκκινη πλάγια γραμμή — η
    κυκλοφορία χωρίς νέα άδεια είναι παράβαση, πρέπει να διαβάζεται αμέσως. */
 .svc-legal { margin: 22px 0 16px; padding: 16px 20px 8px; border-left: 3px solid #b8442c; background: rgba(184,68,44,.06); border-radius: 0 6px 6px 0; }
-.svc-prose .svc-legal h2 { margin-top: 0 !important; color: #8f3220; }
+.svc-prose .svc-legal h2 { margin-top: 0 !important; color: #884627; }
 .svc-legal strong { color: var(--ink); }
 .svc-legal ul { margin: 6px 0 10px; }
 @media (max-width: 768px) { .svc-legal { padding: 14px 14px 6px; } }
@@ -548,41 +548,41 @@ body .ta-box .ta-stat:hover .ta-stat-icon { transform: scale(1.12); color: var(-
 /* Σελίδα όρων χρήσης / απορρήτου / cookies */
 .lg-page { max-width: 860px; }
 .lg-intro { font-size: 17px; }
-.lg-toc { margin: 18px 0 26px; padding: 16px 22px; border: 1px solid rgba(29,58,92,.12); border-radius: 8px; background: #fff; }
+.lg-toc { margin: 18px 0 26px; padding: 16px 22px; border: 1px solid rgba(20,43,69,.12); border-radius: 8px; background: #fff; }
 .lg-toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 32px; }
 .lg-toc li { margin: 3px 0; break-inside: avoid; }
 .lg-page h2 { scroll-margin-top: 90px; }
 .lg-page h3 { margin: 20px 0 6px; font-size: 18px; }
 .lg-table-wrap { overflow-x: auto; margin: 10px 0 16px; -webkit-overflow-scrolling: touch; }
 .lg-table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
-.lg-table th, .lg-table td { text-align: left; vertical-align: top; padding: 9px 10px; border-bottom: 1px solid rgba(29,58,92,.12); }
-.lg-table th { background: rgba(201,153,134,.12); font-weight: 600; }
+.lg-table th, .lg-table td { text-align: left; vertical-align: top; padding: 9px 10px; border-bottom: 1px solid rgba(20,43,69,.12); }
+.lg-table th { background: rgba(193,109,72,.12); font-weight: 600; }
 .lg-table code { font-size: 13px; }
 .lg-btn { display: inline-flex; align-items: center; gap: 4px; padding: 11px 20px; min-height: 44px; border-radius: 6px; border: 1px solid var(--gold); background: var(--gold); color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
 .lg-btn:hover { background: #fff; color: var(--gold); }
 mark.ph { background: #ffe9a8; color: #5a3d00; padding: 0 3px; border-radius: 3px; }
-.lg-updated { margin-top: 28px; font-style: italic; color: var(--stone); }
+.lg-updated { margin-top: 28px; font-style: normal; color: var(--stone); }
 @media (max-width: 640px) { .lg-toc ol { columns: 1; } }
 
 /* ── istoselides v2.11: πρώτο κάδρο με ενέργεια (K12) ─────────────────────────
    Κάθε σελίδα υπηρεσίας δείχνει στην πρώτη οθόνη πώς επικοινωνεί ο επισκέπτης. */
 .svc-hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
 .svc-hero-cta a { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px;
-    padding: 12px 26px; border-radius: 2px; font-family: 'Roboto Condensed', sans-serif; font-weight: 600;
+    padding: 12px 26px; border-radius: 2px; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.66; font-weight: 600;
     font-size: 13px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
     transition: background-color .25s, color .25s, border-color .25s; }
-.svc-cta-primary { background: #c99986; color: #0c1726; border: 1px solid #c99986; }
-.svc-cta-primary:hover { background: #e2b7a6; border-color: #e2b7a6; }
-.svc-cta-tel { color: #f5f4ef; border: 1px solid rgba(245,244,239,.45); }
-.svc-cta-tel:hover { border-color: #c99986; color: #e2b7a6; }
+.svc-cta-primary { background: #a55a38; color: #fff; border: 1px solid #c16d48; }
+.svc-cta-primary:hover { background: #e2b9a6; border-color: #e2b9a6; }
+.svc-cta-tel { color: #f5f7f9; border: 1px solid rgba(245,247,249,.45); }
+.svc-cta-tel:hover { border-color: #c16d48; color: #e2b9a6; }
 @media (max-width: 768px) {
     .svc-hero { padding: 96px 0 34px; }
     .svc-hero-cta { flex-direction: column; gap: 10px; }
     .svc-hero-cta a { width: 100%; min-height: 50px; }
 }
 /* σύνδεσμοι διαδρομής: αντίθεση ≥ 4,5:1 και υπογράμμιση (axe color-contrast, link-in-text-block) */
-.svc-crumb { color: #4a4844; }
-.svc-crumb a { color: #1d3a5c; text-decoration: underline; text-underline-offset: 3px; }
+.svc-crumb { color: #334155; }
+.svc-crumb a { color: #142b45; text-decoration: underline; text-underline-offset: 3px; }
 
 /* LCP (ΜΗ-03): ο τίτλος του svc-hero κινείται μόνο με transform */
 @keyframes svcUpLcp { from { transform: translateY(16px); } to { transform: none; } }
@@ -592,28 +592,28 @@ mark.ph { background: #ffe9a8; color: #5a3d00; padding: 0 3px; border-radius: 3p
 @media (max-width: 768px) {
     .svc-hero {
         background-image:
-            radial-gradient(70% 90% at 15% 0%, rgba(46,95,138,0.45), transparent 70%),
-            linear-gradient(115deg, rgba(5,13,24,0.94) 0%, rgba(14,33,56,0.82) 55%, rgba(5,13,24,0.92) 100%),
+            radial-gradient(70% 90% at 15% 0%, rgba(46,89,138,0.45), transparent 70%),
+            linear-gradient(115deg, rgba(6,14,23,0.94) 0%, rgba(14,34,56,0.82) 55%, rgba(6,14,23,0.92) 100%),
             url('hero-bg-900.webp') !important;
     }
 }
 
 /* ── Κατάλογος 59 υποκατηγοριών ΕΧΕΣ (ΦΕΚ Β´ 61/2020): πτυσσόμενος πίνακας ── */
-.svc-katalogos { margin: 18px 0 32px; border: 1px solid rgba(201,153,134,.35); border-radius: 4px; background: rgba(201,153,134,.04); }
+.svc-katalogos { margin: 18px 0 32px; border: 1px solid rgba(193,109,72,.35); border-radius: 4px; background: rgba(193,109,72,.04); }
 .svc-katalogos summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 18px; font-weight: 600; color: var(--ink); font-size: clamp(16px, 1.6vw, 19px); line-height: 1.35; }
 .svc-katalogos summary::-webkit-details-marker { display: none; }
 .svc-katalogos summary::after { content: '+'; font-size: 24px; color: var(--warm); flex-shrink: 0; line-height: 1; }
 .svc-katalogos[open] summary::after { content: '\2212'; }
-.svc-katalogos[open] summary { border-bottom: 1px solid rgba(201,153,134,.3); }
+.svc-katalogos[open] summary { border-bottom: 1px solid rgba(193,109,72,.3); }
 .svc-katalogos > p { padding: 14px 18px 0; margin: 0; }
 .svc-katalogos-wrap { padding: 12px 18px 4px; overflow-x: auto; }
 .svc-katalogos-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.4; }
 .svc-katalogos-table caption { text-align: left; font-size: 13px; color: var(--stone); padding: 0 0 8px; }
-.svc-katalogos-table th, .svc-katalogos-table td { padding: 8px 10px; border-bottom: 1px solid rgba(28,27,25,.12); text-align: left; vertical-align: top; }
-.svc-katalogos-table th { font-family: 'Roboto Condensed', sans-serif; font-weight: 600; letter-spacing: .6px; text-transform: uppercase; font-size: 12.5px; color: var(--warm); border-bottom: 2px solid rgba(201,153,134,.5); }
+.svc-katalogos-table th, .svc-katalogos-table td { padding: 8px 10px; border-bottom: 1px solid rgba(20,43,69,.12); text-align: left; vertical-align: top; }
+.svc-katalogos-table th { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.66; font-weight: 600; letter-spacing: .6px; text-transform: uppercase; font-size: 12.5px; color: var(--warm); border-bottom: 2px solid rgba(193,109,72,.5); }
 .svc-katalogos-table td:nth-child(1) { width: 3.5em; color: var(--stone); font-variant-numeric: tabular-nums; }
-.svc-katalogos-table td:nth-child(2) { width: 9.5em; font-family: 'JetBrains Mono', ui-monospace, monospace; font-weight: 600; color: var(--ink); }
-.svc-katalogos-table tbody tr:hover { background: rgba(201,153,134,.08); }
+.svc-katalogos-table td:nth-child(2) { width: 9.5em; font-family: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace; font-size-adjust: none; font-weight: 600; color: var(--ink); }
+.svc-katalogos-table tbody tr:hover { background: rgba(193,109,72,.08); }
 .svc-katalogos-src { font-size: 13px; color: var(--stone); padding-bottom: 14px !important; }
 @media (max-width: 600px) { .svc-katalogos-table { font-size: 14px; } .svc-katalogos-table th, .svc-katalogos-table td { padding: 7px 6px; } }
 
@@ -638,7 +638,7 @@ body .ta-box, body .tap-box, body .trc-widget {
 }
 body .ta-wrap { padding-top: 40px; padding-bottom: 8px; }
 body .ta-wrap + .ta-wrap { padding-top: 56px; }
-body .ta-wrap + .ta-wrap > .ta-box { border-top: 1px solid rgba(201,153,134,.38) !important; padding-top: 44px; }
+body .ta-wrap + .ta-wrap > .ta-box { border-top: 1px solid rgba(193,109,72,.38) !important; padding-top: 44px; }
 
 /* ── 2. Η μεταλλική μπάρα κορυφής γίνεται eyebrow της αρχικής ── */
 body .ta-topbar, body .tap-topbar {
@@ -690,8 +690,8 @@ body .ta-box .ta-sec-head span {
 /* ── 5. Τίτλοι: ορθογώνιο αντί για κάθετη γραμμή, τυπογραφία της αρχικής ── */
 .svc-prose h2 {
     padding-left: 0 !important;
-    font-family: 'EB Garamond', Georgia, serif;
-    font-weight: 400 !important;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.64; font-style: normal;
+    font-weight: 600 !important;
     font-size: clamp(26px, 2.9vw, 38px) !important;
     line-height: 1.15 !important;
     letter-spacing: -.4px;
@@ -725,13 +725,13 @@ body .ta-box .ta-sec-head span {
     padding: 0 !important;
     margin: 0 !important;
 }
-.svc-katalogos { border-top: 1px solid rgba(201,153,134,.38) !important; border-bottom: 1px solid rgba(201,153,134,.38) !important; margin: 24px 0 32px !important; }
+.svc-katalogos { border-top: 1px solid rgba(193,109,72,.38) !important; border-bottom: 1px solid rgba(193,109,72,.38) !important; margin: 24px 0 32px !important; }
 .svc-katalogos summary { padding-left: 0; padding-right: 0; }
 .svc-katalogos > p, .svc-katalogos-wrap { padding-left: 0; padding-right: 0; }
 .svc-orismos { margin: 16px 0 !important; }
 .svc-orismos p { font-size: clamp(17.5px, 1.5vw, 20px); color: var(--ink2); }
 /* Νομιμότητα: το κόκκινο μένει στον τίτλο και στο ορθογώνιο, όχι σε κουτί */
-.svc-prose .svc-legal h2 { color: #8f3220 !important; }
+.svc-prose .svc-legal h2 { color: #884627 !important; }
 .svc-prose .svc-legal h2::before { background: #b8442c !important; box-shadow: none; }
 
 /* ── 7. Προειδοποίηση: γραμμή, όχι κουτί ── */
@@ -747,18 +747,18 @@ body .ta-box .ta-warning, .svc-prose .ta-warning {
 /* ── 8. Βήματα: χωρίς κάθετη γραμμή στο πέρασμα ── */
 body .ta-box .ta-steps > li::before { display: none; }
 body .ta-box .ta-steps > li:hover { background: none; }
-body .ta-box .ta-steps > li { border-bottom-color: rgba(201,153,134,.3); }
+body .ta-box .ta-steps > li { border-bottom-color: rgba(193,109,72,.3); }
 
 /* ── 9. Γραμμή κλεισίματος με το κουμπί ── */
 body .ta-box .ta-cta-row {
     background: none !important;
-    border-top: 1px solid rgba(201,153,134,.38) !important;
+    border-top: 1px solid rgba(193,109,72,.38) !important;
     padding-left: 0 !important; padding-right: 0 !important;
     margin-top: 8px;
 }
 
 /* ── 10. Συχνές ερωτήσεις: σειρές όπως η λίστα της αρχικής ── */
-.svc-faq details { border-radius: 0 !important; border-bottom: 1px solid rgba(201,153,134,.3) !important; padding: 18px 0 !important; }
+.svc-faq details { border-radius: 0 !important; border-bottom: 1px solid rgba(193,109,72,.3) !important; padding: 18px 0 !important; }
 .svc-faq details:last-child { border-bottom: 0 !important; }
 .svc-faq details[open] { background: none !important; padding-left: 0 !important; padding-right: 0 !important; }
 .svc-faq summary { font-weight: 400 !important; font-size: clamp(19px, 1.9vw, 23px) !important; color: var(--ink) !important; }
@@ -768,14 +768,14 @@ body .ta-box .ta-cta-row {
 .svc-related a {
     border-radius: 4px !important;
     padding: 22px 34px 22px 22px !important;
-    background: linear-gradient(#fff,#fff) padding-box, linear-gradient(90deg, rgba(201,138,112,.15), rgba(201,138,112,.55) 50%, rgba(201,138,112,.15)) border-box !important;
+    background: linear-gradient(#fff,#fff) padding-box, linear-gradient(90deg, rgba(193,109,72,.15), rgba(193,109,72,.55) 50%, rgba(193,109,72,.15)) border-box !important;
     border: 0 !important; border-top: 2px solid transparent !important;
-    box-shadow: 0 6px 22px rgba(13,26,45,.06);
+    box-shadow: 0 3px 11px rgba(13,28,45,.06);
 }
-.svc-related b { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 21px; letter-spacing: 0; color: var(--ink); }
+.svc-related b { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.64; font-style: normal; font-weight: 600; font-size: 21px; letter-spacing: 0; color: var(--ink); }
 
 /* ── 12. Σελίδα όρων: ο πίνακας περιεχομένων χωρίς κουτί ── */
-.lg-toc { background: none !important; border: 0 !important; border-top: 1px solid rgba(201,153,134,.38) !important; border-bottom: 1px solid rgba(201,153,134,.38) !important; border-radius: 0 !important; padding: 16px 0 !important; }
+.lg-toc { background: none !important; border: 0 !important; border-top: 1px solid rgba(193,109,72,.38) !important; border-bottom: 1px solid rgba(193,109,72,.38) !important; border-radius: 0 !important; padding: 16px 0 !important; }
 
 /* ── 13. Κινητό ── */
 @media (max-width: 768px) {
@@ -790,7 +790,7 @@ body .ta-box .ta-cta-row {
 .svc-prose .svc-role h2, .svc-prose .svc-legal h2 { margin-top: 46px !important; }
 /* Ετικέτες eyebrow σε ανοιχτό φόντο: συμπαγής χαλκός για αναγνωσιμότητα (≥ 4,5:1) */
 body .ta-badge span, body .ta-box .ta-sec-head span {
-    background: none !important; -webkit-text-fill-color: #8e5843 !important; color: #8e5843 !important;
+    background: none !important; -webkit-text-fill-color: #a55a38 !important; color: #a55a38 !important;
 }
 @media (max-width: 768px) { .svc-prose .svc-role h2, .svc-prose .svc-legal h2 { margin-top: 36px !important; } }
 
@@ -800,26 +800,26 @@ body .ta-badge span, body .ta-box .ta-sec-head span {
 
 /* Η μπάρα πλοήγησης πάντα σκούρα, αφού το hero είναι πλέον ανοιχτό */
 nav, nav:not(.scrolled) {
-    background: linear-gradient(180deg, rgba(7,17,31,0.97), rgba(11,26,46,0.95)) !important;
-    border-bottom: 1px solid rgba(201,138,112,0.28) !important;
+    background: linear-gradient(180deg, rgba(8,18,30,0.97), rgba(11,27,46,0.95)) !important;
+    border-bottom: 1px solid rgba(193,109,72,0.28) !important;
 }
 nav .logo-text .name { color: #fff; }
-nav .logo-text .title { color: rgba(231,179,159,0.8); }
+nav .logo-text .title { color: rgba(228,183,162,0.8); }
 nav .hamburger span { background: #fff; }
 
 .svc-hero[data-v3] {
     background: var(--cream) !important;
     background-image:
-        linear-gradient(rgba(17,36,61,0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(17,36,61,0.045) 1px, transparent 1px) !important;
+        linear-gradient(rgba(17,38,61,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,38,61,0.045) 1px, transparent 1px) !important;
     background-size: 28px 28px !important;
     padding: 96px 0 56px !important;
-    border-bottom: 1px solid rgba(201,153,134,.38);
+    border-bottom: 1px solid rgba(193,109,72,.38);
 }
 .svc-hero[data-v3]::before {
     background:
-        radial-gradient(55% 80% at 82% 40%, rgba(201,138,112,0.10), transparent 70%),
-        linear-gradient(90deg, var(--cream) 0%, rgba(245,244,239,0.82) 45%, rgba(245,244,239,0.35) 100%) !important;
+        radial-gradient(55% 80% at 82% 40%, rgba(193,109,72,0.10), transparent 70%),
+        linear-gradient(90deg, var(--cream) 0%, rgba(245,247,249,0.82) 45%, rgba(245,247,249,0.35) 100%) !important;
     -webkit-mask-image: none; mask-image: none;
 }
 .svc-hero[data-v3]::after { display: none; }
@@ -838,13 +838,13 @@ nav .hamburger span { background: #fff; }
 
 .svc-hero[data-v3] .svc-kicker {
     display: flex; align-items: center; gap: 14px;
-    background: none !important; -webkit-text-fill-color: #8e5843 !important; color: #8e5843 !important;
+    background: none !important; -webkit-text-fill-color: #a55a38 !important; color: #a55a38 !important;
     font-size: 12px; letter-spacing: 3.5px; margin-bottom: 22px;
 }
 .svc-hero[data-v3] .svc-kicker::before { content: ''; width: 32px; height: 2px; flex-shrink: 0; background: var(--gold-metal-h); }
 .svc-hero[data-v3] h1 {
     background: none !important; -webkit-text-fill-color: var(--navy-mid) !important; color: var(--navy-mid) !important;
-    font-family: 'EB Garamond', Georgia, serif; font-weight: 400 !important;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.64; font-style: normal; font-weight: 600 !important;
     font-size: clamp(34px, 4.4vw, 62px) !important; line-height: 1.04 !important; letter-spacing: -1px;
     margin: 0 0 22px;
 }
@@ -857,38 +857,38 @@ nav .hamburger span { background: #fff; }
 /* Μία κύρια ενέργεια· το τηλέφωνο δίπλα, χωρισμένο με λεπτή γραμμή */
 .svc-hero[data-v3] .svc-hero-cta { align-items: center; gap: 0; margin-top: 0; }
 .svc-hero[data-v3] .svc-cta-primary {
-    background: var(--gold-metal) !important; background-size: 180% 180% !important;
-    color: #0c1726 !important; border: 0 !important; border-radius: 3px;
+    background: #a55a38 !important; background-size: 180% 180% !important;
+    color: #fff !important; border: 0 !important; border-radius: 3px;
     min-height: 54px; padding: 14px 32px;
-    box-shadow: 0 10px 28px rgba(201,138,112,0.30), inset 0 1px 0 rgba(255,255,255,0.55);
+    box-shadow: 0 5px 14px rgba(193,109,72,0.12), inset 0 1px 0 rgba(255,255,255,0.55);
     transition: background-position .6s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease);
 }
 .svc-hero[data-v3] .svc-cta-primary::after { content: '\2192'; font-size: 16px; letter-spacing: 0; transition: transform .25s var(--ease); }
 .svc-hero[data-v3] .svc-cta-primary:hover { background-position: 100% 100% !important; transform: translateY(-2px); }
 .svc-hero[data-v3] .svc-cta-primary:hover::after { transform: translateX(4px); }
 .svc-hero[data-v3] .svc-cta-tel {
-    border: 0 !important; border-left: 1px solid rgba(201,153,134,.55) !important; border-radius: 0;
+    border: 0 !important; border-left: 1px solid rgba(193,109,72,.55) !important; border-radius: 0;
     margin-left: 28px; padding: 4px 0 4px 28px; min-height: 0;
     color: var(--navy-mid) !important; letter-spacing: 0; text-transform: none;
-    font-family: 'EB Garamond', Georgia, serif; font-size: 26px; font-weight: 500;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.64; font-style: normal; font-size: 26px; font-weight: 600;
 }
 .svc-hero[data-v3] .svc-cta-tel i { color: var(--warm); font-size: 15px; }
 .svc-hero[data-v3] .svc-cta-tel span { display: flex; flex-direction: column; line-height: 1.05; }
 .svc-hero[data-v3] .svc-cta-tel small {
-    font-family: 'Roboto Condensed', sans-serif; font-size: 10.5px; font-weight: 600;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; font-size-adjust: cap-height 0.66; font-size: 10.5px; font-weight: 600;
     letter-spacing: 2.4px; text-transform: uppercase; color: var(--stone); margin-bottom: 3px;
 }
-.svc-hero[data-v3] .svc-cta-tel:hover { color: #8e5843 !important; }
+.svc-hero[data-v3] .svc-cta-tel:hover { color: #a55a38 !important; }
 
 /* Το τεχνικό σχέδιο: φύλλο σχεδίου με σημάδια γωνιών και πινακίδα */
 .svc-hero-art .tap-graphic {
     position: relative; padding: 34px 30px 26px !important;
-    color: #a56a52;
+    color: #a55a38;
     background:
-        linear-gradient(rgba(17,36,61,0.06) 1px, transparent 1px) 0 0 / 14px 14px,
-        linear-gradient(90deg, rgba(17,36,61,0.06) 1px, transparent 1px) 0 0 / 14px 14px,
+        linear-gradient(rgba(17,38,61,0.06) 1px, transparent 1px) 0 0 / 14px 14px,
+        linear-gradient(90deg, rgba(17,38,61,0.06) 1px, transparent 1px) 0 0 / 14px 14px,
         rgba(255,255,255,0.72);
-    border: 1px solid rgba(17,36,61,0.14);
+    border: 1px solid rgba(17,38,61,0.14);
     transition: none !important; transform: none !important;
 }
 .svc-hero-art .tap-graphic::before, .svc-hero-art .tap-graphic::after {
@@ -899,9 +899,9 @@ nav .hamburger span { background: #fff; }
 .svc-hero-art .tap-graphic svg { max-height: 300px !important; width: 100%; display: block; }
 .svc-hero-art figcaption {
     display: flex; align-items: center; gap: 0;
-    border: 1px solid rgba(17,36,61,0.14); border-top: 0;
+    border: 1px solid rgba(17,38,61,0.14); border-top: 0;
     background: rgba(255,255,255,0.85);
-    font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px;
+    font-family: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace; font-size-adjust: none; font-size: 11px;
     letter-spacing: 1.6px; text-transform: uppercase; color: var(--ink2);
 }
 .svc-hero-art figcaption span {
@@ -923,16 +923,16 @@ body .ta-box .ta-steps > li,
 body .ta-box .ta-steps > li:nth-child(even) {
     flex-direction: column; gap: 12px;
     padding: 20px 0 22px !important;
-    border-bottom: 0; border-top: 1px solid rgba(201,153,134,.45);
+    border-bottom: 0; border-top: 1px solid rgba(193,109,72,.45);
     font-size: 16px !important; line-height: 1.6 !important; color: var(--ink2);
 }
 body .ta-box .ta-step-num {
-    background: none !important; color: #b88471 !important; padding: 0 !important;
+    background: none !important; color: #c48365 !important; padding: 0 !important;
     width: auto !important; height: auto !important; border-radius: 0 !important; box-shadow: none !important;
-    font-family: 'EB Garamond', Georgia, serif !important; font-weight: 400 !important;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif !important; font-size-adjust: cap-height 0.64; font-style: normal; font-weight: 600 !important;
     font-size: 46px !important; line-height: 1 !important; letter-spacing: -1px;
 }
-body .ta-box .ta-steps > li:hover .ta-step-num { transform: none; color: #8e5843 !important; }
+body .ta-box .ta-steps > li:hover .ta-step-num { transform: none; color: #a55a38 !important; }
 
 /* Κινητό: σχέδιο κάτω από το κουμπί, ώστε η ενέργεια να μένει στο πρώτο κάδρο */
 @media (max-width: 900px) {
@@ -941,8 +941,8 @@ body .ta-box .ta-steps > li:hover .ta-step-num { transform: none; color: #8e5843
 }
 @media (max-width: 768px) {
     .svc-hero[data-v3] { padding: 84px 0 36px !important; background-image:
-        linear-gradient(rgba(17,36,61,0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(17,36,61,0.045) 1px, transparent 1px) !important; }
+        linear-gradient(rgba(17,38,61,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,38,61,0.045) 1px, transparent 1px) !important; }
     .svc-hero[data-v3] .svc-hero-cta { flex-direction: column; align-items: stretch; gap: 16px; }
     .svc-hero[data-v3] .svc-cta-tel { border-left: 0 !important; margin-left: 0; padding: 0; justify-content: center; }
     .svc-hero-art .tap-graphic { padding: 20px 14px 16px !important; }
@@ -969,7 +969,7 @@ body .ta-box .ta-steps > li { border-left: 0 !important; border-right: 0 !import
         margin: 46px 0 28px 52px;
     }
     .svc-prose > .svc-es .es-body { grid-template-columns: 1fr; }
-    .svc-prose > .svc-es .es-calc { border-left: 0; border-top: 1px solid rgba(120,160,210,.14); }
+    .svc-prose > .svc-es .es-calc { border-left: 0; border-top: 1px solid rgba(120,162,210,.14); }
     .svc-prose > .svc-es + h2 { margin-top: 46px !important; }
 }
 
@@ -998,7 +998,7 @@ body .ta-wrap > .ta-box > .ta-steps + .ta-cta-row {
 }
 body .ta-wrap > .ta-box > .ta-rule:has(+ .ta-sec-head + .ta-steps) { height: 56px; margin: 0 !important; }
 body .ta-wrap > .ta-box > .ta-sec-head:has(+ .ta-steps) { padding-top: 0; }
-body .ta-wrap > .ta-box > .ta-steps + .ta-cta-row { border-top-color: rgba(201,153,134,.45) !important; padding-top: 22px !important; padding-bottom: 60px !important; margin-top: 0; }
+body .ta-wrap > .ta-box > .ta-steps + .ta-cta-row { border-top-color: rgba(193,109,72,.45) !important; padding-top: 22px !important; padding-bottom: 60px !important; margin-top: 0; }
 
 /* Σχετικές υπηρεσίες σε κρεμ, οι κάρτες λευκές πάνω της */
 body .ta-wrap:has(.svc-related) { background: var(--cream); box-shadow: 0 0 0 100vmax var(--cream); }
@@ -1012,7 +1012,7 @@ body .ta-box .ta-stat-strip + .ta-rule { margin-top: 0; }
 }
 
 /* ═══ v3.2 (18/10/2026) — HERO: ΤΥΠΟΓΡΑΦΙΚΗ ΙΕΡΑΡΧΙΑ ΚΑΙ ΙΣΟΡΡΟΠΙΑ ═══════════
-   Τίτλος σε Source Sans 3 (ήδη φορτωμένη, πλήρη ελληνικά), έως δύο γραμμές
+   Τίτλος σε Inter (ήδη φορτωμένη, πλήρη ελληνικά), έως δύο γραμμές
    στον υπολογιστή, ισορροπημένες αλλαγές γραμμής. Πλέγμα 48/52, κοινό
    αριστερό άξονα για ετικέτα, τίτλο, εισαγωγικό, κουμπί και τηλέφωνο.
    Ένα εισαγωγικό· το σχέδιο χωρίς πλαίσιο, γωνίες και λεζάντα. */
@@ -1028,7 +1028,7 @@ body .ta-box .ta-stat-strip + .ta-rule { margin-top: 0; }
 
 .svc-hero[data-v3] .svc-kicker { margin: 0 0 18px; }
 .svc-hero[data-v3] h1 {
-    font-family: 'Source Sans 3', 'Segoe UI', Arial, sans-serif !important;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif !important; font-size-adjust: ex-height 0.49;
     font-weight: 600 !important;
     font-size: clamp(30px, 2.55vw, 42px) !important;
     line-height: 1.14 !important;
@@ -1039,14 +1039,14 @@ body .ta-box .ta-stat-strip + .ta-rule { margin-top: 0; }
 }
 .svc-hero[data-v3] .svc-lede {
     font-size: clamp(16.5px, 1.2vw, 18.5px); line-height: 1.62;
-    color: #3d4450; margin: 0 0 30px;
+    color: #3d4650; margin: 0 0 30px;
 }
 
 /* Κουμπί και τηλέφωνο στον ίδιο οριζόντιο άξονα, ίδιο ύψος */
 .svc-hero[data-v3] .svc-hero-cta { align-items: center; }
 .svc-hero[data-v3] .svc-cta-primary { min-height: 52px; padding: 0 30px; font-size: 13.5px; letter-spacing: 1.6px; border-radius: 4px; }
 .svc-hero[data-v3] .svc-cta-tel {
-    font-family: 'Source Sans 3', sans-serif !important; font-weight: 600; font-size: 22px; letter-spacing: .2px;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif !important; font-size-adjust: ex-height 0.49; font-weight: 600; font-size: 22px; letter-spacing: .2px;
     min-height: 52px; margin-left: 26px; padding: 0 0 0 26px;
 }
 .svc-hero[data-v3] .svc-cta-tel small { font-size: 10.5px; letter-spacing: 2px; margin-bottom: 2px; }
@@ -1058,8 +1058,8 @@ body .ta-box .ta-stat-strip + .ta-rule { margin-top: 0; }
 .svc-hero-art .tap-graphic::before {
     content: '' !important; position: absolute; inset: -6% -4%; width: auto; height: auto; border: 0 !important; z-index: -1;
     background:
-        linear-gradient(rgba(17,36,61,0.07) 1px, transparent 1px) 0 0 / 22px 22px,
-        linear-gradient(90deg, rgba(17,36,61,0.07) 1px, transparent 1px) 0 0 / 22px 22px;
+        linear-gradient(rgba(17,38,61,0.07) 1px, transparent 1px) 0 0 / 22px 22px,
+        linear-gradient(90deg, rgba(17,38,61,0.07) 1px, transparent 1px) 0 0 / 22px 22px;
     -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 35%, transparent 80%);
             mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 35%, transparent 80%);
 }
@@ -1144,27 +1144,27 @@ body .ta-box .ta-stat-strip + .ta-rule { margin-top: 0; }
 .svc-prose > .svc-fam {
     display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     gap: 0 !important; margin: 18px 0 28px !important;
-    border-top: 1px solid rgba(17,36,61,.13); border-left: 1px solid rgba(17,36,61,.13);
+    border-top: 1px solid rgba(17,38,61,.13); border-left: 1px solid rgba(17,38,61,.13);
 }
 .svc-prose > .svc-fam > div {
     background: #fff; padding: 22px 24px 18px;
-    border-right: 1px solid rgba(17,36,61,.13); border-bottom: 1px solid rgba(17,36,61,.13);
+    border-right: 1px solid rgba(17,38,61,.13); border-bottom: 1px solid rgba(17,38,61,.13);
 }
 @media (max-width: 1100px) { .svc-prose > .svc-fam { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
 @media (max-width: 640px)  { .svc-prose > .svc-fam { grid-template-columns: minmax(0, 1fr) !important; } }
 .svc-prose > .svc-fam h3 {
-    margin: 0 0 8px !important; font-family: 'Source Sans 3', sans-serif !important;
+    margin: 0 0 8px !important; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif !important; font-size-adjust: ex-height 0.49;
     font-weight: 600 !important; font-size: 18px !important; color: var(--navy-mid) !important;
 }
 .svc-prose > .svc-fam h3::before { content: ''; display: inline-block; width: 8px; height: 8px; margin-right: 10px; vertical-align: .12em; background: var(--warm); }
-.svc-prose > .svc-fam p { margin: 0 !important; font-size: 15.5px !important; line-height: 1.6 !important; color: #4a5260 !important; }
+.svc-prose > .svc-fam p { margin: 0 !important; font-size: 15.5px !important; line-height: 1.6 !important; color: #4a5460 !important; }
 .svc-prose > .svc-codes {
     gap: 0 !important; margin: 14px 0 28px !important;
-    border-top: 1px solid rgba(17,36,61,.13); border-left: 1px solid rgba(17,36,61,.13);
+    border-top: 1px solid rgba(17,38,61,.13); border-left: 1px solid rgba(17,38,61,.13);
 }
 .svc-prose > .svc-codes li { background: #fff; padding: 12px 18px !important;
-    border-right: 1px solid rgba(17,36,61,.13); border-bottom: 1px solid rgba(17,36,61,.13) !important; }
-.svc-prose > .svc-codes li:hover { transform: none; background: #fbf8f6; }
+    border-right: 1px solid rgba(17,38,61,.13); border-bottom: 1px solid rgba(17,38,61,.13) !important; }
+.svc-prose > .svc-codes li:hover { transform: none; background: #fafbfc; }
 
 /* ═══ ΡΟΛΟΣ ΤΟΥ ΜΗΧΑΝΙΚΟΥ: ΞΕΧΩΡΙΣΤΟ ΠΛΑΙΣΙΟ ═══════════════════════════════
    Η ενότητα ξεχωρίζει από το υπόλοιπο κείμενο: αχνό πλαίσιο, navy γραμμή
@@ -1174,8 +1174,8 @@ body .ta-box .ta-stat-strip + .ta-rule { margin-top: 0; }
     display: flow-root;
     margin: 40px 0 32px !important;
     padding: 26px 32px 14px !important;
-    background: #f8f6f3 !important;
-    border: 1px solid rgba(17,36,61,.14) !important;
+    background: #fafbfc !important;
+    border: 1px solid rgba(17,38,61,.14) !important;
     border-top: 3px solid var(--navy-mid) !important;
     border-radius: 0 0 4px 4px !important;
 }
@@ -1206,16 +1206,16 @@ body .ta-box .ta-sec-head::after {
 /* ═══ v3.4 (18/10/2026) — ΤΥΠΟΓΡΑΦΙΚΟ ΣΥΣΤΗΜΑ, ΣΥΜΜΕΤΡΙΑ, ΟΜΟΙΟΜΟΡΦΙΑ ═══════
    Μετά από μέτρηση σε όλες τις σελίδες (91 συνδυασμοί γραμματοσειράς/μεγέθους/
    βάρους, τίτλοι H2 σε δύο μεγέθη, H3 σε τρεις μορφές). Κανόνες υποσελίδων:
-   · ΜΙΑ οικογένεια για όλο το περιεχόμενο: Source Sans 3. JetBrains Mono μόνο
-     για κωδικούς/τεχνικές τιμές. Το EB Garamond μένει στην ταυτότητα (αρχική,
-     μπλοκ επικοινωνίας). Roboto Condensed: καμία χρήση στις υποσελίδες.
+   · ΜΙΑ οικογένεια για όλο το περιεχόμενο: Inter. IBM Plex Mono μόνο
+     για κωδικούς/τεχνικές τιμές. Το Inter μένει στην ταυτότητα (αρχική,
+     μπλοκ επικοινωνίας). Inter: καμία χρήση στις υποσελίδες.
    · Κλίμακα: H1 36,5 · H2 30 · H3 19 · εισαγωγικό 17,5 · κείμενο 16,5 ·
      δευτερεύον 15 · ετικέτες 12 (κεφαλαία, αραιά) — βάρη 400/600 μόνο.
    · Μήκος γραμμής κειμένου ≤ 80 χαρακτήρες· στήλη κειμένου κεντραρισμένη,
      πίνακες σε όλο το πλάτος· βιτρίνα και κείμενο σε πλέγμα δύο στηλών. */
 :root {
-    --sv-sans: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
-    --sv-mono: 'JetBrains Mono', ui-monospace, monospace;
+    --sv-sans: 'Inter', 'Segoe UI', Arial, sans-serif;
+    --sv-mono: 'IBM Plex Mono', ui-monospace, monospace;
     --sv-h2: clamp(24px, 2.1vw, 30px);
     --sv-h3: 19px;
     --sv-body: 16.5px;
@@ -1224,21 +1224,21 @@ body .ta-box .ta-sec-head::after {
 }
 
 /* ── οικογένεια ── */
-.svc-hero, .ta-wrap, .ta-wrap *:not(i):not([class*="fa-"]) { font-family: var(--sv-sans); }
+.svc-hero, .ta-wrap, .ta-wrap *:not(i):not([class*="fa-"]) { font-family: var(--sv-sans); font-size-adjust: ex-height 0.49; }
 .ta-wrap td:first-child, .svc-codes b, .svc-code, .svc-katalogos-table td:nth-child(2),
 .ta-wrap code, .ta-wrap [class*="mono"], .es-wrap, .es-wrap *, .trc-diagram-tag,
-.trc-spec-val, .trc-progress-lbl, .trc-progress-num, .trc-reset-btn, .ec-f-key { font-family: var(--sv-mono) !important; }
+.trc-spec-val, .trc-progress-lbl, .trc-progress-num, .trc-reset-btn, .ec-f-key { font-family: var(--sv-mono) !important; font-size-adjust: none; }
 
 /* ── τίτλοι ── */
 .svc-prose h2, .svc-prose .svc-role h2, .svc-prose .svc-legal h2 {
-    font-family: var(--sv-sans) !important; font-weight: 600 !important;
+    font-family: var(--sv-sans) !important; font-size-adjust: ex-height 0.49; font-weight: 600 !important;
     font-size: var(--sv-h2) !important; line-height: 1.22 !important; letter-spacing: -.3px !important;
     margin: 52px auto 18px !important;
 }
 .svc-prose h2:first-child, .svc-split-txt > h2:first-child, .svc-prose .svc-role h2 { margin-top: 0 !important; }
 .svc-prose h2::before { width: 11px !important; height: 11px !important; vertical-align: .12em !important; margin-right: 14px !important; }
 .svc-prose h3, .svc-prose .svc-fam h3, .svc-faq summary, .svc-related b, .ta-title, .trc-h {
-    font-family: var(--sv-sans) !important; font-weight: 600 !important;
+    font-family: var(--sv-sans) !important; font-size-adjust: ex-height 0.49; font-weight: 600 !important;
     font-size: var(--sv-h3) !important; line-height: 1.35 !important; letter-spacing: 0 !important;
     color: var(--navy-mid) !important; text-transform: none !important;
 }
@@ -1253,7 +1253,7 @@ body .ta-box .ta-sec-head::after {
 .svc-prose .svc-fam p, .svc-related span, .ta-box .ta-cta-text, .svc-table, .svc-katalogos-table,
 .svc-prose > .svc-codes li, .lg-table { font-size: var(--sv-small) !important; line-height: 1.6 !important; }
 .ta-box .ta-warning-body > strong, .svc-table th, .svc-katalogos-table th, .lg-table th {
-    font-family: var(--sv-sans) !important; font-size: 12px !important; font-weight: 600 !important;
+    font-family: var(--sv-sans) !important; font-size-adjust: ex-height 0.49; font-size: 12px !important; font-weight: 600 !important;
     letter-spacing: 1.6px !important; text-transform: uppercase;
 }
 
@@ -1263,14 +1263,14 @@ body .ta-box .ta-sec-head::after {
 }
 .ta-box .ta-stat-lbl { font-size: 13px !important; font-weight: 400 !important; letter-spacing: .2px !important; text-transform: none !important; color: var(--stone); }
 .ta-box .ta-stat-val { font-size: 22px !important; font-weight: 600 !important; }
-.svc-hero[data-v3] .svc-cta-tel small { font-family: var(--sv-sans) !important; font-size: 11px !important; font-weight: 600; letter-spacing: 2px; }
+.svc-hero[data-v3] .svc-cta-tel small { font-family: var(--sv-sans) !important; font-size-adjust: ex-height 0.49; font-size: 11px !important; font-weight: 600; letter-spacing: 2px; }
 
 /* ── αριθμοί βημάτων: ίδια οικογένεια, λεπτό βάρος ── */
-body .ta-box .ta-step-num { font-family: var(--sv-sans) !important; font-weight: 300 !important; font-size: 44px !important; letter-spacing: -1px; font-variant-numeric: tabular-nums; }
+body .ta-box .ta-step-num { font-family: var(--sv-sans) !important; font-size-adjust: ex-height 0.49; font-weight: 300 !important; font-size: 44px !important; letter-spacing: -1px; font-variant-numeric: tabular-nums; }
 
 /* ── κουμπιά: ένα μέγεθος ── */
 .svc-hero[data-v3] .svc-cta-primary, a.ta-cta-btn, .ta-cta-btn span, .svc-inline-btn, .lg-btn {
-    font-family: var(--sv-sans) !important; font-size: 15px !important; font-weight: 600 !important;
+    font-family: var(--sv-sans) !important; font-size-adjust: ex-height 0.49; font-size: 15px !important; font-weight: 600 !important;
     letter-spacing: .4px !important; text-transform: none !important;
 }
 
@@ -1289,7 +1289,7 @@ body .ta-box .ta-step-num { font-family: var(--sv-sans) !important; font-weight:
 .svc-split-art { position: sticky; top: 104px; }
 .svc-split-art .svc-es { float: none !important; width: auto !important; margin: 6px 0 0 !important; }
 .svc-split-art .es-body { grid-template-columns: 1fr; }
-.svc-split-art .es-calc { border-left: 0; border-top: 1px solid rgba(120,160,210,.14); }
+.svc-split-art .es-calc { border-left: 0; border-top: 1px solid rgba(120,162,210,.14); }
 .svc-split-txt .svc-role { margin: 36px 0 28px !important; }
 @media (max-width: 1100px) {
     .svc-split { grid-template-columns: minmax(0, 1fr); row-gap: 36px; }
@@ -1306,8 +1306,8 @@ body .ta-box .ta-sec-head { padding-top: 22px !important; padding-bottom: 22px !
     body .ta-box .ta-step-num { font-size: 36px !important; }
 }
 /* κύριο κουμπί hero: ματ χαλκός όπως όλα τα κουμπιά (το v3 είχε μείνει μεταλλικό) */
-.svc-hero[data-v3] .svc-cta-primary { background: var(--cu-matt, linear-gradient(180deg,#c3907a,#b27c65)) !important; background-size: auto !important; box-shadow: 0 3px 10px rgba(110,62,44,.16) !important; color: #0c1726 !important; }
-.svc-hero[data-v3] .svc-cta-primary:hover { background: var(--cu-matt-h, #a46d57) !important; color: #fff !important; transform: none; }
+.svc-hero[data-v3] .svc-cta-primary { background: #a55a38 !important; background-size: auto !important; box-shadow: 0 3px 10px rgba(112,64,42,.16) !important; color: #fff !important; }
+.svc-hero[data-v3] .svc-cta-primary:hover { background: var(--cu-matt-h, #b66945) !important; color: #fff !important; transform: none; }
 /* σελίδα όρων: η στήλη κειμένου στο κέντρο */
 .svc-prose.lg-page { margin-left: auto !important; margin-right: auto !important; max-width: var(--sv-col) !important; }
 .svc-prose.lg-page > * { max-width: none; }
@@ -1318,8 +1318,8 @@ body .ta-badge::after { content: ''; display: block; flex-shrink: 0; width: 32px
 body .ta-wrap, .svc-hero { overflow-x: clip; }
 @media (max-width: 768px) { .wdx .svc-es[data-v] { --dx: 0px; } }
 /* αντίθεση WCAG AA (axe): κωδικοί σε λευκό ≥ 4,5:1 · μεγάλοι αριθμοί βημάτων ≥ 3:1 */
-.svc-codes b, .svc-prose > .svc-codes b { color: #94573f !important; }
-body .ta-box .ta-step-num { color: #a8705a !important; }
+.svc-codes b, .svc-prose > .svc-codes b { color: #99583a !important; }
+body .ta-box .ta-step-num { color: #ba6c48 !important; }
 /* κινητό (kinito K3/K12): καμία γραφή < 12 px· κουμπί κλήσης στο πρώτο κάδρο και με μακρύ τίτλο */
 .svc-hero[data-v3] .svc-cta-tel small { font-size: 12px !important; }
 body .ta-cat-bk, body .trc-bk { font-size: 12px !important; }
@@ -1403,13 +1403,13 @@ body .ta-box > .ta-steps { margin-top: 0 !important; padding-top: 6px !important
    πλάτος του περιέκτη (ίδιες ακμές με τα στοιχεία πάνω και κάτω), κρεμ φόντο,
    αχνό περίγραμμα, ίδια εσοχή με το πλαίσιο του ρόλου μηχανικού. */
 body .ta-box > .ta-steps-zone {
-    background: var(--cream); border: 1px solid rgba(17,36,61,.13); border-radius: 3px;
+    background: var(--cream); border: 1px solid rgba(17,38,61,.13); border-radius: 3px;
     padding: 0 32px; margin: 36px 0 0;   /* όχι κάτω περιθώριο: διέρρεε έξω από το λευκό τμήμα και άφηνε κρεμ γραμμή σε όλο το πλάτος */
 }
 body .ta-steps-zone > .ta-rule { height: 34px !important; margin: 0 !important; border: 0 !important; background: none !important; }
 body .ta-steps-zone > .ta-sec-head { padding-top: 0 !important; }
 body .ta-steps-zone > .ta-steps { margin-top: 0 !important; padding-top: 6px !important; }
-body .ta-steps-zone > .ta-cta-row { border-top: 1px solid rgba(201,153,134,.45); padding-top: 22px !important; padding-bottom: 32px !important; margin-top: 0; }
+body .ta-steps-zone > .ta-cta-row { border-top: 1px solid rgba(193,109,72,.45); padding-top: 22px !important; padding-bottom: 32px !important; margin-top: 0; }
 @media (max-width: 768px) {
     body .ta-box > .ta-steps-zone { padding: 0 18px; margin-top: 28px; }
     body .ta-steps-zone > .ta-rule { height: 24px !important; }
