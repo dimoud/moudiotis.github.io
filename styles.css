@@ -6654,14 +6654,60 @@ html:not(#z) body .svc-legal h2,
 html:not(#z) body .as-i b {
     background: linear-gradient(180deg, #d0a18b 0%, #bd876f 46%, #ad7660 100%) !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important; color: transparent !important; -webkit-box-decoration-break: clone; box-decoration-break: clone; text-shadow: none !important;
 }
-/* ===== Αρχική: Οχήματα ειδικής χρήσης (ΕΧΕΣ) — 27/10/2026 ===== */
+/* ===== Αρχική: Μετασκευές / ΕΧΕΣ και ΤΑΟ — «ναι, εδώ ασχολούμαστε» (27/10/2026) ===== */
 .hm-ex { background: #fff; }
-.hm-ex .hm-p + .hm-p { margin-top: 14px; }
-.hm-ex .hm-btn { margin-top: 28px; }
-.hm-ex-box { border-top: 2px solid var(--copper, #C16D48); padding-top: 20px; }
-.hm-ex .hm-ex-h { font-size: 13px !important; font-weight: 600 !important; letter-spacing: .02em !important; text-transform: none !important; color: #475569 !important; margin: 0 0 10px !important; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size-adjust: none; }
-.hm-ex-codes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; }
-.hm-ex-codes li { display: grid; grid-template-columns: 3em 1fr; align-items: baseline; gap: 10px; padding: 13px 0; border-bottom: 1px solid rgba(20,43,69,0.12); }
-.hm-ex-codes b { font-family: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace; font-size-adjust: none; font-weight: 600; font-size: 15px; color: var(--navy, #142B45); letter-spacing: .02em; }
-.hm-ex-codes span { font-size: 15px; line-height: 1.4; color: #334155; }
-@media (max-width: 640px) { .hm-ex-codes { grid-template-columns: 1fr; } }
+.hm-tao { background: var(--surface, #F5F7F9); border-top: 1px solid rgba(20,43,69,0.08); }
+.hm-ex-top { display: grid; grid-template-columns: 6fr 5fr; gap: 64px; align-items: end; margin-bottom: 48px; }
+.hm-ex-top .hm-h { margin-bottom: 0; }
+.hm-ex-top .hm-p { margin: 0; }
+.hm-ex-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.hm-ex-tile { display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid rgba(20,43,69,0.14); border-radius: 2px;
+    background: #fff linear-gradient(rgba(20,43,69,.045) 1px, transparent 1px) 0 0 / 100% 16px, #fff linear-gradient(90deg, rgba(20,43,69,.045) 1px, transparent 1px) 0 0 / 16px 100%;
+    transition: border-color .2s ease, box-shadow .2s ease; }
+.hm-ex-tile:hover { border-color: #C16D48; box-shadow: 0 4px 14px rgba(20,43,69,.08); }
+.hm-ex-svg { display: block; width: 100%; height: auto; padding: 26px 22px 6px; }
+.hm-ex-svg .d { stroke: #142B45; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.hm-ex-svg .a { stroke: #C16D48; stroke-width: 2.4; stroke-linejoin: round; stroke-linecap: round; }
+.hm-ex-svg .g { stroke: rgba(20,43,69,.25); stroke-width: 1; stroke-dasharray: 4 4; }
+.hm-ex-lab { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-top: 1px solid rgba(20,43,69,0.10); background: #fff;
+    font-size: 17px; font-weight: 600; color: #142B45; letter-spacing: -0.005em; }
+.hm-ex-lab i { color: #C16D48; font-size: 14px; transition: transform .2s ease; }
+.hm-ex-tile:hover .hm-ex-lab i { transform: translateX(3px); }
+.hm-ex-svg .d, .hm-ex-svg .a { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.3s cubic-bezier(.16,1,.3,1); }
+.hm-ex-svg .a { transition-delay: .55s; }
+.hm-ex-grid.visible .hm-ex-svg .d, .hm-ex-grid.visible .hm-ex-svg .a, .hm-ex-grid.is-visible .hm-ex-svg .d, .hm-ex-grid.is-visible .hm-ex-svg .a { stroke-dashoffset: 0; }
+.hm-ex-grid .hm-ex-tile:nth-child(2) .d, .hm-ex-grid .hm-ex-tile:nth-child(5) .d { transition-delay: .12s; }
+.hm-ex-grid .hm-ex-tile:nth-child(3) .d, .hm-ex-grid .hm-ex-tile:nth-child(6) .d { transition-delay: .24s; }
+@media (prefers-reduced-motion: reduce) { .hm-ex-svg .d, .hm-ex-svg .a { stroke-dasharray: none; stroke-dashoffset: 0; transition: none; } }
+.hm-ex-foot { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; margin-top: 36px; }
+.hm-ex-foot .hm-btn { margin: 0; }
+.hm-ex-note { display: flex; align-items: center; gap: 10px; margin: 0 auto 0 0; font-size: 15px; color: #334155; }
+.hm-ex-note i { color: #C16D48; }
+/* ΤΑΟ: ροή */
+.hm-tao-flow { list-style: none; margin: 0 0 44px; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); counter-reset: none; }
+.hm-tao-st { position: relative; padding: 18px 20px 18px 0; border-top: 2px solid rgba(20,43,69,0.22); display: flex; flex-direction: column; gap: 6px;
+    font-size: 19px; font-weight: 600; color: #142B45; }
+.hm-tao-st::before { content: ''; position: absolute; top: -7px; left: 0; width: 12px; height: 12px; border-radius: 50%; background: #F5F7F9; border: 2px solid rgba(20,43,69,.45); }
+.hm-tao-st.is-key { border-top-color: #C16D48; }
+.hm-tao-st.is-key::before { background: #C16D48; border-color: #C16D48; }
+.hm-tao-st:last-child::after { content: '\2713'; position: absolute; top: -13px; right: 0; width: 24px; height: 24px; border-radius: 50%; background: #142B45; color: #fff; font-size: 13px; line-height: 24px; text-align: center; }
+.hm-tao-n { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: .06em; color: #56657A; }
+.hm-tao-dh { font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #56657A; margin: 0 0 16px; }
+.hm-tao-cars { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.hm-tao-cars li { background: #fff; border: 1px solid rgba(20,43,69,0.12); border-radius: 2px; overflow: hidden; }
+.hm-tao-cars img { display: block; width: 100% !important; height: auto !important; max-height: none !important; aspect-ratio: 4 / 3; object-fit: cover; }
+.hm-tao-cars span { display: block; padding: 10px 12px 12px; font-size: 13px; color: #475569; line-height: 1.35; }
+.hm-tao-cars b { display: block; font-size: 14px; color: #142B45; font-weight: 600; }
+@media (max-width: 1024px) {
+    .hm-ex-top { grid-template-columns: 1fr; gap: 18px; }
+    .hm-tao-cars { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+    .hm-ex-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .hm-ex-svg { padding: 16px 10px 4px; }
+    .hm-ex-lab { font-size: 14px; padding: 11px 12px; }
+    .hm-tao-flow { grid-template-columns: 1fr 1fr; row-gap: 14px; }
+    .hm-tao-st { font-size: 16px; }
+    .hm-tao-cars { grid-template-columns: 1fr 1fr; }
+    .hm-ex-note { margin-right: 0; flex-basis: 100%; }
+}
