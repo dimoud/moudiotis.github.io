@@ -6711,3 +6711,11 @@ html:not(#z) body .as-i b {
     .hm-tao-cars { grid-template-columns: 1fr 1fr; }
     .hm-ex-note { margin-right: 0; flex-basis: 100%; }
 }
+
+/* ΕΧΕΣ: εικονογραφήσεις αντί για απλά σχέδια (28/10/2026) */
+.hm-ex-tile { background: #fff !important; overflow: hidden; }
+.hm-ex-img { display: block; overflow: hidden; background: #fff; }
+.hm-ex-img img { display: block; width: 100% !important; height: auto !important; aspect-ratio: 4 / 3; object-fit: contain; padding: 10px 14px 0; transition: transform .35s ease; }
+.hm-ex-tile:hover .hm-ex-img img { transform: scale(1.035); }
+.hm-ex-lab { font-size: 18px; }
+@media (max-width: 768px) { .hm-ex-img img { padding: 6px 6px 0; } .hm-ex-lab { font-size: 14px; } }
