@@ -41,7 +41,7 @@
 - [Μετατροπή βαν σε αυτοκινούμενο τροχόσπιτο](https://moudiotis.gr/metatropi-van-se-trochospito/)
 - [Ταξινόμηση τροχόσπιτου](https://moudiotis.gr/trochospita/)
 - [Τεχνική υποστήριξη και βεβαιώσεις μηχανικού](https://moudiotis.gr/texniki-symvouleftiki/): για Τελωνεία, ΚΤΕΟ και Διευθύνσεις Μεταφορών· τεχνικές γνωμοδοτήσεις κατά περίπτωση και επιστολές προς τις αρμόδιες Υπηρεσίες.
-- [Τεχνικός ασφαλείας για επιχειρήσεις](https://moudiotis.gr/texnikos-asfaleias/): ποιες επιχειρήσεις τον χρειάζονται, κατηγορίες επικινδυνότητας Α΄, Β΄, Γ΄ και υποχρεώσεις του εργοδότη, από διπλωματούχο μηχανολόγο μηχανικό.
+- [Τεχνικός ασφαλείας για επιχειρήσεις](https://moudiotis.gr/texnikos-asfaleias/): ποιες επιχειρήσεις τον χρειάζονται, κατηγορίες επικινδυνότητας Α΄, Β΄, Γ΄ και υποχρεώσεις του εργοδότη στην Αθήνα και τη Θεσσαλονίκη.
 - [Άδεια τρέιλερ Ο1 και Ο2](https://moudiotis.gr/adeia-treiler-o1-o2/) · [Κοτσαδόρος: τι ισχύει](https://moudiotis.gr/kotsadoros-elxi/)
 
 ## English
@@ -64,5 +64,5 @@ Moudiotis & Associates Technical Office is a mechanical engineering office with 
 - [Van to motorhome conversion](https://moudiotis.gr/en/metatropi-van-se-trochospito/)
 - [Caravan registration](https://moudiotis.gr/en/trochospita/)
 - [Engineering certificates and technical support](https://moudiotis.gr/en/texniki-symvouleftiki/): technical opinions case by case and letters to the competent authorities
-- [Safety technician for businesses](https://moudiotis.gr/en/texnikos-asfaleias/): which businesses need one, hazard categories A, B and C and employer obligations, from a mechanical engineer.
+- [Safety technician for businesses](https://moudiotis.gr/en/texnikos-asfaleias/): which businesses need one, hazard categories A, B and C and employer obligations, in Athens and Thessaloniki.
 - [O1/O2 trailer licence](https://moudiotis.gr/en/adeia-treiler-o1-o2/) · [Tow bars: what applies](https://moudiotis.gr/en/kotsadoros-elxi/)

@@ -363,9 +363,9 @@ window.SITE_CONFIG = {
             icon:        'fa-helmet-safety',
             titleEl:     'Τεχνικός Ασφαλείας για Επιχειρήσεις',
             titleEn:     'Safety Technician for Businesses',
-            textEl:      '<strong class="kw">Τεχνικός ασφαλείας</strong> για επιχειρήσεις: κατηγορία επικινδυνότητας, <strong class="kw">Γραπτή Εκτίμηση Επαγγελματικού Κινδύνου</strong> (ΓΕΕΚ), υποδείξεις και τεκμηρίωση από μηχανικό.',
-            textEn:      '<strong class="kw">Safety technician</strong> for businesses: hazard category, <strong class="kw">written occupational risk assessment</strong>, recommendations and documentation by an engineer.',
-            seoKeywords: 'τεχνικός ασφαλείας, υπηρεσίες τεχνικού ασφαλείας, ΓΕΕΚ, γραπτή εκτίμηση επαγγελματικού κινδύνου, κατηγορίες επικινδυνότητας, υγεία και ασφάλεια στην εργασία, safety technician Greece, occupational health and safety Athens',
+            textEl:      '<strong class="kw">Τεχνικός ασφαλείας</strong> για επιχειρήσεις: κατηγορία επικινδυνότητας, <strong class="kw">Γραπτή Εκτίμηση Επαγγελματικού Κινδύνου</strong> (ΓΕΕΚ), υποδείξεις και τεκμηρίωση.',
+            textEn:      '<strong class="kw">Safety technician</strong> for businesses: hazard category, <strong class="kw">written occupational risk assessment</strong>, recommendations and documentation.',
+            seoKeywords: 'τεχνικός ασφαλείας, υπηρεσίες τεχνικού ασφαλείας, ΓΕΕΚ, γραπτή εκτίμηση επαγγελματικού κινδύνου, κατηγορίες επικινδυνότητας, υγεία και ασφάλεια στην εργασία, safety technician Athens, safety technician Thessaloniki, occupational health and safety Athens',
         },
         {
             hidden:      true,   // κρυφή (όχι οχήματα)
