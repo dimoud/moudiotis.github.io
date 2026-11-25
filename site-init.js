@@ -154,6 +154,7 @@
     // Αναδυόμενο μενού «Υπηρεσίες»
     T['nav.dd.g1']  = { el: "Εγκρίσεις και Ταξινόμηση", en: "Approvals and Registration" };
     T['nav.dd.g2']  = { el: "Μετατροπές και Ειδικά Οχήματα", en: "Conversions and Special Vehicles" };
+    T['nav.dd.g3']  = { el: "Τεχνική Υποστήριξη", en: "Technical Support" };
     T['nav.dd.all'] = { el: 'Όλες οι υπηρεσίες', en: 'All services' };
     T['svc.more'] = { el: 'Περισσότερα →', en: 'More →' };
     T['nav.dd.deltio-koinopoiisis-tao'] = { el: "Δελτίο Κοινοποίησης και ΤΑΟ", en: "Notification and TAO" };
@@ -168,6 +169,7 @@
     T['nav.dd.metaskeves-yperkataskeves'] = { el: "Μετασκευές, Υπερκατασκευές", en: "Conversions, Superstructures" };
     T['nav.dd.topothetisi-geranou'] = { el: "Τοποθέτηση Γερανού", en: "Crane Installation" };
     T['nav.dd.texniki-symvouleftiki'] = { el: "Βεβαιώσεις Μηχανικού", en: "Engineer Certificates" };
+    T['nav.dd.texnikos-asfaleias'] = { el: "Τεχνικός Ασφαλείας", en: "Safety Technician" };
 
 
 

@@ -359,15 +359,14 @@ window.SITE_CONFIG = {
             seoKeywords: 'μελετη ενεργητικης πυροπροστασιας, ενεργητική πυροπροστασία, μελέτη πυροπροστασίας, συστημα πυροσβεσης, sprinkler, πυρασφάλεια κτιρίου, fire protection study Greece, μηχανολόγος μηχανικός πυροπροστασία',
         },
         {
-            hidden:      true,   // κρυφή (όχι οχήματα)
             urlEl:       '/texnikos-asfaleias/',
             urlEn:       '/en/texnikos-asfaleias/',
             icon:        'fa-helmet-safety',
-            titleEl:     'Τεχνικός Ασφαλείας — Υγεία και Ασφάλεια Εργασίας (Ν.3850/2010)',
-            titleEn:     'Safety Engineer — Occupational Health and Safety (Law 3850/2010)',
-            textEl:      'Η κάλυψη <strong class="kw">Τεχνικού Ασφαλείας</strong> για <strong class="kw">κάθε επιχείρηση</strong>, ακόμα και με 1 εργαζόμενο είναι υποχρεωτική. Σύνταξη <strong class="kw">ΓΕΕΚ</strong>, εκπαιδεύσεις εργαζομένων, σχέδια εκκένωσης, προετοιμασία ΣΕΠΕ.',
-            textEn:      'Mandatory <strong class="kw">Safety Engineer</strong> coverage by a <strong class="kw">mechanical engineer</strong> for <strong class="kw">every business</strong>, even with 1 employee — Athens and Thessaloniki. Written risk assessment (<strong class="kw">GEEK</strong>), employee training, evacuation plans, SEPE preparation.',
-            seoKeywords: 'τεχνικος ασφαλειας, ΓΕΕΚ, υγεια ασφαλεια εργασιας, νομος 3850 2010, safety engineer Athens, occupational health safety Greece',
+            titleEl:     'Τεχνικός Ασφαλείας για Επιχειρήσεις',
+            titleEn:     'Safety Technician for Businesses',
+            textEl:      '<strong class="kw">Τεχνικός ασφαλείας</strong> για επιχειρήσεις: κατηγορία επικινδυνότητας, <strong class="kw">Γραπτή Εκτίμηση Επαγγελματικού Κινδύνου</strong> (ΓΕΕΚ), υποδείξεις και τεκμηρίωση από μηχανικό.',
+            textEn:      '<strong class="kw">Safety technician</strong> for businesses: hazard category, <strong class="kw">written occupational risk assessment</strong>, recommendations and documentation by an engineer.',
+            seoKeywords: 'τεχνικός ασφαλείας, υπηρεσίες τεχνικού ασφαλείας, ΓΕΕΚ, γραπτή εκτίμηση επαγγελματικού κινδύνου, κατηγορίες επικινδυνότητας, υγεία και ασφάλεια στην εργασία, safety technician Greece, occupational health and safety Athens',
         },
         {
             hidden:      true,   // κρυφή (όχι οχήματα)

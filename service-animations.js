@@ -10,6 +10,8 @@
  *                   πινακίδας, από ξένη σε ελληνική άδεια κυκλοφορίας.
  *   #exesAnimWrap → Οχήματα ειδικού σκοπού: πλαίσιο-καμπίνα και η
  *                   υπερκατασκευή που κατεβαίνει και βιδώνεται πάνω του.
+ *   #safeAnimWrap → Τεχνικός ασφαλείας: πίνακας εκτίμησης κινδύνου και
+ *                   κατηγορίες επικινδυνότητας Α', Β', Γ'.
  *
  * Η γλώσσα διαβάζεται από το <html lang> τη στιγμή της δημιουργίας — οι
  * σελίδες υπηρεσιών αλλάζουν γλώσσα με σύνδεσμο, όχι επιτόπου.
@@ -348,10 +350,117 @@
     });
   }
 
+
+  /* ───────────────────────────────────────────────────────
+     ΣΚΗΝΗ 3 — ΤΕΧΝΙΚΟΣ ΑΣΦΑΛΕΙΑΣ
+     Αριστερά ο πίνακας εκτίμησης κινδύνου (πιθανότητα × σοβαρότητα):
+     σχεδιάζεται, εμφανίζεται ο αρχικός κίνδυνος στην υψηλή ζώνη και, με
+     τα μέτρα πρόληψης, μετακινείται στην πράσινη. Δεξιά οι τρεις
+     κατηγορίες επικινδυνότητας Α', Β', Γ' (κατά ΚΑΔ) ως ράβδοι.
+     ─────────────────────────────────────────────────────── */
+  var RED = '#c0504d', AMBER = '#d69e2e';
+
+  function buildSafety() {
+    var alt = t([
+      'Σκίτσο πίνακα εκτίμησης κινδύνου και των κατηγοριών επικινδυνότητας Α, Β, Γ',
+      'Sketch of a risk assessment matrix and of hazard categories A, B and C'
+    ]);
+    var X0 = 70, Y0 = 70, CW = 100, CH = 58, s = [], c, r, score, col;
+
+    s.push('<svg id="svcSvg" viewBox="0 0 820 340" fill="none"',
+      ' xmlns="http://www.w3.org/2000/svg" role="img" aria-label="' + esc(alt) + '"',
+      ' style="width:100%;max-width:820px;overflow:visible;display:block;margin:0 auto">');
+
+    /* ζώνες του πίνακα (εμφανίζονται μαζί με τα κείμενα) */
+    for (r = 0; r < 3; r++) {
+      for (c = 0; c < 3; c++) {
+        score = c + (2 - r);
+        col = score >= 3 ? RED : (score === 2 ? AMBER : GREEN);
+        s.push('<rect class="sv-t" x="' + (X0 + c * CW) + '" y="' + (Y0 + r * CH) + '"',
+          ' width="' + CW + '" height="' + CH + '" fill="' + col + '" fill-opacity="0.16" opacity="0"/>');
+      }
+    }
+
+    s.push('<g stroke="' + GOLD + '" stroke-linecap="round" stroke-linejoin="round" fill="none">');
+    /* πλέγμα 3×3 */
+    s.push('<path class="sv-p" d="M70 70 L370 70 L370 244 L70 244 Z" stroke-width="3.6"/>');
+    s.push('<path class="sv-p" d="M170 70 L170 244" stroke-width="1.6" stroke-opacity="0.7"/>');
+    s.push('<path class="sv-p" d="M270 70 L270 244" stroke-width="1.6" stroke-opacity="0.7"/>');
+    s.push('<path class="sv-p" d="M70 128 L370 128" stroke-width="1.6" stroke-opacity="0.7"/>');
+    s.push('<path class="sv-p" d="M70 186 L370 186" stroke-width="1.6" stroke-opacity="0.7"/>');
+    /* άξονες με βέλη */
+    s.push('<path class="sv-p" d="M70 256 L370 256" stroke-width="1.4" stroke-opacity="0.6"/>');
+    s.push('<path class="sv-p" d="M362 251 L370 256 L362 261" stroke-width="1.4" stroke-opacity="0.6"/>');
+    s.push('<path class="sv-p" d="M58 244 L58 70" stroke-width="1.4" stroke-opacity="0.6"/>');
+    s.push('<path class="sv-p" d="M53 78 L58 70 L63 78" stroke-width="1.4" stroke-opacity="0.6"/>');
+    /* αρχικός κίνδυνος: υψηλή ζώνη */
+    s.push('<g class="sv-old" stroke="' + RED + '">');
+    s.push('<circle class="sv-p" cx="320" cy="99" r="15" stroke-width="3.2"/>');
+    s.push('<circle class="sv-p" cx="320" cy="99" r="5" stroke-width="2"/>');
+    s.push('</g>');
+    /* κατηγορίες Α', Β', Γ' (κατά ΚΑΔ): ράβδοι φθίνουσας επικινδυνότητας */
+    s.push('<path class="sv-p" d="M510 112 L790 112" stroke-width="12" stroke-opacity="0.95"/>');
+    s.push('<path class="sv-p" d="M510 156 L700 156" stroke-width="12" stroke-opacity="0.6"/>');
+    s.push('<path class="sv-p" d="M510 200 L610 200" stroke-width="12" stroke-opacity="0.35"/>');
+    s.push('<path class="sv-p" d="M470 238 L790 238" stroke-width="1.2" stroke-dasharray="4 3" stroke-opacity="0.55"/>');
+    s.push('</g>');
+
+    /* κείμενα */
+    s.push(txt(70, 52, 10, t(['ΕΚΤΙΜΗΣΗ ΚΙΝΔΥΝΟΥ', 'RISK ASSESSMENT']), { ls: 1.8 }));
+    s.push(txt(220, 280, 9, t(['ΠΙΘΑΝΟΤΗΤΑ', 'LIKELIHOOD']), { anchor: 'middle', ls: 1.8, op: 0.8 }));
+    s.push('<text class="sv-t" transform="rotate(-90 40 157)" x="40" y="157" text-anchor="middle"' +
+      ' font-family="' + MONO + '" font-size="9" letter-spacing="1.8" fill="' + GOLD + '"' +
+      ' fill-opacity="0.8" opacity="0">' + esc(t(['ΣΟΒΑΡΟΤΗΤΑ', 'SEVERITY'])) + '</text>');
+    s.push(txt(470, 52, 10, t(['ΚΑΤΗΓΟΡΙΕΣ ΕΠΙΚΙΝΔΥΝΟΤΗΤΑΣ · ΚΑΤΑ ΚΑΔ', 'HAZARD CATEGORIES · BY ACTIVITY CODE']), { ls: 1.8 }));
+    s.push(txt(470, 117, 17, "Α'", { font: OSW, weight: '700', ls: 0, fill: NAVY }));
+    s.push(txt(470, 161, 17, "Β'", { font: OSW, weight: '700', ls: 0, fill: NAVY }));
+    s.push(txt(470, 205, 17, "Γ'", { font: OSW, weight: '700', ls: 0, fill: NAVY }));
+    s.push(txt(470, 262, 9.5, t(['ΓΕΕΚ · ΒΙΒΛΙΟ ΥΠΟΔΕΙΞΕΩΝ · ΕΚΠΑΙΔΕΥΣΗ', 'RISK FILE · ADVICE BOOK · TRAINING']), { ls: 1.6 }));
+    s.push(txt(70, 312, 10, t(['ΜΕΤΡΑ ΠΡΟΛΗΨΗΣ → ΜΕΙΩΣΗ ΚΙΝΔΥΝΟΥ', 'PREVENTIVE MEASURES → LOWER RISK']), { ls: 1.8 }));
+
+    /* αποκάλυψη: ο κίνδυνος μετά τα μέτρα */
+    s.push('<g id="svcReveal" opacity="0">');
+    s.push('<path d="M306 108 Q262 176 232 206" stroke="' + GREEN + '" stroke-width="2.6"' +
+      ' stroke-dasharray="5 4" stroke-linecap="round" fill="none"/>');
+    s.push('<path d="M240 196 L230 208 L244 211" stroke="' + GREEN + '" stroke-width="2.6"' +
+      ' stroke-linecap="round" stroke-linejoin="round" fill="none"/>');
+    s.push('<circle cx="215" cy="215" r="15" fill="' + CREAM + '" stroke="' + GREEN + '" stroke-width="3.4"/>');
+    s.push('<path d="M208 215 L213 220 L222 209" stroke="' + GREEN + '" stroke-width="3"' +
+      ' stroke-linecap="round" stroke-linejoin="round" fill="none"/>');
+    s.push('</g>');
+
+    s.push('</svg>');
+    return s.join('\n');
+  }
+
+  function revealSafety(svg) {
+    svg.querySelectorAll('.sv-old').forEach(function (o) {
+      o.style.transition = 'opacity 0.5s ease';
+      o.style.opacity    = '0.3';
+    });
+    var g = svg.querySelector('#svcReveal');
+    if (!g) return;
+    g.style.transition = 'none';
+    g.style.opacity    = '0';
+    g.setAttribute('transform', 'translate(60,-40) scale(0.7)');
+    void g.getBoundingClientRect();
+    g.style.transition = 'opacity 0.4s ease, transform 0.6s cubic-bezier(0.34,1.35,0.5,1)';
+    g.style.opacity    = '1';
+    g.setAttribute('transform', 'translate(0,0) scale(1)');
+  }
+
+  function resetSafety(svg) {
+    svg.querySelectorAll('.sv-old').forEach(function (o) {
+      o.style.transition = 'none';
+      o.style.opacity    = '1';
+    });
+  }
+
   /* ── ΣΚΗΝΕΣ ── */
   var SCENES = {
     impAnimWrap:  { build: buildImport, reveal: revealImport, reset: resetImport },
-    exesAnimWrap: { build: buildExes,   reveal: revealExes,   reset: resetExes }
+    exesAnimWrap: { build: buildExes,   reveal: revealExes,   reset: resetExes },
+    safeAnimWrap: { build: buildSafety, reveal: revealSafety, reset: resetSafety }
   };
 
   /* ── ΜΗΧΑΝΗ ΣΧΕΔΙΑΣΗΣ (ίδια με τα υπόλοιπα γραφικά) ── */
@@ -431,6 +540,7 @@
     if (body) { body.setAttribute('transform', 'translate(0,0)'); body.style.opacity = '1'; }
     var old = svg.querySelector('#impOld');
     if (old) old.style.opacity = '0.25';
+    svg.querySelectorAll('.sv-old').forEach(function (o) { o.style.opacity = '0.3'; });
     var g = svg.querySelector('#svcReveal');
     if (g) g.style.opacity = '1';
   }
@@ -491,6 +601,7 @@
     build: function (name) {
       if (name === 'import') return buildImport();
       if (name === 'exes')   return buildExes();
+      if (name === 'safety') return buildSafety();
       return '';
     }
   };

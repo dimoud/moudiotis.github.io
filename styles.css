@@ -4812,8 +4812,8 @@ nav .nav-dd.open .nav-dd-btn { color: #e4b7a2; }
     .nav-dd:hover .nav-dd-btn i, .nav-dd.open .nav-dd-btn i { transform: rotate(180deg); }
     .nav-dd-menu {
         position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
-        display: grid; grid-template-columns: 1fr 1fr; gap: 6px 34px;
-        min-width: 520px; padding: 22px 28px 16px; margin-top: 6px;
+        display: grid; grid-template-columns: repeat(3, auto); gap: 6px 34px;
+        min-width: 720px; padding: 22px 28px 16px; margin-top: 6px;
         background: linear-gradient(180deg, #0d2035, #08121e);
         border: 1px solid rgba(193,109,72,0.35); border-radius: 4px;
         box-shadow: 0 9px 22px rgba(0,0,0,0.45);
