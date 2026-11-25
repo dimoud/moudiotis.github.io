@@ -323,7 +323,6 @@ window.SITE_CONFIG = {
             seoKeywords: 'υδραυλικη πλατφορμα, εγκριση τυπου, EN 1570, πιστοποιηση CE, hydraulic platform study Greece, τεχνική μελέτη υδραυλικής πλατφόρμας',
         },
         {
-            desktopOnly: true,   // κάρτα μόνο στον υπολογιστή (>768px): κλείνει συμμετρικά το πλέγμα· η σελίδα της υπάρχει για όλους
             urlEl:       '/texniki-symvouleftiki/',
             urlEn:       '/en/texniki-symvouleftiki/',
             icon:        'fa-clipboard-check',
